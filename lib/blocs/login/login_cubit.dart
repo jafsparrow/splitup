@@ -1,4 +1,4 @@
-import 'package:JCCommisionApp/repositories/authentication_repository.dart';
+import 'package:JCCommisionApp/repositories/user/authentication_repository.dart';
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/cupertino.dart';

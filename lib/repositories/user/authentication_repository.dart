@@ -1,8 +1,9 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
-import 'models/user.dart';
 import 'dart:async';
+
+import 'models/user.dart';
 
 class AuthenticationRepository implements Authentication {
   final FirebaseAuth _firebaseAuth;

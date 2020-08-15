@@ -1,9 +1,8 @@
 import 'dart:async';
-import 'package:JCCommisionApp/repositories/authentication_repository.dart';
-import 'package:JCCommisionApp/repositories/models/user.dart';
+import 'package:JCCommisionApp/repositories/user/authentication_repository.dart';
+import 'package:JCCommisionApp/repositories/user/models/user.dart';
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
-import 'package:flutter/rendering.dart';
 import 'package:meta/meta.dart';
 
 part 'authentication_event.dart';

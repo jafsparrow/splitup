@@ -1,10 +1,11 @@
-import 'package:JCCommisionApp/repositories/authentication_repository.dart';
-import 'package:JCCommisionApp/screens/bloc/authentication_bloc.dart';
+import 'package:JCCommisionApp/repositories/user/authentication_repository.dart';
 import 'package:JCCommisionApp/screens/homepage/homepage.dart';
 import 'package:JCCommisionApp/screens/login/login_page.dart';
 import 'package:JCCommisionApp/shared/theme_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+
+import 'blocs/authentication/authentication_bloc.dart';
 
 void main() {
   runApp(MyApp(

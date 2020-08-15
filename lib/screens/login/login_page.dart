@@ -1,5 +1,5 @@
-import 'package:JCCommisionApp/repositories/authentication_repository.dart';
-import 'package:JCCommisionApp/screens/login/cubit/login_cubit.dart';
+import 'package:JCCommisionApp/blocs/login/login_cubit.dart';
+import 'package:JCCommisionApp/repositories/user/authentication_repository.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
