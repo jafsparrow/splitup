@@ -1,0 +1,25 @@
+[ ] Create Project structure
+    [ ] Create Screens folder.
+    [ ] Create components for each of the screen folder.
+[ ] Create Shared Folder or Core folder.
+[ ] Add Model folder for model files.
+[ ] Add Theme file and other common UI related things.
+[ ] Add sample data folder with files.
+[ ] 
+[ ]
+[ ]
+[ ]
+[ ]
+[ ]
+[ ]
+[ ]
+[ ]
+[ ]
+[ ]
+[ ]
+[ ]
+[ ]
+[ ]
+[ ]
+[ ]
+[ ]

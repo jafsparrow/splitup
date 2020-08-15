@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "861036409934",
+    "firebase_url": "https://bakkerscan.firebaseio.com",
+    "project_id": "bakkerscan",
+    "storage_bucket": "bakkerscan.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:861036409934:android:169e494946cc1e954fff1f",
+        "android_client_info": {
+          "package_name": "com.example.JCCommisionApp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "861036409934-6dhbv59q4b6ns8k2scp8sgckrlr7vgt6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA2vP-2BWJjh8LIT9e7emud35wJBMBxv90"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "861036409934-6dhbv59q4b6ns8k2scp8sgckrlr7vgt6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
