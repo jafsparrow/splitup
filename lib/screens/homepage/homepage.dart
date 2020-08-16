@@ -1,4 +1,6 @@
 import 'package:JCCommisionApp/blocs/login/login_cubit.dart';
+import 'package:JCCommisionApp/blocs/transaction/transacation_bloc.dart';
+import 'package:JCCommisionApp/repositories/transactions/firebase_user_transaction_repository.dart';
 import 'package:JCCommisionApp/repositories/user/authentication_repository.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -12,10 +14,20 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // print('hello worold');
     return Scaffold(
-      body: BlocProvider(
-        create: (context) =>
-            LoginCubit(context.repository<AuthenticationRepository>()),
+      body: MultiBlocProvider(
+        providers: [
+          BlocProvider<LoginCubit>(
+            create: (context) =>
+                LoginCubit(context.repository<AuthenticationRepository>()),
+          ),
+          BlocProvider<TransactionBloc>(
+            create: (context) =>
+                TransactionBloc(repository: FirebaseUserTransactionRepository())
+                  ..add(LoadTransactions()),
+          ),
+        ],
         child: BlocBuilder<LoginCubit, LoginState>(builder: (context, state) {
           return Row(
             children: <Widget>[
@@ -27,7 +39,13 @@ class HomePage extends StatelessWidget {
                   icon: Icon(Icons.access_alarms),
                   onPressed: () {
                     context.bloc<LoginCubit>().logOut();
-                  })
+                  }),
+              BlocBuilder<TransactionBloc, TransactionState>(
+                  builder: (context, state) {
+                return Container(
+                  child: Text('hey you'),
+                );
+              }),
             ],
           );
         }),
