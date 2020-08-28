@@ -6,12 +6,14 @@ class User extends Equatable {
   final String name;
   final String id;
   final String photo;
+  final String phone;
 
   const User(
       {@required this.email,
       @required this.name,
       @required this.id,
-      @required this.photo})
+      @required this.photo,
+      this.phone})
       : assert(email != null),
         assert(id != null);
 

@@ -2,13 +2,16 @@ import 'package:JCCommisionApp/repositories/transactions/models/transaction.dart
 import 'package:JCCommisionApp/repositories/transactions/transaction_user_repository.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
+import 'entities/transaction_entity.dart';
+
 class FirebaseUserTransactionRepository implements UserTransactionRepository {
   final userTransactionCollection =
       Firestore.instance.collection('usertransactions');
 
   @override
   Future<void> addNewUserTransaction(UserTransaction userTransaction) {
-    return userTransactionCollection.add({'transactionId': 'some transaction'});
+    return userTransactionCollection
+        .add(userTransaction.toEntity().toDocument());
   }
 
   @override
@@ -18,9 +21,12 @@ class FirebaseUserTransactionRepository implements UserTransactionRepository {
 
   @override
   Stream<List<UserTransaction>> listUserTransactions() {
-    // return userTransactionCollection.snapshots().map((snapshot) => {
-    //   return snapshot.documents.map((document) => 'hello').toList()
-    // });
+    return userTransactionCollection.snapshots().map((snapshot) {
+      return snapshot.documents
+          .map((document) => UserTransaction.fromEntity(
+              UserTransactionEntity.fromSnapshot(document)))
+          .toList();
+    });
   }
 
   @override
