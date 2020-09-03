@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
@@ -7,13 +8,14 @@ import 'models/user.dart';
 
 class AuthenticationRepository implements Authentication {
   final FirebaseAuth _firebaseAuth;
+  final userTransactionCollection = Firestore.instance.collection('users');
 
   AuthenticationRepository({FirebaseAuth firebaseAuth})
       : _firebaseAuth = firebaseAuth ?? FirebaseAuth.instance;
 
   Stream<User> get user {
     return _firebaseAuth.onAuthStateChanged.map((firebaseUser) {
-      print(firebaseUser);
+      // print(firebaseUser);
       return firebaseUser == null ? User.empty : firebaseUser.toUser;
     });
   }
@@ -48,8 +50,19 @@ class AuthenticationRepository implements Authentication {
 }
 
 extension on FirebaseUser {
+
+  
   User get toUser {
+    
     return User(id: uid, email: email, name: displayName, photo: photoUrl);
+    // var collection = Firestore.instance.collection('users');
+    // DocumentSnapshot document = await collection.document(uid).get();
+    // return User(
+    //     id: document.data['uid'],
+    //     email: document.data['email'],
+    //     name: document.data['name'],
+    //     photo: document.data['photoUrl']);
+
   }
 }
 

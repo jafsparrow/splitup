@@ -7,7 +7,7 @@ class LoginPage extends StatefulWidget {
   const LoginPage({Key key}) : super(key: key);
 
   static Route route() {
-    print('login page static route functionl');
+    // print('login page static route functionl');
     return MaterialPageRoute<void>(builder: (_) => LoginPage());
   }
 
@@ -38,8 +38,8 @@ class _LoginPageState extends State<LoginPage> {
                     controller: _emailController,
                     onChanged: (value) {
                       context.bloc<LoginCubit>().emailChanged(value);
-                      print('ýou are touching me $value');
-                      print('çontroller ${_emailController.value.text}');
+                      // print('ýou are touching me $value');
+                      // print('çontroller ${_emailController.value.text}');
                     },
                   ),
                   SizedBox(
@@ -49,7 +49,7 @@ class _LoginPageState extends State<LoginPage> {
                     controller: _passwordController,
                     onChanged: (value) {
                       context.bloc<LoginCubit>().passwordChanged(value);
-                      print('ýou are touching me $value');
+                      // print('ýou are touching me $value');
                     },
                   ),
                   IconButton(

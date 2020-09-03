@@ -19,7 +19,7 @@ class TotalReward {
       totalRewards = totalRewards + billSubTypeBreakups[key];
     });
 
-    print('total now is $totalRewards');
+    // print('total now is $totalRewards');
     return totalRewards;
   }
 }

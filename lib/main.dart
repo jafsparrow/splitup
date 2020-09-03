@@ -8,6 +8,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'blocs/authentication/authentication_bloc.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
   runApp(MyApp(
     authenticationRepository: AuthenticationRepository(),
   ));
@@ -54,21 +55,21 @@ class _AppViewState extends State<AppView> {
             print(state.status);
             switch (state.status) {
               case AuthenticationStatus.authenticated:
-                print('authenticated section of switch...!!');
+                // print('authenticated section of switch...!!');
                 _navigator.pushAndRemoveUntil<void>(
                   HomePage.route(),
                   (route) => false,
                 );
                 break;
               case AuthenticationStatus.unauthenticated:
-                print('switch unathonticated section');
+                // print('switch unathonticated section');
                 _navigator.pushAndRemoveUntil<void>(
                   LoginPage.route(),
                   (route) => false,
                 );
                 break;
               default:
-                print('switch default section');
+                // print('switch default section');
                 break;
             }
           },

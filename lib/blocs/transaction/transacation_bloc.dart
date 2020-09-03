@@ -17,22 +17,22 @@ class TransactionBloc extends Bloc<TransactionEvent, TransactionState> {
   TransactionBloc({@required UserTransactionRepository repository})
       : _repository = repository,
         super(TransactionLoading()) {
-    print('am I really started');
+    // print('am I really started');
   }
 
   @override
   Stream<TransactionState> mapEventToState(
     TransactionEvent event,
   ) async* {
-    print('event block');
+    // print('event block');
     if (event is LoadTransactions) {
-      print('am I INN');
+      // print('am I INN');
       yield* _mapLoadTransactionToState();
     } else if (event is UpdateTransactions) {
-      print('inside update tran');
+      // print('inside update tran');
       yield* _mapUpdateTransactionsToState(event);
     } else if (event is AddTransaction) {
-      print('calling Add event transaction');
+      // print('calling Add event transaction');
       yield* _mapAddTransactionToState(event);
     }
 
@@ -51,7 +51,7 @@ class TransactionBloc extends Bloc<TransactionEvent, TransactionState> {
 
   Stream<TransactionState> _mapLoadTransactionToState() async* {
     _userTransactionSubscription?.cancel();
-    print('I have asked to load by two dotts notation');
+    // print('I have asked to load by two dotts notation');
 
     _userTransactionSubscription = _repository
         .listUserTransactions()
