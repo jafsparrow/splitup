@@ -32,6 +32,8 @@ class HomePage extends StatelessWidget {
         floatingActionButton: FloatingActionButton(
           child: Icon(Icons.access_alarms),
           onPressed: () {
+            BlocProvider.of<TransactionBloc>(context)
+                .add(AddTransaction(UserTransaction('hello you')));
             Navigator.push(
               context,
               EventAdd.route(onSave: (transaction) {
