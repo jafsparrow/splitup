@@ -1,5 +1,4 @@
 import 'package:JCCommisionApp/blocs/authentication/authentication_bloc.dart';
-import 'package:JCCommisionApp/blocs/transaction/transacation_bloc.dart';
 import 'package:JCCommisionApp/blocs/user_profile/userprofile_cubit.dart';
 import 'package:JCCommisionApp/repositories/transactions/models/total_bill_breakup.dart';
 import 'package:JCCommisionApp/repositories/transactions/models/transaction.dart';
@@ -16,7 +15,6 @@ class EventAdd extends StatefulWidget {
 
   const EventAdd({Key key, @required this.onSave}) : super(key: key);
   static Route route({OnSaveCallback onSave}) {
-    // print('inside static event add page ');
     return MaterialPageRoute<void>(
         builder: (_) => EventAdd(
               onSave: onSave,
@@ -39,11 +37,8 @@ class _EventAddState extends State<EventAdd> {
 
   @override
   void initState() {
-    // print(billingCategorie);
     billFormulaBreakup.forEach((key, val) =>
         controllerMaps[key] = TextEditingController(text: val.toString()));
-    // print('----------------------');
-    // print(controllerMaps);
     super.initState();
   }
 
@@ -51,6 +46,8 @@ class _EventAddState extends State<EventAdd> {
   Widget build(BuildContext context) {
     User user = context.bloc<AuthenticationBloc>().state.user;
     UserProfileRepository userProfileRepo = UserProfileRepository(user);
+
+    UserProfile loggedInUserProfile = null;
     return RepositoryProvider.value(
       value: (context) => userProfileRepo,
       child: BlocProvider<UserprofileCubit>(
@@ -59,6 +56,7 @@ class _EventAddState extends State<EventAdd> {
         child: BlocBuilder<UserprofileCubit, UserprofileState>(
           builder: (context, state) {
             if (state is UserProfileLoaded) {
+              loggedInUserProfile = state.userProfile;
               return SafeArea(
                 child: Scaffold(
                   appBar: AppBar(
@@ -68,69 +66,7 @@ class _EventAddState extends State<EventAdd> {
                   body: BlocBuilder<AuthenticationBloc, AuthenticationState>(
                     builder: (context, state) {
                       return Container(
-                        child: Column(
-                          children: <Widget>[
-                            ...billFormulaBreakup.keys
-                                .map(
-                                  (item) => Padding(
-                                    padding: const EdgeInsets.all(10.0),
-                                    child: TextField(
-                                      controller: controllerMaps[item]
-                                        ..text = 30.toString(),
-                                      decoration: InputDecoration(
-                                          labelText: controllerMaps[item].text),
-                                    ),
-                                  ),
-                                )
-                                .toList(),
-                            SizedBox(
-                              height: 10,
-                            ),
-                            IconButton(
-                              icon: Icon(Icons.account_balance),
-                              onPressed: () {
-                                List<String> valueLIst = [];
-                                Map<String, double> pointsBreakups = {};
-
-                                controllerMaps.forEach((key, value) {
-                                  pointsBreakups[key] =
-                                      double.parse(value.text);
-                                });
-
-                                TotalReward rewards = TotalReward(
-                                    billSubTypeBreakups: pointsBreakups);
-
-                                //  if(context.bloc<UserprofileCubit>().state == UserProfileLoaded) {
-                                //     context.bloc<UserprofileCubit>().state.
-                                //  }
-                                // UserProfile loggedInUserProfile =
-                                //     userProfileLoadedState.userProfile;
-                                // User salesSampleUser = User(
-                                //     name: loggedInUserProfile.name,
-                                //     email: loggedInUserProfile.email,
-                                //     id: loggedInUserProfile.id,
-                                //     photo: loggedInUserProfile.phone);
-
-                                User salesSampleUser = User(
-                                    name: 'hello wrold',
-                                    email: 'hello wrold',
-                                    id: 'hello wrold',
-                                    photo: 'hello wrold');
-                                User partnerSampleUser = User(
-                                    name: 'partner01',
-                                    email: 'partnerjafar@test.com',
-                                    id: 'partner3kdsjfshdkd',
-                                    photo: 'test photo');
-                                UserTransaction newTransaction =
-                                    UserTransaction('hello you',
-                                        totalRewards: rewards,
-                                        salesUser: salesSampleUser,
-                                        partnerUser: partnerSampleUser);
-                                widget.onSave(newTransaction);
-                              },
-                            )
-                          ],
-                        ),
+                        child: buildEventAddForm(loggedInUserProfile),
                       );
                     },
                   ),
@@ -145,76 +81,58 @@ class _EventAddState extends State<EventAdd> {
     );
   }
 
-  Widget buildAddEventArea(
-      UserProfileLoaded userProfileLoadedState, Function onSave) {
-    return SafeArea(
-      child: Scaffold(
-          appBar: AppBar(
-            title: Text('Hello You'),
-            elevation: 0,
-          ),
-          body: BlocBuilder<AuthenticationBloc, AuthenticationState>(
-            builder: (context, state) {
-              return Container(
-                child: Column(
-                  children: <Widget>[
-                    ...billFormulaBreakup.keys
-                        .map(
-                          (item) => Padding(
-                            padding: const EdgeInsets.all(10.0),
-                            child: TextField(
-                              controller: controllerMaps[item]
-                                ..text = 30.toString(),
-                              decoration: InputDecoration(
-                                  labelText: controllerMaps[item].text),
-                            ),
-                          ),
-                        )
-                        .toList(),
-                    SizedBox(
-                      height: 10,
-                    ),
-                    IconButton(
-                      icon: Icon(Icons.account_balance),
-                      onPressed: () {
-                        List<String> valueLIst = [];
-                        Map<String, double> pointsBreakups = {};
-
-                        controllerMaps.forEach((key, value) {
-                          pointsBreakups[key] = double.parse(value.text);
-                        });
-
-                        TotalReward rewards =
-                            TotalReward(billSubTypeBreakups: pointsBreakups);
-
-                        //  if(context.bloc<UserprofileCubit>().state == UserProfileLoaded) {
-                        //     context.bloc<UserprofileCubit>().state.
-                        //  }
-                        UserProfile loggedInUserProfile =
-                            userProfileLoadedState.userProfile;
-                        User salesSampleUser = User(
-                            name: loggedInUserProfile.name,
-                            email: loggedInUserProfile.email,
-                            id: loggedInUserProfile.id,
-                            photo: loggedInUserProfile.phone);
-                        User partnerSampleUser = User(
-                            name: 'partner01',
-                            email: 'partnerjafar@test.com',
-                            id: 'partner3kdsjfshdkd',
-                            photo: 'test photo');
-                        UserTransaction newTransaction = UserTransaction(
-                            'hello you',
-                            totalRewards: rewards,
-                            salesUser: salesSampleUser,
-                            partnerUser: partnerSampleUser);
-                        widget.onSave(newTransaction);
-                      },
-                    )
-                  ],
+  Column buildEventAddForm(UserProfile loggedInUserProfile) {
+    return Column(
+      children: <Widget>[
+        ...billFormulaBreakup.keys
+            .map(
+              (item) => Padding(
+                padding: const EdgeInsets.all(10.0),
+                child: TextField(
+                  controller: controllerMaps[item]..text = 30.toString(),
+                  decoration:
+                      InputDecoration(labelText: controllerMaps[item].text),
                 ),
-              );
-            },
-          )),
+              ),
+            )
+            .toList(),
+        SizedBox(
+          height: 10,
+        ),
+        buildSubmitButton(loggedInUserProfile)
+      ],
+    );
+  }
+
+  IconButton buildSubmitButton(UserProfile loggedInUserProfile) {
+    return IconButton(
+      icon: Icon(Icons.account_balance),
+      onPressed: () {
+        Map<String, double> pointsBreakups = {};
+
+        controllerMaps.forEach((key, value) {
+          pointsBreakups[key] = double.parse(value.text);
+        });
+
+        TotalReward rewards = TotalReward(billSubTypeBreakups: pointsBreakups);
+
+        User salesSampleUser = User(
+            name: loggedInUserProfile.name,
+            email: loggedInUserProfile.email,
+            id: loggedInUserProfile.id,
+            photo: loggedInUserProfile.phone);
+
+        User partnerSampleUser = User(
+            name: 'partner01',
+            email: 'partnerjafar@test.com',
+            id: 'partner3kdsjfshdkd',
+            photo: 'test photo');
+        UserTransaction newTransaction = UserTransaction('hello you',
+            totalRewards: rewards,
+            salesUser: salesSampleUser,
+            partnerUser: partnerSampleUser);
+        widget.onSave(newTransaction);
+      },
     );
   }
 }

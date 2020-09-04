@@ -28,41 +28,43 @@ class HomePage extends StatelessWidget {
                 ..add(LoadTransactions()),
         ),
       ],
-      child: Scaffold(
-        floatingActionButton: FloatingActionButton(
-          child: Icon(Icons.access_alarms),
-          onPressed: () {
-            BlocProvider.of<TransactionBloc>(context)
-                .add(AddTransaction(UserTransaction('hello you')));
-            Navigator.push(
-              context,
-              EventAdd.route(onSave: (transaction) {
-                BlocProvider.of<TransactionBloc>(context)
-                    .add(AddTransaction(transaction));
-                Navigator.pop(context);
-              }),
-            );
-          },
-        ),
-        body: BlocBuilder<TransactionBloc, TransactionState>(
-          builder: (context, state) {
-            if (state is TransacationLoaded) {
-              final userTransactions = state.userTransactions;
-              return buildUserTransactions(userTransactions, context);
-            } else {
-              return Container(
-                child: IconButton(
-                  icon: Icon(Icons.ac_unit),
-                  onPressed: () {
-                    // context
-                    //     .bloc<TransactionBloc>()
-                    //     .add(TransacationLoaded());
-                  },
-                ),
-              );
-            }
-          },
-        ),
+      child: BlocBuilder<TransactionBloc, TransactionState>(
+        builder: (context, state) {
+          return Scaffold(
+            floatingActionButton: FloatingActionButton(
+              child: Icon(Icons.access_alarms),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  EventAdd.route(onSave: (transaction) {
+                    BlocProvider.of<TransactionBloc>(context)
+                        .add(AddTransaction(transaction));
+                    Navigator.pop(context);
+                  }),
+                );
+              },
+            ),
+            body: BlocBuilder<TransactionBloc, TransactionState>(
+              builder: (context, state) {
+                if (state is TransacationLoaded) {
+                  final userTransactions = state.userTransactions;
+                  return buildUserTransactions(userTransactions, context);
+                } else {
+                  return Container(
+                    child: IconButton(
+                      icon: Icon(Icons.ac_unit),
+                      onPressed: () {
+                        // context
+                        //     .bloc<TransactionBloc>()
+                        //     .add(TransacationLoaded());
+                      },
+                    ),
+                  );
+                }
+              },
+            ),
+          );
+        },
       ),
     );
   }
@@ -102,8 +104,8 @@ Container buildUserTransactions(
                     .toString(),
                 style: TextStyle(color: Colors.green, fontSize: 20),
               ),
-              title: Text(userTransactions[index].description),
-              subtitle: Text(userTransactions[index].partnerUser.name),
+              title: Text(DateTime.now().year.toString()),
+              subtitle: Text(userTransactions[index].salesUser.name),
             );
           },
         ),
