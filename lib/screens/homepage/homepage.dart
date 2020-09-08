@@ -44,27 +44,72 @@ class HomePage extends StatelessWidget {
                 );
               },
             ),
-            body: BlocBuilder<TransactionBloc, TransactionState>(
-              builder: (context, state) {
-                if (state is TransacationLoaded) {
-                  final userTransactions = state.userTransactions;
-                  return buildUserTransactions(userTransactions, context);
-                } else {
-                  return Container(
-                    child: IconButton(
-                      icon: Icon(Icons.ac_unit),
-                      onPressed: () {
-                        // context
-                        //     .bloc<TransactionBloc>()
-                        //     .add(TransacationLoaded());
-                      },
-                    ),
-                  );
-                }
-              },
+            bottomNavigationBar: BottomNavigationBar(
+              items: [
+                BottomNavigationBarItem(
+                  icon: Icon(Icons.ac_unit),
+                  title: Text('Home'),
+                  backgroundColor: Colors.blue,
+                ),
+                BottomNavigationBarItem(
+                  icon: Icon(Icons.restaurant_menu),
+                  title: Text('Transactions'),
+                ),
+                BottomNavigationBarItem(
+                  icon: Icon(Icons.access_alarms),
+                  title: Text('Promotions'),
+                ),
+                BottomNavigationBarItem(
+                  icon: Icon(Icons.account_balance),
+                  title: Text('Partners'),
+                ),
+              ],
             ),
+            body: 1 == 1
+                ? buildContainerTest()
+                : BlocBuilder<TransactionBloc, TransactionState>(
+                    builder: (context, state) {
+                      if (state is TransacationLoaded) {
+                        final userTransactions = state.userTransactions;
+                        return buildUserTransactions(userTransactions, context);
+                      } else {
+                        return Container(
+                          child: IconButton(
+                            icon: Icon(Icons.ac_unit),
+                            onPressed: () {
+                              // context
+                              //     .bloc<TransactionBloc>()
+                              //     .add(TransacationLoaded());
+                            },
+                          ),
+                        );
+                      }
+                    },
+                  ),
           );
         },
+      ),
+    );
+  }
+
+  Widget buildContainerTest() {
+    return SafeArea(
+      child: Container(
+        padding: EdgeInsets.all(10),
+        child: Column(
+          children: <Widget>[
+            SizedBox(
+              height: 20,
+            ),
+            Text(
+              'Promotions',
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.w300,
+              ),
+            )
+          ],
+        ),
       ),
     );
   }
