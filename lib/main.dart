@@ -1,3 +1,4 @@
+import 'package:JCCommisionApp/landing_page.dart';
 import 'package:JCCommisionApp/repositories/user/authentication_repository.dart';
 import 'package:JCCommisionApp/screens/homepage/homepage.dart';
 import 'package:JCCommisionApp/screens/login/login_page.dart';
@@ -57,7 +58,7 @@ class _AppViewState extends State<AppView> {
               case AuthenticationStatus.authenticated:
                 // print('authenticated section of switch...!!');
                 _navigator.pushAndRemoveUntil<void>(
-                  HomePage.route(),
+                  LandingPage.route(),
                   (route) => false,
                 );
                 break;

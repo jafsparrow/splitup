@@ -8,9 +8,9 @@ final theme = ThemeData(
   primaryColor: const Color(0xFF00BCD4),
   accentColor: const Color(0xFF009688),
   scaffoldBackgroundColor: const Color(0xFFE0F2F1),
-  inputDecorationTheme: InputDecorationTheme(
-    border: OutlineInputBorder(
-      borderRadius: BorderRadius.circular(8),
-    ),
-  ),
+  // inputDecorationTheme: InputDecorationTheme(
+  //   border: OutlineInputBorder(
+  //     borderRadius: BorderRadius.circular(8),
+  //   ),
+  // ),
 );

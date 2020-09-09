@@ -4,6 +4,7 @@ import 'package:JCCommisionApp/repositories/transactions/firebase_user_transacti
 import 'package:JCCommisionApp/repositories/transactions/models/transaction.dart';
 import 'package:JCCommisionApp/repositories/user/authentication_repository.dart';
 import 'package:JCCommisionApp/screens/eventpage/event_add.dart';
+import 'package:JCCommisionApp/screens/partnerlist/partner_list.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -36,125 +37,66 @@ class HomePage extends StatelessWidget {
               onPressed: () {
                 Navigator.push(
                   context,
-                  EventAdd.route(onSave: (transaction) {
-                    BlocProvider.of<TransactionBloc>(context)
-                        .add(AddTransaction(transaction));
-                    Navigator.pop(context);
-                  }),
+                  EventAdd.route(
+                    onSave: (transaction) {
+                      BlocProvider.of<TransactionBloc>(context)
+                          .add(AddTransaction(transaction));
+                      Navigator.pop(context);
+                    },
+                  ),
                 );
               },
             ),
-            bottomNavigationBar: BottomNavigationBar(
-              items: [
-                BottomNavigationBarItem(
-                  icon: Icon(Icons.ac_unit),
-                  title: Text('Home'),
-                  backgroundColor: Colors.blue,
-                ),
-                BottomNavigationBarItem(
-                  icon: Icon(Icons.restaurant_menu),
-                  title: Text('Transactions'),
-                ),
-                BottomNavigationBarItem(
-                  icon: Icon(Icons.access_alarms),
-                  title: Text('Promotions'),
-                ),
-                BottomNavigationBarItem(
-                  icon: Icon(Icons.account_balance),
-                  title: Text('Partners'),
-                ),
-              ],
+            body: BlocBuilder<TransactionBloc, TransactionState>(
+              builder: (context, state) {
+                if (state is TransacationLoaded) {
+                  final userTransactions = state.userTransactions;
+                  return buildUserTransactions(userTransactions, context);
+                } else {
+                  return Container(
+                    child: IconButton(
+                      icon: Icon(Icons.ac_unit),
+                      onPressed: () {
+                        // context
+                        //     .bloc<TransactionBloc>()
+                        //     .add(TransacationLoaded());
+                      },
+                    ),
+                  );
+                }
+              },
             ),
-            body: 1 == 1
-                ? buildContainerTest()
-                : BlocBuilder<TransactionBloc, TransactionState>(
-                    builder: (context, state) {
-                      if (state is TransacationLoaded) {
-                        final userTransactions = state.userTransactions;
-                        return buildUserTransactions(userTransactions, context);
-                      } else {
-                        return Container(
-                          child: IconButton(
-                            icon: Icon(Icons.ac_unit),
-                            onPressed: () {
-                              // context
-                              //     .bloc<TransactionBloc>()
-                              //     .add(TransacationLoaded());
-                            },
-                          ),
-                        );
-                      }
-                    },
-                  ),
           );
         },
       ),
     );
   }
 
-  Widget buildContainerTest() {
-    return SafeArea(
-      child: Container(
-        padding: EdgeInsets.all(10),
-        child: Column(
-          children: <Widget>[
-            SizedBox(
-              height: 20,
-            ),
-            Text(
-              'Promotions',
-              style: TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.w300,
-              ),
-            )
-          ],
-        ),
+  Container buildUserTransactions(
+      List<UserTransaction> userTransactions, context) {
+    return Container(
+      child: Column(
+        children: <Widget>[
+          ListView.builder(
+            itemCount: userTransactions.length,
+            shrinkWrap: true,
+            itemBuilder: (context, index) {
+              return ListTile(
+                leading: Icon(Icons.list),
+                trailing: Text(
+                  userTransactions[index]
+                      .totalRewards
+                      .getTotalRewardPoints()
+                      .toString(),
+                  style: TextStyle(color: Colors.green, fontSize: 20),
+                ),
+                title: Text(DateTime.now().year.toString()),
+                subtitle: Text(userTransactions[index].salesUser.name),
+              );
+            },
+          ),
+        ],
       ),
     );
   }
-}
-
-FloatingActionButton buildFloatingActionButton(BuildContext context) {
-  return FloatingActionButton(
-    child: Icon(Icons.access_alarms),
-    onPressed: () {
-      Navigator.push(
-        context,
-        EventAdd.route(onSave: (transaction) {
-          BlocProvider.of<TransactionBloc>(context)
-              .add(AddTransaction(transaction));
-          Navigator.pop(context);
-        }),
-      );
-    },
-  );
-}
-
-Container buildUserTransactions(
-    List<UserTransaction> userTransactions, context) {
-  return Container(
-    child: Column(
-      children: <Widget>[
-        ListView.builder(
-          itemCount: userTransactions.length,
-          shrinkWrap: true,
-          itemBuilder: (context, index) {
-            return ListTile(
-              leading: Icon(Icons.list),
-              trailing: Text(
-                userTransactions[index]
-                    .totalRewards
-                    .getTotalRewardPoints()
-                    .toString(),
-                style: TextStyle(color: Colors.green, fontSize: 20),
-              ),
-              title: Text(DateTime.now().year.toString()),
-              subtitle: Text(userTransactions[index].salesUser.name),
-            );
-          },
-        ),
-      ],
-    ),
-  );
 }
