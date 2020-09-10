@@ -7,10 +7,12 @@ final theme = ThemeData(
   primaryColorLight: const Color(0xFFB2EBF2),
   primaryColor: const Color(0xFF00BCD4),
   accentColor: const Color(0xFF009688),
-  scaffoldBackgroundColor: const Color(0xFFE0F2F1),
+  scaffoldBackgroundColor: const Color(0xffF5F5F5),
   // inputDecorationTheme: InputDecorationTheme(
   //   border: OutlineInputBorder(
   //     borderRadius: BorderRadius.circular(8),
   //   ),
   // ),
 );
+
+// #F5F5F5 light grey

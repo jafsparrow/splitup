@@ -1,12 +1,12 @@
-import 'package:JCCommisionApp/blocs/login/login_cubit.dart';
 import 'package:JCCommisionApp/blocs/transaction/transacation_bloc.dart';
 import 'package:JCCommisionApp/repositories/transactions/firebase_user_transaction_repository.dart';
 import 'package:JCCommisionApp/repositories/transactions/models/transaction.dart';
-import 'package:JCCommisionApp/repositories/user/authentication_repository.dart';
 import 'package:JCCommisionApp/screens/eventpage/event_add.dart';
-import 'package:JCCommisionApp/screens/partnerlist/partner_list.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+
+import 'components/date_time_display.dart';
+import 'components/earned_points_display.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key key}) : super(key: key);
@@ -19,10 +19,6 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
-        BlocProvider<LoginCubit>(
-          create: (context) =>
-              LoginCubit(context.repository<AuthenticationRepository>()),
-        ),
         BlocProvider<TransactionBloc>(
           create: (context) =>
               TransactionBloc(repository: FirebaseUserTransactionRepository())
@@ -33,7 +29,7 @@ class HomePage extends StatelessWidget {
         builder: (context, state) {
           return Scaffold(
             floatingActionButton: FloatingActionButton(
-              child: Icon(Icons.access_alarms),
+              child: Icon(Icons.scanner),
               onPressed: () {
                 Navigator.push(
                   context,
@@ -54,13 +50,8 @@ class HomePage extends StatelessWidget {
                   return buildUserTransactions(userTransactions, context);
                 } else {
                   return Container(
-                    child: IconButton(
-                      icon: Icon(Icons.ac_unit),
-                      onPressed: () {
-                        // context
-                        //     .bloc<TransactionBloc>()
-                        //     .add(TransacationLoaded());
-                      },
+                    child: Center(
+                      child: CircularProgressIndicator(),
                     ),
                   );
                 }
@@ -72,31 +63,21 @@ class HomePage extends StatelessWidget {
     );
   }
 
-  Container buildUserTransactions(
+  Widget buildUserTransactions(
       List<UserTransaction> userTransactions, context) {
-    return Container(
-      child: Column(
-        children: <Widget>[
-          ListView.builder(
-            itemCount: userTransactions.length,
-            shrinkWrap: true,
-            itemBuilder: (context, index) {
-              return ListTile(
-                leading: Icon(Icons.list),
-                trailing: Text(
-                  userTransactions[index]
-                      .totalRewards
-                      .getTotalRewardPoints()
-                      .toString(),
-                  style: TextStyle(color: Colors.green, fontSize: 20),
-                ),
-                title: Text(DateTime.now().year.toString()),
-                subtitle: Text(userTransactions[index].salesUser.name),
-              );
-            },
+    return ListView.builder(
+      itemCount: userTransactions.length,
+      shrinkWrap: true,
+      itemBuilder: (context, index) {
+        return ListTile(
+          leading: DateTimeDisplay(
+            dateTime: DateTime.now(),
           ),
-        ],
-      ),
+          trailing: EarnedPoints(currentItem: userTransactions[index]),
+          title: Text(userTransactions[index].partnerUser.name),
+          subtitle: Text(userTransactions[index].salesUser.name),
+        );
+      },
     );
   }
 }

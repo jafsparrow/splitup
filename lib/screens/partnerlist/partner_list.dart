@@ -1,3 +1,4 @@
+import 'package:JCCommisionApp/screens/partner_profile/partner_profile.dart';
 import 'package:flutter/material.dart';
 
 class PartnerList extends StatelessWidget {
@@ -38,7 +39,14 @@ class PartnerList extends StatelessWidget {
 
   Widget buildPartnerListItem(BuildContext context, int index) {
     return ListTile(
-      onTap: () {},
+      onTap: () {
+        Navigator.push(
+            context,
+            MaterialPageRoute(
+                builder: (context) => PartnerProfile(
+                      id: index,
+                    )));
+      },
       title: Text('List Tile baby'),
     );
   }

@@ -50,6 +50,7 @@ class _AppViewState extends State<AppView> {
     return MaterialApp(
       navigatorKey: _navigatorKey,
       theme: theme,
+      debugShowCheckedModeBanner: false,
       builder: (context, child) {
         return BlocListener<AuthenticationBloc, AuthenticationState>(
           listener: (context, state) {
@@ -70,7 +71,6 @@ class _AppViewState extends State<AppView> {
                 );
                 break;
               default:
-                // print('switch default section');
                 break;
             }
           },

@@ -50,32 +50,35 @@ class _EventAddState extends State<EventAdd> {
     UserProfile loggedInUserProfile = null;
     return RepositoryProvider.value(
       value: (context) => userProfileRepo,
-      child: BlocProvider<UserprofileCubit>(
-        create: (context) =>
-            UserprofileCubit(userProfileRepo)..getUserProfileInfo(),
-        child: BlocBuilder<UserprofileCubit, UserprofileState>(
-          builder: (context, state) {
-            if (state is UserProfileLoaded) {
-              loggedInUserProfile = state.userProfile;
-              return SafeArea(
-                child: Scaffold(
-                  appBar: AppBar(
-                    title: Text('Hello You'),
-                    elevation: 0,
-                  ),
-                  body: BlocBuilder<AuthenticationBloc, AuthenticationState>(
+      child: Scaffold(
+        appBar: AppBar(
+          title: Text('Add new Transaction'),
+        ),
+        body: BlocProvider<UserprofileCubit>(
+          create: (context) =>
+              UserprofileCubit(userProfileRepo)..getUserProfileInfo(),
+          child: BlocBuilder<UserprofileCubit, UserprofileState>(
+            builder: (context, state) {
+              if (state is UserProfileLoaded) {
+                loggedInUserProfile = state.userProfile;
+                return SafeArea(
+                  child: BlocBuilder<AuthenticationBloc, AuthenticationState>(
                     builder: (context, state) {
                       return Container(
                         child: buildEventAddForm(loggedInUserProfile),
                       );
                     },
                   ),
-                ),
-              );
-            } else {
-              return Text('user profile is still getting loaded. wait up');
-            }
-          },
+                );
+              } else {
+                return Container(
+                  child: Center(
+                    child: CircularProgressIndicator(),
+                  ),
+                );
+              }
+            },
+          ),
         ),
       ),
     );
@@ -104,9 +107,9 @@ class _EventAddState extends State<EventAdd> {
     );
   }
 
-  IconButton buildSubmitButton(UserProfile loggedInUserProfile) {
-    return IconButton(
-      icon: Icon(Icons.account_balance),
+  Widget buildSubmitButton(UserProfile loggedInUserProfile) {
+    return FlatButton(
+      child: Text('Add new'),
       onPressed: () {
         Map<String, double> pointsBreakups = {};
 
