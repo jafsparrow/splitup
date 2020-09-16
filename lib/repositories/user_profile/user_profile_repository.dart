@@ -13,4 +13,15 @@ class UserProfileRepository {
     DocumentSnapshot snap = await userProfileCollection.document(user.id).get();
     return UserProfile.fromDocumentSnap(snap);
   }
+
+  Future<List<UserProfile>> getListOfUsers(String userType) async {
+    QuerySnapshot users = await userProfileCollection
+        .where('userType.isPartner', isEqualTo: true)
+        .getDocuments();
+    List<UserProfile> userArray = users.documents
+        .map((document) => UserProfile.fromDocumentSnap(document))
+        .toList();
+
+    return userArray;
+  }
 }

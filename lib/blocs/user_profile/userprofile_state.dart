@@ -17,3 +17,12 @@ class UserProfileLoaded extends UserprofileState {
   @override
   List<Object> get props => [userProfile];
 }
+
+class UsersLoaded extends UserprofileState {
+  final List<UserProfile> partnerList;
+
+  UsersLoaded(this.partnerList);
+
+  @override
+  List<Object> get props => [partnerList];
+}

@@ -7,6 +7,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'components/date_time_display.dart';
 import 'components/earned_points_display.dart';
+import 'components/promotions.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key key}) : super(key: key);
@@ -43,19 +44,43 @@ class HomePage extends StatelessWidget {
                 );
               },
             ),
-            body: BlocBuilder<TransactionBloc, TransactionState>(
-              builder: (context, state) {
-                if (state is TransacationLoaded) {
-                  final userTransactions = state.userTransactions;
-                  return buildUserTransactions(userTransactions, context);
-                } else {
-                  return Container(
-                    child: Center(
-                      child: CircularProgressIndicator(),
+            appBar: AppBar(
+              title: Text('Hello you'),
+            ),
+            body: SafeArea(
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                    buildSectionHeading(context, subText: 'Promotions'),
+                    SizedBox(
+                      height: 10,
                     ),
-                  );
-                }
-              },
+                    Promotions(),
+                    buildSectionHeading(context,
+                        subText: 'Recent Transactions'),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    BlocBuilder<TransactionBloc, TransactionState>(
+                      builder: (context, state) {
+                        if (state is TransacationLoaded) {
+                          final userTransactions = state.userTransactions;
+                          return buildUserTransactions(
+                              userTransactions, context);
+                        } else {
+                          return Container(
+                            child: Center(
+                              child: CircularProgressIndicator(),
+                            ),
+                          );
+                        }
+                      },
+                    ),
+                  ],
+                ),
+              ),
             ),
           );
         },
@@ -63,21 +88,41 @@ class HomePage extends StatelessWidget {
     );
   }
 
+  Padding buildSectionHeading(BuildContext context, {String subText}) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 5),
+      child: Text(
+        subText,
+        style: Theme.of(context)
+            .textTheme
+            .headline6
+            .copyWith(fontWeight: FontWeight.w400),
+      ),
+    );
+  }
+
   Widget buildUserTransactions(
       List<UserTransaction> userTransactions, context) {
-    return ListView.builder(
-      itemCount: userTransactions.length,
-      shrinkWrap: true,
-      itemBuilder: (context, index) {
-        return ListTile(
-          leading: DateTimeDisplay(
-            dateTime: DateTime.now(),
-          ),
-          trailing: EarnedPoints(currentItem: userTransactions[index]),
-          title: Text(userTransactions[index].partnerUser.name),
-          subtitle: Text(userTransactions[index].salesUser.name),
-        );
-      },
+    return Expanded(
+      child: ListView.builder(
+        // physics: NeverScrollableScrollPhysics(),
+        shrinkWrap: true,
+        itemCount: userTransactions.length,
+        itemBuilder: (context, index) {
+          return Card(
+            margin: EdgeInsets.all(5),
+            elevation: 0.5,
+            child: ListTile(
+              leading: DateTimeDisplay(
+                dateTime: DateTime.now(),
+              ),
+              trailing: EarnedPoints(currentItem: userTransactions[index]),
+              title: Text(userTransactions[index].partnerUser.name),
+              subtitle: Text(userTransactions[index].salesUser.name),
+            ),
+          );
+        },
+      ),
     );
   }
 }
