@@ -87,9 +87,12 @@ class PartnerList extends StatelessWidget {
         );
       },
       title: Text(
-        'List Tile baby',
+        'Partner User Name',
         style: Theme.of(context).textTheme.subtitle2,
       ),
+      subtitle: Text('IX4343'),
+      leading: Icon(Icons.account_circle),
+      trailing: Text('330', style: Theme.of(context).textTheme.headline6),
     );
   }
 }
