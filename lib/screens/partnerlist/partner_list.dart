@@ -8,38 +8,36 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 class PartnerList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    // PartnerListBloc partnerListBloc = context.bloc<PartnerListBloc>();
+    if (context.bloc<PartnerListBloc>().state is PartnerListLoading) {
+      print('this should appear only once I load .. buhahaha');
+      context.bloc<PartnerListBloc>().add(LoadPartnerUsers());
+    }
     return Scaffold(
       appBar: AppBar(
         title: Text('Partners'),
         actions: <Widget>[],
       ),
-      body: BlocListener<PartnerListBloc, PartnerListState>(
-        listener: (context, state) {
-          print('inside the bloc listener');
-          if (state is PartnerListLoading) {
-            context.bloc<PartnerListBloc>().add(LoadPartnerUsers());
-          }
-        },
-        child: BlocProvider<FilteredPartnersBloc>(
-          create: (context) => FilteredPartnersBloc(
-            partnerListBloc: BlocProvider.of<PartnerListBloc>(context),
-          ),
-          child: Container(
-            padding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
-            child: BlocBuilder<FilteredPartnersBloc, FilteredPartnersState>(
-              builder: (context, state) {
-                print(state);
-                if (state is FilteredPartnersLoading) {
-                  return Center(
-                    child: CircularProgressIndicator(),
-                  );
-                } else if (state is FilteredPartnerList) {
-                  return buildPartnerList(state.filteredPartnerList, context);
-                } else {
-                  return Container();
-                }
-              },
-            ),
+      body: BlocProvider<FilteredPartnersBloc>(
+        create: (context) => FilteredPartnersBloc(
+          partnerListBloc: BlocProvider.of<PartnerListBloc>(context),
+        ),
+        child: Container(
+          padding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+          child: BlocBuilder<FilteredPartnersBloc, FilteredPartnersState>(
+            builder: (context, state) {
+              print(state);
+              if (state is FilteredPartnersLoading) {
+                print('filtered partner loading section');
+                return Center(
+                  child: CircularProgressIndicator(),
+                );
+              } else if (state is FilteredPartnerList) {
+                return buildPartnerList(state.filteredPartnerList, context);
+              } else {
+                return Container();
+              }
+            },
           ),
         ),
       ),

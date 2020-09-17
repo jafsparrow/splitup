@@ -52,7 +52,12 @@ class FilteredPartnersBloc
         (_partnerListBloc.state as PartnerListLoaded).partnerList;
     String searchCriteria = event.filterCriteria;
 
-    yield FilteredPartnerList(searchCriteria,
-        userList.where((user) => user.name == searchCriteria).toList());
+    yield FilteredPartnerList(
+        searchCriteria,
+        userList
+            .where((user) => (user.name)
+                .toLowerCase()
+                .contains(searchCriteria.toLowerCase()))
+            .toList());
   }
 }
