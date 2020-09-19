@@ -1,3 +1,5 @@
+import 'package:JCCommisionApp/screens/partner_profile/components/partner_activities.dart';
+import 'package:JCCommisionApp/screens/partner_profile/components/partner_codes.dart';
 import 'package:flutter/material.dart';
 
 class PartnerProfile extends StatelessWidget {
@@ -16,21 +18,40 @@ class PartnerProfile extends StatelessWidget {
           bottom: TabBar(
             tabs: [
               Tab(
+                  // icon: Icon(Icons.directions_bike),
+                  text: 'Activities'),
+              Tab(
                 // icon: Icon(Icons.directions_car),
                 text: 'Bio',
               ),
               Tab(
                   // icon: Icon(Icons.directions_transit),
                   text: 'Barcodes'),
-              Tab(
-                  // icon: Icon(Icons.directions_bike),
-                  text: 'Activities'),
             ],
           ),
+          actions: <Widget>[
+            PopupMenuButton<String>(
+                onSelected: (val) {},
+                itemBuilder: (context) => [
+                      PopupMenuItem(
+                        child: Text('Add new Barcode'),
+                        value: 'hello',
+                      ),
+                      PopupMenuItem(
+                        child: Text('Deactivate User'),
+                        value: 'Deactive',
+                      ),
+                      PopupMenuItem(
+                        child: Text('Something else'),
+                        value: 'Something',
+                      ),
+                    ])
+          ],
         ),
         body: SafeArea(
           child: TabBarView(
             children: <Widget>[
+              PartnerActivities(),
               Column(
                 children: <Widget>[
                   PartnerUserBio(id: id),
@@ -41,12 +62,7 @@ class PartnerProfile extends StatelessWidget {
                   // ])
                 ],
               ),
-              Center(
-                child: Text('hello me'),
-              ),
-              Center(
-                child: Text('hello me'),
-              ),
+              PartnerCodes(),
             ],
           ),
         ),
