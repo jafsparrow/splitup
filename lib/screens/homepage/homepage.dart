@@ -1,4 +1,4 @@
-import 'package:JCCommisionApp/blocs/transaction/transacation_bloc.dart';
+import 'package:JCCommisionApp/application/transactions/transacation_bloc.dart';
 import 'package:JCCommisionApp/repositories/transactions/firebase_user_transaction_repository.dart';
 import 'package:JCCommisionApp/repositories/transactions/models/transaction.dart';
 import 'package:JCCommisionApp/screens/eventpage/event_add.dart';
@@ -126,3 +126,5 @@ class HomePage extends StatelessWidget {
     );
   }
 }
+
+class TransactionState {}

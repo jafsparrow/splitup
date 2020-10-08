@@ -1,5 +1,5 @@
-import 'package:JCCommisionApp/blocs/authentication/authentication_bloc.dart';
-import 'package:JCCommisionApp/blocs/user_profile/userprofile_cubit.dart';
+import 'package:JCCommisionApp/application/auth/authentication_bloc.dart';
+import 'package:JCCommisionApp/application/user_management/user_profile/userprofile_cubit.dart';
 import 'package:JCCommisionApp/repositories/transactions/models/total_bill_breakup.dart';
 import 'package:JCCommisionApp/repositories/transactions/models/transaction.dart';
 import 'package:JCCommisionApp/repositories/user/models/user.dart';
