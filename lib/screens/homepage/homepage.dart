@@ -126,5 +126,3 @@ class HomePage extends StatelessWidget {
     );
   }
 }
-
-class TransactionState {}
