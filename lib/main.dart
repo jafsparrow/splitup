@@ -1,14 +1,17 @@
+primport 'package:JCCommisionApp/injection.dart';
 import 'package:JCCommisionApp/landing_page.dart';
 import 'package:JCCommisionApp/repositories/user/authentication_repository.dart';
 import 'package:JCCommisionApp/screens/login/login_page.dart';
 import 'package:JCCommisionApp/shared/theme_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:injectable/injectable.dart';
 
 import 'application/auth/authentication_bloc.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
+  configureInjection(Environment.prod);
   runApp(MyApp(
     authenticationRepository: AuthenticationRepository(),
   ));
