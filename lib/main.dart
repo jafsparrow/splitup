@@ -1,17 +1,22 @@
-primport 'package:JCCommisionApp/injection.dart';
+import 'package:JCCommisionApp/application/promotion/promotion_form/promotion_form_bloc.dart';
+import 'package:JCCommisionApp/injection.dart';
 import 'package:JCCommisionApp/landing_page.dart';
 import 'package:JCCommisionApp/repositories/user/authentication_repository.dart';
 import 'package:JCCommisionApp/screens/login/login_page.dart';
 import 'package:JCCommisionApp/shared/theme_helper.dart';
+import 'package:dartz/dartz.dart' as dartz;
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:injectable/injectable.dart';
+import 'package:firebase_core/firebase_core.dart';
 
 import 'application/auth/authentication_bloc.dart';
+import 'domain/promotions/promotion.dart';
 
-void main() {
+Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  configureInjection(Environment.prod);
+  await Firebase.initializeApp();
+  configureInjection(Environment.dev);
   runApp(MyApp(
     authenticationRepository: AuthenticationRepository(),
   ));
@@ -26,9 +31,25 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return RepositoryProvider.value(
       value: authenticationRepository,
-      child: BlocProvider(
-        create: (context) => AuthenticationBloc(
-            authenticationRepository: authenticationRepository),
+      child: MultiBlocProvider(
+        providers: [
+          BlocProvider(
+            create: (context) => AuthenticationBloc(
+                authenticationRepository: authenticationRepository),
+          ),
+          BlocProvider(
+            create: (BuildContext context) {
+              return getIt<PromotionFormBloc>()
+                ..add(
+                  PromotionFormEvent.initialized(
+                    dartz.optionOf(
+                      Promotion.empty(),
+                    ),
+                  ),
+                );
+            },
+          ),
+        ],
         child: AppView(),
       ),
     );

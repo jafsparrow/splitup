@@ -1,5 +1,7 @@
+import 'package:JCCommisionApp/presentation/promotion/promotion_ui.dart';
 import 'package:JCCommisionApp/repositories/user/models/user.dart';
 import 'package:JCCommisionApp/repositories/user_profile/user_profile_repository.dart';
+import 'package:JCCommisionApp/screens/homepage/components/promotions.dart';
 import 'package:JCCommisionApp/screens/homepage/homepage.dart';
 import 'package:JCCommisionApp/screens/partnerlist/partner_list.dart';
 import 'package:JCCommisionApp/screens/stats/stats.dart';
@@ -20,7 +22,7 @@ class LandingPage extends StatefulWidget {
 
 class _LandingPageState extends State<LandingPage> {
   List<String> subMenus = ['Home', 'Partners', 'Stats'];
-  List<Widget> subWidgets = [HomePage(), PartnerList(), Stats()];
+  List<Widget> subWidgets = [HomePage(), PartnerList(), PromotionScreen()];
   int selectedIndex = 0;
   @override
   Widget build(BuildContext context) {

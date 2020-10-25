@@ -3,9 +3,11 @@ import 'package:JCCommisionApp/domain/promotions/promotion.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dartz/dartz.dart';
 import 'package:JCCommisionApp/domain/promotions/promotion_failure.dart';
+import 'package:injectable/injectable.dart';
 
+@LazySingleton(as: IPromotionRepository)
 class PromotionRepository implements IPromotionRepository {
-  final Firestore _firestore;
+  final FirebaseFirestore _firestore;
 
   PromotionRepository(this._firestore);
 

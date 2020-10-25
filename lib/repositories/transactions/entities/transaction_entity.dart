@@ -54,12 +54,12 @@ class UserTransactionEntity extends Equatable {
   }
 
   static UserTransactionEntity fromSnapshot(DocumentSnapshot snap) {
-    String description = snap.data['description'];
+    String description = snap.data()['description'];
     String id = 'testID';
-    DateTime date = DateTime.parse(snap.data["addedDateTime"]);
-    Map<String, dynamic> partnerUserMap = snap.data['partnerUser'];
+    DateTime date = DateTime.parse(snap.data()["addedDateTime"]);
+    Map<String, dynamic> partnerUserMap = snap.data()['partnerUser'];
 
-    Map<String, dynamic> salesUserMap = snap.data['salesUser'];
+    Map<String, dynamic> salesUserMap = snap.data()['salesUser'];
 
     User partnerUser = User(
         email: partnerUserMap['email'],
@@ -73,7 +73,7 @@ class UserTransactionEntity extends Equatable {
         id: salesUserMap['id'],
         photo: salesUserMap['photo']);
 
-    Map<String, dynamic> billBreakupPart = snap.data["transaction_details"];
+    Map<String, dynamic> billBreakupPart = snap.data()["transaction_details"];
 
     Map<String, double> billBreakup = billBreakupPart.cast<String, double>();
 
