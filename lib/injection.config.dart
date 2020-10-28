@@ -8,6 +8,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:get_it/get_it.dart';
 import 'package:injectable/injectable.dart';
 
+import 'infrastructure/core/firebase_injectable_module.dart';
 import 'domain/promotions/i_promotions_repository.dart';
 import 'application/promotion/promotion_form/promotion_form_bloc.dart';
 import 'infrastructure/promotions/promotion_repository.dart';
@@ -21,9 +22,13 @@ GetIt $initGetIt(
   EnvironmentFilter environmentFilter,
 }) {
   final gh = GetItHelper(get, environment, environmentFilter);
+  final firebaseInjectableModule = _$FirebaseInjectableModule();
+  gh.lazySingleton<FirebaseFirestore>(() => firebaseInjectableModule.firestore);
   gh.lazySingleton<IPromotionRepository>(
       () => PromotionRepository(get<FirebaseFirestore>()));
   gh.factory<PromotionFormBloc>(
       () => PromotionFormBloc(get<IPromotionRepository>()));
   return get;
 }
+
+class _$FirebaseInjectableModule extends FirebaseInjectableModule {}

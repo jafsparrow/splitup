@@ -15,8 +15,8 @@ import 'domain/promotions/promotion.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp();
   configureInjection(Environment.dev);
+  await Firebase.initializeApp();
   runApp(MyApp(
     authenticationRepository: AuthenticationRepository(),
   ));

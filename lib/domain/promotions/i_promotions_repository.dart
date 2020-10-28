@@ -6,4 +6,5 @@ abstract class IPromotionRepository {
   Future<Either<PromotionFailure, Unit>> create(Promotion promotion);
   Future<Either<PromotionFailure, Unit>> update(Promotion promotion);
   Future<Either<PromotionFailure, Unit>> delete(Promotion promotion);
+  Future<Either<PromotionFailure, List<Promotion>>> getPromotions();
 }

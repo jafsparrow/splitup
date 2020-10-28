@@ -8,6 +8,9 @@ part of 'promotion_dto.dart';
 // **************************************************************************
 
 T _$identity<T>(T value) => value;
+PromotionDto _$PromotionDtoFromJson(Map<String, dynamic> json) {
+  return _PromotionDto.fromJson(json);
+}
 
 class _$PromotionDtoTearOff {
   const _$PromotionDtoTearOff();
@@ -28,6 +31,7 @@ mixin _$PromotionDto {
   String get title;
   String get description;
 
+  Map<String, dynamic> toJson();
   $PromotionDtoCopyWith<PromotionDto> get copyWith;
 }
 
@@ -89,11 +93,15 @@ class __$PromotionDtoCopyWithImpl<$Res> extends _$PromotionDtoCopyWithImpl<$Res>
   }
 }
 
+@JsonSerializable()
 class _$_PromotionDto extends _PromotionDto {
   const _$_PromotionDto({@required this.title, @required this.description})
       : assert(title != null),
         assert(description != null),
         super._();
+
+  factory _$_PromotionDto.fromJson(Map<String, dynamic> json) =>
+      _$_$_PromotionDtoFromJson(json);
 
   @override
   final String title;
@@ -125,12 +133,20 @@ class _$_PromotionDto extends _PromotionDto {
   @override
   _$PromotionDtoCopyWith<_PromotionDto> get copyWith =>
       __$PromotionDtoCopyWithImpl<_PromotionDto>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$_PromotionDtoToJson(this);
+  }
 }
 
 abstract class _PromotionDto extends PromotionDto {
   const _PromotionDto._() : super._();
   const factory _PromotionDto(
       {@required String title, @required String description}) = _$_PromotionDto;
+
+  factory _PromotionDto.fromJson(Map<String, dynamic> json) =
+      _$_PromotionDto.fromJson;
 
   @override
   String get title;
