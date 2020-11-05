@@ -1,4 +1,7 @@
+import 'package:JCCommisionApp/application/barcode_scan/barcode_scan_util.dart';
 import 'package:JCCommisionApp/application/transactions/transacation_bloc.dart';
+import 'package:JCCommisionApp/domain/barcode_scan/i_barcode_scan_repository.dart';
+import 'package:JCCommisionApp/injection.dart';
 import 'package:JCCommisionApp/repositories/transactions/firebase_user_transaction_repository.dart';
 import 'package:JCCommisionApp/repositories/transactions/models/transaction.dart';
 import 'package:JCCommisionApp/screens/eventpage/event_add.dart';
@@ -8,6 +11,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'components/date_time_display.dart';
 import 'components/earned_points_display.dart';
 import 'components/promotions.dart';
+
+import 'package:qrscan/qrscan.dart' as scanner;
 
 class HomePage extends StatelessWidget {
   const HomePage({Key key}) : super(key: key);
@@ -32,16 +37,20 @@ class HomePage extends StatelessWidget {
             floatingActionButton: FloatingActionButton(
               child: Icon(Icons.scanner),
               onPressed: () {
-                Navigator.push(
-                  context,
-                  EventAdd.route(
-                    onSave: (transaction) {
-                      BlocProvider.of<TransactionBloc>(context)
-                          .add(AddTransaction(transaction));
-                      Navigator.pop(context);
-                    },
-                  ),
-                );
+                getIt<BarcodeScanUtil>().scanCode();
+                // String cameraScanResult = _scanCode();
+                // print(cameraScanResult);
+
+                // Navigator.push(
+                //   context,
+                //   EventAdd.route(
+                //     onSave: (transaction) {
+                //       BlocProvider.of<TransactionBloc>(context)
+                //           .add(AddTransaction(transaction));
+                //       Navigator.pop(context);
+                //     },
+                //   ),
+                // );
               },
             ),
             appBar: AppBar(
@@ -86,6 +95,11 @@ class HomePage extends StatelessWidget {
         },
       ),
     );
+  }
+
+  _scanCode() async {
+    String barcodeScanned = await scanner.scan();
+    return barcodeScanned.toString();
   }
 
   Padding buildSectionHeading(BuildContext context, {String subText}) {
