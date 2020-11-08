@@ -6,5 +6,7 @@ abstract class IUserManagement {
   // define a User class with all the required methods using freezed.
   Future<Either<UserManagementFailure, UserProfile>> getPartnerUserFromBarcode(
       String barcode);
+  Future<Either<UserManagementFailure, UserProfile>> getPartnerUserFromId(
+      String barcode);
   Either<UserManagementFailure, bool> isPartnerUserActive(String barcode);
 }

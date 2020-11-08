@@ -34,4 +34,16 @@ class FirebaseUserManagementRepository implements IUserManagement {
     // TODO: implement isPartnerUserActive
     throw UnimplementedError();
   }
+
+  @override
+  Future<Either<UserManagementFailure, UserProfile>> getPartnerUserFromId(
+      String userId) async {
+    try {
+      DocumentSnapshot userDoc =
+          await _firestore.collection('users').doc(userId).get();
+      return right(UserProfileDto.fromFirestore(userDoc).toDomain());
+    } catch (e) {
+      return left(UserManagementFailure.unexpected());
+    }
+  }
 }

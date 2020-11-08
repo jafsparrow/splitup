@@ -1,5 +1,5 @@
 import 'package:JCCommisionApp/application/auth/authentication_bloc.dart';
-import 'package:JCCommisionApp/application/user_management/user_profile/userprofile_cubit.dart';
+import 'package:JCCommisionApp/application/user_management/user_profile1/userprofile_cubit1.dart';
 import 'package:JCCommisionApp/repositories/transactions/models/total_bill_breakup.dart';
 import 'package:JCCommisionApp/repositories/transactions/models/transaction.dart';
 import 'package:JCCommisionApp/repositories/user/models/user.dart';
@@ -113,9 +113,11 @@ class _EventAddState extends State<EventAdd> {
       onPressed: () {
         Map<String, double> pointsBreakups = {};
 
-        controllerMaps.forEach((key, value) {
-          pointsBreakups[key] = double.parse(value.text);
-        });
+        controllerMaps.forEach(
+          (key, value) {
+            pointsBreakups[key] = double.parse(value.text);
+          },
+        );
 
         TotalReward rewards = TotalReward(billSubTypeBreakups: pointsBreakups);
 

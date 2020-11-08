@@ -7,7 +7,7 @@ import 'package:JCCommisionApp/repositories/user_profile/user_profile_repository
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 
-part 'userprofile_state.dart';
+part 'userprofile_state1.dart';
 
 class UserprofileCubit extends Cubit<UserprofileState> {
   final UserProfileRepository _userProfileRepository;

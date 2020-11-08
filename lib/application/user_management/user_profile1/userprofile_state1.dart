@@ -1,4 +1,4 @@
-part of 'userprofile_cubit.dart';
+part of 'userprofile_cubit1.dart';
 
 abstract class UserprofileState extends Equatable {
   const UserprofileState();
