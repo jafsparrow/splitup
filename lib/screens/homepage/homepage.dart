@@ -1,6 +1,6 @@
-import 'package:JCCommisionApp/application/barcode_scan/barcode_scan_util.dart';
+import 'package:JCCommisionApp/application/auth/authentication_bloc.dart';
 import 'package:JCCommisionApp/application/transactions/transacation_bloc.dart';
-import 'package:JCCommisionApp/domain/barcode_scan/i_barcode_scan_repository.dart';
+import 'package:JCCommisionApp/application/user_management/user_profile/user_profile_bloc.dart';
 import 'package:JCCommisionApp/injection.dart';
 import 'package:JCCommisionApp/repositories/transactions/firebase_user_transaction_repository.dart';
 import 'package:JCCommisionApp/repositories/transactions/models/transaction.dart';
@@ -26,73 +26,119 @@ class HomePage extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider<TransactionBloc>(
-          create: (context) =>
-              TransactionBloc(repository: FirebaseUserTransactionRepository())
-                ..add(LoadTransactions()),
+          create: (context) => TransactionBloc(
+            repository: FirebaseUserTransactionRepository(),
+          )..add(
+              LoadTransactions(),
+            ),
         ),
       ],
-      child: BlocBuilder<TransactionBloc, TransactionState>(
-        builder: (context, state) {
-          return Scaffold(
-            floatingActionButton: FloatingActionButton(
-              child: Icon(Icons.scanner),
-              onPressed: () {
-                getIt<BarcodeScanUtil>().scanCode();
-                // String cameraScanResult = _scanCode();
-                // print(cameraScanResult);
-
-                // Navigator.push(
-                //   context,
-                //   EventAdd.route(
-                //     onSave: (transaction) {
-                //       BlocProvider.of<TransactionBloc>(context)
-                //           .add(AddTransaction(transaction));
-                //       Navigator.pop(context);
-                //     },
-                //   ),
-                // );
+      child: BlocConsumer<UserProfileBloc, UserProfileState>(
+        listener: (context, userProfileState) {
+          print('bloc consumer state changed $userProfileState');
+          userProfileState.maybeMap(
+              loadSuccess: (state) {
+                print('super doorper');
+                Navigator.push(
+                  context,
+                  EventAdd.route(
+                    loggedInUser: context.bloc<AuthenticationBloc>().state.user,
+                    partnerUser: state.userProfile,
+                    onSave: (transaction) {
+                      BlocProvider.of<TransactionBloc>(context)
+                          .add(AddTransaction(transaction));
+                      Navigator.pop(context);
+                    },
+                  ),
+                );
               },
-            ),
-            appBar: AppBar(
-              title: Text('Hello you'),
-            ),
-            body: SafeArea(
-              child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: <Widget>[
-                    buildSectionHeading(context, subText: 'Promotions'),
-                    SizedBox(
-                      height: 10,
-                    ),
-                    Promotions(),
-                    buildSectionHeading(context,
-                        subText: 'Recent Transactions'),
-                    SizedBox(
-                      height: 10,
-                    ),
-                    BlocBuilder<TransactionBloc, TransactionState>(
-                      builder: (context, state) {
-                        if (state is TransacationLoaded) {
-                          final userTransactions = state.userTransactions;
-                          return buildUserTransactions(
-                              userTransactions, context);
-                        } else {
-                          return Container(
-                            child: Center(
-                              child: CircularProgressIndicator(),
-                            ),
-                          );
-                        }
-                      },
-                    ),
-                  ],
-                ),
-              ),
-            ),
-          );
+              loadInProgress: (_) {
+                Scaffold.of(context).showSnackBar(SnackBar(
+                    content:
+                        Text("Hold on..!! I am trying to find the partner..")));
+              },
+              orElse: () {});
         },
+        builder: (context, userProfileState) => Scaffold(
+          appBar: AppBar(
+            title: Text('Hello you'),
+          ),
+          floatingActionButton: FloatingActionButton(
+            child: Icon(Icons.scanner),
+            onPressed: () async {
+              // String cameraScanResult = (await scanner.scan()).toString();
+              // // String cameraScanResult = _scanCode();
+              // print('the result of scan is $cameraScanResult');
+              String cameraScanResult = 'test';
+
+              if (cameraScanResult.isNotEmpty) {
+                context.bloc<UserProfileBloc>().add(
+                      UserProfileEvent.loadUserPofileFromId(id: 'test'),
+                    );
+
+                // getIt<UserProfileBloc>().add(
+                //   UserProfileEvent.loadUserProfileFromBarcode(
+                //       barcode: cameraScanResult),
+                // );
+              }
+              // Navigator.push(
+              //   context,
+              //   EventAdd.route(
+              //     onSave: (transaction) {
+              //       BlocProvider.of<TransactionBloc>(context)
+              //           .add(AddTransaction(transaction));
+              //       Navigator.pop(context);
+              //     },
+              //   ),
+              // );
+            },
+          ),
+          body: userProfileState.maybeMap(
+            loadInProgress: (_) {
+              print('if the progress is indiact');
+              return Center(
+                child: CircularProgressIndicator(),
+              );
+            },
+            orElse: () {
+              return SafeArea(
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: <Widget>[
+                      buildSectionHeading(context, subText: 'Promotions'),
+                      SizedBox(
+                        height: 10,
+                      ),
+                      Promotions(),
+                      buildSectionHeading(context,
+                          subText: 'Recent Transactions'),
+                      SizedBox(
+                        height: 10,
+                      ),
+                      BlocBuilder<TransactionBloc, TransactionState>(
+                        builder: (context, state) {
+                          if (state is TransacationLoaded) {
+                            final userTransactions = state.userTransactions;
+                            return buildUserTransactions(
+                                userTransactions, context);
+                          } else {
+                            return Container(
+                              child: Center(
+                                child: CircularProgressIndicator(),
+                              ),
+                            );
+                          }
+                        },
+                      ),
+                    ],
+                  ),
+                ),
+              );
+            },
+          ),
+        ),
       ),
     );
   }

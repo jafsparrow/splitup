@@ -1,9 +1,9 @@
 import 'package:JCCommisionApp/application/auth/authentication_bloc.dart';
 import 'package:JCCommisionApp/application/user_management/user_profile1/userprofile_cubit1.dart';
+import 'package:JCCommisionApp/domain/user_management/user_profile.dart';
 import 'package:JCCommisionApp/repositories/transactions/models/total_bill_breakup.dart';
 import 'package:JCCommisionApp/repositories/transactions/models/transaction.dart';
 import 'package:JCCommisionApp/repositories/user/models/user.dart';
-import 'package:JCCommisionApp/repositories/user_profile/models/user_profile.dart';
 import 'package:JCCommisionApp/repositories/user_profile/user_profile_repository.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -12,12 +12,25 @@ typedef OnSaveCallback = Function(UserTransaction UserTransaction);
 
 class EventAdd extends StatefulWidget {
   final OnSaveCallback onSave;
+  final UserProfile loggedInUser;
+  final UserProfile partnerUser;
 
-  const EventAdd({Key key, @required this.onSave}) : super(key: key);
-  static Route route({OnSaveCallback onSave}) {
+  const EventAdd(
+      {Key key,
+      @required this.onSave,
+      @required this.loggedInUser,
+      @required this.partnerUser})
+      : super(key: key);
+
+  static Route route(
+      {OnSaveCallback onSave,
+      UserProfile loggedInUser,
+      UserProfile partnerUser}) {
     return MaterialPageRoute<void>(
         builder: (_) => EventAdd(
               onSave: onSave,
+              loggedInUser: loggedInUser,
+              partnerUser: partnerUser,
             ),
         fullscreenDialog: true);
   }
@@ -44,7 +57,7 @@ class _EventAddState extends State<EventAdd> {
 
   @override
   Widget build(BuildContext context) {
-    User user = context.bloc<AuthenticationBloc>().state.user;
+    UserProfile user = context.bloc<AuthenticationBloc>().state.user;
     UserProfileRepository userProfileRepo = UserProfileRepository(user);
 
     UserProfile loggedInUserProfile = null;
@@ -121,21 +134,10 @@ class _EventAddState extends State<EventAdd> {
 
         TotalReward rewards = TotalReward(billSubTypeBreakups: pointsBreakups);
 
-        User salesSampleUser = User(
-            name: loggedInUserProfile.name,
-            email: loggedInUserProfile.email,
-            id: loggedInUserProfile.id,
-            photo: loggedInUserProfile.phone);
-
-        User partnerSampleUser = User(
-            name: 'partner01',
-            email: 'partnerjafar@test.com',
-            id: 'partner3kdsjfshdkd',
-            photo: 'test photo');
         UserTransaction newTransaction = UserTransaction('hello you',
             totalRewards: rewards,
-            salesUser: salesSampleUser,
-            partnerUser: partnerSampleUser);
+            salesUser: loggedInUserProfile,
+            partnerUser: partner);
         widget.onSave(newTransaction);
       },
     );

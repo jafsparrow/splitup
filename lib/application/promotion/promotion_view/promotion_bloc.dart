@@ -3,7 +3,6 @@ import 'dart:async';
 import 'package:JCCommisionApp/domain/promotions/i_promotions_repository.dart';
 import 'package:JCCommisionApp/domain/promotions/promotion.dart';
 import 'package:JCCommisionApp/domain/promotions/promotion_failure.dart';
-import 'package:JCCommisionApp/screens/homepage/components/promotions.dart';
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 

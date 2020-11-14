@@ -1,6 +1,6 @@
 import 'dart:async';
 
-import 'package:JCCommisionApp/repositories/user_profile/models/user_profile.dart';
+import 'package:JCCommisionApp/domain/user_management/user_profile.dart';
 import 'package:JCCommisionApp/repositories/user_profile/user_profile_repository.dart';
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';

@@ -23,6 +23,16 @@ class _$UserProfileTearOff {
       email: email,
     );
   }
+
+// ignore: unused_element
+  EmptyUserProfile empty(
+      [String userName = '', String email = '', String mobileNumber = '']) {
+    return EmptyUserProfile(
+      userName,
+      email,
+      mobileNumber,
+    );
+  }
 }
 
 // ignore: unused_element
@@ -32,6 +42,29 @@ mixin _$UserProfile {
   String get userName;
   String get mobileNumber;
   String get email;
+
+  @optionalTypeArgs
+  Result when<Result extends Object>(
+    Result $default(String userName, String mobileNumber, String email), {
+    @required Result empty(String userName, String email, String mobileNumber),
+  });
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>(
+    Result $default(String userName, String mobileNumber, String email), {
+    Result empty(String userName, String email, String mobileNumber),
+    @required Result orElse(),
+  });
+  @optionalTypeArgs
+  Result map<Result extends Object>(
+    Result $default(_UserProfile value), {
+    @required Result empty(EmptyUserProfile value),
+  });
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>(
+    Result $default(_UserProfile value), {
+    Result empty(EmptyUserProfile value),
+    @required Result orElse(),
+  });
 
   $UserProfileCopyWith<UserProfile> get copyWith;
 }
@@ -100,7 +133,7 @@ class __$UserProfileCopyWithImpl<$Res> extends _$UserProfileCopyWithImpl<$Res>
   }
 }
 
-class _$_UserProfile extends _UserProfile {
+class _$_UserProfile extends _UserProfile with DiagnosticableTreeMixin {
   const _$_UserProfile(
       {@required this.userName,
       @required this.mobileNumber,
@@ -118,8 +151,18 @@ class _$_UserProfile extends _UserProfile {
   final String email;
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'UserProfile(userName: $userName, mobileNumber: $mobileNumber, email: $email)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'UserProfile'))
+      ..add(DiagnosticsProperty('userName', userName))
+      ..add(DiagnosticsProperty('mobileNumber', mobileNumber))
+      ..add(DiagnosticsProperty('email', email));
   }
 
   @override
@@ -146,6 +189,56 @@ class _$_UserProfile extends _UserProfile {
   @override
   _$UserProfileCopyWith<_UserProfile> get copyWith =>
       __$UserProfileCopyWithImpl<_UserProfile>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>(
+    Result $default(String userName, String mobileNumber, String email), {
+    @required Result empty(String userName, String email, String mobileNumber),
+  }) {
+    assert($default != null);
+    assert(empty != null);
+    return $default(userName, mobileNumber, email);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>(
+    Result $default(String userName, String mobileNumber, String email), {
+    Result empty(String userName, String email, String mobileNumber),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if ($default != null) {
+      return $default(userName, mobileNumber, email);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>(
+    Result $default(_UserProfile value), {
+    @required Result empty(EmptyUserProfile value),
+  }) {
+    assert($default != null);
+    assert(empty != null);
+    return $default(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>(
+    Result $default(_UserProfile value), {
+    Result empty(EmptyUserProfile value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if ($default != null) {
+      return $default(this);
+    }
+    return orElse();
+  }
 }
 
 abstract class _UserProfile extends UserProfile {
@@ -163,4 +256,163 @@ abstract class _UserProfile extends UserProfile {
   String get email;
   @override
   _$UserProfileCopyWith<_UserProfile> get copyWith;
+}
+
+abstract class $EmptyUserProfileCopyWith<$Res>
+    implements $UserProfileCopyWith<$Res> {
+  factory $EmptyUserProfileCopyWith(
+          EmptyUserProfile value, $Res Function(EmptyUserProfile) then) =
+      _$EmptyUserProfileCopyWithImpl<$Res>;
+  @override
+  $Res call({String userName, String email, String mobileNumber});
+}
+
+class _$EmptyUserProfileCopyWithImpl<$Res>
+    extends _$UserProfileCopyWithImpl<$Res>
+    implements $EmptyUserProfileCopyWith<$Res> {
+  _$EmptyUserProfileCopyWithImpl(
+      EmptyUserProfile _value, $Res Function(EmptyUserProfile) _then)
+      : super(_value, (v) => _then(v as EmptyUserProfile));
+
+  @override
+  EmptyUserProfile get _value => super._value as EmptyUserProfile;
+
+  @override
+  $Res call({
+    Object userName = freezed,
+    Object email = freezed,
+    Object mobileNumber = freezed,
+  }) {
+    return _then(EmptyUserProfile(
+      userName == freezed ? _value.userName : userName as String,
+      email == freezed ? _value.email : email as String,
+      mobileNumber == freezed ? _value.mobileNumber : mobileNumber as String,
+    ));
+  }
+}
+
+class _$EmptyUserProfile extends EmptyUserProfile with DiagnosticableTreeMixin {
+  const _$EmptyUserProfile(
+      [this.userName = '', this.email = '', this.mobileNumber = ''])
+      : assert(userName != null),
+        assert(email != null),
+        assert(mobileNumber != null),
+        super._();
+
+  @JsonKey(defaultValue: '')
+  @override
+  final String userName;
+  @JsonKey(defaultValue: '')
+  @override
+  final String email;
+  @JsonKey(defaultValue: '')
+  @override
+  final String mobileNumber;
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'UserProfile.empty(userName: $userName, email: $email, mobileNumber: $mobileNumber)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'UserProfile.empty'))
+      ..add(DiagnosticsProperty('userName', userName))
+      ..add(DiagnosticsProperty('email', email))
+      ..add(DiagnosticsProperty('mobileNumber', mobileNumber));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is EmptyUserProfile &&
+            (identical(other.userName, userName) ||
+                const DeepCollectionEquality()
+                    .equals(other.userName, userName)) &&
+            (identical(other.email, email) ||
+                const DeepCollectionEquality().equals(other.email, email)) &&
+            (identical(other.mobileNumber, mobileNumber) ||
+                const DeepCollectionEquality()
+                    .equals(other.mobileNumber, mobileNumber)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(userName) ^
+      const DeepCollectionEquality().hash(email) ^
+      const DeepCollectionEquality().hash(mobileNumber);
+
+  @override
+  $EmptyUserProfileCopyWith<EmptyUserProfile> get copyWith =>
+      _$EmptyUserProfileCopyWithImpl<EmptyUserProfile>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>(
+    Result $default(String userName, String mobileNumber, String email), {
+    @required Result empty(String userName, String email, String mobileNumber),
+  }) {
+    assert($default != null);
+    assert(empty != null);
+    return empty(userName, email, mobileNumber);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>(
+    Result $default(String userName, String mobileNumber, String email), {
+    Result empty(String userName, String email, String mobileNumber),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (empty != null) {
+      return empty(userName, email, mobileNumber);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>(
+    Result $default(_UserProfile value), {
+    @required Result empty(EmptyUserProfile value),
+  }) {
+    assert($default != null);
+    assert(empty != null);
+    return empty(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>(
+    Result $default(_UserProfile value), {
+    Result empty(EmptyUserProfile value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (empty != null) {
+      return empty(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class EmptyUserProfile extends UserProfile {
+  const EmptyUserProfile._() : super._();
+  const factory EmptyUserProfile(
+      [String userName,
+      String email,
+      String mobileNumber]) = _$EmptyUserProfile;
+
+  @override
+  String get userName;
+  @override
+  String get email;
+  @override
+  String get mobileNumber;
+  @override
+  $EmptyUserProfileCopyWith<EmptyUserProfile> get copyWith;
 }

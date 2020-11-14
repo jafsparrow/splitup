@@ -11,7 +11,7 @@ abstract class AuthenticationEvent extends Equatable {
 // auth state changed.
 
 class AuthenticationUserChangedEvent extends AuthenticationEvent {
-  final User user;
+  final UserProfile user;
 
   const AuthenticationUserChangedEvent(this.user);
 

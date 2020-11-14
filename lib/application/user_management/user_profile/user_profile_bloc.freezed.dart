@@ -13,6 +13,11 @@ class _$UserProfileEventTearOff {
   const _$UserProfileEventTearOff();
 
 // ignore: unused_element
+  _Load load() {
+    return const _Load();
+  }
+
+// ignore: unused_element
   _LoadUserProfileFromId loadUserPofileFromId({@required String id}) {
     return _LoadUserProfileFromId(
       id: id,
@@ -34,23 +39,27 @@ const $UserProfileEvent = _$UserProfileEventTearOff();
 mixin _$UserProfileEvent {
   @optionalTypeArgs
   Result when<Result extends Object>({
+    @required Result load(),
     @required Result loadUserPofileFromId(String id),
     @required Result loadUserProfileFromBarcode(String barcode),
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
+    Result load(),
     Result loadUserPofileFromId(String id),
     Result loadUserProfileFromBarcode(String barcode),
     @required Result orElse(),
   });
   @optionalTypeArgs
   Result map<Result extends Object>({
+    @required Result load(_Load value),
     @required Result loadUserPofileFromId(_LoadUserProfileFromId value),
     @required
         Result loadUserProfileFromBarcode(_LoadUserProfileFromBarcode value),
   });
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
+    Result load(_Load value),
     Result loadUserPofileFromId(_LoadUserProfileFromId value),
     Result loadUserProfileFromBarcode(_LoadUserProfileFromBarcode value),
     @required Result orElse(),
@@ -70,6 +79,98 @@ class _$UserProfileEventCopyWithImpl<$Res>
   final UserProfileEvent _value;
   // ignore: unused_field
   final $Res Function(UserProfileEvent) _then;
+}
+
+abstract class _$LoadCopyWith<$Res> {
+  factory _$LoadCopyWith(_Load value, $Res Function(_Load) then) =
+      __$LoadCopyWithImpl<$Res>;
+}
+
+class __$LoadCopyWithImpl<$Res> extends _$UserProfileEventCopyWithImpl<$Res>
+    implements _$LoadCopyWith<$Res> {
+  __$LoadCopyWithImpl(_Load _value, $Res Function(_Load) _then)
+      : super(_value, (v) => _then(v as _Load));
+
+  @override
+  _Load get _value => super._value as _Load;
+}
+
+class _$_Load implements _Load {
+  const _$_Load();
+
+  @override
+  String toString() {
+    return 'UserProfileEvent.load()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is _Load);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result load(),
+    @required Result loadUserPofileFromId(String id),
+    @required Result loadUserProfileFromBarcode(String barcode),
+  }) {
+    assert(load != null);
+    assert(loadUserPofileFromId != null);
+    assert(loadUserProfileFromBarcode != null);
+    return load();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result load(),
+    Result loadUserPofileFromId(String id),
+    Result loadUserProfileFromBarcode(String barcode),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (load != null) {
+      return load();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result load(_Load value),
+    @required Result loadUserPofileFromId(_LoadUserProfileFromId value),
+    @required
+        Result loadUserProfileFromBarcode(_LoadUserProfileFromBarcode value),
+  }) {
+    assert(load != null);
+    assert(loadUserPofileFromId != null);
+    assert(loadUserProfileFromBarcode != null);
+    return load(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result load(_Load value),
+    Result loadUserPofileFromId(_LoadUserProfileFromId value),
+    Result loadUserProfileFromBarcode(_LoadUserProfileFromBarcode value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (load != null) {
+      return load(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _Load implements UserProfileEvent {
+  const factory _Load() = _$_Load;
 }
 
 abstract class _$LoadUserProfileFromIdCopyWith<$Res> {
@@ -130,9 +231,11 @@ class _$_LoadUserProfileFromId implements _LoadUserProfileFromId {
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
+    @required Result load(),
     @required Result loadUserPofileFromId(String id),
     @required Result loadUserProfileFromBarcode(String barcode),
   }) {
+    assert(load != null);
     assert(loadUserPofileFromId != null);
     assert(loadUserProfileFromBarcode != null);
     return loadUserPofileFromId(id);
@@ -141,6 +244,7 @@ class _$_LoadUserProfileFromId implements _LoadUserProfileFromId {
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
+    Result load(),
     Result loadUserPofileFromId(String id),
     Result loadUserProfileFromBarcode(String barcode),
     @required Result orElse(),
@@ -155,10 +259,12 @@ class _$_LoadUserProfileFromId implements _LoadUserProfileFromId {
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
+    @required Result load(_Load value),
     @required Result loadUserPofileFromId(_LoadUserProfileFromId value),
     @required
         Result loadUserProfileFromBarcode(_LoadUserProfileFromBarcode value),
   }) {
+    assert(load != null);
     assert(loadUserPofileFromId != null);
     assert(loadUserProfileFromBarcode != null);
     return loadUserPofileFromId(this);
@@ -167,6 +273,7 @@ class _$_LoadUserProfileFromId implements _LoadUserProfileFromId {
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
+    Result load(_Load value),
     Result loadUserPofileFromId(_LoadUserProfileFromId value),
     Result loadUserProfileFromBarcode(_LoadUserProfileFromBarcode value),
     @required Result orElse(),
@@ -248,9 +355,11 @@ class _$_LoadUserProfileFromBarcode implements _LoadUserProfileFromBarcode {
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
+    @required Result load(),
     @required Result loadUserPofileFromId(String id),
     @required Result loadUserProfileFromBarcode(String barcode),
   }) {
+    assert(load != null);
     assert(loadUserPofileFromId != null);
     assert(loadUserProfileFromBarcode != null);
     return loadUserProfileFromBarcode(barcode);
@@ -259,6 +368,7 @@ class _$_LoadUserProfileFromBarcode implements _LoadUserProfileFromBarcode {
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
+    Result load(),
     Result loadUserPofileFromId(String id),
     Result loadUserProfileFromBarcode(String barcode),
     @required Result orElse(),
@@ -273,10 +383,12 @@ class _$_LoadUserProfileFromBarcode implements _LoadUserProfileFromBarcode {
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
+    @required Result load(_Load value),
     @required Result loadUserPofileFromId(_LoadUserProfileFromId value),
     @required
         Result loadUserProfileFromBarcode(_LoadUserProfileFromBarcode value),
   }) {
+    assert(load != null);
     assert(loadUserPofileFromId != null);
     assert(loadUserProfileFromBarcode != null);
     return loadUserProfileFromBarcode(this);
@@ -285,6 +397,7 @@ class _$_LoadUserProfileFromBarcode implements _LoadUserProfileFromBarcode {
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
+    Result load(_Load value),
     Result loadUserPofileFromId(_LoadUserProfileFromId value),
     Result loadUserProfileFromBarcode(_LoadUserProfileFromBarcode value),
     @required Result orElse(),

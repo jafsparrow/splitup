@@ -1,3 +1,5 @@
+import 'package:JCCommisionApp/domain/user_management/user_profile.dart';
+import 'package:JCCommisionApp/injection.dart';
 import 'package:JCCommisionApp/presentation/promotion/promotion_ui.dart';
 import 'package:JCCommisionApp/repositories/user/models/user.dart';
 import 'package:JCCommisionApp/repositories/user_profile/user_profile_repository.dart';
@@ -10,6 +12,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'application/auth/authentication_bloc.dart';
 import 'application/user_management/list_users/partner_list_bloc.dart';
+import 'application/user_management/user_profile/user_profile_bloc.dart';
 
 class LandingPage extends StatefulWidget {
   static Route route() {
@@ -26,17 +29,29 @@ class _LandingPageState extends State<LandingPage> {
   int selectedIndex = 0;
   @override
   Widget build(BuildContext context) {
-    User user = context.bloc<AuthenticationBloc>().state.user;
+    UserProfile user = context.bloc<AuthenticationBloc>().state.user;
     UserProfileRepository userProfileRepo = UserProfileRepository(user);
 
-    return BlocProvider<PartnerListBloc>(
-      create: (context) => PartnerListBloc(repository: userProfileRepo),
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider<PartnerListBloc>(
+          create: (context) => PartnerListBloc(repository: userProfileRepo),
+        ),
+        BlocProvider<UserProfileBloc>(
+          create: (context) => getIt<UserProfileBloc>()
+            ..add(
+              UserProfileEvent.load(),
+            ),
+        ),
+      ],
       child: Scaffold(
         bottomNavigationBar: BottomNavigationBar(
           onTap: (value) {
-            setState(() {
-              selectedIndex = value;
-            });
+            setState(
+              () {
+                selectedIndex = value;
+              },
+            );
           },
           currentIndex: selectedIndex,
           items: subMenus.map(
