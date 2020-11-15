@@ -1,12 +1,7 @@
-import 'package:JCCommisionApp/application/auth/authentication_bloc.dart';
-import 'package:JCCommisionApp/application/user_management/user_profile1/userprofile_cubit1.dart';
 import 'package:JCCommisionApp/domain/user_management/user_profile.dart';
 import 'package:JCCommisionApp/repositories/transactions/models/total_bill_breakup.dart';
 import 'package:JCCommisionApp/repositories/transactions/models/transaction.dart';
-import 'package:JCCommisionApp/repositories/user/models/user.dart';
-import 'package:JCCommisionApp/repositories/user_profile/user_profile_repository.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 
 typedef OnSaveCallback = Function(UserTransaction UserTransaction);
 
@@ -15,12 +10,12 @@ class EventAdd extends StatefulWidget {
   final UserProfile loggedInUser;
   final UserProfile partnerUser;
 
-  const EventAdd(
-      {Key key,
-      @required this.onSave,
-      @required this.loggedInUser,
-      @required this.partnerUser})
-      : super(key: key);
+  const EventAdd({
+    Key key,
+    @required this.onSave,
+    @required this.loggedInUser,
+    @required this.partnerUser,
+  }) : super(key: key);
 
   static Route route(
       {OnSaveCallback onSave,
@@ -57,47 +52,17 @@ class _EventAddState extends State<EventAdd> {
 
   @override
   Widget build(BuildContext context) {
-    UserProfile user = context.bloc<AuthenticationBloc>().state.user;
-    UserProfileRepository userProfileRepo = UserProfileRepository(user);
-
-    UserProfile loggedInUserProfile = null;
-    return RepositoryProvider.value(
-      value: (context) => userProfileRepo,
-      child: Scaffold(
-        appBar: AppBar(
-          title: Text('Add new Transaction'),
-        ),
-        body: BlocProvider<UserprofileCubit>(
-          create: (context) =>
-              UserprofileCubit(userProfileRepo)..getUserProfileInfo(),
-          child: BlocBuilder<UserprofileCubit, UserprofileState>(
-            builder: (context, state) {
-              if (state is UserProfileLoaded) {
-                loggedInUserProfile = state.userProfile;
-                return SafeArea(
-                  child: BlocBuilder<AuthenticationBloc, AuthenticationState>(
-                    builder: (context, state) {
-                      return Container(
-                        child: buildEventAddForm(loggedInUserProfile),
-                      );
-                    },
-                  ),
-                );
-              } else {
-                return Container(
-                  child: Center(
-                    child: CircularProgressIndicator(),
-                  ),
-                );
-              }
-            },
-          ),
-        ),
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Add new Transaction'),
+      ),
+      body: Container(
+        child: buildEventAddForm(),
       ),
     );
   }
 
-  Column buildEventAddForm(UserProfile loggedInUserProfile) {
+  Column buildEventAddForm() {
     return Column(
       children: <Widget>[
         ...billFormulaBreakup.keys
@@ -105,7 +70,7 @@ class _EventAddState extends State<EventAdd> {
               (item) => Padding(
                 padding: const EdgeInsets.all(10.0),
                 child: TextField(
-                  controller: controllerMaps[item]..text = 30.toString(),
+                  controller: controllerMaps[item]..text = item,
                   decoration:
                       InputDecoration(labelText: controllerMaps[item].text),
                 ),
@@ -115,12 +80,12 @@ class _EventAddState extends State<EventAdd> {
         SizedBox(
           height: 10,
         ),
-        buildSubmitButton(loggedInUserProfile)
+        buildSubmitButton()
       ],
     );
   }
 
-  Widget buildSubmitButton(UserProfile loggedInUserProfile) {
+  Widget buildSubmitButton() {
     return FlatButton(
       child: Text('Add new'),
       onPressed: () {
@@ -136,8 +101,8 @@ class _EventAddState extends State<EventAdd> {
 
         UserTransaction newTransaction = UserTransaction('hello you',
             totalRewards: rewards,
-            salesUser: loggedInUserProfile,
-            partnerUser: partner);
+            salesUser: widget.loggedInUser,
+            partnerUser: widget.partnerUser);
         widget.onSave(newTransaction);
       },
     );

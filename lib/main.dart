@@ -80,14 +80,14 @@ class _AppViewState extends State<AppView> {
             print(state.status);
             switch (state.status) {
               case AuthenticationStatus.authenticated:
-                // print('authenticated section of switch...!!');
+                print('authenticated section of switch...!!');
                 _navigator.pushAndRemoveUntil<void>(
                   LandingPage.route(),
                   (route) => false,
                 );
                 break;
               case AuthenticationStatus.unauthenticated:
-                // print('switch unathonticated section');
+                print('switch unathonticated section');
                 _navigator.pushAndRemoveUntil<void>(
                   LoginPage.route(),
                   (route) => false,
@@ -104,7 +104,12 @@ class _AppViewState extends State<AppView> {
         return MaterialPageRoute(
           builder: (context) => Scaffold(
             appBar: AppBar(
-              title: Text("hello world"),
+              title: Text("Split world"),
+            ),
+            body: Container(
+              child: Center(
+                child: Text('The broken default page'),
+              ),
             ),
           ),
         );

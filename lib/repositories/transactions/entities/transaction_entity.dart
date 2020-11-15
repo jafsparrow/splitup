@@ -1,5 +1,5 @@
+import 'package:JCCommisionApp/domain/user_management/user_profile.dart';
 import 'package:JCCommisionApp/repositories/transactions/models/total_bill_breakup.dart';
-import 'package:JCCommisionApp/repositories/user/models/user.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:equatable/equatable.dart';
 
@@ -7,8 +7,8 @@ class UserTransactionEntity extends Equatable {
   final String description;
   final String id;
   final DateTime addedDate;
-  final User salesUser;
-  final User partnerUser;
+  final UserProfile salesUser;
+  final UserProfile partnerUser;
   final TotalReward totalReward;
 
   const UserTransactionEntity(this.description, this.id, this.addedDate,
@@ -22,8 +22,8 @@ class UserTransactionEntity extends Equatable {
     return {
       "description": description,
       "addedDateTime": addedDate,
-      "salesUser": salesUser.name,
-      "partnerUser": partnerUser.name
+      "salesUser": salesUser.userName,
+      "partnerUser": partnerUser.userName
     };
   }
 
@@ -40,16 +40,8 @@ class UserTransactionEntity extends Equatable {
         json["description"] as String,
         json['id'] as String,
         json["addedDateTime"] as DateTime,
-        json["salesUser"] as User,
-        json["partnerUser"] as User,
-        json['transaction_details'] as TotalReward);
-
-    return UserTransactionEntity(
-        json["description"] as String,
-        json['id'] as String,
-        json["addedDateTime"] as DateTime,
-        json["salesUser"] as User,
-        json["partnerUser"] as User,
+        json["salesUser"] as UserProfile,
+        json["partnerUser"] as UserProfile,
         json['transaction_details'] as TotalReward);
   }
 
@@ -61,17 +53,15 @@ class UserTransactionEntity extends Equatable {
 
     Map<String, dynamic> salesUserMap = snap.data()['salesUser'];
 
-    User partnerUser = User(
+    UserProfile partnerUser = UserProfile(
         email: partnerUserMap['email'],
-        name: partnerUserMap['name'],
-        id: partnerUserMap['id'],
-        photo: partnerUserMap['photo']);
+        userName: partnerUserMap['name'],
+        mobileNumber: partnerUserMap['mobileNumber']);
 
-    User salesUser = User(
+    UserProfile salesUser = UserProfile(
         email: salesUserMap['email'],
-        name: salesUserMap['name'],
-        id: salesUserMap['id'],
-        photo: salesUserMap['photo']);
+        userName: salesUserMap['name'],
+        mobileNumber: salesUserMap['photo']);
 
     Map<String, dynamic> billBreakupPart = snap.data()["transaction_details"];
 
@@ -85,15 +75,15 @@ class UserTransactionEntity extends Equatable {
 
   Map<String, Object> toDocument() {
     var salesUserDetails = {
-      "name": salesUser.name,
+      "name": salesUser.userName,
       "email": salesUser.email,
-      "id": salesUser.id,
+      "id": 'test'
     };
 
     var partnerUserDetails = {
-      "name": partnerUser.name,
+      "name": partnerUser.userName,
       "email": partnerUser.email,
-      "id": partnerUser.id,
+      "id": 'testing ',
     };
 
     var totalRewardPointsEarned = totalReward.getTotalRewardPoints();

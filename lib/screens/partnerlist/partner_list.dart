@@ -1,6 +1,6 @@
 import 'package:JCCommisionApp/application/user_management/filter_users/filtered_partners_bloc.dart';
 import 'package:JCCommisionApp/application/user_management/list_users/partner_list_bloc.dart';
-import 'package:JCCommisionApp/repositories/user_profile/models/user_profile.dart';
+import 'package:JCCommisionApp/domain/user_management/user_profile.dart';
 import 'package:JCCommisionApp/screens/partner_profile/partner_profile.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';

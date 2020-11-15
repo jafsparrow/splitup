@@ -11,7 +11,7 @@ class PromotionScreen extends StatelessWidget {
       builder: (context, state) {
         print(state);
         return Center(
-          child: Text('Hello World'),
+          child: Text('Split World'),
         );
       },
     );

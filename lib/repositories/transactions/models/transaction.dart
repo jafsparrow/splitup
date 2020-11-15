@@ -1,6 +1,6 @@
+import 'package:JCCommisionApp/domain/user_management/user_profile.dart';
 import 'package:JCCommisionApp/repositories/transactions/entities/transaction_entity.dart';
 import 'package:JCCommisionApp/repositories/transactions/models/total_bill_breakup.dart';
-import 'package:JCCommisionApp/repositories/user/models/user.dart';
 import 'package:flutter/cupertino.dart';
 
 class UserTransaction {
@@ -8,8 +8,8 @@ class UserTransaction {
   String id;
   String notes;
   DateTime addedDate;
-  User salesUser;
-  User partnerUser;
+  UserProfile salesUser;
+  UserProfile partnerUser;
   TotalReward totalRewards;
 
   UserTransaction(this.description,

@@ -1,7 +1,6 @@
 import 'package:JCCommisionApp/application/auth/authentication_bloc.dart';
 import 'package:JCCommisionApp/application/transactions/transacation_bloc.dart';
 import 'package:JCCommisionApp/application/user_management/user_profile/user_profile_bloc.dart';
-import 'package:JCCommisionApp/injection.dart';
 import 'package:JCCommisionApp/repositories/transactions/firebase_user_transaction_repository.dart';
 import 'package:JCCommisionApp/repositories/transactions/models/transaction.dart';
 import 'package:JCCommisionApp/screens/eventpage/event_add.dart';
@@ -177,8 +176,8 @@ class HomePage extends StatelessWidget {
                 dateTime: DateTime.now(),
               ),
               trailing: EarnedPoints(currentItem: userTransactions[index]),
-              title: Text(userTransactions[index].partnerUser.name),
-              subtitle: Text(userTransactions[index].salesUser.name),
+              title: Text(userTransactions[index].partnerUser.userName),
+              subtitle: Text(userTransactions[index].salesUser.userName),
             ),
           );
         },

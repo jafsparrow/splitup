@@ -10,8 +10,8 @@ class UserProfile {
       : name =
             userSnapShot.data()['displayName'] ?? 'No display name in result',
         email = userSnapShot.data()['email'],
-        id = userSnapShot.data()['uid'],
-        phone = userSnapShot.data()['phone'] {
+        id = userSnapShot.data()['uid'] ?? 'id is not there',
+        phone = userSnapShot.data()['phone'] ?? 'No phone number' {
     UserProfile._(name: name, email: email, id: id, phone: phone);
   }
 }

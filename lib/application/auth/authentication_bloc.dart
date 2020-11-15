@@ -1,7 +1,6 @@
 import 'dart:async';
 import 'package:JCCommisionApp/domain/user_management/user_profile.dart';
 import 'package:JCCommisionApp/repositories/user/authentication_repository.dart';
-import 'package:JCCommisionApp/repositories/user/models/user.dart';
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:meta/meta.dart';
@@ -34,7 +33,7 @@ class AuthenticationBloc
   }
 
   _mapAuthenticationUserChangedToState(AuthenticationUserChangedEvent event) {
-    return event.user == User.empty
+    return event.user == UserProfile.empty()
         ? const AuthenticationState.unauthenticated()
         : AuthenticationState.authenticated(event.user);
   }

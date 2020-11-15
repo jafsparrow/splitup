@@ -6,8 +6,6 @@ import 'package:flutter/material.dart';
 
 import 'dart:async';
 
-import 'models/user.dart' as localUserClass;
-
 class AuthenticationRepository implements Authentication {
   final FirebaseAuth _firebaseAuth;
   final userTransactionCollection =
@@ -18,7 +16,6 @@ class AuthenticationRepository implements Authentication {
 
   Stream<UserProfile> get user {
     return _firebaseAuth.authStateChanges().map((firebaseUser) {
-      // print(firebaseUser);
       return firebaseUser == null ? UserProfile.empty() : firebaseUser.toUser;
     });
   }
@@ -53,13 +50,15 @@ class AuthenticationRepository implements Authentication {
 }
 
 extension on User {
-  Future<UserProfile> get toUser async {
+  UserProfile get toUser {
     // return localUserClass.User(
     //     id: uid, email: email, name: displayName, photo: photoUrl);
-    var collection = FirebaseFirestore.instance.collection('users');
-    DocumentSnapshot document = await collection.doc(uid).get();
+    // var collection = FirebaseFirestore.instance.collection('users');
+    // DocumentSnapshot document = await collection.doc(uid).get();
 
-    return UserProfileDto.fromFirestore(document).toDomain();
+    // return UserProfileDto.fromFirestore(document).toDomain();
+    return UserProfile(
+        userName: 'Jafar', mobileNumber: '9338393', email: 'test#te@.com');
   }
 }
 

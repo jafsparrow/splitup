@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:JCCommisionApp/application/user_management/list_users/partner_list_bloc.dart';
-import 'package:JCCommisionApp/repositories/user_profile/models/user_profile.dart';
+import 'package:JCCommisionApp/domain/user_management/user_profile.dart';
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
@@ -55,7 +55,7 @@ class FilteredPartnersBloc
     yield FilteredPartnerList(
         searchCriteria,
         userList
-            .where((user) => (user.name)
+            .where((user) => (user.userName)
                 .toLowerCase()
                 .contains(searchCriteria.toLowerCase()))
             .toList());
