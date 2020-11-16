@@ -13,7 +13,7 @@ abstract class OrganisationUserAuthorisationDto
   const factory OrganisationUserAuthorisationDto({
     @required String userRefId,
     @required bool isSalesUser,
-    @required String isPartnerUser,
+    @required bool isPartnerUser,
   }) = _OrganisationUserAuthorisationDto;
 
   factory OrganisationUserAuthorisationDto.fromDomain(
@@ -39,6 +39,6 @@ abstract class OrganisationUserAuthorisationDto
     return OrganisationUserAuthorisationDto.fromJson(doc.data()).copyWith(
         isPartnerUser: doc.data()['isPartnerUser'],
         isSalesUser: doc.data()['isSalesUser'],
-        userRefId: doc.data()['isPartnerUser']);
+        userRefId: doc.data()['userRefId'].toString());
   }
 }

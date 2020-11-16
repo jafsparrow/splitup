@@ -20,7 +20,7 @@ class _$OrganisationUserAuthorisationDtoTearOff {
   _OrganisationUserAuthorisationDto call(
       {@required String userRefId,
       @required bool isSalesUser,
-      @required String isPartnerUser}) {
+      @required bool isPartnerUser}) {
     return _OrganisationUserAuthorisationDto(
       userRefId: userRefId,
       isSalesUser: isSalesUser,
@@ -36,7 +36,7 @@ const $OrganisationUserAuthorisationDto =
 mixin _$OrganisationUserAuthorisationDto {
   String get userRefId;
   bool get isSalesUser;
-  String get isPartnerUser;
+  bool get isPartnerUser;
 
   Map<String, dynamic> toJson();
   $OrganisationUserAuthorisationDtoCopyWith<OrganisationUserAuthorisationDto>
@@ -48,7 +48,7 @@ abstract class $OrganisationUserAuthorisationDtoCopyWith<$Res> {
           OrganisationUserAuthorisationDto value,
           $Res Function(OrganisationUserAuthorisationDto) then) =
       _$OrganisationUserAuthorisationDtoCopyWithImpl<$Res>;
-  $Res call({String userRefId, bool isSalesUser, String isPartnerUser});
+  $Res call({String userRefId, bool isSalesUser, bool isPartnerUser});
 }
 
 class _$OrganisationUserAuthorisationDtoCopyWithImpl<$Res>
@@ -71,7 +71,7 @@ class _$OrganisationUserAuthorisationDtoCopyWithImpl<$Res>
           isSalesUser == freezed ? _value.isSalesUser : isSalesUser as bool,
       isPartnerUser: isPartnerUser == freezed
           ? _value.isPartnerUser
-          : isPartnerUser as String,
+          : isPartnerUser as bool,
     ));
   }
 }
@@ -83,7 +83,7 @@ abstract class _$OrganisationUserAuthorisationDtoCopyWith<$Res>
           $Res Function(_OrganisationUserAuthorisationDto) then) =
       __$OrganisationUserAuthorisationDtoCopyWithImpl<$Res>;
   @override
-  $Res call({String userRefId, bool isSalesUser, String isPartnerUser});
+  $Res call({String userRefId, bool isSalesUser, bool isPartnerUser});
 }
 
 class __$OrganisationUserAuthorisationDtoCopyWithImpl<$Res>
@@ -110,7 +110,7 @@ class __$OrganisationUserAuthorisationDtoCopyWithImpl<$Res>
           isSalesUser == freezed ? _value.isSalesUser : isSalesUser as bool,
       isPartnerUser: isPartnerUser == freezed
           ? _value.isPartnerUser
-          : isPartnerUser as String,
+          : isPartnerUser as bool,
     ));
   }
 }
@@ -136,7 +136,7 @@ class _$_OrganisationUserAuthorisationDto
   @override
   final bool isSalesUser;
   @override
-  final String isPartnerUser;
+  final bool isPartnerUser;
 
   @override
   String toString() {
@@ -182,7 +182,7 @@ abstract class _OrganisationUserAuthorisationDto
   const factory _OrganisationUserAuthorisationDto(
       {@required String userRefId,
       @required bool isSalesUser,
-      @required String isPartnerUser}) = _$_OrganisationUserAuthorisationDto;
+      @required bool isPartnerUser}) = _$_OrganisationUserAuthorisationDto;
 
   factory _OrganisationUserAuthorisationDto.fromJson(
       Map<String, dynamic> json) = _$_OrganisationUserAuthorisationDto.fromJson;
@@ -192,7 +192,7 @@ abstract class _OrganisationUserAuthorisationDto
   @override
   bool get isSalesUser;
   @override
-  String get isPartnerUser;
+  bool get isPartnerUser;
   @override
   _$OrganisationUserAuthorisationDtoCopyWith<_OrganisationUserAuthorisationDto>
       get copyWith;

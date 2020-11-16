@@ -2,11 +2,13 @@ import 'dart:async';
 import 'package:JCCommisionApp/domain/auth/authorisation/i_authorisation_facade.dart';
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:injectable/injectable.dart';
 
 part 'authorisation_event.dart';
 part 'authorisation_state.dart';
 part 'authorisation_bloc.freezed.dart';
 
+@injectable
 class AuthorisationBloc extends Bloc<AuthorisationEvent, AuthorisationState> {
   final IAuthorisationFacade _authorisationRepository;
   AuthorisationBloc(this._authorisationRepository) : super(_Initial());

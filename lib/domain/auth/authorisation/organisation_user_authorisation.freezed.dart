@@ -16,7 +16,7 @@ class _$OrganisationUserAuthorisationTearOff {
   _OrganisationUserAuthorisation call(
       {@required String userRefId,
       @required bool isSalesUser,
-      @required String isPartnerUser}) {
+      @required bool isPartnerUser}) {
     return _OrganisationUserAuthorisation(
       userRefId: userRefId,
       isSalesUser: isSalesUser,
@@ -31,7 +31,7 @@ const $OrganisationUserAuthorisation = _$OrganisationUserAuthorisationTearOff();
 mixin _$OrganisationUserAuthorisation {
   String get userRefId;
   bool get isSalesUser;
-  String get isPartnerUser;
+  bool get isPartnerUser;
 
   $OrganisationUserAuthorisationCopyWith<OrganisationUserAuthorisation>
       get copyWith;
@@ -42,7 +42,7 @@ abstract class $OrganisationUserAuthorisationCopyWith<$Res> {
           OrganisationUserAuthorisation value,
           $Res Function(OrganisationUserAuthorisation) then) =
       _$OrganisationUserAuthorisationCopyWithImpl<$Res>;
-  $Res call({String userRefId, bool isSalesUser, String isPartnerUser});
+  $Res call({String userRefId, bool isSalesUser, bool isPartnerUser});
 }
 
 class _$OrganisationUserAuthorisationCopyWithImpl<$Res>
@@ -65,7 +65,7 @@ class _$OrganisationUserAuthorisationCopyWithImpl<$Res>
           isSalesUser == freezed ? _value.isSalesUser : isSalesUser as bool,
       isPartnerUser: isPartnerUser == freezed
           ? _value.isPartnerUser
-          : isPartnerUser as String,
+          : isPartnerUser as bool,
     ));
   }
 }
@@ -77,7 +77,7 @@ abstract class _$OrganisationUserAuthorisationCopyWith<$Res>
           $Res Function(_OrganisationUserAuthorisation) then) =
       __$OrganisationUserAuthorisationCopyWithImpl<$Res>;
   @override
-  $Res call({String userRefId, bool isSalesUser, String isPartnerUser});
+  $Res call({String userRefId, bool isSalesUser, bool isPartnerUser});
 }
 
 class __$OrganisationUserAuthorisationCopyWithImpl<$Res>
@@ -104,7 +104,7 @@ class __$OrganisationUserAuthorisationCopyWithImpl<$Res>
           isSalesUser == freezed ? _value.isSalesUser : isSalesUser as bool,
       isPartnerUser: isPartnerUser == freezed
           ? _value.isPartnerUser
-          : isPartnerUser as String,
+          : isPartnerUser as bool,
     ));
   }
 }
@@ -124,7 +124,7 @@ class _$_OrganisationUserAuthorisation extends _OrganisationUserAuthorisation {
   @override
   final bool isSalesUser;
   @override
-  final String isPartnerUser;
+  final bool isPartnerUser;
 
   @override
   String toString() {
@@ -165,14 +165,14 @@ abstract class _OrganisationUserAuthorisation
   const factory _OrganisationUserAuthorisation(
       {@required String userRefId,
       @required bool isSalesUser,
-      @required String isPartnerUser}) = _$_OrganisationUserAuthorisation;
+      @required bool isPartnerUser}) = _$_OrganisationUserAuthorisation;
 
   @override
   String get userRefId;
   @override
   bool get isSalesUser;
   @override
-  String get isPartnerUser;
+  bool get isPartnerUser;
   @override
   _$OrganisationUserAuthorisationCopyWith<_OrganisationUserAuthorisation>
       get copyWith;

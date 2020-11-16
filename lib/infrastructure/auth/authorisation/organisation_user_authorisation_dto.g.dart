@@ -11,7 +11,7 @@ _$_OrganisationUserAuthorisationDto
   return _$_OrganisationUserAuthorisationDto(
     userRefId: json['userRefId'] as String,
     isSalesUser: json['isSalesUser'] as bool,
-    isPartnerUser: json['isPartnerUser'] as String,
+    isPartnerUser: json['isPartnerUser'] as bool,
   );
 }
 

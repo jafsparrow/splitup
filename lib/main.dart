@@ -11,6 +11,7 @@ import 'package:injectable/injectable.dart';
 import 'package:firebase_core/firebase_core.dart';
 
 import 'application/auth/authentication_bloc.dart';
+import 'application/auth/authorisation/authorisation_bloc.dart';
 import 'domain/promotions/promotion.dart';
 
 Future<void> main() async {
@@ -70,21 +71,43 @@ class _AppViewState extends State<AppView> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      navigatorKey: _navigatorKey,
-      theme: theme,
-      debugShowCheckedModeBanner: false,
-      builder: (context, child) {
-        return BlocListener<AuthenticationBloc, AuthenticationState>(
-          listener: (context, state) {
+    return BlocProvider(
+      create: (context) => getIt<AuthorisationBloc>()
+        ..add(
+          AuthorisationEvent.checkAuthorisation(
+              companyID: '4cHZwNlWzW79PQ7U5dUf', uid: 'cSOr1zRLEzbUNjeIndgX'),
+        ),
+      child: MaterialApp(
+        navigatorKey: _navigatorKey,
+        theme: theme,
+        debugShowCheckedModeBanner: false,
+        builder: (context, child) {
+          return BlocConsumer<AuthenticationBloc, AuthenticationState>(
+              builder: (context, state) {
+            return BlocListener<AuthorisationBloc, AuthorisationState>(
+              listener: (context, state) {
+                print('inside the new listen');
+                state.maybeMap(authorised: (_) {
+                  _navigator.pushAndRemoveUntil<void>(
+                    LandingPage.route(),
+                    (route) => false,
+                  );
+                }, orElse: () {
+                  return Container(
+                    child: Center(
+                      child: Text('Not Authorized'),
+                    ),
+                  );
+                });
+              },
+              child: Container(),
+            );
+          }, listener: (context, state) {
             print(state.status);
             switch (state.status) {
               case AuthenticationStatus.authenticated:
                 print('authenticated section of switch...!!');
-                _navigator.pushAndRemoveUntil<void>(
-                  LandingPage.route(),
-                  (route) => false,
-                );
+
                 break;
               case AuthenticationStatus.unauthenticated:
                 print('switch unathonticated section');
@@ -96,24 +119,23 @@ class _AppViewState extends State<AppView> {
               default:
                 break;
             }
-          },
-          child: child,
-        );
-      },
-      onGenerateRoute: (_) {
-        return MaterialPageRoute(
-          builder: (context) => Scaffold(
-            appBar: AppBar(
-              title: Text("Split world"),
-            ),
-            body: Container(
-              child: Center(
-                child: Text('The broken default page'),
+          });
+        },
+        onGenerateRoute: (_) {
+          return MaterialPageRoute(
+            builder: (context) => Scaffold(
+              appBar: AppBar(
+                title: Text("Split world"),
+              ),
+              body: Container(
+                child: Center(
+                  child: Text('The broken default page'),
+                ),
               ),
             ),
-          ),
-        );
-      },
+          );
+        },
+      ),
     );
   }
 }

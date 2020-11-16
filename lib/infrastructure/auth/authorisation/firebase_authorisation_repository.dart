@@ -3,8 +3,9 @@ import 'package:JCCommisionApp/domain/auth/authorisation/i_authorisation_facade.
 import 'package:JCCommisionApp/infrastructure/auth/authorisation/organisation_user_authorisation_dto.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dartz/dartz.dart';
-import 'package:JCCommisionApp/domain/auth/user.dart';
+import 'package:injectable/injectable.dart';
 
+@LazySingleton(as: IAuthorisationFacade)
 class FirebaseAuthorisationRepository implements IAuthorisationFacade {
   final FirebaseFirestore _firestore;
 
@@ -15,7 +16,7 @@ class FirebaseAuthorisationRepository implements IAuthorisationFacade {
       String uid, String companyId) async {
     try {
       DocumentSnapshot companyUserCollectionReference = await _firestore
-          .collection('organisations')
+          .collection('companies')
           .doc(companyId)
           .collection('users')
           .doc(uid)
