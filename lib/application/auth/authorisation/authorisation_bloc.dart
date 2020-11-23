@@ -17,17 +17,22 @@ class AuthorisationBloc extends Bloc<AuthorisationEvent, AuthorisationState> {
   Stream<AuthorisationState> mapEventToState(
     AuthorisationEvent event,
   ) async* {
-    yield* event.map(checkAuthorisation: (event) async* {
-      final failureOrSuccess = await _authorisationRepository.isAuthorised(
-          event.uid, event.companyID);
+    yield* event.map(
+      checkAuthorisation: (event) async* {
+        final failureOrSuccess = await _authorisationRepository.isAuthorised(
+            event.uid, event.companyID);
 
-      yield failureOrSuccess.fold(
-          (error) => error.map(
-              cancelledByUser: (_) => AuthorisationState.unexpected(),
-              serverError: (_) => AuthorisationState.notAuthorised(),
-              notAuthorized: (_) => AuthorisationState.notAuthorised(),
-              userNotAssigned: null),
-          (isAuthorised) => AuthorisationState.authorised(isAuthorised));
-    });
+        yield failureOrSuccess.fold(
+            (error) => error.map(
+                cancelledByUser: (_) => AuthorisationState.unexpected(),
+                serverError: (_) => AuthorisationState.notAuthorised(),
+                notAuthorized: (_) => AuthorisationState.notAuthorised(),
+                userNotAssigned: (_) => AuthorisationState.notAuthorised()),
+            (isAuthorised) => AuthorisationState.authorised(isAuthorised));
+      },
+      started: (_Started value) async* {
+        yield AuthorisationState.initial();
+      },
+    );
   }
 }

@@ -20,6 +20,7 @@ import 'domain/organisation/i_organisation_repository.dart';
 import 'domain/promotions/i_promotions_repository.dart';
 import 'domain/user_management/I_user_management_facade.dart';
 import 'infrastructure/organisation/organisation_repository.dart';
+import 'application/user_management/partner_user_add_form/partner_user_add_bloc.dart';
 import 'application/promotion/promotion_form/promotion_form_bloc.dart';
 import 'infrastructure/promotions/promotion_repository.dart';
 import 'application/user_management/user_profile/user_profile_bloc.dart';
@@ -44,6 +45,7 @@ GetIt $initGetIt(
       () => PromotionRepository(get<FirebaseFirestore>()));
   gh.lazySingleton<IUserManagement>(
       () => FirebaseUserManagementRepository(get<FirebaseFirestore>()));
+  gh.factory<PartnerUserAddBloc>(() => PartnerUserAddBloc());
   gh.factory<PromotionFormBloc>(
       () => PromotionFormBloc(get<IPromotionRepository>()));
   gh.factory<UserProfileBloc>(() => UserProfileBloc(get<IUserManagement>()));

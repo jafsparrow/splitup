@@ -1,6 +1,7 @@
 import 'package:JCCommisionApp/application/auth/authentication_bloc.dart';
 import 'package:JCCommisionApp/application/transactions/transacation_bloc.dart';
 import 'package:JCCommisionApp/application/user_management/user_profile/user_profile_bloc.dart';
+import 'package:JCCommisionApp/presentation/user_management/add_partner/add_partner_user_ui.dart';
 import 'package:JCCommisionApp/repositories/transactions/firebase_user_transaction_repository.dart';
 import 'package:JCCommisionApp/repositories/transactions/models/transaction.dart';
 import 'package:JCCommisionApp/screens/eventpage/event_add.dart';
@@ -60,7 +61,34 @@ class HomePage extends StatelessWidget {
         },
         builder: (context, userProfileState) => Scaffold(
           appBar: AppBar(
-            title: Text('Hello you'),
+            title: Text('Homepage'),
+            actions: [
+              PopupMenuButton<String>(
+                  onSelected: (val) {
+                    if (val == 'addPartner') {
+                      print('Navigate to add new user screen.');
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) => AddPartnerUserScreen(),
+                        ),
+                      );
+                    }
+                  },
+                  itemBuilder: (context) => [
+                        PopupMenuItem(
+                          child: Text('Add new Partner'),
+                          value: 'addPartner',
+                        ),
+                        PopupMenuItem(
+                          child: Text('Deactivate User'),
+                          value: 'Deactive',
+                        ),
+                        PopupMenuItem(
+                          child: Text('Something else'),
+                          value: 'Something',
+                        ),
+                      ])
+            ],
           ),
           floatingActionButton: FloatingActionButton(
             child: Icon(Icons.scanner),

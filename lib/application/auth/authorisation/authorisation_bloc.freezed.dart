@@ -19,42 +19,45 @@ class _$AuthorisationEventTearOff {
       companyID: companyID,
     );
   }
+
+// ignore: unused_element
+  _Started started() {
+    return const _Started();
+  }
 }
 
 // ignore: unused_element
 const $AuthorisationEvent = _$AuthorisationEventTearOff();
 
 mixin _$AuthorisationEvent {
-  String get uid;
-  String get companyID;
-
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result checkAuthorisation(String uid, String companyID),
+    @required Result started(),
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result checkAuthorisation(String uid, String companyID),
+    Result started(),
     @required Result orElse(),
   });
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result checkAuthorisation(_CheckAuthorisation value),
+    @required Result started(_Started value),
   });
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result checkAuthorisation(_CheckAuthorisation value),
+    Result started(_Started value),
     @required Result orElse(),
   });
-
-  $AuthorisationEventCopyWith<AuthorisationEvent> get copyWith;
 }
 
 abstract class $AuthorisationEventCopyWith<$Res> {
   factory $AuthorisationEventCopyWith(
           AuthorisationEvent value, $Res Function(AuthorisationEvent) then) =
       _$AuthorisationEventCopyWithImpl<$Res>;
-  $Res call({String uid, String companyID});
 }
 
 class _$AuthorisationEventCopyWithImpl<$Res>
@@ -64,25 +67,12 @@ class _$AuthorisationEventCopyWithImpl<$Res>
   final AuthorisationEvent _value;
   // ignore: unused_field
   final $Res Function(AuthorisationEvent) _then;
-
-  @override
-  $Res call({
-    Object uid = freezed,
-    Object companyID = freezed,
-  }) {
-    return _then(_value.copyWith(
-      uid: uid == freezed ? _value.uid : uid as String,
-      companyID: companyID == freezed ? _value.companyID : companyID as String,
-    ));
-  }
 }
 
-abstract class _$CheckAuthorisationCopyWith<$Res>
-    implements $AuthorisationEventCopyWith<$Res> {
+abstract class _$CheckAuthorisationCopyWith<$Res> {
   factory _$CheckAuthorisationCopyWith(
           _CheckAuthorisation value, $Res Function(_CheckAuthorisation) then) =
       __$CheckAuthorisationCopyWithImpl<$Res>;
-  @override
   $Res call({String uid, String companyID});
 }
 
@@ -146,8 +136,10 @@ class _$_CheckAuthorisation implements _CheckAuthorisation {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result checkAuthorisation(String uid, String companyID),
+    @required Result started(),
   }) {
     assert(checkAuthorisation != null);
+    assert(started != null);
     return checkAuthorisation(uid, companyID);
   }
 
@@ -155,6 +147,7 @@ class _$_CheckAuthorisation implements _CheckAuthorisation {
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result checkAuthorisation(String uid, String companyID),
+    Result started(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -168,8 +161,10 @@ class _$_CheckAuthorisation implements _CheckAuthorisation {
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result checkAuthorisation(_CheckAuthorisation value),
+    @required Result started(_Started value),
   }) {
     assert(checkAuthorisation != null);
+    assert(started != null);
     return checkAuthorisation(this);
   }
 
@@ -177,6 +172,7 @@ class _$_CheckAuthorisation implements _CheckAuthorisation {
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result checkAuthorisation(_CheckAuthorisation value),
+    Result started(_Started value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -191,12 +187,95 @@ abstract class _CheckAuthorisation implements AuthorisationEvent {
   const factory _CheckAuthorisation({String uid, String companyID}) =
       _$_CheckAuthorisation;
 
-  @override
   String get uid;
-  @override
   String get companyID;
-  @override
   _$CheckAuthorisationCopyWith<_CheckAuthorisation> get copyWith;
+}
+
+abstract class _$StartedCopyWith<$Res> {
+  factory _$StartedCopyWith(_Started value, $Res Function(_Started) then) =
+      __$StartedCopyWithImpl<$Res>;
+}
+
+class __$StartedCopyWithImpl<$Res>
+    extends _$AuthorisationEventCopyWithImpl<$Res>
+    implements _$StartedCopyWith<$Res> {
+  __$StartedCopyWithImpl(_Started _value, $Res Function(_Started) _then)
+      : super(_value, (v) => _then(v as _Started));
+
+  @override
+  _Started get _value => super._value as _Started;
+}
+
+class _$_Started implements _Started {
+  const _$_Started();
+
+  @override
+  String toString() {
+    return 'AuthorisationEvent.started()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is _Started);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result checkAuthorisation(String uid, String companyID),
+    @required Result started(),
+  }) {
+    assert(checkAuthorisation != null);
+    assert(started != null);
+    return started();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result checkAuthorisation(String uid, String companyID),
+    Result started(),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (started != null) {
+      return started();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result checkAuthorisation(_CheckAuthorisation value),
+    @required Result started(_Started value),
+  }) {
+    assert(checkAuthorisation != null);
+    assert(started != null);
+    return started(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result checkAuthorisation(_CheckAuthorisation value),
+    Result started(_Started value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (started != null) {
+      return started(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _Started implements AuthorisationEvent {
+  const factory _Started() = _$_Started;
 }
 
 class _$AuthorisationStateTearOff {

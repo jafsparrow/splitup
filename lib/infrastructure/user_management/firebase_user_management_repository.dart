@@ -57,4 +57,20 @@ class FirebaseUserManagementRepository implements IUserManagement {
       return left(UserManagementFailure.unexpected());
     }
   }
+
+  @override
+  Future<Either<UserManagementFailure, String>> addPartnerUser(
+      UserProfile newPartnerUser) {
+    // TODO: implement addPartnerUser
+    throw UnimplementedError();
+  }
+
+  _registerPartnerUser(UserProfile userProfile) {}
+
+  @override
+  Future<Either<UserManagementFailure, String>> updatePartnerUser(
+      UserProfile newPartnerUser) {
+    // TODO: implement updatePartnerUser
+    throw UnimplementedError();
+  }
 }

@@ -16,21 +16,31 @@ class _$UserProfileTearOff {
   _UserProfile call(
       {@required String userName,
       @required String mobileNumber,
-      @required String email}) {
+      @required String email,
+      String nickName,
+      String uid}) {
     return _UserProfile(
       userName: userName,
       mobileNumber: mobileNumber,
       email: email,
+      nickName: nickName,
+      uid: uid,
     );
   }
 
 // ignore: unused_element
   EmptyUserProfile empty(
-      [String userName = '', String email = '', String mobileNumber = '']) {
+      [String userName = '',
+      String email = '',
+      String mobileNumber = '',
+      String nickName = '',
+      String uid = '']) {
     return EmptyUserProfile(
       userName,
       email,
       mobileNumber,
+      nickName,
+      uid,
     );
   }
 }
@@ -42,16 +52,23 @@ mixin _$UserProfile {
   String get userName;
   String get mobileNumber;
   String get email;
+  String get nickName;
+  String get uid;
 
   @optionalTypeArgs
   Result when<Result extends Object>(
-    Result $default(String userName, String mobileNumber, String email), {
-    @required Result empty(String userName, String email, String mobileNumber),
+    Result $default(String userName, String mobileNumber, String email,
+        String nickName, String uid), {
+    @required
+        Result empty(String userName, String email, String mobileNumber,
+            String nickName, String uid),
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>(
-    Result $default(String userName, String mobileNumber, String email), {
-    Result empty(String userName, String email, String mobileNumber),
+    Result $default(String userName, String mobileNumber, String email,
+        String nickName, String uid), {
+    Result empty(String userName, String email, String mobileNumber,
+        String nickName, String uid),
     @required Result orElse(),
   });
   @optionalTypeArgs
@@ -73,7 +90,12 @@ abstract class $UserProfileCopyWith<$Res> {
   factory $UserProfileCopyWith(
           UserProfile value, $Res Function(UserProfile) then) =
       _$UserProfileCopyWithImpl<$Res>;
-  $Res call({String userName, String mobileNumber, String email});
+  $Res call(
+      {String userName,
+      String mobileNumber,
+      String email,
+      String nickName,
+      String uid});
 }
 
 class _$UserProfileCopyWithImpl<$Res> implements $UserProfileCopyWith<$Res> {
@@ -88,6 +110,8 @@ class _$UserProfileCopyWithImpl<$Res> implements $UserProfileCopyWith<$Res> {
     Object userName = freezed,
     Object mobileNumber = freezed,
     Object email = freezed,
+    Object nickName = freezed,
+    Object uid = freezed,
   }) {
     return _then(_value.copyWith(
       userName: userName == freezed ? _value.userName : userName as String,
@@ -95,6 +119,8 @@ class _$UserProfileCopyWithImpl<$Res> implements $UserProfileCopyWith<$Res> {
           ? _value.mobileNumber
           : mobileNumber as String,
       email: email == freezed ? _value.email : email as String,
+      nickName: nickName == freezed ? _value.nickName : nickName as String,
+      uid: uid == freezed ? _value.uid : uid as String,
     ));
   }
 }
@@ -105,7 +131,12 @@ abstract class _$UserProfileCopyWith<$Res>
           _UserProfile value, $Res Function(_UserProfile) then) =
       __$UserProfileCopyWithImpl<$Res>;
   @override
-  $Res call({String userName, String mobileNumber, String email});
+  $Res call(
+      {String userName,
+      String mobileNumber,
+      String email,
+      String nickName,
+      String uid});
 }
 
 class __$UserProfileCopyWithImpl<$Res> extends _$UserProfileCopyWithImpl<$Res>
@@ -122,6 +153,8 @@ class __$UserProfileCopyWithImpl<$Res> extends _$UserProfileCopyWithImpl<$Res>
     Object userName = freezed,
     Object mobileNumber = freezed,
     Object email = freezed,
+    Object nickName = freezed,
+    Object uid = freezed,
   }) {
     return _then(_UserProfile(
       userName: userName == freezed ? _value.userName : userName as String,
@@ -129,6 +162,8 @@ class __$UserProfileCopyWithImpl<$Res> extends _$UserProfileCopyWithImpl<$Res>
           ? _value.mobileNumber
           : mobileNumber as String,
       email: email == freezed ? _value.email : email as String,
+      nickName: nickName == freezed ? _value.nickName : nickName as String,
+      uid: uid == freezed ? _value.uid : uid as String,
     ));
   }
 }
@@ -137,7 +172,9 @@ class _$_UserProfile extends _UserProfile with DiagnosticableTreeMixin {
   const _$_UserProfile(
       {@required this.userName,
       @required this.mobileNumber,
-      @required this.email})
+      @required this.email,
+      this.nickName,
+      this.uid})
       : assert(userName != null),
         assert(mobileNumber != null),
         assert(email != null),
@@ -149,10 +186,14 @@ class _$_UserProfile extends _UserProfile with DiagnosticableTreeMixin {
   final String mobileNumber;
   @override
   final String email;
+  @override
+  final String nickName;
+  @override
+  final String uid;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'UserProfile(userName: $userName, mobileNumber: $mobileNumber, email: $email)';
+    return 'UserProfile(userName: $userName, mobileNumber: $mobileNumber, email: $email, nickName: $nickName, uid: $uid)';
   }
 
   @override
@@ -162,7 +203,9 @@ class _$_UserProfile extends _UserProfile with DiagnosticableTreeMixin {
       ..add(DiagnosticsProperty('type', 'UserProfile'))
       ..add(DiagnosticsProperty('userName', userName))
       ..add(DiagnosticsProperty('mobileNumber', mobileNumber))
-      ..add(DiagnosticsProperty('email', email));
+      ..add(DiagnosticsProperty('email', email))
+      ..add(DiagnosticsProperty('nickName', nickName))
+      ..add(DiagnosticsProperty('uid', uid));
   }
 
   @override
@@ -176,7 +219,12 @@ class _$_UserProfile extends _UserProfile with DiagnosticableTreeMixin {
                 const DeepCollectionEquality()
                     .equals(other.mobileNumber, mobileNumber)) &&
             (identical(other.email, email) ||
-                const DeepCollectionEquality().equals(other.email, email)));
+                const DeepCollectionEquality().equals(other.email, email)) &&
+            (identical(other.nickName, nickName) ||
+                const DeepCollectionEquality()
+                    .equals(other.nickName, nickName)) &&
+            (identical(other.uid, uid) ||
+                const DeepCollectionEquality().equals(other.uid, uid)));
   }
 
   @override
@@ -184,7 +232,9 @@ class _$_UserProfile extends _UserProfile with DiagnosticableTreeMixin {
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(userName) ^
       const DeepCollectionEquality().hash(mobileNumber) ^
-      const DeepCollectionEquality().hash(email);
+      const DeepCollectionEquality().hash(email) ^
+      const DeepCollectionEquality().hash(nickName) ^
+      const DeepCollectionEquality().hash(uid);
 
   @override
   _$UserProfileCopyWith<_UserProfile> get copyWith =>
@@ -193,24 +243,29 @@ class _$_UserProfile extends _UserProfile with DiagnosticableTreeMixin {
   @override
   @optionalTypeArgs
   Result when<Result extends Object>(
-    Result $default(String userName, String mobileNumber, String email), {
-    @required Result empty(String userName, String email, String mobileNumber),
+    Result $default(String userName, String mobileNumber, String email,
+        String nickName, String uid), {
+    @required
+        Result empty(String userName, String email, String mobileNumber,
+            String nickName, String uid),
   }) {
     assert($default != null);
     assert(empty != null);
-    return $default(userName, mobileNumber, email);
+    return $default(userName, mobileNumber, email, nickName, uid);
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>(
-    Result $default(String userName, String mobileNumber, String email), {
-    Result empty(String userName, String email, String mobileNumber),
+    Result $default(String userName, String mobileNumber, String email,
+        String nickName, String uid), {
+    Result empty(String userName, String email, String mobileNumber,
+        String nickName, String uid),
     @required Result orElse(),
   }) {
     assert(orElse != null);
     if ($default != null) {
-      return $default(userName, mobileNumber, email);
+      return $default(userName, mobileNumber, email, nickName, uid);
     }
     return orElse();
   }
@@ -246,7 +301,9 @@ abstract class _UserProfile extends UserProfile {
   const factory _UserProfile(
       {@required String userName,
       @required String mobileNumber,
-      @required String email}) = _$_UserProfile;
+      @required String email,
+      String nickName,
+      String uid}) = _$_UserProfile;
 
   @override
   String get userName;
@@ -254,6 +311,10 @@ abstract class _UserProfile extends UserProfile {
   String get mobileNumber;
   @override
   String get email;
+  @override
+  String get nickName;
+  @override
+  String get uid;
   @override
   _$UserProfileCopyWith<_UserProfile> get copyWith;
 }
@@ -264,7 +325,12 @@ abstract class $EmptyUserProfileCopyWith<$Res>
           EmptyUserProfile value, $Res Function(EmptyUserProfile) then) =
       _$EmptyUserProfileCopyWithImpl<$Res>;
   @override
-  $Res call({String userName, String email, String mobileNumber});
+  $Res call(
+      {String userName,
+      String email,
+      String mobileNumber,
+      String nickName,
+      String uid});
 }
 
 class _$EmptyUserProfileCopyWithImpl<$Res>
@@ -282,21 +348,31 @@ class _$EmptyUserProfileCopyWithImpl<$Res>
     Object userName = freezed,
     Object email = freezed,
     Object mobileNumber = freezed,
+    Object nickName = freezed,
+    Object uid = freezed,
   }) {
     return _then(EmptyUserProfile(
       userName == freezed ? _value.userName : userName as String,
       email == freezed ? _value.email : email as String,
       mobileNumber == freezed ? _value.mobileNumber : mobileNumber as String,
+      nickName == freezed ? _value.nickName : nickName as String,
+      uid == freezed ? _value.uid : uid as String,
     ));
   }
 }
 
 class _$EmptyUserProfile extends EmptyUserProfile with DiagnosticableTreeMixin {
   const _$EmptyUserProfile(
-      [this.userName = '', this.email = '', this.mobileNumber = ''])
+      [this.userName = '',
+      this.email = '',
+      this.mobileNumber = '',
+      this.nickName = '',
+      this.uid = ''])
       : assert(userName != null),
         assert(email != null),
         assert(mobileNumber != null),
+        assert(nickName != null),
+        assert(uid != null),
         super._();
 
   @JsonKey(defaultValue: '')
@@ -308,10 +384,16 @@ class _$EmptyUserProfile extends EmptyUserProfile with DiagnosticableTreeMixin {
   @JsonKey(defaultValue: '')
   @override
   final String mobileNumber;
+  @JsonKey(defaultValue: '')
+  @override
+  final String nickName;
+  @JsonKey(defaultValue: '')
+  @override
+  final String uid;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'UserProfile.empty(userName: $userName, email: $email, mobileNumber: $mobileNumber)';
+    return 'UserProfile.empty(userName: $userName, email: $email, mobileNumber: $mobileNumber, nickName: $nickName, uid: $uid)';
   }
 
   @override
@@ -321,7 +403,9 @@ class _$EmptyUserProfile extends EmptyUserProfile with DiagnosticableTreeMixin {
       ..add(DiagnosticsProperty('type', 'UserProfile.empty'))
       ..add(DiagnosticsProperty('userName', userName))
       ..add(DiagnosticsProperty('email', email))
-      ..add(DiagnosticsProperty('mobileNumber', mobileNumber));
+      ..add(DiagnosticsProperty('mobileNumber', mobileNumber))
+      ..add(DiagnosticsProperty('nickName', nickName))
+      ..add(DiagnosticsProperty('uid', uid));
   }
 
   @override
@@ -335,7 +419,12 @@ class _$EmptyUserProfile extends EmptyUserProfile with DiagnosticableTreeMixin {
                 const DeepCollectionEquality().equals(other.email, email)) &&
             (identical(other.mobileNumber, mobileNumber) ||
                 const DeepCollectionEquality()
-                    .equals(other.mobileNumber, mobileNumber)));
+                    .equals(other.mobileNumber, mobileNumber)) &&
+            (identical(other.nickName, nickName) ||
+                const DeepCollectionEquality()
+                    .equals(other.nickName, nickName)) &&
+            (identical(other.uid, uid) ||
+                const DeepCollectionEquality().equals(other.uid, uid)));
   }
 
   @override
@@ -343,7 +432,9 @@ class _$EmptyUserProfile extends EmptyUserProfile with DiagnosticableTreeMixin {
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(userName) ^
       const DeepCollectionEquality().hash(email) ^
-      const DeepCollectionEquality().hash(mobileNumber);
+      const DeepCollectionEquality().hash(mobileNumber) ^
+      const DeepCollectionEquality().hash(nickName) ^
+      const DeepCollectionEquality().hash(uid);
 
   @override
   $EmptyUserProfileCopyWith<EmptyUserProfile> get copyWith =>
@@ -352,24 +443,29 @@ class _$EmptyUserProfile extends EmptyUserProfile with DiagnosticableTreeMixin {
   @override
   @optionalTypeArgs
   Result when<Result extends Object>(
-    Result $default(String userName, String mobileNumber, String email), {
-    @required Result empty(String userName, String email, String mobileNumber),
+    Result $default(String userName, String mobileNumber, String email,
+        String nickName, String uid), {
+    @required
+        Result empty(String userName, String email, String mobileNumber,
+            String nickName, String uid),
   }) {
     assert($default != null);
     assert(empty != null);
-    return empty(userName, email, mobileNumber);
+    return empty(userName, email, mobileNumber, nickName, uid);
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>(
-    Result $default(String userName, String mobileNumber, String email), {
-    Result empty(String userName, String email, String mobileNumber),
+    Result $default(String userName, String mobileNumber, String email,
+        String nickName, String uid), {
+    Result empty(String userName, String email, String mobileNumber,
+        String nickName, String uid),
     @required Result orElse(),
   }) {
     assert(orElse != null);
     if (empty != null) {
-      return empty(userName, email, mobileNumber);
+      return empty(userName, email, mobileNumber, nickName, uid);
     }
     return orElse();
   }
@@ -405,7 +501,9 @@ abstract class EmptyUserProfile extends UserProfile {
   const factory EmptyUserProfile(
       [String userName,
       String email,
-      String mobileNumber]) = _$EmptyUserProfile;
+      String mobileNumber,
+      String nickName,
+      String uid]) = _$EmptyUserProfile;
 
   @override
   String get userName;
@@ -413,6 +511,10 @@ abstract class EmptyUserProfile extends UserProfile {
   String get email;
   @override
   String get mobileNumber;
+  @override
+  String get nickName;
+  @override
+  String get uid;
   @override
   $EmptyUserProfileCopyWith<EmptyUserProfile> get copyWith;
 }
