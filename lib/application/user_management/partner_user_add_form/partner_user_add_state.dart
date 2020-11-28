@@ -8,7 +8,8 @@ abstract class PartnerUserAddFormState with _$PartnerUserAddFormState {
     @required bool isEditing,
     @required bool isSaving,
     @required
-        Option<Either<UserManagementFailure, Unit>> saveFailureOrSuccessOption,
+        Option<Either<UserManagementFailure, String>>
+            saveFailureOrSuccessOption,
   }) = _PartnerUserAddFormState;
 
   factory PartnerUserAddFormState.initial() => PartnerUserAddFormState(

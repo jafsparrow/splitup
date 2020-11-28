@@ -748,7 +748,7 @@ class _$PartnerUserAddFormStateTearOff {
       @required
           bool isSaving,
       @required
-          Option<Either<UserManagementFailure, Unit>>
+          Option<Either<UserManagementFailure, String>>
               saveFailureOrSuccessOption}) {
     return _PartnerUserAddFormState(
       partnerProfile: partnerProfile,
@@ -768,7 +768,7 @@ mixin _$PartnerUserAddFormState {
   bool get showErrorMessages;
   bool get isEditing;
   bool get isSaving;
-  Option<Either<UserManagementFailure, Unit>> get saveFailureOrSuccessOption;
+  Option<Either<UserManagementFailure, String>> get saveFailureOrSuccessOption;
 
   $PartnerUserAddFormStateCopyWith<PartnerUserAddFormState> get copyWith;
 }
@@ -782,7 +782,8 @@ abstract class $PartnerUserAddFormStateCopyWith<$Res> {
       bool showErrorMessages,
       bool isEditing,
       bool isSaving,
-      Option<Either<UserManagementFailure, Unit>> saveFailureOrSuccessOption});
+      Option<Either<UserManagementFailure, String>>
+          saveFailureOrSuccessOption});
 
   $UserProfileCopyWith<$Res> get partnerProfile;
 }
@@ -815,7 +816,7 @@ class _$PartnerUserAddFormStateCopyWithImpl<$Res>
       saveFailureOrSuccessOption: saveFailureOrSuccessOption == freezed
           ? _value.saveFailureOrSuccessOption
           : saveFailureOrSuccessOption
-              as Option<Either<UserManagementFailure, Unit>>,
+              as Option<Either<UserManagementFailure, String>>,
     ));
   }
 
@@ -841,7 +842,8 @@ abstract class _$PartnerUserAddFormStateCopyWith<$Res>
       bool showErrorMessages,
       bool isEditing,
       bool isSaving,
-      Option<Either<UserManagementFailure, Unit>> saveFailureOrSuccessOption});
+      Option<Either<UserManagementFailure, String>>
+          saveFailureOrSuccessOption});
 
   @override
   $UserProfileCopyWith<$Res> get partnerProfile;
@@ -878,7 +880,7 @@ class __$PartnerUserAddFormStateCopyWithImpl<$Res>
       saveFailureOrSuccessOption: saveFailureOrSuccessOption == freezed
           ? _value.saveFailureOrSuccessOption
           : saveFailureOrSuccessOption
-              as Option<Either<UserManagementFailure, Unit>>,
+              as Option<Either<UserManagementFailure, String>>,
     ));
   }
 }
@@ -905,7 +907,8 @@ class _$_PartnerUserAddFormState implements _PartnerUserAddFormState {
   @override
   final bool isSaving;
   @override
-  final Option<Either<UserManagementFailure, Unit>> saveFailureOrSuccessOption;
+  final Option<Either<UserManagementFailure, String>>
+      saveFailureOrSuccessOption;
 
   @override
   String toString() {
@@ -961,7 +964,7 @@ abstract class _PartnerUserAddFormState implements PartnerUserAddFormState {
       @required
           bool isSaving,
       @required
-          Option<Either<UserManagementFailure, Unit>>
+          Option<Either<UserManagementFailure, String>>
               saveFailureOrSuccessOption}) = _$_PartnerUserAddFormState;
 
   @override
@@ -973,7 +976,7 @@ abstract class _PartnerUserAddFormState implements PartnerUserAddFormState {
   @override
   bool get isSaving;
   @override
-  Option<Either<UserManagementFailure, Unit>> get saveFailureOrSuccessOption;
+  Option<Either<UserManagementFailure, String>> get saveFailureOrSuccessOption;
   @override
   _$PartnerUserAddFormStateCopyWith<_PartnerUserAddFormState> get copyWith;
 }

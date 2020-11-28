@@ -12,11 +12,25 @@ abstract class UserProfileDto implements _$UserProfileDto {
   const factory UserProfileDto(
       {@required String userName,
       @required String mobileNumber,
-      @required String email}) = _UserProfileDto;
+      @required String email,
+      String nickName,
+      String uid}) = _UserProfileDto;
+  factory UserProfileDto.fromDomain(UserProfile userProfile) {
+    return UserProfileDto(
+        userName: userProfile.userName,
+        mobileNumber: userProfile.mobileNumber,
+        email: userProfile.email,
+        uid: userProfile.uid,
+        nickName: userProfile.nickName);
+  }
 
   UserProfile toDomain() {
     return UserProfile(
-        userName: userName, mobileNumber: mobileNumber, email: email);
+        userName: userName,
+        mobileNumber: mobileNumber,
+        email: email,
+        nickName: nickName,
+        uid: uid);
   }
 
   factory UserProfileDto.fromJson(Map<String, dynamic> json) =>

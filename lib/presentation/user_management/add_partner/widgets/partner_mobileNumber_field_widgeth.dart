@@ -29,7 +29,6 @@ class PartnerMobileNumberField extends HookWidget {
             ),
             maxLength: 10,
             maxLines: null,
-            minLines: 8,
             onChanged: (value) => context
                 .bloc<PartnerUserAddBloc>()
                 .add(PartnerUserAddFormEvent.phonNumberChanged(value)),

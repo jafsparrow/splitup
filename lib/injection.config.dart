@@ -4,6 +4,7 @@
 // InjectableConfigGenerator
 // **************************************************************************
 
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:get_it/get_it.dart';
 import 'package:injectable/injectable.dart';
@@ -35,6 +36,7 @@ GetIt $initGetIt(
 }) {
   final gh = GetItHelper(get, environment, environmentFilter);
   final firebaseInjectableModule = _$FirebaseInjectableModule();
+  gh.lazySingleton<FirebaseAuth>(() => firebaseInjectableModule.firebaseAuth);
   gh.lazySingleton<FirebaseFirestore>(() => firebaseInjectableModule.firestore);
   gh.lazySingleton<IAuthorisationFacade>(
       () => FirebaseAuthorisationRepository(get<FirebaseFirestore>()));
@@ -43,9 +45,10 @@ GetIt $initGetIt(
       () => OrganisationRepository(get<FirebaseFirestore>()));
   gh.lazySingleton<IPromotionRepository>(
       () => PromotionRepository(get<FirebaseFirestore>()));
-  gh.lazySingleton<IUserManagement>(
-      () => FirebaseUserManagementRepository(get<FirebaseFirestore>()));
-  gh.factory<PartnerUserAddBloc>(() => PartnerUserAddBloc());
+  gh.lazySingleton<IUserManagement>(() => FirebaseUserManagementRepository(
+      get<FirebaseFirestore>(), get<FirebaseAuth>()));
+  gh.factory<PartnerUserAddBloc>(
+      () => PartnerUserAddBloc(get<IUserManagement>()));
   gh.factory<PromotionFormBloc>(
       () => PromotionFormBloc(get<IPromotionRepository>()));
   gh.factory<UserProfileBloc>(() => UserProfileBloc(get<IUserManagement>()));

@@ -20,7 +20,7 @@ class PartnerNameField extends HookWidget {
             : 'User Name is not loaded';
       },
       child: Padding(
-        padding: const EdgeInsets.all(10),
+        padding: const EdgeInsets.all(5),
         child: TextFormField(
             controller: textEditingController,
             decoration: const InputDecoration(
@@ -28,8 +28,6 @@ class PartnerNameField extends HookWidget {
               counterText: '',
             ),
             maxLength: 6,
-            maxLines: null,
-            minLines: 5,
             onChanged: (value) => context
                 .bloc<PartnerUserAddBloc>()
                 .add(PartnerUserAddFormEvent.userNameChanged(value)),

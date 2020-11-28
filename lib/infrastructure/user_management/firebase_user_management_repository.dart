@@ -4,13 +4,15 @@ import 'package:JCCommisionApp/infrastructure/user_management/userprofile_dto.da
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dartz/dartz.dart';
 import 'package:JCCommisionApp/domain/user_management/user_management_failures.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:injectable/injectable.dart';
 
 @LazySingleton(as: IUserManagement)
 class FirebaseUserManagementRepository implements IUserManagement {
   final FirebaseFirestore _firestore;
+  final FirebaseAuth _fireAuth;
 
-  FirebaseUserManagementRepository(this._firestore);
+  FirebaseUserManagementRepository(this._firestore, this._fireAuth);
 
   @override
   Future<Either<UserManagementFailure, UserProfile>> getPartnerUserFromBarcode(
@@ -60,12 +62,51 @@ class FirebaseUserManagementRepository implements IUserManagement {
 
   @override
   Future<Either<UserManagementFailure, String>> addPartnerUser(
-      UserProfile newPartnerUser) {
-    // TODO: implement addPartnerUser
-    throw UnimplementedError();
+      UserProfile newPartnerUser, String companyId) async {
+    String userEmail = newPartnerUser.email;
+    String userPassword = newPartnerUser.userName.substring(2) + '12345';
+    print(userPassword);
+    try {
+      UserCredential userCredential =
+          await _fireAuth.createUserWithEmailAndPassword(
+              email: userEmail, password: userPassword);
+      UserProfile newUser =
+          newPartnerUser.copyWith(uid: userCredential.user.uid);
+      await _addNewUserToUsersCollection(newUser, companyId);
+
+      await _addUserToCompany(newUser, companyId);
+      return right(userCredential.user.email);
+    } catch (e) {
+      return left(UserManagementFailure.unableToCreateNewUser());
+    }
   }
 
-  _registerPartnerUser(UserProfile userProfile) {}
+  _addNewUserToUsersCollection(UserProfile newUser, String companyId) async {
+    UserProfileDto profileDto = UserProfileDto.fromDomain(newUser);
+
+    Map<String, dynamic> data = {
+      'isActive': true,
+      'isPartnerUser': true,
+      'isSalesUser': false,
+      'companyId': companyId,
+      ...profileDto.toJson()
+    };
+
+    await _firestore.collection('users').doc(newUser.uid).set(data);
+  }
+
+  _addUserToCompany(UserProfile partnerProfile, String companyId) async {
+    Map<String, dynamic> data = {
+      'uid': partnerProfile.uid,
+      'userName': partnerProfile.userName
+    };
+    await _firestore
+        .collection('companies')
+        .doc(companyId)
+        .collection('users')
+        .doc(partnerProfile.uid)
+        .set(data);
+  }
 
   @override
   Future<Either<UserManagementFailure, String>> updatePartnerUser(

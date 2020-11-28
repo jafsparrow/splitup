@@ -8,4 +8,6 @@ abstract class UserManagementFailure with _$UserManagementFailure {
   const factory UserManagementFailure.userNotFound() = _NotFound;
   const factory UserManagementFailure.userInactive() = _IsInactive;
   const factory UserManagementFailure.unableToUpdate() = _UnableToUpdate;
+  const factory UserManagementFailure.unableToCreateNewUser() =
+      _UnableToCreateNewUser;
 }

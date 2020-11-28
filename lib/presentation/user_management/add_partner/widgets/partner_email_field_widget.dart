@@ -27,9 +27,7 @@ class PartnerEmailField extends HookWidget {
               labelText: 'Email',
               counterText: '',
             ),
-            maxLength: 6,
-            maxLines: null,
-            minLines: 5,
+            // maxLength: 6,
             onChanged: (value) => context
                 .bloc<PartnerUserAddBloc>()
                 .add(PartnerUserAddFormEvent.userEmailChanged(value)),

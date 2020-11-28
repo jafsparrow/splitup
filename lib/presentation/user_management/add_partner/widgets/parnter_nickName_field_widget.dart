@@ -28,8 +28,7 @@ class PartnerNickNameField extends HookWidget {
               counterText: '',
             ),
             maxLength: 6,
-            maxLines: null,
-            minLines: 5,
+            enabled: false,
             onChanged: (value) => context
                 .bloc<PartnerUserAddBloc>()
                 .add(PartnerUserAddFormEvent.userNameChanged(value)),

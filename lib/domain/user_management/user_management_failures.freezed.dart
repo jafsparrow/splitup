@@ -31,6 +31,11 @@ class _$UserManagementFailureTearOff {
   _UnableToUpdate unableToUpdate() {
     return const _UnableToUpdate();
   }
+
+// ignore: unused_element
+  _UnableToCreateNewUser unableToCreateNewUser() {
+    return const _UnableToCreateNewUser();
+  }
 }
 
 // ignore: unused_element
@@ -43,6 +48,7 @@ mixin _$UserManagementFailure {
     @required Result userNotFound(),
     @required Result userInactive(),
     @required Result unableToUpdate(),
+    @required Result unableToCreateNewUser(),
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
@@ -50,6 +56,7 @@ mixin _$UserManagementFailure {
     Result userNotFound(),
     Result userInactive(),
     Result unableToUpdate(),
+    Result unableToCreateNewUser(),
     @required Result orElse(),
   });
   @optionalTypeArgs
@@ -58,6 +65,7 @@ mixin _$UserManagementFailure {
     @required Result userNotFound(_NotFound value),
     @required Result userInactive(_IsInactive value),
     @required Result unableToUpdate(_UnableToUpdate value),
+    @required Result unableToCreateNewUser(_UnableToCreateNewUser value),
   });
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
@@ -65,6 +73,7 @@ mixin _$UserManagementFailure {
     Result userNotFound(_NotFound value),
     Result userInactive(_IsInactive value),
     Result unableToUpdate(_UnableToUpdate value),
+    Result unableToCreateNewUser(_UnableToCreateNewUser value),
     @required Result orElse(),
   });
 }
@@ -124,11 +133,13 @@ class _$_Unexpected implements _Unexpected {
     @required Result userNotFound(),
     @required Result userInactive(),
     @required Result unableToUpdate(),
+    @required Result unableToCreateNewUser(),
   }) {
     assert(unexpected != null);
     assert(userNotFound != null);
     assert(userInactive != null);
     assert(unableToUpdate != null);
+    assert(unableToCreateNewUser != null);
     return unexpected();
   }
 
@@ -139,6 +150,7 @@ class _$_Unexpected implements _Unexpected {
     Result userNotFound(),
     Result userInactive(),
     Result unableToUpdate(),
+    Result unableToCreateNewUser(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -155,11 +167,13 @@ class _$_Unexpected implements _Unexpected {
     @required Result userNotFound(_NotFound value),
     @required Result userInactive(_IsInactive value),
     @required Result unableToUpdate(_UnableToUpdate value),
+    @required Result unableToCreateNewUser(_UnableToCreateNewUser value),
   }) {
     assert(unexpected != null);
     assert(userNotFound != null);
     assert(userInactive != null);
     assert(unableToUpdate != null);
+    assert(unableToCreateNewUser != null);
     return unexpected(this);
   }
 
@@ -170,6 +184,7 @@ class _$_Unexpected implements _Unexpected {
     Result userNotFound(_NotFound value),
     Result userInactive(_IsInactive value),
     Result unableToUpdate(_UnableToUpdate value),
+    Result unableToCreateNewUser(_UnableToCreateNewUser value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -222,11 +237,13 @@ class _$_NotFound implements _NotFound {
     @required Result userNotFound(),
     @required Result userInactive(),
     @required Result unableToUpdate(),
+    @required Result unableToCreateNewUser(),
   }) {
     assert(unexpected != null);
     assert(userNotFound != null);
     assert(userInactive != null);
     assert(unableToUpdate != null);
+    assert(unableToCreateNewUser != null);
     return userNotFound();
   }
 
@@ -237,6 +254,7 @@ class _$_NotFound implements _NotFound {
     Result userNotFound(),
     Result userInactive(),
     Result unableToUpdate(),
+    Result unableToCreateNewUser(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -253,11 +271,13 @@ class _$_NotFound implements _NotFound {
     @required Result userNotFound(_NotFound value),
     @required Result userInactive(_IsInactive value),
     @required Result unableToUpdate(_UnableToUpdate value),
+    @required Result unableToCreateNewUser(_UnableToCreateNewUser value),
   }) {
     assert(unexpected != null);
     assert(userNotFound != null);
     assert(userInactive != null);
     assert(unableToUpdate != null);
+    assert(unableToCreateNewUser != null);
     return userNotFound(this);
   }
 
@@ -268,6 +288,7 @@ class _$_NotFound implements _NotFound {
     Result userNotFound(_NotFound value),
     Result userInactive(_IsInactive value),
     Result unableToUpdate(_UnableToUpdate value),
+    Result unableToCreateNewUser(_UnableToCreateNewUser value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -322,11 +343,13 @@ class _$_IsInactive implements _IsInactive {
     @required Result userNotFound(),
     @required Result userInactive(),
     @required Result unableToUpdate(),
+    @required Result unableToCreateNewUser(),
   }) {
     assert(unexpected != null);
     assert(userNotFound != null);
     assert(userInactive != null);
     assert(unableToUpdate != null);
+    assert(unableToCreateNewUser != null);
     return userInactive();
   }
 
@@ -337,6 +360,7 @@ class _$_IsInactive implements _IsInactive {
     Result userNotFound(),
     Result userInactive(),
     Result unableToUpdate(),
+    Result unableToCreateNewUser(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -353,11 +377,13 @@ class _$_IsInactive implements _IsInactive {
     @required Result userNotFound(_NotFound value),
     @required Result userInactive(_IsInactive value),
     @required Result unableToUpdate(_UnableToUpdate value),
+    @required Result unableToCreateNewUser(_UnableToCreateNewUser value),
   }) {
     assert(unexpected != null);
     assert(userNotFound != null);
     assert(userInactive != null);
     assert(unableToUpdate != null);
+    assert(unableToCreateNewUser != null);
     return userInactive(this);
   }
 
@@ -368,6 +394,7 @@ class _$_IsInactive implements _IsInactive {
     Result userNotFound(_NotFound value),
     Result userInactive(_IsInactive value),
     Result unableToUpdate(_UnableToUpdate value),
+    Result unableToCreateNewUser(_UnableToCreateNewUser value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -422,11 +449,13 @@ class _$_UnableToUpdate implements _UnableToUpdate {
     @required Result userNotFound(),
     @required Result userInactive(),
     @required Result unableToUpdate(),
+    @required Result unableToCreateNewUser(),
   }) {
     assert(unexpected != null);
     assert(userNotFound != null);
     assert(userInactive != null);
     assert(unableToUpdate != null);
+    assert(unableToCreateNewUser != null);
     return unableToUpdate();
   }
 
@@ -437,6 +466,7 @@ class _$_UnableToUpdate implements _UnableToUpdate {
     Result userNotFound(),
     Result userInactive(),
     Result unableToUpdate(),
+    Result unableToCreateNewUser(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -453,11 +483,13 @@ class _$_UnableToUpdate implements _UnableToUpdate {
     @required Result userNotFound(_NotFound value),
     @required Result userInactive(_IsInactive value),
     @required Result unableToUpdate(_UnableToUpdate value),
+    @required Result unableToCreateNewUser(_UnableToCreateNewUser value),
   }) {
     assert(unexpected != null);
     assert(userNotFound != null);
     assert(userInactive != null);
     assert(unableToUpdate != null);
+    assert(unableToCreateNewUser != null);
     return unableToUpdate(this);
   }
 
@@ -468,6 +500,7 @@ class _$_UnableToUpdate implements _UnableToUpdate {
     Result userNotFound(_NotFound value),
     Result userInactive(_IsInactive value),
     Result unableToUpdate(_UnableToUpdate value),
+    Result unableToCreateNewUser(_UnableToCreateNewUser value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -480,4 +513,110 @@ class _$_UnableToUpdate implements _UnableToUpdate {
 
 abstract class _UnableToUpdate implements UserManagementFailure {
   const factory _UnableToUpdate() = _$_UnableToUpdate;
+}
+
+abstract class _$UnableToCreateNewUserCopyWith<$Res> {
+  factory _$UnableToCreateNewUserCopyWith(_UnableToCreateNewUser value,
+          $Res Function(_UnableToCreateNewUser) then) =
+      __$UnableToCreateNewUserCopyWithImpl<$Res>;
+}
+
+class __$UnableToCreateNewUserCopyWithImpl<$Res>
+    extends _$UserManagementFailureCopyWithImpl<$Res>
+    implements _$UnableToCreateNewUserCopyWith<$Res> {
+  __$UnableToCreateNewUserCopyWithImpl(_UnableToCreateNewUser _value,
+      $Res Function(_UnableToCreateNewUser) _then)
+      : super(_value, (v) => _then(v as _UnableToCreateNewUser));
+
+  @override
+  _UnableToCreateNewUser get _value => super._value as _UnableToCreateNewUser;
+}
+
+class _$_UnableToCreateNewUser implements _UnableToCreateNewUser {
+  const _$_UnableToCreateNewUser();
+
+  @override
+  String toString() {
+    return 'UserManagementFailure.unableToCreateNewUser()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is _UnableToCreateNewUser);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result unexpected(),
+    @required Result userNotFound(),
+    @required Result userInactive(),
+    @required Result unableToUpdate(),
+    @required Result unableToCreateNewUser(),
+  }) {
+    assert(unexpected != null);
+    assert(userNotFound != null);
+    assert(userInactive != null);
+    assert(unableToUpdate != null);
+    assert(unableToCreateNewUser != null);
+    return unableToCreateNewUser();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result unexpected(),
+    Result userNotFound(),
+    Result userInactive(),
+    Result unableToUpdate(),
+    Result unableToCreateNewUser(),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (unableToCreateNewUser != null) {
+      return unableToCreateNewUser();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result unexpected(_Unexpected value),
+    @required Result userNotFound(_NotFound value),
+    @required Result userInactive(_IsInactive value),
+    @required Result unableToUpdate(_UnableToUpdate value),
+    @required Result unableToCreateNewUser(_UnableToCreateNewUser value),
+  }) {
+    assert(unexpected != null);
+    assert(userNotFound != null);
+    assert(userInactive != null);
+    assert(unableToUpdate != null);
+    assert(unableToCreateNewUser != null);
+    return unableToCreateNewUser(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result unexpected(_Unexpected value),
+    Result userNotFound(_NotFound value),
+    Result userInactive(_IsInactive value),
+    Result unableToUpdate(_UnableToUpdate value),
+    Result unableToCreateNewUser(_UnableToCreateNewUser value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (unableToCreateNewUser != null) {
+      return unableToCreateNewUser(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _UnableToCreateNewUser implements UserManagementFailure {
+  const factory _UnableToCreateNewUser() = _$_UnableToCreateNewUser;
 }

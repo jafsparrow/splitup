@@ -19,11 +19,15 @@ class _$UserProfileDtoTearOff {
   _UserProfileDto call(
       {@required String userName,
       @required String mobileNumber,
-      @required String email}) {
+      @required String email,
+      String nickName,
+      String uid}) {
     return _UserProfileDto(
       userName: userName,
       mobileNumber: mobileNumber,
       email: email,
+      nickName: nickName,
+      uid: uid,
     );
   }
 }
@@ -35,6 +39,8 @@ mixin _$UserProfileDto {
   String get userName;
   String get mobileNumber;
   String get email;
+  String get nickName;
+  String get uid;
 
   Map<String, dynamic> toJson();
   $UserProfileDtoCopyWith<UserProfileDto> get copyWith;
@@ -44,7 +50,12 @@ abstract class $UserProfileDtoCopyWith<$Res> {
   factory $UserProfileDtoCopyWith(
           UserProfileDto value, $Res Function(UserProfileDto) then) =
       _$UserProfileDtoCopyWithImpl<$Res>;
-  $Res call({String userName, String mobileNumber, String email});
+  $Res call(
+      {String userName,
+      String mobileNumber,
+      String email,
+      String nickName,
+      String uid});
 }
 
 class _$UserProfileDtoCopyWithImpl<$Res>
@@ -60,6 +71,8 @@ class _$UserProfileDtoCopyWithImpl<$Res>
     Object userName = freezed,
     Object mobileNumber = freezed,
     Object email = freezed,
+    Object nickName = freezed,
+    Object uid = freezed,
   }) {
     return _then(_value.copyWith(
       userName: userName == freezed ? _value.userName : userName as String,
@@ -67,6 +80,8 @@ class _$UserProfileDtoCopyWithImpl<$Res>
           ? _value.mobileNumber
           : mobileNumber as String,
       email: email == freezed ? _value.email : email as String,
+      nickName: nickName == freezed ? _value.nickName : nickName as String,
+      uid: uid == freezed ? _value.uid : uid as String,
     ));
   }
 }
@@ -77,7 +92,12 @@ abstract class _$UserProfileDtoCopyWith<$Res>
           _UserProfileDto value, $Res Function(_UserProfileDto) then) =
       __$UserProfileDtoCopyWithImpl<$Res>;
   @override
-  $Res call({String userName, String mobileNumber, String email});
+  $Res call(
+      {String userName,
+      String mobileNumber,
+      String email,
+      String nickName,
+      String uid});
 }
 
 class __$UserProfileDtoCopyWithImpl<$Res>
@@ -95,6 +115,8 @@ class __$UserProfileDtoCopyWithImpl<$Res>
     Object userName = freezed,
     Object mobileNumber = freezed,
     Object email = freezed,
+    Object nickName = freezed,
+    Object uid = freezed,
   }) {
     return _then(_UserProfileDto(
       userName: userName == freezed ? _value.userName : userName as String,
@@ -102,6 +124,8 @@ class __$UserProfileDtoCopyWithImpl<$Res>
           ? _value.mobileNumber
           : mobileNumber as String,
       email: email == freezed ? _value.email : email as String,
+      nickName: nickName == freezed ? _value.nickName : nickName as String,
+      uid: uid == freezed ? _value.uid : uid as String,
     ));
   }
 }
@@ -111,7 +135,9 @@ class _$_UserProfileDto extends _UserProfileDto {
   const _$_UserProfileDto(
       {@required this.userName,
       @required this.mobileNumber,
-      @required this.email})
+      @required this.email,
+      this.nickName,
+      this.uid})
       : assert(userName != null),
         assert(mobileNumber != null),
         assert(email != null),
@@ -126,10 +152,14 @@ class _$_UserProfileDto extends _UserProfileDto {
   final String mobileNumber;
   @override
   final String email;
+  @override
+  final String nickName;
+  @override
+  final String uid;
 
   @override
   String toString() {
-    return 'UserProfileDto(userName: $userName, mobileNumber: $mobileNumber, email: $email)';
+    return 'UserProfileDto(userName: $userName, mobileNumber: $mobileNumber, email: $email, nickName: $nickName, uid: $uid)';
   }
 
   @override
@@ -143,7 +173,12 @@ class _$_UserProfileDto extends _UserProfileDto {
                 const DeepCollectionEquality()
                     .equals(other.mobileNumber, mobileNumber)) &&
             (identical(other.email, email) ||
-                const DeepCollectionEquality().equals(other.email, email)));
+                const DeepCollectionEquality().equals(other.email, email)) &&
+            (identical(other.nickName, nickName) ||
+                const DeepCollectionEquality()
+                    .equals(other.nickName, nickName)) &&
+            (identical(other.uid, uid) ||
+                const DeepCollectionEquality().equals(other.uid, uid)));
   }
 
   @override
@@ -151,7 +186,9 @@ class _$_UserProfileDto extends _UserProfileDto {
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(userName) ^
       const DeepCollectionEquality().hash(mobileNumber) ^
-      const DeepCollectionEquality().hash(email);
+      const DeepCollectionEquality().hash(email) ^
+      const DeepCollectionEquality().hash(nickName) ^
+      const DeepCollectionEquality().hash(uid);
 
   @override
   _$UserProfileDtoCopyWith<_UserProfileDto> get copyWith =>
@@ -168,7 +205,9 @@ abstract class _UserProfileDto extends UserProfileDto {
   const factory _UserProfileDto(
       {@required String userName,
       @required String mobileNumber,
-      @required String email}) = _$_UserProfileDto;
+      @required String email,
+      String nickName,
+      String uid}) = _$_UserProfileDto;
 
   factory _UserProfileDto.fromJson(Map<String, dynamic> json) =
       _$_UserProfileDto.fromJson;
@@ -179,6 +218,10 @@ abstract class _UserProfileDto extends UserProfileDto {
   String get mobileNumber;
   @override
   String get email;
+  @override
+  String get nickName;
+  @override
+  String get uid;
   @override
   _$UserProfileDtoCopyWith<_UserProfileDto> get copyWith;
 }

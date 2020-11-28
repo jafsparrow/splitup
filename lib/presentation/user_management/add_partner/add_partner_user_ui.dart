@@ -4,7 +4,9 @@ import 'package:JCCommisionApp/presentation/user_management/add_partner/widgets/
 import 'package:JCCommisionApp/presentation/user_management/add_partner/widgets/partner_email_field_widget.dart';
 import 'package:JCCommisionApp/presentation/user_management/add_partner/widgets/partner_mobileNumber_field_widgeth.dart';
 import 'package:JCCommisionApp/presentation/user_management/add_partner/widgets/partner_name_widget.dart';
+import 'package:JCCommisionApp/screens/partner_profile/partner_profile.dart';
 import 'package:dartz/dartz.dart';
+import 'package:flushbar/flushbar_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -27,46 +29,45 @@ class AddPartnerUserScreen extends StatelessWidget {
         ),
       child: SafeArea(
         child: BlocConsumer<PartnerUserAddBloc, PartnerUserAddFormState>(
+          buildWhen: (p, c) => p.isSaving != c.isSaving,
           builder: (context, state) {
             return Stack(
               children: [
                 const PartnerUserFormScaffold(),
-                SavingInProgressOverlay(isSaving: false)
+                SavingInProgressOverlay(isSaving: state.isSaving)
                 //TODO - this false needs to be looked at to match the logic
               ],
-            );
-            return Material(
-              child: Column(
-                children: [
-                  Container(
-                    height: 200,
-                  ),
-                  Text('Hello world'),
-                  TextFormField(
-                    decoration: InputDecoration(labelText: 'Partner User name'),
-                  ),
-                  SizedBox(
-                    height: 10,
-                  ),
-                  TextFormField(
-                    decoration: InputDecoration(labelText: 'Phone Number'),
-                  )
-                ],
-              ),
             );
           },
           listenWhen: (p, c) =>
               p.saveFailureOrSuccessOption != c.saveFailureOrSuccessOption,
           listener: (context, state) {
             print('I am listening for shit');
-            // state.saveFailureOrSuccessOption.fold((){},
-            // (either) {
-            //   either.fold((failure) => null, (_) {
-            //     // TODO - this is succesfull area.. navigate to user profile view page.
-            //   },);
-            // });
-
-            // (a) => null),
+            state.saveFailureOrSuccessOption.fold(
+              () => {},
+              (either) {
+                either.fold(
+                  (failure) {
+                    FlushbarHelper.createError(
+                      message: failure.map(
+                        unexpected: (_) => 'Something unexpected happened.',
+                        userNotFound: (_) => 'User Not Found',
+                        userInactive: (_) => 'User is inactive',
+                        unableToUpdate: (_) => 'Unable to Update',
+                        unableToCreateNewUser: (_) =>
+                            'Unable to Create Partner User',
+                      ),
+                    );
+                  },
+                  (_) => Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(
+                      builder: (_) => PartnerProfile(id: 33),
+                    ),
+                  ),
+                );
+              },
+            );
           },
         ),
       ),
@@ -147,10 +148,9 @@ class PartnerUserFormScaffold extends StatelessWidget {
             autovalidate: state.showErrorMessages,
             child: SingleChildScrollView(
               child: Column(
-                mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const PartnerNameField(),
+                  Container(child: const PartnerNameField()),
                   const PartnerEmailField(),
                   const PartnerMobileNumberField(),
                   const PartnerNickNameField(),
