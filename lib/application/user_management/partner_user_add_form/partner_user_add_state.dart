@@ -8,7 +8,7 @@ abstract class PartnerUserAddFormState with _$PartnerUserAddFormState {
     @required bool isEditing,
     @required bool isSaving,
     @required
-        Option<Either<UserManagementFailure, String>>
+        Option<Either<UserManagementFailure, UserProfile>>
             saveFailureOrSuccessOption,
   }) = _PartnerUserAddFormState;
 

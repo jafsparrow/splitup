@@ -4,7 +4,7 @@ import 'package:JCCommisionApp/presentation/user_management/add_partner/widgets/
 import 'package:JCCommisionApp/presentation/user_management/add_partner/widgets/partner_email_field_widget.dart';
 import 'package:JCCommisionApp/presentation/user_management/add_partner/widgets/partner_mobileNumber_field_widgeth.dart';
 import 'package:JCCommisionApp/presentation/user_management/add_partner/widgets/partner_name_widget.dart';
-import 'package:JCCommisionApp/screens/partner_profile/partner_profile.dart';
+import 'package:JCCommisionApp/presentation/user_management/partner_profile/partner_profile.dart';
 import 'package:dartz/dartz.dart';
 import 'package:flushbar/flushbar_helper.dart';
 import 'package:flutter/material.dart';
@@ -59,10 +59,12 @@ class AddPartnerUserScreen extends StatelessWidget {
                       ),
                     );
                   },
-                  (_) => Navigator.pushReplacement(
+                  (newlyCreatedPartnerUser) => Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(
-                      builder: (_) => PartnerProfile(id: 33),
+                      builder: (_) => PartnerProfile(
+                        partnerUser: newlyCreatedPartnerUser,
+                      ),
                     ),
                   ),
                 );

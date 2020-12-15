@@ -10,8 +10,8 @@ abstract class IUserManagement {
       String barcode);
   Either<UserManagementFailure, bool> isPartnerUserActive(String barcode);
 
-  Future<Either<UserManagementFailure, String>> addPartnerUser(
+  Future<Either<UserManagementFailure, UserProfile>> addPartnerUser(
       UserProfile newPartnerUser, String companyId);
-  Future<Either<UserManagementFailure, String>> updatePartnerUser(
+  Future<Either<UserManagementFailure, UserProfile>> updatePartnerUser(
       UserProfile newPartnerUser);
 }

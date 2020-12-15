@@ -50,7 +50,7 @@ class PartnerUserAddBloc
       },
       registerPartnerUser: (e) async* {
         print('Inside the register user event area.');
-        Either<UserManagementFailure, String> failureOrSuccess;
+        Either<UserManagementFailure, UserProfile> failureOrSuccess;
         print(state.partnerProfile);
 
         yield state.copyWith(

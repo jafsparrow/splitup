@@ -1,4 +1,4 @@
-import 'package:JCCommisionApp/screens/partner_profile/components/barcode_card.dart';
+import 'package:JCCommisionApp/presentation/user_management/partner_profile/components/barcode_card.dart';
 import 'package:flutter/material.dart';
 
 class PartnerCodes extends StatelessWidget {

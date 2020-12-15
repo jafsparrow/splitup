@@ -61,7 +61,7 @@ class FirebaseUserManagementRepository implements IUserManagement {
   }
 
   @override
-  Future<Either<UserManagementFailure, String>> addPartnerUser(
+  Future<Either<UserManagementFailure, UserProfile>> addPartnerUser(
       UserProfile newPartnerUser, String companyId) async {
     String userEmail = newPartnerUser.email;
     String userPassword = newPartnerUser.userName.substring(2) + '12345';
@@ -75,7 +75,7 @@ class FirebaseUserManagementRepository implements IUserManagement {
       await _addNewUserToUsersCollection(newUser, companyId);
 
       await _addUserToCompany(newUser, companyId);
-      return right(userCredential.user.email);
+      return right(newUser);
     } catch (e) {
       return left(UserManagementFailure.unableToCreateNewUser());
     }
@@ -109,7 +109,7 @@ class FirebaseUserManagementRepository implements IUserManagement {
   }
 
   @override
-  Future<Either<UserManagementFailure, String>> updatePartnerUser(
+  Future<Either<UserManagementFailure, UserProfile>> updatePartnerUser(
       UserProfile newPartnerUser) {
     // TODO: implement updatePartnerUser
     throw UnimplementedError();

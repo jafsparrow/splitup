@@ -1,11 +1,12 @@
-import 'package:JCCommisionApp/screens/partner_profile/components/partner_activities.dart';
-import 'package:JCCommisionApp/screens/partner_profile/components/partner_codes.dart';
+import 'package:JCCommisionApp/domain/user_management/user_profile.dart';
+import 'package:JCCommisionApp/presentation/user_management/partner_profile/components/partner_activities.dart';
+import 'package:JCCommisionApp/presentation/user_management/partner_profile/components/partner_codes.dart';
 import 'package:flutter/material.dart';
 
 class PartnerProfile extends StatelessWidget {
-  final int id;
+  final UserProfile partnerUser;
 
-  const PartnerProfile({Key key, @required this.id}) : super(key: key);
+  const PartnerProfile({Key key, @required this.partnerUser}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
@@ -54,7 +55,9 @@ class PartnerProfile extends StatelessWidget {
               PartnerActivities(),
               Column(
                 children: <Widget>[
-                  PartnerUserBio(id: id),
+                  PartnerUserBio(
+                    partnerUser: partnerUser,
+                  ),
                   // TabBar(tabs: [
                   //   Tab(
                   //     icon: Icon(Icons.ac_unit),
@@ -74,10 +77,10 @@ class PartnerProfile extends StatelessWidget {
 class PartnerUserBio extends StatelessWidget {
   const PartnerUserBio({
     Key key,
-    @required this.id,
+    @required this.partnerUser,
   }) : super(key: key);
 
-  final int id;
+  final UserProfile partnerUser;
 
   @override
   Widget build(BuildContext context) {
@@ -96,7 +99,7 @@ class PartnerUserBio extends StatelessWidget {
               SizedBox(
                 height: 10,
               ),
-              Text('partner profile works $id'),
+              Text('partner profile works '),
             ],
           ),
         ),

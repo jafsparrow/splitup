@@ -1,9 +1,9 @@
 import 'package:JCCommisionApp/domain/user_management/user_profile.dart';
 import 'package:JCCommisionApp/injection.dart';
 import 'package:JCCommisionApp/presentation/promotion/promotion_ui.dart';
+import 'package:JCCommisionApp/presentation/user_management/partnerlist/partner_list.dart';
 import 'package:JCCommisionApp/repositories/user_profile/user_profile_repository.dart';
 import 'package:JCCommisionApp/screens/homepage/homepage.dart';
-import 'package:JCCommisionApp/screens/partnerlist/partner_list.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
