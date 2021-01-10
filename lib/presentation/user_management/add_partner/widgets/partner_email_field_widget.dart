@@ -29,10 +29,10 @@ class PartnerEmailField extends HookWidget {
             ),
             // maxLength: 6,
             onChanged: (value) => context
-                .bloc<PartnerUserAddBloc>()
+                .read<PartnerUserAddBloc>()
                 .add(PartnerUserAddFormEvent.userEmailChanged(value)),
             validator: (_) => (context
-                        .bloc<PartnerUserAddBloc>()
+                        .read<PartnerUserAddBloc>()
                         .state
                         .partnerProfile
                         .email

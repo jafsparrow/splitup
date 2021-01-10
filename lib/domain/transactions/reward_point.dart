@@ -18,4 +18,5 @@ abstract class RewardPoint implements _$RewardPoint {
   //   // print('total now is $totalRewards');
   //   return totalRewards;
   // }
+
 }

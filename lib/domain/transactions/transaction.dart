@@ -1,18 +1,18 @@
-import 'package:JCCommisionApp/domain/auth/user.dart';
 import 'package:JCCommisionApp/domain/transactions/reward_point.dart';
+import 'package:JCCommisionApp/domain/user_management/user_profile.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'transaction.freezed.dart';
 
 @freezed
-abstract class Transaction implements _$Transaction {
-  const factory Transaction({
+abstract class UserTransaction implements _$UserTransaction {
+  const factory UserTransaction({
     String description,
     @Default('') String id,
     String notes,
     DateTime addedDate,
-    @required User salesUser,
-    @required User partnerUser,
+    @required UserProfile salesUser,
+    @required UserProfile partnerUser,
     @required RewardPoint totalRewards,
-  }) = _Transaction;
+  }) = _UserTransaction;
 }

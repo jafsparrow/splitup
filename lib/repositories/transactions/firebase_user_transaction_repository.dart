@@ -6,7 +6,7 @@ import 'entities/transaction_entity.dart';
 
 class FirebaseUserTransactionRepository implements UserTransactionRepository {
   final userTransactionCollection =
-      Firestore.instance.collection('usertransactions');
+      FirebaseFirestore.instance.collection('usertransactions');
 
   @override
   Future<void> addNewUserTransaction(UserTransaction userTransaction) {
@@ -16,13 +16,13 @@ class FirebaseUserTransactionRepository implements UserTransactionRepository {
 
   @override
   Future<void> deleteUserTransaction(UserTransaction transactiaction) {
-    return userTransactionCollection.document('some Id').delete();
+    return userTransactionCollection.doc('some Id').delete();
   }
 
   @override
   Stream<List<UserTransaction>> listUserTransactions() {
     return userTransactionCollection.snapshots().map((snapshot) {
-      return snapshot.documents
+      return snapshot.docs
           .map((document) => UserTransaction.fromEntity(
               UserTransactionEntity.fromSnapshot(document)))
           .toList();

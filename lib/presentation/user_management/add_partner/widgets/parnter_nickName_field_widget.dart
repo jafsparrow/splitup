@@ -30,10 +30,10 @@ class PartnerNickNameField extends HookWidget {
             maxLength: 6,
             enabled: false,
             onChanged: (value) => context
-                .bloc<PartnerUserAddBloc>()
+                .read<PartnerUserAddBloc>()
                 .add(PartnerUserAddFormEvent.userNameChanged(value)),
             validator: (_) => (context
-                        .bloc<PartnerUserAddBloc>()
+                        .read<PartnerUserAddBloc>()
                         .state
                         .partnerProfile
                         .userName

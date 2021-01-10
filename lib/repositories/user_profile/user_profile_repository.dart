@@ -4,7 +4,10 @@ import 'package:JCCommisionApp/infrastructure/user_management/userprofile_dto.da
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 class UserProfileRepository {
-  final userProfileCollection = FirebaseFirestore.instance.collection('users');
+  final userProfileCollection = FirebaseFirestore.instance
+      .collection('companies')
+      .doc('4cHZwNlWzW79PQ7U5dUf')
+      .collection('users');
   UserProfile user;
 
   UserProfileRepository(this.user);
@@ -17,7 +20,7 @@ class UserProfileRepository {
 
   Future<List<UserProfile>> getListOfUsers(String userType) async {
     QuerySnapshot users = await userProfileCollection
-        .where('userType.isPartner', isEqualTo: true)
+        // .where('userType.isPartner', isEqualTo: true)
         .get();
     List<UserProfile> userArray = users.docs
         .map((userDoc) => UserProfileDto.fromFirestore(userDoc).toDomain())

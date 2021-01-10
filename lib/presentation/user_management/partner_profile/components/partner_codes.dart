@@ -1,5 +1,7 @@
+import 'package:JCCommisionApp/application/user_management/partner_barcode_management/partner_barcode_management_bloc.dart';
 import 'package:JCCommisionApp/presentation/user_management/partner_profile/components/barcode_card.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class PartnerCodes extends StatelessWidget {
   const PartnerCodes({Key key}) : super(key: key);
@@ -21,15 +23,30 @@ class PartnerCodes extends StatelessWidget {
           SizedBox(
             height: 15,
           ),
-          Expanded(
-            child: ListView.separated(
-              shrinkWrap: true,
-              itemBuilder: (context, index) => BarcodeCard(
-                title: 'hello world',
-              ),
-              separatorBuilder: (context, index) => Divider(),
-              itemCount: 15,
-            ),
+          BlocBuilder<PartnerBarcodeManagementBloc,
+              PartnerBarcodeManagementState>(
+            builder: (context, state) {
+              return Expanded(
+                child: state.map(
+                  initial: (intialState) => Container(),
+                  loading: (loadingState) => Center(
+                    child: CircularProgressIndicator(),
+                  ),
+                  loadError: (loadError) => Text('Loading error'),
+                  listPartnerBarcode: (partnerListState) {
+                    return ListView.separated(
+                      shrinkWrap: true,
+                      itemBuilder: (context, index) => BarcodeCard(
+                        assignedBarcode:
+                            partnerListState.partnerBarcodes[index],
+                      ),
+                      separatorBuilder: (context, index) => Divider(),
+                      itemCount: partnerListState.partnerBarcodes.length,
+                    );
+                  },
+                ),
+              );
+            },
           )
         ],
       ),

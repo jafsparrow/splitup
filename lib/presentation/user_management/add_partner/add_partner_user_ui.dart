@@ -136,7 +136,7 @@ class PartnerUserFormScaffold extends StatelessWidget {
             icon: Icon(Icons.check),
             onPressed: () {
               context
-                  .bloc<PartnerUserAddBloc>()
+                  .read<PartnerUserAddBloc>()
                   .add(const PartnerUserAddFormEvent.registerPartnerUser());
             },
           )

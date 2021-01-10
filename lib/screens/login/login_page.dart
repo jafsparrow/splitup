@@ -24,8 +24,7 @@ class _LoginPageState extends State<LoginPage> {
     // return Container();
     return Scaffold(
       body: BlocProvider(
-        create: (_) =>
-            LoginCubit(context.repository<AuthenticationRepository>()),
+        create: (_) => LoginCubit(context.read<AuthenticationRepository>()),
         child: SafeArea(
           child: BlocBuilder<LoginCubit, LoginState>(
             builder: (context, state) => Center(
@@ -37,7 +36,7 @@ class _LoginPageState extends State<LoginPage> {
                   TextField(
                     controller: _emailController,
                     onChanged: (value) {
-                      context.bloc<LoginCubit>().emailChanged(value);
+                      context.read<LoginCubit>().emailChanged(value);
                       // print('ýou are touching me $value');
                       // print('çontroller ${_emailController.value.text}');
                     },
@@ -48,14 +47,14 @@ class _LoginPageState extends State<LoginPage> {
                   TextField(
                     controller: _passwordController,
                     onChanged: (value) {
-                      context.bloc<LoginCubit>().passwordChanged(value);
+                      context.read<LoginCubit>().passwordChanged(value);
                       // print('ýou are touching me $value');
                     },
                   ),
                   IconButton(
                     icon: Icon(Icons.rss_feed),
                     onPressed: () {
-                      context.bloc<LoginCubit>().loginWithCredentials();
+                      context.read<LoginCubit>().loginWithCredentials();
                     },
                   )
                 ],

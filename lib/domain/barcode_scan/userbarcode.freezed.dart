@@ -14,13 +14,19 @@ class _$UserBarcodeTearOff {
 
 // ignore: unused_element
   _UserBarcode call(
-      {@required String barcode,
-      @required DateTime expiryDate,
-      @required DateTime issuedDate}) {
+      {@required String id,
+      @required String barcode,
+      @required String associatedUserId,
+      @required bool isActive,
+      @required DateTime issuedDate,
+      @required DateTime expiryDate}) {
     return _UserBarcode(
+      id: id,
       barcode: barcode,
-      expiryDate: expiryDate,
+      associatedUserId: associatedUserId,
+      isActive: isActive,
       issuedDate: issuedDate,
+      expiryDate: expiryDate,
     );
   }
 }
@@ -29,9 +35,12 @@ class _$UserBarcodeTearOff {
 const $UserBarcode = _$UserBarcodeTearOff();
 
 mixin _$UserBarcode {
+  String get id;
   String get barcode;
-  DateTime get expiryDate;
+  String get associatedUserId;
+  bool get isActive;
   DateTime get issuedDate;
+  DateTime get expiryDate;
 
   $UserBarcodeCopyWith<UserBarcode> get copyWith;
 }
@@ -40,7 +49,13 @@ abstract class $UserBarcodeCopyWith<$Res> {
   factory $UserBarcodeCopyWith(
           UserBarcode value, $Res Function(UserBarcode) then) =
       _$UserBarcodeCopyWithImpl<$Res>;
-  $Res call({String barcode, DateTime expiryDate, DateTime issuedDate});
+  $Res call(
+      {String id,
+      String barcode,
+      String associatedUserId,
+      bool isActive,
+      DateTime issuedDate,
+      DateTime expiryDate});
 }
 
 class _$UserBarcodeCopyWithImpl<$Res> implements $UserBarcodeCopyWith<$Res> {
@@ -52,16 +67,24 @@ class _$UserBarcodeCopyWithImpl<$Res> implements $UserBarcodeCopyWith<$Res> {
 
   @override
   $Res call({
+    Object id = freezed,
     Object barcode = freezed,
-    Object expiryDate = freezed,
+    Object associatedUserId = freezed,
+    Object isActive = freezed,
     Object issuedDate = freezed,
+    Object expiryDate = freezed,
   }) {
     return _then(_value.copyWith(
+      id: id == freezed ? _value.id : id as String,
       barcode: barcode == freezed ? _value.barcode : barcode as String,
-      expiryDate:
-          expiryDate == freezed ? _value.expiryDate : expiryDate as DateTime,
+      associatedUserId: associatedUserId == freezed
+          ? _value.associatedUserId
+          : associatedUserId as String,
+      isActive: isActive == freezed ? _value.isActive : isActive as bool,
       issuedDate:
           issuedDate == freezed ? _value.issuedDate : issuedDate as DateTime,
+      expiryDate:
+          expiryDate == freezed ? _value.expiryDate : expiryDate as DateTime,
     ));
   }
 }
@@ -72,7 +95,13 @@ abstract class _$UserBarcodeCopyWith<$Res>
           _UserBarcode value, $Res Function(_UserBarcode) then) =
       __$UserBarcodeCopyWithImpl<$Res>;
   @override
-  $Res call({String barcode, DateTime expiryDate, DateTime issuedDate});
+  $Res call(
+      {String id,
+      String barcode,
+      String associatedUserId,
+      bool isActive,
+      DateTime issuedDate,
+      DateTime expiryDate});
 }
 
 class __$UserBarcodeCopyWithImpl<$Res> extends _$UserBarcodeCopyWithImpl<$Res>
@@ -86,63 +115,94 @@ class __$UserBarcodeCopyWithImpl<$Res> extends _$UserBarcodeCopyWithImpl<$Res>
 
   @override
   $Res call({
+    Object id = freezed,
     Object barcode = freezed,
-    Object expiryDate = freezed,
+    Object associatedUserId = freezed,
+    Object isActive = freezed,
     Object issuedDate = freezed,
+    Object expiryDate = freezed,
   }) {
     return _then(_UserBarcode(
+      id: id == freezed ? _value.id : id as String,
       barcode: barcode == freezed ? _value.barcode : barcode as String,
-      expiryDate:
-          expiryDate == freezed ? _value.expiryDate : expiryDate as DateTime,
+      associatedUserId: associatedUserId == freezed
+          ? _value.associatedUserId
+          : associatedUserId as String,
+      isActive: isActive == freezed ? _value.isActive : isActive as bool,
       issuedDate:
           issuedDate == freezed ? _value.issuedDate : issuedDate as DateTime,
+      expiryDate:
+          expiryDate == freezed ? _value.expiryDate : expiryDate as DateTime,
     ));
   }
 }
 
 class _$_UserBarcode extends _UserBarcode {
   const _$_UserBarcode(
-      {@required this.barcode,
-      @required this.expiryDate,
-      @required this.issuedDate})
-      : assert(barcode != null),
-        assert(expiryDate != null),
+      {@required this.id,
+      @required this.barcode,
+      @required this.associatedUserId,
+      @required this.isActive,
+      @required this.issuedDate,
+      @required this.expiryDate})
+      : assert(id != null),
+        assert(barcode != null),
+        assert(associatedUserId != null),
+        assert(isActive != null),
         assert(issuedDate != null),
+        assert(expiryDate != null),
         super._();
 
   @override
+  final String id;
+  @override
   final String barcode;
   @override
-  final DateTime expiryDate;
+  final String associatedUserId;
+  @override
+  final bool isActive;
   @override
   final DateTime issuedDate;
+  @override
+  final DateTime expiryDate;
 
   @override
   String toString() {
-    return 'UserBarcode(barcode: $barcode, expiryDate: $expiryDate, issuedDate: $issuedDate)';
+    return 'UserBarcode(id: $id, barcode: $barcode, associatedUserId: $associatedUserId, isActive: $isActive, issuedDate: $issuedDate, expiryDate: $expiryDate)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _UserBarcode &&
+            (identical(other.id, id) ||
+                const DeepCollectionEquality().equals(other.id, id)) &&
             (identical(other.barcode, barcode) ||
                 const DeepCollectionEquality()
                     .equals(other.barcode, barcode)) &&
-            (identical(other.expiryDate, expiryDate) ||
+            (identical(other.associatedUserId, associatedUserId) ||
                 const DeepCollectionEquality()
-                    .equals(other.expiryDate, expiryDate)) &&
+                    .equals(other.associatedUserId, associatedUserId)) &&
+            (identical(other.isActive, isActive) ||
+                const DeepCollectionEquality()
+                    .equals(other.isActive, isActive)) &&
             (identical(other.issuedDate, issuedDate) ||
                 const DeepCollectionEquality()
-                    .equals(other.issuedDate, issuedDate)));
+                    .equals(other.issuedDate, issuedDate)) &&
+            (identical(other.expiryDate, expiryDate) ||
+                const DeepCollectionEquality()
+                    .equals(other.expiryDate, expiryDate)));
   }
 
   @override
   int get hashCode =>
       runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(id) ^
       const DeepCollectionEquality().hash(barcode) ^
-      const DeepCollectionEquality().hash(expiryDate) ^
-      const DeepCollectionEquality().hash(issuedDate);
+      const DeepCollectionEquality().hash(associatedUserId) ^
+      const DeepCollectionEquality().hash(isActive) ^
+      const DeepCollectionEquality().hash(issuedDate) ^
+      const DeepCollectionEquality().hash(expiryDate);
 
   @override
   _$UserBarcodeCopyWith<_UserBarcode> get copyWith =>
@@ -152,16 +212,25 @@ class _$_UserBarcode extends _UserBarcode {
 abstract class _UserBarcode extends UserBarcode {
   const _UserBarcode._() : super._();
   const factory _UserBarcode(
-      {@required String barcode,
-      @required DateTime expiryDate,
-      @required DateTime issuedDate}) = _$_UserBarcode;
+      {@required String id,
+      @required String barcode,
+      @required String associatedUserId,
+      @required bool isActive,
+      @required DateTime issuedDate,
+      @required DateTime expiryDate}) = _$_UserBarcode;
 
+  @override
+  String get id;
   @override
   String get barcode;
   @override
-  DateTime get expiryDate;
+  String get associatedUserId;
+  @override
+  bool get isActive;
   @override
   DateTime get issuedDate;
+  @override
+  DateTime get expiryDate;
   @override
   _$UserBarcodeCopyWith<_UserBarcode> get copyWith;
 }

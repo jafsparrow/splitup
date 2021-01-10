@@ -26,7 +26,7 @@ class _LandingPageState extends State<LandingPage> {
   int selectedIndex = 0;
   @override
   Widget build(BuildContext context) {
-    UserProfile user = context.bloc<AuthenticationBloc>().state.user;
+    UserProfile user = context.watch<AuthenticationBloc>().state.user;
     UserProfileRepository userProfileRepo = UserProfileRepository(user);
 
     return MultiBlocProvider(

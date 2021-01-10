@@ -1,7 +1,20 @@
+import 'dart:math';
+
+import 'package:JCCommisionApp/application/auth/authentication_bloc.dart';
+import 'package:JCCommisionApp/application/user_management/partner_barcode_management/partner_barcode_management_bloc.dart';
+import 'package:JCCommisionApp/application/user_management/user_transactions/user_transactions_bloc.dart';
 import 'package:JCCommisionApp/domain/user_management/user_profile.dart';
+import 'package:JCCommisionApp/injection.dart';
 import 'package:JCCommisionApp/presentation/user_management/partner_profile/components/partner_activities.dart';
 import 'package:JCCommisionApp/presentation/user_management/partner_profile/components/partner_codes.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+
+import 'components/partner_bio.dart';
+
+import 'package:qrscan/qrscan.dart' as scanner;
+
+// todo : - need to implement a listen to show messag for éxisting barcode, add failure, try again..
 
 class PartnerProfile extends StatelessWidget {
   final UserProfile partnerUser;
@@ -9,22 +22,62 @@ class PartnerProfile extends StatelessWidget {
   const PartnerProfile({Key key, @required this.partnerUser}) : super(key: key);
   @override
   Widget build(BuildContext context) {
+    // final authBloc = BlocProvider.of<AuthenticationBloc>(context); // this will be used later on..
+    AuthenticationBloc authBloc = context.watch<AuthenticationBloc>();
+
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider<PartnerBarcodeManagementBloc>(
+          create: (context) => getIt<PartnerBarcodeManagementBloc>()
+            ..add(
+              PartnerBarcodeManagementEvent.loadPartnerUserBarcodes(
+                  partnerUserId: partnerUser.uid,
+                  companyId: '4cHZwNlWzW79PQ7U5dUf'),
+            ),
+        ),
+        BlocProvider<UserTransactionsBloc>(
+          create: (context) => getIt<UserTransactionsBloc>()
+            ..add(
+              UserTransactionsEvent.loadUserTransactions(
+                  uid: partnerUser.uid, companyId: '4cHZwNlWzW79PQ7U5dUf'),
+            ),
+        ),
+      ],
+      child: DefaultTabControllerWidget(
+        partnerUser: partnerUser,
+      ),
+    );
+  }
+}
+
+class DefaultTabControllerWidget extends StatelessWidget {
+  final UserProfile partnerUser;
+  const DefaultTabControllerWidget({Key key, this.partnerUser})
+      : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    PartnerBarcodeManagementBloc partnerBarcodeManagementbloc =
+        context.watch<PartnerBarcodeManagementBloc>();
+
+    AuthenticationBloc authBloc = context.watch<AuthenticationBloc>();
+
     return DefaultTabController(
       length: 3,
       child: Scaffold(
         appBar: AppBar(
           // backgroundColor: Colors.transparent,
           elevation: 0,
-          title: Text('Alex the Electri'),
+          title: Text(partnerUser.userName),
           bottom: TabBar(
             tabs: [
-              Tab(
-                  // icon: Icon(Icons.directions_bike),
-                  text: 'Activities'),
               Tab(
                 // icon: Icon(Icons.directions_car),
                 text: 'Bio',
               ),
+              Tab(
+                  // icon: Icon(Icons.directions_bike),
+                  text: 'Activities'),
               Tab(
                   // icon: Icon(Icons.directions_transit),
                   text: 'Barcodes'),
@@ -32,27 +85,53 @@ class PartnerProfile extends StatelessWidget {
           ),
           actions: <Widget>[
             PopupMenuButton<String>(
-                onSelected: (val) {},
-                itemBuilder: (context) => [
-                      PopupMenuItem(
-                        child: Text('Add new Barcode'),
-                        value: 'hello',
-                      ),
-                      PopupMenuItem(
-                        child: Text('Deactivate User'),
-                        value: 'Deactive',
-                      ),
-                      PopupMenuItem(
-                        child: Text('Something else'),
-                        value: 'Something',
-                      ),
-                    ])
+              itemBuilder: (context) {
+                return [
+                  PopupMenuItem(
+                    child: Text('Add new Barcode'),
+                    value: 'new_barcode',
+                  ),
+                  PopupMenuItem(
+                    child: Text('Deactivate User'),
+                    value: 'Deactive',
+                  ),
+                  PopupMenuItem(
+                    child: Text('Something else'),
+                    value: 'Something',
+                  ),
+                ];
+              },
+              onSelected: (val) async {
+                if (val == 'new_barcode') {
+                  print('adding new barcode here');
+
+                  String cameraScanResult =
+                      'UniqueBarcode'; //(await scanner.scan()).toString();
+                  // String cameraScanResult = _scanCode();
+                  print('the result of scan is $cameraScanResult');
+
+                  if (cameraScanResult.isNotEmpty) {
+                    const String companyID = '4cHZwNlWzW79PQ7U5dUf';
+                    UserProfile loggedInUserProfile = authBloc.state.user;
+
+                    partnerBarcodeManagementbloc.add(
+                      PartnerBarcodeManagementEvent.assignedNewBarcode(
+                          barcode:
+                              cameraScanResult, // Random().nextDouble().toString(),
+                          companyId: companyID,
+                          loggedInUser: loggedInUserProfile),
+                    );
+                  } else {
+                    // show some message.
+                  }
+                }
+              },
+            )
           ],
         ),
         body: SafeArea(
           child: TabBarView(
             children: <Widget>[
-              PartnerActivities(),
               Column(
                 children: <Widget>[
                   PartnerUserBio(
@@ -65,74 +144,8 @@ class PartnerProfile extends StatelessWidget {
                   // ])
                 ],
               ),
+              PartnerActivities(),
               PartnerCodes(),
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-}
-
-class PartnerUserBio extends StatelessWidget {
-  const PartnerUserBio({
-    Key key,
-    @required this.partnerUser,
-  }) : super(key: key);
-
-  final UserProfile partnerUser;
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      children: <Widget>[
-        Container(
-          alignment: Alignment.center,
-          width: double.infinity,
-          height: MediaQuery.of(context).size.height * 0.3,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              CircleAvatar(
-                child: Icon(Icons.account_balance),
-              ),
-              SizedBox(
-                height: 10,
-              ),
-              Text('partner profile works '),
-            ],
-          ),
-        ),
-        buildUserHeighLight(context),
-        buildUserHeighLight(context),
-      ],
-    );
-  }
-
-  Widget buildUserHeighLight(BuildContext context) {
-    return Container(
-      height: 100,
-      padding: EdgeInsets.all(10),
-      margin: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
-      child: Card(
-        color: Colors.white,
-        elevation: 1,
-        child: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: <Widget>[
-              Container(
-                  padding: EdgeInsets.all(10), child: Icon(Icons.access_time)),
-              SizedBox(
-                width: 20,
-              ),
-              Expanded(
-                child: Text(
-                  'Total Cards',
-                  style: Theme.of(context).textTheme.headline5,
-                ),
-              )
             ],
           ),
         ),

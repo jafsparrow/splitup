@@ -3,7 +3,7 @@ import 'package:JCCommisionApp/repositories/transactions/models/total_bill_break
 import 'package:JCCommisionApp/repositories/transactions/models/transaction.dart';
 import 'package:flutter/material.dart';
 
-typedef OnSaveCallback = Function(UserTransaction UserTransaction);
+typedef OnSaveCallback = Function(UserTransaction userTransaction);
 
 class EventAdd extends StatefulWidget {
   final OnSaveCallback onSave;

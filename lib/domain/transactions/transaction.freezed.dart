@@ -9,19 +9,19 @@ part of 'transaction.dart';
 
 T _$identity<T>(T value) => value;
 
-class _$TransactionTearOff {
-  const _$TransactionTearOff();
+class _$UserTransactionTearOff {
+  const _$UserTransactionTearOff();
 
 // ignore: unused_element
-  _Transaction call(
+  _UserTransaction call(
       {String description,
       String id = '',
       String notes,
       DateTime addedDate,
-      @required User salesUser,
-      @required User partnerUser,
+      @required UserProfile salesUser,
+      @required UserProfile partnerUser,
       @required RewardPoint totalRewards}) {
-    return _Transaction(
+    return _UserTransaction(
       description: description,
       id: id,
       notes: notes,
@@ -34,44 +34,45 @@ class _$TransactionTearOff {
 }
 
 // ignore: unused_element
-const $Transaction = _$TransactionTearOff();
+const $UserTransaction = _$UserTransactionTearOff();
 
-mixin _$Transaction {
+mixin _$UserTransaction {
   String get description;
   String get id;
   String get notes;
   DateTime get addedDate;
-  User get salesUser;
-  User get partnerUser;
+  UserProfile get salesUser;
+  UserProfile get partnerUser;
   RewardPoint get totalRewards;
 
-  $TransactionCopyWith<Transaction> get copyWith;
+  $UserTransactionCopyWith<UserTransaction> get copyWith;
 }
 
-abstract class $TransactionCopyWith<$Res> {
-  factory $TransactionCopyWith(
-          Transaction value, $Res Function(Transaction) then) =
-      _$TransactionCopyWithImpl<$Res>;
+abstract class $UserTransactionCopyWith<$Res> {
+  factory $UserTransactionCopyWith(
+          UserTransaction value, $Res Function(UserTransaction) then) =
+      _$UserTransactionCopyWithImpl<$Res>;
   $Res call(
       {String description,
       String id,
       String notes,
       DateTime addedDate,
-      User salesUser,
-      User partnerUser,
+      UserProfile salesUser,
+      UserProfile partnerUser,
       RewardPoint totalRewards});
 
-  $UserCopyWith<$Res> get salesUser;
-  $UserCopyWith<$Res> get partnerUser;
+  $UserProfileCopyWith<$Res> get salesUser;
+  $UserProfileCopyWith<$Res> get partnerUser;
   $RewardPointCopyWith<$Res> get totalRewards;
 }
 
-class _$TransactionCopyWithImpl<$Res> implements $TransactionCopyWith<$Res> {
-  _$TransactionCopyWithImpl(this._value, this._then);
+class _$UserTransactionCopyWithImpl<$Res>
+    implements $UserTransactionCopyWith<$Res> {
+  _$UserTransactionCopyWithImpl(this._value, this._then);
 
-  final Transaction _value;
+  final UserTransaction _value;
   // ignore: unused_field
-  final $Res Function(Transaction) _then;
+  final $Res Function(UserTransaction) _then;
 
   @override
   $Res call({
@@ -90,9 +91,11 @@ class _$TransactionCopyWithImpl<$Res> implements $TransactionCopyWith<$Res> {
       notes: notes == freezed ? _value.notes : notes as String,
       addedDate:
           addedDate == freezed ? _value.addedDate : addedDate as DateTime,
-      salesUser: salesUser == freezed ? _value.salesUser : salesUser as User,
-      partnerUser:
-          partnerUser == freezed ? _value.partnerUser : partnerUser as User,
+      salesUser:
+          salesUser == freezed ? _value.salesUser : salesUser as UserProfile,
+      partnerUser: partnerUser == freezed
+          ? _value.partnerUser
+          : partnerUser as UserProfile,
       totalRewards: totalRewards == freezed
           ? _value.totalRewards
           : totalRewards as RewardPoint,
@@ -100,21 +103,21 @@ class _$TransactionCopyWithImpl<$Res> implements $TransactionCopyWith<$Res> {
   }
 
   @override
-  $UserCopyWith<$Res> get salesUser {
+  $UserProfileCopyWith<$Res> get salesUser {
     if (_value.salesUser == null) {
       return null;
     }
-    return $UserCopyWith<$Res>(_value.salesUser, (value) {
+    return $UserProfileCopyWith<$Res>(_value.salesUser, (value) {
       return _then(_value.copyWith(salesUser: value));
     });
   }
 
   @override
-  $UserCopyWith<$Res> get partnerUser {
+  $UserProfileCopyWith<$Res> get partnerUser {
     if (_value.partnerUser == null) {
       return null;
     }
-    return $UserCopyWith<$Res>(_value.partnerUser, (value) {
+    return $UserProfileCopyWith<$Res>(_value.partnerUser, (value) {
       return _then(_value.copyWith(partnerUser: value));
     });
   }
@@ -130,37 +133,38 @@ class _$TransactionCopyWithImpl<$Res> implements $TransactionCopyWith<$Res> {
   }
 }
 
-abstract class _$TransactionCopyWith<$Res>
-    implements $TransactionCopyWith<$Res> {
-  factory _$TransactionCopyWith(
-          _Transaction value, $Res Function(_Transaction) then) =
-      __$TransactionCopyWithImpl<$Res>;
+abstract class _$UserTransactionCopyWith<$Res>
+    implements $UserTransactionCopyWith<$Res> {
+  factory _$UserTransactionCopyWith(
+          _UserTransaction value, $Res Function(_UserTransaction) then) =
+      __$UserTransactionCopyWithImpl<$Res>;
   @override
   $Res call(
       {String description,
       String id,
       String notes,
       DateTime addedDate,
-      User salesUser,
-      User partnerUser,
+      UserProfile salesUser,
+      UserProfile partnerUser,
       RewardPoint totalRewards});
 
   @override
-  $UserCopyWith<$Res> get salesUser;
+  $UserProfileCopyWith<$Res> get salesUser;
   @override
-  $UserCopyWith<$Res> get partnerUser;
+  $UserProfileCopyWith<$Res> get partnerUser;
   @override
   $RewardPointCopyWith<$Res> get totalRewards;
 }
 
-class __$TransactionCopyWithImpl<$Res> extends _$TransactionCopyWithImpl<$Res>
-    implements _$TransactionCopyWith<$Res> {
-  __$TransactionCopyWithImpl(
-      _Transaction _value, $Res Function(_Transaction) _then)
-      : super(_value, (v) => _then(v as _Transaction));
+class __$UserTransactionCopyWithImpl<$Res>
+    extends _$UserTransactionCopyWithImpl<$Res>
+    implements _$UserTransactionCopyWith<$Res> {
+  __$UserTransactionCopyWithImpl(
+      _UserTransaction _value, $Res Function(_UserTransaction) _then)
+      : super(_value, (v) => _then(v as _UserTransaction));
 
   @override
-  _Transaction get _value => super._value as _Transaction;
+  _UserTransaction get _value => super._value as _UserTransaction;
 
   @override
   $Res call({
@@ -172,16 +176,18 @@ class __$TransactionCopyWithImpl<$Res> extends _$TransactionCopyWithImpl<$Res>
     Object partnerUser = freezed,
     Object totalRewards = freezed,
   }) {
-    return _then(_Transaction(
+    return _then(_UserTransaction(
       description:
           description == freezed ? _value.description : description as String,
       id: id == freezed ? _value.id : id as String,
       notes: notes == freezed ? _value.notes : notes as String,
       addedDate:
           addedDate == freezed ? _value.addedDate : addedDate as DateTime,
-      salesUser: salesUser == freezed ? _value.salesUser : salesUser as User,
-      partnerUser:
-          partnerUser == freezed ? _value.partnerUser : partnerUser as User,
+      salesUser:
+          salesUser == freezed ? _value.salesUser : salesUser as UserProfile,
+      partnerUser: partnerUser == freezed
+          ? _value.partnerUser
+          : partnerUser as UserProfile,
       totalRewards: totalRewards == freezed
           ? _value.totalRewards
           : totalRewards as RewardPoint,
@@ -189,8 +195,8 @@ class __$TransactionCopyWithImpl<$Res> extends _$TransactionCopyWithImpl<$Res>
   }
 }
 
-class _$_Transaction implements _Transaction {
-  const _$_Transaction(
+class _$_UserTransaction implements _UserTransaction {
+  const _$_UserTransaction(
       {this.description,
       this.id = '',
       this.notes,
@@ -213,21 +219,21 @@ class _$_Transaction implements _Transaction {
   @override
   final DateTime addedDate;
   @override
-  final User salesUser;
+  final UserProfile salesUser;
   @override
-  final User partnerUser;
+  final UserProfile partnerUser;
   @override
   final RewardPoint totalRewards;
 
   @override
   String toString() {
-    return 'Transaction(description: $description, id: $id, notes: $notes, addedDate: $addedDate, salesUser: $salesUser, partnerUser: $partnerUser, totalRewards: $totalRewards)';
+    return 'UserTransaction(description: $description, id: $id, notes: $notes, addedDate: $addedDate, salesUser: $salesUser, partnerUser: $partnerUser, totalRewards: $totalRewards)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _Transaction &&
+        (other is _UserTransaction &&
             (identical(other.description, description) ||
                 const DeepCollectionEquality()
                     .equals(other.description, description)) &&
@@ -261,19 +267,19 @@ class _$_Transaction implements _Transaction {
       const DeepCollectionEquality().hash(totalRewards);
 
   @override
-  _$TransactionCopyWith<_Transaction> get copyWith =>
-      __$TransactionCopyWithImpl<_Transaction>(this, _$identity);
+  _$UserTransactionCopyWith<_UserTransaction> get copyWith =>
+      __$UserTransactionCopyWithImpl<_UserTransaction>(this, _$identity);
 }
 
-abstract class _Transaction implements Transaction {
-  const factory _Transaction(
+abstract class _UserTransaction implements UserTransaction {
+  const factory _UserTransaction(
       {String description,
       String id,
       String notes,
       DateTime addedDate,
-      @required User salesUser,
-      @required User partnerUser,
-      @required RewardPoint totalRewards}) = _$_Transaction;
+      @required UserProfile salesUser,
+      @required UserProfile partnerUser,
+      @required RewardPoint totalRewards}) = _$_UserTransaction;
 
   @override
   String get description;
@@ -284,11 +290,11 @@ abstract class _Transaction implements Transaction {
   @override
   DateTime get addedDate;
   @override
-  User get salesUser;
+  UserProfile get salesUser;
   @override
-  User get partnerUser;
+  UserProfile get partnerUser;
   @override
   RewardPoint get totalRewards;
   @override
-  _$TransactionCopyWith<_Transaction> get copyWith;
+  _$UserTransactionCopyWith<_UserTransaction> get copyWith;
 }

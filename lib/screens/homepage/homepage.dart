@@ -12,8 +12,6 @@ import 'components/date_time_display.dart';
 import 'components/earned_points_display.dart';
 import 'components/promotions.dart';
 
-import 'package:qrscan/qrscan.dart' as scanner;
-
 class HomePage extends StatelessWidget {
   const HomePage({Key key}) : super(key: key);
 
@@ -42,7 +40,7 @@ class HomePage extends StatelessWidget {
                 Navigator.push(
                   context,
                   EventAdd.route(
-                    loggedInUser: context.bloc<AuthenticationBloc>().state.user,
+                    loggedInUser: context.read<AuthenticationBloc>().state.user,
                     partnerUser: state.userProfile,
                     onSave: (transaction) {
                       BlocProvider.of<TransactionBloc>(context)
@@ -99,7 +97,7 @@ class HomePage extends StatelessWidget {
               String cameraScanResult = 'test';
 
               if (cameraScanResult.isNotEmpty) {
-                context.bloc<UserProfileBloc>().add(
+                context.read<UserProfileBloc>().add(
                       UserProfileEvent.loadUserPofileFromId(id: 'test'),
                     );
 
@@ -168,11 +166,6 @@ class HomePage extends StatelessWidget {
         ),
       ),
     );
-  }
-
-  _scanCode() async {
-    String barcodeScanned = await scanner.scan();
-    return barcodeScanned.toString();
   }
 
   Padding buildSectionHeading(BuildContext context, {String subText}) {

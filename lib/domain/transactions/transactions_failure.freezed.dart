@@ -9,8 +9,8 @@ part of 'transactions_failure.dart';
 
 T _$identity<T>(T value) => value;
 
-class _$NoteFailureTearOff {
-  const _$NoteFailureTearOff();
+class _$UserTransactionFailureTearOff {
+  const _$UserTransactionFailureTearOff();
 
 // ignore: unused_element
   _Unexpected unexpected() {
@@ -23,55 +23,56 @@ class _$NoteFailureTearOff {
   }
 
 // ignore: unused_element
-  _UnableToUpdate unableToUpdate() {
-    return const _UnableToUpdate();
+  _UnableToCreate unableToCreate() {
+    return const _UnableToCreate();
   }
 }
 
 // ignore: unused_element
-const $NoteFailure = _$NoteFailureTearOff();
+const $UserTransactionFailure = _$UserTransactionFailureTearOff();
 
-mixin _$NoteFailure {
+mixin _$UserTransactionFailure {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result unexpected(),
     @required Result insufficientPermission(),
-    @required Result unableToUpdate(),
+    @required Result unableToCreate(),
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result unexpected(),
     Result insufficientPermission(),
-    Result unableToUpdate(),
+    Result unableToCreate(),
     @required Result orElse(),
   });
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result unexpected(_Unexpected value),
     @required Result insufficientPermission(_InsufficientPermission value),
-    @required Result unableToUpdate(_UnableToUpdate value),
+    @required Result unableToCreate(_UnableToCreate value),
   });
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result unexpected(_Unexpected value),
     Result insufficientPermission(_InsufficientPermission value),
-    Result unableToUpdate(_UnableToUpdate value),
+    Result unableToCreate(_UnableToCreate value),
     @required Result orElse(),
   });
 }
 
-abstract class $NoteFailureCopyWith<$Res> {
-  factory $NoteFailureCopyWith(
-          NoteFailure value, $Res Function(NoteFailure) then) =
-      _$NoteFailureCopyWithImpl<$Res>;
+abstract class $UserTransactionFailureCopyWith<$Res> {
+  factory $UserTransactionFailureCopyWith(UserTransactionFailure value,
+          $Res Function(UserTransactionFailure) then) =
+      _$UserTransactionFailureCopyWithImpl<$Res>;
 }
 
-class _$NoteFailureCopyWithImpl<$Res> implements $NoteFailureCopyWith<$Res> {
-  _$NoteFailureCopyWithImpl(this._value, this._then);
+class _$UserTransactionFailureCopyWithImpl<$Res>
+    implements $UserTransactionFailureCopyWith<$Res> {
+  _$UserTransactionFailureCopyWithImpl(this._value, this._then);
 
-  final NoteFailure _value;
+  final UserTransactionFailure _value;
   // ignore: unused_field
-  final $Res Function(NoteFailure) _then;
+  final $Res Function(UserTransactionFailure) _then;
 }
 
 abstract class _$UnexpectedCopyWith<$Res> {
@@ -80,7 +81,8 @@ abstract class _$UnexpectedCopyWith<$Res> {
       __$UnexpectedCopyWithImpl<$Res>;
 }
 
-class __$UnexpectedCopyWithImpl<$Res> extends _$NoteFailureCopyWithImpl<$Res>
+class __$UnexpectedCopyWithImpl<$Res>
+    extends _$UserTransactionFailureCopyWithImpl<$Res>
     implements _$UnexpectedCopyWith<$Res> {
   __$UnexpectedCopyWithImpl(
       _Unexpected _value, $Res Function(_Unexpected) _then)
@@ -95,7 +97,7 @@ class _$_Unexpected implements _Unexpected {
 
   @override
   String toString() {
-    return 'NoteFailure.unexpected()';
+    return 'UserTransactionFailure.unexpected()';
   }
 
   @override
@@ -111,11 +113,11 @@ class _$_Unexpected implements _Unexpected {
   Result when<Result extends Object>({
     @required Result unexpected(),
     @required Result insufficientPermission(),
-    @required Result unableToUpdate(),
+    @required Result unableToCreate(),
   }) {
     assert(unexpected != null);
     assert(insufficientPermission != null);
-    assert(unableToUpdate != null);
+    assert(unableToCreate != null);
     return unexpected();
   }
 
@@ -124,7 +126,7 @@ class _$_Unexpected implements _Unexpected {
   Result maybeWhen<Result extends Object>({
     Result unexpected(),
     Result insufficientPermission(),
-    Result unableToUpdate(),
+    Result unableToCreate(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -139,11 +141,11 @@ class _$_Unexpected implements _Unexpected {
   Result map<Result extends Object>({
     @required Result unexpected(_Unexpected value),
     @required Result insufficientPermission(_InsufficientPermission value),
-    @required Result unableToUpdate(_UnableToUpdate value),
+    @required Result unableToCreate(_UnableToCreate value),
   }) {
     assert(unexpected != null);
     assert(insufficientPermission != null);
-    assert(unableToUpdate != null);
+    assert(unableToCreate != null);
     return unexpected(this);
   }
 
@@ -152,7 +154,7 @@ class _$_Unexpected implements _Unexpected {
   Result maybeMap<Result extends Object>({
     Result unexpected(_Unexpected value),
     Result insufficientPermission(_InsufficientPermission value),
-    Result unableToUpdate(_UnableToUpdate value),
+    Result unableToCreate(_UnableToCreate value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -163,7 +165,7 @@ class _$_Unexpected implements _Unexpected {
   }
 }
 
-abstract class _Unexpected implements NoteFailure {
+abstract class _Unexpected implements UserTransactionFailure {
   const factory _Unexpected() = _$_Unexpected;
 }
 
@@ -174,7 +176,7 @@ abstract class _$InsufficientPermissionCopyWith<$Res> {
 }
 
 class __$InsufficientPermissionCopyWithImpl<$Res>
-    extends _$NoteFailureCopyWithImpl<$Res>
+    extends _$UserTransactionFailureCopyWithImpl<$Res>
     implements _$InsufficientPermissionCopyWith<$Res> {
   __$InsufficientPermissionCopyWithImpl(_InsufficientPermission _value,
       $Res Function(_InsufficientPermission) _then)
@@ -189,7 +191,7 @@ class _$_InsufficientPermission implements _InsufficientPermission {
 
   @override
   String toString() {
-    return 'NoteFailure.insufficientPermission()';
+    return 'UserTransactionFailure.insufficientPermission()';
   }
 
   @override
@@ -205,11 +207,11 @@ class _$_InsufficientPermission implements _InsufficientPermission {
   Result when<Result extends Object>({
     @required Result unexpected(),
     @required Result insufficientPermission(),
-    @required Result unableToUpdate(),
+    @required Result unableToCreate(),
   }) {
     assert(unexpected != null);
     assert(insufficientPermission != null);
-    assert(unableToUpdate != null);
+    assert(unableToCreate != null);
     return insufficientPermission();
   }
 
@@ -218,7 +220,7 @@ class _$_InsufficientPermission implements _InsufficientPermission {
   Result maybeWhen<Result extends Object>({
     Result unexpected(),
     Result insufficientPermission(),
-    Result unableToUpdate(),
+    Result unableToCreate(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -233,11 +235,11 @@ class _$_InsufficientPermission implements _InsufficientPermission {
   Result map<Result extends Object>({
     @required Result unexpected(_Unexpected value),
     @required Result insufficientPermission(_InsufficientPermission value),
-    @required Result unableToUpdate(_UnableToUpdate value),
+    @required Result unableToCreate(_UnableToCreate value),
   }) {
     assert(unexpected != null);
     assert(insufficientPermission != null);
-    assert(unableToUpdate != null);
+    assert(unableToCreate != null);
     return insufficientPermission(this);
   }
 
@@ -246,7 +248,7 @@ class _$_InsufficientPermission implements _InsufficientPermission {
   Result maybeMap<Result extends Object>({
     Result unexpected(_Unexpected value),
     Result insufficientPermission(_InsufficientPermission value),
-    Result unableToUpdate(_UnableToUpdate value),
+    Result unableToCreate(_UnableToCreate value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -257,38 +259,38 @@ class _$_InsufficientPermission implements _InsufficientPermission {
   }
 }
 
-abstract class _InsufficientPermission implements NoteFailure {
+abstract class _InsufficientPermission implements UserTransactionFailure {
   const factory _InsufficientPermission() = _$_InsufficientPermission;
 }
 
-abstract class _$UnableToUpdateCopyWith<$Res> {
-  factory _$UnableToUpdateCopyWith(
-          _UnableToUpdate value, $Res Function(_UnableToUpdate) then) =
-      __$UnableToUpdateCopyWithImpl<$Res>;
+abstract class _$UnableToCreateCopyWith<$Res> {
+  factory _$UnableToCreateCopyWith(
+          _UnableToCreate value, $Res Function(_UnableToCreate) then) =
+      __$UnableToCreateCopyWithImpl<$Res>;
 }
 
-class __$UnableToUpdateCopyWithImpl<$Res>
-    extends _$NoteFailureCopyWithImpl<$Res>
-    implements _$UnableToUpdateCopyWith<$Res> {
-  __$UnableToUpdateCopyWithImpl(
-      _UnableToUpdate _value, $Res Function(_UnableToUpdate) _then)
-      : super(_value, (v) => _then(v as _UnableToUpdate));
+class __$UnableToCreateCopyWithImpl<$Res>
+    extends _$UserTransactionFailureCopyWithImpl<$Res>
+    implements _$UnableToCreateCopyWith<$Res> {
+  __$UnableToCreateCopyWithImpl(
+      _UnableToCreate _value, $Res Function(_UnableToCreate) _then)
+      : super(_value, (v) => _then(v as _UnableToCreate));
 
   @override
-  _UnableToUpdate get _value => super._value as _UnableToUpdate;
+  _UnableToCreate get _value => super._value as _UnableToCreate;
 }
 
-class _$_UnableToUpdate implements _UnableToUpdate {
-  const _$_UnableToUpdate();
+class _$_UnableToCreate implements _UnableToCreate {
+  const _$_UnableToCreate();
 
   @override
   String toString() {
-    return 'NoteFailure.unableToUpdate()';
+    return 'UserTransactionFailure.unableToCreate()';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _UnableToUpdate);
+    return identical(this, other) || (other is _UnableToCreate);
   }
 
   @override
@@ -299,12 +301,12 @@ class _$_UnableToUpdate implements _UnableToUpdate {
   Result when<Result extends Object>({
     @required Result unexpected(),
     @required Result insufficientPermission(),
-    @required Result unableToUpdate(),
+    @required Result unableToCreate(),
   }) {
     assert(unexpected != null);
     assert(insufficientPermission != null);
-    assert(unableToUpdate != null);
-    return unableToUpdate();
+    assert(unableToCreate != null);
+    return unableToCreate();
   }
 
   @override
@@ -312,12 +314,12 @@ class _$_UnableToUpdate implements _UnableToUpdate {
   Result maybeWhen<Result extends Object>({
     Result unexpected(),
     Result insufficientPermission(),
-    Result unableToUpdate(),
+    Result unableToCreate(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (unableToUpdate != null) {
-      return unableToUpdate();
+    if (unableToCreate != null) {
+      return unableToCreate();
     }
     return orElse();
   }
@@ -327,12 +329,12 @@ class _$_UnableToUpdate implements _UnableToUpdate {
   Result map<Result extends Object>({
     @required Result unexpected(_Unexpected value),
     @required Result insufficientPermission(_InsufficientPermission value),
-    @required Result unableToUpdate(_UnableToUpdate value),
+    @required Result unableToCreate(_UnableToCreate value),
   }) {
     assert(unexpected != null);
     assert(insufficientPermission != null);
-    assert(unableToUpdate != null);
-    return unableToUpdate(this);
+    assert(unableToCreate != null);
+    return unableToCreate(this);
   }
 
   @override
@@ -340,17 +342,17 @@ class _$_UnableToUpdate implements _UnableToUpdate {
   Result maybeMap<Result extends Object>({
     Result unexpected(_Unexpected value),
     Result insufficientPermission(_InsufficientPermission value),
-    Result unableToUpdate(_UnableToUpdate value),
+    Result unableToCreate(_UnableToCreate value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (unableToUpdate != null) {
-      return unableToUpdate(this);
+    if (unableToCreate != null) {
+      return unableToCreate(this);
     }
     return orElse();
   }
 }
 
-abstract class _UnableToUpdate implements NoteFailure {
-  const factory _UnableToUpdate() = _$_UnableToUpdate;
+abstract class _UnableToCreate implements UserTransactionFailure {
+  const factory _UnableToCreate() = _$_UnableToCreate;
 }

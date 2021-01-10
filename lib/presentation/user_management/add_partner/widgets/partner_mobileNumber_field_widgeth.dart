@@ -30,10 +30,10 @@ class PartnerMobileNumberField extends HookWidget {
             maxLength: 10,
             maxLines: null,
             onChanged: (value) => context
-                .bloc<PartnerUserAddBloc>()
+                .read<PartnerUserAddBloc>()
                 .add(PartnerUserAddFormEvent.phonNumberChanged(value)),
             validator: (_) => (context
-                        .bloc<PartnerUserAddBloc>()
+                        .read<PartnerUserAddBloc>()
                         .state
                         .partnerProfile
                         .mobileNumber
