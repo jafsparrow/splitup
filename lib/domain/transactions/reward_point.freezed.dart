@@ -85,8 +85,8 @@ class __$RewardPointCopyWithImpl<$Res> extends _$RewardPointCopyWithImpl<$Res>
   }
 }
 
-class _$_RewardPoint implements _RewardPoint {
-  const _$_RewardPoint({this.billFormulaBreakup});
+class _$_RewardPoint extends _RewardPoint {
+  const _$_RewardPoint({this.billFormulaBreakup}) : super._();
 
   @override
   final Map<String, double> billFormulaBreakup;
@@ -115,7 +115,8 @@ class _$_RewardPoint implements _RewardPoint {
       __$RewardPointCopyWithImpl<_RewardPoint>(this, _$identity);
 }
 
-abstract class _RewardPoint implements RewardPoint {
+abstract class _RewardPoint extends RewardPoint {
+  const _RewardPoint._() : super._();
   const factory _RewardPoint({Map<String, double> billFormulaBreakup}) =
       _$_RewardPoint;
 

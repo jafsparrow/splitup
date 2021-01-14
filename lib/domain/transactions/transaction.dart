@@ -13,6 +13,7 @@ abstract class UserTransaction implements _$UserTransaction {
     DateTime addedDate,
     @required UserProfile salesUser,
     @required UserProfile partnerUser,
-    @required RewardPoint totalRewards,
+    @required RewardPoint totalRewardBreakup,
+    @required double earnedTotalRewardForCurrentTransaction,
   }) = _UserTransaction;
 }

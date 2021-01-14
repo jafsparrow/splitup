@@ -1,6 +1,6 @@
 import 'dart:async';
 
-import 'package:JCCommisionApp/domain/transactions/i_transaction_facade.dart';
+import 'package:JCCommisionApp/domain/user_management/partner_user_management/partner_user_transactions/i_user_transaction_facade.dart';
 import 'package:JCCommisionApp/domain/transactions/transaction.dart';
 import 'package:JCCommisionApp/domain/transactions/transactions_failure.dart';
 import 'package:bloc/bloc.dart';

@@ -1,4 +1,3 @@
-import 'package:JCCommisionApp/domain/user_management/user_profile.dart';
 import 'package:JCCommisionApp/injection.dart';
 import 'package:JCCommisionApp/presentation/promotion/promotion_ui.dart';
 import 'package:JCCommisionApp/presentation/user_management/partnerlist/partner_list.dart';
@@ -10,6 +9,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'application/auth/authentication_bloc.dart';
 import 'application/user_management/list_users/partner_list_bloc.dart';
 import 'application/user_management/user_profile/user_profile_bloc.dart';
+import 'domain/user_management/user_profile.dart';
 
 class LandingPage extends StatefulWidget {
   static Route route() {

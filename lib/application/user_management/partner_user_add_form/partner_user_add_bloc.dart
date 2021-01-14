@@ -62,7 +62,8 @@ class PartnerUserAddBloc
             ? await _userManagementRepository
                 .updatePartnerUser(state.partnerProfile)
             : await _userManagementRepository.addPartnerUser(
-                state.partnerProfile, '4cHZwNlWzW79PQ7U5dUf');
+                companyId: '4cHZwNlWzW79PQ7U5dUf',
+                newPartnerUser: state.partnerProfile);
 
         yield state.copyWith(
           isSaving: false,

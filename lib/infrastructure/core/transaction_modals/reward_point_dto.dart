@@ -12,8 +12,12 @@ abstract class RewardPointDto implements _$RewardPointDto {
   const factory RewardPointDto({Map<String, double> billFormulaBreakup}) =
       _RewardPointDto;
 
-  toDomain() {
+  RewardPoint toDomain() {
     return RewardPoint(billFormulaBreakup: billFormulaBreakup);
+  }
+
+  factory RewardPointDto.fromDomain(RewardPoint rewardPoints) {
+    return RewardPointDto(billFormulaBreakup: rewardPoints.billFormulaBreakup);
   }
 
   factory RewardPointDto.fromJson(Map<String, dynamic> json) =>

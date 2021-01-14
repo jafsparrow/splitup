@@ -19,9 +19,12 @@ _$_UserTransactionDto _$_$_UserTransactionDtoFromJson(
     partnerUser: json['partnerUser'] == null
         ? null
         : UserProfileDto.fromJson(json['partnerUser'] as Map<String, dynamic>),
-    totalRewards: json['totalRewards'] == null
+    totalRewardBreakup: json['totalRewardBreakup'] == null
         ? null
-        : RewardPointDto.fromJson(json['totalRewards'] as Map<String, dynamic>),
+        : RewardPointDto.fromJson(
+            json['totalRewardBreakup'] as Map<String, dynamic>),
+    earnedTotalRewardForCurrentTransaction:
+        (json['earnedTotalRewardForCurrentTransaction'] as num)?.toDouble(),
   );
 }
 
@@ -31,7 +34,9 @@ Map<String, dynamic> _$_$_UserTransactionDtoToJson(
       'description': instance.description,
       'notes': instance.notes,
       'addedDate': const ServerTimestampConverter().toJson(instance.addedDate),
-      'salesUser': instance.salesUser,
-      'partnerUser': instance.partnerUser,
-      'totalRewards': instance.totalRewards,
+      'salesUser': instance.salesUser?.toJson(),
+      'partnerUser': instance.partnerUser?.toJson(),
+      'totalRewardBreakup': instance.totalRewardBreakup?.toJson(),
+      'earnedTotalRewardForCurrentTransaction':
+          instance.earnedTotalRewardForCurrentTransaction,
     };

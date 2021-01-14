@@ -51,8 +51,11 @@ class _LoginPageState extends State<LoginPage> {
                       // print('ýou are touching me $value');
                     },
                   ),
-                  IconButton(
-                    icon: Icon(Icons.rss_feed),
+                  SizedBox(
+                    height: 50,
+                  ),
+                  FlatButton(
+                    child: Text('Login'),
                     onPressed: () {
                       context.read<LoginCubit>().loginWithCredentials();
                     },

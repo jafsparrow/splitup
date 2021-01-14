@@ -30,8 +30,10 @@ class UserProfileBloc extends Bloc<UserProfileEvent, UserProfileState> {
     yield* event.map(
       loadUserPofileFromId: (event) async* {
         String userId = event.id;
-        final failureOrSuccess =
-            await _userManagementRepository.getPartnerUserFromId(userId);
+        String companyId = event.companyId;
+
+        final failureOrSuccess = await _userManagementRepository
+            .getPartnerUserFromId(companyId: companyId, userId: userId);
 
         yield failureOrSuccess.fold(
           (error) => UserProfileState.loadFailure(error),
@@ -40,8 +42,11 @@ class UserProfileBloc extends Bloc<UserProfileEvent, UserProfileState> {
       },
       loadUserProfileFromBarcode: (event) async* {
         String barcode = event.barcode;
-        final failureOrSuccess =
-            await _userManagementRepository.getPartnerUserFromBarcode(barcode);
+        String companyId = event.companyId;
+
+        final failureOrSuccess = await _userManagementRepository
+            .getPartnerUserFromBarcode(barcode: barcode, companyId: companyId);
+
         yield failureOrSuccess.fold(
           (error) => UserProfileState.loadFailure(error),
           (userProfile) => UserProfileState.loadSuccess(userProfile),

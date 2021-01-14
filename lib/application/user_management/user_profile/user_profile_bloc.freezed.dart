@@ -18,16 +18,19 @@ class _$UserProfileEventTearOff {
   }
 
 // ignore: unused_element
-  _LoadUserProfileFromId loadUserPofileFromId({@required String id}) {
+  _LoadUserProfileFromId loadUserPofileFromId(
+      {@required String companyId, @required String id}) {
     return _LoadUserProfileFromId(
+      companyId: companyId,
       id: id,
     );
   }
 
 // ignore: unused_element
   _LoadUserProfileFromBarcode loadUserProfileFromBarcode(
-      {@required String barcode}) {
+      {@required String companyId, @required String barcode}) {
     return _LoadUserProfileFromBarcode(
+      companyId: companyId,
       barcode: barcode,
     );
   }
@@ -40,14 +43,15 @@ mixin _$UserProfileEvent {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result load(),
-    @required Result loadUserPofileFromId(String id),
-    @required Result loadUserProfileFromBarcode(String barcode),
+    @required Result loadUserPofileFromId(String companyId, String id),
+    @required
+        Result loadUserProfileFromBarcode(String companyId, String barcode),
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result load(),
-    Result loadUserPofileFromId(String id),
-    Result loadUserProfileFromBarcode(String barcode),
+    Result loadUserPofileFromId(String companyId, String id),
+    Result loadUserProfileFromBarcode(String companyId, String barcode),
     @required Result orElse(),
   });
   @optionalTypeArgs
@@ -115,8 +119,9 @@ class _$_Load implements _Load {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result load(),
-    @required Result loadUserPofileFromId(String id),
-    @required Result loadUserProfileFromBarcode(String barcode),
+    @required Result loadUserPofileFromId(String companyId, String id),
+    @required
+        Result loadUserProfileFromBarcode(String companyId, String barcode),
   }) {
     assert(load != null);
     assert(loadUserPofileFromId != null);
@@ -128,8 +133,8 @@ class _$_Load implements _Load {
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result load(),
-    Result loadUserPofileFromId(String id),
-    Result loadUserProfileFromBarcode(String barcode),
+    Result loadUserPofileFromId(String companyId, String id),
+    Result loadUserProfileFromBarcode(String companyId, String barcode),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -177,7 +182,7 @@ abstract class _$LoadUserProfileFromIdCopyWith<$Res> {
   factory _$LoadUserProfileFromIdCopyWith(_LoadUserProfileFromId value,
           $Res Function(_LoadUserProfileFromId) then) =
       __$LoadUserProfileFromIdCopyWithImpl<$Res>;
-  $Res call({String id});
+  $Res call({String companyId, String id});
 }
 
 class __$LoadUserProfileFromIdCopyWithImpl<$Res>
@@ -192,36 +197,47 @@ class __$LoadUserProfileFromIdCopyWithImpl<$Res>
 
   @override
   $Res call({
+    Object companyId = freezed,
     Object id = freezed,
   }) {
     return _then(_LoadUserProfileFromId(
+      companyId: companyId == freezed ? _value.companyId : companyId as String,
       id: id == freezed ? _value.id : id as String,
     ));
   }
 }
 
 class _$_LoadUserProfileFromId implements _LoadUserProfileFromId {
-  const _$_LoadUserProfileFromId({@required this.id}) : assert(id != null);
+  const _$_LoadUserProfileFromId({@required this.companyId, @required this.id})
+      : assert(companyId != null),
+        assert(id != null);
 
+  @override
+  final String companyId;
   @override
   final String id;
 
   @override
   String toString() {
-    return 'UserProfileEvent.loadUserPofileFromId(id: $id)';
+    return 'UserProfileEvent.loadUserPofileFromId(companyId: $companyId, id: $id)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _LoadUserProfileFromId &&
+            (identical(other.companyId, companyId) ||
+                const DeepCollectionEquality()
+                    .equals(other.companyId, companyId)) &&
             (identical(other.id, id) ||
                 const DeepCollectionEquality().equals(other.id, id)));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(id);
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(companyId) ^
+      const DeepCollectionEquality().hash(id);
 
   @override
   _$LoadUserProfileFromIdCopyWith<_LoadUserProfileFromId> get copyWith =>
@@ -232,26 +248,27 @@ class _$_LoadUserProfileFromId implements _LoadUserProfileFromId {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result load(),
-    @required Result loadUserPofileFromId(String id),
-    @required Result loadUserProfileFromBarcode(String barcode),
+    @required Result loadUserPofileFromId(String companyId, String id),
+    @required
+        Result loadUserProfileFromBarcode(String companyId, String barcode),
   }) {
     assert(load != null);
     assert(loadUserPofileFromId != null);
     assert(loadUserProfileFromBarcode != null);
-    return loadUserPofileFromId(id);
+    return loadUserPofileFromId(companyId, id);
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result load(),
-    Result loadUserPofileFromId(String id),
-    Result loadUserProfileFromBarcode(String barcode),
+    Result loadUserPofileFromId(String companyId, String id),
+    Result loadUserProfileFromBarcode(String companyId, String barcode),
     @required Result orElse(),
   }) {
     assert(orElse != null);
     if (loadUserPofileFromId != null) {
-      return loadUserPofileFromId(id);
+      return loadUserPofileFromId(companyId, id);
     }
     return orElse();
   }
@@ -287,9 +304,11 @@ class _$_LoadUserProfileFromId implements _LoadUserProfileFromId {
 }
 
 abstract class _LoadUserProfileFromId implements UserProfileEvent {
-  const factory _LoadUserProfileFromId({@required String id}) =
-      _$_LoadUserProfileFromId;
+  const factory _LoadUserProfileFromId(
+      {@required String companyId,
+      @required String id}) = _$_LoadUserProfileFromId;
 
+  String get companyId;
   String get id;
   _$LoadUserProfileFromIdCopyWith<_LoadUserProfileFromId> get copyWith;
 }
@@ -299,7 +318,7 @@ abstract class _$LoadUserProfileFromBarcodeCopyWith<$Res> {
           _LoadUserProfileFromBarcode value,
           $Res Function(_LoadUserProfileFromBarcode) then) =
       __$LoadUserProfileFromBarcodeCopyWithImpl<$Res>;
-  $Res call({String barcode});
+  $Res call({String companyId, String barcode});
 }
 
 class __$LoadUserProfileFromBarcodeCopyWithImpl<$Res>
@@ -315,37 +334,48 @@ class __$LoadUserProfileFromBarcodeCopyWithImpl<$Res>
 
   @override
   $Res call({
+    Object companyId = freezed,
     Object barcode = freezed,
   }) {
     return _then(_LoadUserProfileFromBarcode(
+      companyId: companyId == freezed ? _value.companyId : companyId as String,
       barcode: barcode == freezed ? _value.barcode : barcode as String,
     ));
   }
 }
 
 class _$_LoadUserProfileFromBarcode implements _LoadUserProfileFromBarcode {
-  const _$_LoadUserProfileFromBarcode({@required this.barcode})
-      : assert(barcode != null);
+  const _$_LoadUserProfileFromBarcode(
+      {@required this.companyId, @required this.barcode})
+      : assert(companyId != null),
+        assert(barcode != null);
 
+  @override
+  final String companyId;
   @override
   final String barcode;
 
   @override
   String toString() {
-    return 'UserProfileEvent.loadUserProfileFromBarcode(barcode: $barcode)';
+    return 'UserProfileEvent.loadUserProfileFromBarcode(companyId: $companyId, barcode: $barcode)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _LoadUserProfileFromBarcode &&
+            (identical(other.companyId, companyId) ||
+                const DeepCollectionEquality()
+                    .equals(other.companyId, companyId)) &&
             (identical(other.barcode, barcode) ||
                 const DeepCollectionEquality().equals(other.barcode, barcode)));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(barcode);
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(companyId) ^
+      const DeepCollectionEquality().hash(barcode);
 
   @override
   _$LoadUserProfileFromBarcodeCopyWith<_LoadUserProfileFromBarcode>
@@ -356,26 +386,27 @@ class _$_LoadUserProfileFromBarcode implements _LoadUserProfileFromBarcode {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result load(),
-    @required Result loadUserPofileFromId(String id),
-    @required Result loadUserProfileFromBarcode(String barcode),
+    @required Result loadUserPofileFromId(String companyId, String id),
+    @required
+        Result loadUserProfileFromBarcode(String companyId, String barcode),
   }) {
     assert(load != null);
     assert(loadUserPofileFromId != null);
     assert(loadUserProfileFromBarcode != null);
-    return loadUserProfileFromBarcode(barcode);
+    return loadUserProfileFromBarcode(companyId, barcode);
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result load(),
-    Result loadUserPofileFromId(String id),
-    Result loadUserProfileFromBarcode(String barcode),
+    Result loadUserPofileFromId(String companyId, String id),
+    Result loadUserProfileFromBarcode(String companyId, String barcode),
     @required Result orElse(),
   }) {
     assert(orElse != null);
     if (loadUserProfileFromBarcode != null) {
-      return loadUserProfileFromBarcode(barcode);
+      return loadUserProfileFromBarcode(companyId, barcode);
     }
     return orElse();
   }
@@ -411,9 +442,11 @@ class _$_LoadUserProfileFromBarcode implements _LoadUserProfileFromBarcode {
 }
 
 abstract class _LoadUserProfileFromBarcode implements UserProfileEvent {
-  const factory _LoadUserProfileFromBarcode({@required String barcode}) =
-      _$_LoadUserProfileFromBarcode;
+  const factory _LoadUserProfileFromBarcode(
+      {@required String companyId,
+      @required String barcode}) = _$_LoadUserProfileFromBarcode;
 
+  String get companyId;
   String get barcode;
   _$LoadUserProfileFromBarcodeCopyWith<_LoadUserProfileFromBarcode>
       get copyWith;

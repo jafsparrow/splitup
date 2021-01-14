@@ -23,7 +23,8 @@ class _$UserTransactionDtoTearOff {
       @ServerTimestampConverter() DateTime addedDate,
       @required UserProfileDto salesUser,
       @required UserProfileDto partnerUser,
-      @required RewardPointDto totalRewards}) {
+      @required RewardPointDto totalRewardBreakup,
+      @required double earnedTotalRewardForCurrentTransaction}) {
     return _UserTransactionDto(
       id: id,
       description: description,
@@ -31,7 +32,9 @@ class _$UserTransactionDtoTearOff {
       addedDate: addedDate,
       salesUser: salesUser,
       partnerUser: partnerUser,
-      totalRewards: totalRewards,
+      totalRewardBreakup: totalRewardBreakup,
+      earnedTotalRewardForCurrentTransaction:
+          earnedTotalRewardForCurrentTransaction,
     );
   }
 }
@@ -48,7 +51,8 @@ mixin _$UserTransactionDto {
   DateTime get addedDate;
   UserProfileDto get salesUser;
   UserProfileDto get partnerUser;
-  RewardPointDto get totalRewards;
+  RewardPointDto get totalRewardBreakup;
+  double get earnedTotalRewardForCurrentTransaction;
 
   Map<String, dynamic> toJson();
   $UserTransactionDtoCopyWith<UserTransactionDto> get copyWith;
@@ -65,11 +69,12 @@ abstract class $UserTransactionDtoCopyWith<$Res> {
       @ServerTimestampConverter() DateTime addedDate,
       UserProfileDto salesUser,
       UserProfileDto partnerUser,
-      RewardPointDto totalRewards});
+      RewardPointDto totalRewardBreakup,
+      double earnedTotalRewardForCurrentTransaction});
 
   $UserProfileDtoCopyWith<$Res> get salesUser;
   $UserProfileDtoCopyWith<$Res> get partnerUser;
-  $RewardPointDtoCopyWith<$Res> get totalRewards;
+  $RewardPointDtoCopyWith<$Res> get totalRewardBreakup;
 }
 
 class _$UserTransactionDtoCopyWithImpl<$Res>
@@ -88,7 +93,8 @@ class _$UserTransactionDtoCopyWithImpl<$Res>
     Object addedDate = freezed,
     Object salesUser = freezed,
     Object partnerUser = freezed,
-    Object totalRewards = freezed,
+    Object totalRewardBreakup = freezed,
+    Object earnedTotalRewardForCurrentTransaction = freezed,
   }) {
     return _then(_value.copyWith(
       id: id == freezed ? _value.id : id as dynamic,
@@ -102,9 +108,13 @@ class _$UserTransactionDtoCopyWithImpl<$Res>
       partnerUser: partnerUser == freezed
           ? _value.partnerUser
           : partnerUser as UserProfileDto,
-      totalRewards: totalRewards == freezed
-          ? _value.totalRewards
-          : totalRewards as RewardPointDto,
+      totalRewardBreakup: totalRewardBreakup == freezed
+          ? _value.totalRewardBreakup
+          : totalRewardBreakup as RewardPointDto,
+      earnedTotalRewardForCurrentTransaction:
+          earnedTotalRewardForCurrentTransaction == freezed
+              ? _value.earnedTotalRewardForCurrentTransaction
+              : earnedTotalRewardForCurrentTransaction as double,
     ));
   }
 
@@ -129,12 +139,12 @@ class _$UserTransactionDtoCopyWithImpl<$Res>
   }
 
   @override
-  $RewardPointDtoCopyWith<$Res> get totalRewards {
-    if (_value.totalRewards == null) {
+  $RewardPointDtoCopyWith<$Res> get totalRewardBreakup {
+    if (_value.totalRewardBreakup == null) {
       return null;
     }
-    return $RewardPointDtoCopyWith<$Res>(_value.totalRewards, (value) {
-      return _then(_value.copyWith(totalRewards: value));
+    return $RewardPointDtoCopyWith<$Res>(_value.totalRewardBreakup, (value) {
+      return _then(_value.copyWith(totalRewardBreakup: value));
     });
   }
 }
@@ -152,14 +162,15 @@ abstract class _$UserTransactionDtoCopyWith<$Res>
       @ServerTimestampConverter() DateTime addedDate,
       UserProfileDto salesUser,
       UserProfileDto partnerUser,
-      RewardPointDto totalRewards});
+      RewardPointDto totalRewardBreakup,
+      double earnedTotalRewardForCurrentTransaction});
 
   @override
   $UserProfileDtoCopyWith<$Res> get salesUser;
   @override
   $UserProfileDtoCopyWith<$Res> get partnerUser;
   @override
-  $RewardPointDtoCopyWith<$Res> get totalRewards;
+  $RewardPointDtoCopyWith<$Res> get totalRewardBreakup;
 }
 
 class __$UserTransactionDtoCopyWithImpl<$Res>
@@ -180,7 +191,8 @@ class __$UserTransactionDtoCopyWithImpl<$Res>
     Object addedDate = freezed,
     Object salesUser = freezed,
     Object partnerUser = freezed,
-    Object totalRewards = freezed,
+    Object totalRewardBreakup = freezed,
+    Object earnedTotalRewardForCurrentTransaction = freezed,
   }) {
     return _then(_UserTransactionDto(
       id: id == freezed ? _value.id : id,
@@ -194,9 +206,13 @@ class __$UserTransactionDtoCopyWithImpl<$Res>
       partnerUser: partnerUser == freezed
           ? _value.partnerUser
           : partnerUser as UserProfileDto,
-      totalRewards: totalRewards == freezed
-          ? _value.totalRewards
-          : totalRewards as RewardPointDto,
+      totalRewardBreakup: totalRewardBreakup == freezed
+          ? _value.totalRewardBreakup
+          : totalRewardBreakup as RewardPointDto,
+      earnedTotalRewardForCurrentTransaction:
+          earnedTotalRewardForCurrentTransaction == freezed
+              ? _value.earnedTotalRewardForCurrentTransaction
+              : earnedTotalRewardForCurrentTransaction as double,
     ));
   }
 }
@@ -210,11 +226,13 @@ class _$_UserTransactionDto extends _UserTransactionDto {
       @ServerTimestampConverter() this.addedDate,
       @required this.salesUser,
       @required this.partnerUser,
-      @required this.totalRewards})
+      @required this.totalRewardBreakup,
+      @required this.earnedTotalRewardForCurrentTransaction})
       : assert(description != null),
         assert(salesUser != null),
         assert(partnerUser != null),
-        assert(totalRewards != null),
+        assert(totalRewardBreakup != null),
+        assert(earnedTotalRewardForCurrentTransaction != null),
         super._();
 
   factory _$_UserTransactionDto.fromJson(Map<String, dynamic> json) =>
@@ -236,11 +254,13 @@ class _$_UserTransactionDto extends _UserTransactionDto {
   @override
   final UserProfileDto partnerUser;
   @override
-  final RewardPointDto totalRewards;
+  final RewardPointDto totalRewardBreakup;
+  @override
+  final double earnedTotalRewardForCurrentTransaction;
 
   @override
   String toString() {
-    return 'UserTransactionDto(id: $id, description: $description, notes: $notes, addedDate: $addedDate, salesUser: $salesUser, partnerUser: $partnerUser, totalRewards: $totalRewards)';
+    return 'UserTransactionDto(id: $id, description: $description, notes: $notes, addedDate: $addedDate, salesUser: $salesUser, partnerUser: $partnerUser, totalRewardBreakup: $totalRewardBreakup, earnedTotalRewardForCurrentTransaction: $earnedTotalRewardForCurrentTransaction)';
   }
 
   @override
@@ -263,9 +283,14 @@ class _$_UserTransactionDto extends _UserTransactionDto {
             (identical(other.partnerUser, partnerUser) ||
                 const DeepCollectionEquality()
                     .equals(other.partnerUser, partnerUser)) &&
-            (identical(other.totalRewards, totalRewards) ||
+            (identical(other.totalRewardBreakup, totalRewardBreakup) ||
                 const DeepCollectionEquality()
-                    .equals(other.totalRewards, totalRewards)));
+                    .equals(other.totalRewardBreakup, totalRewardBreakup)) &&
+            (identical(other.earnedTotalRewardForCurrentTransaction,
+                    earnedTotalRewardForCurrentTransaction) ||
+                const DeepCollectionEquality().equals(
+                    other.earnedTotalRewardForCurrentTransaction,
+                    earnedTotalRewardForCurrentTransaction)));
   }
 
   @override
@@ -277,7 +302,9 @@ class _$_UserTransactionDto extends _UserTransactionDto {
       const DeepCollectionEquality().hash(addedDate) ^
       const DeepCollectionEquality().hash(salesUser) ^
       const DeepCollectionEquality().hash(partnerUser) ^
-      const DeepCollectionEquality().hash(totalRewards);
+      const DeepCollectionEquality().hash(totalRewardBreakup) ^
+      const DeepCollectionEquality()
+          .hash(earnedTotalRewardForCurrentTransaction);
 
   @override
   _$UserTransactionDtoCopyWith<_UserTransactionDto> get copyWith =>
@@ -292,13 +319,15 @@ class _$_UserTransactionDto extends _UserTransactionDto {
 abstract class _UserTransactionDto extends UserTransactionDto {
   const _UserTransactionDto._() : super._();
   const factory _UserTransactionDto(
-      {@JsonKey(ignore: true) dynamic id,
-      String description,
-      String notes,
-      @ServerTimestampConverter() DateTime addedDate,
-      @required UserProfileDto salesUser,
-      @required UserProfileDto partnerUser,
-      @required RewardPointDto totalRewards}) = _$_UserTransactionDto;
+          {@JsonKey(ignore: true) dynamic id,
+          String description,
+          String notes,
+          @ServerTimestampConverter() DateTime addedDate,
+          @required UserProfileDto salesUser,
+          @required UserProfileDto partnerUser,
+          @required RewardPointDto totalRewardBreakup,
+          @required double earnedTotalRewardForCurrentTransaction}) =
+      _$_UserTransactionDto;
 
   factory _UserTransactionDto.fromJson(Map<String, dynamic> json) =
       _$_UserTransactionDto.fromJson;
@@ -318,7 +347,9 @@ abstract class _UserTransactionDto extends UserTransactionDto {
   @override
   UserProfileDto get partnerUser;
   @override
-  RewardPointDto get totalRewards;
+  RewardPointDto get totalRewardBreakup;
+  @override
+  double get earnedTotalRewardForCurrentTransaction;
   @override
   _$UserTransactionDtoCopyWith<_UserTransactionDto> get copyWith;
 }

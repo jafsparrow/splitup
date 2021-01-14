@@ -1,10 +1,10 @@
-import 'package:JCCommisionApp/repositories/transactions/models/transaction.dart';
+import 'package:JCCommisionApp/domain/transactions/transaction.dart';
 import 'package:flutter/material.dart';
 
 class EarnedPoints extends StatelessWidget {
-  final UserTransaction currentItem;
+  final UserTransaction currentTransaction;
 
-  const EarnedPoints({Key key, this.currentItem}) : super(key: key);
+  const EarnedPoints({Key key, this.currentTransaction}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -16,7 +16,8 @@ class EarnedPoints extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
           Text(
-            currentItem.totalRewards.getTotalRewardPoints().toString(),
+            currentTransaction.earnedTotalRewardForCurrentTransaction
+                .toString(),
             style: TextStyle(color: Colors.white, fontSize: 20),
           ),
           Text(

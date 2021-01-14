@@ -5,13 +5,15 @@ import 'package:dartz/dartz.dart';
 abstract class IUserManagement {
   // define a User class with all the required methods using freezed.
   Future<Either<UserManagementFailure, UserProfile>> getPartnerUserFromBarcode(
-      String barcode);
+      {String companyId, String barcode});
   Future<Either<UserManagementFailure, UserProfile>> getPartnerUserFromId(
-      String barcode);
+      {String companyId, String userId});
+
   Either<UserManagementFailure, bool> isPartnerUserActive(String barcode);
 
   Future<Either<UserManagementFailure, UserProfile>> addPartnerUser(
-      UserProfile newPartnerUser, String companyId);
+      {UserProfile newPartnerUser, String companyId});
+
   Future<Either<UserManagementFailure, UserProfile>> updatePartnerUser(
       UserProfile newPartnerUser);
 }

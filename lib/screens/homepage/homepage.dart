@@ -1,13 +1,13 @@
 import 'package:JCCommisionApp/application/auth/authentication_bloc.dart';
-import 'package:JCCommisionApp/application/transactions/transacation_bloc.dart';
+import 'package:JCCommisionApp/application/transactions_bloc/transactions_bloc.dart';
 import 'package:JCCommisionApp/application/user_management/user_profile/user_profile_bloc.dart';
+import 'package:JCCommisionApp/domain/transactions/transaction.dart';
 import 'package:JCCommisionApp/presentation/user_management/add_partner/add_partner_user_ui.dart';
-import 'package:JCCommisionApp/repositories/transactions/firebase_user_transaction_repository.dart';
-import 'package:JCCommisionApp/repositories/transactions/models/transaction.dart';
 import 'package:JCCommisionApp/screens/eventpage/event_add.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../injection.dart';
 import 'components/date_time_display.dart';
 import 'components/earned_points_display.dart';
 import 'components/promotions.dart';
@@ -23,12 +23,13 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
-        BlocProvider<TransactionBloc>(
-          create: (context) => TransactionBloc(
-            repository: FirebaseUserTransactionRepository(),
-          )..add(
-              LoadTransactions(),
+        BlocProvider<TransactionsBloc>(
+          create: (context) => getIt<TransactionsBloc>()
+            ..add(
+              TransactionsBlocEvent.loadTransactions(
+                  companyId: '4cHZwNlWzW79PQ7U5dUf'),
             ),
+          lazy: false,
         ),
       ],
       child: BlocConsumer<UserProfileBloc, UserProfileState>(
@@ -43,8 +44,11 @@ class HomePage extends StatelessWidget {
                     loggedInUser: context.read<AuthenticationBloc>().state.user,
                     partnerUser: state.userProfile,
                     onSave: (transaction) {
-                      BlocProvider.of<TransactionBloc>(context)
-                          .add(AddTransaction(transaction));
+                      getIt<TransactionsBloc>().add(
+                        TransactionsBlocEvent.addTransaction(
+                            companyId: '4cHZwNlWzW79PQ7U5dUf',
+                            transaction: transaction),
+                      );
                       Navigator.pop(context);
                     },
                   ),
@@ -94,28 +98,33 @@ class HomePage extends StatelessWidget {
               // String cameraScanResult = (await scanner.scan()).toString();
               // // String cameraScanResult = _scanCode();
               // print('the result of scan is $cameraScanResult');
-              String cameraScanResult = 'test';
+              String cameraScanResult = '4iPP478CiqdIvmEu2iQv1IcVJ5o2';
 
               if (cameraScanResult.isNotEmpty) {
                 context.read<UserProfileBloc>().add(
-                      UserProfileEvent.loadUserPofileFromId(id: 'test'),
+                      UserProfileEvent.loadUserPofileFromId(
+                          companyId: '4cHZwNlWzW79PQ7U5dUf',
+                          id: '4iPP478CiqdIvmEu2iQv1IcVJ5o2'),
                     );
 
-                // getIt<UserProfileBloc>().add(
-                //   UserProfileEvent.loadUserProfileFromBarcode(
-                //       barcode: cameraScanResult),
-                // );
+                getIt<UserProfileBloc>().add(
+                  UserProfileEvent.loadUserProfileFromBarcode(
+                      barcode: cameraScanResult),
+                );
               }
-              // Navigator.push(
-              //   context,
-              //   EventAdd.route(
-              //     onSave: (transaction) {
-              //       BlocProvider.of<TransactionBloc>(context)
-              //           .add(AddTransaction(transaction));
-              //       Navigator.pop(context);
-              //     },
-              //   ),
-              // );
+              Navigator.push(
+                context,
+                EventAdd.route(
+                  onSave: (transaction) {
+                    BlocProvider.of<TransactionsBloc>(context).add(
+                      TransactionsBlocEvent.addTransaction(
+                          transaction: transaction,
+                          companyId: '4cHZwNlWzW79PQ7U5dUf'),
+                    );
+                    Navigator.pop(context);
+                  },
+                ),
+              );
             },
           ),
           body: userProfileState.maybeMap(
@@ -142,19 +151,27 @@ class HomePage extends StatelessWidget {
                       SizedBox(
                         height: 10,
                       ),
-                      BlocBuilder<TransactionBloc, TransactionState>(
+                      BlocBuilder<TransactionsBloc, TransactionsBlocState>(
                         builder: (context, state) {
-                          if (state is TransacationLoaded) {
-                            final userTransactions = state.userTransactions;
-                            return buildUserTransactions(
-                                userTransactions, context);
-                          } else {
-                            return Container(
+                          return state.maybeMap(
+                            initial: (state) => Container(
                               child: Center(
                                 child: CircularProgressIndicator(),
                               ),
-                            );
-                          }
+                            ),
+                            loading: (state) => Container(
+                              child: Center(
+                                child: CircularProgressIndicator(),
+                              ),
+                            ),
+                            loadError: (state) => Text('somethign is wrong'),
+                            listTransactions: (state) {
+                              final userTransactions = state.transactions;
+                              return buildUserTransactions(
+                                  userTransactions, context);
+                            },
+                            orElse: () => Text('something is wrong'),
+                          );
                         },
                       ),
                     ],
@@ -196,7 +213,8 @@ class HomePage extends StatelessWidget {
               leading: DateTimeDisplay(
                 dateTime: DateTime.now(),
               ),
-              trailing: EarnedPoints(currentItem: userTransactions[index]),
+              trailing:
+                  EarnedPoints(currentTransaction: userTransactions[index]),
               title: Text(userTransactions[index].partnerUser.userName),
               subtitle: Text(userTransactions[index].salesUser.userName),
             ),

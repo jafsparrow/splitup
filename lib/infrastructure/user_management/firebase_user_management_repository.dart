@@ -16,10 +16,12 @@ class FirebaseUserManagementRepository implements IUserManagement {
 
   @override
   Future<Either<UserManagementFailure, UserProfile>> getPartnerUserFromBarcode(
-      String barcode) async {
+      {String companyId, String barcode}) async {
     await Future.delayed(const Duration(seconds: 10));
     try {
       QuerySnapshot userDetailsSanpshot = await _firestore
+          .collection('companies')
+          .doc(companyId)
           .collection('users')
           .where('barcode', isEqualTo: barcode)
           .get();
@@ -48,11 +50,15 @@ class FirebaseUserManagementRepository implements IUserManagement {
 
   @override
   Future<Either<UserManagementFailure, UserProfile>> getPartnerUserFromId(
-      String userId) async {
+      {String companyId, String userId}) async {
     try {
-      userId = '6ictP3kgeSROU1I0ehkU109Gv6g1';
-      DocumentSnapshot userDoc =
-          await _firestore.collection('users').doc(userId).get();
+      DocumentSnapshot userDoc = await _firestore
+          .collection('companies')
+          .doc(companyId)
+          .collection('users')
+          .doc(userId)
+          .get();
+
       return right(UserProfileDto.fromFirestore(userDoc).toDomain());
     } catch (e) {
       print(e);
@@ -62,9 +68,10 @@ class FirebaseUserManagementRepository implements IUserManagement {
 
   @override
   Future<Either<UserManagementFailure, UserProfile>> addPartnerUser(
-      UserProfile newPartnerUser, String companyId) async {
+      {UserProfile newPartnerUser, String companyId}) async {
     String userEmail = newPartnerUser.email;
     String userPassword = newPartnerUser.userName.substring(2) + '12345';
+
     print(userPassword);
     try {
       UserCredential userCredential =
@@ -96,16 +103,19 @@ class FirebaseUserManagementRepository implements IUserManagement {
   }
 
   _addUserToCompany(UserProfile partnerProfile, String companyId) async {
-    Map<String, dynamic> data = {
-      'uid': partnerProfile.uid,
-      'userName': partnerProfile.userName
-    };
+    // Map<String, dynamic> data = {
+    //   'uid': partnerProfile.uid,
+    //   'userName': partnerProfile.userName
+    // };
+
+    Map<String, dynamic> userData =
+        UserProfileDto.fromDomain(partnerProfile).toJson();
     await _firestore
         .collection('companies')
         .doc(companyId)
         .collection('users')
         .doc(partnerProfile.uid)
-        .set(data);
+        .set(userData);
   }
 
   @override

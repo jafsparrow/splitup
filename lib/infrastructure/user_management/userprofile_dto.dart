@@ -15,6 +15,7 @@ abstract class UserProfileDto implements _$UserProfileDto {
       @required String email,
       String nickName,
       String uid}) = _UserProfileDto;
+
   factory UserProfileDto.fromDomain(UserProfile userProfile) {
     return UserProfileDto(
         userName: userProfile.userName,

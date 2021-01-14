@@ -1,6 +1,6 @@
+import 'package:JCCommisionApp/domain/transactions/reward_point.dart';
+import 'package:JCCommisionApp/domain/transactions/transaction.dart';
 import 'package:JCCommisionApp/domain/user_management/user_profile.dart';
-import 'package:JCCommisionApp/repositories/transactions/models/total_bill_breakup.dart';
-import 'package:JCCommisionApp/repositories/transactions/models/transaction.dart';
 import 'package:flutter/material.dart';
 
 typedef OnSaveCallback = Function(UserTransaction userTransaction);
@@ -45,8 +45,8 @@ class _EventAddState extends State<EventAdd> {
 
   @override
   void initState() {
-    billFormulaBreakup.forEach((key, val) =>
-        controllerMaps[key] = TextEditingController(text: val.toString()));
+    billFormulaBreakup
+        .forEach((key, val) => controllerMaps[key] = TextEditingController());
     super.initState();
   }
 
@@ -97,12 +97,16 @@ class _EventAddState extends State<EventAdd> {
           },
         );
 
-        TotalReward rewards = TotalReward(billSubTypeBreakups: pointsBreakups);
+        RewardPoint rewards = RewardPoint(billFormulaBreakup: pointsBreakups);
 
-        UserTransaction newTransaction = UserTransaction('hello you',
-            totalRewards: rewards,
+        UserTransaction newTransaction = UserTransaction(
+            totalRewardBreakup: rewards,
             salesUser: widget.loggedInUser,
-            partnerUser: widget.partnerUser);
+            partnerUser: widget.partnerUser,
+            earnedTotalRewardForCurrentTransaction: rewards.totalRewardPoints,
+            addedDate: DateTime.now(),
+            description: 'sample data',
+            notes: 'sample data');
         widget.onSave(newTransaction);
       },
     );

@@ -20,7 +20,8 @@ class _$UserTransactionTearOff {
       DateTime addedDate,
       @required UserProfile salesUser,
       @required UserProfile partnerUser,
-      @required RewardPoint totalRewards}) {
+      @required RewardPoint totalRewardBreakup,
+      @required double earnedTotalRewardForCurrentTransaction}) {
     return _UserTransaction(
       description: description,
       id: id,
@@ -28,7 +29,9 @@ class _$UserTransactionTearOff {
       addedDate: addedDate,
       salesUser: salesUser,
       partnerUser: partnerUser,
-      totalRewards: totalRewards,
+      totalRewardBreakup: totalRewardBreakup,
+      earnedTotalRewardForCurrentTransaction:
+          earnedTotalRewardForCurrentTransaction,
     );
   }
 }
@@ -43,7 +46,8 @@ mixin _$UserTransaction {
   DateTime get addedDate;
   UserProfile get salesUser;
   UserProfile get partnerUser;
-  RewardPoint get totalRewards;
+  RewardPoint get totalRewardBreakup;
+  double get earnedTotalRewardForCurrentTransaction;
 
   $UserTransactionCopyWith<UserTransaction> get copyWith;
 }
@@ -59,11 +63,12 @@ abstract class $UserTransactionCopyWith<$Res> {
       DateTime addedDate,
       UserProfile salesUser,
       UserProfile partnerUser,
-      RewardPoint totalRewards});
+      RewardPoint totalRewardBreakup,
+      double earnedTotalRewardForCurrentTransaction});
 
   $UserProfileCopyWith<$Res> get salesUser;
   $UserProfileCopyWith<$Res> get partnerUser;
-  $RewardPointCopyWith<$Res> get totalRewards;
+  $RewardPointCopyWith<$Res> get totalRewardBreakup;
 }
 
 class _$UserTransactionCopyWithImpl<$Res>
@@ -82,7 +87,8 @@ class _$UserTransactionCopyWithImpl<$Res>
     Object addedDate = freezed,
     Object salesUser = freezed,
     Object partnerUser = freezed,
-    Object totalRewards = freezed,
+    Object totalRewardBreakup = freezed,
+    Object earnedTotalRewardForCurrentTransaction = freezed,
   }) {
     return _then(_value.copyWith(
       description:
@@ -96,9 +102,13 @@ class _$UserTransactionCopyWithImpl<$Res>
       partnerUser: partnerUser == freezed
           ? _value.partnerUser
           : partnerUser as UserProfile,
-      totalRewards: totalRewards == freezed
-          ? _value.totalRewards
-          : totalRewards as RewardPoint,
+      totalRewardBreakup: totalRewardBreakup == freezed
+          ? _value.totalRewardBreakup
+          : totalRewardBreakup as RewardPoint,
+      earnedTotalRewardForCurrentTransaction:
+          earnedTotalRewardForCurrentTransaction == freezed
+              ? _value.earnedTotalRewardForCurrentTransaction
+              : earnedTotalRewardForCurrentTransaction as double,
     ));
   }
 
@@ -123,12 +133,12 @@ class _$UserTransactionCopyWithImpl<$Res>
   }
 
   @override
-  $RewardPointCopyWith<$Res> get totalRewards {
-    if (_value.totalRewards == null) {
+  $RewardPointCopyWith<$Res> get totalRewardBreakup {
+    if (_value.totalRewardBreakup == null) {
       return null;
     }
-    return $RewardPointCopyWith<$Res>(_value.totalRewards, (value) {
-      return _then(_value.copyWith(totalRewards: value));
+    return $RewardPointCopyWith<$Res>(_value.totalRewardBreakup, (value) {
+      return _then(_value.copyWith(totalRewardBreakup: value));
     });
   }
 }
@@ -146,14 +156,15 @@ abstract class _$UserTransactionCopyWith<$Res>
       DateTime addedDate,
       UserProfile salesUser,
       UserProfile partnerUser,
-      RewardPoint totalRewards});
+      RewardPoint totalRewardBreakup,
+      double earnedTotalRewardForCurrentTransaction});
 
   @override
   $UserProfileCopyWith<$Res> get salesUser;
   @override
   $UserProfileCopyWith<$Res> get partnerUser;
   @override
-  $RewardPointCopyWith<$Res> get totalRewards;
+  $RewardPointCopyWith<$Res> get totalRewardBreakup;
 }
 
 class __$UserTransactionCopyWithImpl<$Res>
@@ -174,7 +185,8 @@ class __$UserTransactionCopyWithImpl<$Res>
     Object addedDate = freezed,
     Object salesUser = freezed,
     Object partnerUser = freezed,
-    Object totalRewards = freezed,
+    Object totalRewardBreakup = freezed,
+    Object earnedTotalRewardForCurrentTransaction = freezed,
   }) {
     return _then(_UserTransaction(
       description:
@@ -188,9 +200,13 @@ class __$UserTransactionCopyWithImpl<$Res>
       partnerUser: partnerUser == freezed
           ? _value.partnerUser
           : partnerUser as UserProfile,
-      totalRewards: totalRewards == freezed
-          ? _value.totalRewards
-          : totalRewards as RewardPoint,
+      totalRewardBreakup: totalRewardBreakup == freezed
+          ? _value.totalRewardBreakup
+          : totalRewardBreakup as RewardPoint,
+      earnedTotalRewardForCurrentTransaction:
+          earnedTotalRewardForCurrentTransaction == freezed
+              ? _value.earnedTotalRewardForCurrentTransaction
+              : earnedTotalRewardForCurrentTransaction as double,
     ));
   }
 }
@@ -203,11 +219,13 @@ class _$_UserTransaction implements _UserTransaction {
       this.addedDate,
       @required this.salesUser,
       @required this.partnerUser,
-      @required this.totalRewards})
+      @required this.totalRewardBreakup,
+      @required this.earnedTotalRewardForCurrentTransaction})
       : assert(id != null),
         assert(salesUser != null),
         assert(partnerUser != null),
-        assert(totalRewards != null);
+        assert(totalRewardBreakup != null),
+        assert(earnedTotalRewardForCurrentTransaction != null);
 
   @override
   final String description;
@@ -223,11 +241,13 @@ class _$_UserTransaction implements _UserTransaction {
   @override
   final UserProfile partnerUser;
   @override
-  final RewardPoint totalRewards;
+  final RewardPoint totalRewardBreakup;
+  @override
+  final double earnedTotalRewardForCurrentTransaction;
 
   @override
   String toString() {
-    return 'UserTransaction(description: $description, id: $id, notes: $notes, addedDate: $addedDate, salesUser: $salesUser, partnerUser: $partnerUser, totalRewards: $totalRewards)';
+    return 'UserTransaction(description: $description, id: $id, notes: $notes, addedDate: $addedDate, salesUser: $salesUser, partnerUser: $partnerUser, totalRewardBreakup: $totalRewardBreakup, earnedTotalRewardForCurrentTransaction: $earnedTotalRewardForCurrentTransaction)';
   }
 
   @override
@@ -250,9 +270,14 @@ class _$_UserTransaction implements _UserTransaction {
             (identical(other.partnerUser, partnerUser) ||
                 const DeepCollectionEquality()
                     .equals(other.partnerUser, partnerUser)) &&
-            (identical(other.totalRewards, totalRewards) ||
+            (identical(other.totalRewardBreakup, totalRewardBreakup) ||
                 const DeepCollectionEquality()
-                    .equals(other.totalRewards, totalRewards)));
+                    .equals(other.totalRewardBreakup, totalRewardBreakup)) &&
+            (identical(other.earnedTotalRewardForCurrentTransaction,
+                    earnedTotalRewardForCurrentTransaction) ||
+                const DeepCollectionEquality().equals(
+                    other.earnedTotalRewardForCurrentTransaction,
+                    earnedTotalRewardForCurrentTransaction)));
   }
 
   @override
@@ -264,7 +289,9 @@ class _$_UserTransaction implements _UserTransaction {
       const DeepCollectionEquality().hash(addedDate) ^
       const DeepCollectionEquality().hash(salesUser) ^
       const DeepCollectionEquality().hash(partnerUser) ^
-      const DeepCollectionEquality().hash(totalRewards);
+      const DeepCollectionEquality().hash(totalRewardBreakup) ^
+      const DeepCollectionEquality()
+          .hash(earnedTotalRewardForCurrentTransaction);
 
   @override
   _$UserTransactionCopyWith<_UserTransaction> get copyWith =>
@@ -273,13 +300,15 @@ class _$_UserTransaction implements _UserTransaction {
 
 abstract class _UserTransaction implements UserTransaction {
   const factory _UserTransaction(
-      {String description,
-      String id,
-      String notes,
-      DateTime addedDate,
-      @required UserProfile salesUser,
-      @required UserProfile partnerUser,
-      @required RewardPoint totalRewards}) = _$_UserTransaction;
+          {String description,
+          String id,
+          String notes,
+          DateTime addedDate,
+          @required UserProfile salesUser,
+          @required UserProfile partnerUser,
+          @required RewardPoint totalRewardBreakup,
+          @required double earnedTotalRewardForCurrentTransaction}) =
+      _$_UserTransaction;
 
   @override
   String get description;
@@ -294,7 +323,9 @@ abstract class _UserTransaction implements UserTransaction {
   @override
   UserProfile get partnerUser;
   @override
-  RewardPoint get totalRewards;
+  RewardPoint get totalRewardBreakup;
+  @override
+  double get earnedTotalRewardForCurrentTransaction;
   @override
   _$UserTransactionCopyWith<_UserTransaction> get copyWith;
 }

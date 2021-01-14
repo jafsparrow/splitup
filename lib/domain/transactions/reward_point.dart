@@ -6,17 +6,17 @@ part 'reward_point.freezed.dart';
 
 @freezed
 abstract class RewardPoint implements _$RewardPoint {
+  const RewardPoint._();
   const factory RewardPoint({Map<String, double> billFormulaBreakup}) =
       _RewardPoint;
 
-  // double getTotalRewardPoints() {
-  //   double totalRewards = 0;
-  //   billFormulaBreakup.forEach((key, value) {
-  //     totalRewards = totalRewards + billFormulaBreakup[key];
-  //   });
+  double get totalRewardPoints {
+    double totalRewards = 0;
+    billFormulaBreakup.forEach((key, value) {
+      totalRewards = totalRewards + billFormulaBreakup[key];
+    });
 
-  //   // print('total now is $totalRewards');
-  //   return totalRewards;
-  // }
-
+    // print('total now is $totalRewards');
+    return totalRewards;
+  }
 }
