@@ -17,6 +17,7 @@ class UserProfileBloc extends Bloc<UserProfileEvent, UserProfileState> {
   final IUserManagement _userManagementRepository;
 
   UserProfileBloc(this._userManagementRepository) : super(_Initial()) {
+    print('UserProfilebloc is constructed now');
     print(_count);
     _count = _count + 1;
   }
@@ -25,8 +26,7 @@ class UserProfileBloc extends Bloc<UserProfileEvent, UserProfileState> {
   Stream<UserProfileState> mapEventToState(
     UserProfileEvent event,
   ) async* {
-    yield UserProfileState.loadInProgress();
-    print(state);
+    print('priting the state $state');
     yield* event.map(
       loadUserPofileFromId: (event) async* {
         String userId = event.id;
@@ -41,6 +41,8 @@ class UserProfileBloc extends Bloc<UserProfileEvent, UserProfileState> {
         );
       },
       loadUserProfileFromBarcode: (event) async* {
+        yield UserProfileState.loadInProgress();
+
         String barcode = event.barcode;
         String companyId = event.companyId;
 
@@ -54,7 +56,7 @@ class UserProfileBloc extends Bloc<UserProfileEvent, UserProfileState> {
       },
       load: (_Load value) async* {
         // await Future.delayed(const Duration(seconds: 10));
-        yield UserProfileState.loadFailure(UserManagementFailure.unexpected());
+        yield UserProfileState.initial();
       },
     );
   }

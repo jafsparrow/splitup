@@ -56,7 +56,9 @@ class FirestoreTransationRepository implements ITransactionsFacade {
         .collection('userTransactions');
 
     try {
-      QuerySnapshot querySanp = await userTransactionCollection.get();
+      QuerySnapshot querySanp = await userTransactionCollection
+          .orderBy('addedDate', descending: true)
+          .get();
       List<QueryDocumentSnapshot> docSnaps = querySanp.docs;
 
       List<UserTransaction> companyTransaction = docSnaps.map((docSnap) {

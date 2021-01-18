@@ -26,6 +26,7 @@ import 'domain/promotions/i_promotions_repository.dart';
 import 'domain/transactions/transactions_facade.dart';
 import 'domain/user_management/I_user_management_facade.dart';
 import 'domain/user_management/partner_user_management/partner_user_transactions/i_user_transaction_facade.dart';
+import 'application/organisation_bloc/organisation_bloc.dart';
 import 'infrastructure/organisation/organisation_repository.dart';
 import 'application/user_management/partner_barcode_management/partner_barcode_management_bloc.dart';
 import 'application/user_management/partner_user_add_form/partner_user_add_bloc.dart';
@@ -62,6 +63,8 @@ GetIt $initGetIt(
       get<FirebaseFirestore>(), get<FirebaseAuth>()));
   gh.lazySingleton<IUserTransactionFacade>(
       () => FirestoreTransactionRepository(get<FirebaseFirestore>()));
+  gh.factory<OrganisationBloc>(
+      () => OrganisationBloc(get<IOrganisationRepository>()));
   gh.factory<PartnerBarcodeManagementBloc>(
       () => PartnerBarcodeManagementBloc(get<IPartnerBarcodeManagement>()));
   gh.factory<PartnerUserAddBloc>(

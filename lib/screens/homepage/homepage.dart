@@ -21,164 +21,138 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MultiBlocProvider(
-      providers: [
-        BlocProvider<TransactionsBloc>(
-          create: (context) => getIt<TransactionsBloc>()
-            ..add(
-              TransactionsBlocEvent.loadTransactions(
-                  companyId: '4cHZwNlWzW79PQ7U5dUf'),
-            ),
-          lazy: false,
-        ),
-      ],
-      child: BlocConsumer<UserProfileBloc, UserProfileState>(
-        listener: (context, userProfileState) {
-          print('bloc consumer state changed $userProfileState');
-          userProfileState.maybeMap(
-              loadSuccess: (state) {
-                print('super doorper');
-                Navigator.push(
-                  context,
-                  EventAdd.route(
-                    loggedInUser: context.read<AuthenticationBloc>().state.user,
-                    partnerUser: state.userProfile,
-                    onSave: (transaction) {
-                      getIt<TransactionsBloc>().add(
-                        TransactionsBlocEvent.addTransaction(
-                            companyId: '4cHZwNlWzW79PQ7U5dUf',
-                            transaction: transaction),
-                      );
-                      Navigator.pop(context);
-                    },
-                  ),
-                );
-              },
-              loadInProgress: (_) {
-                Scaffold.of(context).showSnackBar(SnackBar(
-                    content:
-                        Text("Hold on..!! I am trying to find the partner..")));
-              },
-              orElse: () {});
-        },
-        builder: (context, userProfileState) => Scaffold(
-          appBar: AppBar(
-            title: Text('Homepage'),
-            actions: [
-              PopupMenuButton<String>(
-                  onSelected: (val) {
-                    if (val == 'addPartner') {
-                      print('Navigate to add new user screen.');
-                      Navigator.of(context).push(
-                        MaterialPageRoute(
-                          builder: (context) => AddPartnerUserScreen(),
-                        ),
-                      );
-                    }
-                  },
-                  itemBuilder: (context) => [
-                        PopupMenuItem(
-                          child: Text('Add new Partner'),
-                          value: 'addPartner',
-                        ),
-                        PopupMenuItem(
-                          child: Text('Deactivate User'),
-                          value: 'Deactive',
-                        ),
-                        PopupMenuItem(
-                          child: Text('Something else'),
-                          value: 'Something',
-                        ),
-                      ])
-            ],
-          ),
-          floatingActionButton: FloatingActionButton(
-            child: Icon(Icons.scanner),
-            onPressed: () async {
-              // String cameraScanResult = (await scanner.scan()).toString();
-              // // String cameraScanResult = _scanCode();
-              // print('the result of scan is $cameraScanResult');
-              String cameraScanResult = '4iPP478CiqdIvmEu2iQv1IcVJ5o2';
-
-              if (cameraScanResult.isNotEmpty) {
-                context.read<UserProfileBloc>().add(
-                      UserProfileEvent.loadUserPofileFromId(
-                          companyId: '4cHZwNlWzW79PQ7U5dUf',
-                          id: '4iPP478CiqdIvmEu2iQv1IcVJ5o2'),
-                    );
-
-                getIt<UserProfileBloc>().add(
-                  UserProfileEvent.loadUserProfileFromBarcode(
-                      barcode: cameraScanResult),
-                );
-              }
+    return BlocConsumer<UserProfileBloc, UserProfileState>(
+      listener: (context, userProfileState) {
+        userProfileState.maybeMap(
+            loadSuccess: (state) {
+              print('This should only be printed only once after restrat');
               Navigator.push(
                 context,
                 EventAdd.route(
+                  loggedInUser: context.read<AuthenticationBloc>().state.user,
+                  partnerUser: state.userProfile,
                   onSave: (transaction) {
-                    BlocProvider.of<TransactionsBloc>(context).add(
+                    getIt<TransactionsBloc>().add(
                       TransactionsBlocEvent.addTransaction(
-                          transaction: transaction,
-                          companyId: '4cHZwNlWzW79PQ7U5dUf'),
+                        companyId: '4cHZwNlWzW79PQ7U5dUf',
+                        transaction: transaction,
+                      ),
                     );
                     Navigator.pop(context);
                   },
                 ),
               );
             },
-          ),
-          body: userProfileState.maybeMap(
-            loadInProgress: (_) {
-              print('if the progress is indiact');
-              return Center(
-                child: CircularProgressIndicator(),
-              );
-            },
-            orElse: () {
-              return SafeArea(
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: <Widget>[
-                      buildSectionHeading(context, subText: 'Promotions'),
-                      SizedBox(
-                        height: 10,
-                      ),
-                      Promotions(),
-                      buildSectionHeading(context,
-                          subText: 'Recent Transactions'),
-                      SizedBox(
-                        height: 10,
-                      ),
-                      BlocBuilder<TransactionsBloc, TransactionsBlocState>(
-                        builder: (context, state) {
-                          return state.maybeMap(
-                            initial: (state) => Container(
-                              child: Center(
-                                child: CircularProgressIndicator(),
-                              ),
-                            ),
-                            loading: (state) => Container(
-                              child: Center(
-                                child: CircularProgressIndicator(),
-                              ),
-                            ),
-                            loadError: (state) => Text('somethign is wrong'),
-                            listTransactions: (state) {
-                              final userTransactions = state.transactions;
-                              return buildUserTransactions(
-                                  userTransactions, context);
-                            },
-                            orElse: () => Text('something is wrong'),
-                          );
-                        },
-                      ),
-                    ],
-                  ),
+            loadFailure: (_) {
+              Scaffold.of(context).showSnackBar(
+                SnackBar(
+                  content:
+                      Text("User could not be found for the barcode, error.."),
                 ),
               );
             },
+            orElse: () {});
+      },
+      listenWhen: (previous, current) => current != previous,
+      builder: (context, userProfileState) => Scaffold(
+        appBar: AppBar(
+          title: Text('Homepage'),
+          actions: [
+            PopupMenuButton<String>(
+                onSelected: (val) {
+                  if (val == 'addPartner') {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (context) => AddPartnerUserScreen(),
+                      ),
+                    );
+                  }
+                },
+                itemBuilder: (context) => [
+                      PopupMenuItem(
+                        child: Text('Add new Partner'),
+                        value: 'addPartner',
+                      ),
+                      PopupMenuItem(
+                        child: Text('Deactivate User'),
+                        value: 'Deactive',
+                      ),
+                      PopupMenuItem(
+                        child: Text('Something else'),
+                        value: 'Something',
+                      ),
+                    ])
+          ],
+        ),
+        floatingActionButton: userProfileState.maybeMap(
+          loadInProgress: (_) => FloatingActionButton(
+            onPressed: null,
+            child: CircularProgressIndicator(),
+            backgroundColor: Colors.grey,
+          ),
+          orElse: () => FloatingActionButton(
+            child: Icon(Icons.scanner),
+            onPressed: () async {
+              // String cameraScanResult = (await scanner.scan()).toString();
+              // // String cameraScanResult = _scanCode();
+              // print('the result of scan is $cameraScanResult');
+              String cameraScanResult = '243525435345';
+
+              if (cameraScanResult.isNotEmpty) {
+                // context.read<UserProfileBloc>().add(
+                //       UserProfileEvent.loadUserPofileFromId(
+                //           companyId: '4cHZwNlWzW79PQ7U5dUf',
+                //           id: 'jRIflF1vSoPl9KD2Hwn3kLtqHE22'),
+                //     );
+
+                context.read<UserProfileBloc>().add(
+                      UserProfileEvent.loadUserProfileFromBarcode(
+                          companyId: '4cHZwNlWzW79PQ7U5dUf',
+                          barcode: cameraScanResult),
+                    );
+              }
+            },
+          ),
+        ),
+        body: SafeArea(
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                buildSectionHeading(context, subText: 'Promotions'),
+                SizedBox(
+                  height: 10,
+                ),
+                Promotions(),
+                buildSectionHeading(context, subText: 'Recent Transactions'),
+                SizedBox(
+                  height: 10,
+                ),
+                BlocBuilder<TransactionsBloc, TransactionsBlocState>(
+                  builder: (context, state) {
+                    return state.maybeMap(
+                      initial: (state) => Container(
+                        child: Center(
+                          child: CircularProgressIndicator(),
+                        ),
+                      ),
+                      loading: (state) => Container(
+                        child: Center(
+                          child: CircularProgressIndicator(),
+                        ),
+                      ),
+                      loadError: (state) => Text('somethign is wrong'),
+                      listTransactions: (state) {
+                        final userTransactions = state.transactions;
+                        return buildUserTransactions(userTransactions, context);
+                      },
+                      orElse: () => Text('something is wrong'),
+                    );
+                  },
+                ),
+              ],
+            ),
           ),
         ),
       ),
@@ -211,7 +185,7 @@ class HomePage extends StatelessWidget {
             elevation: 0.5,
             child: ListTile(
               leading: DateTimeDisplay(
-                dateTime: DateTime.now(),
+                transactionCreationDateTime: userTransactions[index].addedDate,
               ),
               trailing:
                   EarnedPoints(currentTransaction: userTransactions[index]),

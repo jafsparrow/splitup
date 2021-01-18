@@ -18,8 +18,8 @@ class _$OrganisationTearOff {
       @required String companyId,
       @required String phoneNumber,
       @required Map<String, String> address,
-      @required Map<String, String> pointsFormula,
-      @required Map<String, String> licensePlan}) {
+      @required Map<String, double> pointsFormula,
+      @required LicensePlan licensePlan}) {
     return _Organisation(
       companyName: companyName,
       companyId: companyId,
@@ -39,8 +39,8 @@ mixin _$Organisation {
   String get companyId;
   String get phoneNumber;
   Map<String, String> get address;
-  Map<String, String> get pointsFormula;
-  Map<String, String> get licensePlan;
+  Map<String, double> get pointsFormula;
+  LicensePlan get licensePlan;
 
   $OrganisationCopyWith<Organisation> get copyWith;
 }
@@ -54,8 +54,10 @@ abstract class $OrganisationCopyWith<$Res> {
       String companyId,
       String phoneNumber,
       Map<String, String> address,
-      Map<String, String> pointsFormula,
-      Map<String, String> licensePlan});
+      Map<String, double> pointsFormula,
+      LicensePlan licensePlan});
+
+  $LicensePlanCopyWith<$Res> get licensePlan;
 }
 
 class _$OrganisationCopyWithImpl<$Res> implements $OrganisationCopyWith<$Res> {
@@ -84,11 +86,21 @@ class _$OrganisationCopyWithImpl<$Res> implements $OrganisationCopyWith<$Res> {
           address == freezed ? _value.address : address as Map<String, String>,
       pointsFormula: pointsFormula == freezed
           ? _value.pointsFormula
-          : pointsFormula as Map<String, String>,
+          : pointsFormula as Map<String, double>,
       licensePlan: licensePlan == freezed
           ? _value.licensePlan
-          : licensePlan as Map<String, String>,
+          : licensePlan as LicensePlan,
     ));
+  }
+
+  @override
+  $LicensePlanCopyWith<$Res> get licensePlan {
+    if (_value.licensePlan == null) {
+      return null;
+    }
+    return $LicensePlanCopyWith<$Res>(_value.licensePlan, (value) {
+      return _then(_value.copyWith(licensePlan: value));
+    });
   }
 }
 
@@ -103,8 +115,11 @@ abstract class _$OrganisationCopyWith<$Res>
       String companyId,
       String phoneNumber,
       Map<String, String> address,
-      Map<String, String> pointsFormula,
-      Map<String, String> licensePlan});
+      Map<String, double> pointsFormula,
+      LicensePlan licensePlan});
+
+  @override
+  $LicensePlanCopyWith<$Res> get licensePlan;
 }
 
 class __$OrganisationCopyWithImpl<$Res> extends _$OrganisationCopyWithImpl<$Res>
@@ -135,10 +150,10 @@ class __$OrganisationCopyWithImpl<$Res> extends _$OrganisationCopyWithImpl<$Res>
           address == freezed ? _value.address : address as Map<String, String>,
       pointsFormula: pointsFormula == freezed
           ? _value.pointsFormula
-          : pointsFormula as Map<String, String>,
+          : pointsFormula as Map<String, double>,
       licensePlan: licensePlan == freezed
           ? _value.licensePlan
-          : licensePlan as Map<String, String>,
+          : licensePlan as LicensePlan,
     ));
   }
 }
@@ -168,9 +183,9 @@ class _$_Organisation extends _Organisation {
   @override
   final Map<String, String> address;
   @override
-  final Map<String, String> pointsFormula;
+  final Map<String, double> pointsFormula;
   @override
-  final Map<String, String> licensePlan;
+  final LicensePlan licensePlan;
 
   @override
   String toString() {
@@ -223,8 +238,8 @@ abstract class _Organisation extends Organisation {
       @required String companyId,
       @required String phoneNumber,
       @required Map<String, String> address,
-      @required Map<String, String> pointsFormula,
-      @required Map<String, String> licensePlan}) = _$_Organisation;
+      @required Map<String, double> pointsFormula,
+      @required LicensePlan licensePlan}) = _$_Organisation;
 
   @override
   String get companyName;
@@ -235,9 +250,9 @@ abstract class _Organisation extends Organisation {
   @override
   Map<String, String> get address;
   @override
-  Map<String, String> get pointsFormula;
+  Map<String, double> get pointsFormula;
   @override
-  Map<String, String> get licensePlan;
+  LicensePlan get licensePlan;
   @override
   _$OrganisationCopyWith<_Organisation> get copyWith;
 }

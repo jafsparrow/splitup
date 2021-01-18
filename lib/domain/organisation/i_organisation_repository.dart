@@ -4,5 +4,5 @@ import 'package:dartz/dartz.dart';
 
 abstract class IOrganisationRepository {
   Future<Either<OrganisationFailure, Organisation>> getCompanyDetails(
-      String companyId);
+      {String companyId});
 }

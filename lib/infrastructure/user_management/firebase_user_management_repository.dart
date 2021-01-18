@@ -17,12 +17,11 @@ class FirebaseUserManagementRepository implements IUserManagement {
   @override
   Future<Either<UserManagementFailure, UserProfile>> getPartnerUserFromBarcode(
       {String companyId, String barcode}) async {
-    await Future.delayed(const Duration(seconds: 10));
     try {
       QuerySnapshot userDetailsSanpshot = await _firestore
           .collection('companies')
           .doc(companyId)
-          .collection('users')
+          .collection('barcodes')
           .where('barcode', isEqualTo: barcode)
           .get();
       // userDetailsSanpshot.docs.map((doc) => null)
@@ -33,12 +32,16 @@ class FirebaseUserManagementRepository implements IUserManagement {
       if (!userDetailsSanpshot.docs[0].exists) {
         return left(const UserManagementFailure.unexpected());
       }
-      return right(
-          UserProfileDto.fromFirestore(userDetailsSanpshot.docs[0]).toDomain());
+
+      return getPartnerUserFromId(
+          companyId: companyId,
+          userId: userDetailsSanpshot.docs[0]['associatedUserId']);
     } catch (e) {
       print('something wrong happened ');
 
-      return left(const UserManagementFailure.unexpected());
+      return left(
+        const UserManagementFailure.unexpected(),
+      );
     }
   }
 

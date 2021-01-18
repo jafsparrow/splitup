@@ -34,6 +34,12 @@ class PartnerCodes extends StatelessWidget {
                   ),
                   loadError: (loadError) => Text('Loading error'),
                   listPartnerBarcode: (partnerListState) {
+                    // If No barcodes assigned Yet...
+                    if (partnerListState.partnerBarcodes.length < 1) {
+                      return Center(
+                        child: Text('No barcodes assigned Yet'),
+                      );
+                    }
                     return ListView.separated(
                       shrinkWrap: true,
                       itemBuilder: (context, index) => BarcodeCard(

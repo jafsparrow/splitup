@@ -13,10 +13,10 @@ class OrganisationRepository implements IOrganisationRepository {
   OrganisationRepository(this._firestore);
   @override
   Future<Either<OrganisationFailure, Organisation>> getCompanyDetails(
-      String companyId) async {
+      {String companyId}) async {
     try {
       final CollectionReference organisationCollection =
-          _firestore.collection('organisations');
+          _firestore.collection('companies');
 
       DocumentSnapshot docSnap =
           await organisationCollection.doc(companyId).get();

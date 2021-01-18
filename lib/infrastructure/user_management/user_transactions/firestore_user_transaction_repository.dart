@@ -30,7 +30,7 @@ class FirestoreTransactionRepository implements IUserTransactionFacade {
 
     try {
       final QuerySnapshot snapShop = await userTransactionCollectionRef
-          // .where('partnerUser.uid', isEqualTo: uid)
+          .where('partnerUser.uid', isEqualTo: uid)
           .get();
       List<QueryDocumentSnapshot> docSnapsList = snapShop.docs;
 

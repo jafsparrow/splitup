@@ -12,6 +12,7 @@ import 'package:firebase_core/firebase_core.dart';
 
 import 'application/auth/authentication_bloc.dart';
 import 'application/auth/authorisation/authorisation_bloc.dart';
+import 'application/organisation_bloc/organisation_bloc.dart';
 import 'domain/promotions/promotion.dart';
 
 Future<void> main() async {
@@ -49,6 +50,14 @@ class MyApp extends StatelessWidget {
                   ),
                 );
             },
+          ),
+          BlocProvider<OrganisationBloc>(
+            create: (context) => getIt<OrganisationBloc>()
+              ..add(
+                OrganisationEvent.loadOrganisationDataForLoggedInUser(
+                    companyId: '4cHZwNlWzW79PQ7U5dUf'),
+              ),
+            lazy: false,
           ),
         ],
         child: AppView(),

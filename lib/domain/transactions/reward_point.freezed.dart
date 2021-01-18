@@ -13,9 +13,12 @@ class _$RewardPointTearOff {
   const _$RewardPointTearOff();
 
 // ignore: unused_element
-  _RewardPoint call({Map<String, double> billFormulaBreakup}) {
+  _RewardPoint call(
+      {Map<String, double> billFormulaBreakup,
+      Map<String, double> transactionBreakup}) {
     return _RewardPoint(
       billFormulaBreakup: billFormulaBreakup,
+      transactionBreakup: transactionBreakup,
     );
   }
 }
@@ -25,6 +28,7 @@ const $RewardPoint = _$RewardPointTearOff();
 
 mixin _$RewardPoint {
   Map<String, double> get billFormulaBreakup;
+  Map<String, double> get transactionBreakup;
 
   $RewardPointCopyWith<RewardPoint> get copyWith;
 }
@@ -33,7 +37,9 @@ abstract class $RewardPointCopyWith<$Res> {
   factory $RewardPointCopyWith(
           RewardPoint value, $Res Function(RewardPoint) then) =
       _$RewardPointCopyWithImpl<$Res>;
-  $Res call({Map<String, double> billFormulaBreakup});
+  $Res call(
+      {Map<String, double> billFormulaBreakup,
+      Map<String, double> transactionBreakup});
 }
 
 class _$RewardPointCopyWithImpl<$Res> implements $RewardPointCopyWith<$Res> {
@@ -46,11 +52,15 @@ class _$RewardPointCopyWithImpl<$Res> implements $RewardPointCopyWith<$Res> {
   @override
   $Res call({
     Object billFormulaBreakup = freezed,
+    Object transactionBreakup = freezed,
   }) {
     return _then(_value.copyWith(
       billFormulaBreakup: billFormulaBreakup == freezed
           ? _value.billFormulaBreakup
           : billFormulaBreakup as Map<String, double>,
+      transactionBreakup: transactionBreakup == freezed
+          ? _value.transactionBreakup
+          : transactionBreakup as Map<String, double>,
     ));
   }
 }
@@ -61,7 +71,9 @@ abstract class _$RewardPointCopyWith<$Res>
           _RewardPoint value, $Res Function(_RewardPoint) then) =
       __$RewardPointCopyWithImpl<$Res>;
   @override
-  $Res call({Map<String, double> billFormulaBreakup});
+  $Res call(
+      {Map<String, double> billFormulaBreakup,
+      Map<String, double> transactionBreakup});
 }
 
 class __$RewardPointCopyWithImpl<$Res> extends _$RewardPointCopyWithImpl<$Res>
@@ -76,24 +88,31 @@ class __$RewardPointCopyWithImpl<$Res> extends _$RewardPointCopyWithImpl<$Res>
   @override
   $Res call({
     Object billFormulaBreakup = freezed,
+    Object transactionBreakup = freezed,
   }) {
     return _then(_RewardPoint(
       billFormulaBreakup: billFormulaBreakup == freezed
           ? _value.billFormulaBreakup
           : billFormulaBreakup as Map<String, double>,
+      transactionBreakup: transactionBreakup == freezed
+          ? _value.transactionBreakup
+          : transactionBreakup as Map<String, double>,
     ));
   }
 }
 
 class _$_RewardPoint extends _RewardPoint {
-  const _$_RewardPoint({this.billFormulaBreakup}) : super._();
+  const _$_RewardPoint({this.billFormulaBreakup, this.transactionBreakup})
+      : super._();
 
   @override
   final Map<String, double> billFormulaBreakup;
+  @override
+  final Map<String, double> transactionBreakup;
 
   @override
   String toString() {
-    return 'RewardPoint(billFormulaBreakup: $billFormulaBreakup)';
+    return 'RewardPoint(billFormulaBreakup: $billFormulaBreakup, transactionBreakup: $transactionBreakup)';
   }
 
   @override
@@ -102,13 +121,17 @@ class _$_RewardPoint extends _RewardPoint {
         (other is _RewardPoint &&
             (identical(other.billFormulaBreakup, billFormulaBreakup) ||
                 const DeepCollectionEquality()
-                    .equals(other.billFormulaBreakup, billFormulaBreakup)));
+                    .equals(other.billFormulaBreakup, billFormulaBreakup)) &&
+            (identical(other.transactionBreakup, transactionBreakup) ||
+                const DeepCollectionEquality()
+                    .equals(other.transactionBreakup, transactionBreakup)));
   }
 
   @override
   int get hashCode =>
       runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(billFormulaBreakup);
+      const DeepCollectionEquality().hash(billFormulaBreakup) ^
+      const DeepCollectionEquality().hash(transactionBreakup);
 
   @override
   _$RewardPointCopyWith<_RewardPoint> get copyWith =>
@@ -117,11 +140,14 @@ class _$_RewardPoint extends _RewardPoint {
 
 abstract class _RewardPoint extends RewardPoint {
   const _RewardPoint._() : super._();
-  const factory _RewardPoint({Map<String, double> billFormulaBreakup}) =
-      _$_RewardPoint;
+  const factory _RewardPoint(
+      {Map<String, double> billFormulaBreakup,
+      Map<String, double> transactionBreakup}) = _$_RewardPoint;
 
   @override
   Map<String, double> get billFormulaBreakup;
+  @override
+  Map<String, double> get transactionBreakup;
   @override
   _$RewardPointCopyWith<_RewardPoint> get copyWith;
 }

@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 
 class DateTimeDisplay extends StatelessWidget {
-  final DateTime dateTime;
+  final DateTime transactionCreationDateTime;
 
-  const DateTimeDisplay({Key key, this.dateTime}) : super(key: key);
+  const DateTimeDisplay({Key key, this.transactionCreationDateTime})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -18,18 +19,18 @@ class DateTimeDisplay extends StatelessWidget {
       child: Column(
         children: <Widget>[
           Text(
-            '24',
+            transactionCreationDateTime.day.toString(),
             style: TextStyle(fontSize: 25, fontWeight: FontWeight.w300),
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
               Text(
-                'Sep',
+                transactionCreationDateTime.month.toString(),
                 style: TextStyle(fontSize: 10),
               ),
               Text(
-                '20',
+                transactionCreationDateTime.year.toString(),
                 style: TextStyle(fontSize: 10),
               )
             ],

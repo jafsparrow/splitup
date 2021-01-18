@@ -1,3 +1,4 @@
+import 'package:JCCommisionApp/application/organisation_bloc/organisation_bloc.dart';
 import 'package:JCCommisionApp/injection.dart';
 import 'package:JCCommisionApp/presentation/promotion/promotion_ui.dart';
 import 'package:JCCommisionApp/presentation/user_management/partnerlist/partner_list.dart';
@@ -7,6 +8,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'application/auth/authentication_bloc.dart';
+import 'application/transactions_bloc/transactions_bloc.dart';
 import 'application/user_management/list_users/partner_list_bloc.dart';
 import 'application/user_management/user_profile/user_profile_bloc.dart';
 import 'domain/user_management/user_profile.dart';
@@ -21,7 +23,11 @@ class LandingPage extends StatefulWidget {
 }
 
 class _LandingPageState extends State<LandingPage> {
-  List<String> subMenus = ['Home', 'Partners', 'Stats'];
+  Map<String, Icon> subMenus = {
+    'Home': Icon(Icons.mail),
+    'Partners': Icon(Icons.perm_identity),
+    'Stats': Icon(Icons.show_chart)
+  };
   List<Widget> subWidgets = [HomePage(), PartnerList(), PromotionScreen()];
   int selectedIndex = 0;
   @override
@@ -40,6 +46,14 @@ class _LandingPageState extends State<LandingPage> {
               UserProfileEvent.load(),
             ),
         ),
+        BlocProvider<TransactionsBloc>(
+          create: (context) => getIt<TransactionsBloc>()
+            ..add(
+              TransactionsBlocEvent.loadTransactions(
+                  companyId: '4cHZwNlWzW79PQ7U5dUf'),
+            ),
+          lazy: false,
+        ),
       ],
       child: Scaffold(
         bottomNavigationBar: BottomNavigationBar(
@@ -51,11 +65,11 @@ class _LandingPageState extends State<LandingPage> {
             );
           },
           currentIndex: selectedIndex,
-          items: subMenus.map(
+          items: (subMenus.keys).map(
             (item) {
               return BottomNavigationBarItem(
-                icon: Icon(Icons.mail),
-                title: Text(item),
+                icon: subMenus[item],
+                label: item,
               );
             },
           ).toList(),

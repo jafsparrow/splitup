@@ -1,5 +1,6 @@
 import 'package:JCCommisionApp/domain/transactions/transaction.dart';
 import 'package:JCCommisionApp/infrastructure/core/transaction_modals/reward_point_dto.dart';
+import 'package:JCCommisionApp/infrastructure/core/utils/timestamp_dateTime_converter.dart';
 import 'package:JCCommisionApp/infrastructure/user_management/userprofile_dto.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
@@ -54,17 +55,5 @@ abstract class UserTransactionDto implements _$UserTransactionDto {
 
   factory UserTransactionDto.fromFirestore(DocumentSnapshot doc) {
     return UserTransactionDto.fromJson(doc.data()).copyWith(id: doc.id);
-  }
-}
-
-class ServerTimestampConverter implements JsonConverter<DateTime, Timestamp> {
-  const ServerTimestampConverter();
-
-  @override
-  Timestamp toJson(DateTime fieldValue) => Timestamp.fromDate(fieldValue);
-
-  @override
-  DateTime fromJson(Timestamp json) {
-    return json.toDate();
   }
 }

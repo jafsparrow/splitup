@@ -30,20 +30,24 @@ class PartnerActivities extends StatelessWidget {
               return state.maybeMap(
                   userTransactionsLoaded: (listOfUserTransactions) {
                     return Expanded(
-                      child: ListView.builder(
-                        shrinkWrap: true,
-                        itemBuilder: (context, index) {
-                          return ListTile(
-                            title: Text(
-                              listOfUserTransactions
-                                  .userTransactions[index].addedDate
-                                  .toIso8601String(),
+                      child: listOfUserTransactions.userTransactions.length < 1
+                          ? Center(
+                              child: Text('No Transactions yet'),
+                            )
+                          : ListView.builder(
+                              shrinkWrap: true,
+                              itemBuilder: (context, index) {
+                                return ListTile(
+                                  title: Text(
+                                    listOfUserTransactions
+                                        .userTransactions[index].addedDate
+                                        .toIso8601String(),
+                                  ),
+                                );
+                              },
+                              itemCount: listOfUserTransactions
+                                  .userTransactions.length,
                             ),
-                          );
-                        },
-                        itemCount:
-                            listOfUserTransactions.userTransactions.length,
-                      ),
                     );
                   },
                   initial: (_) {
