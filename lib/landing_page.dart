@@ -1,13 +1,16 @@
+import 'package:JCCommisionApp/application/lead_board/weekly_leaders/weekly_leaders_bloc.dart';
 import 'package:JCCommisionApp/application/organisation_bloc/organisation_bloc.dart';
 import 'package:JCCommisionApp/injection.dart';
 import 'package:JCCommisionApp/presentation/promotion/promotion_ui.dart';
 import 'package:JCCommisionApp/presentation/user_management/partnerlist/partner_list.dart';
 import 'package:JCCommisionApp/repositories/user_profile/user_profile_repository.dart';
 import 'package:JCCommisionApp/screens/homepage/homepage.dart';
+import 'package:JCCommisionApp/screens/stats/stats.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'application/auth/authentication_bloc.dart';
+import 'application/lead_board/monthly_leaders/monthly_leaders_bloc.dart';
 import 'application/transactions_bloc/transactions_bloc.dart';
 import 'application/user_management/list_users/partner_list_bloc.dart';
 import 'application/user_management/user_profile/user_profile_bloc.dart';
@@ -28,7 +31,7 @@ class _LandingPageState extends State<LandingPage> {
     'Partners': Icon(Icons.perm_identity),
     'Stats': Icon(Icons.show_chart)
   };
-  List<Widget> subWidgets = [HomePage(), PartnerList(), PromotionScreen()];
+  List<Widget> subWidgets = [HomePage(), PartnerList(), Stats()];
   int selectedIndex = 0;
   @override
   Widget build(BuildContext context) {
@@ -54,6 +57,20 @@ class _LandingPageState extends State<LandingPage> {
             ),
           lazy: false,
         ),
+        BlocProvider<WeeklyLeadersBloc>(
+          create: (context) => getIt<WeeklyLeadersBloc>()
+            ..add(
+              WeeklyLeadersEvent.loadWeeklyLeadBoard(
+                  companyId: '4cHZwNlWzW79PQ7U5dUf'),
+            ),
+        ),
+        BlocProvider<MonthlyLeadersBloc>(
+          create: (context) => getIt<MonthlyLeadersBloc>()
+            ..add(
+              MonthlyLeadersEvent.loadMonthlyLeadBoard(
+                  companyId: '4cHZwNlWzW79PQ7U5dUf'),
+            ),
+        )
       ],
       child: Scaffold(
         bottomNavigationBar: BottomNavigationBar(

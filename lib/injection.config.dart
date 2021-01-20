@@ -26,6 +26,7 @@ import 'domain/promotions/i_promotions_repository.dart';
 import 'domain/transactions/transactions_facade.dart';
 import 'domain/user_management/I_user_management_facade.dart';
 import 'domain/user_management/partner_user_management/partner_user_transactions/i_user_transaction_facade.dart';
+import 'application/lead_board/monthly_leaders/monthly_leaders_bloc.dart';
 import 'application/organisation_bloc/organisation_bloc.dart';
 import 'infrastructure/organisation/organisation_repository.dart';
 import 'application/user_management/partner_barcode_management/partner_barcode_management_bloc.dart';
@@ -35,6 +36,7 @@ import 'infrastructure/promotions/promotion_repository.dart';
 import 'application/transactions_bloc/transactions_bloc.dart';
 import 'application/user_management/user_profile/user_profile_bloc.dart';
 import 'application/user_management/user_transactions/user_transactions_bloc.dart';
+import 'application/lead_board/weekly_leaders/weekly_leaders_bloc.dart';
 
 /// adds generated dependencies
 /// to the provided [GetIt] instance
@@ -63,6 +65,8 @@ GetIt $initGetIt(
       get<FirebaseFirestore>(), get<FirebaseAuth>()));
   gh.lazySingleton<IUserTransactionFacade>(
       () => FirestoreTransactionRepository(get<FirebaseFirestore>()));
+  gh.factory<MonthlyLeadersBloc>(
+      () => MonthlyLeadersBloc(get<ITransactionsFacade>()));
   gh.factory<OrganisationBloc>(
       () => OrganisationBloc(get<IOrganisationRepository>()));
   gh.factory<PartnerBarcodeManagementBloc>(
@@ -76,6 +80,8 @@ GetIt $initGetIt(
   gh.factory<UserProfileBloc>(() => UserProfileBloc(get<IUserManagement>()));
   gh.factory<UserTransactionsBloc>(
       () => UserTransactionsBloc(get<IUserTransactionFacade>()));
+  gh.factory<WeeklyLeadersBloc>(
+      () => WeeklyLeadersBloc(get<ITransactionsFacade>()));
   gh.factory<AuthorisationBloc>(
       () => AuthorisationBloc(get<IAuthorisationFacade>()));
   gh.factory<BarcodeScanUtil>(

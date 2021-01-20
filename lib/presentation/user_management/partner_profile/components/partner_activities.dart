@@ -28,37 +28,38 @@ class PartnerActivities extends StatelessWidget {
           BlocBuilder<UserTransactionsBloc, UserTransactionsState>(
             builder: (context, state) {
               return state.maybeMap(
-                  userTransactionsLoaded: (listOfUserTransactions) {
-                    return Expanded(
-                      child: listOfUserTransactions.userTransactions.length < 1
-                          ? Center(
-                              child: Text('No Transactions yet'),
-                            )
-                          : ListView.builder(
-                              shrinkWrap: true,
-                              itemBuilder: (context, index) {
-                                return ListTile(
-                                  title: Text(
-                                    listOfUserTransactions
-                                        .userTransactions[index].addedDate
-                                        .toIso8601String(),
-                                  ),
-                                );
-                              },
-                              itemCount: listOfUserTransactions
-                                  .userTransactions.length,
-                            ),
-                    );
-                  },
-                  initial: (_) {
-                    return Container();
-                  },
-                  loadingError: (_) => Center(
-                        child: Text('Error in loading the transactions..'),
-                      ),
-                  orElse: () {
-                    return CircularProgressIndicator();
-                  });
+                userTransactionsLoaded: (listOfUserTransactions) {
+                  return Expanded(
+                    child: listOfUserTransactions.userTransactions.length < 1
+                        ? Center(
+                            child: Text('No Transactions yet'),
+                          )
+                        : ListView.builder(
+                            shrinkWrap: true,
+                            itemBuilder: (context, index) {
+                              return ListTile(
+                                title: Text(
+                                  listOfUserTransactions
+                                      .userTransactions[index].addedDate
+                                      .toIso8601String(),
+                                ),
+                              );
+                            },
+                            itemCount:
+                                listOfUserTransactions.userTransactions.length,
+                          ),
+                  );
+                },
+                initial: (_) {
+                  return Container();
+                },
+                loadingError: (_) => Center(
+                  child: Text('Error in loading the transactions..'),
+                ),
+                orElse: () => Center(
+                  child: CircularProgressIndicator(),
+                ),
+              );
             },
           ),
         ],

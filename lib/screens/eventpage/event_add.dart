@@ -44,7 +44,7 @@ class _EventAddState extends State<EventAdd> {
   Map<String, double> billFormulaBreakup = {
     'electrical': 0.43,
     'paints': 0.23,
-    'other': 0.33
+    'others': 0.33
   };
 
   @override
@@ -89,27 +89,39 @@ class _EventAddState extends State<EventAdd> {
     );
   }
 
-  Column buildEventAddForm({Map<String, double> formulaBreak}) {
-    return Column(
-      children: <Widget>[
-        ...billFormulaBreakup.keys
-            .map(
-              (item) => Padding(
-                padding: const EdgeInsets.all(10.0),
-                child: TextField(
-                  controller: controllerMaps[item],
-                  decoration: InputDecoration(
-                      labelText:
-                          '${item} - ${billFormulaBreakup[item].toString()}'),
+  Form buildEventAddForm({Map<String, double> formulaBreak}) {
+    return Form(
+      autovalidateMode: AutovalidateMode.onUserInteraction,
+      child: Column(
+        children: <Widget>[
+          ...billFormulaBreakup.keys
+              .map(
+                (item) => Padding(
+                  padding: const EdgeInsets.all(10.0),
+                  child: TextFormField(
+                    controller: controllerMaps[item]..text = '0',
+                    keyboardType: TextInputType.number,
+                    validator: (value) {
+                      if (value.isNotEmpty) {
+                        if (double.parse(value) > 100.0) {
+                          return 'The Amount is large.';
+                        }
+                      }
+                      return null;
+                    },
+                    decoration: InputDecoration(
+                        labelText:
+                            '$item - ${billFormulaBreakup[item].toString()}'),
+                  ),
                 ),
-              ),
-            )
-            .toList(),
-        SizedBox(
-          height: 10,
-        ),
-        buildSubmitButton(formulaBreak: formulaBreak)
-      ],
+              )
+              .toList(),
+          SizedBox(
+            height: 10,
+          ),
+          buildSubmitButton(formulaBreak: formulaBreak)
+        ],
+      ),
     );
   }
 
@@ -117,27 +129,55 @@ class _EventAddState extends State<EventAdd> {
     return RaisedButton(
       child: Text('Add new'),
       onPressed: () {
-        Map<String, double> pointsEarned = {};
+        AlertDialog alert = AlertDialog(
+          actions: [
+            FlatButton(
+              child: Text("Cancel"),
+              onPressed: () {
+                Navigator.pop(context);
+              },
+            ),
+            FlatButton(
+              child: Text("Continue"),
+              onPressed: () {
+                Navigator.pop(context);
+                Map<String, double> pointsEarned = {};
 
-        controllerMaps.forEach(
-          (key, value) {
-            pointsEarned[key] = double.parse(value.text);
+                controllerMaps.forEach(
+                  (key, value) {
+                    pointsEarned[key] = double.parse(value.text);
+                  },
+                );
+
+                RewardPoint rewards = RewardPoint(
+                    billFormulaBreakup: formulaBreak,
+                    transactionBreakup: pointsEarned);
+
+                UserTransaction newTransaction = UserTransaction(
+                  totalRewardBreakup: rewards,
+                  salesUser: widget.loggedInUser,
+                  partnerUser: widget.partnerUser,
+                  earnedTotalRewardForCurrentTransaction:
+                      rewards.totalRewardPoints,
+                  addedDate: DateTime.now(),
+                  description: 'sample data',
+                  notes: 'sample data',
+                );
+                widget.onSave(newTransaction);
+              },
+            )
+          ],
+          title: Text('Confirm..'),
+          content: Text(
+              'Adding a new Transaction for ${widget.partnerUser.userName}?'),
+        );
+
+        showDialog(
+          context: context,
+          builder: (BuildContext context) {
+            return alert;
           },
         );
-
-        RewardPoint rewards = RewardPoint(
-            billFormulaBreakup: formulaBreak, transactionBreakup: pointsEarned);
-
-        UserTransaction newTransaction = UserTransaction(
-          totalRewardBreakup: rewards,
-          salesUser: widget.loggedInUser,
-          partnerUser: widget.partnerUser,
-          earnedTotalRewardForCurrentTransaction: rewards.totalRewardPoints,
-          addedDate: DateTime.now(),
-          description: 'sample data',
-          notes: 'sample data',
-        );
-        widget.onSave(newTransaction);
       },
     );
   }

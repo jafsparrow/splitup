@@ -13,9 +13,12 @@ abstract class RewardPoint implements _$RewardPoint {
 
   double get totalRewardPoints {
     double totalRewards = 0;
-    billFormulaBreakup.forEach((key, value) {
-      totalRewards = totalRewards + (value * transactionBreakup[key]);
-    });
+    billFormulaBreakup.forEach(
+      (key, value) {
+        totalRewards =
+            totalRewards + (value * transactionBreakup[key]).toDouble();
+      },
+    );
 
     // print('total now is $totalRewards');
     return totalRewards;

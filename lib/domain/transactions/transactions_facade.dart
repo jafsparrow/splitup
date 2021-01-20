@@ -1,3 +1,4 @@
+import 'package:JCCommisionApp/domain/core/utils/winners_sorted.dart';
 import 'package:JCCommisionApp/domain/transactions/transaction.dart';
 import 'package:JCCommisionApp/domain/transactions/transactions_failure.dart';
 import 'package:dartz/dartz.dart';
@@ -14,4 +15,8 @@ abstract class ITransactionsFacade {
 
   Future<Either<UserTransactionFailure, UserTransaction>> updateUserTransaction(
       UserTransaction transaction);
+
+  Future<Either<UserTransactionFailure, List<PartnerPointsAgregate>>>
+      listTransactionsForPeriod(
+          {String companyId, TransactionFilterPeriod period});
 }

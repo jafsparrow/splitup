@@ -96,7 +96,7 @@ class HomePage extends StatelessWidget {
               // String cameraScanResult = (await scanner.scan()).toString();
               // // String cameraScanResult = _scanCode();
               // print('the result of scan is $cameraScanResult');
-              String cameraScanResult = '243525435345';
+              String cameraScanResult = '123454332';
 
               if (cameraScanResult.isNotEmpty) {
                 // context.read<UserProfileBloc>().add(
