@@ -21,12 +21,11 @@ class FirebasePartnerBarcodeManagement implements IPartnerBarcodeManagement {
         .collection('companies')
         .doc(companyId)
         .collection('barcodes');
-
-    final QuerySnapshot barcodeDocSnap = await orgBarcodeCollectionRef
-        .where('barcode', isEqualTo: barcode)
-        .get();
-
     try {
+      final QuerySnapshot barcodeDocSnap = await orgBarcodeCollectionRef
+          .where('barcode', isEqualTo: barcode)
+          .get();
+
       // check if the barcode is already taken.
       // final existingBarcodeList = await barcodeDocRef.get();
       if (barcodeDocSnap.docs.length > 0) {

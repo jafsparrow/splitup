@@ -18,7 +18,7 @@ class EarnedPoints extends StatelessWidget {
           Text(
             currentTransaction.earnedTotalRewardForCurrentTransaction
                 .toString(),
-            style: TextStyle(color: Colors.white, fontSize: 20),
+            style: TextStyle(color: Colors.white, fontSize: 10),
           ),
           Text(
             'Points',

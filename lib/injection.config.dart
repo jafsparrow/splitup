@@ -9,6 +9,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:get_it/get_it.dart';
 import 'package:injectable/injectable.dart';
 
+import 'infrastructure/auth/firestore_auth_repository.dart';
 import 'application/auth/authorisation/authorisation_bloc.dart';
 import 'infrastructure/barcode_scan/barcode_scan_repository.dart';
 import 'application/barcode_scan/barcode_scan_util.dart';
@@ -18,6 +19,7 @@ import 'infrastructure/user_management/partner_user_management/partner_barcodes/
 import 'infrastructure/user_management/firebase_user_management_repository.dart';
 import 'infrastructure/user_management/user_transactions/firestore_user_transaction_repository.dart';
 import 'infrastructure/transactions/firestore_transactions_repository.dart';
+import 'domain/auth/i_auth_facade.dart';
 import 'domain/auth/authorisation/i_authorisation_facade.dart';
 import 'domain/barcode_scan/i_barcode_scan_repository.dart';
 import 'domain/organisation/i_organisation_repository.dart';
@@ -26,6 +28,7 @@ import 'domain/promotions/i_promotions_repository.dart';
 import 'domain/transactions/transactions_facade.dart';
 import 'domain/user_management/I_user_management_facade.dart';
 import 'domain/user_management/partner_user_management/partner_user_transactions/i_user_transaction_facade.dart';
+import 'application/auth/logged_user/logged_user_bloc.dart';
 import 'application/lead_board/monthly_leaders/monthly_leaders_bloc.dart';
 import 'application/organisation_bloc/organisation_bloc.dart';
 import 'infrastructure/organisation/organisation_repository.dart';
@@ -50,6 +53,8 @@ GetIt $initGetIt(
   final firebaseInjectableModule = _$FirebaseInjectableModule();
   gh.lazySingleton<FirebaseAuth>(() => firebaseInjectableModule.firebaseAuth);
   gh.lazySingleton<FirebaseFirestore>(() => firebaseInjectableModule.firestore);
+  gh.lazySingleton<IAuthFacade>(
+      () => AuthRepository(get<FirebaseAuth>(), get<FirebaseFirestore>()));
   gh.lazySingleton<IAuthorisationFacade>(
       () => FirebaseAuthorisationRepository(get<FirebaseFirestore>()));
   gh.lazySingleton<IBarcodeScanRepository>(() => BarcodeScanRepository());
@@ -65,6 +70,7 @@ GetIt $initGetIt(
       get<FirebaseFirestore>(), get<FirebaseAuth>()));
   gh.lazySingleton<IUserTransactionFacade>(
       () => FirestoreTransactionRepository(get<FirebaseFirestore>()));
+  gh.factory<LoggedUserBloc>(() => LoggedUserBloc(get<IAuthFacade>()));
   gh.factory<MonthlyLeadersBloc>(
       () => MonthlyLeadersBloc(get<ITransactionsFacade>()));
   gh.factory<OrganisationBloc>(

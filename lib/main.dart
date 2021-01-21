@@ -12,7 +12,9 @@ import 'package:firebase_core/firebase_core.dart';
 
 import 'application/auth/authentication_bloc.dart';
 import 'application/auth/authorisation/authorisation_bloc.dart';
+import 'application/auth/logged_user/logged_user_bloc.dart';
 import 'application/organisation_bloc/organisation_bloc.dart';
+import 'domain/auth/user.dart';
 import 'domain/promotions/promotion.dart';
 
 Future<void> main() async {
@@ -51,13 +53,12 @@ class MyApp extends StatelessWidget {
                 );
             },
           ),
-          BlocProvider<OrganisationBloc>(
-            create: (context) => getIt<OrganisationBloc>()
-              ..add(
-                OrganisationEvent.loadOrganisationDataForLoggedInUser(
-                    companyId: '4cHZwNlWzW79PQ7U5dUf'),
-              ),
+          BlocProvider<LoggedUserBloc>(
+            create: (context) => getIt<LoggedUserBloc>(),
             lazy: false,
+          ),
+          BlocProvider<OrganisationBloc>(
+            create: (context) => getIt<OrganisationBloc>(),
           ),
         ],
         child: AppView(),
@@ -94,6 +95,12 @@ class _AppViewState extends State<AppView> {
               switch (state.status) {
                 case AuthenticationStatus.authenticated:
                   print('authenticated section of switch...!!');
+
+                  User user = state.user;
+
+                  context.read<LoggedUserBloc>().add(
+                        LoggedUserEvent.loadLoggedUserDetails(uid: user.id),
+                      );
                   // context.bloc<AuthorisationBloc>().add(
                   //       AuthorisationEvent.checkAuthorisation(
                   //           companyID: '4cHZwNlWzW79PQ7U5dUf',
@@ -163,18 +170,21 @@ class _AuthorizationCheckWidgetState extends State<AuthorizationCheckWidget> {
         listener: (context, state) {
           print('hello world in the bloclisten');
           return state.maybeMap(
-            notAuthorised: (_) =>
+              notAuthorised: (_) =>
+                  Navigator.of(context).pushAndRemoveUntil<void>(
+                    NotAuthorisedPage.route(),
+                    (route) => false,
+                  ),
+              orElse: () {
                 Navigator.of(context).pushAndRemoveUntil<void>(
-              NotAuthorisedPage.route(),
-              (route) => false,
-            ),
-            orElse: () => Navigator.of(context).pushAndRemoveUntil<void>(
-              LandingPage.route(),
-              (route) => false,
-            ),
-          );
+                  LandingPage.route(),
+                  (route) => false,
+                );
+              });
         },
-        child: Container(),
+        child: Container(
+          child: Text('This is for real..!'),
+        ),
       ),
     );
   }

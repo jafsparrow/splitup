@@ -1,4 +1,5 @@
 import 'package:JCCommisionApp/application/auth/authentication_bloc.dart';
+import 'package:JCCommisionApp/application/auth/logged_user/logged_user_bloc.dart';
 import 'package:JCCommisionApp/application/transactions_bloc/transactions_bloc.dart';
 import 'package:JCCommisionApp/application/user_management/user_profile/user_profile_bloc.dart';
 import 'package:JCCommisionApp/domain/transactions/transaction.dart';
@@ -21,6 +22,8 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    LoggedUserBloc loggedUserBloc = context.watch<LoggedUserBloc>();
+
     return BlocConsumer<UserProfileBloc, UserProfileState>(
       listener: (context, userProfileState) {
         userProfileState.maybeMap(
@@ -29,7 +32,10 @@ class HomePage extends StatelessWidget {
               Navigator.push(
                 context,
                 EventAdd.route(
-                  loggedInUser: context.read<AuthenticationBloc>().state.user,
+                  loggedInUser: loggedUserBloc.state.maybeWhen(
+                      loggedUserLoaded: (userLoadedState) =>
+                          userLoadedState.loggedUserProfile,
+                      orElse: () {}),
                   partnerUser: state.userProfile,
                   onSave: (transaction) {
                     getIt<TransactionsBloc>().add(

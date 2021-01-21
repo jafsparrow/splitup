@@ -88,6 +88,9 @@ class Stats extends StatelessWidget {
           ),
         ),
       ),
+      appBar: AppBar(
+        title: Text('Statistics'),
+      ),
     );
   }
 }

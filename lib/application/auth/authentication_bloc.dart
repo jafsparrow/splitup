@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'package:JCCommisionApp/domain/auth/user.dart';
 import 'package:JCCommisionApp/domain/user_management/user_profile.dart';
 import 'package:JCCommisionApp/repositories/user/authentication_repository.dart';
 import 'package:bloc/bloc.dart';
@@ -19,7 +20,7 @@ class AuthenticationBloc
   }
 
   final AuthenticationRepository _authenticationRepository;
-  StreamSubscription<UserProfile> _userSubscription;
+  StreamSubscription<User> _userSubscription;
 
   @override
   Stream<AuthenticationState> mapEventToState(

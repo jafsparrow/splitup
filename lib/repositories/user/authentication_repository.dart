@@ -1,5 +1,4 @@
-import 'package:JCCommisionApp/domain/user_management/user_profile.dart';
-import 'package:JCCommisionApp/infrastructure/user_management/userprofile_dto.dart';
+import 'package:JCCommisionApp/domain/auth/user.dart' as domainUser;
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -14,9 +13,11 @@ class AuthenticationRepository implements Authentication {
   AuthenticationRepository({FirebaseAuth firebaseAuth})
       : _firebaseAuth = firebaseAuth ?? FirebaseAuth.instance;
 
-  Stream<UserProfile> get user {
+  Stream<domainUser.User> get user {
     return _firebaseAuth.authStateChanges().map((firebaseUser) {
-      return firebaseUser == null ? UserProfile.empty() : firebaseUser.toUser;
+      return firebaseUser == null
+          ? domainUser.User(id: '')
+          : firebaseUser.toUser;
     });
   }
 
@@ -50,15 +51,16 @@ class AuthenticationRepository implements Authentication {
 }
 
 extension on User {
-  UserProfile get toUser {
+  domainUser.User get toUser {
+    return domainUser.User(id: uid);
     // return localUserClass.User(
     //     id: uid, email: email, name: displayName, photo: photoUrl);
     // var collection = FirebaseFirestore.instance.collection('users');
     // DocumentSnapshot document = await collection.doc(uid).get();
 
-    // return UserProfileDto.fromFirestore(document).toDomain();
-    return UserProfile(
-        userName: 'Jafar', mobileNumber: '9338393', email: 'test#te@.com');
+    // // return UserProfileDto.fromFirestore(document).toDomain();
+    // return UserProfile(
+    //     userName: 'Jafar', mobileNumber: '9338393', email: 'test#te@.com');
   }
 }
 

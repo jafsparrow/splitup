@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import 'package:JCCommisionApp/application/auth/authentication_bloc.dart';
+import 'package:JCCommisionApp/application/auth/logged_user/logged_user_bloc.dart';
 import 'package:JCCommisionApp/application/user_management/partner_barcode_management/partner_barcode_management_bloc.dart';
 import 'package:JCCommisionApp/application/user_management/user_transactions/user_transactions_bloc.dart';
 import 'package:JCCommisionApp/domain/user_management/user_profile.dart';
@@ -60,7 +61,7 @@ class DefaultTabControllerWidget extends StatelessWidget {
     PartnerBarcodeManagementBloc partnerBarcodeManagementbloc =
         context.watch<PartnerBarcodeManagementBloc>();
 
-    AuthenticationBloc authBloc = context.watch<AuthenticationBloc>();
+    LoggedUserBloc loggedUserBloc = context.watch<LoggedUserBloc>();
 
     return DefaultTabController(
       length: 3,
@@ -112,14 +113,18 @@ class DefaultTabControllerWidget extends StatelessWidget {
 
                   if (cameraScanResult.isNotEmpty) {
                     const String companyID = '4cHZwNlWzW79PQ7U5dUf';
-                    UserProfile loggedInUserProfile = authBloc.state.user;
+                    // UserProfile loggedInUserProfile = authBloc.state.user;
 
                     partnerBarcodeManagementbloc.add(
                       PartnerBarcodeManagementEvent.assignedNewBarcode(
-                          barcode:
-                              cameraScanResult, // Random().nextDouble().toString(),
-                          companyId: companyID,
-                          loggedInUser: loggedInUserProfile),
+                        barcode:
+                            cameraScanResult, // Random().nextDouble().toString(),
+                        companyId: companyID,
+                        loggedInUser: loggedUserBloc.state.maybeWhen(
+                            loggedUserLoaded: (userLoadedState) =>
+                                userLoadedState.loggedUserProfile,
+                            orElse: null),
+                      ),
                     );
                   } else {
                     // show some message.
