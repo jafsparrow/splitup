@@ -36,7 +36,7 @@ class HomePage extends StatelessWidget {
                       loggedUserLoaded: (userLoadedState) =>
                           userLoadedState.loggedUserProfile,
                       orElse: () {}),
-                  partnerUser: state.userProfile,
+                  partnerUser: state.user.profile,
                   onSave: (transaction) {
                     getIt<TransactionsBloc>().add(
                       TransactionsBlocEvent.addTransaction(

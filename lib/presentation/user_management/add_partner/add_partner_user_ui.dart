@@ -34,7 +34,7 @@ class AddPartnerUserScreen extends StatelessWidget {
             return Stack(
               children: [
                 const PartnerUserFormScaffold(),
-                SavingInProgressOverlay(isSaving: state.isSaving)
+                // SavingInProgressOverlay(isSaving: state.isSaving)
                 //TODO - this false needs to be looked at to match the logic
               ],
             );
@@ -46,28 +46,34 @@ class AddPartnerUserScreen extends StatelessWidget {
             state.saveFailureOrSuccessOption.fold(
               () => {},
               (either) {
-                either.fold(
-                  (failure) {
-                    FlushbarHelper.createError(
-                      message: failure.map(
-                        unexpected: (_) => 'Something unexpected happened.',
-                        userNotFound: (_) => 'User Not Found',
-                        userInactive: (_) => 'User is inactive',
-                        unableToUpdate: (_) => 'Unable to Update',
-                        unableToCreateNewUser: (_) =>
-                            'Unable to Create Partner User',
-                      ),
-                    );
-                  },
-                  (newlyCreatedPartnerUser) => Navigator.pushReplacement(
+                either.fold((failure) {
+                  FlushbarHelper.createError(
+                    message: failure.map(
+                      unexpected: (_) => 'Something unexpected happened.',
+                      userNotFound: (_) => 'User Not Found',
+                      userInactive: (_) => 'User is inactive',
+                      unableToUpdate: (_) => 'Unable to Update',
+                      unableToCreateNewUser: (_) =>
+                          'Unable to Create Partner User',
+                    ),
+                  );
+                }, (newlyCreatedPartnerUser) {
+                  print(newlyCreatedPartnerUser.mobileNumber);
+
+                  // TODO - this is a hot fix, after adding new users,
+                  // going back from the user profile page brings the partner add page back
+                  // rather than the home page. Need more investigatino later on...
+                  Navigator.of(context).pop();
+
+                  return Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(
                       builder: (_) => PartnerProfile(
                         partnerUser: newlyCreatedPartnerUser,
                       ),
                     ),
-                  ),
-                );
+                  );
+                });
               },
             );
           },

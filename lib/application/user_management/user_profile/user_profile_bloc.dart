@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:JCCommisionApp/domain/user_management/I_user_management_facade.dart';
+import 'package:JCCommisionApp/domain/user_management/partner_user.dart';
 import 'package:JCCommisionApp/domain/user_management/user_management_failures.dart';
 import 'package:JCCommisionApp/domain/user_management/user_profile.dart';
 import 'package:bloc/bloc.dart';

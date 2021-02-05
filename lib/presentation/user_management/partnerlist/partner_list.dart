@@ -9,10 +9,10 @@ class PartnerList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // PartnerListBloc partnerListBloc = context.bloc<PartnerListBloc>();
-    if (context.watch<PartnerListBloc>().state is PartnerListLoading) {
-      print('this should appear only once I load .. buhahaha');
-      context.watch<PartnerListBloc>().add(LoadPartnerUsers());
-    }
+    // if (context.watch<PartnerListBloc>().state is PartnerListLoading) {
+    //   print('this should appear only once I load .. buhahaha');
+    //   context.watch<PartnerListBloc>().add(LoadPartnerUsers());
+    // }
     return Scaffold(
       appBar: AppBar(
         title: Text('Partners'),
@@ -20,7 +20,7 @@ class PartnerList extends StatelessWidget {
       ),
       body: BlocProvider<FilteredPartnersBloc>(
         create: (context) => FilteredPartnersBloc(
-          partnerListBloc: BlocProvider.of<PartnerListBloc>(context),
+          partnerListBloc: context.read<PartnerListBloc>(),
         ),
         child: Container(
           padding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
@@ -34,8 +34,6 @@ class PartnerList extends StatelessWidget {
                 );
               } else if (state is FilteredPartnerList) {
                 return buildPartnerList(state.filteredPartnerList, context);
-              } else {
-                return Container();
               }
             },
           ),
@@ -65,13 +63,15 @@ class PartnerList extends StatelessWidget {
             ),
           ],
         ),
-        ListView.builder(
-          shrinkWrap: true,
-          itemBuilder: (context, index) => buildPartnerListItem(
-            context: context,
-            partnerUser: partnerUserList[index],
+        Expanded(
+          child: ListView.builder(
+            shrinkWrap: true,
+            itemBuilder: (context, index) => buildPartnerListItem(
+              context: context,
+              partnerUser: partnerUserList[index],
+            ),
+            itemCount: partnerUserList.length,
           ),
-          itemCount: partnerUserList.length,
         ),
       ],
     );

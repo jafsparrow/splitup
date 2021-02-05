@@ -52,10 +52,13 @@ class _LandingPageState extends State<LandingPage> {
               return MultiBlocProvider(
                 providers: [
                   BlocProvider<PartnerListBloc>(
-                      create: (context) => PartnerListBloc(
-                            repository: UserProfileRepository(
-                                state.loggedUser.loggedUserProfile),
-                          )),
+                    create: (context) => PartnerListBloc(
+                      repository: UserProfileRepository(
+                          state.loggedUser.loggedUserProfile),
+                    )..add(
+                        LoadPartnerUsers(),
+                      ),
+                  ),
                   BlocProvider<UserProfileBloc>(
                     create: (context) => getIt<UserProfileBloc>()
                       ..add(

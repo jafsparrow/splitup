@@ -1,5 +1,7 @@
 import 'package:JCCommisionApp/domain/user_management/I_user_management_facade.dart';
+import 'package:JCCommisionApp/domain/user_management/partner_user.dart';
 import 'package:JCCommisionApp/domain/user_management/user_profile.dart';
+import 'package:JCCommisionApp/infrastructure/user_management/partner_user_dto.dart';
 import 'package:JCCommisionApp/infrastructure/user_management/userprofile_dto.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dartz/dartz.dart';
@@ -15,7 +17,7 @@ class FirebaseUserManagementRepository implements IUserManagement {
   FirebaseUserManagementRepository(this._firestore, this._fireAuth);
 
   @override
-  Future<Either<UserManagementFailure, UserProfile>> getPartnerUserFromBarcode(
+  Future<Either<UserManagementFailure, PartnerUser>> getPartnerUserFromBarcode(
       {String companyId, String barcode}) async {
     try {
       QuerySnapshot userDetailsSanpshot = await _firestore
@@ -52,7 +54,7 @@ class FirebaseUserManagementRepository implements IUserManagement {
   }
 
   @override
-  Future<Either<UserManagementFailure, UserProfile>> getPartnerUserFromId(
+  Future<Either<UserManagementFailure, PartnerUser>> getPartnerUserFromId(
       {String companyId, String userId}) async {
     try {
       DocumentSnapshot userDoc = await _firestore
@@ -62,7 +64,7 @@ class FirebaseUserManagementRepository implements IUserManagement {
           .doc(userId)
           .get();
 
-      return right(UserProfileDto.fromFirestore(userDoc).toDomain());
+      return right(PartnerUserDto.fromFirestore(userDoc).toDomain());
     } catch (e) {
       print(e);
       return left(UserManagementFailure.unexpected());
@@ -82,9 +84,13 @@ class FirebaseUserManagementRepository implements IUserManagement {
               email: userEmail, password: userPassword);
       UserProfile newUser =
           newPartnerUser.copyWith(uid: userCredential.user.uid);
+
+      PartnerUser newPartner =
+          PartnerUser(profile: newUser, totalRewardPoints: 0);
+
       await _addNewUserToUsersCollection(newUser, companyId);
 
-      await _addUserToCompany(newUser, companyId);
+      await _addUserToCompany(newPartner, companyId);
       return right(newUser);
     } catch (e) {
       return left(UserManagementFailure.unableToCreateNewUser());
@@ -93,6 +99,7 @@ class FirebaseUserManagementRepository implements IUserManagement {
 
   _addNewUserToUsersCollection(UserProfile newUser, String companyId) async {
     UserProfileDto profileDto = UserProfileDto.fromDomain(newUser);
+    // PartnerUserDto partnerDto = PartnerUserDto.fromDomain(newUser);
 
     Map<String, dynamic> data = {
       'isActive': true,
@@ -105,19 +112,22 @@ class FirebaseUserManagementRepository implements IUserManagement {
     await _firestore.collection('users').doc(newUser.uid).set(data);
   }
 
-  _addUserToCompany(UserProfile partnerProfile, String companyId) async {
+  _addUserToCompany(PartnerUser newUser, String companyId) async {
     // Map<String, dynamic> data = {
     //   'uid': partnerProfile.uid,
     //   'userName': partnerProfile.userName
     // };
 
-    Map<String, dynamic> userData =
-        UserProfileDto.fromDomain(partnerProfile).toJson();
+    // Map<String, dynamic> userData =
+    //     UserProfileDto.fromDomain(partnerProfile).toJson();
+
+    Map<String, dynamic> userData = PartnerUserDto.fromDomain(newUser).toJson();
+
     await _firestore
         .collection('companies')
         .doc(companyId)
         .collection('users')
-        .doc(partnerProfile.uid)
+        .doc(newUser.profile.uid)
         .set(userData);
   }
 
@@ -125,6 +135,12 @@ class FirebaseUserManagementRepository implements IUserManagement {
   Future<Either<UserManagementFailure, UserProfile>> updatePartnerUser(
       UserProfile newPartnerUser) {
     // TODO: implement updatePartnerUser
+    throw UnimplementedError();
+  }
+
+  @override
+  Future<List<PartnerUser>> getListOfUsers(String userType) {
+    // TODO: implement getListOfUsers
     throw UnimplementedError();
   }
 }

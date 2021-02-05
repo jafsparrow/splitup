@@ -14,7 +14,10 @@ class AuthenticationRepository implements Authentication {
       : _firebaseAuth = firebaseAuth ?? FirebaseAuth.instance;
 
   Stream<domainUser.User> get user {
+    // _firebaseAuth.signOut();
     return _firebaseAuth.authStateChanges().map((firebaseUser) {
+      print('firesbase logged in user status changed just now');
+      print(firebaseUser);
       return firebaseUser == null
           ? domainUser.User(id: '')
           : firebaseUser.toUser;
@@ -52,7 +55,9 @@ class AuthenticationRepository implements Authentication {
 
 extension on User {
   domainUser.User get toUser {
-    return domainUser.User(id: uid);
+    domainUser.User user = domainUser.User(id: uid);
+
+    return user;
     // return localUserClass.User(
     //     id: uid, email: email, name: displayName, photo: photoUrl);
     // var collection = FirebaseFirestore.instance.collection('users');

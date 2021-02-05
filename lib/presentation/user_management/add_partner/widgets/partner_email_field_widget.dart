@@ -31,15 +31,19 @@ class PartnerEmailField extends HookWidget {
             onChanged: (value) => context
                 .read<PartnerUserAddBloc>()
                 .add(PartnerUserAddFormEvent.userEmailChanged(value)),
-            validator: (_) => (context
-                        .read<PartnerUserAddBloc>()
-                        .state
-                        .partnerProfile
-                        .email
-                        .length >
-                    5)
-                ? null
-                : 'Minimum Length has not reached..'),
+            validator: (_) => null
+
+            // (context
+            //             .read<PartnerUserAddBloc>()
+            //             .state
+            //             .partnerProfile
+            //             .email
+            //             .length >
+            //         5)
+            //     ? null
+            //     : 'Minimum Length has not reached..'
+
+            ),
       ),
     );
   }

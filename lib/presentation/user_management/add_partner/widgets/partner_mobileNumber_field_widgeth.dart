@@ -27,7 +27,7 @@ class PartnerMobileNumberField extends HookWidget {
               labelText: 'Mobile Number',
               counterText: '',
             ),
-            maxLength: 10,
+            maxLength: 8,
             maxLines: null,
             onChanged: (value) => context
                 .read<PartnerUserAddBloc>()
@@ -38,7 +38,7 @@ class PartnerMobileNumberField extends HookWidget {
                         .partnerProfile
                         .mobileNumber
                         .length >
-                    7)
+                    8)
                 ? null
                 : 'Minimum Length has not reached..'),
       ),

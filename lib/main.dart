@@ -135,7 +135,16 @@ class _AppViewState extends State<AppView> {
               ),
               body: Container(
                 child: Center(
-                  child: Text('The broken default page'),
+                  child: Column(
+                    children: [
+                      CircularProgressIndicator(),
+                      SizedBox(
+                        height: 40,
+                      ),
+                      Text(
+                          'Listening to AuthBloc to decide on Authorisation...'),
+                    ],
+                  ),
                 ),
               ),
             ),

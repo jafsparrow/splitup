@@ -27,7 +27,7 @@ class PartnerNickNameField extends HookWidget {
               labelText: 'Nick Name',
               counterText: '',
             ),
-            maxLength: 6,
+            maxLength: 10,
             enabled: false,
             onChanged: (value) => context
                 .read<PartnerUserAddBloc>()

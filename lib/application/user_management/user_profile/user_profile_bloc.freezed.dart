@@ -466,9 +466,9 @@ class _$UserProfileStateTearOff {
   }
 
 // ignore: unused_element
-  _LoadSuccess loadSuccess(UserProfile userProfile) {
+  _LoadSuccess loadSuccess(PartnerUser user) {
     return _LoadSuccess(
-      userProfile,
+      user,
     );
   }
 
@@ -488,14 +488,14 @@ mixin _$UserProfileState {
   Result when<Result extends Object>({
     @required Result initial(),
     @required Result loadInProgress(),
-    @required Result loadSuccess(UserProfile userProfile),
+    @required Result loadSuccess(PartnerUser user),
     @required Result loadFailure(UserManagementFailure failureFailure),
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result initial(),
     Result loadInProgress(),
-    Result loadSuccess(UserProfile userProfile),
+    Result loadSuccess(PartnerUser user),
     Result loadFailure(UserManagementFailure failureFailure),
     @required Result orElse(),
   });
@@ -566,7 +566,7 @@ class _$_Initial implements _Initial {
   Result when<Result extends Object>({
     @required Result initial(),
     @required Result loadInProgress(),
-    @required Result loadSuccess(UserProfile userProfile),
+    @required Result loadSuccess(PartnerUser user),
     @required Result loadFailure(UserManagementFailure failureFailure),
   }) {
     assert(initial != null);
@@ -581,7 +581,7 @@ class _$_Initial implements _Initial {
   Result maybeWhen<Result extends Object>({
     Result initial(),
     Result loadInProgress(),
-    Result loadSuccess(UserProfile userProfile),
+    Result loadSuccess(PartnerUser user),
     Result loadFailure(UserManagementFailure failureFailure),
     @required Result orElse(),
   }) {
@@ -666,7 +666,7 @@ class _$_LoadInProgress implements _LoadInProgress {
   Result when<Result extends Object>({
     @required Result initial(),
     @required Result loadInProgress(),
-    @required Result loadSuccess(UserProfile userProfile),
+    @required Result loadSuccess(PartnerUser user),
     @required Result loadFailure(UserManagementFailure failureFailure),
   }) {
     assert(initial != null);
@@ -681,7 +681,7 @@ class _$_LoadInProgress implements _LoadInProgress {
   Result maybeWhen<Result extends Object>({
     Result initial(),
     Result loadInProgress(),
-    Result loadSuccess(UserProfile userProfile),
+    Result loadSuccess(PartnerUser user),
     Result loadFailure(UserManagementFailure failureFailure),
     @required Result orElse(),
   }) {
@@ -732,9 +732,7 @@ abstract class _$LoadSuccessCopyWith<$Res> {
   factory _$LoadSuccessCopyWith(
           _LoadSuccess value, $Res Function(_LoadSuccess) then) =
       __$LoadSuccessCopyWithImpl<$Res>;
-  $Res call({UserProfile userProfile});
-
-  $UserProfileCopyWith<$Res> get userProfile;
+  $Res call({PartnerUser user});
 }
 
 class __$LoadSuccessCopyWithImpl<$Res>
@@ -749,47 +747,36 @@ class __$LoadSuccessCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object userProfile = freezed,
+    Object user = freezed,
   }) {
     return _then(_LoadSuccess(
-      userProfile == freezed ? _value.userProfile : userProfile as UserProfile,
+      user == freezed ? _value.user : user as PartnerUser,
     ));
-  }
-
-  @override
-  $UserProfileCopyWith<$Res> get userProfile {
-    if (_value.userProfile == null) {
-      return null;
-    }
-    return $UserProfileCopyWith<$Res>(_value.userProfile, (value) {
-      return _then(_value.copyWith(userProfile: value));
-    });
   }
 }
 
 class _$_LoadSuccess implements _LoadSuccess {
-  const _$_LoadSuccess(this.userProfile) : assert(userProfile != null);
+  const _$_LoadSuccess(this.user) : assert(user != null);
 
   @override
-  final UserProfile userProfile;
+  final PartnerUser user;
 
   @override
   String toString() {
-    return 'UserProfileState.loadSuccess(userProfile: $userProfile)';
+    return 'UserProfileState.loadSuccess(user: $user)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _LoadSuccess &&
-            (identical(other.userProfile, userProfile) ||
-                const DeepCollectionEquality()
-                    .equals(other.userProfile, userProfile)));
+            (identical(other.user, user) ||
+                const DeepCollectionEquality().equals(other.user, user)));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(userProfile);
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(user);
 
   @override
   _$LoadSuccessCopyWith<_LoadSuccess> get copyWith =>
@@ -800,14 +787,14 @@ class _$_LoadSuccess implements _LoadSuccess {
   Result when<Result extends Object>({
     @required Result initial(),
     @required Result loadInProgress(),
-    @required Result loadSuccess(UserProfile userProfile),
+    @required Result loadSuccess(PartnerUser user),
     @required Result loadFailure(UserManagementFailure failureFailure),
   }) {
     assert(initial != null);
     assert(loadInProgress != null);
     assert(loadSuccess != null);
     assert(loadFailure != null);
-    return loadSuccess(userProfile);
+    return loadSuccess(user);
   }
 
   @override
@@ -815,13 +802,13 @@ class _$_LoadSuccess implements _LoadSuccess {
   Result maybeWhen<Result extends Object>({
     Result initial(),
     Result loadInProgress(),
-    Result loadSuccess(UserProfile userProfile),
+    Result loadSuccess(PartnerUser user),
     Result loadFailure(UserManagementFailure failureFailure),
     @required Result orElse(),
   }) {
     assert(orElse != null);
     if (loadSuccess != null) {
-      return loadSuccess(userProfile);
+      return loadSuccess(user);
     }
     return orElse();
   }
@@ -859,9 +846,9 @@ class _$_LoadSuccess implements _LoadSuccess {
 }
 
 abstract class _LoadSuccess implements UserProfileState {
-  const factory _LoadSuccess(UserProfile userProfile) = _$_LoadSuccess;
+  const factory _LoadSuccess(PartnerUser user) = _$_LoadSuccess;
 
-  UserProfile get userProfile;
+  PartnerUser get user;
   _$LoadSuccessCopyWith<_LoadSuccess> get copyWith;
 }
 
@@ -940,7 +927,7 @@ class _$_LoadFailure implements _LoadFailure {
   Result when<Result extends Object>({
     @required Result initial(),
     @required Result loadInProgress(),
-    @required Result loadSuccess(UserProfile userProfile),
+    @required Result loadSuccess(PartnerUser user),
     @required Result loadFailure(UserManagementFailure failureFailure),
   }) {
     assert(initial != null);
@@ -955,7 +942,7 @@ class _$_LoadFailure implements _LoadFailure {
   Result maybeWhen<Result extends Object>({
     Result initial(),
     Result loadInProgress(),
-    Result loadSuccess(UserProfile userProfile),
+    Result loadSuccess(PartnerUser user),
     Result loadFailure(UserManagementFailure failureFailure),
     @required Result orElse(),
   }) {

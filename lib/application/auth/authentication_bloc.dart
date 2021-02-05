@@ -34,7 +34,7 @@ class AuthenticationBloc
   }
 
   _mapAuthenticationUserChangedToState(AuthenticationUserChangedEvent event) {
-    return event.user == UserProfile.empty()
+    return event.user.id.isEmpty
         ? const AuthenticationState.unauthenticated()
         : AuthenticationState.authenticated(event.user);
   }
