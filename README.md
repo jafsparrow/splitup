@@ -20,5 +20,8 @@ samples, guidance on mobile development, and a full API reference.
 [ ] Implement the UI display to show the actual points of the user.
 [ ] Edit the lead board UI to have to three highlighted. 
 
+test chagnes
+
+
 [ ] Cloud messaging for all the users whenenver someone earned a point.
 [ ] After creating a user, loggedIn user changed to the new creator. This is not the desired function. Need to find a solution.
