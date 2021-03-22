@@ -28,12 +28,17 @@ class _LoginPageState extends State<LoginPage> {
         child: SafeArea(
           child: BlocBuilder<LoginCubit, LoginState>(
             builder: (context, state) => Center(
-              child: Column(
+              child: ListView(
+                padding: EdgeInsets.only(left: 10, right: 10),
                 children: <Widget>[
                   SizedBox(
-                    height: 20,
+                    height: 50,
                   ),
+                  FlutterLogo(size: 60,),
+                  SizedBox(height: 30,),
+                  Center(child: Text('Please Login', style: Theme.of(context).textTheme.headline6,)),
                   TextField(
+                    
                     controller: _emailController,
                     onChanged: (value) {
                       context.read<LoginCubit>().emailChanged(value);
@@ -54,11 +59,16 @@ class _LoginPageState extends State<LoginPage> {
                   SizedBox(
                     height: 50,
                   ),
-                  FlatButton(
-                    child: Text('Login'),
-                    onPressed: () {
-                      context.read<LoginCubit>().loginWithCredentials();
-                    },
+                  Material(
+                  color:Colors.grey.shade300,
+                  borderRadius: BorderRadius.circular(5),
+                  child: TextButton(
+                      child: Text('Login'),
+                      onPressed: 
+                      () {
+                        context.read<LoginCubit>().loginWithCredentials();
+                      },
+                    ),
                   )
                 ],
               ),
