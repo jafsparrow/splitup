@@ -30,6 +30,7 @@ class AuthenticationRepository implements Authentication {
       await _firebaseAuth.signInWithEmailAndPassword(
           email: email, password: password);
     } catch (e) {
+      print(e);
       throw LogInWithEmailAndPasswordFailure();
     }
   }

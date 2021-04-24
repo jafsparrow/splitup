@@ -25,9 +25,14 @@ class AuthRepository implements IAuthFacade {
 
   @override
   Future<Either<AuthFailure, Unit>> signInWithEmailAndPassword(
-      {EmailAddress emailAddress, Password password}) {
-    // TODO: implement signInWithEmailAndPassword
-    throw UnimplementedError();
+      {EmailAddress emailAddress, Password password}) async{
+    try {
+      UserCredential userCredential =  await _firebaseAuth.signInWithEmailAndPassword(
+          email: emailAddress.getOrCrash(), password: password.getOrCrash());
+          // TODO - whats return unit.
+    } catch (e) {
+      // TODO - return the value failure... for each type of exception.
+    }
   }
 
   @override
