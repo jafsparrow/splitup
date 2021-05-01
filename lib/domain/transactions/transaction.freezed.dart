@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'transaction.dart';
 
@@ -9,19 +9,22 @@ part of 'transaction.dart';
 
 T _$identity<T>(T value) => value;
 
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
+/// @nodoc
 class _$UserTransactionTearOff {
   const _$UserTransactionTearOff();
 
-// ignore: unused_element
   _UserTransaction call(
-      {String description,
+      {String? description,
       String id = '',
-      String notes,
-      DateTime addedDate,
-      @required UserProfile salesUser,
-      @required UserProfile partnerUser,
-      @required RewardPoint totalRewardBreakup,
-      @required double earnedTotalRewardForCurrentTransaction}) {
+      required String notes,
+      required DateTime addedDate,
+      required UserProfile salesUser,
+      required UserProfile partnerUser,
+      required RewardPoint totalRewardBreakup,
+      required double earnedTotalRewardForCurrentTransaction}) {
     return _UserTransaction(
       description: description,
       id: id,
@@ -36,28 +39,33 @@ class _$UserTransactionTearOff {
   }
 }
 
-// ignore: unused_element
+/// @nodoc
 const $UserTransaction = _$UserTransactionTearOff();
 
+/// @nodoc
 mixin _$UserTransaction {
-  String get description;
-  String get id;
-  String get notes;
-  DateTime get addedDate;
-  UserProfile get salesUser;
-  UserProfile get partnerUser;
-  RewardPoint get totalRewardBreakup;
-  double get earnedTotalRewardForCurrentTransaction;
+  String? get description => throw _privateConstructorUsedError;
+  String get id => throw _privateConstructorUsedError;
+  String get notes => throw _privateConstructorUsedError;
+  DateTime get addedDate => throw _privateConstructorUsedError;
+  UserProfile get salesUser => throw _privateConstructorUsedError;
+  UserProfile get partnerUser => throw _privateConstructorUsedError;
+  RewardPoint get totalRewardBreakup => throw _privateConstructorUsedError;
+  double get earnedTotalRewardForCurrentTransaction =>
+      throw _privateConstructorUsedError;
 
-  $UserTransactionCopyWith<UserTransaction> get copyWith;
+  @JsonKey(ignore: true)
+  $UserTransactionCopyWith<UserTransaction> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
+/// @nodoc
 abstract class $UserTransactionCopyWith<$Res> {
   factory $UserTransactionCopyWith(
           UserTransaction value, $Res Function(UserTransaction) then) =
       _$UserTransactionCopyWithImpl<$Res>;
   $Res call(
-      {String description,
+      {String? description,
       String id,
       String notes,
       DateTime addedDate,
@@ -71,6 +79,7 @@ abstract class $UserTransactionCopyWith<$Res> {
   $RewardPointCopyWith<$Res> get totalRewardBreakup;
 }
 
+/// @nodoc
 class _$UserTransactionCopyWithImpl<$Res>
     implements $UserTransactionCopyWith<$Res> {
   _$UserTransactionCopyWithImpl(this._value, this._then);
@@ -81,42 +90,54 @@ class _$UserTransactionCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object description = freezed,
-    Object id = freezed,
-    Object notes = freezed,
-    Object addedDate = freezed,
-    Object salesUser = freezed,
-    Object partnerUser = freezed,
-    Object totalRewardBreakup = freezed,
-    Object earnedTotalRewardForCurrentTransaction = freezed,
+    Object? description = freezed,
+    Object? id = freezed,
+    Object? notes = freezed,
+    Object? addedDate = freezed,
+    Object? salesUser = freezed,
+    Object? partnerUser = freezed,
+    Object? totalRewardBreakup = freezed,
+    Object? earnedTotalRewardForCurrentTransaction = freezed,
   }) {
     return _then(_value.copyWith(
-      description:
-          description == freezed ? _value.description : description as String,
-      id: id == freezed ? _value.id : id as String,
-      notes: notes == freezed ? _value.notes : notes as String,
-      addedDate:
-          addedDate == freezed ? _value.addedDate : addedDate as DateTime,
-      salesUser:
-          salesUser == freezed ? _value.salesUser : salesUser as UserProfile,
+      description: description == freezed
+          ? _value.description
+          : description // ignore: cast_nullable_to_non_nullable
+              as String?,
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      notes: notes == freezed
+          ? _value.notes
+          : notes // ignore: cast_nullable_to_non_nullable
+              as String,
+      addedDate: addedDate == freezed
+          ? _value.addedDate
+          : addedDate // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      salesUser: salesUser == freezed
+          ? _value.salesUser
+          : salesUser // ignore: cast_nullable_to_non_nullable
+              as UserProfile,
       partnerUser: partnerUser == freezed
           ? _value.partnerUser
-          : partnerUser as UserProfile,
+          : partnerUser // ignore: cast_nullable_to_non_nullable
+              as UserProfile,
       totalRewardBreakup: totalRewardBreakup == freezed
           ? _value.totalRewardBreakup
-          : totalRewardBreakup as RewardPoint,
+          : totalRewardBreakup // ignore: cast_nullable_to_non_nullable
+              as RewardPoint,
       earnedTotalRewardForCurrentTransaction:
           earnedTotalRewardForCurrentTransaction == freezed
               ? _value.earnedTotalRewardForCurrentTransaction
-              : earnedTotalRewardForCurrentTransaction as double,
+              : earnedTotalRewardForCurrentTransaction // ignore: cast_nullable_to_non_nullable
+                  as double,
     ));
   }
 
   @override
   $UserProfileCopyWith<$Res> get salesUser {
-    if (_value.salesUser == null) {
-      return null;
-    }
     return $UserProfileCopyWith<$Res>(_value.salesUser, (value) {
       return _then(_value.copyWith(salesUser: value));
     });
@@ -124,9 +145,6 @@ class _$UserTransactionCopyWithImpl<$Res>
 
   @override
   $UserProfileCopyWith<$Res> get partnerUser {
-    if (_value.partnerUser == null) {
-      return null;
-    }
     return $UserProfileCopyWith<$Res>(_value.partnerUser, (value) {
       return _then(_value.copyWith(partnerUser: value));
     });
@@ -134,15 +152,13 @@ class _$UserTransactionCopyWithImpl<$Res>
 
   @override
   $RewardPointCopyWith<$Res> get totalRewardBreakup {
-    if (_value.totalRewardBreakup == null) {
-      return null;
-    }
     return $RewardPointCopyWith<$Res>(_value.totalRewardBreakup, (value) {
       return _then(_value.copyWith(totalRewardBreakup: value));
     });
   }
 }
 
+/// @nodoc
 abstract class _$UserTransactionCopyWith<$Res>
     implements $UserTransactionCopyWith<$Res> {
   factory _$UserTransactionCopyWith(
@@ -150,7 +166,7 @@ abstract class _$UserTransactionCopyWith<$Res>
       __$UserTransactionCopyWithImpl<$Res>;
   @override
   $Res call(
-      {String description,
+      {String? description,
       String id,
       String notes,
       DateTime addedDate,
@@ -167,6 +183,7 @@ abstract class _$UserTransactionCopyWith<$Res>
   $RewardPointCopyWith<$Res> get totalRewardBreakup;
 }
 
+/// @nodoc
 class __$UserTransactionCopyWithImpl<$Res>
     extends _$UserTransactionCopyWithImpl<$Res>
     implements _$UserTransactionCopyWith<$Res> {
@@ -179,56 +196,68 @@ class __$UserTransactionCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object description = freezed,
-    Object id = freezed,
-    Object notes = freezed,
-    Object addedDate = freezed,
-    Object salesUser = freezed,
-    Object partnerUser = freezed,
-    Object totalRewardBreakup = freezed,
-    Object earnedTotalRewardForCurrentTransaction = freezed,
+    Object? description = freezed,
+    Object? id = freezed,
+    Object? notes = freezed,
+    Object? addedDate = freezed,
+    Object? salesUser = freezed,
+    Object? partnerUser = freezed,
+    Object? totalRewardBreakup = freezed,
+    Object? earnedTotalRewardForCurrentTransaction = freezed,
   }) {
     return _then(_UserTransaction(
-      description:
-          description == freezed ? _value.description : description as String,
-      id: id == freezed ? _value.id : id as String,
-      notes: notes == freezed ? _value.notes : notes as String,
-      addedDate:
-          addedDate == freezed ? _value.addedDate : addedDate as DateTime,
-      salesUser:
-          salesUser == freezed ? _value.salesUser : salesUser as UserProfile,
+      description: description == freezed
+          ? _value.description
+          : description // ignore: cast_nullable_to_non_nullable
+              as String?,
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      notes: notes == freezed
+          ? _value.notes
+          : notes // ignore: cast_nullable_to_non_nullable
+              as String,
+      addedDate: addedDate == freezed
+          ? _value.addedDate
+          : addedDate // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      salesUser: salesUser == freezed
+          ? _value.salesUser
+          : salesUser // ignore: cast_nullable_to_non_nullable
+              as UserProfile,
       partnerUser: partnerUser == freezed
           ? _value.partnerUser
-          : partnerUser as UserProfile,
+          : partnerUser // ignore: cast_nullable_to_non_nullable
+              as UserProfile,
       totalRewardBreakup: totalRewardBreakup == freezed
           ? _value.totalRewardBreakup
-          : totalRewardBreakup as RewardPoint,
+          : totalRewardBreakup // ignore: cast_nullable_to_non_nullable
+              as RewardPoint,
       earnedTotalRewardForCurrentTransaction:
           earnedTotalRewardForCurrentTransaction == freezed
               ? _value.earnedTotalRewardForCurrentTransaction
-              : earnedTotalRewardForCurrentTransaction as double,
+              : earnedTotalRewardForCurrentTransaction // ignore: cast_nullable_to_non_nullable
+                  as double,
     ));
   }
 }
+
+/// @nodoc
 
 class _$_UserTransaction implements _UserTransaction {
   const _$_UserTransaction(
       {this.description,
       this.id = '',
-      this.notes,
-      this.addedDate,
-      @required this.salesUser,
-      @required this.partnerUser,
-      @required this.totalRewardBreakup,
-      @required this.earnedTotalRewardForCurrentTransaction})
-      : assert(id != null),
-        assert(salesUser != null),
-        assert(partnerUser != null),
-        assert(totalRewardBreakup != null),
-        assert(earnedTotalRewardForCurrentTransaction != null);
+      required this.notes,
+      required this.addedDate,
+      required this.salesUser,
+      required this.partnerUser,
+      required this.totalRewardBreakup,
+      required this.earnedTotalRewardForCurrentTransaction});
 
   @override
-  final String description;
+  final String? description;
   @JsonKey(defaultValue: '')
   @override
   final String id;
@@ -293,6 +322,7 @@ class _$_UserTransaction implements _UserTransaction {
       const DeepCollectionEquality()
           .hash(earnedTotalRewardForCurrentTransaction);
 
+  @JsonKey(ignore: true)
   @override
   _$UserTransactionCopyWith<_UserTransaction> get copyWith =>
       __$UserTransactionCopyWithImpl<_UserTransaction>(this, _$identity);
@@ -300,32 +330,35 @@ class _$_UserTransaction implements _UserTransaction {
 
 abstract class _UserTransaction implements UserTransaction {
   const factory _UserTransaction(
-          {String description,
+          {String? description,
           String id,
-          String notes,
-          DateTime addedDate,
-          @required UserProfile salesUser,
-          @required UserProfile partnerUser,
-          @required RewardPoint totalRewardBreakup,
-          @required double earnedTotalRewardForCurrentTransaction}) =
+          required String notes,
+          required DateTime addedDate,
+          required UserProfile salesUser,
+          required UserProfile partnerUser,
+          required RewardPoint totalRewardBreakup,
+          required double earnedTotalRewardForCurrentTransaction}) =
       _$_UserTransaction;
 
   @override
-  String get description;
+  String? get description => throw _privateConstructorUsedError;
   @override
-  String get id;
+  String get id => throw _privateConstructorUsedError;
   @override
-  String get notes;
+  String get notes => throw _privateConstructorUsedError;
   @override
-  DateTime get addedDate;
+  DateTime get addedDate => throw _privateConstructorUsedError;
   @override
-  UserProfile get salesUser;
+  UserProfile get salesUser => throw _privateConstructorUsedError;
   @override
-  UserProfile get partnerUser;
+  UserProfile get partnerUser => throw _privateConstructorUsedError;
   @override
-  RewardPoint get totalRewardBreakup;
+  RewardPoint get totalRewardBreakup => throw _privateConstructorUsedError;
   @override
-  double get earnedTotalRewardForCurrentTransaction;
+  double get earnedTotalRewardForCurrentTransaction =>
+      throw _privateConstructorUsedError;
   @override
-  _$UserTransactionCopyWith<_UserTransaction> get copyWith;
+  @JsonKey(ignore: true)
+  _$UserTransactionCopyWith<_UserTransaction> get copyWith =>
+      throw _privateConstructorUsedError;
 }

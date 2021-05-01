@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class ScanBarcode extends StatelessWidget {
-  const ScanBarcode({Key key}) : super(key: key);
+  const ScanBarcode();
 
   static Route route() {
     return MaterialPageRoute<void>(

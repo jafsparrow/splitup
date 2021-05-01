@@ -11,8 +11,8 @@ abstract class LicensePlanDto implements _$LicensePlanDto {
   const LicensePlanDto._();
 
   const factory LicensePlanDto({
-    String planName,
-    @ServerTimestampConverter() DateTime expiryDate,
+    required String planName,
+    @ServerTimestampConverter() DateTime? expiryDate,
   }) = _LicensePlanDto;
 
   factory LicensePlanDto.fromDomain(LicensePlan licensePlan) {
@@ -21,13 +21,13 @@ abstract class LicensePlanDto implements _$LicensePlanDto {
   }
 
   LicensePlan toDomain() {
-    return LicensePlan(planName: planName, expiryDate: expiryDate);
+    return LicensePlan(planName: planName, expiryDate: expiryDate!);
   }
 
   factory LicensePlanDto.fromJson(Map<String, dynamic> json) =>
       _$LicensePlanDtoFromJson(json);
 
   factory LicensePlanDto.fromFirestore(DocumentSnapshot doc) {
-    return LicensePlanDto.fromJson(doc.data());
+    return LicensePlanDto.fromJson(doc.data()!);
   }
 }

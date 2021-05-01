@@ -6,11 +6,11 @@ part 'userbarcode.freezed.dart';
 abstract class UserBarcode with _$UserBarcode {
   const UserBarcode._();
   const factory UserBarcode({
-    @required String id,
-    @required String barcode,
-    @required String associatedUserId,
-    @required bool isActive,
-    @required DateTime issuedDate,
-    @required DateTime expiryDate,
+     String? id,
+    required String barcode,
+    required String associatedUserId,
+    required bool isActive,
+    required DateTime issuedDate,
+    required DateTime expiryDate,
   }) = _UserBarcode;
 }

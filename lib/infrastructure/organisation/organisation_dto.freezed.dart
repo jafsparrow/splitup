@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'organisation_dto.dart';
 
@@ -8,21 +8,25 @@ part of 'organisation_dto.dart';
 // **************************************************************************
 
 T _$identity<T>(T value) => value;
+
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
 OrganisationDto _$OrganisationDtoFromJson(Map<String, dynamic> json) {
   return _OrganisationDto.fromJson(json);
 }
 
+/// @nodoc
 class _$OrganisationDtoTearOff {
   const _$OrganisationDtoTearOff();
 
-// ignore: unused_element
   _OrganisationDto call(
-      {@required String companyName,
-      @JsonKey(ignore: true) dynamic companyId,
-      @required String phoneNumber,
-      @required Map<String, String> address,
-      @required Map<String, double> pointsFormula,
-      @required LicensePlanDto licensePlan}) {
+      {required String companyName,
+      @JsonKey(ignore: true) String? companyId,
+      required String phoneNumber,
+      required Map<String, String> address,
+      required Map<String, double> pointsFormula,
+      required LicensePlanDto licensePlan}) {
     return _OrganisationDto(
       companyName: companyName,
       companyId: companyId,
@@ -32,31 +36,39 @@ class _$OrganisationDtoTearOff {
       licensePlan: licensePlan,
     );
   }
+
+  OrganisationDto fromJson(Map<String, Object> json) {
+    return OrganisationDto.fromJson(json);
+  }
 }
 
-// ignore: unused_element
+/// @nodoc
 const $OrganisationDto = _$OrganisationDtoTearOff();
 
+/// @nodoc
 mixin _$OrganisationDto {
-  String get companyName;
+  String get companyName => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  dynamic get companyId;
-  String get phoneNumber;
-  Map<String, String> get address;
-  Map<String, double> get pointsFormula;
-  LicensePlanDto get licensePlan;
+  String? get companyId => throw _privateConstructorUsedError;
+  String get phoneNumber => throw _privateConstructorUsedError;
+  Map<String, String> get address => throw _privateConstructorUsedError;
+  Map<String, double> get pointsFormula => throw _privateConstructorUsedError;
+  LicensePlanDto get licensePlan => throw _privateConstructorUsedError;
 
-  Map<String, dynamic> toJson();
-  $OrganisationDtoCopyWith<OrganisationDto> get copyWith;
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $OrganisationDtoCopyWith<OrganisationDto> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
+/// @nodoc
 abstract class $OrganisationDtoCopyWith<$Res> {
   factory $OrganisationDtoCopyWith(
           OrganisationDto value, $Res Function(OrganisationDto) then) =
       _$OrganisationDtoCopyWithImpl<$Res>;
   $Res call(
       {String companyName,
-      @JsonKey(ignore: true) dynamic companyId,
+      @JsonKey(ignore: true) String? companyId,
       String phoneNumber,
       Map<String, String> address,
       Map<String, double> pointsFormula,
@@ -65,6 +77,7 @@ abstract class $OrganisationDtoCopyWith<$Res> {
   $LicensePlanDtoCopyWith<$Res> get licensePlan;
 }
 
+/// @nodoc
 class _$OrganisationDtoCopyWithImpl<$Res>
     implements $OrganisationDtoCopyWith<$Res> {
   _$OrganisationDtoCopyWithImpl(this._value, this._then);
@@ -75,41 +88,50 @@ class _$OrganisationDtoCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object companyName = freezed,
-    Object companyId = freezed,
-    Object phoneNumber = freezed,
-    Object address = freezed,
-    Object pointsFormula = freezed,
-    Object licensePlan = freezed,
+    Object? companyName = freezed,
+    Object? companyId = freezed,
+    Object? phoneNumber = freezed,
+    Object? address = freezed,
+    Object? pointsFormula = freezed,
+    Object? licensePlan = freezed,
   }) {
     return _then(_value.copyWith(
-      companyName:
-          companyName == freezed ? _value.companyName : companyName as String,
-      companyId: companyId == freezed ? _value.companyId : companyId as dynamic,
-      phoneNumber:
-          phoneNumber == freezed ? _value.phoneNumber : phoneNumber as String,
-      address:
-          address == freezed ? _value.address : address as Map<String, String>,
+      companyName: companyName == freezed
+          ? _value.companyName
+          : companyName // ignore: cast_nullable_to_non_nullable
+              as String,
+      companyId: companyId == freezed
+          ? _value.companyId
+          : companyId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      phoneNumber: phoneNumber == freezed
+          ? _value.phoneNumber
+          : phoneNumber // ignore: cast_nullable_to_non_nullable
+              as String,
+      address: address == freezed
+          ? _value.address
+          : address // ignore: cast_nullable_to_non_nullable
+              as Map<String, String>,
       pointsFormula: pointsFormula == freezed
           ? _value.pointsFormula
-          : pointsFormula as Map<String, double>,
+          : pointsFormula // ignore: cast_nullable_to_non_nullable
+              as Map<String, double>,
       licensePlan: licensePlan == freezed
           ? _value.licensePlan
-          : licensePlan as LicensePlanDto,
+          : licensePlan // ignore: cast_nullable_to_non_nullable
+              as LicensePlanDto,
     ));
   }
 
   @override
   $LicensePlanDtoCopyWith<$Res> get licensePlan {
-    if (_value.licensePlan == null) {
-      return null;
-    }
     return $LicensePlanDtoCopyWith<$Res>(_value.licensePlan, (value) {
       return _then(_value.copyWith(licensePlan: value));
     });
   }
 }
 
+/// @nodoc
 abstract class _$OrganisationDtoCopyWith<$Res>
     implements $OrganisationDtoCopyWith<$Res> {
   factory _$OrganisationDtoCopyWith(
@@ -118,7 +140,7 @@ abstract class _$OrganisationDtoCopyWith<$Res>
   @override
   $Res call(
       {String companyName,
-      @JsonKey(ignore: true) dynamic companyId,
+      @JsonKey(ignore: true) String? companyId,
       String phoneNumber,
       Map<String, String> address,
       Map<String, double> pointsFormula,
@@ -128,6 +150,7 @@ abstract class _$OrganisationDtoCopyWith<$Res>
   $LicensePlanDtoCopyWith<$Res> get licensePlan;
 }
 
+/// @nodoc
 class __$OrganisationDtoCopyWithImpl<$Res>
     extends _$OrganisationDtoCopyWithImpl<$Res>
     implements _$OrganisationDtoCopyWith<$Res> {
@@ -140,46 +163,53 @@ class __$OrganisationDtoCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object companyName = freezed,
-    Object companyId = freezed,
-    Object phoneNumber = freezed,
-    Object address = freezed,
-    Object pointsFormula = freezed,
-    Object licensePlan = freezed,
+    Object? companyName = freezed,
+    Object? companyId = freezed,
+    Object? phoneNumber = freezed,
+    Object? address = freezed,
+    Object? pointsFormula = freezed,
+    Object? licensePlan = freezed,
   }) {
     return _then(_OrganisationDto(
-      companyName:
-          companyName == freezed ? _value.companyName : companyName as String,
-      companyId: companyId == freezed ? _value.companyId : companyId,
-      phoneNumber:
-          phoneNumber == freezed ? _value.phoneNumber : phoneNumber as String,
-      address:
-          address == freezed ? _value.address : address as Map<String, String>,
+      companyName: companyName == freezed
+          ? _value.companyName
+          : companyName // ignore: cast_nullable_to_non_nullable
+              as String,
+      companyId: companyId == freezed
+          ? _value.companyId
+          : companyId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      phoneNumber: phoneNumber == freezed
+          ? _value.phoneNumber
+          : phoneNumber // ignore: cast_nullable_to_non_nullable
+              as String,
+      address: address == freezed
+          ? _value.address
+          : address // ignore: cast_nullable_to_non_nullable
+              as Map<String, String>,
       pointsFormula: pointsFormula == freezed
           ? _value.pointsFormula
-          : pointsFormula as Map<String, double>,
+          : pointsFormula // ignore: cast_nullable_to_non_nullable
+              as Map<String, double>,
       licensePlan: licensePlan == freezed
           ? _value.licensePlan
-          : licensePlan as LicensePlanDto,
+          : licensePlan // ignore: cast_nullable_to_non_nullable
+              as LicensePlanDto,
     ));
   }
 }
 
+/// @nodoc
 @JsonSerializable()
 class _$_OrganisationDto extends _OrganisationDto {
   const _$_OrganisationDto(
-      {@required this.companyName,
+      {required this.companyName,
       @JsonKey(ignore: true) this.companyId,
-      @required this.phoneNumber,
-      @required this.address,
-      @required this.pointsFormula,
-      @required this.licensePlan})
-      : assert(companyName != null),
-        assert(phoneNumber != null),
-        assert(address != null),
-        assert(pointsFormula != null),
-        assert(licensePlan != null),
-        super._();
+      required this.phoneNumber,
+      required this.address,
+      required this.pointsFormula,
+      required this.licensePlan})
+      : super._();
 
   factory _$_OrganisationDto.fromJson(Map<String, dynamic> json) =>
       _$_$_OrganisationDtoFromJson(json);
@@ -188,7 +218,7 @@ class _$_OrganisationDto extends _OrganisationDto {
   final String companyName;
   @override
   @JsonKey(ignore: true)
-  final dynamic companyId;
+  final String? companyId;
   @override
   final String phoneNumber;
   @override
@@ -237,6 +267,7 @@ class _$_OrganisationDto extends _OrganisationDto {
       const DeepCollectionEquality().hash(pointsFormula) ^
       const DeepCollectionEquality().hash(licensePlan);
 
+  @JsonKey(ignore: true)
   @override
   _$OrganisationDtoCopyWith<_OrganisationDto> get copyWith =>
       __$OrganisationDtoCopyWithImpl<_OrganisationDto>(this, _$identity);
@@ -248,31 +279,33 @@ class _$_OrganisationDto extends _OrganisationDto {
 }
 
 abstract class _OrganisationDto extends OrganisationDto {
-  const _OrganisationDto._() : super._();
   const factory _OrganisationDto(
-      {@required String companyName,
-      @JsonKey(ignore: true) dynamic companyId,
-      @required String phoneNumber,
-      @required Map<String, String> address,
-      @required Map<String, double> pointsFormula,
-      @required LicensePlanDto licensePlan}) = _$_OrganisationDto;
+      {required String companyName,
+      @JsonKey(ignore: true) String? companyId,
+      required String phoneNumber,
+      required Map<String, String> address,
+      required Map<String, double> pointsFormula,
+      required LicensePlanDto licensePlan}) = _$_OrganisationDto;
+  const _OrganisationDto._() : super._();
 
   factory _OrganisationDto.fromJson(Map<String, dynamic> json) =
       _$_OrganisationDto.fromJson;
 
   @override
-  String get companyName;
+  String get companyName => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  dynamic get companyId;
+  String? get companyId => throw _privateConstructorUsedError;
   @override
-  String get phoneNumber;
+  String get phoneNumber => throw _privateConstructorUsedError;
   @override
-  Map<String, String> get address;
+  Map<String, String> get address => throw _privateConstructorUsedError;
   @override
-  Map<String, double> get pointsFormula;
+  Map<String, double> get pointsFormula => throw _privateConstructorUsedError;
   @override
-  LicensePlanDto get licensePlan;
+  LicensePlanDto get licensePlan => throw _privateConstructorUsedError;
   @override
-  _$OrganisationDtoCopyWith<_OrganisationDto> get copyWith;
+  @JsonKey(ignore: true)
+  _$OrganisationDtoCopyWith<_OrganisationDto> get copyWith =>
+      throw _privateConstructorUsedError;
 }

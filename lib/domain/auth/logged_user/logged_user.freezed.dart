@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'logged_user.dart';
 
@@ -9,15 +9,18 @@ part of 'logged_user.dart';
 
 T _$identity<T>(T value) => value;
 
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
+/// @nodoc
 class _$LoggedUserTearOff {
   const _$LoggedUserTearOff();
 
-// ignore: unused_element
   _LoggedUser call(
-      {@required String uid,
-      @required String companyId,
-      @required bool isSalesUser,
-      @required UserProfile loggedUserProfile}) {
+      {required String uid,
+      required String companyId,
+      required bool isSalesUser,
+      required UserProfile loggedUserProfile}) {
     return _LoggedUser(
       uid: uid,
       companyId: companyId,
@@ -27,18 +30,22 @@ class _$LoggedUserTearOff {
   }
 }
 
-// ignore: unused_element
+/// @nodoc
 const $LoggedUser = _$LoggedUserTearOff();
 
+/// @nodoc
 mixin _$LoggedUser {
-  String get uid;
-  String get companyId;
-  bool get isSalesUser;
-  UserProfile get loggedUserProfile;
+  String get uid => throw _privateConstructorUsedError;
+  String get companyId => throw _privateConstructorUsedError;
+  bool get isSalesUser => throw _privateConstructorUsedError;
+  UserProfile get loggedUserProfile => throw _privateConstructorUsedError;
 
-  $LoggedUserCopyWith<LoggedUser> get copyWith;
+  @JsonKey(ignore: true)
+  $LoggedUserCopyWith<LoggedUser> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
+/// @nodoc
 abstract class $LoggedUserCopyWith<$Res> {
   factory $LoggedUserCopyWith(
           LoggedUser value, $Res Function(LoggedUser) then) =
@@ -52,6 +59,7 @@ abstract class $LoggedUserCopyWith<$Res> {
   $UserProfileCopyWith<$Res> get loggedUserProfile;
 }
 
+/// @nodoc
 class _$LoggedUserCopyWithImpl<$Res> implements $LoggedUserCopyWith<$Res> {
   _$LoggedUserCopyWithImpl(this._value, this._then);
 
@@ -61,33 +69,40 @@ class _$LoggedUserCopyWithImpl<$Res> implements $LoggedUserCopyWith<$Res> {
 
   @override
   $Res call({
-    Object uid = freezed,
-    Object companyId = freezed,
-    Object isSalesUser = freezed,
-    Object loggedUserProfile = freezed,
+    Object? uid = freezed,
+    Object? companyId = freezed,
+    Object? isSalesUser = freezed,
+    Object? loggedUserProfile = freezed,
   }) {
     return _then(_value.copyWith(
-      uid: uid == freezed ? _value.uid : uid as String,
-      companyId: companyId == freezed ? _value.companyId : companyId as String,
-      isSalesUser:
-          isSalesUser == freezed ? _value.isSalesUser : isSalesUser as bool,
+      uid: uid == freezed
+          ? _value.uid
+          : uid // ignore: cast_nullable_to_non_nullable
+              as String,
+      companyId: companyId == freezed
+          ? _value.companyId
+          : companyId // ignore: cast_nullable_to_non_nullable
+              as String,
+      isSalesUser: isSalesUser == freezed
+          ? _value.isSalesUser
+          : isSalesUser // ignore: cast_nullable_to_non_nullable
+              as bool,
       loggedUserProfile: loggedUserProfile == freezed
           ? _value.loggedUserProfile
-          : loggedUserProfile as UserProfile,
+          : loggedUserProfile // ignore: cast_nullable_to_non_nullable
+              as UserProfile,
     ));
   }
 
   @override
   $UserProfileCopyWith<$Res> get loggedUserProfile {
-    if (_value.loggedUserProfile == null) {
-      return null;
-    }
     return $UserProfileCopyWith<$Res>(_value.loggedUserProfile, (value) {
       return _then(_value.copyWith(loggedUserProfile: value));
     });
   }
 }
 
+/// @nodoc
 abstract class _$LoggedUserCopyWith<$Res> implements $LoggedUserCopyWith<$Res> {
   factory _$LoggedUserCopyWith(
           _LoggedUser value, $Res Function(_LoggedUser) then) =
@@ -103,6 +118,7 @@ abstract class _$LoggedUserCopyWith<$Res> implements $LoggedUserCopyWith<$Res> {
   $UserProfileCopyWith<$Res> get loggedUserProfile;
 }
 
+/// @nodoc
 class __$LoggedUserCopyWithImpl<$Res> extends _$LoggedUserCopyWithImpl<$Res>
     implements _$LoggedUserCopyWith<$Res> {
   __$LoggedUserCopyWithImpl(
@@ -114,33 +130,40 @@ class __$LoggedUserCopyWithImpl<$Res> extends _$LoggedUserCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object uid = freezed,
-    Object companyId = freezed,
-    Object isSalesUser = freezed,
-    Object loggedUserProfile = freezed,
+    Object? uid = freezed,
+    Object? companyId = freezed,
+    Object? isSalesUser = freezed,
+    Object? loggedUserProfile = freezed,
   }) {
     return _then(_LoggedUser(
-      uid: uid == freezed ? _value.uid : uid as String,
-      companyId: companyId == freezed ? _value.companyId : companyId as String,
-      isSalesUser:
-          isSalesUser == freezed ? _value.isSalesUser : isSalesUser as bool,
+      uid: uid == freezed
+          ? _value.uid
+          : uid // ignore: cast_nullable_to_non_nullable
+              as String,
+      companyId: companyId == freezed
+          ? _value.companyId
+          : companyId // ignore: cast_nullable_to_non_nullable
+              as String,
+      isSalesUser: isSalesUser == freezed
+          ? _value.isSalesUser
+          : isSalesUser // ignore: cast_nullable_to_non_nullable
+              as bool,
       loggedUserProfile: loggedUserProfile == freezed
           ? _value.loggedUserProfile
-          : loggedUserProfile as UserProfile,
+          : loggedUserProfile // ignore: cast_nullable_to_non_nullable
+              as UserProfile,
     ));
   }
 }
 
+/// @nodoc
+
 class _$_LoggedUser implements _LoggedUser {
   const _$_LoggedUser(
-      {@required this.uid,
-      @required this.companyId,
-      @required this.isSalesUser,
-      @required this.loggedUserProfile})
-      : assert(uid != null),
-        assert(companyId != null),
-        assert(isSalesUser != null),
-        assert(loggedUserProfile != null);
+      {required this.uid,
+      required this.companyId,
+      required this.isSalesUser,
+      required this.loggedUserProfile});
 
   @override
   final String uid;
@@ -181,6 +204,7 @@ class _$_LoggedUser implements _LoggedUser {
       const DeepCollectionEquality().hash(isSalesUser) ^
       const DeepCollectionEquality().hash(loggedUserProfile);
 
+  @JsonKey(ignore: true)
   @override
   _$LoggedUserCopyWith<_LoggedUser> get copyWith =>
       __$LoggedUserCopyWithImpl<_LoggedUser>(this, _$identity);
@@ -188,19 +212,21 @@ class _$_LoggedUser implements _LoggedUser {
 
 abstract class _LoggedUser implements LoggedUser {
   const factory _LoggedUser(
-      {@required String uid,
-      @required String companyId,
-      @required bool isSalesUser,
-      @required UserProfile loggedUserProfile}) = _$_LoggedUser;
+      {required String uid,
+      required String companyId,
+      required bool isSalesUser,
+      required UserProfile loggedUserProfile}) = _$_LoggedUser;
 
   @override
-  String get uid;
+  String get uid => throw _privateConstructorUsedError;
   @override
-  String get companyId;
+  String get companyId => throw _privateConstructorUsedError;
   @override
-  bool get isSalesUser;
+  bool get isSalesUser => throw _privateConstructorUsedError;
   @override
-  UserProfile get loggedUserProfile;
+  UserProfile get loggedUserProfile => throw _privateConstructorUsedError;
   @override
-  _$LoggedUserCopyWith<_LoggedUser> get copyWith;
+  @JsonKey(ignore: true)
+  _$LoggedUserCopyWith<_LoggedUser> get copyWith =>
+      throw _privateConstructorUsedError;
 }

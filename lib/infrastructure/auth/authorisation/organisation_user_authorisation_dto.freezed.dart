@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'organisation_user_authorisation_dto.dart';
 
@@ -8,41 +8,52 @@ part of 'organisation_user_authorisation_dto.dart';
 // **************************************************************************
 
 T _$identity<T>(T value) => value;
+
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
 OrganisationUserAuthorisationDto _$OrganisationUserAuthorisationDtoFromJson(
     Map<String, dynamic> json) {
   return _OrganisationUserAuthorisationDto.fromJson(json);
 }
 
+/// @nodoc
 class _$OrganisationUserAuthorisationDtoTearOff {
   const _$OrganisationUserAuthorisationDtoTearOff();
 
-// ignore: unused_element
   _OrganisationUserAuthorisationDto call(
-      {@required String userRefId,
-      @required bool isSalesUser,
-      @required bool isPartnerUser}) {
+      {required String userRefId,
+      required bool isSalesUser,
+      required bool isPartnerUser}) {
     return _OrganisationUserAuthorisationDto(
       userRefId: userRefId,
       isSalesUser: isSalesUser,
       isPartnerUser: isPartnerUser,
     );
   }
+
+  OrganisationUserAuthorisationDto fromJson(Map<String, Object> json) {
+    return OrganisationUserAuthorisationDto.fromJson(json);
+  }
 }
 
-// ignore: unused_element
+/// @nodoc
 const $OrganisationUserAuthorisationDto =
     _$OrganisationUserAuthorisationDtoTearOff();
 
+/// @nodoc
 mixin _$OrganisationUserAuthorisationDto {
-  String get userRefId;
-  bool get isSalesUser;
-  bool get isPartnerUser;
+  String get userRefId => throw _privateConstructorUsedError;
+  bool get isSalesUser => throw _privateConstructorUsedError;
+  bool get isPartnerUser => throw _privateConstructorUsedError;
 
-  Map<String, dynamic> toJson();
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
   $OrganisationUserAuthorisationDtoCopyWith<OrganisationUserAuthorisationDto>
-      get copyWith;
+      get copyWith => throw _privateConstructorUsedError;
 }
 
+/// @nodoc
 abstract class $OrganisationUserAuthorisationDtoCopyWith<$Res> {
   factory $OrganisationUserAuthorisationDtoCopyWith(
           OrganisationUserAuthorisationDto value,
@@ -51,6 +62,7 @@ abstract class $OrganisationUserAuthorisationDtoCopyWith<$Res> {
   $Res call({String userRefId, bool isSalesUser, bool isPartnerUser});
 }
 
+/// @nodoc
 class _$OrganisationUserAuthorisationDtoCopyWithImpl<$Res>
     implements $OrganisationUserAuthorisationDtoCopyWith<$Res> {
   _$OrganisationUserAuthorisationDtoCopyWithImpl(this._value, this._then);
@@ -61,21 +73,28 @@ class _$OrganisationUserAuthorisationDtoCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object userRefId = freezed,
-    Object isSalesUser = freezed,
-    Object isPartnerUser = freezed,
+    Object? userRefId = freezed,
+    Object? isSalesUser = freezed,
+    Object? isPartnerUser = freezed,
   }) {
     return _then(_value.copyWith(
-      userRefId: userRefId == freezed ? _value.userRefId : userRefId as String,
-      isSalesUser:
-          isSalesUser == freezed ? _value.isSalesUser : isSalesUser as bool,
+      userRefId: userRefId == freezed
+          ? _value.userRefId
+          : userRefId // ignore: cast_nullable_to_non_nullable
+              as String,
+      isSalesUser: isSalesUser == freezed
+          ? _value.isSalesUser
+          : isSalesUser // ignore: cast_nullable_to_non_nullable
+              as bool,
       isPartnerUser: isPartnerUser == freezed
           ? _value.isPartnerUser
-          : isPartnerUser as bool,
+          : isPartnerUser // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
 
+/// @nodoc
 abstract class _$OrganisationUserAuthorisationDtoCopyWith<$Res>
     implements $OrganisationUserAuthorisationDtoCopyWith<$Res> {
   factory _$OrganisationUserAuthorisationDtoCopyWith(
@@ -86,6 +105,7 @@ abstract class _$OrganisationUserAuthorisationDtoCopyWith<$Res>
   $Res call({String userRefId, bool isSalesUser, bool isPartnerUser});
 }
 
+/// @nodoc
 class __$OrganisationUserAuthorisationDtoCopyWithImpl<$Res>
     extends _$OrganisationUserAuthorisationDtoCopyWithImpl<$Res>
     implements _$OrganisationUserAuthorisationDtoCopyWith<$Res> {
@@ -100,32 +120,36 @@ class __$OrganisationUserAuthorisationDtoCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object userRefId = freezed,
-    Object isSalesUser = freezed,
-    Object isPartnerUser = freezed,
+    Object? userRefId = freezed,
+    Object? isSalesUser = freezed,
+    Object? isPartnerUser = freezed,
   }) {
     return _then(_OrganisationUserAuthorisationDto(
-      userRefId: userRefId == freezed ? _value.userRefId : userRefId as String,
-      isSalesUser:
-          isSalesUser == freezed ? _value.isSalesUser : isSalesUser as bool,
+      userRefId: userRefId == freezed
+          ? _value.userRefId
+          : userRefId // ignore: cast_nullable_to_non_nullable
+              as String,
+      isSalesUser: isSalesUser == freezed
+          ? _value.isSalesUser
+          : isSalesUser // ignore: cast_nullable_to_non_nullable
+              as bool,
       isPartnerUser: isPartnerUser == freezed
           ? _value.isPartnerUser
-          : isPartnerUser as bool,
+          : isPartnerUser // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
 
+/// @nodoc
 @JsonSerializable()
 class _$_OrganisationUserAuthorisationDto
     extends _OrganisationUserAuthorisationDto {
   const _$_OrganisationUserAuthorisationDto(
-      {@required this.userRefId,
-      @required this.isSalesUser,
-      @required this.isPartnerUser})
-      : assert(userRefId != null),
-        assert(isSalesUser != null),
-        assert(isPartnerUser != null),
-        super._();
+      {required this.userRefId,
+      required this.isSalesUser,
+      required this.isPartnerUser})
+      : super._();
 
   factory _$_OrganisationUserAuthorisationDto.fromJson(
           Map<String, dynamic> json) =>
@@ -165,6 +189,7 @@ class _$_OrganisationUserAuthorisationDto
       const DeepCollectionEquality().hash(isSalesUser) ^
       const DeepCollectionEquality().hash(isPartnerUser);
 
+  @JsonKey(ignore: true)
   @override
   _$OrganisationUserAuthorisationDtoCopyWith<_OrganisationUserAuthorisationDto>
       get copyWith => __$OrganisationUserAuthorisationDtoCopyWithImpl<
@@ -178,22 +203,23 @@ class _$_OrganisationUserAuthorisationDto
 
 abstract class _OrganisationUserAuthorisationDto
     extends OrganisationUserAuthorisationDto {
-  const _OrganisationUserAuthorisationDto._() : super._();
   const factory _OrganisationUserAuthorisationDto(
-      {@required String userRefId,
-      @required bool isSalesUser,
-      @required bool isPartnerUser}) = _$_OrganisationUserAuthorisationDto;
+      {required String userRefId,
+      required bool isSalesUser,
+      required bool isPartnerUser}) = _$_OrganisationUserAuthorisationDto;
+  const _OrganisationUserAuthorisationDto._() : super._();
 
   factory _OrganisationUserAuthorisationDto.fromJson(
       Map<String, dynamic> json) = _$_OrganisationUserAuthorisationDto.fromJson;
 
   @override
-  String get userRefId;
+  String get userRefId => throw _privateConstructorUsedError;
   @override
-  bool get isSalesUser;
+  bool get isSalesUser => throw _privateConstructorUsedError;
   @override
-  bool get isPartnerUser;
+  bool get isPartnerUser => throw _privateConstructorUsedError;
   @override
+  @JsonKey(ignore: true)
   _$OrganisationUserAuthorisationDtoCopyWith<_OrganisationUserAuthorisationDto>
-      get copyWith;
+      get copyWith => throw _privateConstructorUsedError;
 }

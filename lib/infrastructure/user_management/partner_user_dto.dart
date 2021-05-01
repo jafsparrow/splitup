@@ -10,8 +10,8 @@ abstract class PartnerUserDto implements _$PartnerUserDto {
   const PartnerUserDto._();
 
   const factory PartnerUserDto({
-    @required UserProfileDto profile,
-    @required double totalRewardPoints,
+    required UserProfileDto profile,
+    required double totalRewardPoints,
   }) = _PartnerUserDto;
 
   factory PartnerUserDto.fromDomain(PartnerUser partnerUser) {
@@ -32,6 +32,6 @@ abstract class PartnerUserDto implements _$PartnerUserDto {
       _$PartnerUserDtoFromJson(json);
 
   factory PartnerUserDto.fromFirestore(DocumentSnapshot doc) {
-    return PartnerUserDto.fromJson(doc.data());
+    return PartnerUserDto.fromJson(doc.data()!);
   }
 }

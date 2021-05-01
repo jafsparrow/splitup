@@ -6,15 +6,15 @@ abstract class PartnerBarcodeManagementEvent
   const factory PartnerBarcodeManagementEvent.started() = _Started;
 
   const factory PartnerBarcodeManagementEvent.loadPartnerUserBarcodes(
-      {String partnerUserId, String companyId}) = _LoadParnterUserBarcodes;
+      {required String partnerUserId, required String companyId}) = _LoadParnterUserBarcodes;
 
   const factory PartnerBarcodeManagementEvent.assignedNewBarcode(
-      {String barcode,
-      String companyId,
-      UserProfile loggedInUser}) = _AssignedNewBarcode;
+      {required String barcode,
+      required String companyId,
+      required UserProfile loggedInUser}) = _AssignedNewBarcode;
 
   const factory PartnerBarcodeManagementEvent.deactivatedBarcode({
-    String barcode,
-    String companyId,
+    required String barcode,
+    required String companyId,
   }) = _DeactivatedBarcode;
 }

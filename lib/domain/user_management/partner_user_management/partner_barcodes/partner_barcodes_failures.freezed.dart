@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'partner_barcodes_failures.dart';
 
@@ -9,72 +9,79 @@ part of 'partner_barcodes_failures.dart';
 
 T _$identity<T>(T value) => value;
 
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
+/// @nodoc
 class _$PartnerBarcodeFailureTearOff {
   const _$PartnerBarcodeFailureTearOff();
 
-// ignore: unused_element
   _Unexpected unexpected() {
     return const _Unexpected();
   }
 
-// ignore: unused_element
   _NotValid barcodeNotValid() {
     return const _NotValid();
   }
 
-// ignore: unused_element
   _AlreadyAssigned barcodeAlreadyAssigned() {
     return const _AlreadyAssigned();
   }
 
-// ignore: unused_element
   _UnableToUpdate unableToUpdate() {
     return const _UnableToUpdate();
   }
 }
 
-// ignore: unused_element
+/// @nodoc
 const $PartnerBarcodeFailure = _$PartnerBarcodeFailureTearOff();
 
+/// @nodoc
 mixin _$PartnerBarcodeFailure {
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result unexpected(),
-    @required Result barcodeNotValid(),
-    @required Result barcodeAlreadyAssigned(),
-    @required Result unableToUpdate(),
-  });
+  TResult when<TResult extends Object?>({
+    required TResult Function() unexpected,
+    required TResult Function() barcodeNotValid,
+    required TResult Function() barcodeAlreadyAssigned,
+    required TResult Function() unableToUpdate,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result unexpected(),
-    Result barcodeNotValid(),
-    Result barcodeAlreadyAssigned(),
-    Result unableToUpdate(),
-    @required Result orElse(),
-  });
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? unexpected,
+    TResult Function()? barcodeNotValid,
+    TResult Function()? barcodeAlreadyAssigned,
+    TResult Function()? unableToUpdate,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result unexpected(_Unexpected value),
-    @required Result barcodeNotValid(_NotValid value),
-    @required Result barcodeAlreadyAssigned(_AlreadyAssigned value),
-    @required Result unableToUpdate(_UnableToUpdate value),
-  });
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Unexpected value) unexpected,
+    required TResult Function(_NotValid value) barcodeNotValid,
+    required TResult Function(_AlreadyAssigned value) barcodeAlreadyAssigned,
+    required TResult Function(_UnableToUpdate value) unableToUpdate,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result unexpected(_Unexpected value),
-    Result barcodeNotValid(_NotValid value),
-    Result barcodeAlreadyAssigned(_AlreadyAssigned value),
-    Result unableToUpdate(_UnableToUpdate value),
-    @required Result orElse(),
-  });
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Unexpected value)? unexpected,
+    TResult Function(_NotValid value)? barcodeNotValid,
+    TResult Function(_AlreadyAssigned value)? barcodeAlreadyAssigned,
+    TResult Function(_UnableToUpdate value)? unableToUpdate,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
+/// @nodoc
 abstract class $PartnerBarcodeFailureCopyWith<$Res> {
   factory $PartnerBarcodeFailureCopyWith(PartnerBarcodeFailure value,
           $Res Function(PartnerBarcodeFailure) then) =
       _$PartnerBarcodeFailureCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class _$PartnerBarcodeFailureCopyWithImpl<$Res>
     implements $PartnerBarcodeFailureCopyWith<$Res> {
   _$PartnerBarcodeFailureCopyWithImpl(this._value, this._then);
@@ -84,12 +91,14 @@ class _$PartnerBarcodeFailureCopyWithImpl<$Res>
   final $Res Function(PartnerBarcodeFailure) _then;
 }
 
+/// @nodoc
 abstract class _$UnexpectedCopyWith<$Res> {
   factory _$UnexpectedCopyWith(
           _Unexpected value, $Res Function(_Unexpected) then) =
       __$UnexpectedCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class __$UnexpectedCopyWithImpl<$Res>
     extends _$PartnerBarcodeFailureCopyWithImpl<$Res>
     implements _$UnexpectedCopyWith<$Res> {
@@ -100,6 +109,8 @@ class __$UnexpectedCopyWithImpl<$Res>
   @override
   _Unexpected get _value => super._value as _Unexpected;
 }
+
+/// @nodoc
 
 class _$_Unexpected implements _Unexpected {
   const _$_Unexpected();
@@ -119,29 +130,24 @@ class _$_Unexpected implements _Unexpected {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result unexpected(),
-    @required Result barcodeNotValid(),
-    @required Result barcodeAlreadyAssigned(),
-    @required Result unableToUpdate(),
+  TResult when<TResult extends Object?>({
+    required TResult Function() unexpected,
+    required TResult Function() barcodeNotValid,
+    required TResult Function() barcodeAlreadyAssigned,
+    required TResult Function() unableToUpdate,
   }) {
-    assert(unexpected != null);
-    assert(barcodeNotValid != null);
-    assert(barcodeAlreadyAssigned != null);
-    assert(unableToUpdate != null);
     return unexpected();
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result unexpected(),
-    Result barcodeNotValid(),
-    Result barcodeAlreadyAssigned(),
-    Result unableToUpdate(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? unexpected,
+    TResult Function()? barcodeNotValid,
+    TResult Function()? barcodeAlreadyAssigned,
+    TResult Function()? unableToUpdate,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (unexpected != null) {
       return unexpected();
     }
@@ -150,29 +156,24 @@ class _$_Unexpected implements _Unexpected {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result unexpected(_Unexpected value),
-    @required Result barcodeNotValid(_NotValid value),
-    @required Result barcodeAlreadyAssigned(_AlreadyAssigned value),
-    @required Result unableToUpdate(_UnableToUpdate value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Unexpected value) unexpected,
+    required TResult Function(_NotValid value) barcodeNotValid,
+    required TResult Function(_AlreadyAssigned value) barcodeAlreadyAssigned,
+    required TResult Function(_UnableToUpdate value) unableToUpdate,
   }) {
-    assert(unexpected != null);
-    assert(barcodeNotValid != null);
-    assert(barcodeAlreadyAssigned != null);
-    assert(unableToUpdate != null);
     return unexpected(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result unexpected(_Unexpected value),
-    Result barcodeNotValid(_NotValid value),
-    Result barcodeAlreadyAssigned(_AlreadyAssigned value),
-    Result unableToUpdate(_UnableToUpdate value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Unexpected value)? unexpected,
+    TResult Function(_NotValid value)? barcodeNotValid,
+    TResult Function(_AlreadyAssigned value)? barcodeAlreadyAssigned,
+    TResult Function(_UnableToUpdate value)? unableToUpdate,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (unexpected != null) {
       return unexpected(this);
     }
@@ -184,11 +185,13 @@ abstract class _Unexpected implements PartnerBarcodeFailure {
   const factory _Unexpected() = _$_Unexpected;
 }
 
+/// @nodoc
 abstract class _$NotValidCopyWith<$Res> {
   factory _$NotValidCopyWith(_NotValid value, $Res Function(_NotValid) then) =
       __$NotValidCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class __$NotValidCopyWithImpl<$Res>
     extends _$PartnerBarcodeFailureCopyWithImpl<$Res>
     implements _$NotValidCopyWith<$Res> {
@@ -198,6 +201,8 @@ class __$NotValidCopyWithImpl<$Res>
   @override
   _NotValid get _value => super._value as _NotValid;
 }
+
+/// @nodoc
 
 class _$_NotValid implements _NotValid {
   const _$_NotValid();
@@ -217,29 +222,24 @@ class _$_NotValid implements _NotValid {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result unexpected(),
-    @required Result barcodeNotValid(),
-    @required Result barcodeAlreadyAssigned(),
-    @required Result unableToUpdate(),
+  TResult when<TResult extends Object?>({
+    required TResult Function() unexpected,
+    required TResult Function() barcodeNotValid,
+    required TResult Function() barcodeAlreadyAssigned,
+    required TResult Function() unableToUpdate,
   }) {
-    assert(unexpected != null);
-    assert(barcodeNotValid != null);
-    assert(barcodeAlreadyAssigned != null);
-    assert(unableToUpdate != null);
     return barcodeNotValid();
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result unexpected(),
-    Result barcodeNotValid(),
-    Result barcodeAlreadyAssigned(),
-    Result unableToUpdate(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? unexpected,
+    TResult Function()? barcodeNotValid,
+    TResult Function()? barcodeAlreadyAssigned,
+    TResult Function()? unableToUpdate,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (barcodeNotValid != null) {
       return barcodeNotValid();
     }
@@ -248,29 +248,24 @@ class _$_NotValid implements _NotValid {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result unexpected(_Unexpected value),
-    @required Result barcodeNotValid(_NotValid value),
-    @required Result barcodeAlreadyAssigned(_AlreadyAssigned value),
-    @required Result unableToUpdate(_UnableToUpdate value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Unexpected value) unexpected,
+    required TResult Function(_NotValid value) barcodeNotValid,
+    required TResult Function(_AlreadyAssigned value) barcodeAlreadyAssigned,
+    required TResult Function(_UnableToUpdate value) unableToUpdate,
   }) {
-    assert(unexpected != null);
-    assert(barcodeNotValid != null);
-    assert(barcodeAlreadyAssigned != null);
-    assert(unableToUpdate != null);
     return barcodeNotValid(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result unexpected(_Unexpected value),
-    Result barcodeNotValid(_NotValid value),
-    Result barcodeAlreadyAssigned(_AlreadyAssigned value),
-    Result unableToUpdate(_UnableToUpdate value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Unexpected value)? unexpected,
+    TResult Function(_NotValid value)? barcodeNotValid,
+    TResult Function(_AlreadyAssigned value)? barcodeAlreadyAssigned,
+    TResult Function(_UnableToUpdate value)? unableToUpdate,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (barcodeNotValid != null) {
       return barcodeNotValid(this);
     }
@@ -282,12 +277,14 @@ abstract class _NotValid implements PartnerBarcodeFailure {
   const factory _NotValid() = _$_NotValid;
 }
 
+/// @nodoc
 abstract class _$AlreadyAssignedCopyWith<$Res> {
   factory _$AlreadyAssignedCopyWith(
           _AlreadyAssigned value, $Res Function(_AlreadyAssigned) then) =
       __$AlreadyAssignedCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class __$AlreadyAssignedCopyWithImpl<$Res>
     extends _$PartnerBarcodeFailureCopyWithImpl<$Res>
     implements _$AlreadyAssignedCopyWith<$Res> {
@@ -298,6 +295,8 @@ class __$AlreadyAssignedCopyWithImpl<$Res>
   @override
   _AlreadyAssigned get _value => super._value as _AlreadyAssigned;
 }
+
+/// @nodoc
 
 class _$_AlreadyAssigned implements _AlreadyAssigned {
   const _$_AlreadyAssigned();
@@ -317,29 +316,24 @@ class _$_AlreadyAssigned implements _AlreadyAssigned {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result unexpected(),
-    @required Result barcodeNotValid(),
-    @required Result barcodeAlreadyAssigned(),
-    @required Result unableToUpdate(),
+  TResult when<TResult extends Object?>({
+    required TResult Function() unexpected,
+    required TResult Function() barcodeNotValid,
+    required TResult Function() barcodeAlreadyAssigned,
+    required TResult Function() unableToUpdate,
   }) {
-    assert(unexpected != null);
-    assert(barcodeNotValid != null);
-    assert(barcodeAlreadyAssigned != null);
-    assert(unableToUpdate != null);
     return barcodeAlreadyAssigned();
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result unexpected(),
-    Result barcodeNotValid(),
-    Result barcodeAlreadyAssigned(),
-    Result unableToUpdate(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? unexpected,
+    TResult Function()? barcodeNotValid,
+    TResult Function()? barcodeAlreadyAssigned,
+    TResult Function()? unableToUpdate,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (barcodeAlreadyAssigned != null) {
       return barcodeAlreadyAssigned();
     }
@@ -348,29 +342,24 @@ class _$_AlreadyAssigned implements _AlreadyAssigned {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result unexpected(_Unexpected value),
-    @required Result barcodeNotValid(_NotValid value),
-    @required Result barcodeAlreadyAssigned(_AlreadyAssigned value),
-    @required Result unableToUpdate(_UnableToUpdate value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Unexpected value) unexpected,
+    required TResult Function(_NotValid value) barcodeNotValid,
+    required TResult Function(_AlreadyAssigned value) barcodeAlreadyAssigned,
+    required TResult Function(_UnableToUpdate value) unableToUpdate,
   }) {
-    assert(unexpected != null);
-    assert(barcodeNotValid != null);
-    assert(barcodeAlreadyAssigned != null);
-    assert(unableToUpdate != null);
     return barcodeAlreadyAssigned(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result unexpected(_Unexpected value),
-    Result barcodeNotValid(_NotValid value),
-    Result barcodeAlreadyAssigned(_AlreadyAssigned value),
-    Result unableToUpdate(_UnableToUpdate value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Unexpected value)? unexpected,
+    TResult Function(_NotValid value)? barcodeNotValid,
+    TResult Function(_AlreadyAssigned value)? barcodeAlreadyAssigned,
+    TResult Function(_UnableToUpdate value)? unableToUpdate,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (barcodeAlreadyAssigned != null) {
       return barcodeAlreadyAssigned(this);
     }
@@ -382,12 +371,14 @@ abstract class _AlreadyAssigned implements PartnerBarcodeFailure {
   const factory _AlreadyAssigned() = _$_AlreadyAssigned;
 }
 
+/// @nodoc
 abstract class _$UnableToUpdateCopyWith<$Res> {
   factory _$UnableToUpdateCopyWith(
           _UnableToUpdate value, $Res Function(_UnableToUpdate) then) =
       __$UnableToUpdateCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class __$UnableToUpdateCopyWithImpl<$Res>
     extends _$PartnerBarcodeFailureCopyWithImpl<$Res>
     implements _$UnableToUpdateCopyWith<$Res> {
@@ -398,6 +389,8 @@ class __$UnableToUpdateCopyWithImpl<$Res>
   @override
   _UnableToUpdate get _value => super._value as _UnableToUpdate;
 }
+
+/// @nodoc
 
 class _$_UnableToUpdate implements _UnableToUpdate {
   const _$_UnableToUpdate();
@@ -417,29 +410,24 @@ class _$_UnableToUpdate implements _UnableToUpdate {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result unexpected(),
-    @required Result barcodeNotValid(),
-    @required Result barcodeAlreadyAssigned(),
-    @required Result unableToUpdate(),
+  TResult when<TResult extends Object?>({
+    required TResult Function() unexpected,
+    required TResult Function() barcodeNotValid,
+    required TResult Function() barcodeAlreadyAssigned,
+    required TResult Function() unableToUpdate,
   }) {
-    assert(unexpected != null);
-    assert(barcodeNotValid != null);
-    assert(barcodeAlreadyAssigned != null);
-    assert(unableToUpdate != null);
     return unableToUpdate();
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result unexpected(),
-    Result barcodeNotValid(),
-    Result barcodeAlreadyAssigned(),
-    Result unableToUpdate(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? unexpected,
+    TResult Function()? barcodeNotValid,
+    TResult Function()? barcodeAlreadyAssigned,
+    TResult Function()? unableToUpdate,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (unableToUpdate != null) {
       return unableToUpdate();
     }
@@ -448,29 +436,24 @@ class _$_UnableToUpdate implements _UnableToUpdate {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result unexpected(_Unexpected value),
-    @required Result barcodeNotValid(_NotValid value),
-    @required Result barcodeAlreadyAssigned(_AlreadyAssigned value),
-    @required Result unableToUpdate(_UnableToUpdate value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Unexpected value) unexpected,
+    required TResult Function(_NotValid value) barcodeNotValid,
+    required TResult Function(_AlreadyAssigned value) barcodeAlreadyAssigned,
+    required TResult Function(_UnableToUpdate value) unableToUpdate,
   }) {
-    assert(unexpected != null);
-    assert(barcodeNotValid != null);
-    assert(barcodeAlreadyAssigned != null);
-    assert(unableToUpdate != null);
     return unableToUpdate(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result unexpected(_Unexpected value),
-    Result barcodeNotValid(_NotValid value),
-    Result barcodeAlreadyAssigned(_AlreadyAssigned value),
-    Result unableToUpdate(_UnableToUpdate value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Unexpected value)? unexpected,
+    TResult Function(_NotValid value)? barcodeNotValid,
+    TResult Function(_AlreadyAssigned value)? barcodeAlreadyAssigned,
+    TResult Function(_UnableToUpdate value)? unableToUpdate,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (unableToUpdate != null) {
       return unableToUpdate(this);
     }

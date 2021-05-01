@@ -11,7 +11,7 @@ abstract class ValueObject<T> {
   Either<ValueFailure<T>, T> get value;
 
   T getOrCrash() {
-    return value.fold((f) => throw UnexpectedValueError(f), (r) => null);
+    return value.fold((f) => throw UnexpectedValueError(f), (r) => r);
   }
 
   Either<ValueFailure<dynamic>, Unit> get failureOrUnit {

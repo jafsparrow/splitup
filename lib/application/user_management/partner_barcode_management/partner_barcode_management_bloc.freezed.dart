@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'partner_barcode_management_bloc.dart';
 
@@ -9,26 +9,29 @@ part of 'partner_barcode_management_bloc.dart';
 
 T _$identity<T>(T value) => value;
 
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
+/// @nodoc
 class _$PartnerBarcodeManagementEventTearOff {
   const _$PartnerBarcodeManagementEventTearOff();
 
-// ignore: unused_element
   _Started started() {
     return const _Started();
   }
 
-// ignore: unused_element
   _LoadParnterUserBarcodes loadPartnerUserBarcodes(
-      {String partnerUserId, String companyId}) {
+      {required String partnerUserId, required String companyId}) {
     return _LoadParnterUserBarcodes(
       partnerUserId: partnerUserId,
       companyId: companyId,
     );
   }
 
-// ignore: unused_element
   _AssignedNewBarcode assignedNewBarcode(
-      {String barcode, String companyId, UserProfile loggedInUser}) {
+      {required String barcode,
+      required String companyId,
+      required UserProfile loggedInUser}) {
     return _AssignedNewBarcode(
       barcode: barcode,
       companyId: companyId,
@@ -36,8 +39,8 @@ class _$PartnerBarcodeManagementEventTearOff {
     );
   }
 
-// ignore: unused_element
-  _DeactivatedBarcode deactivatedBarcode({String barcode, String companyId}) {
+  _DeactivatedBarcode deactivatedBarcode(
+      {required String barcode, required String companyId}) {
     return _DeactivatedBarcode(
       barcode: barcode,
       companyId: companyId,
@@ -45,46 +48,56 @@ class _$PartnerBarcodeManagementEventTearOff {
   }
 }
 
-// ignore: unused_element
+/// @nodoc
 const $PartnerBarcodeManagementEvent = _$PartnerBarcodeManagementEventTearOff();
 
+/// @nodoc
 mixin _$PartnerBarcodeManagementEvent {
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result started(),
-    @required
-        Result loadPartnerUserBarcodes(String partnerUserId, String companyId),
-    @required
-        Result assignedNewBarcode(
-            String barcode, String companyId, UserProfile loggedInUser),
-    @required Result deactivatedBarcode(String barcode, String companyId),
-  });
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function(String partnerUserId, String companyId)
+        loadPartnerUserBarcodes,
+    required TResult Function(
+            String barcode, String companyId, UserProfile loggedInUser)
+        assignedNewBarcode,
+    required TResult Function(String barcode, String companyId)
+        deactivatedBarcode,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result started(),
-    Result loadPartnerUserBarcodes(String partnerUserId, String companyId),
-    Result assignedNewBarcode(
-        String barcode, String companyId, UserProfile loggedInUser),
-    Result deactivatedBarcode(String barcode, String companyId),
-    @required Result orElse(),
-  });
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function(String partnerUserId, String companyId)?
+        loadPartnerUserBarcodes,
+    TResult Function(
+            String barcode, String companyId, UserProfile loggedInUser)?
+        assignedNewBarcode,
+    TResult Function(String barcode, String companyId)? deactivatedBarcode,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result started(_Started value),
-    @required Result loadPartnerUserBarcodes(_LoadParnterUserBarcodes value),
-    @required Result assignedNewBarcode(_AssignedNewBarcode value),
-    @required Result deactivatedBarcode(_DeactivatedBarcode value),
-  });
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(_LoadParnterUserBarcodes value)
+        loadPartnerUserBarcodes,
+    required TResult Function(_AssignedNewBarcode value) assignedNewBarcode,
+    required TResult Function(_DeactivatedBarcode value) deactivatedBarcode,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result started(_Started value),
-    Result loadPartnerUserBarcodes(_LoadParnterUserBarcodes value),
-    Result assignedNewBarcode(_AssignedNewBarcode value),
-    Result deactivatedBarcode(_DeactivatedBarcode value),
-    @required Result orElse(),
-  });
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(_LoadParnterUserBarcodes value)? loadPartnerUserBarcodes,
+    TResult Function(_AssignedNewBarcode value)? assignedNewBarcode,
+    TResult Function(_DeactivatedBarcode value)? deactivatedBarcode,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
+/// @nodoc
 abstract class $PartnerBarcodeManagementEventCopyWith<$Res> {
   factory $PartnerBarcodeManagementEventCopyWith(
           PartnerBarcodeManagementEvent value,
@@ -92,6 +105,7 @@ abstract class $PartnerBarcodeManagementEventCopyWith<$Res> {
       _$PartnerBarcodeManagementEventCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class _$PartnerBarcodeManagementEventCopyWithImpl<$Res>
     implements $PartnerBarcodeManagementEventCopyWith<$Res> {
   _$PartnerBarcodeManagementEventCopyWithImpl(this._value, this._then);
@@ -101,11 +115,13 @@ class _$PartnerBarcodeManagementEventCopyWithImpl<$Res>
   final $Res Function(PartnerBarcodeManagementEvent) _then;
 }
 
+/// @nodoc
 abstract class _$StartedCopyWith<$Res> {
   factory _$StartedCopyWith(_Started value, $Res Function(_Started) then) =
       __$StartedCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class __$StartedCopyWithImpl<$Res>
     extends _$PartnerBarcodeManagementEventCopyWithImpl<$Res>
     implements _$StartedCopyWith<$Res> {
@@ -115,6 +131,8 @@ class __$StartedCopyWithImpl<$Res>
   @override
   _Started get _value => super._value as _Started;
 }
+
+/// @nodoc
 
 class _$_Started implements _Started {
   const _$_Started();
@@ -134,33 +152,31 @@ class _$_Started implements _Started {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result started(),
-    @required
-        Result loadPartnerUserBarcodes(String partnerUserId, String companyId),
-    @required
-        Result assignedNewBarcode(
-            String barcode, String companyId, UserProfile loggedInUser),
-    @required Result deactivatedBarcode(String barcode, String companyId),
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function(String partnerUserId, String companyId)
+        loadPartnerUserBarcodes,
+    required TResult Function(
+            String barcode, String companyId, UserProfile loggedInUser)
+        assignedNewBarcode,
+    required TResult Function(String barcode, String companyId)
+        deactivatedBarcode,
   }) {
-    assert(started != null);
-    assert(loadPartnerUserBarcodes != null);
-    assert(assignedNewBarcode != null);
-    assert(deactivatedBarcode != null);
     return started();
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result started(),
-    Result loadPartnerUserBarcodes(String partnerUserId, String companyId),
-    Result assignedNewBarcode(
-        String barcode, String companyId, UserProfile loggedInUser),
-    Result deactivatedBarcode(String barcode, String companyId),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function(String partnerUserId, String companyId)?
+        loadPartnerUserBarcodes,
+    TResult Function(
+            String barcode, String companyId, UserProfile loggedInUser)?
+        assignedNewBarcode,
+    TResult Function(String barcode, String companyId)? deactivatedBarcode,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (started != null) {
       return started();
     }
@@ -169,29 +185,25 @@ class _$_Started implements _Started {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result started(_Started value),
-    @required Result loadPartnerUserBarcodes(_LoadParnterUserBarcodes value),
-    @required Result assignedNewBarcode(_AssignedNewBarcode value),
-    @required Result deactivatedBarcode(_DeactivatedBarcode value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(_LoadParnterUserBarcodes value)
+        loadPartnerUserBarcodes,
+    required TResult Function(_AssignedNewBarcode value) assignedNewBarcode,
+    required TResult Function(_DeactivatedBarcode value) deactivatedBarcode,
   }) {
-    assert(started != null);
-    assert(loadPartnerUserBarcodes != null);
-    assert(assignedNewBarcode != null);
-    assert(deactivatedBarcode != null);
     return started(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result started(_Started value),
-    Result loadPartnerUserBarcodes(_LoadParnterUserBarcodes value),
-    Result assignedNewBarcode(_AssignedNewBarcode value),
-    Result deactivatedBarcode(_DeactivatedBarcode value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(_LoadParnterUserBarcodes value)? loadPartnerUserBarcodes,
+    TResult Function(_AssignedNewBarcode value)? assignedNewBarcode,
+    TResult Function(_DeactivatedBarcode value)? deactivatedBarcode,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (started != null) {
       return started(this);
     }
@@ -203,6 +215,7 @@ abstract class _Started implements PartnerBarcodeManagementEvent {
   const factory _Started() = _$_Started;
 }
 
+/// @nodoc
 abstract class _$LoadParnterUserBarcodesCopyWith<$Res> {
   factory _$LoadParnterUserBarcodesCopyWith(_LoadParnterUserBarcodes value,
           $Res Function(_LoadParnterUserBarcodes) then) =
@@ -210,6 +223,7 @@ abstract class _$LoadParnterUserBarcodesCopyWith<$Res> {
   $Res call({String partnerUserId, String companyId});
 }
 
+/// @nodoc
 class __$LoadParnterUserBarcodesCopyWithImpl<$Res>
     extends _$PartnerBarcodeManagementEventCopyWithImpl<$Res>
     implements _$LoadParnterUserBarcodesCopyWith<$Res> {
@@ -223,20 +237,27 @@ class __$LoadParnterUserBarcodesCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object partnerUserId = freezed,
-    Object companyId = freezed,
+    Object? partnerUserId = freezed,
+    Object? companyId = freezed,
   }) {
     return _then(_LoadParnterUserBarcodes(
       partnerUserId: partnerUserId == freezed
           ? _value.partnerUserId
-          : partnerUserId as String,
-      companyId: companyId == freezed ? _value.companyId : companyId as String,
+          : partnerUserId // ignore: cast_nullable_to_non_nullable
+              as String,
+      companyId: companyId == freezed
+          ? _value.companyId
+          : companyId // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
 
+/// @nodoc
+
 class _$_LoadParnterUserBarcodes implements _LoadParnterUserBarcodes {
-  const _$_LoadParnterUserBarcodes({this.partnerUserId, this.companyId});
+  const _$_LoadParnterUserBarcodes(
+      {required this.partnerUserId, required this.companyId});
 
   @override
   final String partnerUserId;
@@ -266,6 +287,7 @@ class _$_LoadParnterUserBarcodes implements _LoadParnterUserBarcodes {
       const DeepCollectionEquality().hash(partnerUserId) ^
       const DeepCollectionEquality().hash(companyId);
 
+  @JsonKey(ignore: true)
   @override
   _$LoadParnterUserBarcodesCopyWith<_LoadParnterUserBarcodes> get copyWith =>
       __$LoadParnterUserBarcodesCopyWithImpl<_LoadParnterUserBarcodes>(
@@ -273,33 +295,31 @@ class _$_LoadParnterUserBarcodes implements _LoadParnterUserBarcodes {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result started(),
-    @required
-        Result loadPartnerUserBarcodes(String partnerUserId, String companyId),
-    @required
-        Result assignedNewBarcode(
-            String barcode, String companyId, UserProfile loggedInUser),
-    @required Result deactivatedBarcode(String barcode, String companyId),
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function(String partnerUserId, String companyId)
+        loadPartnerUserBarcodes,
+    required TResult Function(
+            String barcode, String companyId, UserProfile loggedInUser)
+        assignedNewBarcode,
+    required TResult Function(String barcode, String companyId)
+        deactivatedBarcode,
   }) {
-    assert(started != null);
-    assert(loadPartnerUserBarcodes != null);
-    assert(assignedNewBarcode != null);
-    assert(deactivatedBarcode != null);
     return loadPartnerUserBarcodes(partnerUserId, companyId);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result started(),
-    Result loadPartnerUserBarcodes(String partnerUserId, String companyId),
-    Result assignedNewBarcode(
-        String barcode, String companyId, UserProfile loggedInUser),
-    Result deactivatedBarcode(String barcode, String companyId),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function(String partnerUserId, String companyId)?
+        loadPartnerUserBarcodes,
+    TResult Function(
+            String barcode, String companyId, UserProfile loggedInUser)?
+        assignedNewBarcode,
+    TResult Function(String barcode, String companyId)? deactivatedBarcode,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (loadPartnerUserBarcodes != null) {
       return loadPartnerUserBarcodes(partnerUserId, companyId);
     }
@@ -308,29 +328,25 @@ class _$_LoadParnterUserBarcodes implements _LoadParnterUserBarcodes {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result started(_Started value),
-    @required Result loadPartnerUserBarcodes(_LoadParnterUserBarcodes value),
-    @required Result assignedNewBarcode(_AssignedNewBarcode value),
-    @required Result deactivatedBarcode(_DeactivatedBarcode value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(_LoadParnterUserBarcodes value)
+        loadPartnerUserBarcodes,
+    required TResult Function(_AssignedNewBarcode value) assignedNewBarcode,
+    required TResult Function(_DeactivatedBarcode value) deactivatedBarcode,
   }) {
-    assert(started != null);
-    assert(loadPartnerUserBarcodes != null);
-    assert(assignedNewBarcode != null);
-    assert(deactivatedBarcode != null);
     return loadPartnerUserBarcodes(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result started(_Started value),
-    Result loadPartnerUserBarcodes(_LoadParnterUserBarcodes value),
-    Result assignedNewBarcode(_AssignedNewBarcode value),
-    Result deactivatedBarcode(_DeactivatedBarcode value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(_LoadParnterUserBarcodes value)? loadPartnerUserBarcodes,
+    TResult Function(_AssignedNewBarcode value)? assignedNewBarcode,
+    TResult Function(_DeactivatedBarcode value)? deactivatedBarcode,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (loadPartnerUserBarcodes != null) {
       return loadPartnerUserBarcodes(this);
     }
@@ -341,13 +357,17 @@ class _$_LoadParnterUserBarcodes implements _LoadParnterUserBarcodes {
 abstract class _LoadParnterUserBarcodes
     implements PartnerBarcodeManagementEvent {
   const factory _LoadParnterUserBarcodes(
-      {String partnerUserId, String companyId}) = _$_LoadParnterUserBarcodes;
+      {required String partnerUserId,
+      required String companyId}) = _$_LoadParnterUserBarcodes;
 
-  String get partnerUserId;
-  String get companyId;
-  _$LoadParnterUserBarcodesCopyWith<_LoadParnterUserBarcodes> get copyWith;
+  String get partnerUserId => throw _privateConstructorUsedError;
+  String get companyId => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$LoadParnterUserBarcodesCopyWith<_LoadParnterUserBarcodes> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
+/// @nodoc
 abstract class _$AssignedNewBarcodeCopyWith<$Res> {
   factory _$AssignedNewBarcodeCopyWith(
           _AssignedNewBarcode value, $Res Function(_AssignedNewBarcode) then) =
@@ -357,6 +377,7 @@ abstract class _$AssignedNewBarcodeCopyWith<$Res> {
   $UserProfileCopyWith<$Res> get loggedInUser;
 }
 
+/// @nodoc
 class __$AssignedNewBarcodeCopyWithImpl<$Res>
     extends _$PartnerBarcodeManagementEventCopyWithImpl<$Res>
     implements _$AssignedNewBarcodeCopyWith<$Res> {
@@ -369,33 +390,41 @@ class __$AssignedNewBarcodeCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object barcode = freezed,
-    Object companyId = freezed,
-    Object loggedInUser = freezed,
+    Object? barcode = freezed,
+    Object? companyId = freezed,
+    Object? loggedInUser = freezed,
   }) {
     return _then(_AssignedNewBarcode(
-      barcode: barcode == freezed ? _value.barcode : barcode as String,
-      companyId: companyId == freezed ? _value.companyId : companyId as String,
+      barcode: barcode == freezed
+          ? _value.barcode
+          : barcode // ignore: cast_nullable_to_non_nullable
+              as String,
+      companyId: companyId == freezed
+          ? _value.companyId
+          : companyId // ignore: cast_nullable_to_non_nullable
+              as String,
       loggedInUser: loggedInUser == freezed
           ? _value.loggedInUser
-          : loggedInUser as UserProfile,
+          : loggedInUser // ignore: cast_nullable_to_non_nullable
+              as UserProfile,
     ));
   }
 
   @override
   $UserProfileCopyWith<$Res> get loggedInUser {
-    if (_value.loggedInUser == null) {
-      return null;
-    }
     return $UserProfileCopyWith<$Res>(_value.loggedInUser, (value) {
       return _then(_value.copyWith(loggedInUser: value));
     });
   }
 }
 
+/// @nodoc
+
 class _$_AssignedNewBarcode implements _AssignedNewBarcode {
   const _$_AssignedNewBarcode(
-      {this.barcode, this.companyId, this.loggedInUser});
+      {required this.barcode,
+      required this.companyId,
+      required this.loggedInUser});
 
   @override
   final String barcode;
@@ -431,39 +460,38 @@ class _$_AssignedNewBarcode implements _AssignedNewBarcode {
       const DeepCollectionEquality().hash(companyId) ^
       const DeepCollectionEquality().hash(loggedInUser);
 
+  @JsonKey(ignore: true)
   @override
   _$AssignedNewBarcodeCopyWith<_AssignedNewBarcode> get copyWith =>
       __$AssignedNewBarcodeCopyWithImpl<_AssignedNewBarcode>(this, _$identity);
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result started(),
-    @required
-        Result loadPartnerUserBarcodes(String partnerUserId, String companyId),
-    @required
-        Result assignedNewBarcode(
-            String barcode, String companyId, UserProfile loggedInUser),
-    @required Result deactivatedBarcode(String barcode, String companyId),
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function(String partnerUserId, String companyId)
+        loadPartnerUserBarcodes,
+    required TResult Function(
+            String barcode, String companyId, UserProfile loggedInUser)
+        assignedNewBarcode,
+    required TResult Function(String barcode, String companyId)
+        deactivatedBarcode,
   }) {
-    assert(started != null);
-    assert(loadPartnerUserBarcodes != null);
-    assert(assignedNewBarcode != null);
-    assert(deactivatedBarcode != null);
     return assignedNewBarcode(barcode, companyId, loggedInUser);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result started(),
-    Result loadPartnerUserBarcodes(String partnerUserId, String companyId),
-    Result assignedNewBarcode(
-        String barcode, String companyId, UserProfile loggedInUser),
-    Result deactivatedBarcode(String barcode, String companyId),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function(String partnerUserId, String companyId)?
+        loadPartnerUserBarcodes,
+    TResult Function(
+            String barcode, String companyId, UserProfile loggedInUser)?
+        assignedNewBarcode,
+    TResult Function(String barcode, String companyId)? deactivatedBarcode,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (assignedNewBarcode != null) {
       return assignedNewBarcode(barcode, companyId, loggedInUser);
     }
@@ -472,29 +500,25 @@ class _$_AssignedNewBarcode implements _AssignedNewBarcode {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result started(_Started value),
-    @required Result loadPartnerUserBarcodes(_LoadParnterUserBarcodes value),
-    @required Result assignedNewBarcode(_AssignedNewBarcode value),
-    @required Result deactivatedBarcode(_DeactivatedBarcode value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(_LoadParnterUserBarcodes value)
+        loadPartnerUserBarcodes,
+    required TResult Function(_AssignedNewBarcode value) assignedNewBarcode,
+    required TResult Function(_DeactivatedBarcode value) deactivatedBarcode,
   }) {
-    assert(started != null);
-    assert(loadPartnerUserBarcodes != null);
-    assert(assignedNewBarcode != null);
-    assert(deactivatedBarcode != null);
     return assignedNewBarcode(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result started(_Started value),
-    Result loadPartnerUserBarcodes(_LoadParnterUserBarcodes value),
-    Result assignedNewBarcode(_AssignedNewBarcode value),
-    Result deactivatedBarcode(_DeactivatedBarcode value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(_LoadParnterUserBarcodes value)? loadPartnerUserBarcodes,
+    TResult Function(_AssignedNewBarcode value)? assignedNewBarcode,
+    TResult Function(_DeactivatedBarcode value)? deactivatedBarcode,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (assignedNewBarcode != null) {
       return assignedNewBarcode(this);
     }
@@ -504,16 +528,19 @@ class _$_AssignedNewBarcode implements _AssignedNewBarcode {
 
 abstract class _AssignedNewBarcode implements PartnerBarcodeManagementEvent {
   const factory _AssignedNewBarcode(
-      {String barcode,
-      String companyId,
-      UserProfile loggedInUser}) = _$_AssignedNewBarcode;
+      {required String barcode,
+      required String companyId,
+      required UserProfile loggedInUser}) = _$_AssignedNewBarcode;
 
-  String get barcode;
-  String get companyId;
-  UserProfile get loggedInUser;
-  _$AssignedNewBarcodeCopyWith<_AssignedNewBarcode> get copyWith;
+  String get barcode => throw _privateConstructorUsedError;
+  String get companyId => throw _privateConstructorUsedError;
+  UserProfile get loggedInUser => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$AssignedNewBarcodeCopyWith<_AssignedNewBarcode> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
+/// @nodoc
 abstract class _$DeactivatedBarcodeCopyWith<$Res> {
   factory _$DeactivatedBarcodeCopyWith(
           _DeactivatedBarcode value, $Res Function(_DeactivatedBarcode) then) =
@@ -521,6 +548,7 @@ abstract class _$DeactivatedBarcodeCopyWith<$Res> {
   $Res call({String barcode, String companyId});
 }
 
+/// @nodoc
 class __$DeactivatedBarcodeCopyWithImpl<$Res>
     extends _$PartnerBarcodeManagementEventCopyWithImpl<$Res>
     implements _$DeactivatedBarcodeCopyWith<$Res> {
@@ -533,18 +561,26 @@ class __$DeactivatedBarcodeCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object barcode = freezed,
-    Object companyId = freezed,
+    Object? barcode = freezed,
+    Object? companyId = freezed,
   }) {
     return _then(_DeactivatedBarcode(
-      barcode: barcode == freezed ? _value.barcode : barcode as String,
-      companyId: companyId == freezed ? _value.companyId : companyId as String,
+      barcode: barcode == freezed
+          ? _value.barcode
+          : barcode // ignore: cast_nullable_to_non_nullable
+              as String,
+      companyId: companyId == freezed
+          ? _value.companyId
+          : companyId // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
 
+/// @nodoc
+
 class _$_DeactivatedBarcode implements _DeactivatedBarcode {
-  const _$_DeactivatedBarcode({this.barcode, this.companyId});
+  const _$_DeactivatedBarcode({required this.barcode, required this.companyId});
 
   @override
   final String barcode;
@@ -574,39 +610,38 @@ class _$_DeactivatedBarcode implements _DeactivatedBarcode {
       const DeepCollectionEquality().hash(barcode) ^
       const DeepCollectionEquality().hash(companyId);
 
+  @JsonKey(ignore: true)
   @override
   _$DeactivatedBarcodeCopyWith<_DeactivatedBarcode> get copyWith =>
       __$DeactivatedBarcodeCopyWithImpl<_DeactivatedBarcode>(this, _$identity);
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result started(),
-    @required
-        Result loadPartnerUserBarcodes(String partnerUserId, String companyId),
-    @required
-        Result assignedNewBarcode(
-            String barcode, String companyId, UserProfile loggedInUser),
-    @required Result deactivatedBarcode(String barcode, String companyId),
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function(String partnerUserId, String companyId)
+        loadPartnerUserBarcodes,
+    required TResult Function(
+            String barcode, String companyId, UserProfile loggedInUser)
+        assignedNewBarcode,
+    required TResult Function(String barcode, String companyId)
+        deactivatedBarcode,
   }) {
-    assert(started != null);
-    assert(loadPartnerUserBarcodes != null);
-    assert(assignedNewBarcode != null);
-    assert(deactivatedBarcode != null);
     return deactivatedBarcode(barcode, companyId);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result started(),
-    Result loadPartnerUserBarcodes(String partnerUserId, String companyId),
-    Result assignedNewBarcode(
-        String barcode, String companyId, UserProfile loggedInUser),
-    Result deactivatedBarcode(String barcode, String companyId),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function(String partnerUserId, String companyId)?
+        loadPartnerUserBarcodes,
+    TResult Function(
+            String barcode, String companyId, UserProfile loggedInUser)?
+        assignedNewBarcode,
+    TResult Function(String barcode, String companyId)? deactivatedBarcode,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (deactivatedBarcode != null) {
       return deactivatedBarcode(barcode, companyId);
     }
@@ -615,29 +650,25 @@ class _$_DeactivatedBarcode implements _DeactivatedBarcode {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result started(_Started value),
-    @required Result loadPartnerUserBarcodes(_LoadParnterUserBarcodes value),
-    @required Result assignedNewBarcode(_AssignedNewBarcode value),
-    @required Result deactivatedBarcode(_DeactivatedBarcode value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(_LoadParnterUserBarcodes value)
+        loadPartnerUserBarcodes,
+    required TResult Function(_AssignedNewBarcode value) assignedNewBarcode,
+    required TResult Function(_DeactivatedBarcode value) deactivatedBarcode,
   }) {
-    assert(started != null);
-    assert(loadPartnerUserBarcodes != null);
-    assert(assignedNewBarcode != null);
-    assert(deactivatedBarcode != null);
     return deactivatedBarcode(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result started(_Started value),
-    Result loadPartnerUserBarcodes(_LoadParnterUserBarcodes value),
-    Result assignedNewBarcode(_AssignedNewBarcode value),
-    Result deactivatedBarcode(_DeactivatedBarcode value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(_LoadParnterUserBarcodes value)? loadPartnerUserBarcodes,
+    TResult Function(_AssignedNewBarcode value)? assignedNewBarcode,
+    TResult Function(_DeactivatedBarcode value)? deactivatedBarcode,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (deactivatedBarcode != null) {
       return deactivatedBarcode(this);
     }
@@ -646,35 +677,35 @@ class _$_DeactivatedBarcode implements _DeactivatedBarcode {
 }
 
 abstract class _DeactivatedBarcode implements PartnerBarcodeManagementEvent {
-  const factory _DeactivatedBarcode({String barcode, String companyId}) =
-      _$_DeactivatedBarcode;
+  const factory _DeactivatedBarcode(
+      {required String barcode,
+      required String companyId}) = _$_DeactivatedBarcode;
 
-  String get barcode;
-  String get companyId;
-  _$DeactivatedBarcodeCopyWith<_DeactivatedBarcode> get copyWith;
+  String get barcode => throw _privateConstructorUsedError;
+  String get companyId => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$DeactivatedBarcodeCopyWith<_DeactivatedBarcode> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
+/// @nodoc
 class _$PartnerBarcodeManagementStateTearOff {
   const _$PartnerBarcodeManagementStateTearOff();
 
-// ignore: unused_element
   _Initial initial() {
     return const _Initial();
   }
 
-// ignore: unused_element
   _Loading loading() {
     return const _Loading();
   }
 
-// ignore: unused_element
   _LoadError loadError(PartnerBarcodeFailure failure) {
     return _LoadError(
       failure,
     );
   }
 
-// ignore: unused_element
   _ListPartnerBarcode listPartnerBarcode(List<UserBarcode> partnerBarcodes) {
     return _ListPartnerBarcode(
       partnerBarcodes,
@@ -682,42 +713,49 @@ class _$PartnerBarcodeManagementStateTearOff {
   }
 }
 
-// ignore: unused_element
+/// @nodoc
 const $PartnerBarcodeManagementState = _$PartnerBarcodeManagementStateTearOff();
 
+/// @nodoc
 mixin _$PartnerBarcodeManagementState {
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initial(),
-    @required Result loading(),
-    @required Result loadError(PartnerBarcodeFailure failure),
-    @required Result listPartnerBarcode(List<UserBarcode> partnerBarcodes),
-  });
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(PartnerBarcodeFailure failure) loadError,
+    required TResult Function(List<UserBarcode> partnerBarcodes)
+        listPartnerBarcode,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initial(),
-    Result loading(),
-    Result loadError(PartnerBarcodeFailure failure),
-    Result listPartnerBarcode(List<UserBarcode> partnerBarcodes),
-    @required Result orElse(),
-  });
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(PartnerBarcodeFailure failure)? loadError,
+    TResult Function(List<UserBarcode> partnerBarcodes)? listPartnerBarcode,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initial(_Initial value),
-    @required Result loading(_Loading value),
-    @required Result loadError(_LoadError value),
-    @required Result listPartnerBarcode(_ListPartnerBarcode value),
-  });
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_Loading value) loading,
+    required TResult Function(_LoadError value) loadError,
+    required TResult Function(_ListPartnerBarcode value) listPartnerBarcode,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initial(_Initial value),
-    Result loading(_Loading value),
-    Result loadError(_LoadError value),
-    Result listPartnerBarcode(_ListPartnerBarcode value),
-    @required Result orElse(),
-  });
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Loading value)? loading,
+    TResult Function(_LoadError value)? loadError,
+    TResult Function(_ListPartnerBarcode value)? listPartnerBarcode,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
+/// @nodoc
 abstract class $PartnerBarcodeManagementStateCopyWith<$Res> {
   factory $PartnerBarcodeManagementStateCopyWith(
           PartnerBarcodeManagementState value,
@@ -725,6 +763,7 @@ abstract class $PartnerBarcodeManagementStateCopyWith<$Res> {
       _$PartnerBarcodeManagementStateCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class _$PartnerBarcodeManagementStateCopyWithImpl<$Res>
     implements $PartnerBarcodeManagementStateCopyWith<$Res> {
   _$PartnerBarcodeManagementStateCopyWithImpl(this._value, this._then);
@@ -734,11 +773,13 @@ class _$PartnerBarcodeManagementStateCopyWithImpl<$Res>
   final $Res Function(PartnerBarcodeManagementState) _then;
 }
 
+/// @nodoc
 abstract class _$InitialCopyWith<$Res> {
   factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) =
       __$InitialCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class __$InitialCopyWithImpl<$Res>
     extends _$PartnerBarcodeManagementStateCopyWithImpl<$Res>
     implements _$InitialCopyWith<$Res> {
@@ -748,6 +789,8 @@ class __$InitialCopyWithImpl<$Res>
   @override
   _Initial get _value => super._value as _Initial;
 }
+
+/// @nodoc
 
 class _$_Initial implements _Initial {
   const _$_Initial();
@@ -767,29 +810,25 @@ class _$_Initial implements _Initial {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initial(),
-    @required Result loading(),
-    @required Result loadError(PartnerBarcodeFailure failure),
-    @required Result listPartnerBarcode(List<UserBarcode> partnerBarcodes),
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(PartnerBarcodeFailure failure) loadError,
+    required TResult Function(List<UserBarcode> partnerBarcodes)
+        listPartnerBarcode,
   }) {
-    assert(initial != null);
-    assert(loading != null);
-    assert(loadError != null);
-    assert(listPartnerBarcode != null);
     return initial();
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initial(),
-    Result loading(),
-    Result loadError(PartnerBarcodeFailure failure),
-    Result listPartnerBarcode(List<UserBarcode> partnerBarcodes),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(PartnerBarcodeFailure failure)? loadError,
+    TResult Function(List<UserBarcode> partnerBarcodes)? listPartnerBarcode,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (initial != null) {
       return initial();
     }
@@ -798,29 +837,24 @@ class _$_Initial implements _Initial {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initial(_Initial value),
-    @required Result loading(_Loading value),
-    @required Result loadError(_LoadError value),
-    @required Result listPartnerBarcode(_ListPartnerBarcode value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_Loading value) loading,
+    required TResult Function(_LoadError value) loadError,
+    required TResult Function(_ListPartnerBarcode value) listPartnerBarcode,
   }) {
-    assert(initial != null);
-    assert(loading != null);
-    assert(loadError != null);
-    assert(listPartnerBarcode != null);
     return initial(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initial(_Initial value),
-    Result loading(_Loading value),
-    Result loadError(_LoadError value),
-    Result listPartnerBarcode(_ListPartnerBarcode value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Loading value)? loading,
+    TResult Function(_LoadError value)? loadError,
+    TResult Function(_ListPartnerBarcode value)? listPartnerBarcode,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (initial != null) {
       return initial(this);
     }
@@ -832,11 +866,13 @@ abstract class _Initial implements PartnerBarcodeManagementState {
   const factory _Initial() = _$_Initial;
 }
 
+/// @nodoc
 abstract class _$LoadingCopyWith<$Res> {
   factory _$LoadingCopyWith(_Loading value, $Res Function(_Loading) then) =
       __$LoadingCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class __$LoadingCopyWithImpl<$Res>
     extends _$PartnerBarcodeManagementStateCopyWithImpl<$Res>
     implements _$LoadingCopyWith<$Res> {
@@ -846,6 +882,8 @@ class __$LoadingCopyWithImpl<$Res>
   @override
   _Loading get _value => super._value as _Loading;
 }
+
+/// @nodoc
 
 class _$_Loading implements _Loading {
   const _$_Loading();
@@ -865,29 +903,25 @@ class _$_Loading implements _Loading {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initial(),
-    @required Result loading(),
-    @required Result loadError(PartnerBarcodeFailure failure),
-    @required Result listPartnerBarcode(List<UserBarcode> partnerBarcodes),
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(PartnerBarcodeFailure failure) loadError,
+    required TResult Function(List<UserBarcode> partnerBarcodes)
+        listPartnerBarcode,
   }) {
-    assert(initial != null);
-    assert(loading != null);
-    assert(loadError != null);
-    assert(listPartnerBarcode != null);
     return loading();
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initial(),
-    Result loading(),
-    Result loadError(PartnerBarcodeFailure failure),
-    Result listPartnerBarcode(List<UserBarcode> partnerBarcodes),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(PartnerBarcodeFailure failure)? loadError,
+    TResult Function(List<UserBarcode> partnerBarcodes)? listPartnerBarcode,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (loading != null) {
       return loading();
     }
@@ -896,29 +930,24 @@ class _$_Loading implements _Loading {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initial(_Initial value),
-    @required Result loading(_Loading value),
-    @required Result loadError(_LoadError value),
-    @required Result listPartnerBarcode(_ListPartnerBarcode value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_Loading value) loading,
+    required TResult Function(_LoadError value) loadError,
+    required TResult Function(_ListPartnerBarcode value) listPartnerBarcode,
   }) {
-    assert(initial != null);
-    assert(loading != null);
-    assert(loadError != null);
-    assert(listPartnerBarcode != null);
     return loading(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initial(_Initial value),
-    Result loading(_Loading value),
-    Result loadError(_LoadError value),
-    Result listPartnerBarcode(_ListPartnerBarcode value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Loading value)? loading,
+    TResult Function(_LoadError value)? loadError,
+    TResult Function(_ListPartnerBarcode value)? listPartnerBarcode,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (loading != null) {
       return loading(this);
     }
@@ -930,6 +959,7 @@ abstract class _Loading implements PartnerBarcodeManagementState {
   const factory _Loading() = _$_Loading;
 }
 
+/// @nodoc
 abstract class _$LoadErrorCopyWith<$Res> {
   factory _$LoadErrorCopyWith(
           _LoadError value, $Res Function(_LoadError) then) =
@@ -939,6 +969,7 @@ abstract class _$LoadErrorCopyWith<$Res> {
   $PartnerBarcodeFailureCopyWith<$Res> get failure;
 }
 
+/// @nodoc
 class __$LoadErrorCopyWithImpl<$Res>
     extends _$PartnerBarcodeManagementStateCopyWithImpl<$Res>
     implements _$LoadErrorCopyWith<$Res> {
@@ -950,26 +981,28 @@ class __$LoadErrorCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object failure = freezed,
+    Object? failure = freezed,
   }) {
     return _then(_LoadError(
-      failure == freezed ? _value.failure : failure as PartnerBarcodeFailure,
+      failure == freezed
+          ? _value.failure
+          : failure // ignore: cast_nullable_to_non_nullable
+              as PartnerBarcodeFailure,
     ));
   }
 
   @override
   $PartnerBarcodeFailureCopyWith<$Res> get failure {
-    if (_value.failure == null) {
-      return null;
-    }
     return $PartnerBarcodeFailureCopyWith<$Res>(_value.failure, (value) {
       return _then(_value.copyWith(failure: value));
     });
   }
 }
 
+/// @nodoc
+
 class _$_LoadError implements _LoadError {
-  const _$_LoadError(this.failure) : assert(failure != null);
+  const _$_LoadError(this.failure);
 
   @override
   final PartnerBarcodeFailure failure;
@@ -991,35 +1024,32 @@ class _$_LoadError implements _LoadError {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(failure);
 
+  @JsonKey(ignore: true)
   @override
   _$LoadErrorCopyWith<_LoadError> get copyWith =>
       __$LoadErrorCopyWithImpl<_LoadError>(this, _$identity);
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initial(),
-    @required Result loading(),
-    @required Result loadError(PartnerBarcodeFailure failure),
-    @required Result listPartnerBarcode(List<UserBarcode> partnerBarcodes),
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(PartnerBarcodeFailure failure) loadError,
+    required TResult Function(List<UserBarcode> partnerBarcodes)
+        listPartnerBarcode,
   }) {
-    assert(initial != null);
-    assert(loading != null);
-    assert(loadError != null);
-    assert(listPartnerBarcode != null);
     return loadError(failure);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initial(),
-    Result loading(),
-    Result loadError(PartnerBarcodeFailure failure),
-    Result listPartnerBarcode(List<UserBarcode> partnerBarcodes),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(PartnerBarcodeFailure failure)? loadError,
+    TResult Function(List<UserBarcode> partnerBarcodes)? listPartnerBarcode,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (loadError != null) {
       return loadError(failure);
     }
@@ -1028,29 +1058,24 @@ class _$_LoadError implements _LoadError {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initial(_Initial value),
-    @required Result loading(_Loading value),
-    @required Result loadError(_LoadError value),
-    @required Result listPartnerBarcode(_ListPartnerBarcode value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_Loading value) loading,
+    required TResult Function(_LoadError value) loadError,
+    required TResult Function(_ListPartnerBarcode value) listPartnerBarcode,
   }) {
-    assert(initial != null);
-    assert(loading != null);
-    assert(loadError != null);
-    assert(listPartnerBarcode != null);
     return loadError(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initial(_Initial value),
-    Result loading(_Loading value),
-    Result loadError(_LoadError value),
-    Result listPartnerBarcode(_ListPartnerBarcode value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Loading value)? loading,
+    TResult Function(_LoadError value)? loadError,
+    TResult Function(_ListPartnerBarcode value)? listPartnerBarcode,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (loadError != null) {
       return loadError(this);
     }
@@ -1061,10 +1086,13 @@ class _$_LoadError implements _LoadError {
 abstract class _LoadError implements PartnerBarcodeManagementState {
   const factory _LoadError(PartnerBarcodeFailure failure) = _$_LoadError;
 
-  PartnerBarcodeFailure get failure;
-  _$LoadErrorCopyWith<_LoadError> get copyWith;
+  PartnerBarcodeFailure get failure => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$LoadErrorCopyWith<_LoadError> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
+/// @nodoc
 abstract class _$ListPartnerBarcodeCopyWith<$Res> {
   factory _$ListPartnerBarcodeCopyWith(
           _ListPartnerBarcode value, $Res Function(_ListPartnerBarcode) then) =
@@ -1072,6 +1100,7 @@ abstract class _$ListPartnerBarcodeCopyWith<$Res> {
   $Res call({List<UserBarcode> partnerBarcodes});
 }
 
+/// @nodoc
 class __$ListPartnerBarcodeCopyWithImpl<$Res>
     extends _$PartnerBarcodeManagementStateCopyWithImpl<$Res>
     implements _$ListPartnerBarcodeCopyWith<$Res> {
@@ -1084,19 +1113,21 @@ class __$ListPartnerBarcodeCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object partnerBarcodes = freezed,
+    Object? partnerBarcodes = freezed,
   }) {
     return _then(_ListPartnerBarcode(
       partnerBarcodes == freezed
           ? _value.partnerBarcodes
-          : partnerBarcodes as List<UserBarcode>,
+          : partnerBarcodes // ignore: cast_nullable_to_non_nullable
+              as List<UserBarcode>,
     ));
   }
 }
 
+/// @nodoc
+
 class _$_ListPartnerBarcode implements _ListPartnerBarcode {
-  const _$_ListPartnerBarcode(this.partnerBarcodes)
-      : assert(partnerBarcodes != null);
+  const _$_ListPartnerBarcode(this.partnerBarcodes);
 
   @override
   final List<UserBarcode> partnerBarcodes;
@@ -1120,35 +1151,32 @@ class _$_ListPartnerBarcode implements _ListPartnerBarcode {
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(partnerBarcodes);
 
+  @JsonKey(ignore: true)
   @override
   _$ListPartnerBarcodeCopyWith<_ListPartnerBarcode> get copyWith =>
       __$ListPartnerBarcodeCopyWithImpl<_ListPartnerBarcode>(this, _$identity);
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initial(),
-    @required Result loading(),
-    @required Result loadError(PartnerBarcodeFailure failure),
-    @required Result listPartnerBarcode(List<UserBarcode> partnerBarcodes),
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(PartnerBarcodeFailure failure) loadError,
+    required TResult Function(List<UserBarcode> partnerBarcodes)
+        listPartnerBarcode,
   }) {
-    assert(initial != null);
-    assert(loading != null);
-    assert(loadError != null);
-    assert(listPartnerBarcode != null);
     return listPartnerBarcode(partnerBarcodes);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initial(),
-    Result loading(),
-    Result loadError(PartnerBarcodeFailure failure),
-    Result listPartnerBarcode(List<UserBarcode> partnerBarcodes),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(PartnerBarcodeFailure failure)? loadError,
+    TResult Function(List<UserBarcode> partnerBarcodes)? listPartnerBarcode,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (listPartnerBarcode != null) {
       return listPartnerBarcode(partnerBarcodes);
     }
@@ -1157,29 +1185,24 @@ class _$_ListPartnerBarcode implements _ListPartnerBarcode {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initial(_Initial value),
-    @required Result loading(_Loading value),
-    @required Result loadError(_LoadError value),
-    @required Result listPartnerBarcode(_ListPartnerBarcode value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_Loading value) loading,
+    required TResult Function(_LoadError value) loadError,
+    required TResult Function(_ListPartnerBarcode value) listPartnerBarcode,
   }) {
-    assert(initial != null);
-    assert(loading != null);
-    assert(loadError != null);
-    assert(listPartnerBarcode != null);
     return listPartnerBarcode(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initial(_Initial value),
-    Result loading(_Loading value),
-    Result loadError(_LoadError value),
-    Result listPartnerBarcode(_ListPartnerBarcode value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Loading value)? loading,
+    TResult Function(_LoadError value)? loadError,
+    TResult Function(_ListPartnerBarcode value)? listPartnerBarcode,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (listPartnerBarcode != null) {
       return listPartnerBarcode(this);
     }
@@ -1191,6 +1214,8 @@ abstract class _ListPartnerBarcode implements PartnerBarcodeManagementState {
   const factory _ListPartnerBarcode(List<UserBarcode> partnerBarcodes) =
       _$_ListPartnerBarcode;
 
-  List<UserBarcode> get partnerBarcodes;
-  _$ListPartnerBarcodeCopyWith<_ListPartnerBarcode> get copyWith;
+  List<UserBarcode> get partnerBarcodes => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$ListPartnerBarcodeCopyWith<_ListPartnerBarcode> get copyWith =>
+      throw _privateConstructorUsedError;
 }

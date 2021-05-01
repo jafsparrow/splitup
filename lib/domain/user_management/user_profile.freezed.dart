@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'user_profile.dart';
 
@@ -9,16 +9,19 @@ part of 'user_profile.dart';
 
 T _$identity<T>(T value) => value;
 
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
+/// @nodoc
 class _$UserProfileTearOff {
   const _$UserProfileTearOff();
 
-// ignore: unused_element
   _UserProfile call(
-      {@required String userName,
-      @required String mobileNumber,
-      @required String email,
-      String nickName,
-      String uid}) {
+      {required String userName,
+      required String mobileNumber,
+      required String email,
+      required String nickName,
+      required String uid}) {
     return _UserProfile(
       userName: userName,
       mobileNumber: mobileNumber,
@@ -28,7 +31,6 @@ class _$UserProfileTearOff {
     );
   }
 
-// ignore: unused_element
   EmptyUserProfile empty(
       [String userName = '',
       String email = '',
@@ -45,47 +47,58 @@ class _$UserProfileTearOff {
   }
 }
 
-// ignore: unused_element
+/// @nodoc
 const $UserProfile = _$UserProfileTearOff();
 
+/// @nodoc
 mixin _$UserProfile {
-  String get userName;
-  String get mobileNumber;
-  String get email;
-  String get nickName;
-  String get uid;
+  String get userName => throw _privateConstructorUsedError;
+  String get mobileNumber => throw _privateConstructorUsedError;
+  String get email => throw _privateConstructorUsedError;
+  String get nickName => throw _privateConstructorUsedError;
+  String get uid => throw _privateConstructorUsedError;
 
   @optionalTypeArgs
-  Result when<Result extends Object>(
-    Result $default(String userName, String mobileNumber, String email,
-        String nickName, String uid), {
-    @required
-        Result empty(String userName, String email, String mobileNumber,
-            String nickName, String uid),
-  });
+  TResult when<TResult extends Object?>(
+    TResult Function(String userName, String mobileNumber, String email,
+            String nickName, String uid)
+        $default, {
+    required TResult Function(String userName, String email,
+            String mobileNumber, String nickName, String uid)
+        empty,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>(
-    Result $default(String userName, String mobileNumber, String email,
-        String nickName, String uid), {
-    Result empty(String userName, String email, String mobileNumber,
-        String nickName, String uid),
-    @required Result orElse(),
-  });
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(String userName, String mobileNumber, String email,
+            String nickName, String uid)?
+        $default, {
+    TResult Function(String userName, String email, String mobileNumber,
+            String nickName, String uid)?
+        empty,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result map<Result extends Object>(
-    Result $default(_UserProfile value), {
-    @required Result empty(EmptyUserProfile value),
-  });
+  TResult map<TResult extends Object?>(
+    TResult Function(_UserProfile value) $default, {
+    required TResult Function(EmptyUserProfile value) empty,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>(
-    Result $default(_UserProfile value), {
-    Result empty(EmptyUserProfile value),
-    @required Result orElse(),
-  });
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_UserProfile value)? $default, {
+    TResult Function(EmptyUserProfile value)? empty,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
 
-  $UserProfileCopyWith<UserProfile> get copyWith;
+  @JsonKey(ignore: true)
+  $UserProfileCopyWith<UserProfile> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
+/// @nodoc
 abstract class $UserProfileCopyWith<$Res> {
   factory $UserProfileCopyWith(
           UserProfile value, $Res Function(UserProfile) then) =
@@ -98,6 +111,7 @@ abstract class $UserProfileCopyWith<$Res> {
       String uid});
 }
 
+/// @nodoc
 class _$UserProfileCopyWithImpl<$Res> implements $UserProfileCopyWith<$Res> {
   _$UserProfileCopyWithImpl(this._value, this._then);
 
@@ -107,24 +121,38 @@ class _$UserProfileCopyWithImpl<$Res> implements $UserProfileCopyWith<$Res> {
 
   @override
   $Res call({
-    Object userName = freezed,
-    Object mobileNumber = freezed,
-    Object email = freezed,
-    Object nickName = freezed,
-    Object uid = freezed,
+    Object? userName = freezed,
+    Object? mobileNumber = freezed,
+    Object? email = freezed,
+    Object? nickName = freezed,
+    Object? uid = freezed,
   }) {
     return _then(_value.copyWith(
-      userName: userName == freezed ? _value.userName : userName as String,
+      userName: userName == freezed
+          ? _value.userName
+          : userName // ignore: cast_nullable_to_non_nullable
+              as String,
       mobileNumber: mobileNumber == freezed
           ? _value.mobileNumber
-          : mobileNumber as String,
-      email: email == freezed ? _value.email : email as String,
-      nickName: nickName == freezed ? _value.nickName : nickName as String,
-      uid: uid == freezed ? _value.uid : uid as String,
+          : mobileNumber // ignore: cast_nullable_to_non_nullable
+              as String,
+      email: email == freezed
+          ? _value.email
+          : email // ignore: cast_nullable_to_non_nullable
+              as String,
+      nickName: nickName == freezed
+          ? _value.nickName
+          : nickName // ignore: cast_nullable_to_non_nullable
+              as String,
+      uid: uid == freezed
+          ? _value.uid
+          : uid // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
 
+/// @nodoc
 abstract class _$UserProfileCopyWith<$Res>
     implements $UserProfileCopyWith<$Res> {
   factory _$UserProfileCopyWith(
@@ -139,6 +167,7 @@ abstract class _$UserProfileCopyWith<$Res>
       String uid});
 }
 
+/// @nodoc
 class __$UserProfileCopyWithImpl<$Res> extends _$UserProfileCopyWithImpl<$Res>
     implements _$UserProfileCopyWith<$Res> {
   __$UserProfileCopyWithImpl(
@@ -150,35 +179,47 @@ class __$UserProfileCopyWithImpl<$Res> extends _$UserProfileCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object userName = freezed,
-    Object mobileNumber = freezed,
-    Object email = freezed,
-    Object nickName = freezed,
-    Object uid = freezed,
+    Object? userName = freezed,
+    Object? mobileNumber = freezed,
+    Object? email = freezed,
+    Object? nickName = freezed,
+    Object? uid = freezed,
   }) {
     return _then(_UserProfile(
-      userName: userName == freezed ? _value.userName : userName as String,
+      userName: userName == freezed
+          ? _value.userName
+          : userName // ignore: cast_nullable_to_non_nullable
+              as String,
       mobileNumber: mobileNumber == freezed
           ? _value.mobileNumber
-          : mobileNumber as String,
-      email: email == freezed ? _value.email : email as String,
-      nickName: nickName == freezed ? _value.nickName : nickName as String,
-      uid: uid == freezed ? _value.uid : uid as String,
+          : mobileNumber // ignore: cast_nullable_to_non_nullable
+              as String,
+      email: email == freezed
+          ? _value.email
+          : email // ignore: cast_nullable_to_non_nullable
+              as String,
+      nickName: nickName == freezed
+          ? _value.nickName
+          : nickName // ignore: cast_nullable_to_non_nullable
+              as String,
+      uid: uid == freezed
+          ? _value.uid
+          : uid // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
 
+/// @nodoc
+
 class _$_UserProfile extends _UserProfile with DiagnosticableTreeMixin {
   const _$_UserProfile(
-      {@required this.userName,
-      @required this.mobileNumber,
-      @required this.email,
-      this.nickName,
-      this.uid})
-      : assert(userName != null),
-        assert(mobileNumber != null),
-        assert(email != null),
-        super._();
+      {required this.userName,
+      required this.mobileNumber,
+      required this.email,
+      required this.nickName,
+      required this.uid})
+      : super._();
 
   @override
   final String userName;
@@ -236,34 +277,35 @@ class _$_UserProfile extends _UserProfile with DiagnosticableTreeMixin {
       const DeepCollectionEquality().hash(nickName) ^
       const DeepCollectionEquality().hash(uid);
 
+  @JsonKey(ignore: true)
   @override
   _$UserProfileCopyWith<_UserProfile> get copyWith =>
       __$UserProfileCopyWithImpl<_UserProfile>(this, _$identity);
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>(
-    Result $default(String userName, String mobileNumber, String email,
-        String nickName, String uid), {
-    @required
-        Result empty(String userName, String email, String mobileNumber,
-            String nickName, String uid),
+  TResult when<TResult extends Object?>(
+    TResult Function(String userName, String mobileNumber, String email,
+            String nickName, String uid)
+        $default, {
+    required TResult Function(String userName, String email,
+            String mobileNumber, String nickName, String uid)
+        empty,
   }) {
-    assert($default != null);
-    assert(empty != null);
     return $default(userName, mobileNumber, email, nickName, uid);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>(
-    Result $default(String userName, String mobileNumber, String email,
-        String nickName, String uid), {
-    Result empty(String userName, String email, String mobileNumber,
-        String nickName, String uid),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(String userName, String mobileNumber, String email,
+            String nickName, String uid)?
+        $default, {
+    TResult Function(String userName, String email, String mobileNumber,
+            String nickName, String uid)?
+        empty,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if ($default != null) {
       return $default(userName, mobileNumber, email, nickName, uid);
     }
@@ -272,23 +314,20 @@ class _$_UserProfile extends _UserProfile with DiagnosticableTreeMixin {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>(
-    Result $default(_UserProfile value), {
-    @required Result empty(EmptyUserProfile value),
+  TResult map<TResult extends Object?>(
+    TResult Function(_UserProfile value) $default, {
+    required TResult Function(EmptyUserProfile value) empty,
   }) {
-    assert($default != null);
-    assert(empty != null);
     return $default(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>(
-    Result $default(_UserProfile value), {
-    Result empty(EmptyUserProfile value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_UserProfile value)? $default, {
+    TResult Function(EmptyUserProfile value)? empty,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if ($default != null) {
       return $default(this);
     }
@@ -297,28 +336,31 @@ class _$_UserProfile extends _UserProfile with DiagnosticableTreeMixin {
 }
 
 abstract class _UserProfile extends UserProfile {
-  const _UserProfile._() : super._();
   const factory _UserProfile(
-      {@required String userName,
-      @required String mobileNumber,
-      @required String email,
-      String nickName,
-      String uid}) = _$_UserProfile;
+      {required String userName,
+      required String mobileNumber,
+      required String email,
+      required String nickName,
+      required String uid}) = _$_UserProfile;
+  const _UserProfile._() : super._();
 
   @override
-  String get userName;
+  String get userName => throw _privateConstructorUsedError;
   @override
-  String get mobileNumber;
+  String get mobileNumber => throw _privateConstructorUsedError;
   @override
-  String get email;
+  String get email => throw _privateConstructorUsedError;
   @override
-  String get nickName;
+  String get nickName => throw _privateConstructorUsedError;
   @override
-  String get uid;
+  String get uid => throw _privateConstructorUsedError;
   @override
-  _$UserProfileCopyWith<_UserProfile> get copyWith;
+  @JsonKey(ignore: true)
+  _$UserProfileCopyWith<_UserProfile> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
+/// @nodoc
 abstract class $EmptyUserProfileCopyWith<$Res>
     implements $UserProfileCopyWith<$Res> {
   factory $EmptyUserProfileCopyWith(
@@ -333,6 +375,7 @@ abstract class $EmptyUserProfileCopyWith<$Res>
       String uid});
 }
 
+/// @nodoc
 class _$EmptyUserProfileCopyWithImpl<$Res>
     extends _$UserProfileCopyWithImpl<$Res>
     implements $EmptyUserProfileCopyWith<$Res> {
@@ -345,21 +388,38 @@ class _$EmptyUserProfileCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object userName = freezed,
-    Object email = freezed,
-    Object mobileNumber = freezed,
-    Object nickName = freezed,
-    Object uid = freezed,
+    Object? userName = freezed,
+    Object? email = freezed,
+    Object? mobileNumber = freezed,
+    Object? nickName = freezed,
+    Object? uid = freezed,
   }) {
     return _then(EmptyUserProfile(
-      userName == freezed ? _value.userName : userName as String,
-      email == freezed ? _value.email : email as String,
-      mobileNumber == freezed ? _value.mobileNumber : mobileNumber as String,
-      nickName == freezed ? _value.nickName : nickName as String,
-      uid == freezed ? _value.uid : uid as String,
+      userName == freezed
+          ? _value.userName
+          : userName // ignore: cast_nullable_to_non_nullable
+              as String,
+      email == freezed
+          ? _value.email
+          : email // ignore: cast_nullable_to_non_nullable
+              as String,
+      mobileNumber == freezed
+          ? _value.mobileNumber
+          : mobileNumber // ignore: cast_nullable_to_non_nullable
+              as String,
+      nickName == freezed
+          ? _value.nickName
+          : nickName // ignore: cast_nullable_to_non_nullable
+              as String,
+      uid == freezed
+          ? _value.uid
+          : uid // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
+
+/// @nodoc
 
 class _$EmptyUserProfile extends EmptyUserProfile with DiagnosticableTreeMixin {
   const _$EmptyUserProfile(
@@ -368,12 +428,7 @@ class _$EmptyUserProfile extends EmptyUserProfile with DiagnosticableTreeMixin {
       this.mobileNumber = '',
       this.nickName = '',
       this.uid = ''])
-      : assert(userName != null),
-        assert(email != null),
-        assert(mobileNumber != null),
-        assert(nickName != null),
-        assert(uid != null),
-        super._();
+      : super._();
 
   @JsonKey(defaultValue: '')
   @override
@@ -436,34 +491,35 @@ class _$EmptyUserProfile extends EmptyUserProfile with DiagnosticableTreeMixin {
       const DeepCollectionEquality().hash(nickName) ^
       const DeepCollectionEquality().hash(uid);
 
+  @JsonKey(ignore: true)
   @override
   $EmptyUserProfileCopyWith<EmptyUserProfile> get copyWith =>
       _$EmptyUserProfileCopyWithImpl<EmptyUserProfile>(this, _$identity);
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>(
-    Result $default(String userName, String mobileNumber, String email,
-        String nickName, String uid), {
-    @required
-        Result empty(String userName, String email, String mobileNumber,
-            String nickName, String uid),
+  TResult when<TResult extends Object?>(
+    TResult Function(String userName, String mobileNumber, String email,
+            String nickName, String uid)
+        $default, {
+    required TResult Function(String userName, String email,
+            String mobileNumber, String nickName, String uid)
+        empty,
   }) {
-    assert($default != null);
-    assert(empty != null);
     return empty(userName, email, mobileNumber, nickName, uid);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>(
-    Result $default(String userName, String mobileNumber, String email,
-        String nickName, String uid), {
-    Result empty(String userName, String email, String mobileNumber,
-        String nickName, String uid),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(String userName, String mobileNumber, String email,
+            String nickName, String uid)?
+        $default, {
+    TResult Function(String userName, String email, String mobileNumber,
+            String nickName, String uid)?
+        empty,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (empty != null) {
       return empty(userName, email, mobileNumber, nickName, uid);
     }
@@ -472,23 +528,20 @@ class _$EmptyUserProfile extends EmptyUserProfile with DiagnosticableTreeMixin {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>(
-    Result $default(_UserProfile value), {
-    @required Result empty(EmptyUserProfile value),
+  TResult map<TResult extends Object?>(
+    TResult Function(_UserProfile value) $default, {
+    required TResult Function(EmptyUserProfile value) empty,
   }) {
-    assert($default != null);
-    assert(empty != null);
     return empty(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>(
-    Result $default(_UserProfile value), {
-    Result empty(EmptyUserProfile value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_UserProfile value)? $default, {
+    TResult Function(EmptyUserProfile value)? empty,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (empty != null) {
       return empty(this);
     }
@@ -497,24 +550,26 @@ class _$EmptyUserProfile extends EmptyUserProfile with DiagnosticableTreeMixin {
 }
 
 abstract class EmptyUserProfile extends UserProfile {
-  const EmptyUserProfile._() : super._();
   const factory EmptyUserProfile(
       [String userName,
       String email,
       String mobileNumber,
       String nickName,
       String uid]) = _$EmptyUserProfile;
+  const EmptyUserProfile._() : super._();
 
   @override
-  String get userName;
+  String get userName => throw _privateConstructorUsedError;
   @override
-  String get email;
+  String get email => throw _privateConstructorUsedError;
   @override
-  String get mobileNumber;
+  String get mobileNumber => throw _privateConstructorUsedError;
   @override
-  String get nickName;
+  String get nickName => throw _privateConstructorUsedError;
   @override
-  String get uid;
+  String get uid => throw _privateConstructorUsedError;
   @override
-  $EmptyUserProfileCopyWith<EmptyUserProfile> get copyWith;
+  @JsonKey(ignore: true)
+  $EmptyUserProfileCopyWith<EmptyUserProfile> get copyWith =>
+      throw _privateConstructorUsedError;
 }

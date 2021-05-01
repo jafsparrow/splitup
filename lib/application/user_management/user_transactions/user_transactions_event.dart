@@ -4,7 +4,7 @@ part of 'user_transactions_bloc.dart';
 abstract class UserTransactionsEvent with _$UserTransactionsEvent {
   const factory UserTransactionsEvent.started() = _Started;
   const factory UserTransactionsEvent.loadUserTransactions({
-    String uid,
-    String companyId,
+    required String uid,
+    required String companyId,
   }) = _LoadUserTransactions;
 }

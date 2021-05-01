@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'promotion_form_bloc.dart';
 
@@ -9,78 +9,85 @@ part of 'promotion_form_bloc.dart';
 
 T _$identity<T>(T value) => value;
 
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
+/// @nodoc
 class _$PromotionFormEventTearOff {
   const _$PromotionFormEventTearOff();
 
-// ignore: unused_element
   _Initialized initialized(Option<Promotion> intialPromotion) {
     return _Initialized(
       intialPromotion,
     );
   }
 
-// ignore: unused_element
   _TitleChanged titleChanged(String title) {
     return _TitleChanged(
       title,
     );
   }
 
-// ignore: unused_element
   _DescriptionChanged descriptionChanged(String description) {
     return _DescriptionChanged(
       description,
     );
   }
 
-// ignore: unused_element
   _Save save() {
     return const _Save();
   }
 }
 
-// ignore: unused_element
+/// @nodoc
 const $PromotionFormEvent = _$PromotionFormEventTearOff();
 
+/// @nodoc
 mixin _$PromotionFormEvent {
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initialized(Option<Promotion> intialPromotion),
-    @required Result titleChanged(String title),
-    @required Result descriptionChanged(String description),
-    @required Result save(),
-  });
+  TResult when<TResult extends Object?>({
+    required TResult Function(Option<Promotion> intialPromotion) initialized,
+    required TResult Function(String title) titleChanged,
+    required TResult Function(String description) descriptionChanged,
+    required TResult Function() save,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initialized(Option<Promotion> intialPromotion),
-    Result titleChanged(String title),
-    Result descriptionChanged(String description),
-    Result save(),
-    @required Result orElse(),
-  });
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Option<Promotion> intialPromotion)? initialized,
+    TResult Function(String title)? titleChanged,
+    TResult Function(String description)? descriptionChanged,
+    TResult Function()? save,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initialized(_Initialized value),
-    @required Result titleChanged(_TitleChanged value),
-    @required Result descriptionChanged(_DescriptionChanged value),
-    @required Result save(_Save value),
-  });
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initialized value) initialized,
+    required TResult Function(_TitleChanged value) titleChanged,
+    required TResult Function(_DescriptionChanged value) descriptionChanged,
+    required TResult Function(_Save value) save,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initialized(_Initialized value),
-    Result titleChanged(_TitleChanged value),
-    Result descriptionChanged(_DescriptionChanged value),
-    Result save(_Save value),
-    @required Result orElse(),
-  });
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_TitleChanged value)? titleChanged,
+    TResult Function(_DescriptionChanged value)? descriptionChanged,
+    TResult Function(_Save value)? save,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
+/// @nodoc
 abstract class $PromotionFormEventCopyWith<$Res> {
   factory $PromotionFormEventCopyWith(
           PromotionFormEvent value, $Res Function(PromotionFormEvent) then) =
       _$PromotionFormEventCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class _$PromotionFormEventCopyWithImpl<$Res>
     implements $PromotionFormEventCopyWith<$Res> {
   _$PromotionFormEventCopyWithImpl(this._value, this._then);
@@ -90,6 +97,7 @@ class _$PromotionFormEventCopyWithImpl<$Res>
   final $Res Function(PromotionFormEvent) _then;
 }
 
+/// @nodoc
 abstract class _$InitializedCopyWith<$Res> {
   factory _$InitializedCopyWith(
           _Initialized value, $Res Function(_Initialized) then) =
@@ -97,6 +105,7 @@ abstract class _$InitializedCopyWith<$Res> {
   $Res call({Option<Promotion> intialPromotion});
 }
 
+/// @nodoc
 class __$InitializedCopyWithImpl<$Res>
     extends _$PromotionFormEventCopyWithImpl<$Res>
     implements _$InitializedCopyWith<$Res> {
@@ -109,18 +118,21 @@ class __$InitializedCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object intialPromotion = freezed,
+    Object? intialPromotion = freezed,
   }) {
     return _then(_Initialized(
       intialPromotion == freezed
           ? _value.intialPromotion
-          : intialPromotion as Option<Promotion>,
+          : intialPromotion // ignore: cast_nullable_to_non_nullable
+              as Option<Promotion>,
     ));
   }
 }
 
+/// @nodoc
+
 class _$_Initialized implements _Initialized {
-  const _$_Initialized(this.intialPromotion) : assert(intialPromotion != null);
+  const _$_Initialized(this.intialPromotion);
 
   @override
   final Option<Promotion> intialPromotion;
@@ -144,35 +156,31 @@ class _$_Initialized implements _Initialized {
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(intialPromotion);
 
+  @JsonKey(ignore: true)
   @override
   _$InitializedCopyWith<_Initialized> get copyWith =>
       __$InitializedCopyWithImpl<_Initialized>(this, _$identity);
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initialized(Option<Promotion> intialPromotion),
-    @required Result titleChanged(String title),
-    @required Result descriptionChanged(String description),
-    @required Result save(),
+  TResult when<TResult extends Object?>({
+    required TResult Function(Option<Promotion> intialPromotion) initialized,
+    required TResult Function(String title) titleChanged,
+    required TResult Function(String description) descriptionChanged,
+    required TResult Function() save,
   }) {
-    assert(initialized != null);
-    assert(titleChanged != null);
-    assert(descriptionChanged != null);
-    assert(save != null);
     return initialized(intialPromotion);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initialized(Option<Promotion> intialPromotion),
-    Result titleChanged(String title),
-    Result descriptionChanged(String description),
-    Result save(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Option<Promotion> intialPromotion)? initialized,
+    TResult Function(String title)? titleChanged,
+    TResult Function(String description)? descriptionChanged,
+    TResult Function()? save,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (initialized != null) {
       return initialized(intialPromotion);
     }
@@ -181,29 +189,24 @@ class _$_Initialized implements _Initialized {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initialized(_Initialized value),
-    @required Result titleChanged(_TitleChanged value),
-    @required Result descriptionChanged(_DescriptionChanged value),
-    @required Result save(_Save value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initialized value) initialized,
+    required TResult Function(_TitleChanged value) titleChanged,
+    required TResult Function(_DescriptionChanged value) descriptionChanged,
+    required TResult Function(_Save value) save,
   }) {
-    assert(initialized != null);
-    assert(titleChanged != null);
-    assert(descriptionChanged != null);
-    assert(save != null);
     return initialized(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initialized(_Initialized value),
-    Result titleChanged(_TitleChanged value),
-    Result descriptionChanged(_DescriptionChanged value),
-    Result save(_Save value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_TitleChanged value)? titleChanged,
+    TResult Function(_DescriptionChanged value)? descriptionChanged,
+    TResult Function(_Save value)? save,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (initialized != null) {
       return initialized(this);
     }
@@ -215,10 +218,13 @@ abstract class _Initialized implements PromotionFormEvent {
   const factory _Initialized(Option<Promotion> intialPromotion) =
       _$_Initialized;
 
-  Option<Promotion> get intialPromotion;
-  _$InitializedCopyWith<_Initialized> get copyWith;
+  Option<Promotion> get intialPromotion => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$InitializedCopyWith<_Initialized> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
+/// @nodoc
 abstract class _$TitleChangedCopyWith<$Res> {
   factory _$TitleChangedCopyWith(
           _TitleChanged value, $Res Function(_TitleChanged) then) =
@@ -226,6 +232,7 @@ abstract class _$TitleChangedCopyWith<$Res> {
   $Res call({String title});
 }
 
+/// @nodoc
 class __$TitleChangedCopyWithImpl<$Res>
     extends _$PromotionFormEventCopyWithImpl<$Res>
     implements _$TitleChangedCopyWith<$Res> {
@@ -238,16 +245,21 @@ class __$TitleChangedCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object title = freezed,
+    Object? title = freezed,
   }) {
     return _then(_TitleChanged(
-      title == freezed ? _value.title : title as String,
+      title == freezed
+          ? _value.title
+          : title // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
 
+/// @nodoc
+
 class _$_TitleChanged implements _TitleChanged {
-  const _$_TitleChanged(this.title) : assert(title != null);
+  const _$_TitleChanged(this.title);
 
   @override
   final String title;
@@ -269,35 +281,31 @@ class _$_TitleChanged implements _TitleChanged {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(title);
 
+  @JsonKey(ignore: true)
   @override
   _$TitleChangedCopyWith<_TitleChanged> get copyWith =>
       __$TitleChangedCopyWithImpl<_TitleChanged>(this, _$identity);
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initialized(Option<Promotion> intialPromotion),
-    @required Result titleChanged(String title),
-    @required Result descriptionChanged(String description),
-    @required Result save(),
+  TResult when<TResult extends Object?>({
+    required TResult Function(Option<Promotion> intialPromotion) initialized,
+    required TResult Function(String title) titleChanged,
+    required TResult Function(String description) descriptionChanged,
+    required TResult Function() save,
   }) {
-    assert(initialized != null);
-    assert(titleChanged != null);
-    assert(descriptionChanged != null);
-    assert(save != null);
     return titleChanged(title);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initialized(Option<Promotion> intialPromotion),
-    Result titleChanged(String title),
-    Result descriptionChanged(String description),
-    Result save(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Option<Promotion> intialPromotion)? initialized,
+    TResult Function(String title)? titleChanged,
+    TResult Function(String description)? descriptionChanged,
+    TResult Function()? save,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (titleChanged != null) {
       return titleChanged(title);
     }
@@ -306,29 +314,24 @@ class _$_TitleChanged implements _TitleChanged {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initialized(_Initialized value),
-    @required Result titleChanged(_TitleChanged value),
-    @required Result descriptionChanged(_DescriptionChanged value),
-    @required Result save(_Save value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initialized value) initialized,
+    required TResult Function(_TitleChanged value) titleChanged,
+    required TResult Function(_DescriptionChanged value) descriptionChanged,
+    required TResult Function(_Save value) save,
   }) {
-    assert(initialized != null);
-    assert(titleChanged != null);
-    assert(descriptionChanged != null);
-    assert(save != null);
     return titleChanged(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initialized(_Initialized value),
-    Result titleChanged(_TitleChanged value),
-    Result descriptionChanged(_DescriptionChanged value),
-    Result save(_Save value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_TitleChanged value)? titleChanged,
+    TResult Function(_DescriptionChanged value)? descriptionChanged,
+    TResult Function(_Save value)? save,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (titleChanged != null) {
       return titleChanged(this);
     }
@@ -339,10 +342,13 @@ class _$_TitleChanged implements _TitleChanged {
 abstract class _TitleChanged implements PromotionFormEvent {
   const factory _TitleChanged(String title) = _$_TitleChanged;
 
-  String get title;
-  _$TitleChangedCopyWith<_TitleChanged> get copyWith;
+  String get title => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$TitleChangedCopyWith<_TitleChanged> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
+/// @nodoc
 abstract class _$DescriptionChangedCopyWith<$Res> {
   factory _$DescriptionChangedCopyWith(
           _DescriptionChanged value, $Res Function(_DescriptionChanged) then) =
@@ -350,6 +356,7 @@ abstract class _$DescriptionChangedCopyWith<$Res> {
   $Res call({String description});
 }
 
+/// @nodoc
 class __$DescriptionChangedCopyWithImpl<$Res>
     extends _$PromotionFormEventCopyWithImpl<$Res>
     implements _$DescriptionChangedCopyWith<$Res> {
@@ -362,16 +369,21 @@ class __$DescriptionChangedCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object description = freezed,
+    Object? description = freezed,
   }) {
     return _then(_DescriptionChanged(
-      description == freezed ? _value.description : description as String,
+      description == freezed
+          ? _value.description
+          : description // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
 
+/// @nodoc
+
 class _$_DescriptionChanged implements _DescriptionChanged {
-  const _$_DescriptionChanged(this.description) : assert(description != null);
+  const _$_DescriptionChanged(this.description);
 
   @override
   final String description;
@@ -394,35 +406,31 @@ class _$_DescriptionChanged implements _DescriptionChanged {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(description);
 
+  @JsonKey(ignore: true)
   @override
   _$DescriptionChangedCopyWith<_DescriptionChanged> get copyWith =>
       __$DescriptionChangedCopyWithImpl<_DescriptionChanged>(this, _$identity);
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initialized(Option<Promotion> intialPromotion),
-    @required Result titleChanged(String title),
-    @required Result descriptionChanged(String description),
-    @required Result save(),
+  TResult when<TResult extends Object?>({
+    required TResult Function(Option<Promotion> intialPromotion) initialized,
+    required TResult Function(String title) titleChanged,
+    required TResult Function(String description) descriptionChanged,
+    required TResult Function() save,
   }) {
-    assert(initialized != null);
-    assert(titleChanged != null);
-    assert(descriptionChanged != null);
-    assert(save != null);
     return descriptionChanged(description);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initialized(Option<Promotion> intialPromotion),
-    Result titleChanged(String title),
-    Result descriptionChanged(String description),
-    Result save(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Option<Promotion> intialPromotion)? initialized,
+    TResult Function(String title)? titleChanged,
+    TResult Function(String description)? descriptionChanged,
+    TResult Function()? save,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (descriptionChanged != null) {
       return descriptionChanged(description);
     }
@@ -431,29 +439,24 @@ class _$_DescriptionChanged implements _DescriptionChanged {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initialized(_Initialized value),
-    @required Result titleChanged(_TitleChanged value),
-    @required Result descriptionChanged(_DescriptionChanged value),
-    @required Result save(_Save value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initialized value) initialized,
+    required TResult Function(_TitleChanged value) titleChanged,
+    required TResult Function(_DescriptionChanged value) descriptionChanged,
+    required TResult Function(_Save value) save,
   }) {
-    assert(initialized != null);
-    assert(titleChanged != null);
-    assert(descriptionChanged != null);
-    assert(save != null);
     return descriptionChanged(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initialized(_Initialized value),
-    Result titleChanged(_TitleChanged value),
-    Result descriptionChanged(_DescriptionChanged value),
-    Result save(_Save value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_TitleChanged value)? titleChanged,
+    TResult Function(_DescriptionChanged value)? descriptionChanged,
+    TResult Function(_Save value)? save,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (descriptionChanged != null) {
       return descriptionChanged(this);
     }
@@ -464,15 +467,19 @@ class _$_DescriptionChanged implements _DescriptionChanged {
 abstract class _DescriptionChanged implements PromotionFormEvent {
   const factory _DescriptionChanged(String description) = _$_DescriptionChanged;
 
-  String get description;
-  _$DescriptionChangedCopyWith<_DescriptionChanged> get copyWith;
+  String get description => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$DescriptionChangedCopyWith<_DescriptionChanged> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
+/// @nodoc
 abstract class _$SaveCopyWith<$Res> {
   factory _$SaveCopyWith(_Save value, $Res Function(_Save) then) =
       __$SaveCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class __$SaveCopyWithImpl<$Res> extends _$PromotionFormEventCopyWithImpl<$Res>
     implements _$SaveCopyWith<$Res> {
   __$SaveCopyWithImpl(_Save _value, $Res Function(_Save) _then)
@@ -481,6 +488,8 @@ class __$SaveCopyWithImpl<$Res> extends _$PromotionFormEventCopyWithImpl<$Res>
   @override
   _Save get _value => super._value as _Save;
 }
+
+/// @nodoc
 
 class _$_Save implements _Save {
   const _$_Save();
@@ -500,29 +509,24 @@ class _$_Save implements _Save {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initialized(Option<Promotion> intialPromotion),
-    @required Result titleChanged(String title),
-    @required Result descriptionChanged(String description),
-    @required Result save(),
+  TResult when<TResult extends Object?>({
+    required TResult Function(Option<Promotion> intialPromotion) initialized,
+    required TResult Function(String title) titleChanged,
+    required TResult Function(String description) descriptionChanged,
+    required TResult Function() save,
   }) {
-    assert(initialized != null);
-    assert(titleChanged != null);
-    assert(descriptionChanged != null);
-    assert(save != null);
     return save();
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initialized(Option<Promotion> intialPromotion),
-    Result titleChanged(String title),
-    Result descriptionChanged(String description),
-    Result save(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Option<Promotion> intialPromotion)? initialized,
+    TResult Function(String title)? titleChanged,
+    TResult Function(String description)? descriptionChanged,
+    TResult Function()? save,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (save != null) {
       return save();
     }
@@ -531,29 +535,24 @@ class _$_Save implements _Save {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initialized(_Initialized value),
-    @required Result titleChanged(_TitleChanged value),
-    @required Result descriptionChanged(_DescriptionChanged value),
-    @required Result save(_Save value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initialized value) initialized,
+    required TResult Function(_TitleChanged value) titleChanged,
+    required TResult Function(_DescriptionChanged value) descriptionChanged,
+    required TResult Function(_Save value) save,
   }) {
-    assert(initialized != null);
-    assert(titleChanged != null);
-    assert(descriptionChanged != null);
-    assert(save != null);
     return save(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initialized(_Initialized value),
-    Result titleChanged(_TitleChanged value),
-    Result descriptionChanged(_DescriptionChanged value),
-    Result save(_Save value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_TitleChanged value)? titleChanged,
+    TResult Function(_DescriptionChanged value)? descriptionChanged,
+    TResult Function(_Save value)? save,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (save != null) {
       return save(this);
     }
@@ -565,21 +564,17 @@ abstract class _Save implements PromotionFormEvent {
   const factory _Save() = _$_Save;
 }
 
+/// @nodoc
 class _$PromotionFormStateTearOff {
   const _$PromotionFormStateTearOff();
 
-// ignore: unused_element
   _PromotionFormState call(
-      {@required
-          Promotion promotion,
-      @required
-          bool showErrorMessages,
-      @required
-          bool isEditing,
-      @required
-          bool isSaving,
-      @required
-          Option<Either<PromotionFailure, Unit>> saveFailureOrSuccessOption}) {
+      {required Promotion promotion,
+      required bool showErrorMessages,
+      required bool isEditing,
+      required bool isSaving,
+      required Option<Either<PromotionFailure, Unit>>
+          saveFailureOrSuccessOption}) {
     return _PromotionFormState(
       promotion: promotion,
       showErrorMessages: showErrorMessages,
@@ -590,19 +585,24 @@ class _$PromotionFormStateTearOff {
   }
 }
 
-// ignore: unused_element
+/// @nodoc
 const $PromotionFormState = _$PromotionFormStateTearOff();
 
+/// @nodoc
 mixin _$PromotionFormState {
-  Promotion get promotion;
-  bool get showErrorMessages;
-  bool get isEditing;
-  bool get isSaving;
-  Option<Either<PromotionFailure, Unit>> get saveFailureOrSuccessOption;
+  Promotion get promotion => throw _privateConstructorUsedError;
+  bool get showErrorMessages => throw _privateConstructorUsedError;
+  bool get isEditing => throw _privateConstructorUsedError;
+  bool get isSaving => throw _privateConstructorUsedError;
+  Option<Either<PromotionFailure, Unit>> get saveFailureOrSuccessOption =>
+      throw _privateConstructorUsedError;
 
-  $PromotionFormStateCopyWith<PromotionFormState> get copyWith;
+  @JsonKey(ignore: true)
+  $PromotionFormStateCopyWith<PromotionFormState> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
+/// @nodoc
 abstract class $PromotionFormStateCopyWith<$Res> {
   factory $PromotionFormStateCopyWith(
           PromotionFormState value, $Res Function(PromotionFormState) then) =
@@ -617,6 +617,7 @@ abstract class $PromotionFormStateCopyWith<$Res> {
   $PromotionCopyWith<$Res> get promotion;
 }
 
+/// @nodoc
 class _$PromotionFormStateCopyWithImpl<$Res>
     implements $PromotionFormStateCopyWith<$Res> {
   _$PromotionFormStateCopyWithImpl(this._value, this._then);
@@ -627,38 +628,45 @@ class _$PromotionFormStateCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object promotion = freezed,
-    Object showErrorMessages = freezed,
-    Object isEditing = freezed,
-    Object isSaving = freezed,
-    Object saveFailureOrSuccessOption = freezed,
+    Object? promotion = freezed,
+    Object? showErrorMessages = freezed,
+    Object? isEditing = freezed,
+    Object? isSaving = freezed,
+    Object? saveFailureOrSuccessOption = freezed,
   }) {
     return _then(_value.copyWith(
-      promotion:
-          promotion == freezed ? _value.promotion : promotion as Promotion,
+      promotion: promotion == freezed
+          ? _value.promotion
+          : promotion // ignore: cast_nullable_to_non_nullable
+              as Promotion,
       showErrorMessages: showErrorMessages == freezed
           ? _value.showErrorMessages
-          : showErrorMessages as bool,
-      isEditing: isEditing == freezed ? _value.isEditing : isEditing as bool,
-      isSaving: isSaving == freezed ? _value.isSaving : isSaving as bool,
+          : showErrorMessages // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isEditing: isEditing == freezed
+          ? _value.isEditing
+          : isEditing // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isSaving: isSaving == freezed
+          ? _value.isSaving
+          : isSaving // ignore: cast_nullable_to_non_nullable
+              as bool,
       saveFailureOrSuccessOption: saveFailureOrSuccessOption == freezed
           ? _value.saveFailureOrSuccessOption
-          : saveFailureOrSuccessOption
+          : saveFailureOrSuccessOption // ignore: cast_nullable_to_non_nullable
               as Option<Either<PromotionFailure, Unit>>,
     ));
   }
 
   @override
   $PromotionCopyWith<$Res> get promotion {
-    if (_value.promotion == null) {
-      return null;
-    }
     return $PromotionCopyWith<$Res>(_value.promotion, (value) {
       return _then(_value.copyWith(promotion: value));
     });
   }
 }
 
+/// @nodoc
 abstract class _$PromotionFormStateCopyWith<$Res>
     implements $PromotionFormStateCopyWith<$Res> {
   factory _$PromotionFormStateCopyWith(
@@ -676,6 +684,7 @@ abstract class _$PromotionFormStateCopyWith<$Res>
   $PromotionCopyWith<$Res> get promotion;
 }
 
+/// @nodoc
 class __$PromotionFormStateCopyWithImpl<$Res>
     extends _$PromotionFormStateCopyWithImpl<$Res>
     implements _$PromotionFormStateCopyWith<$Res> {
@@ -688,40 +697,46 @@ class __$PromotionFormStateCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object promotion = freezed,
-    Object showErrorMessages = freezed,
-    Object isEditing = freezed,
-    Object isSaving = freezed,
-    Object saveFailureOrSuccessOption = freezed,
+    Object? promotion = freezed,
+    Object? showErrorMessages = freezed,
+    Object? isEditing = freezed,
+    Object? isSaving = freezed,
+    Object? saveFailureOrSuccessOption = freezed,
   }) {
     return _then(_PromotionFormState(
-      promotion:
-          promotion == freezed ? _value.promotion : promotion as Promotion,
+      promotion: promotion == freezed
+          ? _value.promotion
+          : promotion // ignore: cast_nullable_to_non_nullable
+              as Promotion,
       showErrorMessages: showErrorMessages == freezed
           ? _value.showErrorMessages
-          : showErrorMessages as bool,
-      isEditing: isEditing == freezed ? _value.isEditing : isEditing as bool,
-      isSaving: isSaving == freezed ? _value.isSaving : isSaving as bool,
+          : showErrorMessages // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isEditing: isEditing == freezed
+          ? _value.isEditing
+          : isEditing // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isSaving: isSaving == freezed
+          ? _value.isSaving
+          : isSaving // ignore: cast_nullable_to_non_nullable
+              as bool,
       saveFailureOrSuccessOption: saveFailureOrSuccessOption == freezed
           ? _value.saveFailureOrSuccessOption
-          : saveFailureOrSuccessOption
+          : saveFailureOrSuccessOption // ignore: cast_nullable_to_non_nullable
               as Option<Either<PromotionFailure, Unit>>,
     ));
   }
 }
 
+/// @nodoc
+
 class _$_PromotionFormState implements _PromotionFormState {
   const _$_PromotionFormState(
-      {@required this.promotion,
-      @required this.showErrorMessages,
-      @required this.isEditing,
-      @required this.isSaving,
-      @required this.saveFailureOrSuccessOption})
-      : assert(promotion != null),
-        assert(showErrorMessages != null),
-        assert(isEditing != null),
-        assert(isSaving != null),
-        assert(saveFailureOrSuccessOption != null);
+      {required this.promotion,
+      required this.showErrorMessages,
+      required this.isEditing,
+      required this.isSaving,
+      required this.saveFailureOrSuccessOption});
 
   @override
   final Promotion promotion;
@@ -771,6 +786,7 @@ class _$_PromotionFormState implements _PromotionFormState {
       const DeepCollectionEquality().hash(isSaving) ^
       const DeepCollectionEquality().hash(saveFailureOrSuccessOption);
 
+  @JsonKey(ignore: true)
   @override
   _$PromotionFormStateCopyWith<_PromotionFormState> get copyWith =>
       __$PromotionFormStateCopyWithImpl<_PromotionFormState>(this, _$identity);
@@ -778,28 +794,26 @@ class _$_PromotionFormState implements _PromotionFormState {
 
 abstract class _PromotionFormState implements PromotionFormState {
   const factory _PromotionFormState(
-      {@required
-          Promotion promotion,
-      @required
-          bool showErrorMessages,
-      @required
-          bool isEditing,
-      @required
-          bool isSaving,
-      @required
-          Option<Either<PromotionFailure, Unit>>
-              saveFailureOrSuccessOption}) = _$_PromotionFormState;
+      {required Promotion promotion,
+      required bool showErrorMessages,
+      required bool isEditing,
+      required bool isSaving,
+      required Option<Either<PromotionFailure, Unit>>
+          saveFailureOrSuccessOption}) = _$_PromotionFormState;
 
   @override
-  Promotion get promotion;
+  Promotion get promotion => throw _privateConstructorUsedError;
   @override
-  bool get showErrorMessages;
+  bool get showErrorMessages => throw _privateConstructorUsedError;
   @override
-  bool get isEditing;
+  bool get isEditing => throw _privateConstructorUsedError;
   @override
-  bool get isSaving;
+  bool get isSaving => throw _privateConstructorUsedError;
   @override
-  Option<Either<PromotionFailure, Unit>> get saveFailureOrSuccessOption;
+  Option<Either<PromotionFailure, Unit>> get saveFailureOrSuccessOption =>
+      throw _privateConstructorUsedError;
   @override
-  _$PromotionFormStateCopyWith<_PromotionFormState> get copyWith;
+  @JsonKey(ignore: true)
+  _$PromotionFormStateCopyWith<_PromotionFormState> get copyWith =>
+      throw _privateConstructorUsedError;
 }

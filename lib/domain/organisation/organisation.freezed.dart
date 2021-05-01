@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'organisation.dart';
 
@@ -9,17 +9,20 @@ part of 'organisation.dart';
 
 T _$identity<T>(T value) => value;
 
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
+/// @nodoc
 class _$OrganisationTearOff {
   const _$OrganisationTearOff();
 
-// ignore: unused_element
   _Organisation call(
-      {@required String companyName,
-      @required String companyId,
-      @required String phoneNumber,
-      @required Map<String, String> address,
-      @required Map<String, double> pointsFormula,
-      @required LicensePlan licensePlan}) {
+      {required String companyName,
+      required String companyId,
+      required String phoneNumber,
+      required Map<String, String> address,
+      required Map<String, double> pointsFormula,
+      required LicensePlan licensePlan}) {
     return _Organisation(
       companyName: companyName,
       companyId: companyId,
@@ -31,20 +34,24 @@ class _$OrganisationTearOff {
   }
 }
 
-// ignore: unused_element
+/// @nodoc
 const $Organisation = _$OrganisationTearOff();
 
+/// @nodoc
 mixin _$Organisation {
-  String get companyName;
-  String get companyId;
-  String get phoneNumber;
-  Map<String, String> get address;
-  Map<String, double> get pointsFormula;
-  LicensePlan get licensePlan;
+  String get companyName => throw _privateConstructorUsedError;
+  String get companyId => throw _privateConstructorUsedError;
+  String get phoneNumber => throw _privateConstructorUsedError;
+  Map<String, String> get address => throw _privateConstructorUsedError;
+  Map<String, double> get pointsFormula => throw _privateConstructorUsedError;
+  LicensePlan get licensePlan => throw _privateConstructorUsedError;
 
-  $OrganisationCopyWith<Organisation> get copyWith;
+  @JsonKey(ignore: true)
+  $OrganisationCopyWith<Organisation> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
+/// @nodoc
 abstract class $OrganisationCopyWith<$Res> {
   factory $OrganisationCopyWith(
           Organisation value, $Res Function(Organisation) then) =
@@ -60,6 +67,7 @@ abstract class $OrganisationCopyWith<$Res> {
   $LicensePlanCopyWith<$Res> get licensePlan;
 }
 
+/// @nodoc
 class _$OrganisationCopyWithImpl<$Res> implements $OrganisationCopyWith<$Res> {
   _$OrganisationCopyWithImpl(this._value, this._then);
 
@@ -69,41 +77,50 @@ class _$OrganisationCopyWithImpl<$Res> implements $OrganisationCopyWith<$Res> {
 
   @override
   $Res call({
-    Object companyName = freezed,
-    Object companyId = freezed,
-    Object phoneNumber = freezed,
-    Object address = freezed,
-    Object pointsFormula = freezed,
-    Object licensePlan = freezed,
+    Object? companyName = freezed,
+    Object? companyId = freezed,
+    Object? phoneNumber = freezed,
+    Object? address = freezed,
+    Object? pointsFormula = freezed,
+    Object? licensePlan = freezed,
   }) {
     return _then(_value.copyWith(
-      companyName:
-          companyName == freezed ? _value.companyName : companyName as String,
-      companyId: companyId == freezed ? _value.companyId : companyId as String,
-      phoneNumber:
-          phoneNumber == freezed ? _value.phoneNumber : phoneNumber as String,
-      address:
-          address == freezed ? _value.address : address as Map<String, String>,
+      companyName: companyName == freezed
+          ? _value.companyName
+          : companyName // ignore: cast_nullable_to_non_nullable
+              as String,
+      companyId: companyId == freezed
+          ? _value.companyId
+          : companyId // ignore: cast_nullable_to_non_nullable
+              as String,
+      phoneNumber: phoneNumber == freezed
+          ? _value.phoneNumber
+          : phoneNumber // ignore: cast_nullable_to_non_nullable
+              as String,
+      address: address == freezed
+          ? _value.address
+          : address // ignore: cast_nullable_to_non_nullable
+              as Map<String, String>,
       pointsFormula: pointsFormula == freezed
           ? _value.pointsFormula
-          : pointsFormula as Map<String, double>,
+          : pointsFormula // ignore: cast_nullable_to_non_nullable
+              as Map<String, double>,
       licensePlan: licensePlan == freezed
           ? _value.licensePlan
-          : licensePlan as LicensePlan,
+          : licensePlan // ignore: cast_nullable_to_non_nullable
+              as LicensePlan,
     ));
   }
 
   @override
   $LicensePlanCopyWith<$Res> get licensePlan {
-    if (_value.licensePlan == null) {
-      return null;
-    }
     return $LicensePlanCopyWith<$Res>(_value.licensePlan, (value) {
       return _then(_value.copyWith(licensePlan: value));
     });
   }
 }
 
+/// @nodoc
 abstract class _$OrganisationCopyWith<$Res>
     implements $OrganisationCopyWith<$Res> {
   factory _$OrganisationCopyWith(
@@ -122,6 +139,7 @@ abstract class _$OrganisationCopyWith<$Res>
   $LicensePlanCopyWith<$Res> get licensePlan;
 }
 
+/// @nodoc
 class __$OrganisationCopyWithImpl<$Res> extends _$OrganisationCopyWithImpl<$Res>
     implements _$OrganisationCopyWith<$Res> {
   __$OrganisationCopyWithImpl(
@@ -133,46 +151,53 @@ class __$OrganisationCopyWithImpl<$Res> extends _$OrganisationCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object companyName = freezed,
-    Object companyId = freezed,
-    Object phoneNumber = freezed,
-    Object address = freezed,
-    Object pointsFormula = freezed,
-    Object licensePlan = freezed,
+    Object? companyName = freezed,
+    Object? companyId = freezed,
+    Object? phoneNumber = freezed,
+    Object? address = freezed,
+    Object? pointsFormula = freezed,
+    Object? licensePlan = freezed,
   }) {
     return _then(_Organisation(
-      companyName:
-          companyName == freezed ? _value.companyName : companyName as String,
-      companyId: companyId == freezed ? _value.companyId : companyId as String,
-      phoneNumber:
-          phoneNumber == freezed ? _value.phoneNumber : phoneNumber as String,
-      address:
-          address == freezed ? _value.address : address as Map<String, String>,
+      companyName: companyName == freezed
+          ? _value.companyName
+          : companyName // ignore: cast_nullable_to_non_nullable
+              as String,
+      companyId: companyId == freezed
+          ? _value.companyId
+          : companyId // ignore: cast_nullable_to_non_nullable
+              as String,
+      phoneNumber: phoneNumber == freezed
+          ? _value.phoneNumber
+          : phoneNumber // ignore: cast_nullable_to_non_nullable
+              as String,
+      address: address == freezed
+          ? _value.address
+          : address // ignore: cast_nullable_to_non_nullable
+              as Map<String, String>,
       pointsFormula: pointsFormula == freezed
           ? _value.pointsFormula
-          : pointsFormula as Map<String, double>,
+          : pointsFormula // ignore: cast_nullable_to_non_nullable
+              as Map<String, double>,
       licensePlan: licensePlan == freezed
           ? _value.licensePlan
-          : licensePlan as LicensePlan,
+          : licensePlan // ignore: cast_nullable_to_non_nullable
+              as LicensePlan,
     ));
   }
 }
 
+/// @nodoc
+
 class _$_Organisation extends _Organisation {
   const _$_Organisation(
-      {@required this.companyName,
-      @required this.companyId,
-      @required this.phoneNumber,
-      @required this.address,
-      @required this.pointsFormula,
-      @required this.licensePlan})
-      : assert(companyName != null),
-        assert(companyId != null),
-        assert(phoneNumber != null),
-        assert(address != null),
-        assert(pointsFormula != null),
-        assert(licensePlan != null),
-        super._();
+      {required this.companyName,
+      required this.companyId,
+      required this.phoneNumber,
+      required this.address,
+      required this.pointsFormula,
+      required this.licensePlan})
+      : super._();
 
   @override
   final String companyName;
@@ -226,33 +251,36 @@ class _$_Organisation extends _Organisation {
       const DeepCollectionEquality().hash(pointsFormula) ^
       const DeepCollectionEquality().hash(licensePlan);
 
+  @JsonKey(ignore: true)
   @override
   _$OrganisationCopyWith<_Organisation> get copyWith =>
       __$OrganisationCopyWithImpl<_Organisation>(this, _$identity);
 }
 
 abstract class _Organisation extends Organisation {
-  const _Organisation._() : super._();
   const factory _Organisation(
-      {@required String companyName,
-      @required String companyId,
-      @required String phoneNumber,
-      @required Map<String, String> address,
-      @required Map<String, double> pointsFormula,
-      @required LicensePlan licensePlan}) = _$_Organisation;
+      {required String companyName,
+      required String companyId,
+      required String phoneNumber,
+      required Map<String, String> address,
+      required Map<String, double> pointsFormula,
+      required LicensePlan licensePlan}) = _$_Organisation;
+  const _Organisation._() : super._();
 
   @override
-  String get companyName;
+  String get companyName => throw _privateConstructorUsedError;
   @override
-  String get companyId;
+  String get companyId => throw _privateConstructorUsedError;
   @override
-  String get phoneNumber;
+  String get phoneNumber => throw _privateConstructorUsedError;
   @override
-  Map<String, String> get address;
+  Map<String, String> get address => throw _privateConstructorUsedError;
   @override
-  Map<String, double> get pointsFormula;
+  Map<String, double> get pointsFormula => throw _privateConstructorUsedError;
   @override
-  LicensePlan get licensePlan;
+  LicensePlan get licensePlan => throw _privateConstructorUsedError;
   @override
-  _$OrganisationCopyWith<_Organisation> get copyWith;
+  @JsonKey(ignore: true)
+  _$OrganisationCopyWith<_Organisation> get copyWith =>
+      throw _privateConstructorUsedError;
 }

@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class LoginPage extends StatefulWidget {
-  const LoginPage({Key key}) : super(key: key);
+  const LoginPage();
 
   static Route route() {
     // print('login page static route functionl');
@@ -37,8 +37,13 @@ class _LoginPageState extends State<LoginPage> {
                   FlutterLogo(size: 60,),
                   SizedBox(height: 30,),
                   Center(child: Text('Please Login', style: Theme.of(context).textTheme.headline6,)),
+                  SizedBox(height: 30),
                   TextField(
-                    
+                    decoration: InputDecoration(
+                      icon: Icon(Icons.account_box),
+                      fillColor: Colors.amber,
+                      labelText: 'UserName'
+                    ),
                     controller: _emailController,
                     onChanged: (value) {
                       context.read<LoginCubit>().emailChanged(value);
@@ -51,6 +56,10 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                   TextField(
                     controller: _passwordController,
+                    decoration: InputDecoration(
+                      icon: Icon(Icons.security),
+                      labelText: 'Password'
+                    ),
                     onChanged: (value) {
                       context.read<LoginCubit>().passwordChanged(value);
                       // print('ýou are touching me $value');

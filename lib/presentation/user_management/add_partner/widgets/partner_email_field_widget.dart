@@ -4,9 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 
 class PartnerEmailField extends HookWidget {
-  const PartnerEmailField({
-    Key key,
-  }) : super(key: key);
+  const PartnerEmailField();
 
   @override
   Widget build(BuildContext context) {

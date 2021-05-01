@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'user_profile_bloc.dart';
 
@@ -9,26 +9,27 @@ part of 'user_profile_bloc.dart';
 
 T _$identity<T>(T value) => value;
 
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
+/// @nodoc
 class _$UserProfileEventTearOff {
   const _$UserProfileEventTearOff();
 
-// ignore: unused_element
   _Load load() {
     return const _Load();
   }
 
-// ignore: unused_element
   _LoadUserProfileFromId loadUserPofileFromId(
-      {@required String companyId, @required String id}) {
+      {required String companyId, required String id}) {
     return _LoadUserProfileFromId(
       companyId: companyId,
       id: id,
     );
   }
 
-// ignore: unused_element
   _LoadUserProfileFromBarcode loadUserProfileFromBarcode(
-      {@required String companyId, @required String barcode}) {
+      {required String companyId, required String barcode}) {
     return _LoadUserProfileFromBarcode(
       companyId: companyId,
       barcode: barcode,
@@ -36,46 +37,56 @@ class _$UserProfileEventTearOff {
   }
 }
 
-// ignore: unused_element
+/// @nodoc
 const $UserProfileEvent = _$UserProfileEventTearOff();
 
+/// @nodoc
 mixin _$UserProfileEvent {
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result load(),
-    @required Result loadUserPofileFromId(String companyId, String id),
-    @required
-        Result loadUserProfileFromBarcode(String companyId, String barcode),
-  });
+  TResult when<TResult extends Object?>({
+    required TResult Function() load,
+    required TResult Function(String companyId, String id) loadUserPofileFromId,
+    required TResult Function(String companyId, String barcode)
+        loadUserProfileFromBarcode,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result load(),
-    Result loadUserPofileFromId(String companyId, String id),
-    Result loadUserProfileFromBarcode(String companyId, String barcode),
-    @required Result orElse(),
-  });
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? load,
+    TResult Function(String companyId, String id)? loadUserPofileFromId,
+    TResult Function(String companyId, String barcode)?
+        loadUserProfileFromBarcode,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result load(_Load value),
-    @required Result loadUserPofileFromId(_LoadUserProfileFromId value),
-    @required
-        Result loadUserProfileFromBarcode(_LoadUserProfileFromBarcode value),
-  });
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Load value) load,
+    required TResult Function(_LoadUserProfileFromId value)
+        loadUserPofileFromId,
+    required TResult Function(_LoadUserProfileFromBarcode value)
+        loadUserProfileFromBarcode,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result load(_Load value),
-    Result loadUserPofileFromId(_LoadUserProfileFromId value),
-    Result loadUserProfileFromBarcode(_LoadUserProfileFromBarcode value),
-    @required Result orElse(),
-  });
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Load value)? load,
+    TResult Function(_LoadUserProfileFromId value)? loadUserPofileFromId,
+    TResult Function(_LoadUserProfileFromBarcode value)?
+        loadUserProfileFromBarcode,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
+/// @nodoc
 abstract class $UserProfileEventCopyWith<$Res> {
   factory $UserProfileEventCopyWith(
           UserProfileEvent value, $Res Function(UserProfileEvent) then) =
       _$UserProfileEventCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class _$UserProfileEventCopyWithImpl<$Res>
     implements $UserProfileEventCopyWith<$Res> {
   _$UserProfileEventCopyWithImpl(this._value, this._then);
@@ -85,11 +96,13 @@ class _$UserProfileEventCopyWithImpl<$Res>
   final $Res Function(UserProfileEvent) _then;
 }
 
+/// @nodoc
 abstract class _$LoadCopyWith<$Res> {
   factory _$LoadCopyWith(_Load value, $Res Function(_Load) then) =
       __$LoadCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class __$LoadCopyWithImpl<$Res> extends _$UserProfileEventCopyWithImpl<$Res>
     implements _$LoadCopyWith<$Res> {
   __$LoadCopyWithImpl(_Load _value, $Res Function(_Load) _then)
@@ -98,6 +111,8 @@ class __$LoadCopyWithImpl<$Res> extends _$UserProfileEventCopyWithImpl<$Res>
   @override
   _Load get _value => super._value as _Load;
 }
+
+/// @nodoc
 
 class _$_Load implements _Load {
   const _$_Load();
@@ -117,27 +132,24 @@ class _$_Load implements _Load {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result load(),
-    @required Result loadUserPofileFromId(String companyId, String id),
-    @required
-        Result loadUserProfileFromBarcode(String companyId, String barcode),
+  TResult when<TResult extends Object?>({
+    required TResult Function() load,
+    required TResult Function(String companyId, String id) loadUserPofileFromId,
+    required TResult Function(String companyId, String barcode)
+        loadUserProfileFromBarcode,
   }) {
-    assert(load != null);
-    assert(loadUserPofileFromId != null);
-    assert(loadUserProfileFromBarcode != null);
     return load();
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result load(),
-    Result loadUserPofileFromId(String companyId, String id),
-    Result loadUserProfileFromBarcode(String companyId, String barcode),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? load,
+    TResult Function(String companyId, String id)? loadUserPofileFromId,
+    TResult Function(String companyId, String barcode)?
+        loadUserProfileFromBarcode,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (load != null) {
       return load();
     }
@@ -146,27 +158,25 @@ class _$_Load implements _Load {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result load(_Load value),
-    @required Result loadUserPofileFromId(_LoadUserProfileFromId value),
-    @required
-        Result loadUserProfileFromBarcode(_LoadUserProfileFromBarcode value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Load value) load,
+    required TResult Function(_LoadUserProfileFromId value)
+        loadUserPofileFromId,
+    required TResult Function(_LoadUserProfileFromBarcode value)
+        loadUserProfileFromBarcode,
   }) {
-    assert(load != null);
-    assert(loadUserPofileFromId != null);
-    assert(loadUserProfileFromBarcode != null);
     return load(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result load(_Load value),
-    Result loadUserPofileFromId(_LoadUserProfileFromId value),
-    Result loadUserProfileFromBarcode(_LoadUserProfileFromBarcode value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Load value)? load,
+    TResult Function(_LoadUserProfileFromId value)? loadUserPofileFromId,
+    TResult Function(_LoadUserProfileFromBarcode value)?
+        loadUserProfileFromBarcode,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (load != null) {
       return load(this);
     }
@@ -178,6 +188,7 @@ abstract class _Load implements UserProfileEvent {
   const factory _Load() = _$_Load;
 }
 
+/// @nodoc
 abstract class _$LoadUserProfileFromIdCopyWith<$Res> {
   factory _$LoadUserProfileFromIdCopyWith(_LoadUserProfileFromId value,
           $Res Function(_LoadUserProfileFromId) then) =
@@ -185,6 +196,7 @@ abstract class _$LoadUserProfileFromIdCopyWith<$Res> {
   $Res call({String companyId, String id});
 }
 
+/// @nodoc
 class __$LoadUserProfileFromIdCopyWithImpl<$Res>
     extends _$UserProfileEventCopyWithImpl<$Res>
     implements _$LoadUserProfileFromIdCopyWith<$Res> {
@@ -197,20 +209,26 @@ class __$LoadUserProfileFromIdCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object companyId = freezed,
-    Object id = freezed,
+    Object? companyId = freezed,
+    Object? id = freezed,
   }) {
     return _then(_LoadUserProfileFromId(
-      companyId: companyId == freezed ? _value.companyId : companyId as String,
-      id: id == freezed ? _value.id : id as String,
+      companyId: companyId == freezed
+          ? _value.companyId
+          : companyId // ignore: cast_nullable_to_non_nullable
+              as String,
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
 
+/// @nodoc
+
 class _$_LoadUserProfileFromId implements _LoadUserProfileFromId {
-  const _$_LoadUserProfileFromId({@required this.companyId, @required this.id})
-      : assert(companyId != null),
-        assert(id != null);
+  const _$_LoadUserProfileFromId({required this.companyId, required this.id});
 
   @override
   final String companyId;
@@ -239,6 +257,7 @@ class _$_LoadUserProfileFromId implements _LoadUserProfileFromId {
       const DeepCollectionEquality().hash(companyId) ^
       const DeepCollectionEquality().hash(id);
 
+  @JsonKey(ignore: true)
   @override
   _$LoadUserProfileFromIdCopyWith<_LoadUserProfileFromId> get copyWith =>
       __$LoadUserProfileFromIdCopyWithImpl<_LoadUserProfileFromId>(
@@ -246,27 +265,24 @@ class _$_LoadUserProfileFromId implements _LoadUserProfileFromId {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result load(),
-    @required Result loadUserPofileFromId(String companyId, String id),
-    @required
-        Result loadUserProfileFromBarcode(String companyId, String barcode),
+  TResult when<TResult extends Object?>({
+    required TResult Function() load,
+    required TResult Function(String companyId, String id) loadUserPofileFromId,
+    required TResult Function(String companyId, String barcode)
+        loadUserProfileFromBarcode,
   }) {
-    assert(load != null);
-    assert(loadUserPofileFromId != null);
-    assert(loadUserProfileFromBarcode != null);
     return loadUserPofileFromId(companyId, id);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result load(),
-    Result loadUserPofileFromId(String companyId, String id),
-    Result loadUserProfileFromBarcode(String companyId, String barcode),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? load,
+    TResult Function(String companyId, String id)? loadUserPofileFromId,
+    TResult Function(String companyId, String barcode)?
+        loadUserProfileFromBarcode,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (loadUserPofileFromId != null) {
       return loadUserPofileFromId(companyId, id);
     }
@@ -275,27 +291,25 @@ class _$_LoadUserProfileFromId implements _LoadUserProfileFromId {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result load(_Load value),
-    @required Result loadUserPofileFromId(_LoadUserProfileFromId value),
-    @required
-        Result loadUserProfileFromBarcode(_LoadUserProfileFromBarcode value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Load value) load,
+    required TResult Function(_LoadUserProfileFromId value)
+        loadUserPofileFromId,
+    required TResult Function(_LoadUserProfileFromBarcode value)
+        loadUserProfileFromBarcode,
   }) {
-    assert(load != null);
-    assert(loadUserPofileFromId != null);
-    assert(loadUserProfileFromBarcode != null);
     return loadUserPofileFromId(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result load(_Load value),
-    Result loadUserPofileFromId(_LoadUserProfileFromId value),
-    Result loadUserProfileFromBarcode(_LoadUserProfileFromBarcode value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Load value)? load,
+    TResult Function(_LoadUserProfileFromId value)? loadUserPofileFromId,
+    TResult Function(_LoadUserProfileFromBarcode value)?
+        loadUserProfileFromBarcode,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (loadUserPofileFromId != null) {
       return loadUserPofileFromId(this);
     }
@@ -305,14 +319,17 @@ class _$_LoadUserProfileFromId implements _LoadUserProfileFromId {
 
 abstract class _LoadUserProfileFromId implements UserProfileEvent {
   const factory _LoadUserProfileFromId(
-      {@required String companyId,
-      @required String id}) = _$_LoadUserProfileFromId;
+      {required String companyId,
+      required String id}) = _$_LoadUserProfileFromId;
 
-  String get companyId;
-  String get id;
-  _$LoadUserProfileFromIdCopyWith<_LoadUserProfileFromId> get copyWith;
+  String get companyId => throw _privateConstructorUsedError;
+  String get id => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$LoadUserProfileFromIdCopyWith<_LoadUserProfileFromId> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
+/// @nodoc
 abstract class _$LoadUserProfileFromBarcodeCopyWith<$Res> {
   factory _$LoadUserProfileFromBarcodeCopyWith(
           _LoadUserProfileFromBarcode value,
@@ -321,6 +338,7 @@ abstract class _$LoadUserProfileFromBarcodeCopyWith<$Res> {
   $Res call({String companyId, String barcode});
 }
 
+/// @nodoc
 class __$LoadUserProfileFromBarcodeCopyWithImpl<$Res>
     extends _$UserProfileEventCopyWithImpl<$Res>
     implements _$LoadUserProfileFromBarcodeCopyWith<$Res> {
@@ -334,21 +352,27 @@ class __$LoadUserProfileFromBarcodeCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object companyId = freezed,
-    Object barcode = freezed,
+    Object? companyId = freezed,
+    Object? barcode = freezed,
   }) {
     return _then(_LoadUserProfileFromBarcode(
-      companyId: companyId == freezed ? _value.companyId : companyId as String,
-      barcode: barcode == freezed ? _value.barcode : barcode as String,
+      companyId: companyId == freezed
+          ? _value.companyId
+          : companyId // ignore: cast_nullable_to_non_nullable
+              as String,
+      barcode: barcode == freezed
+          ? _value.barcode
+          : barcode // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
 
+/// @nodoc
+
 class _$_LoadUserProfileFromBarcode implements _LoadUserProfileFromBarcode {
   const _$_LoadUserProfileFromBarcode(
-      {@required this.companyId, @required this.barcode})
-      : assert(companyId != null),
-        assert(barcode != null);
+      {required this.companyId, required this.barcode});
 
   @override
   final String companyId;
@@ -377,6 +401,7 @@ class _$_LoadUserProfileFromBarcode implements _LoadUserProfileFromBarcode {
       const DeepCollectionEquality().hash(companyId) ^
       const DeepCollectionEquality().hash(barcode);
 
+  @JsonKey(ignore: true)
   @override
   _$LoadUserProfileFromBarcodeCopyWith<_LoadUserProfileFromBarcode>
       get copyWith => __$LoadUserProfileFromBarcodeCopyWithImpl<
@@ -384,27 +409,24 @@ class _$_LoadUserProfileFromBarcode implements _LoadUserProfileFromBarcode {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result load(),
-    @required Result loadUserPofileFromId(String companyId, String id),
-    @required
-        Result loadUserProfileFromBarcode(String companyId, String barcode),
+  TResult when<TResult extends Object?>({
+    required TResult Function() load,
+    required TResult Function(String companyId, String id) loadUserPofileFromId,
+    required TResult Function(String companyId, String barcode)
+        loadUserProfileFromBarcode,
   }) {
-    assert(load != null);
-    assert(loadUserPofileFromId != null);
-    assert(loadUserProfileFromBarcode != null);
     return loadUserProfileFromBarcode(companyId, barcode);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result load(),
-    Result loadUserPofileFromId(String companyId, String id),
-    Result loadUserProfileFromBarcode(String companyId, String barcode),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? load,
+    TResult Function(String companyId, String id)? loadUserPofileFromId,
+    TResult Function(String companyId, String barcode)?
+        loadUserProfileFromBarcode,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (loadUserProfileFromBarcode != null) {
       return loadUserProfileFromBarcode(companyId, barcode);
     }
@@ -413,27 +435,25 @@ class _$_LoadUserProfileFromBarcode implements _LoadUserProfileFromBarcode {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result load(_Load value),
-    @required Result loadUserPofileFromId(_LoadUserProfileFromId value),
-    @required
-        Result loadUserProfileFromBarcode(_LoadUserProfileFromBarcode value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Load value) load,
+    required TResult Function(_LoadUserProfileFromId value)
+        loadUserPofileFromId,
+    required TResult Function(_LoadUserProfileFromBarcode value)
+        loadUserProfileFromBarcode,
   }) {
-    assert(load != null);
-    assert(loadUserPofileFromId != null);
-    assert(loadUserProfileFromBarcode != null);
     return loadUserProfileFromBarcode(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result load(_Load value),
-    Result loadUserPofileFromId(_LoadUserProfileFromId value),
-    Result loadUserProfileFromBarcode(_LoadUserProfileFromBarcode value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Load value)? load,
+    TResult Function(_LoadUserProfileFromId value)? loadUserPofileFromId,
+    TResult Function(_LoadUserProfileFromBarcode value)?
+        loadUserProfileFromBarcode,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (loadUserProfileFromBarcode != null) {
       return loadUserProfileFromBarcode(this);
     }
@@ -443,36 +463,34 @@ class _$_LoadUserProfileFromBarcode implements _LoadUserProfileFromBarcode {
 
 abstract class _LoadUserProfileFromBarcode implements UserProfileEvent {
   const factory _LoadUserProfileFromBarcode(
-      {@required String companyId,
-      @required String barcode}) = _$_LoadUserProfileFromBarcode;
+      {required String companyId,
+      required String barcode}) = _$_LoadUserProfileFromBarcode;
 
-  String get companyId;
-  String get barcode;
+  String get companyId => throw _privateConstructorUsedError;
+  String get barcode => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
   _$LoadUserProfileFromBarcodeCopyWith<_LoadUserProfileFromBarcode>
-      get copyWith;
+      get copyWith => throw _privateConstructorUsedError;
 }
 
+/// @nodoc
 class _$UserProfileStateTearOff {
   const _$UserProfileStateTearOff();
 
-// ignore: unused_element
   _Initial initial() {
     return const _Initial();
   }
 
-// ignore: unused_element
   _LoadInProgress loadInProgress() {
     return const _LoadInProgress();
   }
 
-// ignore: unused_element
   _LoadSuccess loadSuccess(PartnerUser user) {
     return _LoadSuccess(
       user,
     );
   }
 
-// ignore: unused_element
   _LoadFailure loadFailure(UserManagementFailure failureFailure) {
     return _LoadFailure(
       failureFailure,
@@ -480,48 +498,55 @@ class _$UserProfileStateTearOff {
   }
 }
 
-// ignore: unused_element
+/// @nodoc
 const $UserProfileState = _$UserProfileStateTearOff();
 
+/// @nodoc
 mixin _$UserProfileState {
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initial(),
-    @required Result loadInProgress(),
-    @required Result loadSuccess(PartnerUser user),
-    @required Result loadFailure(UserManagementFailure failureFailure),
-  });
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loadInProgress,
+    required TResult Function(PartnerUser user) loadSuccess,
+    required TResult Function(UserManagementFailure failureFailure) loadFailure,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initial(),
-    Result loadInProgress(),
-    Result loadSuccess(PartnerUser user),
-    Result loadFailure(UserManagementFailure failureFailure),
-    @required Result orElse(),
-  });
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loadInProgress,
+    TResult Function(PartnerUser user)? loadSuccess,
+    TResult Function(UserManagementFailure failureFailure)? loadFailure,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initial(_Initial value),
-    @required Result loadInProgress(_LoadInProgress value),
-    @required Result loadSuccess(_LoadSuccess value),
-    @required Result loadFailure(_LoadFailure value),
-  });
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_LoadInProgress value) loadInProgress,
+    required TResult Function(_LoadSuccess value) loadSuccess,
+    required TResult Function(_LoadFailure value) loadFailure,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initial(_Initial value),
-    Result loadInProgress(_LoadInProgress value),
-    Result loadSuccess(_LoadSuccess value),
-    Result loadFailure(_LoadFailure value),
-    @required Result orElse(),
-  });
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_LoadInProgress value)? loadInProgress,
+    TResult Function(_LoadSuccess value)? loadSuccess,
+    TResult Function(_LoadFailure value)? loadFailure,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
+/// @nodoc
 abstract class $UserProfileStateCopyWith<$Res> {
   factory $UserProfileStateCopyWith(
           UserProfileState value, $Res Function(UserProfileState) then) =
       _$UserProfileStateCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class _$UserProfileStateCopyWithImpl<$Res>
     implements $UserProfileStateCopyWith<$Res> {
   _$UserProfileStateCopyWithImpl(this._value, this._then);
@@ -531,11 +556,13 @@ class _$UserProfileStateCopyWithImpl<$Res>
   final $Res Function(UserProfileState) _then;
 }
 
+/// @nodoc
 abstract class _$InitialCopyWith<$Res> {
   factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) =
       __$InitialCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class __$InitialCopyWithImpl<$Res> extends _$UserProfileStateCopyWithImpl<$Res>
     implements _$InitialCopyWith<$Res> {
   __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then)
@@ -544,6 +571,8 @@ class __$InitialCopyWithImpl<$Res> extends _$UserProfileStateCopyWithImpl<$Res>
   @override
   _Initial get _value => super._value as _Initial;
 }
+
+/// @nodoc
 
 class _$_Initial implements _Initial {
   const _$_Initial();
@@ -563,29 +592,24 @@ class _$_Initial implements _Initial {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initial(),
-    @required Result loadInProgress(),
-    @required Result loadSuccess(PartnerUser user),
-    @required Result loadFailure(UserManagementFailure failureFailure),
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loadInProgress,
+    required TResult Function(PartnerUser user) loadSuccess,
+    required TResult Function(UserManagementFailure failureFailure) loadFailure,
   }) {
-    assert(initial != null);
-    assert(loadInProgress != null);
-    assert(loadSuccess != null);
-    assert(loadFailure != null);
     return initial();
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initial(),
-    Result loadInProgress(),
-    Result loadSuccess(PartnerUser user),
-    Result loadFailure(UserManagementFailure failureFailure),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loadInProgress,
+    TResult Function(PartnerUser user)? loadSuccess,
+    TResult Function(UserManagementFailure failureFailure)? loadFailure,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (initial != null) {
       return initial();
     }
@@ -594,29 +618,24 @@ class _$_Initial implements _Initial {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initial(_Initial value),
-    @required Result loadInProgress(_LoadInProgress value),
-    @required Result loadSuccess(_LoadSuccess value),
-    @required Result loadFailure(_LoadFailure value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_LoadInProgress value) loadInProgress,
+    required TResult Function(_LoadSuccess value) loadSuccess,
+    required TResult Function(_LoadFailure value) loadFailure,
   }) {
-    assert(initial != null);
-    assert(loadInProgress != null);
-    assert(loadSuccess != null);
-    assert(loadFailure != null);
     return initial(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initial(_Initial value),
-    Result loadInProgress(_LoadInProgress value),
-    Result loadSuccess(_LoadSuccess value),
-    Result loadFailure(_LoadFailure value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_LoadInProgress value)? loadInProgress,
+    TResult Function(_LoadSuccess value)? loadSuccess,
+    TResult Function(_LoadFailure value)? loadFailure,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (initial != null) {
       return initial(this);
     }
@@ -628,12 +647,14 @@ abstract class _Initial implements UserProfileState {
   const factory _Initial() = _$_Initial;
 }
 
+/// @nodoc
 abstract class _$LoadInProgressCopyWith<$Res> {
   factory _$LoadInProgressCopyWith(
           _LoadInProgress value, $Res Function(_LoadInProgress) then) =
       __$LoadInProgressCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class __$LoadInProgressCopyWithImpl<$Res>
     extends _$UserProfileStateCopyWithImpl<$Res>
     implements _$LoadInProgressCopyWith<$Res> {
@@ -644,6 +665,8 @@ class __$LoadInProgressCopyWithImpl<$Res>
   @override
   _LoadInProgress get _value => super._value as _LoadInProgress;
 }
+
+/// @nodoc
 
 class _$_LoadInProgress implements _LoadInProgress {
   const _$_LoadInProgress();
@@ -663,29 +686,24 @@ class _$_LoadInProgress implements _LoadInProgress {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initial(),
-    @required Result loadInProgress(),
-    @required Result loadSuccess(PartnerUser user),
-    @required Result loadFailure(UserManagementFailure failureFailure),
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loadInProgress,
+    required TResult Function(PartnerUser user) loadSuccess,
+    required TResult Function(UserManagementFailure failureFailure) loadFailure,
   }) {
-    assert(initial != null);
-    assert(loadInProgress != null);
-    assert(loadSuccess != null);
-    assert(loadFailure != null);
     return loadInProgress();
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initial(),
-    Result loadInProgress(),
-    Result loadSuccess(PartnerUser user),
-    Result loadFailure(UserManagementFailure failureFailure),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loadInProgress,
+    TResult Function(PartnerUser user)? loadSuccess,
+    TResult Function(UserManagementFailure failureFailure)? loadFailure,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (loadInProgress != null) {
       return loadInProgress();
     }
@@ -694,29 +712,24 @@ class _$_LoadInProgress implements _LoadInProgress {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initial(_Initial value),
-    @required Result loadInProgress(_LoadInProgress value),
-    @required Result loadSuccess(_LoadSuccess value),
-    @required Result loadFailure(_LoadFailure value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_LoadInProgress value) loadInProgress,
+    required TResult Function(_LoadSuccess value) loadSuccess,
+    required TResult Function(_LoadFailure value) loadFailure,
   }) {
-    assert(initial != null);
-    assert(loadInProgress != null);
-    assert(loadSuccess != null);
-    assert(loadFailure != null);
     return loadInProgress(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initial(_Initial value),
-    Result loadInProgress(_LoadInProgress value),
-    Result loadSuccess(_LoadSuccess value),
-    Result loadFailure(_LoadFailure value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_LoadInProgress value)? loadInProgress,
+    TResult Function(_LoadSuccess value)? loadSuccess,
+    TResult Function(_LoadFailure value)? loadFailure,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (loadInProgress != null) {
       return loadInProgress(this);
     }
@@ -728,13 +741,17 @@ abstract class _LoadInProgress implements UserProfileState {
   const factory _LoadInProgress() = _$_LoadInProgress;
 }
 
+/// @nodoc
 abstract class _$LoadSuccessCopyWith<$Res> {
   factory _$LoadSuccessCopyWith(
           _LoadSuccess value, $Res Function(_LoadSuccess) then) =
       __$LoadSuccessCopyWithImpl<$Res>;
   $Res call({PartnerUser user});
+
+  $PartnerUserCopyWith<$Res> get user;
 }
 
+/// @nodoc
 class __$LoadSuccessCopyWithImpl<$Res>
     extends _$UserProfileStateCopyWithImpl<$Res>
     implements _$LoadSuccessCopyWith<$Res> {
@@ -747,16 +764,28 @@ class __$LoadSuccessCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object user = freezed,
+    Object? user = freezed,
   }) {
     return _then(_LoadSuccess(
-      user == freezed ? _value.user : user as PartnerUser,
+      user == freezed
+          ? _value.user
+          : user // ignore: cast_nullable_to_non_nullable
+              as PartnerUser,
     ));
+  }
+
+  @override
+  $PartnerUserCopyWith<$Res> get user {
+    return $PartnerUserCopyWith<$Res>(_value.user, (value) {
+      return _then(_value.copyWith(user: value));
+    });
   }
 }
 
+/// @nodoc
+
 class _$_LoadSuccess implements _LoadSuccess {
-  const _$_LoadSuccess(this.user) : assert(user != null);
+  const _$_LoadSuccess(this.user);
 
   @override
   final PartnerUser user;
@@ -778,35 +807,31 @@ class _$_LoadSuccess implements _LoadSuccess {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(user);
 
+  @JsonKey(ignore: true)
   @override
   _$LoadSuccessCopyWith<_LoadSuccess> get copyWith =>
       __$LoadSuccessCopyWithImpl<_LoadSuccess>(this, _$identity);
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initial(),
-    @required Result loadInProgress(),
-    @required Result loadSuccess(PartnerUser user),
-    @required Result loadFailure(UserManagementFailure failureFailure),
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loadInProgress,
+    required TResult Function(PartnerUser user) loadSuccess,
+    required TResult Function(UserManagementFailure failureFailure) loadFailure,
   }) {
-    assert(initial != null);
-    assert(loadInProgress != null);
-    assert(loadSuccess != null);
-    assert(loadFailure != null);
     return loadSuccess(user);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initial(),
-    Result loadInProgress(),
-    Result loadSuccess(PartnerUser user),
-    Result loadFailure(UserManagementFailure failureFailure),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loadInProgress,
+    TResult Function(PartnerUser user)? loadSuccess,
+    TResult Function(UserManagementFailure failureFailure)? loadFailure,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (loadSuccess != null) {
       return loadSuccess(user);
     }
@@ -815,29 +840,24 @@ class _$_LoadSuccess implements _LoadSuccess {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initial(_Initial value),
-    @required Result loadInProgress(_LoadInProgress value),
-    @required Result loadSuccess(_LoadSuccess value),
-    @required Result loadFailure(_LoadFailure value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_LoadInProgress value) loadInProgress,
+    required TResult Function(_LoadSuccess value) loadSuccess,
+    required TResult Function(_LoadFailure value) loadFailure,
   }) {
-    assert(initial != null);
-    assert(loadInProgress != null);
-    assert(loadSuccess != null);
-    assert(loadFailure != null);
     return loadSuccess(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initial(_Initial value),
-    Result loadInProgress(_LoadInProgress value),
-    Result loadSuccess(_LoadSuccess value),
-    Result loadFailure(_LoadFailure value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_LoadInProgress value)? loadInProgress,
+    TResult Function(_LoadSuccess value)? loadSuccess,
+    TResult Function(_LoadFailure value)? loadFailure,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (loadSuccess != null) {
       return loadSuccess(this);
     }
@@ -848,10 +868,13 @@ class _$_LoadSuccess implements _LoadSuccess {
 abstract class _LoadSuccess implements UserProfileState {
   const factory _LoadSuccess(PartnerUser user) = _$_LoadSuccess;
 
-  PartnerUser get user;
-  _$LoadSuccessCopyWith<_LoadSuccess> get copyWith;
+  PartnerUser get user => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$LoadSuccessCopyWith<_LoadSuccess> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
+/// @nodoc
 abstract class _$LoadFailureCopyWith<$Res> {
   factory _$LoadFailureCopyWith(
           _LoadFailure value, $Res Function(_LoadFailure) then) =
@@ -861,6 +884,7 @@ abstract class _$LoadFailureCopyWith<$Res> {
   $UserManagementFailureCopyWith<$Res> get failureFailure;
 }
 
+/// @nodoc
 class __$LoadFailureCopyWithImpl<$Res>
     extends _$UserProfileStateCopyWithImpl<$Res>
     implements _$LoadFailureCopyWith<$Res> {
@@ -873,28 +897,28 @@ class __$LoadFailureCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object failureFailure = freezed,
+    Object? failureFailure = freezed,
   }) {
     return _then(_LoadFailure(
       failureFailure == freezed
           ? _value.failureFailure
-          : failureFailure as UserManagementFailure,
+          : failureFailure // ignore: cast_nullable_to_non_nullable
+              as UserManagementFailure,
     ));
   }
 
   @override
   $UserManagementFailureCopyWith<$Res> get failureFailure {
-    if (_value.failureFailure == null) {
-      return null;
-    }
     return $UserManagementFailureCopyWith<$Res>(_value.failureFailure, (value) {
       return _then(_value.copyWith(failureFailure: value));
     });
   }
 }
 
+/// @nodoc
+
 class _$_LoadFailure implements _LoadFailure {
-  const _$_LoadFailure(this.failureFailure) : assert(failureFailure != null);
+  const _$_LoadFailure(this.failureFailure);
 
   @override
   final UserManagementFailure failureFailure;
@@ -918,35 +942,31 @@ class _$_LoadFailure implements _LoadFailure {
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(failureFailure);
 
+  @JsonKey(ignore: true)
   @override
   _$LoadFailureCopyWith<_LoadFailure> get copyWith =>
       __$LoadFailureCopyWithImpl<_LoadFailure>(this, _$identity);
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initial(),
-    @required Result loadInProgress(),
-    @required Result loadSuccess(PartnerUser user),
-    @required Result loadFailure(UserManagementFailure failureFailure),
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loadInProgress,
+    required TResult Function(PartnerUser user) loadSuccess,
+    required TResult Function(UserManagementFailure failureFailure) loadFailure,
   }) {
-    assert(initial != null);
-    assert(loadInProgress != null);
-    assert(loadSuccess != null);
-    assert(loadFailure != null);
     return loadFailure(failureFailure);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initial(),
-    Result loadInProgress(),
-    Result loadSuccess(PartnerUser user),
-    Result loadFailure(UserManagementFailure failureFailure),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loadInProgress,
+    TResult Function(PartnerUser user)? loadSuccess,
+    TResult Function(UserManagementFailure failureFailure)? loadFailure,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (loadFailure != null) {
       return loadFailure(failureFailure);
     }
@@ -955,29 +975,24 @@ class _$_LoadFailure implements _LoadFailure {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initial(_Initial value),
-    @required Result loadInProgress(_LoadInProgress value),
-    @required Result loadSuccess(_LoadSuccess value),
-    @required Result loadFailure(_LoadFailure value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_LoadInProgress value) loadInProgress,
+    required TResult Function(_LoadSuccess value) loadSuccess,
+    required TResult Function(_LoadFailure value) loadFailure,
   }) {
-    assert(initial != null);
-    assert(loadInProgress != null);
-    assert(loadSuccess != null);
-    assert(loadFailure != null);
     return loadFailure(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initial(_Initial value),
-    Result loadInProgress(_LoadInProgress value),
-    Result loadSuccess(_LoadSuccess value),
-    Result loadFailure(_LoadFailure value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_LoadInProgress value)? loadInProgress,
+    TResult Function(_LoadSuccess value)? loadSuccess,
+    TResult Function(_LoadFailure value)? loadFailure,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (loadFailure != null) {
       return loadFailure(this);
     }
@@ -989,6 +1004,9 @@ abstract class _LoadFailure implements UserProfileState {
   const factory _LoadFailure(UserManagementFailure failureFailure) =
       _$_LoadFailure;
 
-  UserManagementFailure get failureFailure;
-  _$LoadFailureCopyWith<_LoadFailure> get copyWith;
+  UserManagementFailure get failureFailure =>
+      throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$LoadFailureCopyWith<_LoadFailure> get copyWith =>
+      throw _privateConstructorUsedError;
 }

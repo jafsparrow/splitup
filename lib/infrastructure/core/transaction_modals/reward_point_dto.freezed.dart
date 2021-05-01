@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'reward_point_dto.dart';
 
@@ -8,31 +8,44 @@ part of 'reward_point_dto.dart';
 // **************************************************************************
 
 T _$identity<T>(T value) => value;
+
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
 RewardPointDto _$RewardPointDtoFromJson(Map<String, dynamic> json) {
   return _RewardPointDto.fromJson(json);
 }
 
+/// @nodoc
 class _$RewardPointDtoTearOff {
   const _$RewardPointDtoTearOff();
 
-// ignore: unused_element
-  _RewardPointDto call({Map<String, double> billFormulaBreakup}) {
+  _RewardPointDto call({required Map<String, double> billFormulaBreakup}) {
     return _RewardPointDto(
       billFormulaBreakup: billFormulaBreakup,
     );
   }
+
+  RewardPointDto fromJson(Map<String, Object> json) {
+    return RewardPointDto.fromJson(json);
+  }
 }
 
-// ignore: unused_element
+/// @nodoc
 const $RewardPointDto = _$RewardPointDtoTearOff();
 
+/// @nodoc
 mixin _$RewardPointDto {
-  Map<String, double> get billFormulaBreakup;
+  Map<String, double> get billFormulaBreakup =>
+      throw _privateConstructorUsedError;
 
-  Map<String, dynamic> toJson();
-  $RewardPointDtoCopyWith<RewardPointDto> get copyWith;
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $RewardPointDtoCopyWith<RewardPointDto> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
+/// @nodoc
 abstract class $RewardPointDtoCopyWith<$Res> {
   factory $RewardPointDtoCopyWith(
           RewardPointDto value, $Res Function(RewardPointDto) then) =
@@ -40,6 +53,7 @@ abstract class $RewardPointDtoCopyWith<$Res> {
   $Res call({Map<String, double> billFormulaBreakup});
 }
 
+/// @nodoc
 class _$RewardPointDtoCopyWithImpl<$Res>
     implements $RewardPointDtoCopyWith<$Res> {
   _$RewardPointDtoCopyWithImpl(this._value, this._then);
@@ -50,16 +64,18 @@ class _$RewardPointDtoCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object billFormulaBreakup = freezed,
+    Object? billFormulaBreakup = freezed,
   }) {
     return _then(_value.copyWith(
       billFormulaBreakup: billFormulaBreakup == freezed
           ? _value.billFormulaBreakup
-          : billFormulaBreakup as Map<String, double>,
+          : billFormulaBreakup // ignore: cast_nullable_to_non_nullable
+              as Map<String, double>,
     ));
   }
 }
 
+/// @nodoc
 abstract class _$RewardPointDtoCopyWith<$Res>
     implements $RewardPointDtoCopyWith<$Res> {
   factory _$RewardPointDtoCopyWith(
@@ -69,6 +85,7 @@ abstract class _$RewardPointDtoCopyWith<$Res>
   $Res call({Map<String, double> billFormulaBreakup});
 }
 
+/// @nodoc
 class __$RewardPointDtoCopyWithImpl<$Res>
     extends _$RewardPointDtoCopyWithImpl<$Res>
     implements _$RewardPointDtoCopyWith<$Res> {
@@ -81,19 +98,21 @@ class __$RewardPointDtoCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object billFormulaBreakup = freezed,
+    Object? billFormulaBreakup = freezed,
   }) {
     return _then(_RewardPointDto(
       billFormulaBreakup: billFormulaBreakup == freezed
           ? _value.billFormulaBreakup
-          : billFormulaBreakup as Map<String, double>,
+          : billFormulaBreakup // ignore: cast_nullable_to_non_nullable
+              as Map<String, double>,
     ));
   }
 }
 
+/// @nodoc
 @JsonSerializable()
 class _$_RewardPointDto extends _RewardPointDto {
-  const _$_RewardPointDto({this.billFormulaBreakup}) : super._();
+  const _$_RewardPointDto({required this.billFormulaBreakup}) : super._();
 
   factory _$_RewardPointDto.fromJson(Map<String, dynamic> json) =>
       _$_$_RewardPointDtoFromJson(json);
@@ -120,6 +139,7 @@ class _$_RewardPointDto extends _RewardPointDto {
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(billFormulaBreakup);
 
+  @JsonKey(ignore: true)
   @override
   _$RewardPointDtoCopyWith<_RewardPointDto> get copyWith =>
       __$RewardPointDtoCopyWithImpl<_RewardPointDto>(this, _$identity);
@@ -131,15 +151,18 @@ class _$_RewardPointDto extends _RewardPointDto {
 }
 
 abstract class _RewardPointDto extends RewardPointDto {
+  const factory _RewardPointDto(
+      {required Map<String, double> billFormulaBreakup}) = _$_RewardPointDto;
   const _RewardPointDto._() : super._();
-  const factory _RewardPointDto({Map<String, double> billFormulaBreakup}) =
-      _$_RewardPointDto;
 
   factory _RewardPointDto.fromJson(Map<String, dynamic> json) =
       _$_RewardPointDto.fromJson;
 
   @override
-  Map<String, double> get billFormulaBreakup;
+  Map<String, double> get billFormulaBreakup =>
+      throw _privateConstructorUsedError;
   @override
-  _$RewardPointDtoCopyWith<_RewardPointDto> get copyWith;
+  @JsonKey(ignore: true)
+  _$RewardPointDtoCopyWith<_RewardPointDto> get copyWith =>
+      throw _privateConstructorUsedError;
 }

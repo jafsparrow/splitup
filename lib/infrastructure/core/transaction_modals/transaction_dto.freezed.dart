@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'transaction_dto.dart';
 
@@ -8,23 +8,27 @@ part of 'transaction_dto.dart';
 // **************************************************************************
 
 T _$identity<T>(T value) => value;
+
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
 UserTransactionDto _$UserTransactionDtoFromJson(Map<String, dynamic> json) {
   return _UserTransactionDto.fromJson(json);
 }
 
+/// @nodoc
 class _$UserTransactionDtoTearOff {
   const _$UserTransactionDtoTearOff();
 
-// ignore: unused_element
   _UserTransactionDto call(
-      {@JsonKey(ignore: true) dynamic id,
-      String description = '',
-      String notes,
-      @ServerTimestampConverter() DateTime addedDate,
-      @required UserProfileDto salesUser,
-      @required UserProfileDto partnerUser,
-      @required RewardPointDto totalRewardBreakup,
-      @required double earnedTotalRewardForCurrentTransaction}) {
+      {@JsonKey(ignore: true) String? id,
+      String? description = '',
+      String? notes,
+      @ServerTimestampConverter() DateTime? addedDate,
+      required UserProfileDto salesUser,
+      required UserProfileDto partnerUser,
+      required RewardPointDto totalRewardBreakup,
+      required double earnedTotalRewardForCurrentTransaction}) {
     return _UserTransactionDto(
       id: id,
       description: description,
@@ -37,36 +41,45 @@ class _$UserTransactionDtoTearOff {
           earnedTotalRewardForCurrentTransaction,
     );
   }
+
+  UserTransactionDto fromJson(Map<String, Object> json) {
+    return UserTransactionDto.fromJson(json);
+  }
 }
 
-// ignore: unused_element
+/// @nodoc
 const $UserTransactionDto = _$UserTransactionDtoTearOff();
 
+/// @nodoc
 mixin _$UserTransactionDto {
   @JsonKey(ignore: true)
-  dynamic get id;
-  String get description;
-  String get notes;
+  String? get id => throw _privateConstructorUsedError;
+  String? get description => throw _privateConstructorUsedError;
+  String? get notes => throw _privateConstructorUsedError;
   @ServerTimestampConverter()
-  DateTime get addedDate;
-  UserProfileDto get salesUser;
-  UserProfileDto get partnerUser;
-  RewardPointDto get totalRewardBreakup;
-  double get earnedTotalRewardForCurrentTransaction;
+  DateTime? get addedDate => throw _privateConstructorUsedError;
+  UserProfileDto get salesUser => throw _privateConstructorUsedError;
+  UserProfileDto get partnerUser => throw _privateConstructorUsedError;
+  RewardPointDto get totalRewardBreakup => throw _privateConstructorUsedError;
+  double get earnedTotalRewardForCurrentTransaction =>
+      throw _privateConstructorUsedError;
 
-  Map<String, dynamic> toJson();
-  $UserTransactionDtoCopyWith<UserTransactionDto> get copyWith;
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $UserTransactionDtoCopyWith<UserTransactionDto> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
+/// @nodoc
 abstract class $UserTransactionDtoCopyWith<$Res> {
   factory $UserTransactionDtoCopyWith(
           UserTransactionDto value, $Res Function(UserTransactionDto) then) =
       _$UserTransactionDtoCopyWithImpl<$Res>;
   $Res call(
-      {@JsonKey(ignore: true) dynamic id,
-      String description,
-      String notes,
-      @ServerTimestampConverter() DateTime addedDate,
+      {@JsonKey(ignore: true) String? id,
+      String? description,
+      String? notes,
+      @ServerTimestampConverter() DateTime? addedDate,
       UserProfileDto salesUser,
       UserProfileDto partnerUser,
       RewardPointDto totalRewardBreakup,
@@ -77,6 +90,7 @@ abstract class $UserTransactionDtoCopyWith<$Res> {
   $RewardPointDtoCopyWith<$Res> get totalRewardBreakup;
 }
 
+/// @nodoc
 class _$UserTransactionDtoCopyWithImpl<$Res>
     implements $UserTransactionDtoCopyWith<$Res> {
   _$UserTransactionDtoCopyWithImpl(this._value, this._then);
@@ -87,42 +101,54 @@ class _$UserTransactionDtoCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object id = freezed,
-    Object description = freezed,
-    Object notes = freezed,
-    Object addedDate = freezed,
-    Object salesUser = freezed,
-    Object partnerUser = freezed,
-    Object totalRewardBreakup = freezed,
-    Object earnedTotalRewardForCurrentTransaction = freezed,
+    Object? id = freezed,
+    Object? description = freezed,
+    Object? notes = freezed,
+    Object? addedDate = freezed,
+    Object? salesUser = freezed,
+    Object? partnerUser = freezed,
+    Object? totalRewardBreakup = freezed,
+    Object? earnedTotalRewardForCurrentTransaction = freezed,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed ? _value.id : id as dynamic,
-      description:
-          description == freezed ? _value.description : description as String,
-      notes: notes == freezed ? _value.notes : notes as String,
-      addedDate:
-          addedDate == freezed ? _value.addedDate : addedDate as DateTime,
-      salesUser:
-          salesUser == freezed ? _value.salesUser : salesUser as UserProfileDto,
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      description: description == freezed
+          ? _value.description
+          : description // ignore: cast_nullable_to_non_nullable
+              as String?,
+      notes: notes == freezed
+          ? _value.notes
+          : notes // ignore: cast_nullable_to_non_nullable
+              as String?,
+      addedDate: addedDate == freezed
+          ? _value.addedDate
+          : addedDate // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      salesUser: salesUser == freezed
+          ? _value.salesUser
+          : salesUser // ignore: cast_nullable_to_non_nullable
+              as UserProfileDto,
       partnerUser: partnerUser == freezed
           ? _value.partnerUser
-          : partnerUser as UserProfileDto,
+          : partnerUser // ignore: cast_nullable_to_non_nullable
+              as UserProfileDto,
       totalRewardBreakup: totalRewardBreakup == freezed
           ? _value.totalRewardBreakup
-          : totalRewardBreakup as RewardPointDto,
+          : totalRewardBreakup // ignore: cast_nullable_to_non_nullable
+              as RewardPointDto,
       earnedTotalRewardForCurrentTransaction:
           earnedTotalRewardForCurrentTransaction == freezed
               ? _value.earnedTotalRewardForCurrentTransaction
-              : earnedTotalRewardForCurrentTransaction as double,
+              : earnedTotalRewardForCurrentTransaction // ignore: cast_nullable_to_non_nullable
+                  as double,
     ));
   }
 
   @override
   $UserProfileDtoCopyWith<$Res> get salesUser {
-    if (_value.salesUser == null) {
-      return null;
-    }
     return $UserProfileDtoCopyWith<$Res>(_value.salesUser, (value) {
       return _then(_value.copyWith(salesUser: value));
     });
@@ -130,9 +156,6 @@ class _$UserTransactionDtoCopyWithImpl<$Res>
 
   @override
   $UserProfileDtoCopyWith<$Res> get partnerUser {
-    if (_value.partnerUser == null) {
-      return null;
-    }
     return $UserProfileDtoCopyWith<$Res>(_value.partnerUser, (value) {
       return _then(_value.copyWith(partnerUser: value));
     });
@@ -140,15 +163,13 @@ class _$UserTransactionDtoCopyWithImpl<$Res>
 
   @override
   $RewardPointDtoCopyWith<$Res> get totalRewardBreakup {
-    if (_value.totalRewardBreakup == null) {
-      return null;
-    }
     return $RewardPointDtoCopyWith<$Res>(_value.totalRewardBreakup, (value) {
       return _then(_value.copyWith(totalRewardBreakup: value));
     });
   }
 }
 
+/// @nodoc
 abstract class _$UserTransactionDtoCopyWith<$Res>
     implements $UserTransactionDtoCopyWith<$Res> {
   factory _$UserTransactionDtoCopyWith(
@@ -156,10 +177,10 @@ abstract class _$UserTransactionDtoCopyWith<$Res>
       __$UserTransactionDtoCopyWithImpl<$Res>;
   @override
   $Res call(
-      {@JsonKey(ignore: true) dynamic id,
-      String description,
-      String notes,
-      @ServerTimestampConverter() DateTime addedDate,
+      {@JsonKey(ignore: true) String? id,
+      String? description,
+      String? notes,
+      @ServerTimestampConverter() DateTime? addedDate,
       UserProfileDto salesUser,
       UserProfileDto partnerUser,
       RewardPointDto totalRewardBreakup,
@@ -173,6 +194,7 @@ abstract class _$UserTransactionDtoCopyWith<$Res>
   $RewardPointDtoCopyWith<$Res> get totalRewardBreakup;
 }
 
+/// @nodoc
 class __$UserTransactionDtoCopyWithImpl<$Res>
     extends _$UserTransactionDtoCopyWithImpl<$Res>
     implements _$UserTransactionDtoCopyWith<$Res> {
@@ -185,38 +207,54 @@ class __$UserTransactionDtoCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object id = freezed,
-    Object description = freezed,
-    Object notes = freezed,
-    Object addedDate = freezed,
-    Object salesUser = freezed,
-    Object partnerUser = freezed,
-    Object totalRewardBreakup = freezed,
-    Object earnedTotalRewardForCurrentTransaction = freezed,
+    Object? id = freezed,
+    Object? description = freezed,
+    Object? notes = freezed,
+    Object? addedDate = freezed,
+    Object? salesUser = freezed,
+    Object? partnerUser = freezed,
+    Object? totalRewardBreakup = freezed,
+    Object? earnedTotalRewardForCurrentTransaction = freezed,
   }) {
     return _then(_UserTransactionDto(
-      id: id == freezed ? _value.id : id,
-      description:
-          description == freezed ? _value.description : description as String,
-      notes: notes == freezed ? _value.notes : notes as String,
-      addedDate:
-          addedDate == freezed ? _value.addedDate : addedDate as DateTime,
-      salesUser:
-          salesUser == freezed ? _value.salesUser : salesUser as UserProfileDto,
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      description: description == freezed
+          ? _value.description
+          : description // ignore: cast_nullable_to_non_nullable
+              as String?,
+      notes: notes == freezed
+          ? _value.notes
+          : notes // ignore: cast_nullable_to_non_nullable
+              as String?,
+      addedDate: addedDate == freezed
+          ? _value.addedDate
+          : addedDate // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      salesUser: salesUser == freezed
+          ? _value.salesUser
+          : salesUser // ignore: cast_nullable_to_non_nullable
+              as UserProfileDto,
       partnerUser: partnerUser == freezed
           ? _value.partnerUser
-          : partnerUser as UserProfileDto,
+          : partnerUser // ignore: cast_nullable_to_non_nullable
+              as UserProfileDto,
       totalRewardBreakup: totalRewardBreakup == freezed
           ? _value.totalRewardBreakup
-          : totalRewardBreakup as RewardPointDto,
+          : totalRewardBreakup // ignore: cast_nullable_to_non_nullable
+              as RewardPointDto,
       earnedTotalRewardForCurrentTransaction:
           earnedTotalRewardForCurrentTransaction == freezed
               ? _value.earnedTotalRewardForCurrentTransaction
-              : earnedTotalRewardForCurrentTransaction as double,
+              : earnedTotalRewardForCurrentTransaction // ignore: cast_nullable_to_non_nullable
+                  as double,
     ));
   }
 }
 
+/// @nodoc
 @JsonSerializable()
 class _$_UserTransactionDto extends _UserTransactionDto {
   const _$_UserTransactionDto(
@@ -224,31 +262,26 @@ class _$_UserTransactionDto extends _UserTransactionDto {
       this.description = '',
       this.notes,
       @ServerTimestampConverter() this.addedDate,
-      @required this.salesUser,
-      @required this.partnerUser,
-      @required this.totalRewardBreakup,
-      @required this.earnedTotalRewardForCurrentTransaction})
-      : assert(description != null),
-        assert(salesUser != null),
-        assert(partnerUser != null),
-        assert(totalRewardBreakup != null),
-        assert(earnedTotalRewardForCurrentTransaction != null),
-        super._();
+      required this.salesUser,
+      required this.partnerUser,
+      required this.totalRewardBreakup,
+      required this.earnedTotalRewardForCurrentTransaction})
+      : super._();
 
   factory _$_UserTransactionDto.fromJson(Map<String, dynamic> json) =>
       _$_$_UserTransactionDtoFromJson(json);
 
   @override
   @JsonKey(ignore: true)
-  final dynamic id;
+  final String? id;
   @JsonKey(defaultValue: '')
   @override
-  final String description;
+  final String? description;
   @override
-  final String notes;
+  final String? notes;
   @override
   @ServerTimestampConverter()
-  final DateTime addedDate;
+  final DateTime? addedDate;
   @override
   final UserProfileDto salesUser;
   @override
@@ -306,6 +339,7 @@ class _$_UserTransactionDto extends _UserTransactionDto {
       const DeepCollectionEquality()
           .hash(earnedTotalRewardForCurrentTransaction);
 
+  @JsonKey(ignore: true)
   @override
   _$UserTransactionDtoCopyWith<_UserTransactionDto> get copyWith =>
       __$UserTransactionDtoCopyWithImpl<_UserTransactionDto>(this, _$identity);
@@ -317,39 +351,42 @@ class _$_UserTransactionDto extends _UserTransactionDto {
 }
 
 abstract class _UserTransactionDto extends UserTransactionDto {
-  const _UserTransactionDto._() : super._();
   const factory _UserTransactionDto(
-          {@JsonKey(ignore: true) dynamic id,
-          String description,
-          String notes,
-          @ServerTimestampConverter() DateTime addedDate,
-          @required UserProfileDto salesUser,
-          @required UserProfileDto partnerUser,
-          @required RewardPointDto totalRewardBreakup,
-          @required double earnedTotalRewardForCurrentTransaction}) =
+          {@JsonKey(ignore: true) String? id,
+          String? description,
+          String? notes,
+          @ServerTimestampConverter() DateTime? addedDate,
+          required UserProfileDto salesUser,
+          required UserProfileDto partnerUser,
+          required RewardPointDto totalRewardBreakup,
+          required double earnedTotalRewardForCurrentTransaction}) =
       _$_UserTransactionDto;
+  const _UserTransactionDto._() : super._();
 
   factory _UserTransactionDto.fromJson(Map<String, dynamic> json) =
       _$_UserTransactionDto.fromJson;
 
   @override
   @JsonKey(ignore: true)
-  dynamic get id;
+  String? get id => throw _privateConstructorUsedError;
   @override
-  String get description;
+  String? get description => throw _privateConstructorUsedError;
   @override
-  String get notes;
+  String? get notes => throw _privateConstructorUsedError;
   @override
   @ServerTimestampConverter()
-  DateTime get addedDate;
+  DateTime? get addedDate => throw _privateConstructorUsedError;
   @override
-  UserProfileDto get salesUser;
+  UserProfileDto get salesUser => throw _privateConstructorUsedError;
   @override
-  UserProfileDto get partnerUser;
+  UserProfileDto get partnerUser => throw _privateConstructorUsedError;
   @override
-  RewardPointDto get totalRewardBreakup;
+  RewardPointDto get totalRewardBreakup => throw _privateConstructorUsedError;
   @override
-  double get earnedTotalRewardForCurrentTransaction;
+  double get earnedTotalRewardForCurrentTransaction =>
+      throw _privateConstructorUsedError;
   @override
-  _$UserTransactionDtoCopyWith<_UserTransactionDto> get copyWith;
+  @JsonKey(ignore: true)
+  _$UserTransactionDtoCopyWith<_UserTransactionDto> get copyWith =>
+      throw _privateConstructorUsedError;
 }

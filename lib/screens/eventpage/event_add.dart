@@ -6,6 +6,7 @@ import 'package:JCCommisionApp/shared/theme_helper.dart';
 import 'package:flutter/material.dart';
 
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
 
 typedef OnSaveCallback = Function(UserTransaction userTransaction);
 
@@ -15,16 +16,15 @@ class EventAdd extends StatefulWidget {
   final UserProfile partnerUser;
 
   const EventAdd({
-    Key key,
-    @required this.onSave,
-    @required this.loggedInUser,
-    @required this.partnerUser,
-  }) : super(key: key);
+    required this.onSave,
+    required this.loggedInUser,
+    required this.partnerUser,
+  });
 
   static Route route(
-      {OnSaveCallback onSave,
-      UserProfile loggedInUser,
-      UserProfile partnerUser}) {
+      {required OnSaveCallback onSave,
+     required UserProfile loggedInUser,
+     required UserProfile partnerUser}) {
     return MaterialPageRoute<void>(
         builder: (_) => EventAdd(
               onSave: onSave,
@@ -89,7 +89,7 @@ class _EventAddState extends State<EventAdd> {
     );
   }
 
-  Form buildEventAddForm({Map<String, double> formulaBreak}) {
+  Form buildEventAddForm({ Map<String, double>? formulaBreak}) {
     return Form(
       autovalidateMode: AutovalidateMode.onUserInteraction,
       child: Column(
@@ -99,10 +99,10 @@ class _EventAddState extends State<EventAdd> {
                 (item) => Padding(
                   padding: const EdgeInsets.all(10.0),
                   child: TextFormField(
-                    controller: controllerMaps[item]..text = '0',
+                    controller: controllerMaps[item]!..text = '0',
                     keyboardType: TextInputType.number,
                     validator: (value) {
-                      if (value.isNotEmpty) {
+                      if (value!.isNotEmpty) {
                         if (double.parse(value) > 100.0) {
                           return 'The Amount is large.';
                         }
@@ -125,7 +125,7 @@ class _EventAddState extends State<EventAdd> {
     );
   }
 
-  Widget buildSubmitButton({Map<String, double> formulaBreak}) {
+  Widget buildSubmitButton({Map<String, double>? formulaBreak}) {
     return RaisedButton(
       child: Text('Add new'),
       onPressed: () {
@@ -150,7 +150,7 @@ class _EventAddState extends State<EventAdd> {
                 );
 
                 RewardPoint rewards = RewardPoint(
-                    billFormulaBreakup: formulaBreak,
+                    billFormulaBreakup: formulaBreak!,
                     transactionBreakup: pointsEarned);
 
                 UserTransaction newTransaction = UserTransaction(

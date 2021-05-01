@@ -1,9 +1,8 @@
-import 'package:JCCommisionApp/application/auth/authentication_bloc.dart';
+
 import 'package:JCCommisionApp/application/auth/logged_user/logged_user_bloc.dart';
 import 'package:JCCommisionApp/application/transactions_bloc/transactions_bloc.dart';
 import 'package:JCCommisionApp/application/user_management/user_profile/user_profile_bloc.dart';
 import 'package:JCCommisionApp/domain/transactions/transaction.dart';
-import 'package:JCCommisionApp/presentation/user_management/add_partner/add_partner_user_ui.dart';
 import 'package:JCCommisionApp/screens/eventpage/event_add.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -14,7 +13,7 @@ import 'components/earned_points_display.dart';
 import 'components/promotions.dart';
 
 class HomePage extends StatelessWidget {
-  const HomePage({Key key}) : super(key: key);
+  const HomePage();
 
   static Route route() {
     return MaterialPageRoute<void>(builder: (_) => HomePage());
@@ -29,25 +28,25 @@ class HomePage extends StatelessWidget {
         userProfileState.maybeMap(
             loadSuccess: (state) {
               print('This should only be printed only once after restrat');
-              Navigator.push(
-                context,
-                EventAdd.route(
-                  loggedInUser: loggedUserBloc.state.maybeWhen(
-                      loggedUserLoaded: (userLoadedState) =>
-                          userLoadedState.loggedUserProfile,
-                      orElse: () {}),
-                  partnerUser: state.user.profile,
-                  onSave: (transaction) {
-                    getIt<TransactionsBloc>().add(
-                      TransactionsBlocEvent.addTransaction(
-                        companyId: '4cHZwNlWzW79PQ7U5dUf',
-                        transaction: transaction,
-                      ),
-                    );
-                    Navigator.pop(context);
-                  },
-                ),
-              );
+              // Navigator.push(
+              //   context,
+              //   EventAdd.route(
+              //     loggedInUser: loggedUserBloc.state.maybeWhen(
+              //         loggedUserLoaded: (userLoadedState) =>
+              //             userLoadedState.loggedUserProfile,
+              //         orElse: () {}),
+              //     partnerUser: state.user.profile,
+              //     onSave: (transaction) {
+              //       getIt<TransactionsBloc>().add(
+              //         TransactionsBlocEvent.addTransaction(
+              //           companyId: '4cHZwNlWzW79PQ7U5dUf',
+              //           transaction: transaction,
+              //         ),
+              //       );
+              //       Navigator.pop(context);
+              //     },
+              //   ),
+              // );
             },
             loadFailure: (_) {
               Scaffold.of(context).showSnackBar(
@@ -66,19 +65,21 @@ class HomePage extends StatelessWidget {
           actions: [
             PopupMenuButton<String>(
                 onSelected: (val) {
-                  if (val == 'addPartner') {
-                    Navigator.of(context).push(
-                      MaterialPageRoute(
-                        builder: (context) => AddPartnerUserScreen(),
-                      ),
-                    );
-                  }
+                  // NOTE: - as registering a user in firebase auto logs the new user. this feature is temporarily deffered
+                  // if (val == 'addPartner') {
+                  //   Navigator.of(context).push(
+                  //     MaterialPageRoute(
+                  //       builder: (context) => AddPartnerUserScreen(),
+                  //     ),
+                  //   );
+                  // }
                 },
                 itemBuilder: (context) => [
-                      PopupMenuItem(
-                        child: Text('Add new Partner'),
-                        value: 'addPartner',
-                      ),
+                  // NOTE: - as registering a user in firebase auto logs the new user. this feature is temporarily deffered
+                      // PopupMenuItem(
+                      //   child: Text('Add new Partner'),
+                      //   value: 'addPartner',
+                      // ),
                       PopupMenuItem(
                         child: Text('Deactivate User'),
                         value: 'Deactive',
@@ -165,7 +166,7 @@ class HomePage extends StatelessWidget {
     );
   }
 
-  Padding buildSectionHeading(BuildContext context, {String subText}) {
+  Padding buildSectionHeading(BuildContext context, {required String subText}) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 5),
       child: Text(
@@ -173,7 +174,7 @@ class HomePage extends StatelessWidget {
         style: Theme.of(context)
             .textTheme
             .headline6
-            .copyWith(fontWeight: FontWeight.w400),
+            // .copyWith(fontWeight: FontWeight.w400),
       ),
     );
   }

@@ -8,11 +8,11 @@ abstract class Organisation implements _$Organisation {
   const Organisation._();
 
   const factory Organisation({
-    @required String companyName,
-    @required String companyId,
-    @required String phoneNumber,
-    @required Map<String, String> address,
-    @required Map<String, double> pointsFormula,
-    @required LicensePlan licensePlan,
+    required String companyName,
+    required String companyId,
+    required String phoneNumber,
+    required Map<String, String> address,
+    required Map<String, double> pointsFormula,
+    required LicensePlan licensePlan,
   }) = _Organisation;
 }

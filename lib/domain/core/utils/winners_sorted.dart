@@ -8,9 +8,9 @@ class PartnerPointsAgregate {
   String uid;
 
   PartnerPointsAgregate(
-      {this.userName, this.uid, this.nickName, this.totalPointsForPeriod});
+      {required this.userName, required this.uid, required this.nickName, required this.totalPointsForPeriod});
 
-  copyWith({double points}) {
+  copyWith({required double points}) {
     PartnerPointsAgregate(
         totalPointsForPeriod: totalPointsForPeriod + points,
         userName: userName,
@@ -45,10 +45,10 @@ class WinnerSortUtil {
     transactions.forEach((transaction) {
       if (!mapResult.isNotEmpty) {
         if (mapResult.containsKey(transaction.partnerUser.uid)) {
-          PartnerPointsAgregate currentAgregate =
+          PartnerPointsAgregate? currentAgregate =
               mapResult[transaction.partnerUser.uid];
 
-          mapResult[transaction.partnerUser.uid] = currentAgregate.copyWith(
+          mapResult[transaction.partnerUser.uid] = currentAgregate?.copyWith(
               points: transaction.earnedTotalRewardForCurrentTransaction);
         } else {
           UserProfile partnerUser = transaction.partnerUser;

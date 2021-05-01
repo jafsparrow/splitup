@@ -14,14 +14,14 @@ abstract class UserTransactionDto implements _$UserTransactionDto {
   const UserTransactionDto._();
 
   const factory UserTransactionDto(
-          {@JsonKey(ignore: true) id,
-          @Default('') String description,
-          String notes,
-          @ServerTimestampConverter() DateTime addedDate,
-          @required UserProfileDto salesUser,
-          @required UserProfileDto partnerUser,
-          @required RewardPointDto totalRewardBreakup,
-          @required double earnedTotalRewardForCurrentTransaction}) =
+          {@JsonKey(ignore: true) String? id,
+          @Default('') String? description,
+          String? notes,
+          @ServerTimestampConverter() DateTime? addedDate,
+          required UserProfileDto salesUser,
+          required UserProfileDto partnerUser,
+          required RewardPointDto totalRewardBreakup,
+          required double earnedTotalRewardForCurrentTransaction}) =
       _UserTransactionDto;
 
   factory UserTransactionDto.fromDomain(UserTransaction transaction) {
@@ -40,20 +40,20 @@ abstract class UserTransactionDto implements _$UserTransactionDto {
 
   UserTransaction toDomain() {
     return UserTransaction(
-        id: id,
+        id: id!,
         partnerUser: partnerUser.toDomain(),
         salesUser: salesUser.toDomain(),
         totalRewardBreakup: totalRewardBreakup.toDomain(),
         earnedTotalRewardForCurrentTransaction:
             earnedTotalRewardForCurrentTransaction,
-        notes: notes,
-        addedDate: addedDate);
+        notes: notes!,
+        addedDate: addedDate!);
   }
 
   factory UserTransactionDto.fromJson(Map<String, dynamic> json) =>
       _$UserTransactionDtoFromJson(json);
 
   factory UserTransactionDto.fromFirestore(DocumentSnapshot doc) {
-    return UserTransactionDto.fromJson(doc.data()).copyWith(id: doc.id);
+    return UserTransactionDto.fromJson(doc.data()!).copyWith(id: doc.id);
   }
 }

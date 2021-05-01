@@ -18,5 +18,5 @@ abstract class IUserManagement {
   Future<Either<UserManagementFailure, UserProfile>> updatePartnerUser(
       UserProfile newPartnerUser);
 
-  Future<List<PartnerUser>> getListOfUsers(String userType);
+  Future<Either<UserManagementFailure, List<PartnerUser>> > getPartnerUsers({String companyId});
 }

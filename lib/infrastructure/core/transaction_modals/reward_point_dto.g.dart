@@ -9,9 +9,7 @@ part of 'reward_point_dto.dart';
 _$_RewardPointDto _$_$_RewardPointDtoFromJson(Map<String, dynamic> json) {
   return _$_RewardPointDto(
     billFormulaBreakup:
-        (json['billFormulaBreakup'] as Map<String, dynamic>)?.map(
-      (k, e) => MapEntry(k, (e as num)?.toDouble()),
-    ),
+        Map<String, double>.from(json['billFormulaBreakup'] as Map),
   );
 }
 

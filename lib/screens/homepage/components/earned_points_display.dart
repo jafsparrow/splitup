@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 class EarnedPoints extends StatelessWidget {
   final UserTransaction currentTransaction;
 
-  const EarnedPoints({Key key, this.currentTransaction}) : super(key: key);
+  const EarnedPoints({required this.currentTransaction});
   @override
   Widget build(BuildContext context) {
     return Container(

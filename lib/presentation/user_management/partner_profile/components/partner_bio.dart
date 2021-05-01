@@ -3,9 +3,8 @@ import 'package:flutter/material.dart';
 
 class PartnerUserBio extends StatelessWidget {
   const PartnerUserBio({
-    Key key,
-    @required this.partnerUser,
-  }) : super(key: key);
+    required this.partnerUser,
+  });
 
   final UserProfile partnerUser;
 

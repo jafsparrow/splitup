@@ -8,8 +8,8 @@ abstract class OrganisationUserAuthorisation
   const OrganisationUserAuthorisation._();
 
   const factory OrganisationUserAuthorisation({
-    @required String userRefId,
-    @required bool isSalesUser,
-    @required bool isPartnerUser,
+    required String userRefId,
+    required bool isSalesUser,
+    required bool isPartnerUser,
   }) = _OrganisationUserAuthorisation;
 }

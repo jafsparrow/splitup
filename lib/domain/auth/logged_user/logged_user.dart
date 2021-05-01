@@ -6,10 +6,10 @@ part 'logged_user.freezed.dart';
 @freezed
 abstract class LoggedUser implements _$LoggedUser {
   const factory LoggedUser({
-    @required String uid,
-    @required String companyId,
-    @required bool isSalesUser,
-    @required UserProfile loggedUserProfile
+    required String uid,
+    required String companyId,
+    required bool isSalesUser,
+    required UserProfile loggedUserProfile
     
   }) = _LoggedUser;
 }

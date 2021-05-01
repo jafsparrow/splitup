@@ -5,8 +5,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 class BarcodeCard extends StatelessWidget {
   final UserBarcode assignedBarcode;
-  const BarcodeCard({Key key, @required this.assignedBarcode})
-      : super(key: key);
+  const BarcodeCard({required this.assignedBarcode})
+      ;
 
   @override
   Widget build(BuildContext context) {

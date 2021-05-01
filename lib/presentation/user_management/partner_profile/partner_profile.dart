@@ -2,6 +2,7 @@ import 'dart:math';
 
 import 'package:JCCommisionApp/application/auth/authentication_bloc.dart';
 import 'package:JCCommisionApp/application/auth/logged_user/logged_user_bloc.dart';
+import 'package:JCCommisionApp/application/user_management/list_users/partner_list_bloc.dart';
 import 'package:JCCommisionApp/application/user_management/partner_barcode_management/partner_barcode_management_bloc.dart';
 import 'package:JCCommisionApp/application/user_management/user_transactions/user_transactions_bloc.dart';
 import 'package:JCCommisionApp/domain/user_management/user_profile.dart';
@@ -20,7 +21,7 @@ import 'package:qrscan/qrscan.dart' as scanner;
 class PartnerProfile extends StatelessWidget {
   final UserProfile partnerUser;
 
-  const PartnerProfile({Key key, @required this.partnerUser}) : super(key: key);
+  const PartnerProfile({ required this.partnerUser});
   @override
   Widget build(BuildContext context) {
     // final authBloc = BlocProvider.of<AuthenticationBloc>(context); // this will be used later on..
@@ -53,8 +54,8 @@ class PartnerProfile extends StatelessWidget {
 
 class DefaultTabControllerWidget extends StatelessWidget {
   final UserProfile partnerUser;
-  const DefaultTabControllerWidget({Key key, this.partnerUser})
-      : super(key: key);
+  const DefaultTabControllerWidget({required this.partnerUser})
+      ;
 
   @override
   Widget build(BuildContext context) {
@@ -115,17 +116,17 @@ class DefaultTabControllerWidget extends StatelessWidget {
                     const String companyID = '4cHZwNlWzW79PQ7U5dUf';
                     // UserProfile loggedInUserProfile = authBloc.state.user;
 
-                    partnerBarcodeManagementbloc.add(
-                      PartnerBarcodeManagementEvent.assignedNewBarcode(
-                        barcode:
-                            cameraScanResult, // Random().nextDouble().toString(),
-                        companyId: companyID,
-                        loggedInUser: loggedUserBloc.state.maybeWhen(
-                            loggedUserLoaded: (userLoadedState) =>
-                                userLoadedState.loggedUserProfile,
-                            orElse: null),
-                      ),
-                    );
+                    // partnerBarcodeManagementbloc.add(
+                    //   PartnerBarcodeManagementEvent.assignedNewBarcode(
+                    //     barcode:
+                    //         cameraScanResult, // Random().nextDouble().toString(),
+                    //     companyId: companyID,
+                    //     loggedInUser: loggedUserBloc.state.maybeWhen(
+                    //         loggedUserLoaded: (userLoadedState) =>
+                    //             userLoadedState.loggedUserProfile, orElse: () { return  },
+                    //        ),
+                    //   ),
+                    // );
                   } else {
                     // show some message.
                   }

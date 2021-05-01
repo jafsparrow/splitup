@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'promotion_bloc.dart';
 
@@ -9,45 +9,55 @@ part of 'promotion_bloc.dart';
 
 T _$identity<T>(T value) => value;
 
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
+/// @nodoc
 class _$PromotionEventTearOff {
   const _$PromotionEventTearOff();
 
-// ignore: unused_element
   _Load load() {
     return const _Load();
   }
 }
 
-// ignore: unused_element
+/// @nodoc
 const $PromotionEvent = _$PromotionEventTearOff();
 
+/// @nodoc
 mixin _$PromotionEvent {
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result load(),
-  });
+  TResult when<TResult extends Object?>({
+    required TResult Function() load,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result load(),
-    @required Result orElse(),
-  });
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? load,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result load(_Load value),
-  });
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Load value) load,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result load(_Load value),
-    @required Result orElse(),
-  });
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Load value)? load,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
+/// @nodoc
 abstract class $PromotionEventCopyWith<$Res> {
   factory $PromotionEventCopyWith(
           PromotionEvent value, $Res Function(PromotionEvent) then) =
       _$PromotionEventCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class _$PromotionEventCopyWithImpl<$Res>
     implements $PromotionEventCopyWith<$Res> {
   _$PromotionEventCopyWithImpl(this._value, this._then);
@@ -57,11 +67,13 @@ class _$PromotionEventCopyWithImpl<$Res>
   final $Res Function(PromotionEvent) _then;
 }
 
+/// @nodoc
 abstract class _$LoadCopyWith<$Res> {
   factory _$LoadCopyWith(_Load value, $Res Function(_Load) then) =
       __$LoadCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class __$LoadCopyWithImpl<$Res> extends _$PromotionEventCopyWithImpl<$Res>
     implements _$LoadCopyWith<$Res> {
   __$LoadCopyWithImpl(_Load _value, $Res Function(_Load) _then)
@@ -70,6 +82,8 @@ class __$LoadCopyWithImpl<$Res> extends _$PromotionEventCopyWithImpl<$Res>
   @override
   _Load get _value => super._value as _Load;
 }
+
+/// @nodoc
 
 class _$_Load implements _Load {
   const _$_Load();
@@ -89,20 +103,18 @@ class _$_Load implements _Load {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result load(),
+  TResult when<TResult extends Object?>({
+    required TResult Function() load,
   }) {
-    assert(load != null);
     return load();
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result load(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? load,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (load != null) {
       return load();
     }
@@ -111,20 +123,18 @@ class _$_Load implements _Load {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result load(_Load value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Load value) load,
   }) {
-    assert(load != null);
     return load(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result load(_Load value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Load value)? load,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (load != null) {
       return load(this);
     }
@@ -136,27 +146,24 @@ abstract class _Load implements PromotionEvent {
   const factory _Load() = _$_Load;
 }
 
+/// @nodoc
 class _$PromotionStateTearOff {
   const _$PromotionStateTearOff();
 
-// ignore: unused_element
   _Initial initial() {
     return const _Initial();
   }
 
-// ignore: unused_element
   _LoadInProgress loadInProgress() {
     return const _LoadInProgress();
   }
 
-// ignore: unused_element
   _LoadSuccess loadSuccess(List<Promotion> promotions) {
     return _LoadSuccess(
       promotions,
     );
   }
 
-// ignore: unused_element
   _LoadFailure loadFailure(PromotionFailure failureFailure) {
     return _LoadFailure(
       failureFailure,
@@ -164,48 +171,55 @@ class _$PromotionStateTearOff {
   }
 }
 
-// ignore: unused_element
+/// @nodoc
 const $PromotionState = _$PromotionStateTearOff();
 
+/// @nodoc
 mixin _$PromotionState {
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initial(),
-    @required Result loadInProgress(),
-    @required Result loadSuccess(List<Promotion> promotions),
-    @required Result loadFailure(PromotionFailure failureFailure),
-  });
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loadInProgress,
+    required TResult Function(List<Promotion> promotions) loadSuccess,
+    required TResult Function(PromotionFailure failureFailure) loadFailure,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initial(),
-    Result loadInProgress(),
-    Result loadSuccess(List<Promotion> promotions),
-    Result loadFailure(PromotionFailure failureFailure),
-    @required Result orElse(),
-  });
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loadInProgress,
+    TResult Function(List<Promotion> promotions)? loadSuccess,
+    TResult Function(PromotionFailure failureFailure)? loadFailure,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initial(_Initial value),
-    @required Result loadInProgress(_LoadInProgress value),
-    @required Result loadSuccess(_LoadSuccess value),
-    @required Result loadFailure(_LoadFailure value),
-  });
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_LoadInProgress value) loadInProgress,
+    required TResult Function(_LoadSuccess value) loadSuccess,
+    required TResult Function(_LoadFailure value) loadFailure,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initial(_Initial value),
-    Result loadInProgress(_LoadInProgress value),
-    Result loadSuccess(_LoadSuccess value),
-    Result loadFailure(_LoadFailure value),
-    @required Result orElse(),
-  });
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_LoadInProgress value)? loadInProgress,
+    TResult Function(_LoadSuccess value)? loadSuccess,
+    TResult Function(_LoadFailure value)? loadFailure,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
+/// @nodoc
 abstract class $PromotionStateCopyWith<$Res> {
   factory $PromotionStateCopyWith(
           PromotionState value, $Res Function(PromotionState) then) =
       _$PromotionStateCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class _$PromotionStateCopyWithImpl<$Res>
     implements $PromotionStateCopyWith<$Res> {
   _$PromotionStateCopyWithImpl(this._value, this._then);
@@ -215,11 +229,13 @@ class _$PromotionStateCopyWithImpl<$Res>
   final $Res Function(PromotionState) _then;
 }
 
+/// @nodoc
 abstract class _$InitialCopyWith<$Res> {
   factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) =
       __$InitialCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class __$InitialCopyWithImpl<$Res> extends _$PromotionStateCopyWithImpl<$Res>
     implements _$InitialCopyWith<$Res> {
   __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then)
@@ -228,6 +244,8 @@ class __$InitialCopyWithImpl<$Res> extends _$PromotionStateCopyWithImpl<$Res>
   @override
   _Initial get _value => super._value as _Initial;
 }
+
+/// @nodoc
 
 class _$_Initial implements _Initial {
   const _$_Initial();
@@ -247,29 +265,24 @@ class _$_Initial implements _Initial {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initial(),
-    @required Result loadInProgress(),
-    @required Result loadSuccess(List<Promotion> promotions),
-    @required Result loadFailure(PromotionFailure failureFailure),
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loadInProgress,
+    required TResult Function(List<Promotion> promotions) loadSuccess,
+    required TResult Function(PromotionFailure failureFailure) loadFailure,
   }) {
-    assert(initial != null);
-    assert(loadInProgress != null);
-    assert(loadSuccess != null);
-    assert(loadFailure != null);
     return initial();
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initial(),
-    Result loadInProgress(),
-    Result loadSuccess(List<Promotion> promotions),
-    Result loadFailure(PromotionFailure failureFailure),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loadInProgress,
+    TResult Function(List<Promotion> promotions)? loadSuccess,
+    TResult Function(PromotionFailure failureFailure)? loadFailure,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (initial != null) {
       return initial();
     }
@@ -278,29 +291,24 @@ class _$_Initial implements _Initial {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initial(_Initial value),
-    @required Result loadInProgress(_LoadInProgress value),
-    @required Result loadSuccess(_LoadSuccess value),
-    @required Result loadFailure(_LoadFailure value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_LoadInProgress value) loadInProgress,
+    required TResult Function(_LoadSuccess value) loadSuccess,
+    required TResult Function(_LoadFailure value) loadFailure,
   }) {
-    assert(initial != null);
-    assert(loadInProgress != null);
-    assert(loadSuccess != null);
-    assert(loadFailure != null);
     return initial(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initial(_Initial value),
-    Result loadInProgress(_LoadInProgress value),
-    Result loadSuccess(_LoadSuccess value),
-    Result loadFailure(_LoadFailure value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_LoadInProgress value)? loadInProgress,
+    TResult Function(_LoadSuccess value)? loadSuccess,
+    TResult Function(_LoadFailure value)? loadFailure,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (initial != null) {
       return initial(this);
     }
@@ -312,12 +320,14 @@ abstract class _Initial implements PromotionState {
   const factory _Initial() = _$_Initial;
 }
 
+/// @nodoc
 abstract class _$LoadInProgressCopyWith<$Res> {
   factory _$LoadInProgressCopyWith(
           _LoadInProgress value, $Res Function(_LoadInProgress) then) =
       __$LoadInProgressCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class __$LoadInProgressCopyWithImpl<$Res>
     extends _$PromotionStateCopyWithImpl<$Res>
     implements _$LoadInProgressCopyWith<$Res> {
@@ -328,6 +338,8 @@ class __$LoadInProgressCopyWithImpl<$Res>
   @override
   _LoadInProgress get _value => super._value as _LoadInProgress;
 }
+
+/// @nodoc
 
 class _$_LoadInProgress implements _LoadInProgress {
   const _$_LoadInProgress();
@@ -347,29 +359,24 @@ class _$_LoadInProgress implements _LoadInProgress {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initial(),
-    @required Result loadInProgress(),
-    @required Result loadSuccess(List<Promotion> promotions),
-    @required Result loadFailure(PromotionFailure failureFailure),
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loadInProgress,
+    required TResult Function(List<Promotion> promotions) loadSuccess,
+    required TResult Function(PromotionFailure failureFailure) loadFailure,
   }) {
-    assert(initial != null);
-    assert(loadInProgress != null);
-    assert(loadSuccess != null);
-    assert(loadFailure != null);
     return loadInProgress();
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initial(),
-    Result loadInProgress(),
-    Result loadSuccess(List<Promotion> promotions),
-    Result loadFailure(PromotionFailure failureFailure),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loadInProgress,
+    TResult Function(List<Promotion> promotions)? loadSuccess,
+    TResult Function(PromotionFailure failureFailure)? loadFailure,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (loadInProgress != null) {
       return loadInProgress();
     }
@@ -378,29 +385,24 @@ class _$_LoadInProgress implements _LoadInProgress {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initial(_Initial value),
-    @required Result loadInProgress(_LoadInProgress value),
-    @required Result loadSuccess(_LoadSuccess value),
-    @required Result loadFailure(_LoadFailure value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_LoadInProgress value) loadInProgress,
+    required TResult Function(_LoadSuccess value) loadSuccess,
+    required TResult Function(_LoadFailure value) loadFailure,
   }) {
-    assert(initial != null);
-    assert(loadInProgress != null);
-    assert(loadSuccess != null);
-    assert(loadFailure != null);
     return loadInProgress(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initial(_Initial value),
-    Result loadInProgress(_LoadInProgress value),
-    Result loadSuccess(_LoadSuccess value),
-    Result loadFailure(_LoadFailure value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_LoadInProgress value)? loadInProgress,
+    TResult Function(_LoadSuccess value)? loadSuccess,
+    TResult Function(_LoadFailure value)? loadFailure,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (loadInProgress != null) {
       return loadInProgress(this);
     }
@@ -412,6 +414,7 @@ abstract class _LoadInProgress implements PromotionState {
   const factory _LoadInProgress() = _$_LoadInProgress;
 }
 
+/// @nodoc
 abstract class _$LoadSuccessCopyWith<$Res> {
   factory _$LoadSuccessCopyWith(
           _LoadSuccess value, $Res Function(_LoadSuccess) then) =
@@ -419,6 +422,7 @@ abstract class _$LoadSuccessCopyWith<$Res> {
   $Res call({List<Promotion> promotions});
 }
 
+/// @nodoc
 class __$LoadSuccessCopyWithImpl<$Res>
     extends _$PromotionStateCopyWithImpl<$Res>
     implements _$LoadSuccessCopyWith<$Res> {
@@ -431,16 +435,21 @@ class __$LoadSuccessCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object promotions = freezed,
+    Object? promotions = freezed,
   }) {
     return _then(_LoadSuccess(
-      promotions == freezed ? _value.promotions : promotions as List<Promotion>,
+      promotions == freezed
+          ? _value.promotions
+          : promotions // ignore: cast_nullable_to_non_nullable
+              as List<Promotion>,
     ));
   }
 }
 
+/// @nodoc
+
 class _$_LoadSuccess implements _LoadSuccess {
-  const _$_LoadSuccess(this.promotions) : assert(promotions != null);
+  const _$_LoadSuccess(this.promotions);
 
   @override
   final List<Promotion> promotions;
@@ -463,35 +472,31 @@ class _$_LoadSuccess implements _LoadSuccess {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(promotions);
 
+  @JsonKey(ignore: true)
   @override
   _$LoadSuccessCopyWith<_LoadSuccess> get copyWith =>
       __$LoadSuccessCopyWithImpl<_LoadSuccess>(this, _$identity);
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initial(),
-    @required Result loadInProgress(),
-    @required Result loadSuccess(List<Promotion> promotions),
-    @required Result loadFailure(PromotionFailure failureFailure),
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loadInProgress,
+    required TResult Function(List<Promotion> promotions) loadSuccess,
+    required TResult Function(PromotionFailure failureFailure) loadFailure,
   }) {
-    assert(initial != null);
-    assert(loadInProgress != null);
-    assert(loadSuccess != null);
-    assert(loadFailure != null);
     return loadSuccess(promotions);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initial(),
-    Result loadInProgress(),
-    Result loadSuccess(List<Promotion> promotions),
-    Result loadFailure(PromotionFailure failureFailure),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loadInProgress,
+    TResult Function(List<Promotion> promotions)? loadSuccess,
+    TResult Function(PromotionFailure failureFailure)? loadFailure,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (loadSuccess != null) {
       return loadSuccess(promotions);
     }
@@ -500,29 +505,24 @@ class _$_LoadSuccess implements _LoadSuccess {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initial(_Initial value),
-    @required Result loadInProgress(_LoadInProgress value),
-    @required Result loadSuccess(_LoadSuccess value),
-    @required Result loadFailure(_LoadFailure value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_LoadInProgress value) loadInProgress,
+    required TResult Function(_LoadSuccess value) loadSuccess,
+    required TResult Function(_LoadFailure value) loadFailure,
   }) {
-    assert(initial != null);
-    assert(loadInProgress != null);
-    assert(loadSuccess != null);
-    assert(loadFailure != null);
     return loadSuccess(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initial(_Initial value),
-    Result loadInProgress(_LoadInProgress value),
-    Result loadSuccess(_LoadSuccess value),
-    Result loadFailure(_LoadFailure value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_LoadInProgress value)? loadInProgress,
+    TResult Function(_LoadSuccess value)? loadSuccess,
+    TResult Function(_LoadFailure value)? loadFailure,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (loadSuccess != null) {
       return loadSuccess(this);
     }
@@ -533,10 +533,13 @@ class _$_LoadSuccess implements _LoadSuccess {
 abstract class _LoadSuccess implements PromotionState {
   const factory _LoadSuccess(List<Promotion> promotions) = _$_LoadSuccess;
 
-  List<Promotion> get promotions;
-  _$LoadSuccessCopyWith<_LoadSuccess> get copyWith;
+  List<Promotion> get promotions => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$LoadSuccessCopyWith<_LoadSuccess> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
+/// @nodoc
 abstract class _$LoadFailureCopyWith<$Res> {
   factory _$LoadFailureCopyWith(
           _LoadFailure value, $Res Function(_LoadFailure) then) =
@@ -546,6 +549,7 @@ abstract class _$LoadFailureCopyWith<$Res> {
   $PromotionFailureCopyWith<$Res> get failureFailure;
 }
 
+/// @nodoc
 class __$LoadFailureCopyWithImpl<$Res>
     extends _$PromotionStateCopyWithImpl<$Res>
     implements _$LoadFailureCopyWith<$Res> {
@@ -558,28 +562,28 @@ class __$LoadFailureCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object failureFailure = freezed,
+    Object? failureFailure = freezed,
   }) {
     return _then(_LoadFailure(
       failureFailure == freezed
           ? _value.failureFailure
-          : failureFailure as PromotionFailure,
+          : failureFailure // ignore: cast_nullable_to_non_nullable
+              as PromotionFailure,
     ));
   }
 
   @override
   $PromotionFailureCopyWith<$Res> get failureFailure {
-    if (_value.failureFailure == null) {
-      return null;
-    }
     return $PromotionFailureCopyWith<$Res>(_value.failureFailure, (value) {
       return _then(_value.copyWith(failureFailure: value));
     });
   }
 }
 
+/// @nodoc
+
 class _$_LoadFailure implements _LoadFailure {
-  const _$_LoadFailure(this.failureFailure) : assert(failureFailure != null);
+  const _$_LoadFailure(this.failureFailure);
 
   @override
   final PromotionFailure failureFailure;
@@ -603,35 +607,31 @@ class _$_LoadFailure implements _LoadFailure {
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(failureFailure);
 
+  @JsonKey(ignore: true)
   @override
   _$LoadFailureCopyWith<_LoadFailure> get copyWith =>
       __$LoadFailureCopyWithImpl<_LoadFailure>(this, _$identity);
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initial(),
-    @required Result loadInProgress(),
-    @required Result loadSuccess(List<Promotion> promotions),
-    @required Result loadFailure(PromotionFailure failureFailure),
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loadInProgress,
+    required TResult Function(List<Promotion> promotions) loadSuccess,
+    required TResult Function(PromotionFailure failureFailure) loadFailure,
   }) {
-    assert(initial != null);
-    assert(loadInProgress != null);
-    assert(loadSuccess != null);
-    assert(loadFailure != null);
     return loadFailure(failureFailure);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initial(),
-    Result loadInProgress(),
-    Result loadSuccess(List<Promotion> promotions),
-    Result loadFailure(PromotionFailure failureFailure),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loadInProgress,
+    TResult Function(List<Promotion> promotions)? loadSuccess,
+    TResult Function(PromotionFailure failureFailure)? loadFailure,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (loadFailure != null) {
       return loadFailure(failureFailure);
     }
@@ -640,29 +640,24 @@ class _$_LoadFailure implements _LoadFailure {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initial(_Initial value),
-    @required Result loadInProgress(_LoadInProgress value),
-    @required Result loadSuccess(_LoadSuccess value),
-    @required Result loadFailure(_LoadFailure value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_LoadInProgress value) loadInProgress,
+    required TResult Function(_LoadSuccess value) loadSuccess,
+    required TResult Function(_LoadFailure value) loadFailure,
   }) {
-    assert(initial != null);
-    assert(loadInProgress != null);
-    assert(loadSuccess != null);
-    assert(loadFailure != null);
     return loadFailure(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initial(_Initial value),
-    Result loadInProgress(_LoadInProgress value),
-    Result loadSuccess(_LoadSuccess value),
-    Result loadFailure(_LoadFailure value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_LoadInProgress value)? loadInProgress,
+    TResult Function(_LoadSuccess value)? loadSuccess,
+    TResult Function(_LoadFailure value)? loadFailure,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (loadFailure != null) {
       return loadFailure(this);
     }
@@ -673,6 +668,8 @@ class _$_LoadFailure implements _LoadFailure {
 abstract class _LoadFailure implements PromotionState {
   const factory _LoadFailure(PromotionFailure failureFailure) = _$_LoadFailure;
 
-  PromotionFailure get failureFailure;
-  _$LoadFailureCopyWith<_LoadFailure> get copyWith;
+  PromotionFailure get failureFailure => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$LoadFailureCopyWith<_LoadFailure> get copyWith =>
+      throw _privateConstructorUsedError;
 }

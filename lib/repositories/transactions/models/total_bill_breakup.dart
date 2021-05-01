@@ -16,7 +16,7 @@ class TotalReward {
   getTotalRewardPoints() {
     double totalRewards = 0;
     billSubTypeBreakups.forEach((key, value) {
-      totalRewards = totalRewards + billSubTypeBreakups[key];
+      totalRewards = totalRewards + billSubTypeBreakups[key]!;
     });
 
     // print('total now is $totalRewards');

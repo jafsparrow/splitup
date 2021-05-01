@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class PartnerActivities extends StatelessWidget {
-  const PartnerActivities({Key key}) : super(key: key);
+  const PartnerActivities();
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +19,7 @@ class PartnerActivities extends StatelessWidget {
             'Recent Activities',
             style: Theme.of(context)
                 .textTheme
-                .headline6
+                .headline6!
                 .copyWith(fontWeight: FontWeight.w300),
           ),
           SizedBox(

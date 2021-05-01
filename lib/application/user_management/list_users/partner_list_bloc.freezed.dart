@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
-part of 'monthly_leaders_bloc.dart';
+part of 'partner_list_bloc.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -13,68 +13,68 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
-class _$MonthlyLeadersEventTearOff {
-  const _$MonthlyLeadersEventTearOff();
+class _$PartnerListEventTearOff {
+  const _$PartnerListEventTearOff();
 
   _Started started() {
     return const _Started();
   }
 
-  _LoadMonthlyLeadBoard loadMonthlyLeadBoard({required String companyId}) {
-    return _LoadMonthlyLeadBoard(
+  _LoadPartners loadPartners({required String companyId}) {
+    return _LoadPartners(
       companyId: companyId,
     );
   }
 }
 
 /// @nodoc
-const $MonthlyLeadersEvent = _$MonthlyLeadersEventTearOff();
+const $PartnerListEvent = _$PartnerListEventTearOff();
 
 /// @nodoc
-mixin _$MonthlyLeadersEvent {
+mixin _$PartnerListEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function(String companyId) loadMonthlyLeadBoard,
+    required TResult Function(String companyId) loadPartners,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function(String companyId)? loadMonthlyLeadBoard,
+    TResult Function(String companyId)? loadPartners,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
-    required TResult Function(_LoadMonthlyLeadBoard value) loadMonthlyLeadBoard,
+    required TResult Function(_LoadPartners value) loadPartners,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
-    TResult Function(_LoadMonthlyLeadBoard value)? loadMonthlyLeadBoard,
+    TResult Function(_LoadPartners value)? loadPartners,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $MonthlyLeadersEventCopyWith<$Res> {
-  factory $MonthlyLeadersEventCopyWith(
-          MonthlyLeadersEvent value, $Res Function(MonthlyLeadersEvent) then) =
-      _$MonthlyLeadersEventCopyWithImpl<$Res>;
+abstract class $PartnerListEventCopyWith<$Res> {
+  factory $PartnerListEventCopyWith(
+          PartnerListEvent value, $Res Function(PartnerListEvent) then) =
+      _$PartnerListEventCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$MonthlyLeadersEventCopyWithImpl<$Res>
-    implements $MonthlyLeadersEventCopyWith<$Res> {
-  _$MonthlyLeadersEventCopyWithImpl(this._value, this._then);
+class _$PartnerListEventCopyWithImpl<$Res>
+    implements $PartnerListEventCopyWith<$Res> {
+  _$PartnerListEventCopyWithImpl(this._value, this._then);
 
-  final MonthlyLeadersEvent _value;
+  final PartnerListEvent _value;
   // ignore: unused_field
-  final $Res Function(MonthlyLeadersEvent) _then;
+  final $Res Function(PartnerListEvent) _then;
 }
 
 /// @nodoc
@@ -84,8 +84,7 @@ abstract class _$StartedCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$StartedCopyWithImpl<$Res>
-    extends _$MonthlyLeadersEventCopyWithImpl<$Res>
+class __$StartedCopyWithImpl<$Res> extends _$PartnerListEventCopyWithImpl<$Res>
     implements _$StartedCopyWith<$Res> {
   __$StartedCopyWithImpl(_Started _value, $Res Function(_Started) _then)
       : super(_value, (v) => _then(v as _Started));
@@ -101,7 +100,7 @@ class _$_Started implements _Started {
 
   @override
   String toString() {
-    return 'MonthlyLeadersEvent.started()';
+    return 'PartnerListEvent.started()';
   }
 
   @override
@@ -116,7 +115,7 @@ class _$_Started implements _Started {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function(String companyId) loadMonthlyLeadBoard,
+    required TResult Function(String companyId) loadPartners,
   }) {
     return started();
   }
@@ -125,7 +124,7 @@ class _$_Started implements _Started {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function(String companyId)? loadMonthlyLeadBoard,
+    TResult Function(String companyId)? loadPartners,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -138,7 +137,7 @@ class _$_Started implements _Started {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
-    required TResult Function(_LoadMonthlyLeadBoard value) loadMonthlyLeadBoard,
+    required TResult Function(_LoadPartners value) loadPartners,
   }) {
     return started(this);
   }
@@ -147,7 +146,7 @@ class _$_Started implements _Started {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
-    TResult Function(_LoadMonthlyLeadBoard value)? loadMonthlyLeadBoard,
+    TResult Function(_LoadPartners value)? loadPartners,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -157,34 +156,34 @@ class _$_Started implements _Started {
   }
 }
 
-abstract class _Started implements MonthlyLeadersEvent {
+abstract class _Started implements PartnerListEvent {
   const factory _Started() = _$_Started;
 }
 
 /// @nodoc
-abstract class _$LoadMonthlyLeadBoardCopyWith<$Res> {
-  factory _$LoadMonthlyLeadBoardCopyWith(_LoadMonthlyLeadBoard value,
-          $Res Function(_LoadMonthlyLeadBoard) then) =
-      __$LoadMonthlyLeadBoardCopyWithImpl<$Res>;
+abstract class _$LoadPartnersCopyWith<$Res> {
+  factory _$LoadPartnersCopyWith(
+          _LoadPartners value, $Res Function(_LoadPartners) then) =
+      __$LoadPartnersCopyWithImpl<$Res>;
   $Res call({String companyId});
 }
 
 /// @nodoc
-class __$LoadMonthlyLeadBoardCopyWithImpl<$Res>
-    extends _$MonthlyLeadersEventCopyWithImpl<$Res>
-    implements _$LoadMonthlyLeadBoardCopyWith<$Res> {
-  __$LoadMonthlyLeadBoardCopyWithImpl(
-      _LoadMonthlyLeadBoard _value, $Res Function(_LoadMonthlyLeadBoard) _then)
-      : super(_value, (v) => _then(v as _LoadMonthlyLeadBoard));
+class __$LoadPartnersCopyWithImpl<$Res>
+    extends _$PartnerListEventCopyWithImpl<$Res>
+    implements _$LoadPartnersCopyWith<$Res> {
+  __$LoadPartnersCopyWithImpl(
+      _LoadPartners _value, $Res Function(_LoadPartners) _then)
+      : super(_value, (v) => _then(v as _LoadPartners));
 
   @override
-  _LoadMonthlyLeadBoard get _value => super._value as _LoadMonthlyLeadBoard;
+  _LoadPartners get _value => super._value as _LoadPartners;
 
   @override
   $Res call({
     Object? companyId = freezed,
   }) {
-    return _then(_LoadMonthlyLeadBoard(
+    return _then(_LoadPartners(
       companyId: companyId == freezed
           ? _value.companyId
           : companyId // ignore: cast_nullable_to_non_nullable
@@ -195,21 +194,21 @@ class __$LoadMonthlyLeadBoardCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_LoadMonthlyLeadBoard implements _LoadMonthlyLeadBoard {
-  const _$_LoadMonthlyLeadBoard({required this.companyId});
+class _$_LoadPartners implements _LoadPartners {
+  const _$_LoadPartners({required this.companyId});
 
   @override
   final String companyId;
 
   @override
   String toString() {
-    return 'MonthlyLeadersEvent.loadMonthlyLeadBoard(companyId: $companyId)';
+    return 'PartnerListEvent.loadPartners(companyId: $companyId)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _LoadMonthlyLeadBoard &&
+        (other is _LoadPartners &&
             (identical(other.companyId, companyId) ||
                 const DeepCollectionEquality()
                     .equals(other.companyId, companyId)));
@@ -221,28 +220,27 @@ class _$_LoadMonthlyLeadBoard implements _LoadMonthlyLeadBoard {
 
   @JsonKey(ignore: true)
   @override
-  _$LoadMonthlyLeadBoardCopyWith<_LoadMonthlyLeadBoard> get copyWith =>
-      __$LoadMonthlyLeadBoardCopyWithImpl<_LoadMonthlyLeadBoard>(
-          this, _$identity);
+  _$LoadPartnersCopyWith<_LoadPartners> get copyWith =>
+      __$LoadPartnersCopyWithImpl<_LoadPartners>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function(String companyId) loadMonthlyLeadBoard,
+    required TResult Function(String companyId) loadPartners,
   }) {
-    return loadMonthlyLeadBoard(companyId);
+    return loadPartners(companyId);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function(String companyId)? loadMonthlyLeadBoard,
+    TResult Function(String companyId)? loadPartners,
     required TResult orElse(),
   }) {
-    if (loadMonthlyLeadBoard != null) {
-      return loadMonthlyLeadBoard(companyId);
+    if (loadPartners != null) {
+      return loadPartners(companyId);
     }
     return orElse();
   }
@@ -251,38 +249,37 @@ class _$_LoadMonthlyLeadBoard implements _LoadMonthlyLeadBoard {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
-    required TResult Function(_LoadMonthlyLeadBoard value) loadMonthlyLeadBoard,
+    required TResult Function(_LoadPartners value) loadPartners,
   }) {
-    return loadMonthlyLeadBoard(this);
+    return loadPartners(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
-    TResult Function(_LoadMonthlyLeadBoard value)? loadMonthlyLeadBoard,
+    TResult Function(_LoadPartners value)? loadPartners,
     required TResult orElse(),
   }) {
-    if (loadMonthlyLeadBoard != null) {
-      return loadMonthlyLeadBoard(this);
+    if (loadPartners != null) {
+      return loadPartners(this);
     }
     return orElse();
   }
 }
 
-abstract class _LoadMonthlyLeadBoard implements MonthlyLeadersEvent {
-  const factory _LoadMonthlyLeadBoard({required String companyId}) =
-      _$_LoadMonthlyLeadBoard;
+abstract class _LoadPartners implements PartnerListEvent {
+  const factory _LoadPartners({required String companyId}) = _$_LoadPartners;
 
   String get companyId => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  _$LoadMonthlyLeadBoardCopyWith<_LoadMonthlyLeadBoard> get copyWith =>
+  _$LoadPartnersCopyWith<_LoadPartners> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-class _$MonthlyLeadersStateTearOff {
-  const _$MonthlyLeadersStateTearOff();
+class _$PartnerListStateTearOff {
+  const _$PartnerListStateTearOff();
 
   _Initial initial() {
     return const _Initial();
@@ -292,39 +289,36 @@ class _$MonthlyLeadersStateTearOff {
     return const _Loading();
   }
 
-  _Error error() {
-    return const _Error();
+  _PartnerListLoaded partnerListLoaded({required List<PartnerUser> partners}) {
+    return _PartnerListLoaded(
+      partners: partners,
+    );
   }
 
-  _MonthlyLeadBoardLoaded monthlyLeadedBoardLoaded(
-      {required List<PartnerPointsAgregate> weeklyLeaders}) {
-    return _MonthlyLeadBoardLoaded(
-      weeklyLeaders: weeklyLeaders,
-    );
+  _LoadError loadError() {
+    return const _LoadError();
   }
 }
 
 /// @nodoc
-const $MonthlyLeadersState = _$MonthlyLeadersStateTearOff();
+const $PartnerListState = _$PartnerListStateTearOff();
 
 /// @nodoc
-mixin _$MonthlyLeadersState {
+mixin _$PartnerListState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function() error,
-    required TResult Function(List<PartnerPointsAgregate> weeklyLeaders)
-        monthlyLeadedBoardLoaded,
+    required TResult Function(List<PartnerUser> partners) partnerListLoaded,
+    required TResult Function() loadError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function()? error,
-    TResult Function(List<PartnerPointsAgregate> weeklyLeaders)?
-        monthlyLeadedBoardLoaded,
+    TResult Function(List<PartnerUser> partners)? partnerListLoaded,
+    TResult Function()? loadError,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -332,37 +326,36 @@ mixin _$MonthlyLeadersState {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_Loading value) loading,
-    required TResult Function(_Error value) error,
-    required TResult Function(_MonthlyLeadBoardLoaded value)
-        monthlyLeadedBoardLoaded,
+    required TResult Function(_PartnerListLoaded value) partnerListLoaded,
+    required TResult Function(_LoadError value) loadError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
-    TResult Function(_Error value)? error,
-    TResult Function(_MonthlyLeadBoardLoaded value)? monthlyLeadedBoardLoaded,
+    TResult Function(_PartnerListLoaded value)? partnerListLoaded,
+    TResult Function(_LoadError value)? loadError,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $MonthlyLeadersStateCopyWith<$Res> {
-  factory $MonthlyLeadersStateCopyWith(
-          MonthlyLeadersState value, $Res Function(MonthlyLeadersState) then) =
-      _$MonthlyLeadersStateCopyWithImpl<$Res>;
+abstract class $PartnerListStateCopyWith<$Res> {
+  factory $PartnerListStateCopyWith(
+          PartnerListState value, $Res Function(PartnerListState) then) =
+      _$PartnerListStateCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$MonthlyLeadersStateCopyWithImpl<$Res>
-    implements $MonthlyLeadersStateCopyWith<$Res> {
-  _$MonthlyLeadersStateCopyWithImpl(this._value, this._then);
+class _$PartnerListStateCopyWithImpl<$Res>
+    implements $PartnerListStateCopyWith<$Res> {
+  _$PartnerListStateCopyWithImpl(this._value, this._then);
 
-  final MonthlyLeadersState _value;
+  final PartnerListState _value;
   // ignore: unused_field
-  final $Res Function(MonthlyLeadersState) _then;
+  final $Res Function(PartnerListState) _then;
 }
 
 /// @nodoc
@@ -372,8 +365,7 @@ abstract class _$InitialCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$InitialCopyWithImpl<$Res>
-    extends _$MonthlyLeadersStateCopyWithImpl<$Res>
+class __$InitialCopyWithImpl<$Res> extends _$PartnerListStateCopyWithImpl<$Res>
     implements _$InitialCopyWith<$Res> {
   __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then)
       : super(_value, (v) => _then(v as _Initial));
@@ -389,7 +381,7 @@ class _$_Initial implements _Initial {
 
   @override
   String toString() {
-    return 'MonthlyLeadersState.initial()';
+    return 'PartnerListState.initial()';
   }
 
   @override
@@ -405,9 +397,8 @@ class _$_Initial implements _Initial {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function() error,
-    required TResult Function(List<PartnerPointsAgregate> weeklyLeaders)
-        monthlyLeadedBoardLoaded,
+    required TResult Function(List<PartnerUser> partners) partnerListLoaded,
+    required TResult Function() loadError,
   }) {
     return initial();
   }
@@ -417,9 +408,8 @@ class _$_Initial implements _Initial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function()? error,
-    TResult Function(List<PartnerPointsAgregate> weeklyLeaders)?
-        monthlyLeadedBoardLoaded,
+    TResult Function(List<PartnerUser> partners)? partnerListLoaded,
+    TResult Function()? loadError,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -433,9 +423,8 @@ class _$_Initial implements _Initial {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_Loading value) loading,
-    required TResult Function(_Error value) error,
-    required TResult Function(_MonthlyLeadBoardLoaded value)
-        monthlyLeadedBoardLoaded,
+    required TResult Function(_PartnerListLoaded value) partnerListLoaded,
+    required TResult Function(_LoadError value) loadError,
   }) {
     return initial(this);
   }
@@ -445,8 +434,8 @@ class _$_Initial implements _Initial {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
-    TResult Function(_Error value)? error,
-    TResult Function(_MonthlyLeadBoardLoaded value)? monthlyLeadedBoardLoaded,
+    TResult Function(_PartnerListLoaded value)? partnerListLoaded,
+    TResult Function(_LoadError value)? loadError,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -456,7 +445,7 @@ class _$_Initial implements _Initial {
   }
 }
 
-abstract class _Initial implements MonthlyLeadersState {
+abstract class _Initial implements PartnerListState {
   const factory _Initial() = _$_Initial;
 }
 
@@ -467,8 +456,7 @@ abstract class _$LoadingCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$LoadingCopyWithImpl<$Res>
-    extends _$MonthlyLeadersStateCopyWithImpl<$Res>
+class __$LoadingCopyWithImpl<$Res> extends _$PartnerListStateCopyWithImpl<$Res>
     implements _$LoadingCopyWith<$Res> {
   __$LoadingCopyWithImpl(_Loading _value, $Res Function(_Loading) _then)
       : super(_value, (v) => _then(v as _Loading));
@@ -484,7 +472,7 @@ class _$_Loading implements _Loading {
 
   @override
   String toString() {
-    return 'MonthlyLeadersState.loading()';
+    return 'PartnerListState.loading()';
   }
 
   @override
@@ -500,9 +488,8 @@ class _$_Loading implements _Loading {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function() error,
-    required TResult Function(List<PartnerPointsAgregate> weeklyLeaders)
-        monthlyLeadedBoardLoaded,
+    required TResult Function(List<PartnerUser> partners) partnerListLoaded,
+    required TResult Function() loadError,
   }) {
     return loading();
   }
@@ -512,9 +499,8 @@ class _$_Loading implements _Loading {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function()? error,
-    TResult Function(List<PartnerPointsAgregate> weeklyLeaders)?
-        monthlyLeadedBoardLoaded,
+    TResult Function(List<PartnerUser> partners)? partnerListLoaded,
+    TResult Function()? loadError,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -528,9 +514,8 @@ class _$_Loading implements _Loading {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_Loading value) loading,
-    required TResult Function(_Error value) error,
-    required TResult Function(_MonthlyLeadBoardLoaded value)
-        monthlyLeadedBoardLoaded,
+    required TResult Function(_PartnerListLoaded value) partnerListLoaded,
+    required TResult Function(_LoadError value) loadError,
   }) {
     return loading(this);
   }
@@ -540,8 +525,8 @@ class _$_Loading implements _Loading {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
-    TResult Function(_Error value)? error,
-    TResult Function(_MonthlyLeadBoardLoaded value)? monthlyLeadedBoardLoaded,
+    TResult Function(_PartnerListLoaded value)? partnerListLoaded,
+    TResult Function(_LoadError value)? loadError,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -551,39 +536,167 @@ class _$_Loading implements _Loading {
   }
 }
 
-abstract class _Loading implements MonthlyLeadersState {
+abstract class _Loading implements PartnerListState {
   const factory _Loading() = _$_Loading;
 }
 
 /// @nodoc
-abstract class _$ErrorCopyWith<$Res> {
-  factory _$ErrorCopyWith(_Error value, $Res Function(_Error) then) =
-      __$ErrorCopyWithImpl<$Res>;
+abstract class _$PartnerListLoadedCopyWith<$Res> {
+  factory _$PartnerListLoadedCopyWith(
+          _PartnerListLoaded value, $Res Function(_PartnerListLoaded) then) =
+      __$PartnerListLoadedCopyWithImpl<$Res>;
+  $Res call({List<PartnerUser> partners});
 }
 
 /// @nodoc
-class __$ErrorCopyWithImpl<$Res> extends _$MonthlyLeadersStateCopyWithImpl<$Res>
-    implements _$ErrorCopyWith<$Res> {
-  __$ErrorCopyWithImpl(_Error _value, $Res Function(_Error) _then)
-      : super(_value, (v) => _then(v as _Error));
+class __$PartnerListLoadedCopyWithImpl<$Res>
+    extends _$PartnerListStateCopyWithImpl<$Res>
+    implements _$PartnerListLoadedCopyWith<$Res> {
+  __$PartnerListLoadedCopyWithImpl(
+      _PartnerListLoaded _value, $Res Function(_PartnerListLoaded) _then)
+      : super(_value, (v) => _then(v as _PartnerListLoaded));
 
   @override
-  _Error get _value => super._value as _Error;
+  _PartnerListLoaded get _value => super._value as _PartnerListLoaded;
+
+  @override
+  $Res call({
+    Object? partners = freezed,
+  }) {
+    return _then(_PartnerListLoaded(
+      partners: partners == freezed
+          ? _value.partners
+          : partners // ignore: cast_nullable_to_non_nullable
+              as List<PartnerUser>,
+    ));
+  }
 }
 
 /// @nodoc
 
-class _$_Error implements _Error {
-  const _$_Error();
+class _$_PartnerListLoaded implements _PartnerListLoaded {
+  const _$_PartnerListLoaded({required this.partners});
+
+  @override
+  final List<PartnerUser> partners;
 
   @override
   String toString() {
-    return 'MonthlyLeadersState.error()';
+    return 'PartnerListState.partnerListLoaded(partners: $partners)';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Error);
+    return identical(this, other) ||
+        (other is _PartnerListLoaded &&
+            (identical(other.partners, partners) ||
+                const DeepCollectionEquality()
+                    .equals(other.partners, partners)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(partners);
+
+  @JsonKey(ignore: true)
+  @override
+  _$PartnerListLoadedCopyWith<_PartnerListLoaded> get copyWith =>
+      __$PartnerListLoadedCopyWithImpl<_PartnerListLoaded>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(List<PartnerUser> partners) partnerListLoaded,
+    required TResult Function() loadError,
+  }) {
+    return partnerListLoaded(partners);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(List<PartnerUser> partners)? partnerListLoaded,
+    TResult Function()? loadError,
+    required TResult orElse(),
+  }) {
+    if (partnerListLoaded != null) {
+      return partnerListLoaded(partners);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_Loading value) loading,
+    required TResult Function(_PartnerListLoaded value) partnerListLoaded,
+    required TResult Function(_LoadError value) loadError,
+  }) {
+    return partnerListLoaded(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Loading value)? loading,
+    TResult Function(_PartnerListLoaded value)? partnerListLoaded,
+    TResult Function(_LoadError value)? loadError,
+    required TResult orElse(),
+  }) {
+    if (partnerListLoaded != null) {
+      return partnerListLoaded(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _PartnerListLoaded implements PartnerListState {
+  const factory _PartnerListLoaded({required List<PartnerUser> partners}) =
+      _$_PartnerListLoaded;
+
+  List<PartnerUser> get partners => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$PartnerListLoadedCopyWith<_PartnerListLoaded> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$LoadErrorCopyWith<$Res> {
+  factory _$LoadErrorCopyWith(
+          _LoadError value, $Res Function(_LoadError) then) =
+      __$LoadErrorCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$LoadErrorCopyWithImpl<$Res>
+    extends _$PartnerListStateCopyWithImpl<$Res>
+    implements _$LoadErrorCopyWith<$Res> {
+  __$LoadErrorCopyWithImpl(_LoadError _value, $Res Function(_LoadError) _then)
+      : super(_value, (v) => _then(v as _LoadError));
+
+  @override
+  _LoadError get _value => super._value as _LoadError;
+}
+
+/// @nodoc
+
+class _$_LoadError implements _LoadError {
+  const _$_LoadError();
+
+  @override
+  String toString() {
+    return 'PartnerListState.loadError()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is _LoadError);
   }
 
   @override
@@ -594,11 +707,10 @@ class _$_Error implements _Error {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function() error,
-    required TResult Function(List<PartnerPointsAgregate> weeklyLeaders)
-        monthlyLeadedBoardLoaded,
+    required TResult Function(List<PartnerUser> partners) partnerListLoaded,
+    required TResult Function() loadError,
   }) {
-    return error();
+    return loadError();
   }
 
   @override
@@ -606,13 +718,12 @@ class _$_Error implements _Error {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function()? error,
-    TResult Function(List<PartnerPointsAgregate> weeklyLeaders)?
-        monthlyLeadedBoardLoaded,
+    TResult Function(List<PartnerUser> partners)? partnerListLoaded,
+    TResult Function()? loadError,
     required TResult orElse(),
   }) {
-    if (error != null) {
-      return error();
+    if (loadError != null) {
+      return loadError();
     }
     return orElse();
   }
@@ -622,11 +733,10 @@ class _$_Error implements _Error {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_Loading value) loading,
-    required TResult Function(_Error value) error,
-    required TResult Function(_MonthlyLeadBoardLoaded value)
-        monthlyLeadedBoardLoaded,
+    required TResult Function(_PartnerListLoaded value) partnerListLoaded,
+    required TResult Function(_LoadError value) loadError,
   }) {
-    return error(this);
+    return loadError(this);
   }
 
   @override
@@ -634,149 +744,17 @@ class _$_Error implements _Error {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
-    TResult Function(_Error value)? error,
-    TResult Function(_MonthlyLeadBoardLoaded value)? monthlyLeadedBoardLoaded,
+    TResult Function(_PartnerListLoaded value)? partnerListLoaded,
+    TResult Function(_LoadError value)? loadError,
     required TResult orElse(),
   }) {
-    if (error != null) {
-      return error(this);
+    if (loadError != null) {
+      return loadError(this);
     }
     return orElse();
   }
 }
 
-abstract class _Error implements MonthlyLeadersState {
-  const factory _Error() = _$_Error;
-}
-
-/// @nodoc
-abstract class _$MonthlyLeadBoardLoadedCopyWith<$Res> {
-  factory _$MonthlyLeadBoardLoadedCopyWith(_MonthlyLeadBoardLoaded value,
-          $Res Function(_MonthlyLeadBoardLoaded) then) =
-      __$MonthlyLeadBoardLoadedCopyWithImpl<$Res>;
-  $Res call({List<PartnerPointsAgregate> weeklyLeaders});
-}
-
-/// @nodoc
-class __$MonthlyLeadBoardLoadedCopyWithImpl<$Res>
-    extends _$MonthlyLeadersStateCopyWithImpl<$Res>
-    implements _$MonthlyLeadBoardLoadedCopyWith<$Res> {
-  __$MonthlyLeadBoardLoadedCopyWithImpl(_MonthlyLeadBoardLoaded _value,
-      $Res Function(_MonthlyLeadBoardLoaded) _then)
-      : super(_value, (v) => _then(v as _MonthlyLeadBoardLoaded));
-
-  @override
-  _MonthlyLeadBoardLoaded get _value => super._value as _MonthlyLeadBoardLoaded;
-
-  @override
-  $Res call({
-    Object? weeklyLeaders = freezed,
-  }) {
-    return _then(_MonthlyLeadBoardLoaded(
-      weeklyLeaders: weeklyLeaders == freezed
-          ? _value.weeklyLeaders
-          : weeklyLeaders // ignore: cast_nullable_to_non_nullable
-              as List<PartnerPointsAgregate>,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$_MonthlyLeadBoardLoaded implements _MonthlyLeadBoardLoaded {
-  const _$_MonthlyLeadBoardLoaded({required this.weeklyLeaders});
-
-  @override
-  final List<PartnerPointsAgregate> weeklyLeaders;
-
-  @override
-  String toString() {
-    return 'MonthlyLeadersState.monthlyLeadedBoardLoaded(weeklyLeaders: $weeklyLeaders)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is _MonthlyLeadBoardLoaded &&
-            (identical(other.weeklyLeaders, weeklyLeaders) ||
-                const DeepCollectionEquality()
-                    .equals(other.weeklyLeaders, weeklyLeaders)));
-  }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(weeklyLeaders);
-
-  @JsonKey(ignore: true)
-  @override
-  _$MonthlyLeadBoardLoadedCopyWith<_MonthlyLeadBoardLoaded> get copyWith =>
-      __$MonthlyLeadBoardLoadedCopyWithImpl<_MonthlyLeadBoardLoaded>(
-          this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() loading,
-    required TResult Function() error,
-    required TResult Function(List<PartnerPointsAgregate> weeklyLeaders)
-        monthlyLeadedBoardLoaded,
-  }) {
-    return monthlyLeadedBoardLoaded(weeklyLeaders);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function()? error,
-    TResult Function(List<PartnerPointsAgregate> weeklyLeaders)?
-        monthlyLeadedBoardLoaded,
-    required TResult orElse(),
-  }) {
-    if (monthlyLeadedBoardLoaded != null) {
-      return monthlyLeadedBoardLoaded(weeklyLeaders);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_Loading value) loading,
-    required TResult Function(_Error value) error,
-    required TResult Function(_MonthlyLeadBoardLoaded value)
-        monthlyLeadedBoardLoaded,
-  }) {
-    return monthlyLeadedBoardLoaded(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_Loading value)? loading,
-    TResult Function(_Error value)? error,
-    TResult Function(_MonthlyLeadBoardLoaded value)? monthlyLeadedBoardLoaded,
-    required TResult orElse(),
-  }) {
-    if (monthlyLeadedBoardLoaded != null) {
-      return monthlyLeadedBoardLoaded(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _MonthlyLeadBoardLoaded implements MonthlyLeadersState {
-  const factory _MonthlyLeadBoardLoaded(
-          {required List<PartnerPointsAgregate> weeklyLeaders}) =
-      _$_MonthlyLeadBoardLoaded;
-
-  List<PartnerPointsAgregate> get weeklyLeaders =>
-      throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  _$MonthlyLeadBoardLoadedCopyWith<_MonthlyLeadBoardLoaded> get copyWith =>
-      throw _privateConstructorUsedError;
+abstract class _LoadError implements PartnerListState {
+  const factory _LoadError() = _$_LoadError;
 }

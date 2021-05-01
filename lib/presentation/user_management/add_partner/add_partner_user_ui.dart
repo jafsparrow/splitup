@@ -6,17 +6,16 @@ import 'package:JCCommisionApp/presentation/user_management/add_partner/widgets/
 import 'package:JCCommisionApp/presentation/user_management/add_partner/widgets/partner_name_widget.dart';
 import 'package:JCCommisionApp/presentation/user_management/partner_profile/partner_profile.dart';
 import 'package:dartz/dartz.dart';
-import 'package:flushbar/flushbar_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../injection.dart';
 
 class AddPartnerUserScreen extends StatelessWidget {
-  final UserProfile editedParnerUserProfile;
+  final UserProfile? editedParnerUserProfile;
 
-  const AddPartnerUserScreen({Key key, this.editedParnerUserProfile})
-      : super(key: key);
+  const AddPartnerUserScreen({ this.editedParnerUserProfile})
+      ;
 
   @override
   Widget build(BuildContext context) {
@@ -47,16 +46,18 @@ class AddPartnerUserScreen extends StatelessWidget {
               () => {},
               (either) {
                 either.fold((failure) {
-                  FlushbarHelper.createError(
-                    message: failure.map(
-                      unexpected: (_) => 'Something unexpected happened.',
-                      userNotFound: (_) => 'User Not Found',
-                      userInactive: (_) => 'User is inactive',
-                      unableToUpdate: (_) => 'Unable to Update',
-                      unableToCreateNewUser: (_) =>
-                          'Unable to Create Partner User',
-                    ),
-                  );
+
+                  // TODO :- Flushbar does not have a null safety version yet. commenting it out
+                  // FlushbarHelper.createError(
+                  //   message: failure.map(
+                  //     unexpected: (_) => 'Something unexpected happened.',
+                  //     userNotFound: (_) => 'User Not Found',
+                  //     userInactive: (_) => 'User is inactive',
+                  //     unableToUpdate: (_) => 'Unable to Update',
+                  //     unableToCreateNewUser: (_) =>
+                  //         'Unable to Create Partner User',
+                  //   ),
+                  // );
                 }, (newlyCreatedPartnerUser) {
                   print(newlyCreatedPartnerUser.mobileNumber);
 
@@ -87,9 +88,9 @@ class SavingInProgressOverlay extends StatelessWidget {
   final bool isSaving;
 
   const SavingInProgressOverlay({
-    Key key,
-    @required this.isSaving,
-  }) : super(key: key);
+    
+    required this.isSaving,
+  }) ;
 
   @override
   Widget build(BuildContext context) {
@@ -109,7 +110,7 @@ class SavingInProgressOverlay extends StatelessWidget {
               const SizedBox(height: 8),
               Text(
                 'Saving',
-                style: Theme.of(context).textTheme.bodyText2.copyWith(
+                style: Theme.of(context).textTheme.bodyText2?.copyWith(
                       color: Colors.white,
                       fontSize: 16,
                     ),
@@ -123,9 +124,7 @@ class SavingInProgressOverlay extends StatelessWidget {
 }
 
 class PartnerUserFormScaffold extends StatelessWidget {
-  const PartnerUserFormScaffold({
-    Key key,
-  }) : super(key: key);
+  const PartnerUserFormScaffold();
 
   @override
   Widget build(BuildContext context) {

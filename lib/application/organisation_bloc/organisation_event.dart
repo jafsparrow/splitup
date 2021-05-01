@@ -4,5 +4,5 @@ part of 'organisation_bloc.dart';
 abstract class OrganisationEvent with _$OrganisationEvent {
   const factory OrganisationEvent.started() = _Started;
   const factory OrganisationEvent.loadOrganisationDataForLoggedInUser(
-      {String companyId}) = _LoadOraganisationDataForLoggedInUser;
+      {required String companyId}) = _LoadOraganisationDataForLoggedInUser;
 }

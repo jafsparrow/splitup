@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'userbarcode.dart';
 
@@ -9,17 +9,20 @@ part of 'userbarcode.dart';
 
 T _$identity<T>(T value) => value;
 
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
+/// @nodoc
 class _$UserBarcodeTearOff {
   const _$UserBarcodeTearOff();
 
-// ignore: unused_element
   _UserBarcode call(
-      {@required String id,
-      @required String barcode,
-      @required String associatedUserId,
-      @required bool isActive,
-      @required DateTime issuedDate,
-      @required DateTime expiryDate}) {
+      {String? id,
+      required String barcode,
+      required String associatedUserId,
+      required bool isActive,
+      required DateTime issuedDate,
+      required DateTime expiryDate}) {
     return _UserBarcode(
       id: id,
       barcode: barcode,
@@ -31,26 +34,30 @@ class _$UserBarcodeTearOff {
   }
 }
 
-// ignore: unused_element
+/// @nodoc
 const $UserBarcode = _$UserBarcodeTearOff();
 
+/// @nodoc
 mixin _$UserBarcode {
-  String get id;
-  String get barcode;
-  String get associatedUserId;
-  bool get isActive;
-  DateTime get issuedDate;
-  DateTime get expiryDate;
+  String? get id => throw _privateConstructorUsedError;
+  String get barcode => throw _privateConstructorUsedError;
+  String get associatedUserId => throw _privateConstructorUsedError;
+  bool get isActive => throw _privateConstructorUsedError;
+  DateTime get issuedDate => throw _privateConstructorUsedError;
+  DateTime get expiryDate => throw _privateConstructorUsedError;
 
-  $UserBarcodeCopyWith<UserBarcode> get copyWith;
+  @JsonKey(ignore: true)
+  $UserBarcodeCopyWith<UserBarcode> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
+/// @nodoc
 abstract class $UserBarcodeCopyWith<$Res> {
   factory $UserBarcodeCopyWith(
           UserBarcode value, $Res Function(UserBarcode) then) =
       _$UserBarcodeCopyWithImpl<$Res>;
   $Res call(
-      {String id,
+      {String? id,
       String barcode,
       String associatedUserId,
       bool isActive,
@@ -58,6 +65,7 @@ abstract class $UserBarcodeCopyWith<$Res> {
       DateTime expiryDate});
 }
 
+/// @nodoc
 class _$UserBarcodeCopyWithImpl<$Res> implements $UserBarcodeCopyWith<$Res> {
   _$UserBarcodeCopyWithImpl(this._value, this._then);
 
@@ -67,28 +75,43 @@ class _$UserBarcodeCopyWithImpl<$Res> implements $UserBarcodeCopyWith<$Res> {
 
   @override
   $Res call({
-    Object id = freezed,
-    Object barcode = freezed,
-    Object associatedUserId = freezed,
-    Object isActive = freezed,
-    Object issuedDate = freezed,
-    Object expiryDate = freezed,
+    Object? id = freezed,
+    Object? barcode = freezed,
+    Object? associatedUserId = freezed,
+    Object? isActive = freezed,
+    Object? issuedDate = freezed,
+    Object? expiryDate = freezed,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed ? _value.id : id as String,
-      barcode: barcode == freezed ? _value.barcode : barcode as String,
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      barcode: barcode == freezed
+          ? _value.barcode
+          : barcode // ignore: cast_nullable_to_non_nullable
+              as String,
       associatedUserId: associatedUserId == freezed
           ? _value.associatedUserId
-          : associatedUserId as String,
-      isActive: isActive == freezed ? _value.isActive : isActive as bool,
-      issuedDate:
-          issuedDate == freezed ? _value.issuedDate : issuedDate as DateTime,
-      expiryDate:
-          expiryDate == freezed ? _value.expiryDate : expiryDate as DateTime,
+          : associatedUserId // ignore: cast_nullable_to_non_nullable
+              as String,
+      isActive: isActive == freezed
+          ? _value.isActive
+          : isActive // ignore: cast_nullable_to_non_nullable
+              as bool,
+      issuedDate: issuedDate == freezed
+          ? _value.issuedDate
+          : issuedDate // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      expiryDate: expiryDate == freezed
+          ? _value.expiryDate
+          : expiryDate // ignore: cast_nullable_to_non_nullable
+              as DateTime,
     ));
   }
 }
 
+/// @nodoc
 abstract class _$UserBarcodeCopyWith<$Res>
     implements $UserBarcodeCopyWith<$Res> {
   factory _$UserBarcodeCopyWith(
@@ -96,7 +119,7 @@ abstract class _$UserBarcodeCopyWith<$Res>
       __$UserBarcodeCopyWithImpl<$Res>;
   @override
   $Res call(
-      {String id,
+      {String? id,
       String barcode,
       String associatedUserId,
       bool isActive,
@@ -104,6 +127,7 @@ abstract class _$UserBarcodeCopyWith<$Res>
       DateTime expiryDate});
 }
 
+/// @nodoc
 class __$UserBarcodeCopyWithImpl<$Res> extends _$UserBarcodeCopyWithImpl<$Res>
     implements _$UserBarcodeCopyWith<$Res> {
   __$UserBarcodeCopyWithImpl(
@@ -115,46 +139,56 @@ class __$UserBarcodeCopyWithImpl<$Res> extends _$UserBarcodeCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object id = freezed,
-    Object barcode = freezed,
-    Object associatedUserId = freezed,
-    Object isActive = freezed,
-    Object issuedDate = freezed,
-    Object expiryDate = freezed,
+    Object? id = freezed,
+    Object? barcode = freezed,
+    Object? associatedUserId = freezed,
+    Object? isActive = freezed,
+    Object? issuedDate = freezed,
+    Object? expiryDate = freezed,
   }) {
     return _then(_UserBarcode(
-      id: id == freezed ? _value.id : id as String,
-      barcode: barcode == freezed ? _value.barcode : barcode as String,
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      barcode: barcode == freezed
+          ? _value.barcode
+          : barcode // ignore: cast_nullable_to_non_nullable
+              as String,
       associatedUserId: associatedUserId == freezed
           ? _value.associatedUserId
-          : associatedUserId as String,
-      isActive: isActive == freezed ? _value.isActive : isActive as bool,
-      issuedDate:
-          issuedDate == freezed ? _value.issuedDate : issuedDate as DateTime,
-      expiryDate:
-          expiryDate == freezed ? _value.expiryDate : expiryDate as DateTime,
+          : associatedUserId // ignore: cast_nullable_to_non_nullable
+              as String,
+      isActive: isActive == freezed
+          ? _value.isActive
+          : isActive // ignore: cast_nullable_to_non_nullable
+              as bool,
+      issuedDate: issuedDate == freezed
+          ? _value.issuedDate
+          : issuedDate // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      expiryDate: expiryDate == freezed
+          ? _value.expiryDate
+          : expiryDate // ignore: cast_nullable_to_non_nullable
+              as DateTime,
     ));
   }
 }
 
+/// @nodoc
+
 class _$_UserBarcode extends _UserBarcode {
   const _$_UserBarcode(
-      {@required this.id,
-      @required this.barcode,
-      @required this.associatedUserId,
-      @required this.isActive,
-      @required this.issuedDate,
-      @required this.expiryDate})
-      : assert(id != null),
-        assert(barcode != null),
-        assert(associatedUserId != null),
-        assert(isActive != null),
-        assert(issuedDate != null),
-        assert(expiryDate != null),
-        super._();
+      {this.id,
+      required this.barcode,
+      required this.associatedUserId,
+      required this.isActive,
+      required this.issuedDate,
+      required this.expiryDate})
+      : super._();
 
   @override
-  final String id;
+  final String? id;
   @override
   final String barcode;
   @override
@@ -204,33 +238,36 @@ class _$_UserBarcode extends _UserBarcode {
       const DeepCollectionEquality().hash(issuedDate) ^
       const DeepCollectionEquality().hash(expiryDate);
 
+  @JsonKey(ignore: true)
   @override
   _$UserBarcodeCopyWith<_UserBarcode> get copyWith =>
       __$UserBarcodeCopyWithImpl<_UserBarcode>(this, _$identity);
 }
 
 abstract class _UserBarcode extends UserBarcode {
-  const _UserBarcode._() : super._();
   const factory _UserBarcode(
-      {@required String id,
-      @required String barcode,
-      @required String associatedUserId,
-      @required bool isActive,
-      @required DateTime issuedDate,
-      @required DateTime expiryDate}) = _$_UserBarcode;
+      {String? id,
+      required String barcode,
+      required String associatedUserId,
+      required bool isActive,
+      required DateTime issuedDate,
+      required DateTime expiryDate}) = _$_UserBarcode;
+  const _UserBarcode._() : super._();
 
   @override
-  String get id;
+  String? get id => throw _privateConstructorUsedError;
   @override
-  String get barcode;
+  String get barcode => throw _privateConstructorUsedError;
   @override
-  String get associatedUserId;
+  String get associatedUserId => throw _privateConstructorUsedError;
   @override
-  bool get isActive;
+  bool get isActive => throw _privateConstructorUsedError;
   @override
-  DateTime get issuedDate;
+  DateTime get issuedDate => throw _privateConstructorUsedError;
   @override
-  DateTime get expiryDate;
+  DateTime get expiryDate => throw _privateConstructorUsedError;
   @override
-  _$UserBarcodeCopyWith<_UserBarcode> get copyWith;
+  @JsonKey(ignore: true)
+  _$UserBarcodeCopyWith<_UserBarcode> get copyWith =>
+      throw _privateConstructorUsedError;
 }

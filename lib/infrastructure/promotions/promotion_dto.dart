@@ -12,8 +12,8 @@ abstract class PromotionDto implements _$PromotionDto {
   const PromotionDto._();
 
   const factory PromotionDto({
-    @required String title,
-    @required String description,
+    required String title,
+    required String description,
   }) = _PromotionDto;
 
   factory PromotionDto.fromDomain(Promotion promotion) {
@@ -33,7 +33,7 @@ abstract class PromotionDto implements _$PromotionDto {
       _$PromotionDtoFromJson(json);
 
   factory PromotionDto.fromFirestore(DocumentSnapshot doc) {
-    return PromotionDto.fromJson(doc.data())
-        .copyWith(title: doc.data()['title']);
+    return PromotionDto.fromJson(doc.data()!)
+        .copyWith(title: doc.data()!['title']);
   }
 }

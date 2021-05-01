@@ -9,7 +9,7 @@ part 'reward_point_dto.g.dart';
 abstract class RewardPointDto implements _$RewardPointDto {
   const RewardPointDto._();
 
-  const factory RewardPointDto({Map<String, double> billFormulaBreakup}) =
+  const factory RewardPointDto({required Map<String, double> billFormulaBreakup}) =
       _RewardPointDto;
 
   RewardPoint toDomain() {
@@ -24,6 +24,6 @@ abstract class RewardPointDto implements _$RewardPointDto {
       _$RewardPointDtoFromJson(json);
 
   factory RewardPointDto.fromFirestore(DocumentSnapshot doc) {
-    return RewardPointDto.fromJson(doc.data());
+    return RewardPointDto.fromJson(doc.data()!);
   }
 }

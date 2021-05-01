@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'authorisation_bloc.dart';
 
@@ -9,57 +9,67 @@ part of 'authorisation_bloc.dart';
 
 T _$identity<T>(T value) => value;
 
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
+/// @nodoc
 class _$AuthorisationEventTearOff {
   const _$AuthorisationEventTearOff();
 
-// ignore: unused_element
-  _CheckAuthorisation checkAuthorisation({String uid, String companyID}) {
+  _CheckAuthorisation checkAuthorisation(
+      {required String uid, required String companyID}) {
     return _CheckAuthorisation(
       uid: uid,
       companyID: companyID,
     );
   }
 
-// ignore: unused_element
   _Started started() {
     return const _Started();
   }
 }
 
-// ignore: unused_element
+/// @nodoc
 const $AuthorisationEvent = _$AuthorisationEventTearOff();
 
+/// @nodoc
 mixin _$AuthorisationEvent {
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result checkAuthorisation(String uid, String companyID),
-    @required Result started(),
-  });
+  TResult when<TResult extends Object?>({
+    required TResult Function(String uid, String companyID) checkAuthorisation,
+    required TResult Function() started,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result checkAuthorisation(String uid, String companyID),
-    Result started(),
-    @required Result orElse(),
-  });
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String uid, String companyID)? checkAuthorisation,
+    TResult Function()? started,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result checkAuthorisation(_CheckAuthorisation value),
-    @required Result started(_Started value),
-  });
+  TResult map<TResult extends Object?>({
+    required TResult Function(_CheckAuthorisation value) checkAuthorisation,
+    required TResult Function(_Started value) started,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result checkAuthorisation(_CheckAuthorisation value),
-    Result started(_Started value),
-    @required Result orElse(),
-  });
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_CheckAuthorisation value)? checkAuthorisation,
+    TResult Function(_Started value)? started,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
+/// @nodoc
 abstract class $AuthorisationEventCopyWith<$Res> {
   factory $AuthorisationEventCopyWith(
           AuthorisationEvent value, $Res Function(AuthorisationEvent) then) =
       _$AuthorisationEventCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class _$AuthorisationEventCopyWithImpl<$Res>
     implements $AuthorisationEventCopyWith<$Res> {
   _$AuthorisationEventCopyWithImpl(this._value, this._then);
@@ -69,6 +79,7 @@ class _$AuthorisationEventCopyWithImpl<$Res>
   final $Res Function(AuthorisationEvent) _then;
 }
 
+/// @nodoc
 abstract class _$CheckAuthorisationCopyWith<$Res> {
   factory _$CheckAuthorisationCopyWith(
           _CheckAuthorisation value, $Res Function(_CheckAuthorisation) then) =
@@ -76,6 +87,7 @@ abstract class _$CheckAuthorisationCopyWith<$Res> {
   $Res call({String uid, String companyID});
 }
 
+/// @nodoc
 class __$CheckAuthorisationCopyWithImpl<$Res>
     extends _$AuthorisationEventCopyWithImpl<$Res>
     implements _$CheckAuthorisationCopyWith<$Res> {
@@ -88,18 +100,26 @@ class __$CheckAuthorisationCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object uid = freezed,
-    Object companyID = freezed,
+    Object? uid = freezed,
+    Object? companyID = freezed,
   }) {
     return _then(_CheckAuthorisation(
-      uid: uid == freezed ? _value.uid : uid as String,
-      companyID: companyID == freezed ? _value.companyID : companyID as String,
+      uid: uid == freezed
+          ? _value.uid
+          : uid // ignore: cast_nullable_to_non_nullable
+              as String,
+      companyID: companyID == freezed
+          ? _value.companyID
+          : companyID // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
 
+/// @nodoc
+
 class _$_CheckAuthorisation implements _CheckAuthorisation {
-  const _$_CheckAuthorisation({this.uid, this.companyID});
+  const _$_CheckAuthorisation({required this.uid, required this.companyID});
 
   @override
   final String uid;
@@ -128,29 +148,27 @@ class _$_CheckAuthorisation implements _CheckAuthorisation {
       const DeepCollectionEquality().hash(uid) ^
       const DeepCollectionEquality().hash(companyID);
 
+  @JsonKey(ignore: true)
   @override
   _$CheckAuthorisationCopyWith<_CheckAuthorisation> get copyWith =>
       __$CheckAuthorisationCopyWithImpl<_CheckAuthorisation>(this, _$identity);
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result checkAuthorisation(String uid, String companyID),
-    @required Result started(),
+  TResult when<TResult extends Object?>({
+    required TResult Function(String uid, String companyID) checkAuthorisation,
+    required TResult Function() started,
   }) {
-    assert(checkAuthorisation != null);
-    assert(started != null);
     return checkAuthorisation(uid, companyID);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result checkAuthorisation(String uid, String companyID),
-    Result started(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String uid, String companyID)? checkAuthorisation,
+    TResult Function()? started,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (checkAuthorisation != null) {
       return checkAuthorisation(uid, companyID);
     }
@@ -159,23 +177,20 @@ class _$_CheckAuthorisation implements _CheckAuthorisation {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result checkAuthorisation(_CheckAuthorisation value),
-    @required Result started(_Started value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_CheckAuthorisation value) checkAuthorisation,
+    required TResult Function(_Started value) started,
   }) {
-    assert(checkAuthorisation != null);
-    assert(started != null);
     return checkAuthorisation(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result checkAuthorisation(_CheckAuthorisation value),
-    Result started(_Started value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_CheckAuthorisation value)? checkAuthorisation,
+    TResult Function(_Started value)? started,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (checkAuthorisation != null) {
       return checkAuthorisation(this);
     }
@@ -184,19 +199,23 @@ class _$_CheckAuthorisation implements _CheckAuthorisation {
 }
 
 abstract class _CheckAuthorisation implements AuthorisationEvent {
-  const factory _CheckAuthorisation({String uid, String companyID}) =
-      _$_CheckAuthorisation;
+  const factory _CheckAuthorisation(
+      {required String uid, required String companyID}) = _$_CheckAuthorisation;
 
-  String get uid;
-  String get companyID;
-  _$CheckAuthorisationCopyWith<_CheckAuthorisation> get copyWith;
+  String get uid => throw _privateConstructorUsedError;
+  String get companyID => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$CheckAuthorisationCopyWith<_CheckAuthorisation> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
+/// @nodoc
 abstract class _$StartedCopyWith<$Res> {
   factory _$StartedCopyWith(_Started value, $Res Function(_Started) then) =
       __$StartedCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class __$StartedCopyWithImpl<$Res>
     extends _$AuthorisationEventCopyWithImpl<$Res>
     implements _$StartedCopyWith<$Res> {
@@ -206,6 +225,8 @@ class __$StartedCopyWithImpl<$Res>
   @override
   _Started get _value => super._value as _Started;
 }
+
+/// @nodoc
 
 class _$_Started implements _Started {
   const _$_Started();
@@ -225,23 +246,20 @@ class _$_Started implements _Started {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result checkAuthorisation(String uid, String companyID),
-    @required Result started(),
+  TResult when<TResult extends Object?>({
+    required TResult Function(String uid, String companyID) checkAuthorisation,
+    required TResult Function() started,
   }) {
-    assert(checkAuthorisation != null);
-    assert(started != null);
     return started();
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result checkAuthorisation(String uid, String companyID),
-    Result started(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String uid, String companyID)? checkAuthorisation,
+    TResult Function()? started,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (started != null) {
       return started();
     }
@@ -250,23 +268,20 @@ class _$_Started implements _Started {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result checkAuthorisation(_CheckAuthorisation value),
-    @required Result started(_Started value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_CheckAuthorisation value) checkAuthorisation,
+    required TResult Function(_Started value) started,
   }) {
-    assert(checkAuthorisation != null);
-    assert(started != null);
     return started(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result checkAuthorisation(_CheckAuthorisation value),
-    Result started(_Started value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_CheckAuthorisation value)? checkAuthorisation,
+    TResult Function(_Started value)? started,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (started != null) {
       return started(this);
     }
@@ -278,74 +293,78 @@ abstract class _Started implements AuthorisationEvent {
   const factory _Started() = _$_Started;
 }
 
+/// @nodoc
 class _$AuthorisationStateTearOff {
   const _$AuthorisationStateTearOff();
 
-// ignore: unused_element
   _Initial initial() {
     return const _Initial();
   }
 
-// ignore: unused_element
   _Authorized authorised(bool isAuthorised) {
     return _Authorized(
       isAuthorised,
     );
   }
 
-// ignore: unused_element
   _Unexpected unexpected() {
     return const _Unexpected();
   }
 
-// ignore: unused_element
   _NotAuthorized notAuthorised() {
     return const _NotAuthorized();
   }
 }
 
-// ignore: unused_element
+/// @nodoc
 const $AuthorisationState = _$AuthorisationStateTearOff();
 
+/// @nodoc
 mixin _$AuthorisationState {
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initial(),
-    @required Result authorised(bool isAuthorised),
-    @required Result unexpected(),
-    @required Result notAuthorised(),
-  });
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function(bool isAuthorised) authorised,
+    required TResult Function() unexpected,
+    required TResult Function() notAuthorised,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initial(),
-    Result authorised(bool isAuthorised),
-    Result unexpected(),
-    Result notAuthorised(),
-    @required Result orElse(),
-  });
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(bool isAuthorised)? authorised,
+    TResult Function()? unexpected,
+    TResult Function()? notAuthorised,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initial(_Initial value),
-    @required Result authorised(_Authorized value),
-    @required Result unexpected(_Unexpected value),
-    @required Result notAuthorised(_NotAuthorized value),
-  });
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_Authorized value) authorised,
+    required TResult Function(_Unexpected value) unexpected,
+    required TResult Function(_NotAuthorized value) notAuthorised,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initial(_Initial value),
-    Result authorised(_Authorized value),
-    Result unexpected(_Unexpected value),
-    Result notAuthorised(_NotAuthorized value),
-    @required Result orElse(),
-  });
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Authorized value)? authorised,
+    TResult Function(_Unexpected value)? unexpected,
+    TResult Function(_NotAuthorized value)? notAuthorised,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
+/// @nodoc
 abstract class $AuthorisationStateCopyWith<$Res> {
   factory $AuthorisationStateCopyWith(
           AuthorisationState value, $Res Function(AuthorisationState) then) =
       _$AuthorisationStateCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class _$AuthorisationStateCopyWithImpl<$Res>
     implements $AuthorisationStateCopyWith<$Res> {
   _$AuthorisationStateCopyWithImpl(this._value, this._then);
@@ -355,11 +374,13 @@ class _$AuthorisationStateCopyWithImpl<$Res>
   final $Res Function(AuthorisationState) _then;
 }
 
+/// @nodoc
 abstract class _$InitialCopyWith<$Res> {
   factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) =
       __$InitialCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class __$InitialCopyWithImpl<$Res>
     extends _$AuthorisationStateCopyWithImpl<$Res>
     implements _$InitialCopyWith<$Res> {
@@ -369,6 +390,8 @@ class __$InitialCopyWithImpl<$Res>
   @override
   _Initial get _value => super._value as _Initial;
 }
+
+/// @nodoc
 
 class _$_Initial implements _Initial {
   const _$_Initial();
@@ -388,29 +411,24 @@ class _$_Initial implements _Initial {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initial(),
-    @required Result authorised(bool isAuthorised),
-    @required Result unexpected(),
-    @required Result notAuthorised(),
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function(bool isAuthorised) authorised,
+    required TResult Function() unexpected,
+    required TResult Function() notAuthorised,
   }) {
-    assert(initial != null);
-    assert(authorised != null);
-    assert(unexpected != null);
-    assert(notAuthorised != null);
     return initial();
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initial(),
-    Result authorised(bool isAuthorised),
-    Result unexpected(),
-    Result notAuthorised(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(bool isAuthorised)? authorised,
+    TResult Function()? unexpected,
+    TResult Function()? notAuthorised,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (initial != null) {
       return initial();
     }
@@ -419,29 +437,24 @@ class _$_Initial implements _Initial {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initial(_Initial value),
-    @required Result authorised(_Authorized value),
-    @required Result unexpected(_Unexpected value),
-    @required Result notAuthorised(_NotAuthorized value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_Authorized value) authorised,
+    required TResult Function(_Unexpected value) unexpected,
+    required TResult Function(_NotAuthorized value) notAuthorised,
   }) {
-    assert(initial != null);
-    assert(authorised != null);
-    assert(unexpected != null);
-    assert(notAuthorised != null);
     return initial(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initial(_Initial value),
-    Result authorised(_Authorized value),
-    Result unexpected(_Unexpected value),
-    Result notAuthorised(_NotAuthorized value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Authorized value)? authorised,
+    TResult Function(_Unexpected value)? unexpected,
+    TResult Function(_NotAuthorized value)? notAuthorised,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (initial != null) {
       return initial(this);
     }
@@ -453,6 +466,7 @@ abstract class _Initial implements AuthorisationState {
   const factory _Initial() = _$_Initial;
 }
 
+/// @nodoc
 abstract class _$AuthorizedCopyWith<$Res> {
   factory _$AuthorizedCopyWith(
           _Authorized value, $Res Function(_Authorized) then) =
@@ -460,6 +474,7 @@ abstract class _$AuthorizedCopyWith<$Res> {
   $Res call({bool isAuthorised});
 }
 
+/// @nodoc
 class __$AuthorizedCopyWithImpl<$Res>
     extends _$AuthorisationStateCopyWithImpl<$Res>
     implements _$AuthorizedCopyWith<$Res> {
@@ -472,16 +487,21 @@ class __$AuthorizedCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object isAuthorised = freezed,
+    Object? isAuthorised = freezed,
   }) {
     return _then(_Authorized(
-      isAuthorised == freezed ? _value.isAuthorised : isAuthorised as bool,
+      isAuthorised == freezed
+          ? _value.isAuthorised
+          : isAuthorised // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
 
+/// @nodoc
+
 class _$_Authorized implements _Authorized {
-  const _$_Authorized(this.isAuthorised) : assert(isAuthorised != null);
+  const _$_Authorized(this.isAuthorised);
 
   @override
   final bool isAuthorised;
@@ -504,35 +524,31 @@ class _$_Authorized implements _Authorized {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(isAuthorised);
 
+  @JsonKey(ignore: true)
   @override
   _$AuthorizedCopyWith<_Authorized> get copyWith =>
       __$AuthorizedCopyWithImpl<_Authorized>(this, _$identity);
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initial(),
-    @required Result authorised(bool isAuthorised),
-    @required Result unexpected(),
-    @required Result notAuthorised(),
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function(bool isAuthorised) authorised,
+    required TResult Function() unexpected,
+    required TResult Function() notAuthorised,
   }) {
-    assert(initial != null);
-    assert(authorised != null);
-    assert(unexpected != null);
-    assert(notAuthorised != null);
     return authorised(isAuthorised);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initial(),
-    Result authorised(bool isAuthorised),
-    Result unexpected(),
-    Result notAuthorised(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(bool isAuthorised)? authorised,
+    TResult Function()? unexpected,
+    TResult Function()? notAuthorised,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (authorised != null) {
       return authorised(isAuthorised);
     }
@@ -541,29 +557,24 @@ class _$_Authorized implements _Authorized {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initial(_Initial value),
-    @required Result authorised(_Authorized value),
-    @required Result unexpected(_Unexpected value),
-    @required Result notAuthorised(_NotAuthorized value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_Authorized value) authorised,
+    required TResult Function(_Unexpected value) unexpected,
+    required TResult Function(_NotAuthorized value) notAuthorised,
   }) {
-    assert(initial != null);
-    assert(authorised != null);
-    assert(unexpected != null);
-    assert(notAuthorised != null);
     return authorised(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initial(_Initial value),
-    Result authorised(_Authorized value),
-    Result unexpected(_Unexpected value),
-    Result notAuthorised(_NotAuthorized value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Authorized value)? authorised,
+    TResult Function(_Unexpected value)? unexpected,
+    TResult Function(_NotAuthorized value)? notAuthorised,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (authorised != null) {
       return authorised(this);
     }
@@ -574,16 +585,20 @@ class _$_Authorized implements _Authorized {
 abstract class _Authorized implements AuthorisationState {
   const factory _Authorized(bool isAuthorised) = _$_Authorized;
 
-  bool get isAuthorised;
-  _$AuthorizedCopyWith<_Authorized> get copyWith;
+  bool get isAuthorised => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$AuthorizedCopyWith<_Authorized> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
+/// @nodoc
 abstract class _$UnexpectedCopyWith<$Res> {
   factory _$UnexpectedCopyWith(
           _Unexpected value, $Res Function(_Unexpected) then) =
       __$UnexpectedCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class __$UnexpectedCopyWithImpl<$Res>
     extends _$AuthorisationStateCopyWithImpl<$Res>
     implements _$UnexpectedCopyWith<$Res> {
@@ -594,6 +609,8 @@ class __$UnexpectedCopyWithImpl<$Res>
   @override
   _Unexpected get _value => super._value as _Unexpected;
 }
+
+/// @nodoc
 
 class _$_Unexpected implements _Unexpected {
   const _$_Unexpected();
@@ -613,29 +630,24 @@ class _$_Unexpected implements _Unexpected {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initial(),
-    @required Result authorised(bool isAuthorised),
-    @required Result unexpected(),
-    @required Result notAuthorised(),
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function(bool isAuthorised) authorised,
+    required TResult Function() unexpected,
+    required TResult Function() notAuthorised,
   }) {
-    assert(initial != null);
-    assert(authorised != null);
-    assert(unexpected != null);
-    assert(notAuthorised != null);
     return unexpected();
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initial(),
-    Result authorised(bool isAuthorised),
-    Result unexpected(),
-    Result notAuthorised(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(bool isAuthorised)? authorised,
+    TResult Function()? unexpected,
+    TResult Function()? notAuthorised,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (unexpected != null) {
       return unexpected();
     }
@@ -644,29 +656,24 @@ class _$_Unexpected implements _Unexpected {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initial(_Initial value),
-    @required Result authorised(_Authorized value),
-    @required Result unexpected(_Unexpected value),
-    @required Result notAuthorised(_NotAuthorized value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_Authorized value) authorised,
+    required TResult Function(_Unexpected value) unexpected,
+    required TResult Function(_NotAuthorized value) notAuthorised,
   }) {
-    assert(initial != null);
-    assert(authorised != null);
-    assert(unexpected != null);
-    assert(notAuthorised != null);
     return unexpected(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initial(_Initial value),
-    Result authorised(_Authorized value),
-    Result unexpected(_Unexpected value),
-    Result notAuthorised(_NotAuthorized value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Authorized value)? authorised,
+    TResult Function(_Unexpected value)? unexpected,
+    TResult Function(_NotAuthorized value)? notAuthorised,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (unexpected != null) {
       return unexpected(this);
     }
@@ -678,12 +685,14 @@ abstract class _Unexpected implements AuthorisationState {
   const factory _Unexpected() = _$_Unexpected;
 }
 
+/// @nodoc
 abstract class _$NotAuthorizedCopyWith<$Res> {
   factory _$NotAuthorizedCopyWith(
           _NotAuthorized value, $Res Function(_NotAuthorized) then) =
       __$NotAuthorizedCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class __$NotAuthorizedCopyWithImpl<$Res>
     extends _$AuthorisationStateCopyWithImpl<$Res>
     implements _$NotAuthorizedCopyWith<$Res> {
@@ -694,6 +703,8 @@ class __$NotAuthorizedCopyWithImpl<$Res>
   @override
   _NotAuthorized get _value => super._value as _NotAuthorized;
 }
+
+/// @nodoc
 
 class _$_NotAuthorized implements _NotAuthorized {
   const _$_NotAuthorized();
@@ -713,29 +724,24 @@ class _$_NotAuthorized implements _NotAuthorized {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initial(),
-    @required Result authorised(bool isAuthorised),
-    @required Result unexpected(),
-    @required Result notAuthorised(),
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function(bool isAuthorised) authorised,
+    required TResult Function() unexpected,
+    required TResult Function() notAuthorised,
   }) {
-    assert(initial != null);
-    assert(authorised != null);
-    assert(unexpected != null);
-    assert(notAuthorised != null);
     return notAuthorised();
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initial(),
-    Result authorised(bool isAuthorised),
-    Result unexpected(),
-    Result notAuthorised(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(bool isAuthorised)? authorised,
+    TResult Function()? unexpected,
+    TResult Function()? notAuthorised,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (notAuthorised != null) {
       return notAuthorised();
     }
@@ -744,29 +750,24 @@ class _$_NotAuthorized implements _NotAuthorized {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initial(_Initial value),
-    @required Result authorised(_Authorized value),
-    @required Result unexpected(_Unexpected value),
-    @required Result notAuthorised(_NotAuthorized value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_Authorized value) authorised,
+    required TResult Function(_Unexpected value) unexpected,
+    required TResult Function(_NotAuthorized value) notAuthorised,
   }) {
-    assert(initial != null);
-    assert(authorised != null);
-    assert(unexpected != null);
-    assert(notAuthorised != null);
     return notAuthorised(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initial(_Initial value),
-    Result authorised(_Authorized value),
-    Result unexpected(_Unexpected value),
-    Result notAuthorised(_NotAuthorized value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Authorized value)? authorised,
+    TResult Function(_Unexpected value)? unexpected,
+    TResult Function(_NotAuthorized value)? notAuthorised,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (notAuthorised != null) {
       return notAuthorised(this);
     }

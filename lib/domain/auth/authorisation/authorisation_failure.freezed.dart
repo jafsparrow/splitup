@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'authorisation_failure.dart';
 
@@ -9,72 +9,79 @@ part of 'authorisation_failure.dart';
 
 T _$identity<T>(T value) => value;
 
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
+/// @nodoc
 class _$AuthorisationFailureTearOff {
   const _$AuthorisationFailureTearOff();
 
-// ignore: unused_element
   CancelledByUser cancelledByUser() {
     return const CancelledByUser();
   }
 
-// ignore: unused_element
   ServerError serverError() {
     return const ServerError();
   }
 
-// ignore: unused_element
   NotAuthorised notAuthorized() {
     return const NotAuthorised();
   }
 
-// ignore: unused_element
   UserNotAssigned userNotAssigned() {
     return const UserNotAssigned();
   }
 }
 
-// ignore: unused_element
+/// @nodoc
 const $AuthorisationFailure = _$AuthorisationFailureTearOff();
 
+/// @nodoc
 mixin _$AuthorisationFailure {
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result cancelledByUser(),
-    @required Result serverError(),
-    @required Result notAuthorized(),
-    @required Result userNotAssigned(),
-  });
+  TResult when<TResult extends Object?>({
+    required TResult Function() cancelledByUser,
+    required TResult Function() serverError,
+    required TResult Function() notAuthorized,
+    required TResult Function() userNotAssigned,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result cancelledByUser(),
-    Result serverError(),
-    Result notAuthorized(),
-    Result userNotAssigned(),
-    @required Result orElse(),
-  });
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? cancelledByUser,
+    TResult Function()? serverError,
+    TResult Function()? notAuthorized,
+    TResult Function()? userNotAssigned,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result cancelledByUser(CancelledByUser value),
-    @required Result serverError(ServerError value),
-    @required Result notAuthorized(NotAuthorised value),
-    @required Result userNotAssigned(UserNotAssigned value),
-  });
+  TResult map<TResult extends Object?>({
+    required TResult Function(CancelledByUser value) cancelledByUser,
+    required TResult Function(ServerError value) serverError,
+    required TResult Function(NotAuthorised value) notAuthorized,
+    required TResult Function(UserNotAssigned value) userNotAssigned,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result cancelledByUser(CancelledByUser value),
-    Result serverError(ServerError value),
-    Result notAuthorized(NotAuthorised value),
-    Result userNotAssigned(UserNotAssigned value),
-    @required Result orElse(),
-  });
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(CancelledByUser value)? cancelledByUser,
+    TResult Function(ServerError value)? serverError,
+    TResult Function(NotAuthorised value)? notAuthorized,
+    TResult Function(UserNotAssigned value)? userNotAssigned,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
+/// @nodoc
 abstract class $AuthorisationFailureCopyWith<$Res> {
   factory $AuthorisationFailureCopyWith(AuthorisationFailure value,
           $Res Function(AuthorisationFailure) then) =
       _$AuthorisationFailureCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class _$AuthorisationFailureCopyWithImpl<$Res>
     implements $AuthorisationFailureCopyWith<$Res> {
   _$AuthorisationFailureCopyWithImpl(this._value, this._then);
@@ -84,12 +91,14 @@ class _$AuthorisationFailureCopyWithImpl<$Res>
   final $Res Function(AuthorisationFailure) _then;
 }
 
+/// @nodoc
 abstract class $CancelledByUserCopyWith<$Res> {
   factory $CancelledByUserCopyWith(
           CancelledByUser value, $Res Function(CancelledByUser) then) =
       _$CancelledByUserCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class _$CancelledByUserCopyWithImpl<$Res>
     extends _$AuthorisationFailureCopyWithImpl<$Res>
     implements $CancelledByUserCopyWith<$Res> {
@@ -100,6 +109,8 @@ class _$CancelledByUserCopyWithImpl<$Res>
   @override
   CancelledByUser get _value => super._value as CancelledByUser;
 }
+
+/// @nodoc
 
 class _$CancelledByUser implements CancelledByUser {
   const _$CancelledByUser();
@@ -119,29 +130,24 @@ class _$CancelledByUser implements CancelledByUser {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result cancelledByUser(),
-    @required Result serverError(),
-    @required Result notAuthorized(),
-    @required Result userNotAssigned(),
+  TResult when<TResult extends Object?>({
+    required TResult Function() cancelledByUser,
+    required TResult Function() serverError,
+    required TResult Function() notAuthorized,
+    required TResult Function() userNotAssigned,
   }) {
-    assert(cancelledByUser != null);
-    assert(serverError != null);
-    assert(notAuthorized != null);
-    assert(userNotAssigned != null);
     return cancelledByUser();
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result cancelledByUser(),
-    Result serverError(),
-    Result notAuthorized(),
-    Result userNotAssigned(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? cancelledByUser,
+    TResult Function()? serverError,
+    TResult Function()? notAuthorized,
+    TResult Function()? userNotAssigned,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (cancelledByUser != null) {
       return cancelledByUser();
     }
@@ -150,29 +156,24 @@ class _$CancelledByUser implements CancelledByUser {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result cancelledByUser(CancelledByUser value),
-    @required Result serverError(ServerError value),
-    @required Result notAuthorized(NotAuthorised value),
-    @required Result userNotAssigned(UserNotAssigned value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(CancelledByUser value) cancelledByUser,
+    required TResult Function(ServerError value) serverError,
+    required TResult Function(NotAuthorised value) notAuthorized,
+    required TResult Function(UserNotAssigned value) userNotAssigned,
   }) {
-    assert(cancelledByUser != null);
-    assert(serverError != null);
-    assert(notAuthorized != null);
-    assert(userNotAssigned != null);
     return cancelledByUser(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result cancelledByUser(CancelledByUser value),
-    Result serverError(ServerError value),
-    Result notAuthorized(NotAuthorised value),
-    Result userNotAssigned(UserNotAssigned value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(CancelledByUser value)? cancelledByUser,
+    TResult Function(ServerError value)? serverError,
+    TResult Function(NotAuthorised value)? notAuthorized,
+    TResult Function(UserNotAssigned value)? userNotAssigned,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (cancelledByUser != null) {
       return cancelledByUser(this);
     }
@@ -184,12 +185,14 @@ abstract class CancelledByUser implements AuthorisationFailure {
   const factory CancelledByUser() = _$CancelledByUser;
 }
 
+/// @nodoc
 abstract class $ServerErrorCopyWith<$Res> {
   factory $ServerErrorCopyWith(
           ServerError value, $Res Function(ServerError) then) =
       _$ServerErrorCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class _$ServerErrorCopyWithImpl<$Res>
     extends _$AuthorisationFailureCopyWithImpl<$Res>
     implements $ServerErrorCopyWith<$Res> {
@@ -200,6 +203,8 @@ class _$ServerErrorCopyWithImpl<$Res>
   @override
   ServerError get _value => super._value as ServerError;
 }
+
+/// @nodoc
 
 class _$ServerError implements ServerError {
   const _$ServerError();
@@ -219,29 +224,24 @@ class _$ServerError implements ServerError {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result cancelledByUser(),
-    @required Result serverError(),
-    @required Result notAuthorized(),
-    @required Result userNotAssigned(),
+  TResult when<TResult extends Object?>({
+    required TResult Function() cancelledByUser,
+    required TResult Function() serverError,
+    required TResult Function() notAuthorized,
+    required TResult Function() userNotAssigned,
   }) {
-    assert(cancelledByUser != null);
-    assert(serverError != null);
-    assert(notAuthorized != null);
-    assert(userNotAssigned != null);
     return serverError();
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result cancelledByUser(),
-    Result serverError(),
-    Result notAuthorized(),
-    Result userNotAssigned(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? cancelledByUser,
+    TResult Function()? serverError,
+    TResult Function()? notAuthorized,
+    TResult Function()? userNotAssigned,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (serverError != null) {
       return serverError();
     }
@@ -250,29 +250,24 @@ class _$ServerError implements ServerError {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result cancelledByUser(CancelledByUser value),
-    @required Result serverError(ServerError value),
-    @required Result notAuthorized(NotAuthorised value),
-    @required Result userNotAssigned(UserNotAssigned value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(CancelledByUser value) cancelledByUser,
+    required TResult Function(ServerError value) serverError,
+    required TResult Function(NotAuthorised value) notAuthorized,
+    required TResult Function(UserNotAssigned value) userNotAssigned,
   }) {
-    assert(cancelledByUser != null);
-    assert(serverError != null);
-    assert(notAuthorized != null);
-    assert(userNotAssigned != null);
     return serverError(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result cancelledByUser(CancelledByUser value),
-    Result serverError(ServerError value),
-    Result notAuthorized(NotAuthorised value),
-    Result userNotAssigned(UserNotAssigned value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(CancelledByUser value)? cancelledByUser,
+    TResult Function(ServerError value)? serverError,
+    TResult Function(NotAuthorised value)? notAuthorized,
+    TResult Function(UserNotAssigned value)? userNotAssigned,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (serverError != null) {
       return serverError(this);
     }
@@ -284,12 +279,14 @@ abstract class ServerError implements AuthorisationFailure {
   const factory ServerError() = _$ServerError;
 }
 
+/// @nodoc
 abstract class $NotAuthorisedCopyWith<$Res> {
   factory $NotAuthorisedCopyWith(
           NotAuthorised value, $Res Function(NotAuthorised) then) =
       _$NotAuthorisedCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class _$NotAuthorisedCopyWithImpl<$Res>
     extends _$AuthorisationFailureCopyWithImpl<$Res>
     implements $NotAuthorisedCopyWith<$Res> {
@@ -300,6 +297,8 @@ class _$NotAuthorisedCopyWithImpl<$Res>
   @override
   NotAuthorised get _value => super._value as NotAuthorised;
 }
+
+/// @nodoc
 
 class _$NotAuthorised implements NotAuthorised {
   const _$NotAuthorised();
@@ -319,29 +318,24 @@ class _$NotAuthorised implements NotAuthorised {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result cancelledByUser(),
-    @required Result serverError(),
-    @required Result notAuthorized(),
-    @required Result userNotAssigned(),
+  TResult when<TResult extends Object?>({
+    required TResult Function() cancelledByUser,
+    required TResult Function() serverError,
+    required TResult Function() notAuthorized,
+    required TResult Function() userNotAssigned,
   }) {
-    assert(cancelledByUser != null);
-    assert(serverError != null);
-    assert(notAuthorized != null);
-    assert(userNotAssigned != null);
     return notAuthorized();
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result cancelledByUser(),
-    Result serverError(),
-    Result notAuthorized(),
-    Result userNotAssigned(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? cancelledByUser,
+    TResult Function()? serverError,
+    TResult Function()? notAuthorized,
+    TResult Function()? userNotAssigned,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (notAuthorized != null) {
       return notAuthorized();
     }
@@ -350,29 +344,24 @@ class _$NotAuthorised implements NotAuthorised {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result cancelledByUser(CancelledByUser value),
-    @required Result serverError(ServerError value),
-    @required Result notAuthorized(NotAuthorised value),
-    @required Result userNotAssigned(UserNotAssigned value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(CancelledByUser value) cancelledByUser,
+    required TResult Function(ServerError value) serverError,
+    required TResult Function(NotAuthorised value) notAuthorized,
+    required TResult Function(UserNotAssigned value) userNotAssigned,
   }) {
-    assert(cancelledByUser != null);
-    assert(serverError != null);
-    assert(notAuthorized != null);
-    assert(userNotAssigned != null);
     return notAuthorized(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result cancelledByUser(CancelledByUser value),
-    Result serverError(ServerError value),
-    Result notAuthorized(NotAuthorised value),
-    Result userNotAssigned(UserNotAssigned value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(CancelledByUser value)? cancelledByUser,
+    TResult Function(ServerError value)? serverError,
+    TResult Function(NotAuthorised value)? notAuthorized,
+    TResult Function(UserNotAssigned value)? userNotAssigned,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (notAuthorized != null) {
       return notAuthorized(this);
     }
@@ -384,12 +373,14 @@ abstract class NotAuthorised implements AuthorisationFailure {
   const factory NotAuthorised() = _$NotAuthorised;
 }
 
+/// @nodoc
 abstract class $UserNotAssignedCopyWith<$Res> {
   factory $UserNotAssignedCopyWith(
           UserNotAssigned value, $Res Function(UserNotAssigned) then) =
       _$UserNotAssignedCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class _$UserNotAssignedCopyWithImpl<$Res>
     extends _$AuthorisationFailureCopyWithImpl<$Res>
     implements $UserNotAssignedCopyWith<$Res> {
@@ -400,6 +391,8 @@ class _$UserNotAssignedCopyWithImpl<$Res>
   @override
   UserNotAssigned get _value => super._value as UserNotAssigned;
 }
+
+/// @nodoc
 
 class _$UserNotAssigned implements UserNotAssigned {
   const _$UserNotAssigned();
@@ -419,29 +412,24 @@ class _$UserNotAssigned implements UserNotAssigned {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result cancelledByUser(),
-    @required Result serverError(),
-    @required Result notAuthorized(),
-    @required Result userNotAssigned(),
+  TResult when<TResult extends Object?>({
+    required TResult Function() cancelledByUser,
+    required TResult Function() serverError,
+    required TResult Function() notAuthorized,
+    required TResult Function() userNotAssigned,
   }) {
-    assert(cancelledByUser != null);
-    assert(serverError != null);
-    assert(notAuthorized != null);
-    assert(userNotAssigned != null);
     return userNotAssigned();
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result cancelledByUser(),
-    Result serverError(),
-    Result notAuthorized(),
-    Result userNotAssigned(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? cancelledByUser,
+    TResult Function()? serverError,
+    TResult Function()? notAuthorized,
+    TResult Function()? userNotAssigned,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (userNotAssigned != null) {
       return userNotAssigned();
     }
@@ -450,29 +438,24 @@ class _$UserNotAssigned implements UserNotAssigned {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result cancelledByUser(CancelledByUser value),
-    @required Result serverError(ServerError value),
-    @required Result notAuthorized(NotAuthorised value),
-    @required Result userNotAssigned(UserNotAssigned value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(CancelledByUser value) cancelledByUser,
+    required TResult Function(ServerError value) serverError,
+    required TResult Function(NotAuthorised value) notAuthorized,
+    required TResult Function(UserNotAssigned value) userNotAssigned,
   }) {
-    assert(cancelledByUser != null);
-    assert(serverError != null);
-    assert(notAuthorized != null);
-    assert(userNotAssigned != null);
     return userNotAssigned(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result cancelledByUser(CancelledByUser value),
-    Result serverError(ServerError value),
-    Result notAuthorized(NotAuthorised value),
-    Result userNotAssigned(UserNotAssigned value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(CancelledByUser value)? cancelledByUser,
+    TResult Function(ServerError value)? serverError,
+    TResult Function(NotAuthorised value)? notAuthorized,
+    TResult Function(UserNotAssigned value)? userNotAssigned,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (userNotAssigned != null) {
       return userNotAssigned(this);
     }

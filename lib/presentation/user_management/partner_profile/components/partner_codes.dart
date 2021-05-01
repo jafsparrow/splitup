@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class PartnerCodes extends StatelessWidget {
-  const PartnerCodes({Key key}) : super(key: key);
+  const PartnerCodes();
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +17,7 @@ class PartnerCodes extends StatelessWidget {
             'Assigned Barcodes',
             style: Theme.of(context)
                 .textTheme
-                .headline6
+                .headline6!
                 .copyWith(fontWeight: FontWeight.w300),
           ),
           SizedBox(

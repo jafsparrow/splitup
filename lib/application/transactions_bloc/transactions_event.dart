@@ -4,7 +4,7 @@ part of 'transactions_bloc.dart';
 abstract class TransactionsBlocEvent with _$TransactionsBlocEvent {
   const factory TransactionsBlocEvent.started() = _Started;
   const factory TransactionsBlocEvent.addTransaction(
-      {String companyId, UserTransaction transaction}) = _AddTransaction;
-  const factory TransactionsBlocEvent.loadTransactions({String companyId}) =
+      {required String companyId, required UserTransaction transaction}) = _AddTransaction;
+  const factory TransactionsBlocEvent.loadTransactions({required String companyId}) =
       _LoadTransactions;
 }

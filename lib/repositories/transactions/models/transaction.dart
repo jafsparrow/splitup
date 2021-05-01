@@ -6,25 +6,25 @@ import 'package:flutter/cupertino.dart';
 class UserTransaction {
   String description;
   String id;
-  String notes;
+  late String notes;
   DateTime addedDate;
   UserProfile salesUser;
   UserProfile partnerUser;
   TotalReward totalRewards;
 
   UserTransaction(this.description,
-      {id, this.totalRewards, this.salesUser, this.partnerUser})
+      {required id,required this.totalRewards,required  this.salesUser,required this.partnerUser})
       : this.id = id ?? '',
         this.addedDate = DateTime.now();
 
-  UserTransaction copyWith(
-      {String description,
-      TotalReward rewards,
-      String id,
-      @required salesUser,
-      @required partnerUser}) {
-    return UserTransaction(description = description ?? '', id: id ?? this.id);
-  }
+  // UserTransaction copyWith(
+  //     {String? description,
+  //     required TotalReward rewards,
+  //     required String id,
+  //     required salesUser,
+  //     required partnerUser}) {
+  //   return UserTransaction(description = description ?? '', id: id, partnerUser: null, salesUser: null, totalRewards: null);
+  // }
 
   static UserTransaction fromEntity(UserTransactionEntity entity) {
     return UserTransaction(entity.description,

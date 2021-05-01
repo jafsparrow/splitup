@@ -48,7 +48,7 @@ class PromotionRepository implements IPromotionRepository {
             .toList(),
       );
     } on FirebaseException catch (e) {
-      if (e is FirebaseException && e.message.contains('PERMISSION_DENIED')) {
+      if (e is FirebaseException && e.message!.contains('PERMISSION_DENIED')) {
         return left(const PromotionFailure.insufficientPermission());
       } else {
         // log.error(e.toString());

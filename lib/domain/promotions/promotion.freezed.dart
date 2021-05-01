@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'promotion.dart';
 
@@ -9,13 +9,16 @@ part of 'promotion.dart';
 
 T _$identity<T>(T value) => value;
 
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
+/// @nodoc
 class _$PromotionTearOff {
   const _$PromotionTearOff();
 
-// ignore: unused_element
   _Promotion call(
-      {@required PromotionTitle title,
-      @required PromotionDescription description}) {
+      {required PromotionTitle title,
+      required PromotionDescription description}) {
     return _Promotion(
       title: title,
       description: description,
@@ -23,22 +26,27 @@ class _$PromotionTearOff {
   }
 }
 
-// ignore: unused_element
+/// @nodoc
 const $Promotion = _$PromotionTearOff();
 
+/// @nodoc
 mixin _$Promotion {
-  PromotionTitle get title;
-  PromotionDescription get description;
+  PromotionTitle get title => throw _privateConstructorUsedError;
+  PromotionDescription get description => throw _privateConstructorUsedError;
 
-  $PromotionCopyWith<Promotion> get copyWith;
+  @JsonKey(ignore: true)
+  $PromotionCopyWith<Promotion> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
+/// @nodoc
 abstract class $PromotionCopyWith<$Res> {
   factory $PromotionCopyWith(Promotion value, $Res Function(Promotion) then) =
       _$PromotionCopyWithImpl<$Res>;
   $Res call({PromotionTitle title, PromotionDescription description});
 }
 
+/// @nodoc
 class _$PromotionCopyWithImpl<$Res> implements $PromotionCopyWith<$Res> {
   _$PromotionCopyWithImpl(this._value, this._then);
 
@@ -48,18 +56,23 @@ class _$PromotionCopyWithImpl<$Res> implements $PromotionCopyWith<$Res> {
 
   @override
   $Res call({
-    Object title = freezed,
-    Object description = freezed,
+    Object? title = freezed,
+    Object? description = freezed,
   }) {
     return _then(_value.copyWith(
-      title: title == freezed ? _value.title : title as PromotionTitle,
+      title: title == freezed
+          ? _value.title
+          : title // ignore: cast_nullable_to_non_nullable
+              as PromotionTitle,
       description: description == freezed
           ? _value.description
-          : description as PromotionDescription,
+          : description // ignore: cast_nullable_to_non_nullable
+              as PromotionDescription,
     ));
   }
 }
 
+/// @nodoc
 abstract class _$PromotionCopyWith<$Res> implements $PromotionCopyWith<$Res> {
   factory _$PromotionCopyWith(
           _Promotion value, $Res Function(_Promotion) then) =
@@ -68,6 +81,7 @@ abstract class _$PromotionCopyWith<$Res> implements $PromotionCopyWith<$Res> {
   $Res call({PromotionTitle title, PromotionDescription description});
 }
 
+/// @nodoc
 class __$PromotionCopyWithImpl<$Res> extends _$PromotionCopyWithImpl<$Res>
     implements _$PromotionCopyWith<$Res> {
   __$PromotionCopyWithImpl(_Promotion _value, $Res Function(_Promotion) _then)
@@ -78,23 +92,27 @@ class __$PromotionCopyWithImpl<$Res> extends _$PromotionCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object title = freezed,
-    Object description = freezed,
+    Object? title = freezed,
+    Object? description = freezed,
   }) {
     return _then(_Promotion(
-      title: title == freezed ? _value.title : title as PromotionTitle,
+      title: title == freezed
+          ? _value.title
+          : title // ignore: cast_nullable_to_non_nullable
+              as PromotionTitle,
       description: description == freezed
           ? _value.description
-          : description as PromotionDescription,
+          : description // ignore: cast_nullable_to_non_nullable
+              as PromotionDescription,
     ));
   }
 }
 
+/// @nodoc
+
 class _$_Promotion extends _Promotion {
-  const _$_Promotion({@required this.title, @required this.description})
-      : assert(title != null),
-        assert(description != null),
-        super._();
+  const _$_Promotion({required this.title, required this.description})
+      : super._();
 
   @override
   final PromotionTitle title;
@@ -123,21 +141,24 @@ class _$_Promotion extends _Promotion {
       const DeepCollectionEquality().hash(title) ^
       const DeepCollectionEquality().hash(description);
 
+  @JsonKey(ignore: true)
   @override
   _$PromotionCopyWith<_Promotion> get copyWith =>
       __$PromotionCopyWithImpl<_Promotion>(this, _$identity);
 }
 
 abstract class _Promotion extends Promotion {
-  const _Promotion._() : super._();
   const factory _Promotion(
-      {@required PromotionTitle title,
-      @required PromotionDescription description}) = _$_Promotion;
+      {required PromotionTitle title,
+      required PromotionDescription description}) = _$_Promotion;
+  const _Promotion._() : super._();
 
   @override
-  PromotionTitle get title;
+  PromotionTitle get title => throw _privateConstructorUsedError;
   @override
-  PromotionDescription get description;
+  PromotionDescription get description => throw _privateConstructorUsedError;
   @override
-  _$PromotionCopyWith<_Promotion> get copyWith;
+  @JsonKey(ignore: true)
+  _$PromotionCopyWith<_Promotion> get copyWith =>
+      throw _privateConstructorUsedError;
 }

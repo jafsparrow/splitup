@@ -18,7 +18,7 @@ class FirebaseUserManagementRepository implements IUserManagement {
 
   @override
   Future<Either<UserManagementFailure, PartnerUser>> getPartnerUserFromBarcode(
-      {String companyId, String barcode}) async {
+      {String? companyId, String? barcode}) async {
     try {
       QuerySnapshot userDetailsSanpshot = await _firestore
           .collection('companies')
@@ -36,7 +36,7 @@ class FirebaseUserManagementRepository implements IUserManagement {
       }
 
       return getPartnerUserFromId(
-          companyId: companyId,
+          companyId: companyId!,
           userId: userDetailsSanpshot.docs[0]['associatedUserId']);
     } catch (e) {
       print('something wrong happened ');
@@ -55,7 +55,7 @@ class FirebaseUserManagementRepository implements IUserManagement {
 
   @override
   Future<Either<UserManagementFailure, PartnerUser>> getPartnerUserFromId(
-      {String companyId, String userId}) async {
+      {String? companyId, String? userId}) async {
     try {
       DocumentSnapshot userDoc = await _firestore
           .collection('companies')
@@ -73,8 +73,8 @@ class FirebaseUserManagementRepository implements IUserManagement {
 
   @override
   Future<Either<UserManagementFailure, UserProfile>> addPartnerUser(
-      {UserProfile newPartnerUser, String companyId}) async {
-    String userEmail = newPartnerUser.email;
+      {UserProfile? newPartnerUser, String? companyId}) async {
+    String userEmail = newPartnerUser!.email;
     String userPassword = newPartnerUser.userName.substring(2) + '12345';
 
     print(userPassword);
@@ -83,12 +83,12 @@ class FirebaseUserManagementRepository implements IUserManagement {
           await _fireAuth.createUserWithEmailAndPassword(
               email: userEmail, password: userPassword);
       UserProfile newUser =
-          newPartnerUser.copyWith(uid: userCredential.user.uid);
+          newPartnerUser.copyWith(uid: userCredential.user!.uid);
 
       PartnerUser newPartner =
           PartnerUser(profile: newUser, totalRewardPoints: 0);
 
-      await _addNewUserToUsersCollection(newUser, companyId);
+      await _addNewUserToUsersCollection(newUser, companyId!);
 
       await _addUserToCompany(newPartner, companyId);
       return right(newUser);
@@ -138,9 +138,22 @@ class FirebaseUserManagementRepository implements IUserManagement {
     throw UnimplementedError();
   }
 
+
   @override
-  Future<List<PartnerUser>> getListOfUsers(String userType) {
-    // TODO: implement getListOfUsers
-    throw UnimplementedError();
+  Future<Either<UserManagementFailure, List<PartnerUser>>> getPartnerUsers({String? companyId}) async {
+     try {
+      QuerySnapshot userDoc = await _firestore
+          .collection('companies')
+          .doc(companyId)
+          .collection('users')
+          .get();
+      
+      List<PartnerUser> partnerList = userDoc.docs.map((userDoc) => PartnerUserDto.fromFirestore(userDoc).toDomain()).toList();
+
+      return right(partnerList);
+    } catch (e) {
+      print(e);
+      return left(UserManagementFailure.unexpected());
+    }
   }
 }

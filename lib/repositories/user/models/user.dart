@@ -9,15 +9,15 @@ class User extends Equatable {
   final String phone;
 
   const User(
-      {@required this.email,
-      @required this.name,
-      @required this.id,
-      @required this.photo,
-      this.phone})
+      {required this.email,
+      required this.name,
+      required this.id,
+      required this.photo,
+      required this.phone})
       : assert(email != null),
         assert(id != null);
 
-  static const empty = User(email: '', id: '', name: null, photo: null);
+  static const empty = User(email: '', id: '', name: '', photo: '', phone: '');
 
   @override
   // TODO: implement props

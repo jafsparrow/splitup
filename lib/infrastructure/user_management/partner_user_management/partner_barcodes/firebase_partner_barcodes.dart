@@ -14,7 +14,7 @@ class FirebasePartnerBarcodeManagement implements IPartnerBarcodeManagement {
 
   @override
   Future<Either<PartnerBarcodeFailure, UserBarcode>> assignBarcode(
-      {String uid, String companyId, String barcode}) async {
+      {String? uid, String? companyId, String? barcode}) async {
     // read the barcode , make a userBarcode object out of it,
     // check if the barcode existing.
     final CollectionReference orgBarcodeCollectionRef = _firestore
@@ -39,7 +39,8 @@ class FirebasePartnerBarcodeManagement implements IPartnerBarcodeManagement {
       );
       // assign the given barcode for the user.
       UserBarcodeDto newBarcodeDto = UserBarcodeDto(
-          barcode: barcode,
+        id: uid!,
+          barcode: barcode!,
           associatedUserId: uid,
           isActive: true,
           expiryDate: expiryDate,
@@ -63,7 +64,7 @@ class FirebasePartnerBarcodeManagement implements IPartnerBarcodeManagement {
 
   @override
   Future<Either<PartnerBarcodeFailure, bool>> deactivateBarcode(
-      {String uid, String companyId, String barcode}) async {
+      {String? uid, String? companyId, String? barcode}) async {
     final CollectionReference orgBarcodeCollectionRef = _firestore
         .collection('companies')
         .doc(companyId)
@@ -71,6 +72,7 @@ class FirebasePartnerBarcodeManagement implements IPartnerBarcodeManagement {
 
     try {
       await orgBarcodeCollectionRef.doc(barcode).update({'isActive': false});
+      return right(true);
     } catch (e) {
       return left(PartnerBarcodeFailure.unableToUpdate());
     }
@@ -78,7 +80,7 @@ class FirebasePartnerBarcodeManagement implements IPartnerBarcodeManagement {
 
   @override
   Future<Either<PartnerBarcodeFailure, List<UserBarcode>>>
-      getPartnerUserBarcodes({String uid, String companyId}) async {
+      getPartnerUserBarcodes({String? uid, String? companyId}) async {
     try {
       final CollectionReference orgBarcodeCollectionRef = _firestore
           .collection('companies')

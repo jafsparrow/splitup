@@ -1,7 +1,6 @@
 import 'package:JCCommisionApp/application/user_management/filter_users/filtered_partners_bloc.dart';
 import 'package:JCCommisionApp/application/user_management/list_users/partner_list_bloc.dart';
-import 'package:JCCommisionApp/domain/user_management/user_profile.dart';
-import 'package:JCCommisionApp/presentation/user_management/partner_profile/partner_profile.dart';
+import 'package:JCCommisionApp/domain/user_management/partner_user.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -35,6 +34,7 @@ class PartnerList extends StatelessWidget {
               } else if (state is FilteredPartnerList) {
                 return buildPartnerList(state.filteredPartnerList, context);
               }
+              return Container();
             },
           ),
         ),
@@ -43,7 +43,7 @@ class PartnerList extends StatelessWidget {
   }
 
   Widget buildPartnerList(
-      List<UserProfile> partnerUserList, BuildContext context) {
+      List<PartnerUser> partnerUserList, BuildContext context) {
     return Column(
       children: <Widget>[
         Row(
@@ -77,21 +77,21 @@ class PartnerList extends StatelessWidget {
     );
   }
 
-  Widget buildPartnerListItem({BuildContext context, UserProfile partnerUser}) {
+  Widget buildPartnerListItem({required BuildContext context,required PartnerUser partnerUser}) {
     return ListTile(
       onTap: () {
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => PartnerProfile(partnerUser: partnerUser),
-          ),
-        );
+        // Navigator.push(
+        //   context,
+        //   MaterialPageRoute(
+        //     builder: (context) => PartnerProfile(partnerUser: partnerUser),
+        //   ),
+        // );
       },
       title: Text(
-        partnerUser.userName,
+        partnerUser.profile.userName,
         style: Theme.of(context).textTheme.subtitle2,
       ),
-      subtitle: Text(partnerUser.userName),
+      subtitle: Text(partnerUser.profile.userName),
       leading: Icon(Icons.account_circle),
       trailing: Text('330', style: Theme.of(context).textTheme.headline6),
     );

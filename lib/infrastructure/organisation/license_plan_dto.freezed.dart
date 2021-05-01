@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'license_plan_dto.dart';
 
@@ -8,42 +8,57 @@ part of 'license_plan_dto.dart';
 // **************************************************************************
 
 T _$identity<T>(T value) => value;
+
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
 LicensePlanDto _$LicensePlanDtoFromJson(Map<String, dynamic> json) {
   return _LicensePlanDto.fromJson(json);
 }
 
+/// @nodoc
 class _$LicensePlanDtoTearOff {
   const _$LicensePlanDtoTearOff();
 
-// ignore: unused_element
   _LicensePlanDto call(
-      {String planName, @ServerTimestampConverter() DateTime expiryDate}) {
+      {required String planName,
+      @ServerTimestampConverter() DateTime? expiryDate}) {
     return _LicensePlanDto(
       planName: planName,
       expiryDate: expiryDate,
     );
   }
+
+  LicensePlanDto fromJson(Map<String, Object> json) {
+    return LicensePlanDto.fromJson(json);
+  }
 }
 
-// ignore: unused_element
+/// @nodoc
 const $LicensePlanDto = _$LicensePlanDtoTearOff();
 
+/// @nodoc
 mixin _$LicensePlanDto {
-  String get planName;
+  String get planName => throw _privateConstructorUsedError;
   @ServerTimestampConverter()
-  DateTime get expiryDate;
+  DateTime? get expiryDate => throw _privateConstructorUsedError;
 
-  Map<String, dynamic> toJson();
-  $LicensePlanDtoCopyWith<LicensePlanDto> get copyWith;
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $LicensePlanDtoCopyWith<LicensePlanDto> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
+/// @nodoc
 abstract class $LicensePlanDtoCopyWith<$Res> {
   factory $LicensePlanDtoCopyWith(
           LicensePlanDto value, $Res Function(LicensePlanDto) then) =
       _$LicensePlanDtoCopyWithImpl<$Res>;
-  $Res call({String planName, @ServerTimestampConverter() DateTime expiryDate});
+  $Res call(
+      {String planName, @ServerTimestampConverter() DateTime? expiryDate});
 }
 
+/// @nodoc
 class _$LicensePlanDtoCopyWithImpl<$Res>
     implements $LicensePlanDtoCopyWith<$Res> {
   _$LicensePlanDtoCopyWithImpl(this._value, this._then);
@@ -54,26 +69,34 @@ class _$LicensePlanDtoCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object planName = freezed,
-    Object expiryDate = freezed,
+    Object? planName = freezed,
+    Object? expiryDate = freezed,
   }) {
     return _then(_value.copyWith(
-      planName: planName == freezed ? _value.planName : planName as String,
-      expiryDate:
-          expiryDate == freezed ? _value.expiryDate : expiryDate as DateTime,
+      planName: planName == freezed
+          ? _value.planName
+          : planName // ignore: cast_nullable_to_non_nullable
+              as String,
+      expiryDate: expiryDate == freezed
+          ? _value.expiryDate
+          : expiryDate // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
     ));
   }
 }
 
+/// @nodoc
 abstract class _$LicensePlanDtoCopyWith<$Res>
     implements $LicensePlanDtoCopyWith<$Res> {
   factory _$LicensePlanDtoCopyWith(
           _LicensePlanDto value, $Res Function(_LicensePlanDto) then) =
       __$LicensePlanDtoCopyWithImpl<$Res>;
   @override
-  $Res call({String planName, @ServerTimestampConverter() DateTime expiryDate});
+  $Res call(
+      {String planName, @ServerTimestampConverter() DateTime? expiryDate});
 }
 
+/// @nodoc
 class __$LicensePlanDtoCopyWithImpl<$Res>
     extends _$LicensePlanDtoCopyWithImpl<$Res>
     implements _$LicensePlanDtoCopyWith<$Res> {
@@ -86,21 +109,27 @@ class __$LicensePlanDtoCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object planName = freezed,
-    Object expiryDate = freezed,
+    Object? planName = freezed,
+    Object? expiryDate = freezed,
   }) {
     return _then(_LicensePlanDto(
-      planName: planName == freezed ? _value.planName : planName as String,
-      expiryDate:
-          expiryDate == freezed ? _value.expiryDate : expiryDate as DateTime,
+      planName: planName == freezed
+          ? _value.planName
+          : planName // ignore: cast_nullable_to_non_nullable
+              as String,
+      expiryDate: expiryDate == freezed
+          ? _value.expiryDate
+          : expiryDate // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
     ));
   }
 }
 
+/// @nodoc
 @JsonSerializable()
 class _$_LicensePlanDto extends _LicensePlanDto {
   const _$_LicensePlanDto(
-      {this.planName, @ServerTimestampConverter() this.expiryDate})
+      {required this.planName, @ServerTimestampConverter() this.expiryDate})
       : super._();
 
   factory _$_LicensePlanDto.fromJson(Map<String, dynamic> json) =>
@@ -110,7 +139,7 @@ class _$_LicensePlanDto extends _LicensePlanDto {
   final String planName;
   @override
   @ServerTimestampConverter()
-  final DateTime expiryDate;
+  final DateTime? expiryDate;
 
   @override
   String toString() {
@@ -135,6 +164,7 @@ class _$_LicensePlanDto extends _LicensePlanDto {
       const DeepCollectionEquality().hash(planName) ^
       const DeepCollectionEquality().hash(expiryDate);
 
+  @JsonKey(ignore: true)
   @override
   _$LicensePlanDtoCopyWith<_LicensePlanDto> get copyWith =>
       __$LicensePlanDtoCopyWithImpl<_LicensePlanDto>(this, _$identity);
@@ -146,19 +176,21 @@ class _$_LicensePlanDto extends _LicensePlanDto {
 }
 
 abstract class _LicensePlanDto extends LicensePlanDto {
-  const _LicensePlanDto._() : super._();
   const factory _LicensePlanDto(
-      {String planName,
-      @ServerTimestampConverter() DateTime expiryDate}) = _$_LicensePlanDto;
+      {required String planName,
+      @ServerTimestampConverter() DateTime? expiryDate}) = _$_LicensePlanDto;
+  const _LicensePlanDto._() : super._();
 
   factory _LicensePlanDto.fromJson(Map<String, dynamic> json) =
       _$_LicensePlanDto.fromJson;
 
   @override
-  String get planName;
+  String get planName => throw _privateConstructorUsedError;
   @override
   @ServerTimestampConverter()
-  DateTime get expiryDate;
+  DateTime? get expiryDate => throw _privateConstructorUsedError;
   @override
-  _$LicensePlanDtoCopyWith<_LicensePlanDto> get copyWith;
+  @JsonKey(ignore: true)
+  _$LicensePlanDtoCopyWith<_LicensePlanDto> get copyWith =>
+      throw _privateConstructorUsedError;
 }

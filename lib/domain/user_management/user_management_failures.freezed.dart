@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'user_management_failures.dart';
 
@@ -9,81 +9,88 @@ part of 'user_management_failures.dart';
 
 T _$identity<T>(T value) => value;
 
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
+/// @nodoc
 class _$UserManagementFailureTearOff {
   const _$UserManagementFailureTearOff();
 
-// ignore: unused_element
   _Unexpected unexpected() {
     return const _Unexpected();
   }
 
-// ignore: unused_element
   _NotFound userNotFound() {
     return const _NotFound();
   }
 
-// ignore: unused_element
   _IsInactive userInactive() {
     return const _IsInactive();
   }
 
-// ignore: unused_element
   _UnableToUpdate unableToUpdate() {
     return const _UnableToUpdate();
   }
 
-// ignore: unused_element
   _UnableToCreateNewUser unableToCreateNewUser() {
     return const _UnableToCreateNewUser();
   }
 }
 
-// ignore: unused_element
+/// @nodoc
 const $UserManagementFailure = _$UserManagementFailureTearOff();
 
+/// @nodoc
 mixin _$UserManagementFailure {
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result unexpected(),
-    @required Result userNotFound(),
-    @required Result userInactive(),
-    @required Result unableToUpdate(),
-    @required Result unableToCreateNewUser(),
-  });
+  TResult when<TResult extends Object?>({
+    required TResult Function() unexpected,
+    required TResult Function() userNotFound,
+    required TResult Function() userInactive,
+    required TResult Function() unableToUpdate,
+    required TResult Function() unableToCreateNewUser,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result unexpected(),
-    Result userNotFound(),
-    Result userInactive(),
-    Result unableToUpdate(),
-    Result unableToCreateNewUser(),
-    @required Result orElse(),
-  });
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? unexpected,
+    TResult Function()? userNotFound,
+    TResult Function()? userInactive,
+    TResult Function()? unableToUpdate,
+    TResult Function()? unableToCreateNewUser,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result unexpected(_Unexpected value),
-    @required Result userNotFound(_NotFound value),
-    @required Result userInactive(_IsInactive value),
-    @required Result unableToUpdate(_UnableToUpdate value),
-    @required Result unableToCreateNewUser(_UnableToCreateNewUser value),
-  });
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Unexpected value) unexpected,
+    required TResult Function(_NotFound value) userNotFound,
+    required TResult Function(_IsInactive value) userInactive,
+    required TResult Function(_UnableToUpdate value) unableToUpdate,
+    required TResult Function(_UnableToCreateNewUser value)
+        unableToCreateNewUser,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result unexpected(_Unexpected value),
-    Result userNotFound(_NotFound value),
-    Result userInactive(_IsInactive value),
-    Result unableToUpdate(_UnableToUpdate value),
-    Result unableToCreateNewUser(_UnableToCreateNewUser value),
-    @required Result orElse(),
-  });
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Unexpected value)? unexpected,
+    TResult Function(_NotFound value)? userNotFound,
+    TResult Function(_IsInactive value)? userInactive,
+    TResult Function(_UnableToUpdate value)? unableToUpdate,
+    TResult Function(_UnableToCreateNewUser value)? unableToCreateNewUser,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
+/// @nodoc
 abstract class $UserManagementFailureCopyWith<$Res> {
   factory $UserManagementFailureCopyWith(UserManagementFailure value,
           $Res Function(UserManagementFailure) then) =
       _$UserManagementFailureCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class _$UserManagementFailureCopyWithImpl<$Res>
     implements $UserManagementFailureCopyWith<$Res> {
   _$UserManagementFailureCopyWithImpl(this._value, this._then);
@@ -93,12 +100,14 @@ class _$UserManagementFailureCopyWithImpl<$Res>
   final $Res Function(UserManagementFailure) _then;
 }
 
+/// @nodoc
 abstract class _$UnexpectedCopyWith<$Res> {
   factory _$UnexpectedCopyWith(
           _Unexpected value, $Res Function(_Unexpected) then) =
       __$UnexpectedCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class __$UnexpectedCopyWithImpl<$Res>
     extends _$UserManagementFailureCopyWithImpl<$Res>
     implements _$UnexpectedCopyWith<$Res> {
@@ -109,6 +118,8 @@ class __$UnexpectedCopyWithImpl<$Res>
   @override
   _Unexpected get _value => super._value as _Unexpected;
 }
+
+/// @nodoc
 
 class _$_Unexpected implements _Unexpected {
   const _$_Unexpected();
@@ -128,32 +139,26 @@ class _$_Unexpected implements _Unexpected {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result unexpected(),
-    @required Result userNotFound(),
-    @required Result userInactive(),
-    @required Result unableToUpdate(),
-    @required Result unableToCreateNewUser(),
+  TResult when<TResult extends Object?>({
+    required TResult Function() unexpected,
+    required TResult Function() userNotFound,
+    required TResult Function() userInactive,
+    required TResult Function() unableToUpdate,
+    required TResult Function() unableToCreateNewUser,
   }) {
-    assert(unexpected != null);
-    assert(userNotFound != null);
-    assert(userInactive != null);
-    assert(unableToUpdate != null);
-    assert(unableToCreateNewUser != null);
     return unexpected();
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result unexpected(),
-    Result userNotFound(),
-    Result userInactive(),
-    Result unableToUpdate(),
-    Result unableToCreateNewUser(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? unexpected,
+    TResult Function()? userNotFound,
+    TResult Function()? userInactive,
+    TResult Function()? unableToUpdate,
+    TResult Function()? unableToCreateNewUser,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (unexpected != null) {
       return unexpected();
     }
@@ -162,32 +167,27 @@ class _$_Unexpected implements _Unexpected {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result unexpected(_Unexpected value),
-    @required Result userNotFound(_NotFound value),
-    @required Result userInactive(_IsInactive value),
-    @required Result unableToUpdate(_UnableToUpdate value),
-    @required Result unableToCreateNewUser(_UnableToCreateNewUser value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Unexpected value) unexpected,
+    required TResult Function(_NotFound value) userNotFound,
+    required TResult Function(_IsInactive value) userInactive,
+    required TResult Function(_UnableToUpdate value) unableToUpdate,
+    required TResult Function(_UnableToCreateNewUser value)
+        unableToCreateNewUser,
   }) {
-    assert(unexpected != null);
-    assert(userNotFound != null);
-    assert(userInactive != null);
-    assert(unableToUpdate != null);
-    assert(unableToCreateNewUser != null);
     return unexpected(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result unexpected(_Unexpected value),
-    Result userNotFound(_NotFound value),
-    Result userInactive(_IsInactive value),
-    Result unableToUpdate(_UnableToUpdate value),
-    Result unableToCreateNewUser(_UnableToCreateNewUser value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Unexpected value)? unexpected,
+    TResult Function(_NotFound value)? userNotFound,
+    TResult Function(_IsInactive value)? userInactive,
+    TResult Function(_UnableToUpdate value)? unableToUpdate,
+    TResult Function(_UnableToCreateNewUser value)? unableToCreateNewUser,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (unexpected != null) {
       return unexpected(this);
     }
@@ -199,11 +199,13 @@ abstract class _Unexpected implements UserManagementFailure {
   const factory _Unexpected() = _$_Unexpected;
 }
 
+/// @nodoc
 abstract class _$NotFoundCopyWith<$Res> {
   factory _$NotFoundCopyWith(_NotFound value, $Res Function(_NotFound) then) =
       __$NotFoundCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class __$NotFoundCopyWithImpl<$Res>
     extends _$UserManagementFailureCopyWithImpl<$Res>
     implements _$NotFoundCopyWith<$Res> {
@@ -213,6 +215,8 @@ class __$NotFoundCopyWithImpl<$Res>
   @override
   _NotFound get _value => super._value as _NotFound;
 }
+
+/// @nodoc
 
 class _$_NotFound implements _NotFound {
   const _$_NotFound();
@@ -232,32 +236,26 @@ class _$_NotFound implements _NotFound {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result unexpected(),
-    @required Result userNotFound(),
-    @required Result userInactive(),
-    @required Result unableToUpdate(),
-    @required Result unableToCreateNewUser(),
+  TResult when<TResult extends Object?>({
+    required TResult Function() unexpected,
+    required TResult Function() userNotFound,
+    required TResult Function() userInactive,
+    required TResult Function() unableToUpdate,
+    required TResult Function() unableToCreateNewUser,
   }) {
-    assert(unexpected != null);
-    assert(userNotFound != null);
-    assert(userInactive != null);
-    assert(unableToUpdate != null);
-    assert(unableToCreateNewUser != null);
     return userNotFound();
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result unexpected(),
-    Result userNotFound(),
-    Result userInactive(),
-    Result unableToUpdate(),
-    Result unableToCreateNewUser(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? unexpected,
+    TResult Function()? userNotFound,
+    TResult Function()? userInactive,
+    TResult Function()? unableToUpdate,
+    TResult Function()? unableToCreateNewUser,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (userNotFound != null) {
       return userNotFound();
     }
@@ -266,32 +264,27 @@ class _$_NotFound implements _NotFound {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result unexpected(_Unexpected value),
-    @required Result userNotFound(_NotFound value),
-    @required Result userInactive(_IsInactive value),
-    @required Result unableToUpdate(_UnableToUpdate value),
-    @required Result unableToCreateNewUser(_UnableToCreateNewUser value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Unexpected value) unexpected,
+    required TResult Function(_NotFound value) userNotFound,
+    required TResult Function(_IsInactive value) userInactive,
+    required TResult Function(_UnableToUpdate value) unableToUpdate,
+    required TResult Function(_UnableToCreateNewUser value)
+        unableToCreateNewUser,
   }) {
-    assert(unexpected != null);
-    assert(userNotFound != null);
-    assert(userInactive != null);
-    assert(unableToUpdate != null);
-    assert(unableToCreateNewUser != null);
     return userNotFound(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result unexpected(_Unexpected value),
-    Result userNotFound(_NotFound value),
-    Result userInactive(_IsInactive value),
-    Result unableToUpdate(_UnableToUpdate value),
-    Result unableToCreateNewUser(_UnableToCreateNewUser value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Unexpected value)? unexpected,
+    TResult Function(_NotFound value)? userNotFound,
+    TResult Function(_IsInactive value)? userInactive,
+    TResult Function(_UnableToUpdate value)? unableToUpdate,
+    TResult Function(_UnableToCreateNewUser value)? unableToCreateNewUser,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (userNotFound != null) {
       return userNotFound(this);
     }
@@ -303,12 +296,14 @@ abstract class _NotFound implements UserManagementFailure {
   const factory _NotFound() = _$_NotFound;
 }
 
+/// @nodoc
 abstract class _$IsInactiveCopyWith<$Res> {
   factory _$IsInactiveCopyWith(
           _IsInactive value, $Res Function(_IsInactive) then) =
       __$IsInactiveCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class __$IsInactiveCopyWithImpl<$Res>
     extends _$UserManagementFailureCopyWithImpl<$Res>
     implements _$IsInactiveCopyWith<$Res> {
@@ -319,6 +314,8 @@ class __$IsInactiveCopyWithImpl<$Res>
   @override
   _IsInactive get _value => super._value as _IsInactive;
 }
+
+/// @nodoc
 
 class _$_IsInactive implements _IsInactive {
   const _$_IsInactive();
@@ -338,32 +335,26 @@ class _$_IsInactive implements _IsInactive {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result unexpected(),
-    @required Result userNotFound(),
-    @required Result userInactive(),
-    @required Result unableToUpdate(),
-    @required Result unableToCreateNewUser(),
+  TResult when<TResult extends Object?>({
+    required TResult Function() unexpected,
+    required TResult Function() userNotFound,
+    required TResult Function() userInactive,
+    required TResult Function() unableToUpdate,
+    required TResult Function() unableToCreateNewUser,
   }) {
-    assert(unexpected != null);
-    assert(userNotFound != null);
-    assert(userInactive != null);
-    assert(unableToUpdate != null);
-    assert(unableToCreateNewUser != null);
     return userInactive();
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result unexpected(),
-    Result userNotFound(),
-    Result userInactive(),
-    Result unableToUpdate(),
-    Result unableToCreateNewUser(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? unexpected,
+    TResult Function()? userNotFound,
+    TResult Function()? userInactive,
+    TResult Function()? unableToUpdate,
+    TResult Function()? unableToCreateNewUser,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (userInactive != null) {
       return userInactive();
     }
@@ -372,32 +363,27 @@ class _$_IsInactive implements _IsInactive {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result unexpected(_Unexpected value),
-    @required Result userNotFound(_NotFound value),
-    @required Result userInactive(_IsInactive value),
-    @required Result unableToUpdate(_UnableToUpdate value),
-    @required Result unableToCreateNewUser(_UnableToCreateNewUser value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Unexpected value) unexpected,
+    required TResult Function(_NotFound value) userNotFound,
+    required TResult Function(_IsInactive value) userInactive,
+    required TResult Function(_UnableToUpdate value) unableToUpdate,
+    required TResult Function(_UnableToCreateNewUser value)
+        unableToCreateNewUser,
   }) {
-    assert(unexpected != null);
-    assert(userNotFound != null);
-    assert(userInactive != null);
-    assert(unableToUpdate != null);
-    assert(unableToCreateNewUser != null);
     return userInactive(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result unexpected(_Unexpected value),
-    Result userNotFound(_NotFound value),
-    Result userInactive(_IsInactive value),
-    Result unableToUpdate(_UnableToUpdate value),
-    Result unableToCreateNewUser(_UnableToCreateNewUser value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Unexpected value)? unexpected,
+    TResult Function(_NotFound value)? userNotFound,
+    TResult Function(_IsInactive value)? userInactive,
+    TResult Function(_UnableToUpdate value)? unableToUpdate,
+    TResult Function(_UnableToCreateNewUser value)? unableToCreateNewUser,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (userInactive != null) {
       return userInactive(this);
     }
@@ -409,12 +395,14 @@ abstract class _IsInactive implements UserManagementFailure {
   const factory _IsInactive() = _$_IsInactive;
 }
 
+/// @nodoc
 abstract class _$UnableToUpdateCopyWith<$Res> {
   factory _$UnableToUpdateCopyWith(
           _UnableToUpdate value, $Res Function(_UnableToUpdate) then) =
       __$UnableToUpdateCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class __$UnableToUpdateCopyWithImpl<$Res>
     extends _$UserManagementFailureCopyWithImpl<$Res>
     implements _$UnableToUpdateCopyWith<$Res> {
@@ -425,6 +413,8 @@ class __$UnableToUpdateCopyWithImpl<$Res>
   @override
   _UnableToUpdate get _value => super._value as _UnableToUpdate;
 }
+
+/// @nodoc
 
 class _$_UnableToUpdate implements _UnableToUpdate {
   const _$_UnableToUpdate();
@@ -444,32 +434,26 @@ class _$_UnableToUpdate implements _UnableToUpdate {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result unexpected(),
-    @required Result userNotFound(),
-    @required Result userInactive(),
-    @required Result unableToUpdate(),
-    @required Result unableToCreateNewUser(),
+  TResult when<TResult extends Object?>({
+    required TResult Function() unexpected,
+    required TResult Function() userNotFound,
+    required TResult Function() userInactive,
+    required TResult Function() unableToUpdate,
+    required TResult Function() unableToCreateNewUser,
   }) {
-    assert(unexpected != null);
-    assert(userNotFound != null);
-    assert(userInactive != null);
-    assert(unableToUpdate != null);
-    assert(unableToCreateNewUser != null);
     return unableToUpdate();
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result unexpected(),
-    Result userNotFound(),
-    Result userInactive(),
-    Result unableToUpdate(),
-    Result unableToCreateNewUser(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? unexpected,
+    TResult Function()? userNotFound,
+    TResult Function()? userInactive,
+    TResult Function()? unableToUpdate,
+    TResult Function()? unableToCreateNewUser,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (unableToUpdate != null) {
       return unableToUpdate();
     }
@@ -478,32 +462,27 @@ class _$_UnableToUpdate implements _UnableToUpdate {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result unexpected(_Unexpected value),
-    @required Result userNotFound(_NotFound value),
-    @required Result userInactive(_IsInactive value),
-    @required Result unableToUpdate(_UnableToUpdate value),
-    @required Result unableToCreateNewUser(_UnableToCreateNewUser value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Unexpected value) unexpected,
+    required TResult Function(_NotFound value) userNotFound,
+    required TResult Function(_IsInactive value) userInactive,
+    required TResult Function(_UnableToUpdate value) unableToUpdate,
+    required TResult Function(_UnableToCreateNewUser value)
+        unableToCreateNewUser,
   }) {
-    assert(unexpected != null);
-    assert(userNotFound != null);
-    assert(userInactive != null);
-    assert(unableToUpdate != null);
-    assert(unableToCreateNewUser != null);
     return unableToUpdate(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result unexpected(_Unexpected value),
-    Result userNotFound(_NotFound value),
-    Result userInactive(_IsInactive value),
-    Result unableToUpdate(_UnableToUpdate value),
-    Result unableToCreateNewUser(_UnableToCreateNewUser value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Unexpected value)? unexpected,
+    TResult Function(_NotFound value)? userNotFound,
+    TResult Function(_IsInactive value)? userInactive,
+    TResult Function(_UnableToUpdate value)? unableToUpdate,
+    TResult Function(_UnableToCreateNewUser value)? unableToCreateNewUser,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (unableToUpdate != null) {
       return unableToUpdate(this);
     }
@@ -515,12 +494,14 @@ abstract class _UnableToUpdate implements UserManagementFailure {
   const factory _UnableToUpdate() = _$_UnableToUpdate;
 }
 
+/// @nodoc
 abstract class _$UnableToCreateNewUserCopyWith<$Res> {
   factory _$UnableToCreateNewUserCopyWith(_UnableToCreateNewUser value,
           $Res Function(_UnableToCreateNewUser) then) =
       __$UnableToCreateNewUserCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class __$UnableToCreateNewUserCopyWithImpl<$Res>
     extends _$UserManagementFailureCopyWithImpl<$Res>
     implements _$UnableToCreateNewUserCopyWith<$Res> {
@@ -531,6 +512,8 @@ class __$UnableToCreateNewUserCopyWithImpl<$Res>
   @override
   _UnableToCreateNewUser get _value => super._value as _UnableToCreateNewUser;
 }
+
+/// @nodoc
 
 class _$_UnableToCreateNewUser implements _UnableToCreateNewUser {
   const _$_UnableToCreateNewUser();
@@ -550,32 +533,26 @@ class _$_UnableToCreateNewUser implements _UnableToCreateNewUser {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result unexpected(),
-    @required Result userNotFound(),
-    @required Result userInactive(),
-    @required Result unableToUpdate(),
-    @required Result unableToCreateNewUser(),
+  TResult when<TResult extends Object?>({
+    required TResult Function() unexpected,
+    required TResult Function() userNotFound,
+    required TResult Function() userInactive,
+    required TResult Function() unableToUpdate,
+    required TResult Function() unableToCreateNewUser,
   }) {
-    assert(unexpected != null);
-    assert(userNotFound != null);
-    assert(userInactive != null);
-    assert(unableToUpdate != null);
-    assert(unableToCreateNewUser != null);
     return unableToCreateNewUser();
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result unexpected(),
-    Result userNotFound(),
-    Result userInactive(),
-    Result unableToUpdate(),
-    Result unableToCreateNewUser(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? unexpected,
+    TResult Function()? userNotFound,
+    TResult Function()? userInactive,
+    TResult Function()? unableToUpdate,
+    TResult Function()? unableToCreateNewUser,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (unableToCreateNewUser != null) {
       return unableToCreateNewUser();
     }
@@ -584,32 +561,27 @@ class _$_UnableToCreateNewUser implements _UnableToCreateNewUser {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result unexpected(_Unexpected value),
-    @required Result userNotFound(_NotFound value),
-    @required Result userInactive(_IsInactive value),
-    @required Result unableToUpdate(_UnableToUpdate value),
-    @required Result unableToCreateNewUser(_UnableToCreateNewUser value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Unexpected value) unexpected,
+    required TResult Function(_NotFound value) userNotFound,
+    required TResult Function(_IsInactive value) userInactive,
+    required TResult Function(_UnableToUpdate value) unableToUpdate,
+    required TResult Function(_UnableToCreateNewUser value)
+        unableToCreateNewUser,
   }) {
-    assert(unexpected != null);
-    assert(userNotFound != null);
-    assert(userInactive != null);
-    assert(unableToUpdate != null);
-    assert(unableToCreateNewUser != null);
     return unableToCreateNewUser(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result unexpected(_Unexpected value),
-    Result userNotFound(_NotFound value),
-    Result userInactive(_IsInactive value),
-    Result unableToUpdate(_UnableToUpdate value),
-    Result unableToCreateNewUser(_UnableToCreateNewUser value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Unexpected value)? unexpected,
+    TResult Function(_NotFound value)? userNotFound,
+    TResult Function(_IsInactive value)? userInactive,
+    TResult Function(_UnableToUpdate value)? unableToUpdate,
+    TResult Function(_UnableToCreateNewUser value)? unableToCreateNewUser,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (unableToCreateNewUser != null) {
       return unableToCreateNewUser(this);
     }

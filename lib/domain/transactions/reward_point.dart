@@ -8,15 +8,15 @@ part 'reward_point.freezed.dart';
 abstract class RewardPoint implements _$RewardPoint {
   const RewardPoint._();
   const factory RewardPoint(
-      {Map<String, double> billFormulaBreakup,
-      Map<String, double> transactionBreakup}) = _RewardPoint;
+      {required Map<String, double> billFormulaBreakup,
+       Map<String, double>? transactionBreakup}) = _RewardPoint;
 
   double get totalRewardPoints {
     double totalRewards = 0;
     billFormulaBreakup.forEach(
       (key, value) {
         totalRewards =
-            totalRewards + (value * transactionBreakup[key]).toDouble();
+            totalRewards + (value * (transactionBreakup![key]!.toDouble()));
       },
     );
 

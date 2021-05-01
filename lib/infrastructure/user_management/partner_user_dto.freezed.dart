@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'partner_user_dto.dart';
 
@@ -8,34 +8,46 @@ part of 'partner_user_dto.dart';
 // **************************************************************************
 
 T _$identity<T>(T value) => value;
+
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
 PartnerUserDto _$PartnerUserDtoFromJson(Map<String, dynamic> json) {
   return _PartnerUserDto.fromJson(json);
 }
 
+/// @nodoc
 class _$PartnerUserDtoTearOff {
   const _$PartnerUserDtoTearOff();
 
-// ignore: unused_element
   _PartnerUserDto call(
-      {@required UserProfileDto profile, @required double totalRewardPoints}) {
+      {required UserProfileDto profile, required double totalRewardPoints}) {
     return _PartnerUserDto(
       profile: profile,
       totalRewardPoints: totalRewardPoints,
     );
   }
+
+  PartnerUserDto fromJson(Map<String, Object> json) {
+    return PartnerUserDto.fromJson(json);
+  }
 }
 
-// ignore: unused_element
+/// @nodoc
 const $PartnerUserDto = _$PartnerUserDtoTearOff();
 
+/// @nodoc
 mixin _$PartnerUserDto {
-  UserProfileDto get profile;
-  double get totalRewardPoints;
+  UserProfileDto get profile => throw _privateConstructorUsedError;
+  double get totalRewardPoints => throw _privateConstructorUsedError;
 
-  Map<String, dynamic> toJson();
-  $PartnerUserDtoCopyWith<PartnerUserDto> get copyWith;
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $PartnerUserDtoCopyWith<PartnerUserDto> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
+/// @nodoc
 abstract class $PartnerUserDtoCopyWith<$Res> {
   factory $PartnerUserDtoCopyWith(
           PartnerUserDto value, $Res Function(PartnerUserDto) then) =
@@ -45,6 +57,7 @@ abstract class $PartnerUserDtoCopyWith<$Res> {
   $UserProfileDtoCopyWith<$Res> get profile;
 }
 
+/// @nodoc
 class _$PartnerUserDtoCopyWithImpl<$Res>
     implements $PartnerUserDtoCopyWith<$Res> {
   _$PartnerUserDtoCopyWithImpl(this._value, this._then);
@@ -55,28 +68,30 @@ class _$PartnerUserDtoCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object profile = freezed,
-    Object totalRewardPoints = freezed,
+    Object? profile = freezed,
+    Object? totalRewardPoints = freezed,
   }) {
     return _then(_value.copyWith(
-      profile: profile == freezed ? _value.profile : profile as UserProfileDto,
+      profile: profile == freezed
+          ? _value.profile
+          : profile // ignore: cast_nullable_to_non_nullable
+              as UserProfileDto,
       totalRewardPoints: totalRewardPoints == freezed
           ? _value.totalRewardPoints
-          : totalRewardPoints as double,
+          : totalRewardPoints // ignore: cast_nullable_to_non_nullable
+              as double,
     ));
   }
 
   @override
   $UserProfileDtoCopyWith<$Res> get profile {
-    if (_value.profile == null) {
-      return null;
-    }
     return $UserProfileDtoCopyWith<$Res>(_value.profile, (value) {
       return _then(_value.copyWith(profile: value));
     });
   }
 }
 
+/// @nodoc
 abstract class _$PartnerUserDtoCopyWith<$Res>
     implements $PartnerUserDtoCopyWith<$Res> {
   factory _$PartnerUserDtoCopyWith(
@@ -89,6 +104,7 @@ abstract class _$PartnerUserDtoCopyWith<$Res>
   $UserProfileDtoCopyWith<$Res> get profile;
 }
 
+/// @nodoc
 class __$PartnerUserDtoCopyWithImpl<$Res>
     extends _$PartnerUserDtoCopyWithImpl<$Res>
     implements _$PartnerUserDtoCopyWith<$Res> {
@@ -101,25 +117,28 @@ class __$PartnerUserDtoCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object profile = freezed,
-    Object totalRewardPoints = freezed,
+    Object? profile = freezed,
+    Object? totalRewardPoints = freezed,
   }) {
     return _then(_PartnerUserDto(
-      profile: profile == freezed ? _value.profile : profile as UserProfileDto,
+      profile: profile == freezed
+          ? _value.profile
+          : profile // ignore: cast_nullable_to_non_nullable
+              as UserProfileDto,
       totalRewardPoints: totalRewardPoints == freezed
           ? _value.totalRewardPoints
-          : totalRewardPoints as double,
+          : totalRewardPoints // ignore: cast_nullable_to_non_nullable
+              as double,
     ));
   }
 }
 
+/// @nodoc
 @JsonSerializable()
 class _$_PartnerUserDto extends _PartnerUserDto {
   const _$_PartnerUserDto(
-      {@required this.profile, @required this.totalRewardPoints})
-      : assert(profile != null),
-        assert(totalRewardPoints != null),
-        super._();
+      {required this.profile, required this.totalRewardPoints})
+      : super._();
 
   factory _$_PartnerUserDto.fromJson(Map<String, dynamic> json) =>
       _$_$_PartnerUserDtoFromJson(json);
@@ -152,6 +171,7 @@ class _$_PartnerUserDto extends _PartnerUserDto {
       const DeepCollectionEquality().hash(profile) ^
       const DeepCollectionEquality().hash(totalRewardPoints);
 
+  @JsonKey(ignore: true)
   @override
   _$PartnerUserDtoCopyWith<_PartnerUserDto> get copyWith =>
       __$PartnerUserDtoCopyWithImpl<_PartnerUserDto>(this, _$identity);
@@ -163,18 +183,20 @@ class _$_PartnerUserDto extends _PartnerUserDto {
 }
 
 abstract class _PartnerUserDto extends PartnerUserDto {
-  const _PartnerUserDto._() : super._();
   const factory _PartnerUserDto(
-      {@required UserProfileDto profile,
-      @required double totalRewardPoints}) = _$_PartnerUserDto;
+      {required UserProfileDto profile,
+      required double totalRewardPoints}) = _$_PartnerUserDto;
+  const _PartnerUserDto._() : super._();
 
   factory _PartnerUserDto.fromJson(Map<String, dynamic> json) =
       _$_PartnerUserDto.fromJson;
 
   @override
-  UserProfileDto get profile;
+  UserProfileDto get profile => throw _privateConstructorUsedError;
   @override
-  double get totalRewardPoints;
+  double get totalRewardPoints => throw _privateConstructorUsedError;
   @override
-  _$PartnerUserDtoCopyWith<_PartnerUserDto> get copyWith;
+  @JsonKey(ignore: true)
+  _$PartnerUserDtoCopyWith<_PartnerUserDto> get copyWith =>
+      throw _privateConstructorUsedError;
 }

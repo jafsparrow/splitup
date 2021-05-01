@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'userbarcode_dto.dart';
 
@@ -8,21 +8,25 @@ part of 'userbarcode_dto.dart';
 // **************************************************************************
 
 T _$identity<T>(T value) => value;
+
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
 UserBarcodeDto _$UserBarcodeDtoFromJson(Map<String, dynamic> json) {
   return _UserBarcodeDto.fromJson(json);
 }
 
+/// @nodoc
 class _$UserBarcodeDtoTearOff {
   const _$UserBarcodeDtoTearOff();
 
-// ignore: unused_element
   _UserBarcodeDto call(
-      {@JsonKey(ignore: true) dynamic id,
-      @required String barcode,
-      @required String associatedUserId,
-      @required bool isActive,
-      @required @ServerTimestampConverter() DateTime expiryDate,
-      @required @ServerTimestampConverter() DateTime issuedDate}) {
+      {@JsonKey(ignore: true) String? id,
+      required String barcode,
+      required String associatedUserId,
+      required bool isActive,
+      @ServerTimestampConverter() required DateTime expiryDate,
+      @ServerTimestampConverter() required DateTime issuedDate}) {
     return _UserBarcodeDto(
       id: id,
       barcode: barcode,
@@ -32,32 +36,40 @@ class _$UserBarcodeDtoTearOff {
       issuedDate: issuedDate,
     );
   }
+
+  UserBarcodeDto fromJson(Map<String, Object> json) {
+    return UserBarcodeDto.fromJson(json);
+  }
 }
 
-// ignore: unused_element
+/// @nodoc
 const $UserBarcodeDto = _$UserBarcodeDtoTearOff();
 
+/// @nodoc
 mixin _$UserBarcodeDto {
   @JsonKey(ignore: true)
-  dynamic get id;
-  String get barcode;
-  String get associatedUserId;
-  bool get isActive;
+  String? get id => throw _privateConstructorUsedError;
+  String get barcode => throw _privateConstructorUsedError;
+  String get associatedUserId => throw _privateConstructorUsedError;
+  bool get isActive => throw _privateConstructorUsedError;
   @ServerTimestampConverter()
-  DateTime get expiryDate;
+  DateTime get expiryDate => throw _privateConstructorUsedError;
   @ServerTimestampConverter()
-  DateTime get issuedDate;
+  DateTime get issuedDate => throw _privateConstructorUsedError;
 
-  Map<String, dynamic> toJson();
-  $UserBarcodeDtoCopyWith<UserBarcodeDto> get copyWith;
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $UserBarcodeDtoCopyWith<UserBarcodeDto> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
+/// @nodoc
 abstract class $UserBarcodeDtoCopyWith<$Res> {
   factory $UserBarcodeDtoCopyWith(
           UserBarcodeDto value, $Res Function(UserBarcodeDto) then) =
       _$UserBarcodeDtoCopyWithImpl<$Res>;
   $Res call(
-      {@JsonKey(ignore: true) dynamic id,
+      {@JsonKey(ignore: true) String? id,
       String barcode,
       String associatedUserId,
       bool isActive,
@@ -65,6 +77,7 @@ abstract class $UserBarcodeDtoCopyWith<$Res> {
       @ServerTimestampConverter() DateTime issuedDate});
 }
 
+/// @nodoc
 class _$UserBarcodeDtoCopyWithImpl<$Res>
     implements $UserBarcodeDtoCopyWith<$Res> {
   _$UserBarcodeDtoCopyWithImpl(this._value, this._then);
@@ -75,28 +88,43 @@ class _$UserBarcodeDtoCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object id = freezed,
-    Object barcode = freezed,
-    Object associatedUserId = freezed,
-    Object isActive = freezed,
-    Object expiryDate = freezed,
-    Object issuedDate = freezed,
+    Object? id = freezed,
+    Object? barcode = freezed,
+    Object? associatedUserId = freezed,
+    Object? isActive = freezed,
+    Object? expiryDate = freezed,
+    Object? issuedDate = freezed,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed ? _value.id : id as dynamic,
-      barcode: barcode == freezed ? _value.barcode : barcode as String,
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      barcode: barcode == freezed
+          ? _value.barcode
+          : barcode // ignore: cast_nullable_to_non_nullable
+              as String,
       associatedUserId: associatedUserId == freezed
           ? _value.associatedUserId
-          : associatedUserId as String,
-      isActive: isActive == freezed ? _value.isActive : isActive as bool,
-      expiryDate:
-          expiryDate == freezed ? _value.expiryDate : expiryDate as DateTime,
-      issuedDate:
-          issuedDate == freezed ? _value.issuedDate : issuedDate as DateTime,
+          : associatedUserId // ignore: cast_nullable_to_non_nullable
+              as String,
+      isActive: isActive == freezed
+          ? _value.isActive
+          : isActive // ignore: cast_nullable_to_non_nullable
+              as bool,
+      expiryDate: expiryDate == freezed
+          ? _value.expiryDate
+          : expiryDate // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      issuedDate: issuedDate == freezed
+          ? _value.issuedDate
+          : issuedDate // ignore: cast_nullable_to_non_nullable
+              as DateTime,
     ));
   }
 }
 
+/// @nodoc
 abstract class _$UserBarcodeDtoCopyWith<$Res>
     implements $UserBarcodeDtoCopyWith<$Res> {
   factory _$UserBarcodeDtoCopyWith(
@@ -104,7 +132,7 @@ abstract class _$UserBarcodeDtoCopyWith<$Res>
       __$UserBarcodeDtoCopyWithImpl<$Res>;
   @override
   $Res call(
-      {@JsonKey(ignore: true) dynamic id,
+      {@JsonKey(ignore: true) String? id,
       String barcode,
       String associatedUserId,
       bool isActive,
@@ -112,6 +140,7 @@ abstract class _$UserBarcodeDtoCopyWith<$Res>
       @ServerTimestampConverter() DateTime issuedDate});
 }
 
+/// @nodoc
 class __$UserBarcodeDtoCopyWithImpl<$Res>
     extends _$UserBarcodeDtoCopyWithImpl<$Res>
     implements _$UserBarcodeDtoCopyWith<$Res> {
@@ -124,50 +153,60 @@ class __$UserBarcodeDtoCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object id = freezed,
-    Object barcode = freezed,
-    Object associatedUserId = freezed,
-    Object isActive = freezed,
-    Object expiryDate = freezed,
-    Object issuedDate = freezed,
+    Object? id = freezed,
+    Object? barcode = freezed,
+    Object? associatedUserId = freezed,
+    Object? isActive = freezed,
+    Object? expiryDate = freezed,
+    Object? issuedDate = freezed,
   }) {
     return _then(_UserBarcodeDto(
-      id: id == freezed ? _value.id : id,
-      barcode: barcode == freezed ? _value.barcode : barcode as String,
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      barcode: barcode == freezed
+          ? _value.barcode
+          : barcode // ignore: cast_nullable_to_non_nullable
+              as String,
       associatedUserId: associatedUserId == freezed
           ? _value.associatedUserId
-          : associatedUserId as String,
-      isActive: isActive == freezed ? _value.isActive : isActive as bool,
-      expiryDate:
-          expiryDate == freezed ? _value.expiryDate : expiryDate as DateTime,
-      issuedDate:
-          issuedDate == freezed ? _value.issuedDate : issuedDate as DateTime,
+          : associatedUserId // ignore: cast_nullable_to_non_nullable
+              as String,
+      isActive: isActive == freezed
+          ? _value.isActive
+          : isActive // ignore: cast_nullable_to_non_nullable
+              as bool,
+      expiryDate: expiryDate == freezed
+          ? _value.expiryDate
+          : expiryDate // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      issuedDate: issuedDate == freezed
+          ? _value.issuedDate
+          : issuedDate // ignore: cast_nullable_to_non_nullable
+              as DateTime,
     ));
   }
 }
 
+/// @nodoc
 @JsonSerializable()
 class _$_UserBarcodeDto extends _UserBarcodeDto {
   const _$_UserBarcodeDto(
       {@JsonKey(ignore: true) this.id,
-      @required this.barcode,
-      @required this.associatedUserId,
-      @required this.isActive,
-      @required @ServerTimestampConverter() this.expiryDate,
-      @required @ServerTimestampConverter() this.issuedDate})
-      : assert(barcode != null),
-        assert(associatedUserId != null),
-        assert(isActive != null),
-        assert(expiryDate != null),
-        assert(issuedDate != null),
-        super._();
+      required this.barcode,
+      required this.associatedUserId,
+      required this.isActive,
+      @ServerTimestampConverter() required this.expiryDate,
+      @ServerTimestampConverter() required this.issuedDate})
+      : super._();
 
   factory _$_UserBarcodeDto.fromJson(Map<String, dynamic> json) =>
       _$_$_UserBarcodeDtoFromJson(json);
 
   @override
   @JsonKey(ignore: true)
-  final dynamic id;
+  final String? id;
   @override
   final String barcode;
   @override
@@ -219,6 +258,7 @@ class _$_UserBarcodeDto extends _UserBarcodeDto {
       const DeepCollectionEquality().hash(expiryDate) ^
       const DeepCollectionEquality().hash(issuedDate);
 
+  @JsonKey(ignore: true)
   @override
   _$UserBarcodeDtoCopyWith<_UserBarcodeDto> get copyWith =>
       __$UserBarcodeDtoCopyWithImpl<_UserBarcodeDto>(this, _$identity);
@@ -230,34 +270,36 @@ class _$_UserBarcodeDto extends _UserBarcodeDto {
 }
 
 abstract class _UserBarcodeDto extends UserBarcodeDto {
-  const _UserBarcodeDto._() : super._();
   const factory _UserBarcodeDto(
-          {@JsonKey(ignore: true) dynamic id,
-          @required String barcode,
-          @required String associatedUserId,
-          @required bool isActive,
-          @required @ServerTimestampConverter() DateTime expiryDate,
-          @required @ServerTimestampConverter() DateTime issuedDate}) =
+          {@JsonKey(ignore: true) String? id,
+          required String barcode,
+          required String associatedUserId,
+          required bool isActive,
+          @ServerTimestampConverter() required DateTime expiryDate,
+          @ServerTimestampConverter() required DateTime issuedDate}) =
       _$_UserBarcodeDto;
+  const _UserBarcodeDto._() : super._();
 
   factory _UserBarcodeDto.fromJson(Map<String, dynamic> json) =
       _$_UserBarcodeDto.fromJson;
 
   @override
   @JsonKey(ignore: true)
-  dynamic get id;
+  String? get id => throw _privateConstructorUsedError;
   @override
-  String get barcode;
+  String get barcode => throw _privateConstructorUsedError;
   @override
-  String get associatedUserId;
+  String get associatedUserId => throw _privateConstructorUsedError;
   @override
-  bool get isActive;
-  @override
-  @ServerTimestampConverter()
-  DateTime get expiryDate;
+  bool get isActive => throw _privateConstructorUsedError;
   @override
   @ServerTimestampConverter()
-  DateTime get issuedDate;
+  DateTime get expiryDate => throw _privateConstructorUsedError;
   @override
-  _$UserBarcodeDtoCopyWith<_UserBarcodeDto> get copyWith;
+  @ServerTimestampConverter()
+  DateTime get issuedDate => throw _privateConstructorUsedError;
+  @override
+  @JsonKey(ignore: true)
+  _$UserBarcodeDtoCopyWith<_UserBarcodeDto> get copyWith =>
+      throw _privateConstructorUsedError;
 }

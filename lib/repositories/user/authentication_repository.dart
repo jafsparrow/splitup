@@ -10,7 +10,7 @@ class AuthenticationRepository implements Authentication {
   final userTransactionCollection =
       FirebaseFirestore.instance.collection('users');
 
-  AuthenticationRepository({FirebaseAuth firebaseAuth})
+  AuthenticationRepository({FirebaseAuth? firebaseAuth})
       : _firebaseAuth = firebaseAuth ?? FirebaseAuth.instance;
 
   Stream<domainUser.User> get user {
@@ -25,7 +25,7 @@ class AuthenticationRepository implements Authentication {
   }
 
   @override
-  Future<void> loginWithEmailPassword({String email, String password}) async {
+  Future<void> loginWithEmailPassword({required String email,required  String password}) async {
     try {
       await _firebaseAuth.signInWithEmailAndPassword(
           email: email, password: password);
@@ -36,8 +36,8 @@ class AuthenticationRepository implements Authentication {
   }
 
   @override
-  Future<void> signUp({String email, String password}) async {
-    assert(email != null, password != null);
+  Future<void> signUp({required String email, required String password}) async {
+    // assert(email != null, password != null);
     try {
       await _firebaseAuth.createUserWithEmailAndPassword(
           email: email, password: password);
@@ -72,8 +72,8 @@ extension on User {
 
 abstract class Authentication {
   Future<void> loginWithEmailPassword(
-      {@required String email, @required String password});
-  Future<void> signUp({@required String email, @required String password});
+      {required String email, required String password});
+  Future<void> signUp({required String email, required String password});
 
   Future<void> logOut();
 }

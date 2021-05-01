@@ -8,8 +8,8 @@ abstract class Promotion implements _$Promotion {
   const Promotion._();
 
   const factory Promotion({
-    @required PromotionTitle title,
-    @required PromotionDescription description,
+    required PromotionTitle title,
+    required PromotionDescription description,
   }) = _Promotion;
 
   factory Promotion.empty() {

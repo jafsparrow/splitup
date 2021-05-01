@@ -10,12 +10,12 @@ part 'userbarcode_dto.g.dart';
 abstract class UserBarcodeDto implements _$UserBarcodeDto {
   const UserBarcodeDto._();
   const factory UserBarcodeDto({
-    @JsonKey(ignore: true) id,
-    @required String barcode,
-    @required String associatedUserId,
-    @required bool isActive,
-    @required @ServerTimestampConverter() DateTime expiryDate,
-    @required @ServerTimestampConverter() DateTime issuedDate,
+    @JsonKey(ignore: true)  String? id,
+    required String barcode,
+    required String associatedUserId,
+    required bool isActive,
+     @ServerTimestampConverter() required DateTime expiryDate,
+     @ServerTimestampConverter() required DateTime issuedDate,
   }) = _UserBarcodeDto;
 
   factory UserBarcodeDto.fromDomain(UserBarcode barcode) {
@@ -44,7 +44,7 @@ abstract class UserBarcodeDto implements _$UserBarcodeDto {
       _$UserBarcodeDtoFromJson(json);
 
   factory UserBarcodeDto.fromFirestore(DocumentSnapshot doc) {
-    return UserBarcodeDto.fromJson(doc.data()).copyWith(id: doc.id);
+    return UserBarcodeDto.fromJson(doc.data()!).copyWith(id: doc.id);
   }
 }
 

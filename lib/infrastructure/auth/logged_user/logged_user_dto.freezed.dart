@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'logged_user_dto.dart';
 
@@ -8,19 +8,23 @@ part of 'logged_user_dto.dart';
 // **************************************************************************
 
 T _$identity<T>(T value) => value;
+
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
 LoggedUserDto _$LoggedUserDtoFromJson(Map<String, dynamic> json) {
   return _LoggedUserDto.fromJson(json);
 }
 
+/// @nodoc
 class _$LoggedUserDtoTearOff {
   const _$LoggedUserDtoTearOff();
 
-// ignore: unused_element
   _LoggedUserDto call(
-      {@required String uid,
-      @required String companyId,
-      @required bool isSalesUser,
-      @required UserProfileDto loggedUserProfile}) {
+      {required String uid,
+      required String companyId,
+      required bool isSalesUser,
+      required UserProfileDto loggedUserProfile}) {
     return _LoggedUserDto(
       uid: uid,
       companyId: companyId,
@@ -28,21 +32,29 @@ class _$LoggedUserDtoTearOff {
       loggedUserProfile: loggedUserProfile,
     );
   }
+
+  LoggedUserDto fromJson(Map<String, Object> json) {
+    return LoggedUserDto.fromJson(json);
+  }
 }
 
-// ignore: unused_element
+/// @nodoc
 const $LoggedUserDto = _$LoggedUserDtoTearOff();
 
+/// @nodoc
 mixin _$LoggedUserDto {
-  String get uid;
-  String get companyId;
-  bool get isSalesUser;
-  UserProfileDto get loggedUserProfile;
+  String get uid => throw _privateConstructorUsedError;
+  String get companyId => throw _privateConstructorUsedError;
+  bool get isSalesUser => throw _privateConstructorUsedError;
+  UserProfileDto get loggedUserProfile => throw _privateConstructorUsedError;
 
-  Map<String, dynamic> toJson();
-  $LoggedUserDtoCopyWith<LoggedUserDto> get copyWith;
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $LoggedUserDtoCopyWith<LoggedUserDto> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
+/// @nodoc
 abstract class $LoggedUserDtoCopyWith<$Res> {
   factory $LoggedUserDtoCopyWith(
           LoggedUserDto value, $Res Function(LoggedUserDto) then) =
@@ -56,6 +68,7 @@ abstract class $LoggedUserDtoCopyWith<$Res> {
   $UserProfileDtoCopyWith<$Res> get loggedUserProfile;
 }
 
+/// @nodoc
 class _$LoggedUserDtoCopyWithImpl<$Res>
     implements $LoggedUserDtoCopyWith<$Res> {
   _$LoggedUserDtoCopyWithImpl(this._value, this._then);
@@ -66,33 +79,40 @@ class _$LoggedUserDtoCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object uid = freezed,
-    Object companyId = freezed,
-    Object isSalesUser = freezed,
-    Object loggedUserProfile = freezed,
+    Object? uid = freezed,
+    Object? companyId = freezed,
+    Object? isSalesUser = freezed,
+    Object? loggedUserProfile = freezed,
   }) {
     return _then(_value.copyWith(
-      uid: uid == freezed ? _value.uid : uid as String,
-      companyId: companyId == freezed ? _value.companyId : companyId as String,
-      isSalesUser:
-          isSalesUser == freezed ? _value.isSalesUser : isSalesUser as bool,
+      uid: uid == freezed
+          ? _value.uid
+          : uid // ignore: cast_nullable_to_non_nullable
+              as String,
+      companyId: companyId == freezed
+          ? _value.companyId
+          : companyId // ignore: cast_nullable_to_non_nullable
+              as String,
+      isSalesUser: isSalesUser == freezed
+          ? _value.isSalesUser
+          : isSalesUser // ignore: cast_nullable_to_non_nullable
+              as bool,
       loggedUserProfile: loggedUserProfile == freezed
           ? _value.loggedUserProfile
-          : loggedUserProfile as UserProfileDto,
+          : loggedUserProfile // ignore: cast_nullable_to_non_nullable
+              as UserProfileDto,
     ));
   }
 
   @override
   $UserProfileDtoCopyWith<$Res> get loggedUserProfile {
-    if (_value.loggedUserProfile == null) {
-      return null;
-    }
     return $UserProfileDtoCopyWith<$Res>(_value.loggedUserProfile, (value) {
       return _then(_value.copyWith(loggedUserProfile: value));
     });
   }
 }
 
+/// @nodoc
 abstract class _$LoggedUserDtoCopyWith<$Res>
     implements $LoggedUserDtoCopyWith<$Res> {
   factory _$LoggedUserDtoCopyWith(
@@ -109,6 +129,7 @@ abstract class _$LoggedUserDtoCopyWith<$Res>
   $UserProfileDtoCopyWith<$Res> get loggedUserProfile;
 }
 
+/// @nodoc
 class __$LoggedUserDtoCopyWithImpl<$Res>
     extends _$LoggedUserDtoCopyWithImpl<$Res>
     implements _$LoggedUserDtoCopyWith<$Res> {
@@ -121,35 +142,41 @@ class __$LoggedUserDtoCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object uid = freezed,
-    Object companyId = freezed,
-    Object isSalesUser = freezed,
-    Object loggedUserProfile = freezed,
+    Object? uid = freezed,
+    Object? companyId = freezed,
+    Object? isSalesUser = freezed,
+    Object? loggedUserProfile = freezed,
   }) {
     return _then(_LoggedUserDto(
-      uid: uid == freezed ? _value.uid : uid as String,
-      companyId: companyId == freezed ? _value.companyId : companyId as String,
-      isSalesUser:
-          isSalesUser == freezed ? _value.isSalesUser : isSalesUser as bool,
+      uid: uid == freezed
+          ? _value.uid
+          : uid // ignore: cast_nullable_to_non_nullable
+              as String,
+      companyId: companyId == freezed
+          ? _value.companyId
+          : companyId // ignore: cast_nullable_to_non_nullable
+              as String,
+      isSalesUser: isSalesUser == freezed
+          ? _value.isSalesUser
+          : isSalesUser // ignore: cast_nullable_to_non_nullable
+              as bool,
       loggedUserProfile: loggedUserProfile == freezed
           ? _value.loggedUserProfile
-          : loggedUserProfile as UserProfileDto,
+          : loggedUserProfile // ignore: cast_nullable_to_non_nullable
+              as UserProfileDto,
     ));
   }
 }
 
+/// @nodoc
 @JsonSerializable()
 class _$_LoggedUserDto extends _LoggedUserDto {
   const _$_LoggedUserDto(
-      {@required this.uid,
-      @required this.companyId,
-      @required this.isSalesUser,
-      @required this.loggedUserProfile})
-      : assert(uid != null),
-        assert(companyId != null),
-        assert(isSalesUser != null),
-        assert(loggedUserProfile != null),
-        super._();
+      {required this.uid,
+      required this.companyId,
+      required this.isSalesUser,
+      required this.loggedUserProfile})
+      : super._();
 
   factory _$_LoggedUserDto.fromJson(Map<String, dynamic> json) =>
       _$_$_LoggedUserDtoFromJson(json);
@@ -193,6 +220,7 @@ class _$_LoggedUserDto extends _LoggedUserDto {
       const DeepCollectionEquality().hash(isSalesUser) ^
       const DeepCollectionEquality().hash(loggedUserProfile);
 
+  @JsonKey(ignore: true)
   @override
   _$LoggedUserDtoCopyWith<_LoggedUserDto> get copyWith =>
       __$LoggedUserDtoCopyWithImpl<_LoggedUserDto>(this, _$identity);
@@ -204,24 +232,26 @@ class _$_LoggedUserDto extends _LoggedUserDto {
 }
 
 abstract class _LoggedUserDto extends LoggedUserDto {
-  const _LoggedUserDto._() : super._();
   const factory _LoggedUserDto(
-      {@required String uid,
-      @required String companyId,
-      @required bool isSalesUser,
-      @required UserProfileDto loggedUserProfile}) = _$_LoggedUserDto;
+      {required String uid,
+      required String companyId,
+      required bool isSalesUser,
+      required UserProfileDto loggedUserProfile}) = _$_LoggedUserDto;
+  const _LoggedUserDto._() : super._();
 
   factory _LoggedUserDto.fromJson(Map<String, dynamic> json) =
       _$_LoggedUserDto.fromJson;
 
   @override
-  String get uid;
+  String get uid => throw _privateConstructorUsedError;
   @override
-  String get companyId;
+  String get companyId => throw _privateConstructorUsedError;
   @override
-  bool get isSalesUser;
+  bool get isSalesUser => throw _privateConstructorUsedError;
   @override
-  UserProfileDto get loggedUserProfile;
+  UserProfileDto get loggedUserProfile => throw _privateConstructorUsedError;
   @override
-  _$LoggedUserDtoCopyWith<_LoggedUserDto> get copyWith;
+  @JsonKey(ignore: true)
+  _$LoggedUserDtoCopyWith<_LoggedUserDto> get copyWith =>
+      throw _privateConstructorUsedError;
 }

@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'partner_user.dart';
 
@@ -9,12 +9,15 @@ part of 'partner_user.dart';
 
 T _$identity<T>(T value) => value;
 
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
+/// @nodoc
 class _$PartnerUserTearOff {
   const _$PartnerUserTearOff();
 
-// ignore: unused_element
   _PartnerUser call(
-      {@required UserProfile profile, @required double totalRewardPoints}) {
+      {required UserProfile profile, required double totalRewardPoints}) {
     return _PartnerUser(
       profile: profile,
       totalRewardPoints: totalRewardPoints,
@@ -22,16 +25,20 @@ class _$PartnerUserTearOff {
   }
 }
 
-// ignore: unused_element
+/// @nodoc
 const $PartnerUser = _$PartnerUserTearOff();
 
+/// @nodoc
 mixin _$PartnerUser {
-  UserProfile get profile;
-  double get totalRewardPoints;
+  UserProfile get profile => throw _privateConstructorUsedError;
+  double get totalRewardPoints => throw _privateConstructorUsedError;
 
-  $PartnerUserCopyWith<PartnerUser> get copyWith;
+  @JsonKey(ignore: true)
+  $PartnerUserCopyWith<PartnerUser> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
+/// @nodoc
 abstract class $PartnerUserCopyWith<$Res> {
   factory $PartnerUserCopyWith(
           PartnerUser value, $Res Function(PartnerUser) then) =
@@ -41,6 +48,7 @@ abstract class $PartnerUserCopyWith<$Res> {
   $UserProfileCopyWith<$Res> get profile;
 }
 
+/// @nodoc
 class _$PartnerUserCopyWithImpl<$Res> implements $PartnerUserCopyWith<$Res> {
   _$PartnerUserCopyWithImpl(this._value, this._then);
 
@@ -50,28 +58,30 @@ class _$PartnerUserCopyWithImpl<$Res> implements $PartnerUserCopyWith<$Res> {
 
   @override
   $Res call({
-    Object profile = freezed,
-    Object totalRewardPoints = freezed,
+    Object? profile = freezed,
+    Object? totalRewardPoints = freezed,
   }) {
     return _then(_value.copyWith(
-      profile: profile == freezed ? _value.profile : profile as UserProfile,
+      profile: profile == freezed
+          ? _value.profile
+          : profile // ignore: cast_nullable_to_non_nullable
+              as UserProfile,
       totalRewardPoints: totalRewardPoints == freezed
           ? _value.totalRewardPoints
-          : totalRewardPoints as double,
+          : totalRewardPoints // ignore: cast_nullable_to_non_nullable
+              as double,
     ));
   }
 
   @override
   $UserProfileCopyWith<$Res> get profile {
-    if (_value.profile == null) {
-      return null;
-    }
     return $UserProfileCopyWith<$Res>(_value.profile, (value) {
       return _then(_value.copyWith(profile: value));
     });
   }
 }
 
+/// @nodoc
 abstract class _$PartnerUserCopyWith<$Res>
     implements $PartnerUserCopyWith<$Res> {
   factory _$PartnerUserCopyWith(
@@ -84,6 +94,7 @@ abstract class _$PartnerUserCopyWith<$Res>
   $UserProfileCopyWith<$Res> get profile;
 }
 
+/// @nodoc
 class __$PartnerUserCopyWithImpl<$Res> extends _$PartnerUserCopyWithImpl<$Res>
     implements _$PartnerUserCopyWith<$Res> {
   __$PartnerUserCopyWithImpl(
@@ -95,24 +106,27 @@ class __$PartnerUserCopyWithImpl<$Res> extends _$PartnerUserCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object profile = freezed,
-    Object totalRewardPoints = freezed,
+    Object? profile = freezed,
+    Object? totalRewardPoints = freezed,
   }) {
     return _then(_PartnerUser(
-      profile: profile == freezed ? _value.profile : profile as UserProfile,
+      profile: profile == freezed
+          ? _value.profile
+          : profile // ignore: cast_nullable_to_non_nullable
+              as UserProfile,
       totalRewardPoints: totalRewardPoints == freezed
           ? _value.totalRewardPoints
-          : totalRewardPoints as double,
+          : totalRewardPoints // ignore: cast_nullable_to_non_nullable
+              as double,
     ));
   }
 }
 
+/// @nodoc
+
 class _$_PartnerUser extends _PartnerUser {
-  const _$_PartnerUser(
-      {@required this.profile, @required this.totalRewardPoints})
-      : assert(profile != null),
-        assert(totalRewardPoints != null),
-        super._();
+  const _$_PartnerUser({required this.profile, required this.totalRewardPoints})
+      : super._();
 
   @override
   final UserProfile profile;
@@ -142,21 +156,24 @@ class _$_PartnerUser extends _PartnerUser {
       const DeepCollectionEquality().hash(profile) ^
       const DeepCollectionEquality().hash(totalRewardPoints);
 
+  @JsonKey(ignore: true)
   @override
   _$PartnerUserCopyWith<_PartnerUser> get copyWith =>
       __$PartnerUserCopyWithImpl<_PartnerUser>(this, _$identity);
 }
 
 abstract class _PartnerUser extends PartnerUser {
-  const _PartnerUser._() : super._();
   const factory _PartnerUser(
-      {@required UserProfile profile,
-      @required double totalRewardPoints}) = _$_PartnerUser;
+      {required UserProfile profile,
+      required double totalRewardPoints}) = _$_PartnerUser;
+  const _PartnerUser._() : super._();
 
   @override
-  UserProfile get profile;
+  UserProfile get profile => throw _privateConstructorUsedError;
   @override
-  double get totalRewardPoints;
+  double get totalRewardPoints => throw _privateConstructorUsedError;
   @override
-  _$PartnerUserCopyWith<_PartnerUser> get copyWith;
+  @JsonKey(ignore: true)
+  _$PartnerUserCopyWith<_PartnerUser> get copyWith =>
+      throw _privateConstructorUsedError;
 }

@@ -10,11 +10,11 @@ abstract class UserProfileDto implements _$UserProfileDto {
   const UserProfileDto._();
 
   const factory UserProfileDto(
-      {@required String userName,
-      @required String mobileNumber,
-      @required String email,
-      String nickName,
-      String uid}) = _UserProfileDto;
+      {required String userName,
+      required String mobileNumber,
+      required String email,
+      required String nickName,
+      required String uid}) = _UserProfileDto;
 
   factory UserProfileDto.fromDomain(UserProfile userProfile) {
     return UserProfileDto(
@@ -38,6 +38,6 @@ abstract class UserProfileDto implements _$UserProfileDto {
       _$UserProfileDtoFromJson(json);
 
   factory UserProfileDto.fromFirestore(DocumentSnapshot doc) {
-    return UserProfileDto.fromJson(doc.data());
+    return UserProfileDto.fromJson(doc.data()!);
   }
 }

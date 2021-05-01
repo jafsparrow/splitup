@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'weekly_leaders_bloc.dart';
 
@@ -9,56 +9,65 @@ part of 'weekly_leaders_bloc.dart';
 
 T _$identity<T>(T value) => value;
 
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
+/// @nodoc
 class _$WeeklyLeadersEventTearOff {
   const _$WeeklyLeadersEventTearOff();
 
-// ignore: unused_element
   _Started started() {
     return const _Started();
   }
 
-// ignore: unused_element
-  _LoadWeeklyLeadBoard loadWeeklyLeadBoard({String companyId}) {
+  _LoadWeeklyLeadBoard loadWeeklyLeadBoard({required String companyId}) {
     return _LoadWeeklyLeadBoard(
       companyId: companyId,
     );
   }
 }
 
-// ignore: unused_element
+/// @nodoc
 const $WeeklyLeadersEvent = _$WeeklyLeadersEventTearOff();
 
+/// @nodoc
 mixin _$WeeklyLeadersEvent {
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result started(),
-    @required Result loadWeeklyLeadBoard(String companyId),
-  });
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function(String companyId) loadWeeklyLeadBoard,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result started(),
-    Result loadWeeklyLeadBoard(String companyId),
-    @required Result orElse(),
-  });
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function(String companyId)? loadWeeklyLeadBoard,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result started(_Started value),
-    @required Result loadWeeklyLeadBoard(_LoadWeeklyLeadBoard value),
-  });
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(_LoadWeeklyLeadBoard value) loadWeeklyLeadBoard,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result started(_Started value),
-    Result loadWeeklyLeadBoard(_LoadWeeklyLeadBoard value),
-    @required Result orElse(),
-  });
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(_LoadWeeklyLeadBoard value)? loadWeeklyLeadBoard,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
+/// @nodoc
 abstract class $WeeklyLeadersEventCopyWith<$Res> {
   factory $WeeklyLeadersEventCopyWith(
           WeeklyLeadersEvent value, $Res Function(WeeklyLeadersEvent) then) =
       _$WeeklyLeadersEventCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class _$WeeklyLeadersEventCopyWithImpl<$Res>
     implements $WeeklyLeadersEventCopyWith<$Res> {
   _$WeeklyLeadersEventCopyWithImpl(this._value, this._then);
@@ -68,11 +77,13 @@ class _$WeeklyLeadersEventCopyWithImpl<$Res>
   final $Res Function(WeeklyLeadersEvent) _then;
 }
 
+/// @nodoc
 abstract class _$StartedCopyWith<$Res> {
   factory _$StartedCopyWith(_Started value, $Res Function(_Started) then) =
       __$StartedCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class __$StartedCopyWithImpl<$Res>
     extends _$WeeklyLeadersEventCopyWithImpl<$Res>
     implements _$StartedCopyWith<$Res> {
@@ -82,6 +93,8 @@ class __$StartedCopyWithImpl<$Res>
   @override
   _Started get _value => super._value as _Started;
 }
+
+/// @nodoc
 
 class _$_Started implements _Started {
   const _$_Started();
@@ -101,23 +114,20 @@ class _$_Started implements _Started {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result started(),
-    @required Result loadWeeklyLeadBoard(String companyId),
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function(String companyId) loadWeeklyLeadBoard,
   }) {
-    assert(started != null);
-    assert(loadWeeklyLeadBoard != null);
     return started();
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result started(),
-    Result loadWeeklyLeadBoard(String companyId),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function(String companyId)? loadWeeklyLeadBoard,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (started != null) {
       return started();
     }
@@ -126,23 +136,20 @@ class _$_Started implements _Started {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result started(_Started value),
-    @required Result loadWeeklyLeadBoard(_LoadWeeklyLeadBoard value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(_LoadWeeklyLeadBoard value) loadWeeklyLeadBoard,
   }) {
-    assert(started != null);
-    assert(loadWeeklyLeadBoard != null);
     return started(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result started(_Started value),
-    Result loadWeeklyLeadBoard(_LoadWeeklyLeadBoard value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(_LoadWeeklyLeadBoard value)? loadWeeklyLeadBoard,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (started != null) {
       return started(this);
     }
@@ -154,6 +161,7 @@ abstract class _Started implements WeeklyLeadersEvent {
   const factory _Started() = _$_Started;
 }
 
+/// @nodoc
 abstract class _$LoadWeeklyLeadBoardCopyWith<$Res> {
   factory _$LoadWeeklyLeadBoardCopyWith(_LoadWeeklyLeadBoard value,
           $Res Function(_LoadWeeklyLeadBoard) then) =
@@ -161,6 +169,7 @@ abstract class _$LoadWeeklyLeadBoardCopyWith<$Res> {
   $Res call({String companyId});
 }
 
+/// @nodoc
 class __$LoadWeeklyLeadBoardCopyWithImpl<$Res>
     extends _$WeeklyLeadersEventCopyWithImpl<$Res>
     implements _$LoadWeeklyLeadBoardCopyWith<$Res> {
@@ -173,16 +182,21 @@ class __$LoadWeeklyLeadBoardCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object companyId = freezed,
+    Object? companyId = freezed,
   }) {
     return _then(_LoadWeeklyLeadBoard(
-      companyId: companyId == freezed ? _value.companyId : companyId as String,
+      companyId: companyId == freezed
+          ? _value.companyId
+          : companyId // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
 
+/// @nodoc
+
 class _$_LoadWeeklyLeadBoard implements _LoadWeeklyLeadBoard {
-  const _$_LoadWeeklyLeadBoard({this.companyId});
+  const _$_LoadWeeklyLeadBoard({required this.companyId});
 
   @override
   final String companyId;
@@ -205,6 +219,7 @@ class _$_LoadWeeklyLeadBoard implements _LoadWeeklyLeadBoard {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(companyId);
 
+  @JsonKey(ignore: true)
   @override
   _$LoadWeeklyLeadBoardCopyWith<_LoadWeeklyLeadBoard> get copyWith =>
       __$LoadWeeklyLeadBoardCopyWithImpl<_LoadWeeklyLeadBoard>(
@@ -212,23 +227,20 @@ class _$_LoadWeeklyLeadBoard implements _LoadWeeklyLeadBoard {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result started(),
-    @required Result loadWeeklyLeadBoard(String companyId),
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function(String companyId) loadWeeklyLeadBoard,
   }) {
-    assert(started != null);
-    assert(loadWeeklyLeadBoard != null);
     return loadWeeklyLeadBoard(companyId);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result started(),
-    Result loadWeeklyLeadBoard(String companyId),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function(String companyId)? loadWeeklyLeadBoard,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (loadWeeklyLeadBoard != null) {
       return loadWeeklyLeadBoard(companyId);
     }
@@ -237,23 +249,20 @@ class _$_LoadWeeklyLeadBoard implements _LoadWeeklyLeadBoard {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result started(_Started value),
-    @required Result loadWeeklyLeadBoard(_LoadWeeklyLeadBoard value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(_LoadWeeklyLeadBoard value) loadWeeklyLeadBoard,
   }) {
-    assert(started != null);
-    assert(loadWeeklyLeadBoard != null);
     return loadWeeklyLeadBoard(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result started(_Started value),
-    Result loadWeeklyLeadBoard(_LoadWeeklyLeadBoard value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(_LoadWeeklyLeadBoard value)? loadWeeklyLeadBoard,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (loadWeeklyLeadBoard != null) {
       return loadWeeklyLeadBoard(this);
     }
@@ -262,84 +271,91 @@ class _$_LoadWeeklyLeadBoard implements _LoadWeeklyLeadBoard {
 }
 
 abstract class _LoadWeeklyLeadBoard implements WeeklyLeadersEvent {
-  const factory _LoadWeeklyLeadBoard({String companyId}) =
+  const factory _LoadWeeklyLeadBoard({required String companyId}) =
       _$_LoadWeeklyLeadBoard;
 
-  String get companyId;
-  _$LoadWeeklyLeadBoardCopyWith<_LoadWeeklyLeadBoard> get copyWith;
+  String get companyId => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$LoadWeeklyLeadBoardCopyWith<_LoadWeeklyLeadBoard> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
+/// @nodoc
 class _$WeeklyLeadersStateTearOff {
   const _$WeeklyLeadersStateTearOff();
 
-// ignore: unused_element
   _Initial initial() {
     return const _Initial();
   }
 
-// ignore: unused_element
   _Loading loading() {
     return const _Loading();
   }
 
-// ignore: unused_element
   _Error error() {
     return const _Error();
   }
 
-// ignore: unused_element
   _WeeklyLeadBoardLoaded weeklyLeadedBoardLoaded(
-      {List<PartnerPointsAgregate> weeklyLeaders}) {
+      {required List<PartnerPointsAgregate> weeklyLeaders}) {
     return _WeeklyLeadBoardLoaded(
       weeklyLeaders: weeklyLeaders,
     );
   }
 }
 
-// ignore: unused_element
+/// @nodoc
 const $WeeklyLeadersState = _$WeeklyLeadersStateTearOff();
 
+/// @nodoc
 mixin _$WeeklyLeadersState {
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initial(),
-    @required Result loading(),
-    @required Result error(),
-    @required
-        Result weeklyLeadedBoardLoaded(
-            List<PartnerPointsAgregate> weeklyLeaders),
-  });
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function() error,
+    required TResult Function(List<PartnerPointsAgregate> weeklyLeaders)
+        weeklyLeadedBoardLoaded,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initial(),
-    Result loading(),
-    Result error(),
-    Result weeklyLeadedBoardLoaded(List<PartnerPointsAgregate> weeklyLeaders),
-    @required Result orElse(),
-  });
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function()? error,
+    TResult Function(List<PartnerPointsAgregate> weeklyLeaders)?
+        weeklyLeadedBoardLoaded,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initial(_Initial value),
-    @required Result loading(_Loading value),
-    @required Result error(_Error value),
-    @required Result weeklyLeadedBoardLoaded(_WeeklyLeadBoardLoaded value),
-  });
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_Loading value) loading,
+    required TResult Function(_Error value) error,
+    required TResult Function(_WeeklyLeadBoardLoaded value)
+        weeklyLeadedBoardLoaded,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initial(_Initial value),
-    Result loading(_Loading value),
-    Result error(_Error value),
-    Result weeklyLeadedBoardLoaded(_WeeklyLeadBoardLoaded value),
-    @required Result orElse(),
-  });
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Loading value)? loading,
+    TResult Function(_Error value)? error,
+    TResult Function(_WeeklyLeadBoardLoaded value)? weeklyLeadedBoardLoaded,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
+/// @nodoc
 abstract class $WeeklyLeadersStateCopyWith<$Res> {
   factory $WeeklyLeadersStateCopyWith(
           WeeklyLeadersState value, $Res Function(WeeklyLeadersState) then) =
       _$WeeklyLeadersStateCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class _$WeeklyLeadersStateCopyWithImpl<$Res>
     implements $WeeklyLeadersStateCopyWith<$Res> {
   _$WeeklyLeadersStateCopyWithImpl(this._value, this._then);
@@ -349,11 +365,13 @@ class _$WeeklyLeadersStateCopyWithImpl<$Res>
   final $Res Function(WeeklyLeadersState) _then;
 }
 
+/// @nodoc
 abstract class _$InitialCopyWith<$Res> {
   factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) =
       __$InitialCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class __$InitialCopyWithImpl<$Res>
     extends _$WeeklyLeadersStateCopyWithImpl<$Res>
     implements _$InitialCopyWith<$Res> {
@@ -363,6 +381,8 @@ class __$InitialCopyWithImpl<$Res>
   @override
   _Initial get _value => super._value as _Initial;
 }
+
+/// @nodoc
 
 class _$_Initial implements _Initial {
   const _$_Initial();
@@ -382,31 +402,26 @@ class _$_Initial implements _Initial {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initial(),
-    @required Result loading(),
-    @required Result error(),
-    @required
-        Result weeklyLeadedBoardLoaded(
-            List<PartnerPointsAgregate> weeklyLeaders),
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function() error,
+    required TResult Function(List<PartnerPointsAgregate> weeklyLeaders)
+        weeklyLeadedBoardLoaded,
   }) {
-    assert(initial != null);
-    assert(loading != null);
-    assert(error != null);
-    assert(weeklyLeadedBoardLoaded != null);
     return initial();
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initial(),
-    Result loading(),
-    Result error(),
-    Result weeklyLeadedBoardLoaded(List<PartnerPointsAgregate> weeklyLeaders),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function()? error,
+    TResult Function(List<PartnerPointsAgregate> weeklyLeaders)?
+        weeklyLeadedBoardLoaded,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (initial != null) {
       return initial();
     }
@@ -415,29 +430,25 @@ class _$_Initial implements _Initial {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initial(_Initial value),
-    @required Result loading(_Loading value),
-    @required Result error(_Error value),
-    @required Result weeklyLeadedBoardLoaded(_WeeklyLeadBoardLoaded value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_Loading value) loading,
+    required TResult Function(_Error value) error,
+    required TResult Function(_WeeklyLeadBoardLoaded value)
+        weeklyLeadedBoardLoaded,
   }) {
-    assert(initial != null);
-    assert(loading != null);
-    assert(error != null);
-    assert(weeklyLeadedBoardLoaded != null);
     return initial(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initial(_Initial value),
-    Result loading(_Loading value),
-    Result error(_Error value),
-    Result weeklyLeadedBoardLoaded(_WeeklyLeadBoardLoaded value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Loading value)? loading,
+    TResult Function(_Error value)? error,
+    TResult Function(_WeeklyLeadBoardLoaded value)? weeklyLeadedBoardLoaded,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (initial != null) {
       return initial(this);
     }
@@ -449,11 +460,13 @@ abstract class _Initial implements WeeklyLeadersState {
   const factory _Initial() = _$_Initial;
 }
 
+/// @nodoc
 abstract class _$LoadingCopyWith<$Res> {
   factory _$LoadingCopyWith(_Loading value, $Res Function(_Loading) then) =
       __$LoadingCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class __$LoadingCopyWithImpl<$Res>
     extends _$WeeklyLeadersStateCopyWithImpl<$Res>
     implements _$LoadingCopyWith<$Res> {
@@ -463,6 +476,8 @@ class __$LoadingCopyWithImpl<$Res>
   @override
   _Loading get _value => super._value as _Loading;
 }
+
+/// @nodoc
 
 class _$_Loading implements _Loading {
   const _$_Loading();
@@ -482,31 +497,26 @@ class _$_Loading implements _Loading {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initial(),
-    @required Result loading(),
-    @required Result error(),
-    @required
-        Result weeklyLeadedBoardLoaded(
-            List<PartnerPointsAgregate> weeklyLeaders),
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function() error,
+    required TResult Function(List<PartnerPointsAgregate> weeklyLeaders)
+        weeklyLeadedBoardLoaded,
   }) {
-    assert(initial != null);
-    assert(loading != null);
-    assert(error != null);
-    assert(weeklyLeadedBoardLoaded != null);
     return loading();
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initial(),
-    Result loading(),
-    Result error(),
-    Result weeklyLeadedBoardLoaded(List<PartnerPointsAgregate> weeklyLeaders),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function()? error,
+    TResult Function(List<PartnerPointsAgregate> weeklyLeaders)?
+        weeklyLeadedBoardLoaded,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (loading != null) {
       return loading();
     }
@@ -515,29 +525,25 @@ class _$_Loading implements _Loading {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initial(_Initial value),
-    @required Result loading(_Loading value),
-    @required Result error(_Error value),
-    @required Result weeklyLeadedBoardLoaded(_WeeklyLeadBoardLoaded value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_Loading value) loading,
+    required TResult Function(_Error value) error,
+    required TResult Function(_WeeklyLeadBoardLoaded value)
+        weeklyLeadedBoardLoaded,
   }) {
-    assert(initial != null);
-    assert(loading != null);
-    assert(error != null);
-    assert(weeklyLeadedBoardLoaded != null);
     return loading(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initial(_Initial value),
-    Result loading(_Loading value),
-    Result error(_Error value),
-    Result weeklyLeadedBoardLoaded(_WeeklyLeadBoardLoaded value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Loading value)? loading,
+    TResult Function(_Error value)? error,
+    TResult Function(_WeeklyLeadBoardLoaded value)? weeklyLeadedBoardLoaded,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (loading != null) {
       return loading(this);
     }
@@ -549,11 +555,13 @@ abstract class _Loading implements WeeklyLeadersState {
   const factory _Loading() = _$_Loading;
 }
 
+/// @nodoc
 abstract class _$ErrorCopyWith<$Res> {
   factory _$ErrorCopyWith(_Error value, $Res Function(_Error) then) =
       __$ErrorCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class __$ErrorCopyWithImpl<$Res> extends _$WeeklyLeadersStateCopyWithImpl<$Res>
     implements _$ErrorCopyWith<$Res> {
   __$ErrorCopyWithImpl(_Error _value, $Res Function(_Error) _then)
@@ -562,6 +570,8 @@ class __$ErrorCopyWithImpl<$Res> extends _$WeeklyLeadersStateCopyWithImpl<$Res>
   @override
   _Error get _value => super._value as _Error;
 }
+
+/// @nodoc
 
 class _$_Error implements _Error {
   const _$_Error();
@@ -581,31 +591,26 @@ class _$_Error implements _Error {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initial(),
-    @required Result loading(),
-    @required Result error(),
-    @required
-        Result weeklyLeadedBoardLoaded(
-            List<PartnerPointsAgregate> weeklyLeaders),
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function() error,
+    required TResult Function(List<PartnerPointsAgregate> weeklyLeaders)
+        weeklyLeadedBoardLoaded,
   }) {
-    assert(initial != null);
-    assert(loading != null);
-    assert(error != null);
-    assert(weeklyLeadedBoardLoaded != null);
     return error();
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initial(),
-    Result loading(),
-    Result error(),
-    Result weeklyLeadedBoardLoaded(List<PartnerPointsAgregate> weeklyLeaders),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function()? error,
+    TResult Function(List<PartnerPointsAgregate> weeklyLeaders)?
+        weeklyLeadedBoardLoaded,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (error != null) {
       return error();
     }
@@ -614,29 +619,25 @@ class _$_Error implements _Error {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initial(_Initial value),
-    @required Result loading(_Loading value),
-    @required Result error(_Error value),
-    @required Result weeklyLeadedBoardLoaded(_WeeklyLeadBoardLoaded value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_Loading value) loading,
+    required TResult Function(_Error value) error,
+    required TResult Function(_WeeklyLeadBoardLoaded value)
+        weeklyLeadedBoardLoaded,
   }) {
-    assert(initial != null);
-    assert(loading != null);
-    assert(error != null);
-    assert(weeklyLeadedBoardLoaded != null);
     return error(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initial(_Initial value),
-    Result loading(_Loading value),
-    Result error(_Error value),
-    Result weeklyLeadedBoardLoaded(_WeeklyLeadBoardLoaded value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Loading value)? loading,
+    TResult Function(_Error value)? error,
+    TResult Function(_WeeklyLeadBoardLoaded value)? weeklyLeadedBoardLoaded,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (error != null) {
       return error(this);
     }
@@ -648,6 +649,7 @@ abstract class _Error implements WeeklyLeadersState {
   const factory _Error() = _$_Error;
 }
 
+/// @nodoc
 abstract class _$WeeklyLeadBoardLoadedCopyWith<$Res> {
   factory _$WeeklyLeadBoardLoadedCopyWith(_WeeklyLeadBoardLoaded value,
           $Res Function(_WeeklyLeadBoardLoaded) then) =
@@ -655,6 +657,7 @@ abstract class _$WeeklyLeadBoardLoadedCopyWith<$Res> {
   $Res call({List<PartnerPointsAgregate> weeklyLeaders});
 }
 
+/// @nodoc
 class __$WeeklyLeadBoardLoadedCopyWithImpl<$Res>
     extends _$WeeklyLeadersStateCopyWithImpl<$Res>
     implements _$WeeklyLeadBoardLoadedCopyWith<$Res> {
@@ -667,18 +670,21 @@ class __$WeeklyLeadBoardLoadedCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object weeklyLeaders = freezed,
+    Object? weeklyLeaders = freezed,
   }) {
     return _then(_WeeklyLeadBoardLoaded(
       weeklyLeaders: weeklyLeaders == freezed
           ? _value.weeklyLeaders
-          : weeklyLeaders as List<PartnerPointsAgregate>,
+          : weeklyLeaders // ignore: cast_nullable_to_non_nullable
+              as List<PartnerPointsAgregate>,
     ));
   }
 }
 
+/// @nodoc
+
 class _$_WeeklyLeadBoardLoaded implements _WeeklyLeadBoardLoaded {
-  const _$_WeeklyLeadBoardLoaded({this.weeklyLeaders});
+  const _$_WeeklyLeadBoardLoaded({required this.weeklyLeaders});
 
   @override
   final List<PartnerPointsAgregate> weeklyLeaders;
@@ -701,6 +707,7 @@ class _$_WeeklyLeadBoardLoaded implements _WeeklyLeadBoardLoaded {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(weeklyLeaders);
 
+  @JsonKey(ignore: true)
   @override
   _$WeeklyLeadBoardLoadedCopyWith<_WeeklyLeadBoardLoaded> get copyWith =>
       __$WeeklyLeadBoardLoadedCopyWithImpl<_WeeklyLeadBoardLoaded>(
@@ -708,31 +715,26 @@ class _$_WeeklyLeadBoardLoaded implements _WeeklyLeadBoardLoaded {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initial(),
-    @required Result loading(),
-    @required Result error(),
-    @required
-        Result weeklyLeadedBoardLoaded(
-            List<PartnerPointsAgregate> weeklyLeaders),
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function() error,
+    required TResult Function(List<PartnerPointsAgregate> weeklyLeaders)
+        weeklyLeadedBoardLoaded,
   }) {
-    assert(initial != null);
-    assert(loading != null);
-    assert(error != null);
-    assert(weeklyLeadedBoardLoaded != null);
     return weeklyLeadedBoardLoaded(weeklyLeaders);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initial(),
-    Result loading(),
-    Result error(),
-    Result weeklyLeadedBoardLoaded(List<PartnerPointsAgregate> weeklyLeaders),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function()? error,
+    TResult Function(List<PartnerPointsAgregate> weeklyLeaders)?
+        weeklyLeadedBoardLoaded,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (weeklyLeadedBoardLoaded != null) {
       return weeklyLeadedBoardLoaded(weeklyLeaders);
     }
@@ -741,29 +743,25 @@ class _$_WeeklyLeadBoardLoaded implements _WeeklyLeadBoardLoaded {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initial(_Initial value),
-    @required Result loading(_Loading value),
-    @required Result error(_Error value),
-    @required Result weeklyLeadedBoardLoaded(_WeeklyLeadBoardLoaded value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_Loading value) loading,
+    required TResult Function(_Error value) error,
+    required TResult Function(_WeeklyLeadBoardLoaded value)
+        weeklyLeadedBoardLoaded,
   }) {
-    assert(initial != null);
-    assert(loading != null);
-    assert(error != null);
-    assert(weeklyLeadedBoardLoaded != null);
     return weeklyLeadedBoardLoaded(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initial(_Initial value),
-    Result loading(_Loading value),
-    Result error(_Error value),
-    Result weeklyLeadedBoardLoaded(_WeeklyLeadBoardLoaded value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Loading value)? loading,
+    TResult Function(_Error value)? error,
+    TResult Function(_WeeklyLeadBoardLoaded value)? weeklyLeadedBoardLoaded,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (weeklyLeadedBoardLoaded != null) {
       return weeklyLeadedBoardLoaded(this);
     }
@@ -773,8 +771,12 @@ class _$_WeeklyLeadBoardLoaded implements _WeeklyLeadBoardLoaded {
 
 abstract class _WeeklyLeadBoardLoaded implements WeeklyLeadersState {
   const factory _WeeklyLeadBoardLoaded(
-      {List<PartnerPointsAgregate> weeklyLeaders}) = _$_WeeklyLeadBoardLoaded;
+          {required List<PartnerPointsAgregate> weeklyLeaders}) =
+      _$_WeeklyLeadBoardLoaded;
 
-  List<PartnerPointsAgregate> get weeklyLeaders;
-  _$WeeklyLeadBoardLoadedCopyWith<_WeeklyLeadBoardLoaded> get copyWith;
+  List<PartnerPointsAgregate> get weeklyLeaders =>
+      throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$WeeklyLeadBoardLoadedCopyWith<_WeeklyLeadBoardLoaded> get copyWith =>
+      throw _privateConstructorUsedError;
 }

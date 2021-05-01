@@ -7,13 +7,13 @@ part 'transaction.freezed.dart';
 @freezed
 abstract class UserTransaction implements _$UserTransaction {
   const factory UserTransaction({
-    String description,
+     String? description,
     @Default('') String id,
-    String notes,
-    DateTime addedDate,
-    @required UserProfile salesUser,
-    @required UserProfile partnerUser,
-    @required RewardPoint totalRewardBreakup,
-    @required double earnedTotalRewardForCurrentTransaction,
+    required String notes,
+    required DateTime addedDate,
+    required UserProfile salesUser,
+    required UserProfile partnerUser,
+    required RewardPoint totalRewardBreakup,
+    required double earnedTotalRewardForCurrentTransaction,
   }) = _UserTransaction;
 }

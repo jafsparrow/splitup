@@ -8,7 +8,7 @@ abstract class PartnerUser implements _$PartnerUser {
   const PartnerUser._();
 
   const factory PartnerUser({
-    @required UserProfile profile,
-    @required double totalRewardPoints,
+    required UserProfile profile,
+    required double totalRewardPoints,
   }) = _PartnerUser;
 }

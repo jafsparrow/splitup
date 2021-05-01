@@ -8,11 +8,11 @@ abstract class UserProfile implements _$UserProfile {
   const UserProfile._();
 
   const factory UserProfile(
-      {@required String userName,
-      @required String mobileNumber,
-      @required String email,
-      String nickName,
-      String uid}) = _UserProfile;
+      {required String userName,
+      required String mobileNumber,
+      required String email,
+      required String nickName,
+      required String uid}) = _UserProfile;
 
   const factory UserProfile.empty([
     @Default('') String userName,

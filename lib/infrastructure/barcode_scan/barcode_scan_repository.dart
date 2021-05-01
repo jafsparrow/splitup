@@ -1,6 +1,5 @@
 import 'package:JCCommisionApp/domain/barcode_scan/barcode_scan_failures.dart';
 import 'package:JCCommisionApp/domain/barcode_scan/i_barcode_scan_repository.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dartz/dartz.dart';
 import 'package:injectable/injectable.dart';
 
@@ -23,5 +22,5 @@ class BarcodeScanRepository implements IBarcodeScanRepository {
   }
 
   @override
-  getUserProfileFromBarcode(String barcode) {}
+  getUserProfileFromBarcode(String barcode) { throw UnimplementedError();}
 }

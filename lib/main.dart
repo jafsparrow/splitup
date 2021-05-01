@@ -27,7 +27,7 @@ Future<void> main() async {
 }
 
 class MyApp extends StatelessWidget {
-  MyApp({Key key, @required this.authenticationRepository}) : super(key: key);
+  MyApp({ required this.authenticationRepository});
 
   final AuthenticationRepository authenticationRepository;
 
@@ -68,7 +68,7 @@ class MyApp extends StatelessWidget {
 }
 
 class AppView extends StatefulWidget {
-  AppView({Key key}) : super(key: key);
+  AppView();
 
   @override
   _AppViewState createState() => _AppViewState();
@@ -77,7 +77,7 @@ class AppView extends StatefulWidget {
 class _AppViewState extends State<AppView> {
   final _navigatorKey = GlobalKey<NavigatorState>();
 
-  NavigatorState get _navigator => _navigatorKey.currentState;
+  NavigatorState? get _navigator => _navigatorKey.currentState;
 
   @override
   Widget build(BuildContext context) {
@@ -107,7 +107,7 @@ class _AppViewState extends State<AppView> {
                   //           uid: 'cSOr1zRLEzbUNjeIndgX'),
                   //     );
 
-                  _navigator.push(AuthorizationCheckWidget.route());
+                  _navigator!.push(AuthorizationCheckWidget.route());
                   // _navigator.push(
                   //   AuthorizationCheckWidget.route(),
                   //   (route) => false,
@@ -115,7 +115,7 @@ class _AppViewState extends State<AppView> {
                   break;
                 case AuthenticationStatus.unauthenticated:
                   // print('switch unathonticated section');
-                  _navigator.pushAndRemoveUntil<void>(
+                  _navigator!.pushAndRemoveUntil<void>(
                     LoginPage.route(),
                     (route) => false,
                   );
@@ -156,7 +156,7 @@ class _AppViewState extends State<AppView> {
 }
 
 class AuthorizationCheckWidget extends StatefulWidget {
-  const AuthorizationCheckWidget({Key key}) : super(key: key);
+  const AuthorizationCheckWidget();
   static Route route() {
     // print('login page static route functionl');
     return MaterialPageRoute<void>(builder: (_) => AuthorizationCheckWidget());
@@ -170,7 +170,7 @@ class AuthorizationCheckWidget extends StatefulWidget {
 class _AuthorizationCheckWidgetState extends State<AuthorizationCheckWidget> {
   final _navigatorKey = GlobalKey<NavigatorState>();
 
-  NavigatorState get _navigator => _navigatorKey.currentState;
+  NavigatorState? get _navigator => _navigatorKey.currentState;
 
   @override
   Widget build(BuildContext context) {
@@ -178,7 +178,7 @@ class _AuthorizationCheckWidgetState extends State<AuthorizationCheckWidget> {
       child: BlocListener<AuthorisationBloc, AuthorisationState>(
         listener: (context, state) {
           print('hello world in the bloclisten');
-          return state.maybeMap(
+           state.maybeMap(
               notAuthorised: (_) =>
                   Navigator.of(context).pushAndRemoveUntil<void>(
                     NotAuthorisedPage.route(),
@@ -200,7 +200,7 @@ class _AuthorizationCheckWidgetState extends State<AuthorizationCheckWidget> {
 }
 
 class NotAuthorisedPage extends StatelessWidget {
-  const NotAuthorisedPage({Key key}) : super(key: key);
+  const NotAuthorisedPage();
 
   static Route route() {
     // print('login page static route functionl');
@@ -240,7 +240,7 @@ class NotAuthorisedPage extends StatelessWidget {
 // }
 
 // class MyApp extends StatelessWidget {
-//   MyApp({Key key, @required this.authenticationRepository}) : super(key: key);
+//   MyApp({Key key, required this.authenticationRepository}) : super(key: key);
 
 //   final AuthenticationRepository authenticationRepository;
 

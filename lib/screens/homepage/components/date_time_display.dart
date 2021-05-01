@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 class DateTimeDisplay extends StatelessWidget {
   final DateTime transactionCreationDateTime;
 
-  const DateTimeDisplay({Key key, this.transactionCreationDateTime})
-      : super(key: key);
+  const DateTimeDisplay({required this.transactionCreationDateTime});
+      
 
   @override
   Widget build(BuildContext context) {

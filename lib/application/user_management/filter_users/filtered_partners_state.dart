@@ -10,7 +10,7 @@ abstract class FilteredPartnersState extends Equatable {
 class FilteredPartnersLoading extends FilteredPartnersState {}
 
 class FilteredPartnerList extends FilteredPartnersState {
-  final List<UserProfile> filteredPartnerList;
+  final List<PartnerUser> filteredPartnerList;
   final String filterCriteria;
 
   FilteredPartnerList(this.filterCriteria, this.filteredPartnerList);

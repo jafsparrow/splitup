@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'transactions_failure.dart';
 
@@ -9,63 +9,72 @@ part of 'transactions_failure.dart';
 
 T _$identity<T>(T value) => value;
 
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
+/// @nodoc
 class _$UserTransactionFailureTearOff {
   const _$UserTransactionFailureTearOff();
 
-// ignore: unused_element
   _Unexpected unexpected() {
     return const _Unexpected();
   }
 
-// ignore: unused_element
   _InsufficientPermission insufficientPermission() {
     return const _InsufficientPermission();
   }
 
-// ignore: unused_element
   _UnableToCreate unableToCreate() {
     return const _UnableToCreate();
   }
 }
 
-// ignore: unused_element
+/// @nodoc
 const $UserTransactionFailure = _$UserTransactionFailureTearOff();
 
+/// @nodoc
 mixin _$UserTransactionFailure {
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result unexpected(),
-    @required Result insufficientPermission(),
-    @required Result unableToCreate(),
-  });
+  TResult when<TResult extends Object?>({
+    required TResult Function() unexpected,
+    required TResult Function() insufficientPermission,
+    required TResult Function() unableToCreate,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result unexpected(),
-    Result insufficientPermission(),
-    Result unableToCreate(),
-    @required Result orElse(),
-  });
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? unexpected,
+    TResult Function()? insufficientPermission,
+    TResult Function()? unableToCreate,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result unexpected(_Unexpected value),
-    @required Result insufficientPermission(_InsufficientPermission value),
-    @required Result unableToCreate(_UnableToCreate value),
-  });
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Unexpected value) unexpected,
+    required TResult Function(_InsufficientPermission value)
+        insufficientPermission,
+    required TResult Function(_UnableToCreate value) unableToCreate,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result unexpected(_Unexpected value),
-    Result insufficientPermission(_InsufficientPermission value),
-    Result unableToCreate(_UnableToCreate value),
-    @required Result orElse(),
-  });
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Unexpected value)? unexpected,
+    TResult Function(_InsufficientPermission value)? insufficientPermission,
+    TResult Function(_UnableToCreate value)? unableToCreate,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
+/// @nodoc
 abstract class $UserTransactionFailureCopyWith<$Res> {
   factory $UserTransactionFailureCopyWith(UserTransactionFailure value,
           $Res Function(UserTransactionFailure) then) =
       _$UserTransactionFailureCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class _$UserTransactionFailureCopyWithImpl<$Res>
     implements $UserTransactionFailureCopyWith<$Res> {
   _$UserTransactionFailureCopyWithImpl(this._value, this._then);
@@ -75,12 +84,14 @@ class _$UserTransactionFailureCopyWithImpl<$Res>
   final $Res Function(UserTransactionFailure) _then;
 }
 
+/// @nodoc
 abstract class _$UnexpectedCopyWith<$Res> {
   factory _$UnexpectedCopyWith(
           _Unexpected value, $Res Function(_Unexpected) then) =
       __$UnexpectedCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class __$UnexpectedCopyWithImpl<$Res>
     extends _$UserTransactionFailureCopyWithImpl<$Res>
     implements _$UnexpectedCopyWith<$Res> {
@@ -91,6 +102,8 @@ class __$UnexpectedCopyWithImpl<$Res>
   @override
   _Unexpected get _value => super._value as _Unexpected;
 }
+
+/// @nodoc
 
 class _$_Unexpected implements _Unexpected {
   const _$_Unexpected();
@@ -110,26 +123,22 @@ class _$_Unexpected implements _Unexpected {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result unexpected(),
-    @required Result insufficientPermission(),
-    @required Result unableToCreate(),
+  TResult when<TResult extends Object?>({
+    required TResult Function() unexpected,
+    required TResult Function() insufficientPermission,
+    required TResult Function() unableToCreate,
   }) {
-    assert(unexpected != null);
-    assert(insufficientPermission != null);
-    assert(unableToCreate != null);
     return unexpected();
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result unexpected(),
-    Result insufficientPermission(),
-    Result unableToCreate(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? unexpected,
+    TResult Function()? insufficientPermission,
+    TResult Function()? unableToCreate,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (unexpected != null) {
       return unexpected();
     }
@@ -138,26 +147,23 @@ class _$_Unexpected implements _Unexpected {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result unexpected(_Unexpected value),
-    @required Result insufficientPermission(_InsufficientPermission value),
-    @required Result unableToCreate(_UnableToCreate value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Unexpected value) unexpected,
+    required TResult Function(_InsufficientPermission value)
+        insufficientPermission,
+    required TResult Function(_UnableToCreate value) unableToCreate,
   }) {
-    assert(unexpected != null);
-    assert(insufficientPermission != null);
-    assert(unableToCreate != null);
     return unexpected(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result unexpected(_Unexpected value),
-    Result insufficientPermission(_InsufficientPermission value),
-    Result unableToCreate(_UnableToCreate value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Unexpected value)? unexpected,
+    TResult Function(_InsufficientPermission value)? insufficientPermission,
+    TResult Function(_UnableToCreate value)? unableToCreate,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (unexpected != null) {
       return unexpected(this);
     }
@@ -169,12 +175,14 @@ abstract class _Unexpected implements UserTransactionFailure {
   const factory _Unexpected() = _$_Unexpected;
 }
 
+/// @nodoc
 abstract class _$InsufficientPermissionCopyWith<$Res> {
   factory _$InsufficientPermissionCopyWith(_InsufficientPermission value,
           $Res Function(_InsufficientPermission) then) =
       __$InsufficientPermissionCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class __$InsufficientPermissionCopyWithImpl<$Res>
     extends _$UserTransactionFailureCopyWithImpl<$Res>
     implements _$InsufficientPermissionCopyWith<$Res> {
@@ -185,6 +193,8 @@ class __$InsufficientPermissionCopyWithImpl<$Res>
   @override
   _InsufficientPermission get _value => super._value as _InsufficientPermission;
 }
+
+/// @nodoc
 
 class _$_InsufficientPermission implements _InsufficientPermission {
   const _$_InsufficientPermission();
@@ -204,26 +214,22 @@ class _$_InsufficientPermission implements _InsufficientPermission {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result unexpected(),
-    @required Result insufficientPermission(),
-    @required Result unableToCreate(),
+  TResult when<TResult extends Object?>({
+    required TResult Function() unexpected,
+    required TResult Function() insufficientPermission,
+    required TResult Function() unableToCreate,
   }) {
-    assert(unexpected != null);
-    assert(insufficientPermission != null);
-    assert(unableToCreate != null);
     return insufficientPermission();
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result unexpected(),
-    Result insufficientPermission(),
-    Result unableToCreate(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? unexpected,
+    TResult Function()? insufficientPermission,
+    TResult Function()? unableToCreate,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (insufficientPermission != null) {
       return insufficientPermission();
     }
@@ -232,26 +238,23 @@ class _$_InsufficientPermission implements _InsufficientPermission {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result unexpected(_Unexpected value),
-    @required Result insufficientPermission(_InsufficientPermission value),
-    @required Result unableToCreate(_UnableToCreate value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Unexpected value) unexpected,
+    required TResult Function(_InsufficientPermission value)
+        insufficientPermission,
+    required TResult Function(_UnableToCreate value) unableToCreate,
   }) {
-    assert(unexpected != null);
-    assert(insufficientPermission != null);
-    assert(unableToCreate != null);
     return insufficientPermission(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result unexpected(_Unexpected value),
-    Result insufficientPermission(_InsufficientPermission value),
-    Result unableToCreate(_UnableToCreate value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Unexpected value)? unexpected,
+    TResult Function(_InsufficientPermission value)? insufficientPermission,
+    TResult Function(_UnableToCreate value)? unableToCreate,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (insufficientPermission != null) {
       return insufficientPermission(this);
     }
@@ -263,12 +266,14 @@ abstract class _InsufficientPermission implements UserTransactionFailure {
   const factory _InsufficientPermission() = _$_InsufficientPermission;
 }
 
+/// @nodoc
 abstract class _$UnableToCreateCopyWith<$Res> {
   factory _$UnableToCreateCopyWith(
           _UnableToCreate value, $Res Function(_UnableToCreate) then) =
       __$UnableToCreateCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class __$UnableToCreateCopyWithImpl<$Res>
     extends _$UserTransactionFailureCopyWithImpl<$Res>
     implements _$UnableToCreateCopyWith<$Res> {
@@ -279,6 +284,8 @@ class __$UnableToCreateCopyWithImpl<$Res>
   @override
   _UnableToCreate get _value => super._value as _UnableToCreate;
 }
+
+/// @nodoc
 
 class _$_UnableToCreate implements _UnableToCreate {
   const _$_UnableToCreate();
@@ -298,26 +305,22 @@ class _$_UnableToCreate implements _UnableToCreate {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result unexpected(),
-    @required Result insufficientPermission(),
-    @required Result unableToCreate(),
+  TResult when<TResult extends Object?>({
+    required TResult Function() unexpected,
+    required TResult Function() insufficientPermission,
+    required TResult Function() unableToCreate,
   }) {
-    assert(unexpected != null);
-    assert(insufficientPermission != null);
-    assert(unableToCreate != null);
     return unableToCreate();
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result unexpected(),
-    Result insufficientPermission(),
-    Result unableToCreate(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? unexpected,
+    TResult Function()? insufficientPermission,
+    TResult Function()? unableToCreate,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (unableToCreate != null) {
       return unableToCreate();
     }
@@ -326,26 +329,23 @@ class _$_UnableToCreate implements _UnableToCreate {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result unexpected(_Unexpected value),
-    @required Result insufficientPermission(_InsufficientPermission value),
-    @required Result unableToCreate(_UnableToCreate value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Unexpected value) unexpected,
+    required TResult Function(_InsufficientPermission value)
+        insufficientPermission,
+    required TResult Function(_UnableToCreate value) unableToCreate,
   }) {
-    assert(unexpected != null);
-    assert(insufficientPermission != null);
-    assert(unableToCreate != null);
     return unableToCreate(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result unexpected(_Unexpected value),
-    Result insufficientPermission(_InsufficientPermission value),
-    Result unableToCreate(_UnableToCreate value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Unexpected value)? unexpected,
+    TResult Function(_InsufficientPermission value)? insufficientPermission,
+    TResult Function(_UnableToCreate value)? unableToCreate,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (unableToCreate != null) {
       return unableToCreate(this);
     }

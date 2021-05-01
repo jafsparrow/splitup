@@ -25,3 +25,8 @@ test chagnes
 
 [ ] Cloud messaging for all the users whenenver someone earned a point.
 [ ] After creating a user, loggedIn user changed to the new creator. This is not the desired function. Need to find a solution.
+
+
+Test data
+test@test.com
+test1234

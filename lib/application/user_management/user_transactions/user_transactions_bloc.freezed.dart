@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'user_transactions_bloc.dart';
 
@@ -9,16 +9,19 @@ part of 'user_transactions_bloc.dart';
 
 T _$identity<T>(T value) => value;
 
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
+/// @nodoc
 class _$UserTransactionsEventTearOff {
   const _$UserTransactionsEventTearOff();
 
-// ignore: unused_element
   _Started started() {
     return const _Started();
   }
 
-// ignore: unused_element
-  _LoadUserTransactions loadUserTransactions({String uid, String companyId}) {
+  _LoadUserTransactions loadUserTransactions(
+      {required String uid, required String companyId}) {
     return _LoadUserTransactions(
       uid: uid,
       companyId: companyId,
@@ -26,40 +29,48 @@ class _$UserTransactionsEventTearOff {
   }
 }
 
-// ignore: unused_element
+/// @nodoc
 const $UserTransactionsEvent = _$UserTransactionsEventTearOff();
 
+/// @nodoc
 mixin _$UserTransactionsEvent {
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result started(),
-    @required Result loadUserTransactions(String uid, String companyId),
-  });
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function(String uid, String companyId)
+        loadUserTransactions,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result started(),
-    Result loadUserTransactions(String uid, String companyId),
-    @required Result orElse(),
-  });
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function(String uid, String companyId)? loadUserTransactions,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result started(_Started value),
-    @required Result loadUserTransactions(_LoadUserTransactions value),
-  });
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(_LoadUserTransactions value) loadUserTransactions,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result started(_Started value),
-    Result loadUserTransactions(_LoadUserTransactions value),
-    @required Result orElse(),
-  });
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(_LoadUserTransactions value)? loadUserTransactions,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
+/// @nodoc
 abstract class $UserTransactionsEventCopyWith<$Res> {
   factory $UserTransactionsEventCopyWith(UserTransactionsEvent value,
           $Res Function(UserTransactionsEvent) then) =
       _$UserTransactionsEventCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class _$UserTransactionsEventCopyWithImpl<$Res>
     implements $UserTransactionsEventCopyWith<$Res> {
   _$UserTransactionsEventCopyWithImpl(this._value, this._then);
@@ -69,11 +80,13 @@ class _$UserTransactionsEventCopyWithImpl<$Res>
   final $Res Function(UserTransactionsEvent) _then;
 }
 
+/// @nodoc
 abstract class _$StartedCopyWith<$Res> {
   factory _$StartedCopyWith(_Started value, $Res Function(_Started) then) =
       __$StartedCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class __$StartedCopyWithImpl<$Res>
     extends _$UserTransactionsEventCopyWithImpl<$Res>
     implements _$StartedCopyWith<$Res> {
@@ -83,6 +96,8 @@ class __$StartedCopyWithImpl<$Res>
   @override
   _Started get _value => super._value as _Started;
 }
+
+/// @nodoc
 
 class _$_Started implements _Started {
   const _$_Started();
@@ -102,23 +117,21 @@ class _$_Started implements _Started {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result started(),
-    @required Result loadUserTransactions(String uid, String companyId),
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function(String uid, String companyId)
+        loadUserTransactions,
   }) {
-    assert(started != null);
-    assert(loadUserTransactions != null);
     return started();
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result started(),
-    Result loadUserTransactions(String uid, String companyId),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function(String uid, String companyId)? loadUserTransactions,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (started != null) {
       return started();
     }
@@ -127,23 +140,20 @@ class _$_Started implements _Started {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result started(_Started value),
-    @required Result loadUserTransactions(_LoadUserTransactions value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(_LoadUserTransactions value) loadUserTransactions,
   }) {
-    assert(started != null);
-    assert(loadUserTransactions != null);
     return started(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result started(_Started value),
-    Result loadUserTransactions(_LoadUserTransactions value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(_LoadUserTransactions value)? loadUserTransactions,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (started != null) {
       return started(this);
     }
@@ -155,6 +165,7 @@ abstract class _Started implements UserTransactionsEvent {
   const factory _Started() = _$_Started;
 }
 
+/// @nodoc
 abstract class _$LoadUserTransactionsCopyWith<$Res> {
   factory _$LoadUserTransactionsCopyWith(_LoadUserTransactions value,
           $Res Function(_LoadUserTransactions) then) =
@@ -162,6 +173,7 @@ abstract class _$LoadUserTransactionsCopyWith<$Res> {
   $Res call({String uid, String companyId});
 }
 
+/// @nodoc
 class __$LoadUserTransactionsCopyWithImpl<$Res>
     extends _$UserTransactionsEventCopyWithImpl<$Res>
     implements _$LoadUserTransactionsCopyWith<$Res> {
@@ -174,18 +186,26 @@ class __$LoadUserTransactionsCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object uid = freezed,
-    Object companyId = freezed,
+    Object? uid = freezed,
+    Object? companyId = freezed,
   }) {
     return _then(_LoadUserTransactions(
-      uid: uid == freezed ? _value.uid : uid as String,
-      companyId: companyId == freezed ? _value.companyId : companyId as String,
+      uid: uid == freezed
+          ? _value.uid
+          : uid // ignore: cast_nullable_to_non_nullable
+              as String,
+      companyId: companyId == freezed
+          ? _value.companyId
+          : companyId // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
 
+/// @nodoc
+
 class _$_LoadUserTransactions implements _LoadUserTransactions {
-  const _$_LoadUserTransactions({this.uid, this.companyId});
+  const _$_LoadUserTransactions({required this.uid, required this.companyId});
 
   @override
   final String uid;
@@ -214,6 +234,7 @@ class _$_LoadUserTransactions implements _LoadUserTransactions {
       const DeepCollectionEquality().hash(uid) ^
       const DeepCollectionEquality().hash(companyId);
 
+  @JsonKey(ignore: true)
   @override
   _$LoadUserTransactionsCopyWith<_LoadUserTransactions> get copyWith =>
       __$LoadUserTransactionsCopyWithImpl<_LoadUserTransactions>(
@@ -221,23 +242,21 @@ class _$_LoadUserTransactions implements _LoadUserTransactions {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result started(),
-    @required Result loadUserTransactions(String uid, String companyId),
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function(String uid, String companyId)
+        loadUserTransactions,
   }) {
-    assert(started != null);
-    assert(loadUserTransactions != null);
     return loadUserTransactions(uid, companyId);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result started(),
-    Result loadUserTransactions(String uid, String companyId),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function(String uid, String companyId)? loadUserTransactions,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (loadUserTransactions != null) {
       return loadUserTransactions(uid, companyId);
     }
@@ -246,23 +265,20 @@ class _$_LoadUserTransactions implements _LoadUserTransactions {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result started(_Started value),
-    @required Result loadUserTransactions(_LoadUserTransactions value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(_LoadUserTransactions value) loadUserTransactions,
   }) {
-    assert(started != null);
-    assert(loadUserTransactions != null);
     return loadUserTransactions(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result started(_Started value),
-    Result loadUserTransactions(_LoadUserTransactions value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(_LoadUserTransactions value)? loadUserTransactions,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (loadUserTransactions != null) {
       return loadUserTransactions(this);
     }
@@ -271,86 +287,95 @@ class _$_LoadUserTransactions implements _LoadUserTransactions {
 }
 
 abstract class _LoadUserTransactions implements UserTransactionsEvent {
-  const factory _LoadUserTransactions({String uid, String companyId}) =
-      _$_LoadUserTransactions;
+  const factory _LoadUserTransactions(
+      {required String uid,
+      required String companyId}) = _$_LoadUserTransactions;
 
-  String get uid;
-  String get companyId;
-  _$LoadUserTransactionsCopyWith<_LoadUserTransactions> get copyWith;
+  String get uid => throw _privateConstructorUsedError;
+  String get companyId => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$LoadUserTransactionsCopyWith<_LoadUserTransactions> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
+/// @nodoc
 class _$UserTransactionsStateTearOff {
   const _$UserTransactionsStateTearOff();
 
-// ignore: unused_element
   _Initial initial() {
     return const _Initial();
   }
 
-// ignore: unused_element
   _TransactionLoading transactionLoading() {
     return const _TransactionLoading();
   }
 
-// ignore: unused_element
   _UserTransactionsLoaded userTransactionsLoaded(
-      {List<UserTransaction> userTransactions}) {
+      {required List<UserTransaction> userTransactions}) {
     return _UserTransactionsLoaded(
       userTransactions: userTransactions,
     );
   }
 
-// ignore: unused_element
-  _LoadingError loadingError({UserTransactionFailure failure}) {
+  _LoadingError loadingError({required UserTransactionFailure failure}) {
     return _LoadingError(
       failure: failure,
     );
   }
 }
 
-// ignore: unused_element
+/// @nodoc
 const $UserTransactionsState = _$UserTransactionsStateTearOff();
 
+/// @nodoc
 mixin _$UserTransactionsState {
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initial(),
-    @required Result transactionLoading(),
-    @required
-        Result userTransactionsLoaded(List<UserTransaction> userTransactions),
-    @required Result loadingError(UserTransactionFailure failure),
-  });
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() transactionLoading,
+    required TResult Function(List<UserTransaction> userTransactions)
+        userTransactionsLoaded,
+    required TResult Function(UserTransactionFailure failure) loadingError,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initial(),
-    Result transactionLoading(),
-    Result userTransactionsLoaded(List<UserTransaction> userTransactions),
-    Result loadingError(UserTransactionFailure failure),
-    @required Result orElse(),
-  });
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? transactionLoading,
+    TResult Function(List<UserTransaction> userTransactions)?
+        userTransactionsLoaded,
+    TResult Function(UserTransactionFailure failure)? loadingError,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initial(_Initial value),
-    @required Result transactionLoading(_TransactionLoading value),
-    @required Result userTransactionsLoaded(_UserTransactionsLoaded value),
-    @required Result loadingError(_LoadingError value),
-  });
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_TransactionLoading value) transactionLoading,
+    required TResult Function(_UserTransactionsLoaded value)
+        userTransactionsLoaded,
+    required TResult Function(_LoadingError value) loadingError,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initial(_Initial value),
-    Result transactionLoading(_TransactionLoading value),
-    Result userTransactionsLoaded(_UserTransactionsLoaded value),
-    Result loadingError(_LoadingError value),
-    @required Result orElse(),
-  });
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_TransactionLoading value)? transactionLoading,
+    TResult Function(_UserTransactionsLoaded value)? userTransactionsLoaded,
+    TResult Function(_LoadingError value)? loadingError,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
+/// @nodoc
 abstract class $UserTransactionsStateCopyWith<$Res> {
   factory $UserTransactionsStateCopyWith(UserTransactionsState value,
           $Res Function(UserTransactionsState) then) =
       _$UserTransactionsStateCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class _$UserTransactionsStateCopyWithImpl<$Res>
     implements $UserTransactionsStateCopyWith<$Res> {
   _$UserTransactionsStateCopyWithImpl(this._value, this._then);
@@ -360,11 +385,13 @@ class _$UserTransactionsStateCopyWithImpl<$Res>
   final $Res Function(UserTransactionsState) _then;
 }
 
+/// @nodoc
 abstract class _$InitialCopyWith<$Res> {
   factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) =
       __$InitialCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class __$InitialCopyWithImpl<$Res>
     extends _$UserTransactionsStateCopyWithImpl<$Res>
     implements _$InitialCopyWith<$Res> {
@@ -374,6 +401,8 @@ class __$InitialCopyWithImpl<$Res>
   @override
   _Initial get _value => super._value as _Initial;
 }
+
+/// @nodoc
 
 class _$_Initial implements _Initial {
   const _$_Initial();
@@ -393,30 +422,26 @@ class _$_Initial implements _Initial {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initial(),
-    @required Result transactionLoading(),
-    @required
-        Result userTransactionsLoaded(List<UserTransaction> userTransactions),
-    @required Result loadingError(UserTransactionFailure failure),
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() transactionLoading,
+    required TResult Function(List<UserTransaction> userTransactions)
+        userTransactionsLoaded,
+    required TResult Function(UserTransactionFailure failure) loadingError,
   }) {
-    assert(initial != null);
-    assert(transactionLoading != null);
-    assert(userTransactionsLoaded != null);
-    assert(loadingError != null);
     return initial();
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initial(),
-    Result transactionLoading(),
-    Result userTransactionsLoaded(List<UserTransaction> userTransactions),
-    Result loadingError(UserTransactionFailure failure),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? transactionLoading,
+    TResult Function(List<UserTransaction> userTransactions)?
+        userTransactionsLoaded,
+    TResult Function(UserTransactionFailure failure)? loadingError,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (initial != null) {
       return initial();
     }
@@ -425,29 +450,25 @@ class _$_Initial implements _Initial {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initial(_Initial value),
-    @required Result transactionLoading(_TransactionLoading value),
-    @required Result userTransactionsLoaded(_UserTransactionsLoaded value),
-    @required Result loadingError(_LoadingError value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_TransactionLoading value) transactionLoading,
+    required TResult Function(_UserTransactionsLoaded value)
+        userTransactionsLoaded,
+    required TResult Function(_LoadingError value) loadingError,
   }) {
-    assert(initial != null);
-    assert(transactionLoading != null);
-    assert(userTransactionsLoaded != null);
-    assert(loadingError != null);
     return initial(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initial(_Initial value),
-    Result transactionLoading(_TransactionLoading value),
-    Result userTransactionsLoaded(_UserTransactionsLoaded value),
-    Result loadingError(_LoadingError value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_TransactionLoading value)? transactionLoading,
+    TResult Function(_UserTransactionsLoaded value)? userTransactionsLoaded,
+    TResult Function(_LoadingError value)? loadingError,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (initial != null) {
       return initial(this);
     }
@@ -459,12 +480,14 @@ abstract class _Initial implements UserTransactionsState {
   const factory _Initial() = _$_Initial;
 }
 
+/// @nodoc
 abstract class _$TransactionLoadingCopyWith<$Res> {
   factory _$TransactionLoadingCopyWith(
           _TransactionLoading value, $Res Function(_TransactionLoading) then) =
       __$TransactionLoadingCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class __$TransactionLoadingCopyWithImpl<$Res>
     extends _$UserTransactionsStateCopyWithImpl<$Res>
     implements _$TransactionLoadingCopyWith<$Res> {
@@ -475,6 +498,8 @@ class __$TransactionLoadingCopyWithImpl<$Res>
   @override
   _TransactionLoading get _value => super._value as _TransactionLoading;
 }
+
+/// @nodoc
 
 class _$_TransactionLoading implements _TransactionLoading {
   const _$_TransactionLoading();
@@ -494,30 +519,26 @@ class _$_TransactionLoading implements _TransactionLoading {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initial(),
-    @required Result transactionLoading(),
-    @required
-        Result userTransactionsLoaded(List<UserTransaction> userTransactions),
-    @required Result loadingError(UserTransactionFailure failure),
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() transactionLoading,
+    required TResult Function(List<UserTransaction> userTransactions)
+        userTransactionsLoaded,
+    required TResult Function(UserTransactionFailure failure) loadingError,
   }) {
-    assert(initial != null);
-    assert(transactionLoading != null);
-    assert(userTransactionsLoaded != null);
-    assert(loadingError != null);
     return transactionLoading();
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initial(),
-    Result transactionLoading(),
-    Result userTransactionsLoaded(List<UserTransaction> userTransactions),
-    Result loadingError(UserTransactionFailure failure),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? transactionLoading,
+    TResult Function(List<UserTransaction> userTransactions)?
+        userTransactionsLoaded,
+    TResult Function(UserTransactionFailure failure)? loadingError,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (transactionLoading != null) {
       return transactionLoading();
     }
@@ -526,29 +547,25 @@ class _$_TransactionLoading implements _TransactionLoading {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initial(_Initial value),
-    @required Result transactionLoading(_TransactionLoading value),
-    @required Result userTransactionsLoaded(_UserTransactionsLoaded value),
-    @required Result loadingError(_LoadingError value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_TransactionLoading value) transactionLoading,
+    required TResult Function(_UserTransactionsLoaded value)
+        userTransactionsLoaded,
+    required TResult Function(_LoadingError value) loadingError,
   }) {
-    assert(initial != null);
-    assert(transactionLoading != null);
-    assert(userTransactionsLoaded != null);
-    assert(loadingError != null);
     return transactionLoading(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initial(_Initial value),
-    Result transactionLoading(_TransactionLoading value),
-    Result userTransactionsLoaded(_UserTransactionsLoaded value),
-    Result loadingError(_LoadingError value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_TransactionLoading value)? transactionLoading,
+    TResult Function(_UserTransactionsLoaded value)? userTransactionsLoaded,
+    TResult Function(_LoadingError value)? loadingError,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (transactionLoading != null) {
       return transactionLoading(this);
     }
@@ -560,6 +577,7 @@ abstract class _TransactionLoading implements UserTransactionsState {
   const factory _TransactionLoading() = _$_TransactionLoading;
 }
 
+/// @nodoc
 abstract class _$UserTransactionsLoadedCopyWith<$Res> {
   factory _$UserTransactionsLoadedCopyWith(_UserTransactionsLoaded value,
           $Res Function(_UserTransactionsLoaded) then) =
@@ -567,6 +585,7 @@ abstract class _$UserTransactionsLoadedCopyWith<$Res> {
   $Res call({List<UserTransaction> userTransactions});
 }
 
+/// @nodoc
 class __$UserTransactionsLoadedCopyWithImpl<$Res>
     extends _$UserTransactionsStateCopyWithImpl<$Res>
     implements _$UserTransactionsLoadedCopyWith<$Res> {
@@ -579,18 +598,21 @@ class __$UserTransactionsLoadedCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object userTransactions = freezed,
+    Object? userTransactions = freezed,
   }) {
     return _then(_UserTransactionsLoaded(
       userTransactions: userTransactions == freezed
           ? _value.userTransactions
-          : userTransactions as List<UserTransaction>,
+          : userTransactions // ignore: cast_nullable_to_non_nullable
+              as List<UserTransaction>,
     ));
   }
 }
 
+/// @nodoc
+
 class _$_UserTransactionsLoaded implements _UserTransactionsLoaded {
-  const _$_UserTransactionsLoaded({this.userTransactions});
+  const _$_UserTransactionsLoaded({required this.userTransactions});
 
   @override
   final List<UserTransaction> userTransactions;
@@ -614,6 +636,7 @@ class _$_UserTransactionsLoaded implements _UserTransactionsLoaded {
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(userTransactions);
 
+  @JsonKey(ignore: true)
   @override
   _$UserTransactionsLoadedCopyWith<_UserTransactionsLoaded> get copyWith =>
       __$UserTransactionsLoadedCopyWithImpl<_UserTransactionsLoaded>(
@@ -621,30 +644,26 @@ class _$_UserTransactionsLoaded implements _UserTransactionsLoaded {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initial(),
-    @required Result transactionLoading(),
-    @required
-        Result userTransactionsLoaded(List<UserTransaction> userTransactions),
-    @required Result loadingError(UserTransactionFailure failure),
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() transactionLoading,
+    required TResult Function(List<UserTransaction> userTransactions)
+        userTransactionsLoaded,
+    required TResult Function(UserTransactionFailure failure) loadingError,
   }) {
-    assert(initial != null);
-    assert(transactionLoading != null);
-    assert(userTransactionsLoaded != null);
-    assert(loadingError != null);
     return userTransactionsLoaded(userTransactions);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initial(),
-    Result transactionLoading(),
-    Result userTransactionsLoaded(List<UserTransaction> userTransactions),
-    Result loadingError(UserTransactionFailure failure),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? transactionLoading,
+    TResult Function(List<UserTransaction> userTransactions)?
+        userTransactionsLoaded,
+    TResult Function(UserTransactionFailure failure)? loadingError,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (userTransactionsLoaded != null) {
       return userTransactionsLoaded(userTransactions);
     }
@@ -653,29 +672,25 @@ class _$_UserTransactionsLoaded implements _UserTransactionsLoaded {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initial(_Initial value),
-    @required Result transactionLoading(_TransactionLoading value),
-    @required Result userTransactionsLoaded(_UserTransactionsLoaded value),
-    @required Result loadingError(_LoadingError value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_TransactionLoading value) transactionLoading,
+    required TResult Function(_UserTransactionsLoaded value)
+        userTransactionsLoaded,
+    required TResult Function(_LoadingError value) loadingError,
   }) {
-    assert(initial != null);
-    assert(transactionLoading != null);
-    assert(userTransactionsLoaded != null);
-    assert(loadingError != null);
     return userTransactionsLoaded(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initial(_Initial value),
-    Result transactionLoading(_TransactionLoading value),
-    Result userTransactionsLoaded(_UserTransactionsLoaded value),
-    Result loadingError(_LoadingError value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_TransactionLoading value)? transactionLoading,
+    TResult Function(_UserTransactionsLoaded value)? userTransactionsLoaded,
+    TResult Function(_LoadingError value)? loadingError,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (userTransactionsLoaded != null) {
       return userTransactionsLoaded(this);
     }
@@ -685,12 +700,17 @@ class _$_UserTransactionsLoaded implements _UserTransactionsLoaded {
 
 abstract class _UserTransactionsLoaded implements UserTransactionsState {
   const factory _UserTransactionsLoaded(
-      {List<UserTransaction> userTransactions}) = _$_UserTransactionsLoaded;
+          {required List<UserTransaction> userTransactions}) =
+      _$_UserTransactionsLoaded;
 
-  List<UserTransaction> get userTransactions;
-  _$UserTransactionsLoadedCopyWith<_UserTransactionsLoaded> get copyWith;
+  List<UserTransaction> get userTransactions =>
+      throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$UserTransactionsLoadedCopyWith<_UserTransactionsLoaded> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
+/// @nodoc
 abstract class _$LoadingErrorCopyWith<$Res> {
   factory _$LoadingErrorCopyWith(
           _LoadingError value, $Res Function(_LoadingError) then) =
@@ -700,6 +720,7 @@ abstract class _$LoadingErrorCopyWith<$Res> {
   $UserTransactionFailureCopyWith<$Res> get failure;
 }
 
+/// @nodoc
 class __$LoadingErrorCopyWithImpl<$Res>
     extends _$UserTransactionsStateCopyWithImpl<$Res>
     implements _$LoadingErrorCopyWith<$Res> {
@@ -712,28 +733,28 @@ class __$LoadingErrorCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object failure = freezed,
+    Object? failure = freezed,
   }) {
     return _then(_LoadingError(
       failure: failure == freezed
           ? _value.failure
-          : failure as UserTransactionFailure,
+          : failure // ignore: cast_nullable_to_non_nullable
+              as UserTransactionFailure,
     ));
   }
 
   @override
   $UserTransactionFailureCopyWith<$Res> get failure {
-    if (_value.failure == null) {
-      return null;
-    }
     return $UserTransactionFailureCopyWith<$Res>(_value.failure, (value) {
       return _then(_value.copyWith(failure: value));
     });
   }
 }
 
+/// @nodoc
+
 class _$_LoadingError implements _LoadingError {
-  const _$_LoadingError({this.failure});
+  const _$_LoadingError({required this.failure});
 
   @override
   final UserTransactionFailure failure;
@@ -755,36 +776,33 @@ class _$_LoadingError implements _LoadingError {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(failure);
 
+  @JsonKey(ignore: true)
   @override
   _$LoadingErrorCopyWith<_LoadingError> get copyWith =>
       __$LoadingErrorCopyWithImpl<_LoadingError>(this, _$identity);
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initial(),
-    @required Result transactionLoading(),
-    @required
-        Result userTransactionsLoaded(List<UserTransaction> userTransactions),
-    @required Result loadingError(UserTransactionFailure failure),
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() transactionLoading,
+    required TResult Function(List<UserTransaction> userTransactions)
+        userTransactionsLoaded,
+    required TResult Function(UserTransactionFailure failure) loadingError,
   }) {
-    assert(initial != null);
-    assert(transactionLoading != null);
-    assert(userTransactionsLoaded != null);
-    assert(loadingError != null);
     return loadingError(failure);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initial(),
-    Result transactionLoading(),
-    Result userTransactionsLoaded(List<UserTransaction> userTransactions),
-    Result loadingError(UserTransactionFailure failure),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? transactionLoading,
+    TResult Function(List<UserTransaction> userTransactions)?
+        userTransactionsLoaded,
+    TResult Function(UserTransactionFailure failure)? loadingError,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (loadingError != null) {
       return loadingError(failure);
     }
@@ -793,29 +811,25 @@ class _$_LoadingError implements _LoadingError {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initial(_Initial value),
-    @required Result transactionLoading(_TransactionLoading value),
-    @required Result userTransactionsLoaded(_UserTransactionsLoaded value),
-    @required Result loadingError(_LoadingError value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_TransactionLoading value) transactionLoading,
+    required TResult Function(_UserTransactionsLoaded value)
+        userTransactionsLoaded,
+    required TResult Function(_LoadingError value) loadingError,
   }) {
-    assert(initial != null);
-    assert(transactionLoading != null);
-    assert(userTransactionsLoaded != null);
-    assert(loadingError != null);
     return loadingError(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initial(_Initial value),
-    Result transactionLoading(_TransactionLoading value),
-    Result userTransactionsLoaded(_UserTransactionsLoaded value),
-    Result loadingError(_LoadingError value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_TransactionLoading value)? transactionLoading,
+    TResult Function(_UserTransactionsLoaded value)? userTransactionsLoaded,
+    TResult Function(_LoadingError value)? loadingError,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (loadingError != null) {
       return loadingError(this);
     }
@@ -824,9 +838,11 @@ class _$_LoadingError implements _LoadingError {
 }
 
 abstract class _LoadingError implements UserTransactionsState {
-  const factory _LoadingError({UserTransactionFailure failure}) =
+  const factory _LoadingError({required UserTransactionFailure failure}) =
       _$_LoadingError;
 
-  UserTransactionFailure get failure;
-  _$LoadingErrorCopyWith<_LoadingError> get copyWith;
+  UserTransactionFailure get failure => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$LoadingErrorCopyWith<_LoadingError> get copyWith =>
+      throw _privateConstructorUsedError;
 }

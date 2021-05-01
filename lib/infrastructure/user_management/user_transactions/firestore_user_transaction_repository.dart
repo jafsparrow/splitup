@@ -14,7 +14,7 @@ class FirestoreTransactionRepository implements IUserTransactionFacade {
   FirestoreTransactionRepository(this._firestore);
 
   @override
-  Future<void> createTransaction({UserTransaction newTransaction}) {
+  Future<void> createTransaction({UserTransaction? newTransaction}) {
     // TODO: implement createTransaction
     throw UnimplementedError();
   }
@@ -22,7 +22,7 @@ class FirestoreTransactionRepository implements IUserTransactionFacade {
   @override
   Future<Either<UserTransactionFailure, List<UserTransaction>>>
       listUserTransactions(
-          {String companyId, String uid, int limitNumber}) async {
+          {String? companyId, String? uid, int? limitNumber}) async {
     final userTransactionCollectionRef = FirebaseFirestore.instance
         .collection('companies')
         .doc(companyId)

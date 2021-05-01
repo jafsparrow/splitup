@@ -4,9 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 
 class PartnerMobileNumberField extends HookWidget {
-  const PartnerMobileNumberField({
-    Key key,
-  }) : super(key: key);
+  const PartnerMobileNumberField();
 
   @override
   Widget build(BuildContext context) {

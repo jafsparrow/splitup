@@ -11,9 +11,9 @@ abstract class OrganisationUserAuthorisationDto
   const OrganisationUserAuthorisationDto._();
 
   const factory OrganisationUserAuthorisationDto({
-    @required String userRefId,
-    @required bool isSalesUser,
-    @required bool isPartnerUser,
+    required String userRefId,
+    required bool isSalesUser,
+    required bool isPartnerUser,
   }) = _OrganisationUserAuthorisationDto;
 
   factory OrganisationUserAuthorisationDto.fromDomain(
@@ -36,9 +36,9 @@ abstract class OrganisationUserAuthorisationDto
       _$OrganisationUserAuthorisationDtoFromJson(json);
 
   factory OrganisationUserAuthorisationDto.fromFirestore(DocumentSnapshot doc) {
-    return OrganisationUserAuthorisationDto.fromJson(doc.data()).copyWith(
-        isPartnerUser: doc.data()['isPartnerUser'],
-        isSalesUser: doc.data()['isSalesUser'],
-        userRefId: doc.data()['userRefId'].toString());
+    return OrganisationUserAuthorisationDto.fromJson(doc.data()!).copyWith(
+        isPartnerUser: doc.data()!['isPartnerUser'],
+        isSalesUser: doc.data()!['isSalesUser'],
+        userRefId: doc.data()!['userRefId'].toString());
   }
 }

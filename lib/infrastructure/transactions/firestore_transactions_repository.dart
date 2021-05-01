@@ -16,7 +16,7 @@ class FirestoreTransationRepository implements ITransactionsFacade {
 
   @override
   Future<Either<UserTransactionFailure, UserTransaction>> addNewUserTransaction(
-      {String companyId, UserTransaction transaction}) async {
+      {String? companyId, UserTransaction? transaction}) async {
     final userTransactionCollection = _firestore
         .collection('companies')
         .doc(companyId)
@@ -24,7 +24,7 @@ class FirestoreTransationRepository implements ITransactionsFacade {
 
     try {
       DocumentReference docRef = await userTransactionCollection.add(
-        mapToTransactionDto(transaction).toJson(),
+        mapToTransactionDto(transaction!).toJson(),
       );
 
       return right(
@@ -44,14 +44,14 @@ class FirestoreTransationRepository implements ITransactionsFacade {
 
   @override
   Future<Either<UserTransactionFailure, void>> deleteUserTransaction(
-      {String companyId, UserTransaction transaction}) {
+      {String? companyId, UserTransaction? transaction}) {
     // TODO: implement deleteUserTransaction
     throw UnimplementedError();
   }
 
   @override
   Future<Either<UserTransactionFailure, List<UserTransaction>>>
-      listUserTransactions({String companyId}) async {
+      listUserTransactions({String? companyId}) async {
     final userTransactionCollection = _firestore
         .collection('companies')
         .doc(companyId)
@@ -75,8 +75,8 @@ class FirestoreTransationRepository implements ITransactionsFacade {
 
   @override
   Future<Either<UserTransactionFailure, List<PartnerPointsAgregate>>>
-      _transactionsFromTheGivenDate({String companyId, DateTime date}) async {
-    Timestamp dateTimeStamp = Timestamp.fromDate(date);
+      _transactionsFromTheGivenDate({String? companyId, DateTime? date}) async {
+    Timestamp dateTimeStamp = Timestamp.fromDate(date!);
 
     final userTransactionCollection = _firestore
         .collection('companies')
@@ -112,7 +112,7 @@ class FirestoreTransationRepository implements ITransactionsFacade {
   @override
   Future<Either<UserTransactionFailure, List<PartnerPointsAgregate>>>
       listTransactionsForPeriod(
-          {String companyId, TransactionFilterPeriod period}) async {
+          {String? companyId, TransactionFilterPeriod? period}) async {
     DateTime queryFromDateTime;
     switch (period) {
       case (TransactionFilterPeriod.weekly):

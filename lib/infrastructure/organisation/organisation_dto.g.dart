@@ -10,15 +10,10 @@ _$_OrganisationDto _$_$_OrganisationDtoFromJson(Map<String, dynamic> json) {
   return _$_OrganisationDto(
     companyName: json['companyName'] as String,
     phoneNumber: json['phoneNumber'] as String,
-    address: (json['address'] as Map<String, dynamic>)?.map(
-      (k, e) => MapEntry(k, e as String),
-    ),
-    pointsFormula: (json['pointsFormula'] as Map<String, dynamic>)?.map(
-      (k, e) => MapEntry(k, (e as num)?.toDouble()),
-    ),
-    licensePlan: json['licensePlan'] == null
-        ? null
-        : LicensePlanDto.fromJson(json['licensePlan'] as Map<String, dynamic>),
+    address: Map<String, String>.from(json['address'] as Map),
+    pointsFormula: Map<String, double>.from(json['pointsFormula'] as Map),
+    licensePlan:
+        LicensePlanDto.fromJson(json['licensePlan'] as Map<String, dynamic>),
   );
 }
 
@@ -28,5 +23,5 @@ Map<String, dynamic> _$_$_OrganisationDtoToJson(_$_OrganisationDto instance) =>
       'phoneNumber': instance.phoneNumber,
       'address': instance.address,
       'pointsFormula': instance.pointsFormula,
-      'licensePlan': instance.licensePlan?.toJson(),
+      'licensePlan': instance.licensePlan.toJson(),
     };

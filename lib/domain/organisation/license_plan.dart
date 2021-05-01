@@ -7,7 +7,7 @@ abstract class LicensePlan implements _$LicensePlan {
   const LicensePlan._();
 
   const factory LicensePlan({
-    String planName,
-    DateTime expiryDate,
+    required String planName,
+    required DateTime expiryDate,
   }) = _LicensePlan;
 }

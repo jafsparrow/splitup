@@ -32,9 +32,8 @@ class UserTransactionEntity extends Equatable {
   }
 
   static UserTransactionEntity fromJson(Map<String, Object> json) {
-    String description = json['description'];
-    String id = json['id'] ? json['id'].toString() : 'testID';
-    DateTime date = DateTime(json["addedDateTime"]);
+    Object? description = json['description'];
+    String id = json['id'] != null ? json['id'].toString() : 'testID';
 
     return UserTransactionEntity(
         json["description"] as String,
@@ -45,25 +44,30 @@ class UserTransactionEntity extends Equatable {
         json['transaction_details'] as TotalReward);
   }
 
-  static UserTransactionEntity fromSnapshot(DocumentSnapshot snap) {
-    String description = snap.data()['description'];
+  static UserTransactionEntity fromSnapshot(DocumentSnapshot? snap) {
+    String description = snap!.data()!['description'];
     String id = 'testID';
-    DateTime date = DateTime.parse(snap.data()["addedDateTime"]);
-    Map<String, dynamic> partnerUserMap = snap.data()['partnerUser'];
+    DateTime date = DateTime.parse(snap.data()!["addedDateTime"]);
+    Map<String, dynamic> partnerUserMap = snap.data()!['partnerUser'];
 
-    Map<String, dynamic> salesUserMap = snap.data()['salesUser'];
+    Map<String, dynamic> salesUserMap = snap.data()!['salesUser'];
 
     UserProfile partnerUser = UserProfile(
+        uid: partnerUserMap['uid'],
         email: partnerUserMap['email'],
         userName: partnerUserMap['name'],
-        mobileNumber: partnerUserMap['mobileNumber']);
+        mobileNumber: partnerUserMap['mobileNumber'],
+        nickName: partnerUserMap['nickName']);
 
     UserProfile salesUser = UserProfile(
+      uid: salesUserMap['uid'],
         email: salesUserMap['email'],
         userName: salesUserMap['name'],
-        mobileNumber: salesUserMap['photo']);
+        mobileNumber: salesUserMap['photo'],
+        nickName: salesUserMap['nickName']
+        );
 
-    Map<String, dynamic> billBreakupPart = snap.data()["transaction_details"];
+    Map<String, dynamic> billBreakupPart = snap.data()!["transaction_details"];
 
     Map<String, double> billBreakup = billBreakupPart.cast<String, double>();
 

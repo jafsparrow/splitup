@@ -52,11 +52,8 @@ class _LandingPageState extends State<LandingPage> {
               return MultiBlocProvider(
                 providers: [
                   BlocProvider<PartnerListBloc>(
-                    create: (context) => PartnerListBloc(
-                      repository: UserProfileRepository(
-                          state.loggedUser.loggedUserProfile),
-                    )..add(
-                        LoadPartnerUsers(),
+                    create: (context) => getIt<PartnerListBloc>()..add(
+                        PartnerListEvent.loadPartners(companyId: 'sdfsdfdsf')
                       ),
                   ),
                   BlocProvider<UserProfileBloc>(
@@ -101,7 +98,7 @@ class _LandingPageState extends State<LandingPage> {
                     items: (subMenus.keys).map(
                       (item) {
                         return BottomNavigationBarItem(
-                          icon: subMenus[item],
+                          icon: subMenus[item]!,
                           label: item,
                         );
                       },

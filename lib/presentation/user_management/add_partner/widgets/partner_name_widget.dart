@@ -4,9 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 
 class PartnerNameField extends HookWidget {
-  const PartnerNameField({
-    Key key,
-  }) : super(key: key);
+  const PartnerNameField();
 
   @override
   Widget build(BuildContext context) {

@@ -6,7 +6,7 @@ abstract class UserTransactionsState with _$UserTransactionsState {
   const factory UserTransactionsState.transactionLoading() =
       _TransactionLoading;
   const factory UserTransactionsState.userTransactionsLoaded(
-      {List<UserTransaction> userTransactions}) = _UserTransactionsLoaded;
+      {required List<UserTransaction> userTransactions}) = _UserTransactionsLoaded;
   const factory UserTransactionsState.loadingError(
-      {UserTransactionFailure failure}) = _LoadingError;
+      {required UserTransactionFailure failure}) = _LoadingError;
 }

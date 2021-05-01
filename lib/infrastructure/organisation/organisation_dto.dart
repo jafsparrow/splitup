@@ -11,12 +11,12 @@ abstract class OrganisationDto implements _$OrganisationDto {
   const OrganisationDto._();
 
   const factory OrganisationDto({
-    @required String companyName,
-    @JsonKey(ignore: true) companyId,
-    @required String phoneNumber,
-    @required Map<String, String> address,
-    @required Map<String, double> pointsFormula,
-    @required LicensePlanDto licensePlan,
+    required String companyName,
+    @JsonKey(ignore: true) String? companyId,
+    required String phoneNumber,
+    required Map<String, String> address,
+    required Map<String, double> pointsFormula,
+    required LicensePlanDto licensePlan,
   }) = _OrganisationDto;
 
   factory OrganisationDto.fromDomain(Organisation org) {
@@ -33,7 +33,7 @@ abstract class OrganisationDto implements _$OrganisationDto {
   Organisation toDomain() {
     return Organisation(
       companyName: companyName,
-      companyId: companyId,
+      companyId: companyId!,
       phoneNumber: phoneNumber,
       address: address,
       pointsFormula: pointsFormula,
@@ -45,7 +45,7 @@ abstract class OrganisationDto implements _$OrganisationDto {
       _$OrganisationDtoFromJson(json);
 
   factory OrganisationDto.fromFirestore(DocumentSnapshot doc) {
-    return OrganisationDto.fromJson(doc.data()).copyWith(companyId: doc.id);
+    return OrganisationDto.fromJson(doc.data()!).copyWith(companyId: doc.id);
 
     // return UserBarcodeDto.fromJson(doc.data()).copyWith(id: doc.id);
     // Map<String, dynamic> docData = doc.data();

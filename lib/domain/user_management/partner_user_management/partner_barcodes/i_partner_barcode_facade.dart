@@ -6,8 +6,8 @@ import 'package:flutter/material.dart';
 abstract class IPartnerBarcodeManagement {
   Future<Either<PartnerBarcodeFailure, List<UserBarcode>>>
       getPartnerUserBarcodes({
-    @required String uid,
-    @required String companyId,
+    required String uid,
+    required String companyId,
   });
 
   Future<Either<PartnerBarcodeFailure, UserBarcode>> assignBarcode({

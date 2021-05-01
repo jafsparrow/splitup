@@ -18,14 +18,18 @@ class AuthRepository implements IAuthFacade {
 
   @override
   Future<Either<AuthFailure, Unit>> registerWithEmailAndPassword(
-      {EmailAddress emailAddress, Password password}) {
+      {required EmailAddress emailAddress, required Password password}) {
     // TODO: implement registerWithEmailAndPassword
     throw UnimplementedError();
   }
 
   @override
   Future<Either<AuthFailure, Unit>> signInWithEmailAndPassword(
-      {EmailAddress emailAddress, Password password}) async{
+
+    
+      {required EmailAddress emailAddress,required Password password}) async{
+
+        throw UnimplementedError();
     try {
       UserCredential userCredential =  await _firebaseAuth.signInWithEmailAndPassword(
           email: emailAddress.getOrCrash(), password: password.getOrCrash());
@@ -48,7 +52,7 @@ class AuthRepository implements IAuthFacade {
   }
 
   @override
-  Future<Either<bool, LoggedUser>> getSignedInUserData({String uid}) async {
+  Future<Either<bool, LoggedUser>> getSignedInUserData({String? uid}) async {
     final usersCollectionRef = FirebaseFirestore.instance.collection('users');
     try {
       final DocumentSnapshot userSanpshot =
