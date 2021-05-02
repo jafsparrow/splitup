@@ -26,14 +26,15 @@ class AuthenticationBloc
     AuthenticationEvent event,
   ) async* {
     if (event is AuthenticationUserChangedEvent) {
-       _mapAuthenticationUserChangedToState(event);
+       yield _mapAuthenticationUserChangedToState(event);
     } else if (event is AuthenticationLogoutRequested) {
       yield AuthenticationState.unauthenticated();
     }
   }
 
-    Stream<AuthenticationState> _mapAuthenticationUserChangedToState(AuthenticationUserChangedEvent event) async* {
-     yield event.user.id.isEmpty
+    AuthenticationState _mapAuthenticationUserChangedToState(AuthenticationUserChangedEvent event)  {
+      print('inside the map function.');
+     return event.user.id.isEmpty
         ? const AuthenticationState.unauthenticated()
         : AuthenticationState.authenticated(event.user);
   }
