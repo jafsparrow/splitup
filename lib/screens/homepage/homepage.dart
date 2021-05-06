@@ -2,6 +2,7 @@ import 'package:JCCommisionApp/application/auth/logged_user/logged_user_bloc.dar
 import 'package:JCCommisionApp/application/transactions_bloc/transactions_bloc.dart';
 import 'package:JCCommisionApp/application/user_management/user_profile/user_profile_bloc.dart';
 import 'package:JCCommisionApp/domain/transactions/transaction.dart';
+import 'package:JCCommisionApp/presentation/user_management/add_partner/add_partner_user_ui.dart';
 import 'package:JCCommisionApp/screens/eventpage/event_add.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -75,20 +76,20 @@ class HomePage extends StatelessWidget {
             PopupMenuButton<String>(
                 onSelected: (val) {
                   // NOTE: - as registering a user in firebase auto logs the new user. this feature is temporarily deffered
-                  // if (val == 'addPartner') {
-                  //   Navigator.of(context).push(
-                  //     MaterialPageRoute(
-                  //       builder: (context) => AddPartnerUserScreen(),
-                  //     ),
-                  //   );
-                  // }
+                  if (val == 'addPartner') {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (context) => AddPartnerUserScreen(),
+                      ),
+                    );
+                  }
                 },
                 itemBuilder: (context) => [
                       // NOTE: - as registering a user in firebase auto logs the new user. this feature is temporarily deffered
-                      // PopupMenuItem(
-                      //   child: Text('Add new Partner'),
-                      //   value: 'addPartner',
-                      // ),
+                      PopupMenuItem(
+                        child: Text('Add new Partner'),
+                        value: 'addPartner',
+                      ),
                       PopupMenuItem(
                         child: Text('Deactivate User'),
                         value: 'Deactive',

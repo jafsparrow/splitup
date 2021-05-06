@@ -297,9 +297,9 @@ class _$MonthlyLeadersStateTearOff {
   }
 
   _MonthlyLeadBoardLoaded monthlyLeadedBoardLoaded(
-      {required List<PartnerPointsAgregate> weeklyLeaders}) {
+      {required List<PartnerPointsAgregate> monthlyLeaders}) {
     return _MonthlyLeadBoardLoaded(
-      weeklyLeaders: weeklyLeaders,
+      monthlyLeaders: monthlyLeaders,
     );
   }
 }
@@ -314,7 +314,7 @@ mixin _$MonthlyLeadersState {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function() error,
-    required TResult Function(List<PartnerPointsAgregate> weeklyLeaders)
+    required TResult Function(List<PartnerPointsAgregate> monthlyLeaders)
         monthlyLeadedBoardLoaded,
   }) =>
       throw _privateConstructorUsedError;
@@ -323,7 +323,7 @@ mixin _$MonthlyLeadersState {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function()? error,
-    TResult Function(List<PartnerPointsAgregate> weeklyLeaders)?
+    TResult Function(List<PartnerPointsAgregate> monthlyLeaders)?
         monthlyLeadedBoardLoaded,
     required TResult orElse(),
   }) =>
@@ -406,7 +406,7 @@ class _$_Initial implements _Initial {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function() error,
-    required TResult Function(List<PartnerPointsAgregate> weeklyLeaders)
+    required TResult Function(List<PartnerPointsAgregate> monthlyLeaders)
         monthlyLeadedBoardLoaded,
   }) {
     return initial();
@@ -418,7 +418,7 @@ class _$_Initial implements _Initial {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function()? error,
-    TResult Function(List<PartnerPointsAgregate> weeklyLeaders)?
+    TResult Function(List<PartnerPointsAgregate> monthlyLeaders)?
         monthlyLeadedBoardLoaded,
     required TResult orElse(),
   }) {
@@ -501,7 +501,7 @@ class _$_Loading implements _Loading {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function() error,
-    required TResult Function(List<PartnerPointsAgregate> weeklyLeaders)
+    required TResult Function(List<PartnerPointsAgregate> monthlyLeaders)
         monthlyLeadedBoardLoaded,
   }) {
     return loading();
@@ -513,7 +513,7 @@ class _$_Loading implements _Loading {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function()? error,
-    TResult Function(List<PartnerPointsAgregate> weeklyLeaders)?
+    TResult Function(List<PartnerPointsAgregate> monthlyLeaders)?
         monthlyLeadedBoardLoaded,
     required TResult orElse(),
   }) {
@@ -595,7 +595,7 @@ class _$_Error implements _Error {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function() error,
-    required TResult Function(List<PartnerPointsAgregate> weeklyLeaders)
+    required TResult Function(List<PartnerPointsAgregate> monthlyLeaders)
         monthlyLeadedBoardLoaded,
   }) {
     return error();
@@ -607,7 +607,7 @@ class _$_Error implements _Error {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function()? error,
-    TResult Function(List<PartnerPointsAgregate> weeklyLeaders)?
+    TResult Function(List<PartnerPointsAgregate> monthlyLeaders)?
         monthlyLeadedBoardLoaded,
     required TResult orElse(),
   }) {
@@ -654,7 +654,7 @@ abstract class _$MonthlyLeadBoardLoadedCopyWith<$Res> {
   factory _$MonthlyLeadBoardLoadedCopyWith(_MonthlyLeadBoardLoaded value,
           $Res Function(_MonthlyLeadBoardLoaded) then) =
       __$MonthlyLeadBoardLoadedCopyWithImpl<$Res>;
-  $Res call({List<PartnerPointsAgregate> weeklyLeaders});
+  $Res call({List<PartnerPointsAgregate> monthlyLeaders});
 }
 
 /// @nodoc
@@ -670,12 +670,12 @@ class __$MonthlyLeadBoardLoadedCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? weeklyLeaders = freezed,
+    Object? monthlyLeaders = freezed,
   }) {
     return _then(_MonthlyLeadBoardLoaded(
-      weeklyLeaders: weeklyLeaders == freezed
-          ? _value.weeklyLeaders
-          : weeklyLeaders // ignore: cast_nullable_to_non_nullable
+      monthlyLeaders: monthlyLeaders == freezed
+          ? _value.monthlyLeaders
+          : monthlyLeaders // ignore: cast_nullable_to_non_nullable
               as List<PartnerPointsAgregate>,
     ));
   }
@@ -684,28 +684,29 @@ class __$MonthlyLeadBoardLoadedCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_MonthlyLeadBoardLoaded implements _MonthlyLeadBoardLoaded {
-  const _$_MonthlyLeadBoardLoaded({required this.weeklyLeaders});
+  const _$_MonthlyLeadBoardLoaded({required this.monthlyLeaders});
 
   @override
-  final List<PartnerPointsAgregate> weeklyLeaders;
+  final List<PartnerPointsAgregate> monthlyLeaders;
 
   @override
   String toString() {
-    return 'MonthlyLeadersState.monthlyLeadedBoardLoaded(weeklyLeaders: $weeklyLeaders)';
+    return 'MonthlyLeadersState.monthlyLeadedBoardLoaded(monthlyLeaders: $monthlyLeaders)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _MonthlyLeadBoardLoaded &&
-            (identical(other.weeklyLeaders, weeklyLeaders) ||
+            (identical(other.monthlyLeaders, monthlyLeaders) ||
                 const DeepCollectionEquality()
-                    .equals(other.weeklyLeaders, weeklyLeaders)));
+                    .equals(other.monthlyLeaders, monthlyLeaders)));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(weeklyLeaders);
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(monthlyLeaders);
 
   @JsonKey(ignore: true)
   @override
@@ -719,10 +720,10 @@ class _$_MonthlyLeadBoardLoaded implements _MonthlyLeadBoardLoaded {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function() error,
-    required TResult Function(List<PartnerPointsAgregate> weeklyLeaders)
+    required TResult Function(List<PartnerPointsAgregate> monthlyLeaders)
         monthlyLeadedBoardLoaded,
   }) {
-    return monthlyLeadedBoardLoaded(weeklyLeaders);
+    return monthlyLeadedBoardLoaded(monthlyLeaders);
   }
 
   @override
@@ -731,12 +732,12 @@ class _$_MonthlyLeadBoardLoaded implements _MonthlyLeadBoardLoaded {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function()? error,
-    TResult Function(List<PartnerPointsAgregate> weeklyLeaders)?
+    TResult Function(List<PartnerPointsAgregate> monthlyLeaders)?
         monthlyLeadedBoardLoaded,
     required TResult orElse(),
   }) {
     if (monthlyLeadedBoardLoaded != null) {
-      return monthlyLeadedBoardLoaded(weeklyLeaders);
+      return monthlyLeadedBoardLoaded(monthlyLeaders);
     }
     return orElse();
   }
@@ -771,10 +772,10 @@ class _$_MonthlyLeadBoardLoaded implements _MonthlyLeadBoardLoaded {
 
 abstract class _MonthlyLeadBoardLoaded implements MonthlyLeadersState {
   const factory _MonthlyLeadBoardLoaded(
-          {required List<PartnerPointsAgregate> weeklyLeaders}) =
+          {required List<PartnerPointsAgregate> monthlyLeaders}) =
       _$_MonthlyLeadBoardLoaded;
 
-  List<PartnerPointsAgregate> get weeklyLeaders =>
+  List<PartnerPointsAgregate> get monthlyLeaders =>
       throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   _$MonthlyLeadBoardLoadedCopyWith<_MonthlyLeadBoardLoaded> get copyWith =>

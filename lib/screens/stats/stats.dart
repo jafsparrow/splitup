@@ -9,82 +9,101 @@ class Stats extends StatelessWidget {
     return Scaffold(
       body: SafeArea(
         child: Expanded(
-          child: Column(
-            children: [
-              SizedBox(
-                height: 50,
-              ),
-              Text(
-                'Weekly Lead Board',
-                style: Theme.of(context).textTheme.headline6,
-              ),
-              BlocBuilder<WeeklyLeadersBloc, WeeklyLeadersState>(
+          child: Padding(
+            padding: const EdgeInsets.only(left: 10, right: 10),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                SizedBox(
+                  height: 20,
+                ),
+                Text(
+                  'Weekly Lead Board',
+                  style: Theme.of(context).textTheme.headline6,
+                ),
+                SizedBox(
+                  height: 10,
+                ),
+                BlocBuilder<WeeklyLeadersBloc, WeeklyLeadersState>(
                   builder: (context, state) {
-                return state.map(
-                    initial: (_) => Container(),
-                    loading: (_) => Center(
-                          child: CircularProgressIndicator(),
-                        ),
-                    error: (error) => Center(
-                          child: Text(
-                              'Something wrong happened while loading the leadboard.'),
-                        ),
-                    weeklyLeadedBoardLoaded: (listAgrregate) {
-                      var weeklyLeader = listAgrregate.weeklyLeaders;
-                      print(listAgrregate.weeklyLeaders);
+                    return state.map(
+                      initial: (_) => Container(),
+                      loading: (_) => Center(
+                        child: CircularProgressIndicator(),
+                      ),
+                      error: (error) => Center(
+                        child: Text(
+                            'Something wrong happened while loading the leadboard.'),
+                      ),
+                      weeklyLeadedBoardLoaded: (listAgrregate) {
+                        var weeklyLeader = listAgrregate.weeklyLeaders;
+                        print(listAgrregate.weeklyLeaders);
 
-                      // return Container(
-                      //   child: Text('${weeklyLeader[0].totalPointsForPeriod}'),
-                      // );
+                        if (weeklyLeader.isEmpty) {
+                          return Center(
+                            child: Text('No Leaders for this week yet.'),
+                          );
+                        }
 
-                      return ListView.builder(
-                        itemBuilder: (context, index) => ListTile(
-                          title: Text(weeklyLeader[index].nickName),
-                          trailing: Text(weeklyLeader[index]
-                              .totalPointsForPeriod
-                              .toString()),
-                        ),
-                        itemCount: weeklyLeader.length,
-                        shrinkWrap: true,
-                      );
-                    });
-              }),
-              Text(
-                'Monthly Lead Board',
-                style: Theme.of(context).textTheme.headline6,
-              ),
-              BlocBuilder<MonthlyLeadersBloc, MonthlyLeadersState>(
-                  builder: (context, state) {
-                return state.map(
-                    initial: (_) => Container(),
-                    loading: (_) => Center(
-                          child: CircularProgressIndicator(),
-                        ),
-                    error: (error) => Center(
-                          child: Text(
-                              'Something wrong happened while loading the leadboard.'),
-                        ),
-                    monthlyLeadedBoardLoaded: (listAgrregate) {
-                      var weeklyLeader = listAgrregate.weeklyLeaders;
-                      print(listAgrregate.weeklyLeaders);
+                        return ListView.builder(
+                          itemBuilder: (context, index) => ListTile(
+                            title: Text(weeklyLeader[index].nickName),
+                            trailing: Text(weeklyLeader[index]
+                                .totalPointsForPeriod
+                                .toString()),
+                          ),
+                          itemCount: weeklyLeader.length,
+                          shrinkWrap: true,
+                        );
+                      },
+                    );
+                  },
+                ),
+                SizedBox(
+                  height: 10,
+                ),
+                Divider(),
+                Text(
+                  'Monthly Lead Board',
+                  style: Theme.of(context).textTheme.headline6,
+                ),
+                SizedBox(
+                  height: 10,
+                ),
+                BlocBuilder<MonthlyLeadersBloc, MonthlyLeadersState>(
+                    builder: (context, state) {
+                  return state.map(
+                      initial: (_) => Container(),
+                      loading: (_) => Center(
+                            child: CircularProgressIndicator(),
+                          ),
+                      error: (error) => Center(
+                            child: Text(
+                                'Something wrong happened while loading the leadboard.'),
+                          ),
+                      monthlyLeadedBoardLoaded: (listAgrregate) {
+                        var monthlyLeader = listAgrregate.monthlyLeaders;
 
-                      // return Container(
-                      //   child: Text('${weeklyLeader[0].totalPointsForPeriod}'),
-                      // );
+                        if (monthlyLeader.isEmpty) {
+                          return Center(
+                            child: Text('No Leaders for this month yet.'),
+                          );
+                        }
 
-                      return ListView.builder(
-                        itemBuilder: (context, index) => ListTile(
-                          title: Text(weeklyLeader[index].userName),
-                          trailing: Text(weeklyLeader[index]
-                              .totalPointsForPeriod
-                              .toString()),
-                        ),
-                        itemCount: weeklyLeader.length,
-                        shrinkWrap: true,
-                      );
-                    });
-              })
-            ],
+                        return ListView.builder(
+                          itemBuilder: (context, index) => ListTile(
+                            title: Text(monthlyLeader[index].userName),
+                            trailing: Text(monthlyLeader[index]
+                                .totalPointsForPeriod
+                                .toString()),
+                          ),
+                          itemCount: monthlyLeader.length,
+                          shrinkWrap: true,
+                        );
+                      });
+                })
+              ],
+            ),
           ),
         ),
       ),

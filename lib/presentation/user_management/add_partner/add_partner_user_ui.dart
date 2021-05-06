@@ -1,4 +1,5 @@
 import 'package:JCCommisionApp/application/user_management/partner_user_add_form/partner_user_add_bloc.dart';
+import 'package:JCCommisionApp/domain/user_management/partner_user.dart';
 import 'package:JCCommisionApp/domain/user_management/user_profile.dart';
 import 'package:JCCommisionApp/presentation/user_management/add_partner/widgets/parnter_nickName_field_widget.dart';
 import 'package:JCCommisionApp/presentation/user_management/add_partner/widgets/partner_email_field_widget.dart';
@@ -14,8 +15,7 @@ import '../../../injection.dart';
 class AddPartnerUserScreen extends StatelessWidget {
   final UserProfile? editedParnerUserProfile;
 
-  const AddPartnerUserScreen({ this.editedParnerUserProfile})
-      ;
+  const AddPartnerUserScreen({this.editedParnerUserProfile});
 
   @override
   Widget build(BuildContext context) {
@@ -46,7 +46,6 @@ class AddPartnerUserScreen extends StatelessWidget {
               () => {},
               (either) {
                 either.fold((failure) {
-
                   // TODO :- Flushbar does not have a null safety version yet. commenting it out
                   // FlushbarHelper.createError(
                   //   message: failure.map(
@@ -70,7 +69,10 @@ class AddPartnerUserScreen extends StatelessWidget {
                     context,
                     MaterialPageRoute(
                       builder: (_) => PartnerProfile(
-                        partnerUser: newlyCreatedPartnerUser,
+                        partnerUser: PartnerUser(
+                          profile: newlyCreatedPartnerUser,
+                          totalRewardPoints: 0,
+                        ),
                       ),
                     ),
                   );
@@ -88,9 +90,8 @@ class SavingInProgressOverlay extends StatelessWidget {
   final bool isSaving;
 
   const SavingInProgressOverlay({
-    
     required this.isSaving,
-  }) ;
+  });
 
   @override
   Widget build(BuildContext context) {

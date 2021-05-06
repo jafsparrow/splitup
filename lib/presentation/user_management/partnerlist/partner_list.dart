@@ -1,6 +1,7 @@
 import 'package:JCCommisionApp/application/user_management/filter_users/filtered_partners_bloc.dart';
 import 'package:JCCommisionApp/application/user_management/list_users/partner_list_bloc.dart';
 import 'package:JCCommisionApp/domain/user_management/partner_user.dart';
+import 'package:JCCommisionApp/presentation/user_management/partner_profile/partner_profile.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -85,12 +86,12 @@ class PartnerList extends StatelessWidget {
       {required BuildContext context, required PartnerUser partnerUser}) {
     return ListTile(
       onTap: () {
-        // Navigator.push(
-        //   context,
-        //   MaterialPageRoute(
-        //     builder: (context) => PartnerProfile(partnerUser: partnerUser),
-        //   ),
-        // );
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => PartnerProfile(partnerUser: partnerUser),
+          ),
+        );
       },
       title: Text(
         partnerUser.profile.userName,

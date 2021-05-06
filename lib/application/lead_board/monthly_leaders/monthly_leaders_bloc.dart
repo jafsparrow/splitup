@@ -37,7 +37,7 @@ class MonthlyLeadersBloc
       yield successOrFailure.fold(
           (error) => MonthlyLeadersState.error(),
           (agregateList) => MonthlyLeadersState.monthlyLeadedBoardLoaded(
-              weeklyLeaders: agregateList));
+              monthlyLeaders: agregateList));
     });
   }
 }

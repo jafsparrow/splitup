@@ -7,5 +7,6 @@ abstract class MonthlyLeadersState with _$MonthlyLeadersState {
   const factory MonthlyLeadersState.loading() = _Loading;
   const factory MonthlyLeadersState.error() = _Error;
   const factory MonthlyLeadersState.monthlyLeadedBoardLoaded(
-      {required List<PartnerPointsAgregate> weeklyLeaders}) = _MonthlyLeadBoardLoaded;
+          {required List<PartnerPointsAgregate> monthlyLeaders}) =
+      _MonthlyLeadBoardLoaded;
 }

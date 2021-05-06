@@ -5,6 +5,7 @@ import 'package:JCCommisionApp/application/auth/logged_user/logged_user_bloc.dar
 import 'package:JCCommisionApp/application/user_management/list_users/partner_list_bloc.dart';
 import 'package:JCCommisionApp/application/user_management/partner_barcode_management/partner_barcode_management_bloc.dart';
 import 'package:JCCommisionApp/application/user_management/user_transactions/user_transactions_bloc.dart';
+import 'package:JCCommisionApp/domain/user_management/partner_user.dart';
 import 'package:JCCommisionApp/domain/user_management/user_profile.dart';
 import 'package:JCCommisionApp/injection.dart';
 import 'package:JCCommisionApp/presentation/user_management/partner_profile/components/partner_activities.dart';
@@ -19,9 +20,9 @@ import 'package:qrscan/qrscan.dart' as scanner;
 // todo : - need to implement a listen to show messag for éxisting barcode, add failure, try again..
 
 class PartnerProfile extends StatelessWidget {
-  final UserProfile partnerUser;
+  final PartnerUser partnerUser;
 
-  const PartnerProfile({ required this.partnerUser});
+  const PartnerProfile({required this.partnerUser});
   @override
   Widget build(BuildContext context) {
     // final authBloc = BlocProvider.of<AuthenticationBloc>(context); // this will be used later on..
@@ -33,7 +34,7 @@ class PartnerProfile extends StatelessWidget {
           create: (context) => getIt<PartnerBarcodeManagementBloc>()
             ..add(
               PartnerBarcodeManagementEvent.loadPartnerUserBarcodes(
-                  partnerUserId: partnerUser.uid,
+                  partnerUserId: partnerUser.profile.uid,
                   companyId: '4cHZwNlWzW79PQ7U5dUf'),
             ),
         ),
@@ -41,12 +42,13 @@ class PartnerProfile extends StatelessWidget {
           create: (context) => getIt<UserTransactionsBloc>()
             ..add(
               UserTransactionsEvent.loadUserTransactions(
-                  uid: partnerUser.uid, companyId: '4cHZwNlWzW79PQ7U5dUf'),
+                  uid: partnerUser.profile.uid,
+                  companyId: '4cHZwNlWzW79PQ7U5dUf'),
             ),
         ),
       ],
       child: DefaultTabControllerWidget(
-        partnerUser: partnerUser,
+        partnerUser: partnerUser.profile,
       ),
     );
   }
@@ -54,8 +56,7 @@ class PartnerProfile extends StatelessWidget {
 
 class DefaultTabControllerWidget extends StatelessWidget {
   final UserProfile partnerUser;
-  const DefaultTabControllerWidget({required this.partnerUser})
-      ;
+  const DefaultTabControllerWidget({required this.partnerUser});
 
   @override
   Widget build(BuildContext context) {
