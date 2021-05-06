@@ -15,16 +15,16 @@ class FilteredPartnersBloc
 
   FilteredPartnersBloc({required PartnerListBloc partnerListBloc})
       : _partnerListBloc = partnerListBloc,
-        super(
-
-          partnerListBloc.state.maybeMap(partnerListLoaded: (partnerLoadedState) => FilteredPartnerList('all',partnerLoadedState.partners ) ,orElse: () => FilteredPartnersLoading())
-
-        ) {
+        super(partnerListBloc.state.maybeMap(
+            partnerListLoaded: (partnerLoadedState) =>
+                FilteredPartnerList('all', partnerLoadedState.partners),
+            orElse: () => FilteredPartnersLoading())) {
+    print('inside the consturctor');
     _partnerBlocSubscription = _partnerListBloc.stream.listen((event) {
       event.maybeMap(
-        partnerListLoaded: (loadedEvent) => add(FilterPartnerUsers('Jafar')),
-        orElse: (){});
-     });
+          partnerListLoaded: (loadedEvent) => add(FilterPartnerUsers('')),
+          orElse: () {});
+    });
   }
   @override
   Future<void> close() {
@@ -45,22 +45,28 @@ class FilteredPartnersBloc
 
   Stream<FilteredPartnersState> _mapFilterPartnerUsertoState(
       FilterPartnerUsers event) async* {
-
-
     String searchCriteria = event.filterCriteria;
-   yield* _partnerListBloc.state.maybeWhen(
-     partnerListLoaded: (partnerProfileLoadedState) async* {
-       
-   
+    yield* _partnerListBloc.state.maybeWhen(
+        partnerListLoaded: (partnerProfileLoadedState) async* {
+      // initial when the filter bloc should show all the data.
+      if (searchCriteria == "") {
+        yield FilteredPartnerList(
+          searchCriteria,
+          partnerProfileLoadedState,
+        );
+      }
 
-       yield FilteredPartnerList(
+      // this is when the user starts to type use names
+      yield FilteredPartnerList(
         searchCriteria,
-        partnerProfileLoadedState.where((partnerUser) => (partnerUser.profile.userName)
+        partnerProfileLoadedState
+            .where((partnerUser) => (partnerUser.profile.userName)
                 .toLowerCase()
                 .contains(searchCriteria.toLowerCase()))
-            .toList());
-     },
-     orElse: () async*{ yield FilteredPartnersLoading();});
-
+            .toList(),
+      );
+    }, orElse: () async* {
+      yield FilteredPartnersLoading();
+    });
   }
 }

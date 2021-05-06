@@ -17,7 +17,7 @@ abstract class UserTransactionDto implements _$UserTransactionDto {
           {@JsonKey(ignore: true) String? id,
           @Default('') String? description,
           String? notes,
-          @ServerTimestampConverter() DateTime? addedDate,
+          @ServerTimestampConverter() required DateTime addedDate,
           required UserProfileDto salesUser,
           required UserProfileDto partnerUser,
           required RewardPointDto totalRewardBreakup,

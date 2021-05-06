@@ -36,7 +36,7 @@ class PartnerListBloc extends Bloc<PartnerListEvent, PartnerListState> {
         String companyId = event.companyId;
          Either<UserManagementFailure, List<PartnerUser>> sucessOrFailure =
             await _repository.getPartnerUsers(companyId: companyId);
-        sucessOrFailure.fold(
+        yield sucessOrFailure.fold(
         (error) => PartnerListState.loadError(), 
       
         (partnerUserList) => PartnerListState.partnerListLoaded(partners: partnerUserList));

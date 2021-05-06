@@ -11,9 +11,8 @@ _$_UserTransactionDto _$_$_UserTransactionDtoFromJson(
   return _$_UserTransactionDto(
     description: json['description'] as String? ?? '',
     notes: json['notes'] as String?,
-    addedDate: json['addedDate'] == null
-        ? null
-        : DateTime.parse(json['addedDate'] as String),
+    addedDate: const ServerTimestampConverter()
+        .fromJson(json['addedDate'] as Timestamp),
     salesUser:
         UserProfileDto.fromJson(json['salesUser'] as Map<String, dynamic>),
     partnerUser:
@@ -30,7 +29,7 @@ Map<String, dynamic> _$_$_UserTransactionDtoToJson(
     <String, dynamic>{
       'description': instance.description,
       'notes': instance.notes,
-      'addedDate': instance.addedDate?.toIso8601String(),
+      'addedDate': const ServerTimestampConverter().toJson(instance.addedDate),
       'salesUser': instance.salesUser.toJson(),
       'partnerUser': instance.partnerUser.toJson(),
       'totalRewardBreakup': instance.totalRewardBreakup.toJson(),

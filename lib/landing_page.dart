@@ -53,7 +53,7 @@ class _LandingPageState extends State<LandingPage> {
                 providers: [
                   BlocProvider<PartnerListBloc>(
                     create: (context) => getIt<PartnerListBloc>()..add(
-                        PartnerListEvent.loadPartners(companyId: 'sdfsdfdsf')
+                        PartnerListEvent.loadPartners(companyId: companyId)
                       ),
                   ),
                   BlocProvider<UserProfileBloc>(

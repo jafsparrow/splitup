@@ -24,7 +24,7 @@ class _$UserTransactionDtoTearOff {
       {@JsonKey(ignore: true) String? id,
       String? description = '',
       String? notes,
-      @ServerTimestampConverter() DateTime? addedDate,
+      @ServerTimestampConverter() required DateTime addedDate,
       required UserProfileDto salesUser,
       required UserProfileDto partnerUser,
       required RewardPointDto totalRewardBreakup,
@@ -57,7 +57,7 @@ mixin _$UserTransactionDto {
   String? get description => throw _privateConstructorUsedError;
   String? get notes => throw _privateConstructorUsedError;
   @ServerTimestampConverter()
-  DateTime? get addedDate => throw _privateConstructorUsedError;
+  DateTime get addedDate => throw _privateConstructorUsedError;
   UserProfileDto get salesUser => throw _privateConstructorUsedError;
   UserProfileDto get partnerUser => throw _privateConstructorUsedError;
   RewardPointDto get totalRewardBreakup => throw _privateConstructorUsedError;
@@ -79,7 +79,7 @@ abstract class $UserTransactionDtoCopyWith<$Res> {
       {@JsonKey(ignore: true) String? id,
       String? description,
       String? notes,
-      @ServerTimestampConverter() DateTime? addedDate,
+      @ServerTimestampConverter() DateTime addedDate,
       UserProfileDto salesUser,
       UserProfileDto partnerUser,
       RewardPointDto totalRewardBreakup,
@@ -126,7 +126,7 @@ class _$UserTransactionDtoCopyWithImpl<$Res>
       addedDate: addedDate == freezed
           ? _value.addedDate
           : addedDate // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
+              as DateTime,
       salesUser: salesUser == freezed
           ? _value.salesUser
           : salesUser // ignore: cast_nullable_to_non_nullable
@@ -180,7 +180,7 @@ abstract class _$UserTransactionDtoCopyWith<$Res>
       {@JsonKey(ignore: true) String? id,
       String? description,
       String? notes,
-      @ServerTimestampConverter() DateTime? addedDate,
+      @ServerTimestampConverter() DateTime addedDate,
       UserProfileDto salesUser,
       UserProfileDto partnerUser,
       RewardPointDto totalRewardBreakup,
@@ -232,7 +232,7 @@ class __$UserTransactionDtoCopyWithImpl<$Res>
       addedDate: addedDate == freezed
           ? _value.addedDate
           : addedDate // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
+              as DateTime,
       salesUser: salesUser == freezed
           ? _value.salesUser
           : salesUser // ignore: cast_nullable_to_non_nullable
@@ -261,7 +261,7 @@ class _$_UserTransactionDto extends _UserTransactionDto {
       {@JsonKey(ignore: true) this.id,
       this.description = '',
       this.notes,
-      @ServerTimestampConverter() this.addedDate,
+      @ServerTimestampConverter() required this.addedDate,
       required this.salesUser,
       required this.partnerUser,
       required this.totalRewardBreakup,
@@ -281,7 +281,7 @@ class _$_UserTransactionDto extends _UserTransactionDto {
   final String? notes;
   @override
   @ServerTimestampConverter()
-  final DateTime? addedDate;
+  final DateTime addedDate;
   @override
   final UserProfileDto salesUser;
   @override
@@ -355,7 +355,7 @@ abstract class _UserTransactionDto extends UserTransactionDto {
           {@JsonKey(ignore: true) String? id,
           String? description,
           String? notes,
-          @ServerTimestampConverter() DateTime? addedDate,
+          @ServerTimestampConverter() required DateTime addedDate,
           required UserProfileDto salesUser,
           required UserProfileDto partnerUser,
           required RewardPointDto totalRewardBreakup,
@@ -375,7 +375,7 @@ abstract class _UserTransactionDto extends UserTransactionDto {
   String? get notes => throw _privateConstructorUsedError;
   @override
   @ServerTimestampConverter()
-  DateTime? get addedDate => throw _privateConstructorUsedError;
+  DateTime get addedDate => throw _privateConstructorUsedError;
   @override
   UserProfileDto get salesUser => throw _privateConstructorUsedError;
   @override

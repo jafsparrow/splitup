@@ -1,4 +1,3 @@
-
 import 'package:JCCommisionApp/application/auth/logged_user/logged_user_bloc.dart';
 import 'package:JCCommisionApp/application/transactions_bloc/transactions_bloc.dart';
 import 'package:JCCommisionApp/application/user_management/user_profile/user_profile_bloc.dart';
@@ -26,37 +25,47 @@ class HomePage extends StatelessWidget {
     return BlocConsumer<UserProfileBloc, UserProfileState>(
       listener: (context, userProfileState) {
         userProfileState.maybeMap(
-            loadSuccess: (state) {
-              print('This should only be printed only once after restrat');
-              // Navigator.push(
-              //   context,
-              //   EventAdd.route(
-              //     loggedInUser: loggedUserBloc.state.maybeWhen(
-              //         loggedUserLoaded: (userLoadedState) =>
-              //             userLoadedState.loggedUserProfile,
-              //         orElse: () {}),
-              //     partnerUser: state.user.profile,
-              //     onSave: (transaction) {
-              //       getIt<TransactionsBloc>().add(
-              //         TransactionsBlocEvent.addTransaction(
-              //           companyId: '4cHZwNlWzW79PQ7U5dUf',
-              //           transaction: transaction,
-              //         ),
-              //       );
-              //       Navigator.pop(context);
-              //     },
-              //   ),
-              // );
-            },
-            loadFailure: (_) {
-              Scaffold.of(context).showSnackBar(
-                SnackBar(
-                  content:
-                      Text("User could not be found for the barcode, error.."),
-                ),
-              );
-            },
-            orElse: () {});
+          loadSuccess: (state) {
+            print('This should only be printed only once after restrat');
+
+            loggedUserBloc.state.maybeWhen(
+              loggedUserLoaded: (userLoadedState) {
+                Navigator.push(
+                  context,
+                  EventAdd.route(
+                      onSave: (transaction) {
+                        getIt<TransactionsBloc>().add(
+                          TransactionsBlocEvent.addTransaction(
+                            companyId: '4cHZwNlWzW79PQ7U5dUf',
+                            transaction: transaction,
+                          ),
+                        );
+                        Navigator.pop(context);
+                      },
+                      loggedInUser: userLoadedState.loggedUserProfile,
+                      partnerUser: state.user.profile),
+                );
+              },
+              orElse: () {
+                ScaffoldMessenger.of(context).showSnackBar(
+                  SnackBar(
+                    content:
+                        Text("Could not find the logged user information..."),
+                  ),
+                );
+              },
+            );
+          },
+          loadFailure: (_) {
+            ScaffoldMessenger.of(context).showSnackBar(
+              SnackBar(
+                content:
+                    Text("User could not be found for the barcode, error.."),
+              ),
+            );
+          },
+          orElse: () {},
+        );
       },
       listenWhen: (previous, current) => current != previous,
       builder: (context, userProfileState) => Scaffold(
@@ -75,7 +84,7 @@ class HomePage extends StatelessWidget {
                   // }
                 },
                 itemBuilder: (context) => [
-                  // NOTE: - as registering a user in firebase auto logs the new user. this feature is temporarily deffered
+                      // NOTE: - as registering a user in firebase auto logs the new user. this feature is temporarily deffered
                       // PopupMenuItem(
                       //   child: Text('Add new Partner'),
                       //   value: 'addPartner',
@@ -169,13 +178,9 @@ class HomePage extends StatelessWidget {
   Padding buildSectionHeading(BuildContext context, {required String subText}) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 5),
-      child: Text(
-        subText,
-        style: Theme.of(context)
-            .textTheme
-            .headline6
-            // .copyWith(fontWeight: FontWeight.w400),
-      ),
+      child: Text(subText, style: Theme.of(context).textTheme.headline6
+          // .copyWith(fontWeight: FontWeight.w400),
+          ),
     );
   }
 

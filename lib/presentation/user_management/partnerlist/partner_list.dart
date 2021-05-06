@@ -7,7 +7,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 class PartnerList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    // PartnerListBloc partnerListBloc = context.bloc<PartnerListBloc>();
+    // PartnerListBloc partnerListBloc = context.read<PartnerListBloc>();
     // if (context.watch<PartnerListBloc>().state is PartnerListLoading) {
     //   print('this should appear only once I load .. buhahaha');
     //   context.watch<PartnerListBloc>().add(LoadPartnerUsers());
@@ -51,15 +51,19 @@ class PartnerList extends StatelessWidget {
             Expanded(
               child: TextField(
                 onChanged: (value) {
-                  context
-                      .read<FilteredPartnersBloc>()
-                      .add(FilterPartnerUsers(value));
+                  context.read<FilteredPartnersBloc>().add(
+                        FilterPartnerUsers(value),
+                      );
                 },
               ),
             ),
             IconButton(
-              icon: Icon(Icons.search),
-              onPressed: () {},
+              icon: Icon(Icons.search_off),
+              onPressed: () {
+                context.read<FilteredPartnersBloc>().add(
+                      FilterPartnerUsers(""),
+                    );
+              },
             ),
           ],
         ),
@@ -77,7 +81,8 @@ class PartnerList extends StatelessWidget {
     );
   }
 
-  Widget buildPartnerListItem({required BuildContext context,required PartnerUser partnerUser}) {
+  Widget buildPartnerListItem(
+      {required BuildContext context, required PartnerUser partnerUser}) {
     return ListTile(
       onTap: () {
         // Navigator.push(
