@@ -37,7 +37,8 @@ class HomePage extends StatelessWidget {
                       onSave: (transaction) {
                         getIt<TransactionsBloc>().add(
                           TransactionsBlocEvent.addTransaction(
-                            companyId: '4cHZwNlWzW79PQ7U5dUf',
+                            companyId: userLoadedState
+                                .companyId, //'4cHZwNlWzW79PQ7U5dUf',
                             transaction: transaction,
                           ),
                         );
@@ -74,31 +75,32 @@ class HomePage extends StatelessWidget {
           title: Text('Homepage'),
           actions: [
             PopupMenuButton<String>(
-                onSelected: (val) {
-                  // NOTE: - as registering a user in firebase auto logs the new user. this feature is temporarily deffered
-                  if (val == 'addPartner') {
-                    Navigator.of(context).push(
-                      MaterialPageRoute(
-                        builder: (context) => AddPartnerUserScreen(),
-                      ),
-                    );
-                  }
-                },
-                itemBuilder: (context) => [
-                      // NOTE: - as registering a user in firebase auto logs the new user. this feature is temporarily deffered
-                      PopupMenuItem(
-                        child: Text('Add new Partner'),
-                        value: 'addPartner',
-                      ),
-                      PopupMenuItem(
-                        child: Text('Deactivate User'),
-                        value: 'Deactive',
-                      ),
-                      PopupMenuItem(
-                        child: Text('Something else'),
-                        value: 'Something',
-                      ),
-                    ])
+              onSelected: (val) {
+                // NOTE: - as registering a user in firebase auto logs the new user. this feature is temporarily deffered
+                if (val == 'addPartner') {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (context) => AddPartnerUserScreen(),
+                    ),
+                  );
+                }
+              },
+              itemBuilder: (context) => [
+                // NOTE: - as registering a user in firebase auto logs the new user. this feature is temporarily deffered
+                PopupMenuItem(
+                  child: Text('Add new Partner'),
+                  value: 'addPartner',
+                ),
+                PopupMenuItem(
+                  child: Text('Deactivate User'),
+                  value: 'Deactive',
+                ),
+                PopupMenuItem(
+                  child: Text('Something else'),
+                  value: 'Something',
+                ),
+              ],
+            )
           ],
         ),
         floatingActionButton: userProfileState.maybeMap(
@@ -113,20 +115,26 @@ class HomePage extends StatelessWidget {
               // String cameraScanResult = (await scanner.scan()).toString();
               // // String cameraScanResult = _scanCode();
               // print('the result of scan is $cameraScanResult');
-              String cameraScanResult = '123454332';
+              String cameraScanResult = 'Jrl8OF1Llr6a6CRiKbbT';
 
               if (cameraScanResult.isNotEmpty) {
-                // context.read<UserProfileBloc>().add(
-                //       UserProfileEvent.loadUserPofileFromId(
-                //           companyId: '4cHZwNlWzW79PQ7U5dUf',
-                //           id: 'jRIflF1vSoPl9KD2Hwn3kLtqHE22'),
-                //     );
-
-                context.read<UserProfileBloc>().add(
-                      UserProfileEvent.loadUserProfileFromBarcode(
-                          companyId: '4cHZwNlWzW79PQ7U5dUf',
-                          barcode: cameraScanResult),
+                loggedUserBloc.state.maybeWhen(
+                  loggedUserLoaded: (loggedUser) {
+                    context.read<UserProfileBloc>().add(
+                          UserProfileEvent.loadUserProfileFromBarcode(
+                              companyId: loggedUser
+                                  .companyId, //'4cHZwNlWzW79PQ7U5dUf',
+                              barcode: cameraScanResult),
+                        );
+                  },
+                  orElse: () {
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      SnackBar(
+                        content: Text('Error while getting logged user info'),
+                      ),
                     );
+                  },
+                );
               }
             },
           ),

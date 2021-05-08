@@ -79,11 +79,12 @@ class FirebaseUserManagementRepository implements IUserManagement {
 
     print(userPassword);
     try {
-      UserCredential userCredential =
-          await _fireAuth.createUserWithEmailAndPassword(
-              email: userEmail, password: userPassword);
+      // creating a user from fronténd switches the logged In user. so this is deffered for future.
+      // UserCredential userCredential =
+      //     await _fireAuth.createUserWithEmailAndPassword(
+      //         email: userEmail, password: userPassword);
       UserProfile newUser =
-          newPartnerUser.copyWith(uid: userCredential.user!.uid);
+          newPartnerUser.copyWith(uid: "someThingNeedtoAddlater$userPassword");
 
       PartnerUser newPartner =
           PartnerUser(profile: newUser, totalRewardPoints: 0);
@@ -109,7 +110,9 @@ class FirebaseUserManagementRepository implements IUserManagement {
       ...profileDto.toJson()
     };
 
-    await _firestore.collection('users').doc(newUser.uid).set(data);
+    await _firestore
+        .collection('users')
+        .add(data); //doc(newUser.uid).set(data);
   }
 
   _addUserToCompany(PartnerUser newUser, String companyId) async {
@@ -138,17 +141,19 @@ class FirebaseUserManagementRepository implements IUserManagement {
     throw UnimplementedError();
   }
 
-
   @override
-  Future<Either<UserManagementFailure, List<PartnerUser>>> getPartnerUsers({String? companyId}) async {
-     try {
+  Future<Either<UserManagementFailure, List<PartnerUser>>> getPartnerUsers(
+      {String? companyId}) async {
+    try {
       QuerySnapshot userDoc = await _firestore
           .collection('companies')
           .doc(companyId)
           .collection('users')
           .get();
-      
-      List<PartnerUser> partnerList = userDoc.docs.map((userDoc) => PartnerUserDto.fromFirestore(userDoc).toDomain()).toList();
+
+      List<PartnerUser> partnerList = userDoc.docs
+          .map((userDoc) => PartnerUserDto.fromFirestore(userDoc).toDomain())
+          .toList();
 
       return right(partnerList);
     } catch (e) {

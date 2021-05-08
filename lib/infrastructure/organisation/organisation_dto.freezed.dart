@@ -25,7 +25,7 @@ class _$OrganisationDtoTearOff {
       @JsonKey(ignore: true) String? companyId,
       required String phoneNumber,
       required Map<String, String> address,
-      required Map<String, double> pointsFormula,
+      required Map<String, dynamic> pointsFormula,
       required LicensePlanDto licensePlan}) {
     return _OrganisationDto(
       companyName: companyName,
@@ -52,7 +52,7 @@ mixin _$OrganisationDto {
   String? get companyId => throw _privateConstructorUsedError;
   String get phoneNumber => throw _privateConstructorUsedError;
   Map<String, String> get address => throw _privateConstructorUsedError;
-  Map<String, double> get pointsFormula => throw _privateConstructorUsedError;
+  Map<String, dynamic> get pointsFormula => throw _privateConstructorUsedError;
   LicensePlanDto get licensePlan => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -71,7 +71,7 @@ abstract class $OrganisationDtoCopyWith<$Res> {
       @JsonKey(ignore: true) String? companyId,
       String phoneNumber,
       Map<String, String> address,
-      Map<String, double> pointsFormula,
+      Map<String, dynamic> pointsFormula,
       LicensePlanDto licensePlan});
 
   $LicensePlanDtoCopyWith<$Res> get licensePlan;
@@ -115,7 +115,7 @@ class _$OrganisationDtoCopyWithImpl<$Res>
       pointsFormula: pointsFormula == freezed
           ? _value.pointsFormula
           : pointsFormula // ignore: cast_nullable_to_non_nullable
-              as Map<String, double>,
+              as Map<String, dynamic>,
       licensePlan: licensePlan == freezed
           ? _value.licensePlan
           : licensePlan // ignore: cast_nullable_to_non_nullable
@@ -143,7 +143,7 @@ abstract class _$OrganisationDtoCopyWith<$Res>
       @JsonKey(ignore: true) String? companyId,
       String phoneNumber,
       Map<String, String> address,
-      Map<String, double> pointsFormula,
+      Map<String, dynamic> pointsFormula,
       LicensePlanDto licensePlan});
 
   @override
@@ -190,7 +190,7 @@ class __$OrganisationDtoCopyWithImpl<$Res>
       pointsFormula: pointsFormula == freezed
           ? _value.pointsFormula
           : pointsFormula // ignore: cast_nullable_to_non_nullable
-              as Map<String, double>,
+              as Map<String, dynamic>,
       licensePlan: licensePlan == freezed
           ? _value.licensePlan
           : licensePlan // ignore: cast_nullable_to_non_nullable
@@ -224,7 +224,7 @@ class _$_OrganisationDto extends _OrganisationDto {
   @override
   final Map<String, String> address;
   @override
-  final Map<String, double> pointsFormula;
+  final Map<String, dynamic> pointsFormula;
   @override
   final LicensePlanDto licensePlan;
 
@@ -284,7 +284,7 @@ abstract class _OrganisationDto extends OrganisationDto {
       @JsonKey(ignore: true) String? companyId,
       required String phoneNumber,
       required Map<String, String> address,
-      required Map<String, double> pointsFormula,
+      required Map<String, dynamic> pointsFormula,
       required LicensePlanDto licensePlan}) = _$_OrganisationDto;
   const _OrganisationDto._() : super._();
 
@@ -301,7 +301,7 @@ abstract class _OrganisationDto extends OrganisationDto {
   @override
   Map<String, String> get address => throw _privateConstructorUsedError;
   @override
-  Map<String, double> get pointsFormula => throw _privateConstructorUsedError;
+  Map<String, dynamic> get pointsFormula => throw _privateConstructorUsedError;
   @override
   LicensePlanDto get licensePlan => throw _privateConstructorUsedError;
   @override

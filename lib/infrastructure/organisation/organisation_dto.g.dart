@@ -11,7 +11,7 @@ _$_OrganisationDto _$_$_OrganisationDtoFromJson(Map<String, dynamic> json) {
     companyName: json['companyName'] as String,
     phoneNumber: json['phoneNumber'] as String,
     address: Map<String, String>.from(json['address'] as Map),
-    pointsFormula: Map<String, double>.from(json['pointsFormula'] as Map),
+    pointsFormula: json['pointsFormula'] as Map<String, dynamic>,
     licensePlan:
         LicensePlanDto.fromJson(json['licensePlan'] as Map<String, dynamic>),
   );

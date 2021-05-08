@@ -15,7 +15,7 @@ abstract class OrganisationDto implements _$OrganisationDto {
     @JsonKey(ignore: true) String? companyId,
     required String phoneNumber,
     required Map<String, String> address,
-    required Map<String, double> pointsFormula,
+    required Map<String, dynamic> pointsFormula,
     required LicensePlanDto licensePlan,
   }) = _OrganisationDto;
 
@@ -36,7 +36,8 @@ abstract class OrganisationDto implements _$OrganisationDto {
       companyId: companyId!,
       phoneNumber: phoneNumber,
       address: address,
-      pointsFormula: pointsFormula,
+      pointsFormula: pointsFormula
+          .map((key, value) => MapEntry(key, double.parse(value.toString()))),
       licensePlan: licensePlan.toDomain(),
     );
   }
@@ -46,8 +47,6 @@ abstract class OrganisationDto implements _$OrganisationDto {
 
   factory OrganisationDto.fromFirestore(DocumentSnapshot doc) {
     return OrganisationDto.fromJson(doc.data()!).copyWith(companyId: doc.id);
-
-    // return UserBarcodeDto.fromJson(doc.data()).copyWith(id: doc.id);
     // Map<String, dynamic> docData = doc.data();
     // return OrganisationDto.fromJson(doc.data()).copyWith(
     //   companyName: docData['name'],
