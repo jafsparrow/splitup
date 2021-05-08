@@ -1,3 +1,4 @@
+import 'package:JCCommisionApp/application/auth/logged_user/logged_user_bloc.dart';
 import 'package:JCCommisionApp/application/lead_board/monthly_leaders/monthly_leaders_bloc.dart';
 import 'package:JCCommisionApp/application/lead_board/weekly_leaders/weekly_leaders_bloc.dart';
 import 'package:flutter/material.dart';
@@ -109,6 +110,27 @@ class Stats extends StatelessWidget {
       ),
       appBar: AppBar(
         title: Text('Statistics'),
+        actions: [
+          IconButton(
+              icon: Icon(Icons.refresh),
+              onPressed: () {
+                context.read<LoggedUserBloc>().state.maybeMap(
+                    loggedUserLoaded: (loggedUserLoadedstate) {
+                      context.read<WeeklyLeadersBloc>().add(
+                            WeeklyLeadersEvent.loadWeeklyLeadBoard(
+                                companyId:
+                                    loggedUserLoadedstate.loggedUser.companyId),
+                          );
+
+                      context.read<MonthlyLeadersBloc>().add(
+                            MonthlyLeadersEvent.loadMonthlyLeadBoard(
+                                companyId:
+                                    loggedUserLoadedstate.loggedUser.companyId),
+                          );
+                    },
+                    orElse: () {});
+              })
+        ],
       ),
     );
   }

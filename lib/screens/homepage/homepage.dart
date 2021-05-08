@@ -1,4 +1,6 @@
 import 'package:JCCommisionApp/application/auth/logged_user/logged_user_bloc.dart';
+import 'package:JCCommisionApp/application/lead_board/monthly_leaders/monthly_leaders_bloc.dart';
+import 'package:JCCommisionApp/application/lead_board/weekly_leaders/weekly_leaders_bloc.dart';
 import 'package:JCCommisionApp/application/transactions_bloc/transactions_bloc.dart';
 import 'package:JCCommisionApp/application/user_management/user_profile/user_profile_bloc.dart';
 import 'package:JCCommisionApp/domain/transactions/transaction.dart';
@@ -43,6 +45,16 @@ class HomePage extends StatelessWidget {
                           ),
                         );
                         Navigator.pop(context);
+
+                        context.read<WeeklyLeadersBloc>().add(
+                              WeeklyLeadersEvent.loadWeeklyLeadBoard(
+                                  companyId: userLoadedState.companyId),
+                            );
+
+                        context.read<MonthlyLeadersBloc>().add(
+                              MonthlyLeadersEvent.loadMonthlyLeadBoard(
+                                  companyId: userLoadedState.companyId),
+                            );
                       },
                       loggedInUser: userLoadedState.loggedUserProfile,
                       partnerUser: state.user.profile),
